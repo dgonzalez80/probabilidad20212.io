@@ -1,0 +1,45 @@
+---
+title: "**Módulo 0**"
+author: "dgonzalez "
+subtitle: " " 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f1f8e38264b0b0d6efb29aa" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
+
+
+<br/><br/><br/>
+
+### <span style="color:#0DA5A6">**Introducción**</span>
+
+Este módulo contiene aquellos conceptos que se consideran necesarios para abordar los temas propuestos en  el curso. En caso de no recordarlos o de no  haberlos trabajado  previamente, te  recomiendo revisar el  contenido de esta modulo.
+
+Son ellos: 
+
+* Sumatoria y productoria (Módulo 1), 
+
+* Teoría de conjuntos  (Módulo 2), 
+
+* Técnicas de conteo  (Módulo 2), 
+
+* Función exponencial (Módulo 3), 
+
+* Función Logarítmica (Módulo 3), 
+
+* Derivación  (Módulo 4) e 
+
+* Integración (Módulo 4).
+
+<br/><br/><br/>
+
+### <span style="color:#0DA5A6">**Objetivo**</span>
+
+Al finalizar este modulo los estudiantes RECORDARAN los conceptos de SUMATORIA, PRODUCTORIA, TEORIA DE CONJUNTOS, TECNCAS DE CONTEO, FUNCION EXOPNENCIAL y LOGARÍTMICA, DERIVACIÓN e INTEGRACIÓN, conceptos que serán requeridos para la mejor comprensión de los conceptos planteados en el curso.

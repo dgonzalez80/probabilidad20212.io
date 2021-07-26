@@ -1,0 +1,34 @@
+---
+title: "**Módulo 5**"
+author: "dgonzalez "
+subtitle: " " 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5fb5bc2f0c974e0cf98fb240" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
+
+<br/><br/><br/>
+
+### <span style="color:#BC2B6A">**Introducción**</span>
+
+Una de las aplicaciones más utilizadas de la Estadística la conforman los modelos de regresión, los cuales permiten explicar una variable a partir de la combinación  lineal de otro  grupo de variables, pero también  la estimación de  coeficientes que miden la relación  entre dos variables.  Ambas situaciones con un gran número de aplicaciones.
+
+<br/><br/><br/>
+
+### <span style="color:#BC2B6A">**Objetivo**</span>
+
+Al finalizar el módulo el estudiante estará en capacidad de PROPONER soluciones a problemas reales mediante la utilización de los MODELOS DE REGRESIÓN a situaciones que permitan la toma de decisiones informadas y la generación de políticas
+
+
+
+
+

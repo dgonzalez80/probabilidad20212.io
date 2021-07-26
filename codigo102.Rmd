@@ -1,0 +1,11 @@
+---
+title: "Código 2"
+author: "dgonzalez "
+subtitle: "Módulo 1- Unidad 1.1" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---

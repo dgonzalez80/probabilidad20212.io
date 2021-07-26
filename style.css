@@ -1,0 +1,11 @@
+.section.sidebar {
+  top: 61px;
+  border-bottom: 10px solid #00afbb;
+  border-left: 10px solid #008000;
+  background-color: rgba(9, 135,74, 20);
+}
+
+.navbar {
+background-color:rgba(43,111,213,1.0);
+border-color:black;
+}

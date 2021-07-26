@@ -1,0 +1,16 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data/
+img/
+tex/
+.aux
+.log
+.out
+.tex
+.gz
+.Rproj
+.css
+.pdf
+.Rmd

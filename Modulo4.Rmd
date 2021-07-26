@@ -1,0 +1,29 @@
+---
+title: "**Módulo 4**"
+author: "dgonzalez "
+subtitle: " " 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f1f835fc43a880d757f9161" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
+
+<br/><br/><br/>
+
+### <span style="color:#E09600">**Introducción**</span>
+
+La inferencia estadística es una de las herramientas mas fuertes de la estadística que  permite la generalización de los resultados  obtenidos  en una muestra a  toda  la población. En este módulo encontraras los procedimientos que te permitirán realizar una correcta inferencia de tus datos.
+
+<br/><br/><br/>
+
+### <span style="color:#E09600">**Objetivo**</span>
+
+Al finalizar el módulo el estudiante estará en capacidad de RECONOCER, INFERIR y CONSTRASTAR a partir de la estimación a través de INTERVALOS DE CONFIANZA  y PRUEBAS DE HIPOTESIS, permitiendo incorporar estas herramientas estadísticas a la toma de decisiones.

@@ -1,0 +1,20 @@
+---
+title: "Referencias "
+author: "dgonzalez"
+date: " "
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+# Texto 1
+Probabilidad y Estadísitca para ingeniería y ciencias - Mendenhall W & Sincich T (1997)
+
+# Texto 2
+Estadística para ingenieros y científicos - Navidi W. (2006)
+
+# Texto 3
+Probabilidad y Estadística para ingeniería y Ciencias - Walpole, Meyers,Ye (2007)

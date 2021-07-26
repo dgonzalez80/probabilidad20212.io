@@ -1,0 +1,129 @@
+---
+title: "**Bases de datos**"
+author: "dgonzalez"
+subtitle: "**Módulo 1- Unidad 1.1**" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
+```
+
+## **Guía de aprendizaje 1.1**
+
+```{r,eval=FALSE, echo=FALSE, out.width="100%", fig.cap=""}
+knitr::include_url("pdf/Guia_de_aprendizaje_101.pdf", height="1000px")
+```
+
+<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f23be82264b0b0d6efb793c" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
+
+<br/><br/>
+
+## **1. Introducción**
+
+En esta unidad se  presenta  la **Metodología Estadística** como  estrategia que  permite  visualizar las diferentes etapas presentes en una investigación  o análisis de  datos :
+
+* Definición del problema
+* Definición de los objetivos
+* Definición de las variables de interés
+* Diseño del experimento
+* Recolección de la información
+* Procesamiento de información
+* Análisis descriptivo
+* Inferencia estadística
+* Recomendaciones y conclusiones
+
+Haciendo especial referencia a la construcción, depuración  y documentación  de las bases de datos, acciones necesarias para un  buen  análisis de datos.
+
+Con este ropósito se hará uso del portal **Bases de Datos Abiertos Colombia**,  de la hoja electrónica **Excel** y del lenguaje  **R**.
+
+<br/><br/>
+
+## **2. Objetivos de la unidad**
+
+Al finalizar la unidad los estudiantes estarán  en  capacidad de  RECONOCER los  pasos de la Metodología Estadística y podrán ESTRUCTURAR, LIMPIAR y DOCUMENTAR una  base de datos con  el fin de  garantizar los elementos  necesarios  para  realizar  un  procesamiento  de  datos. Para ello seleccionaran una base de datos  del  portal de  Datos Abiertos Colombia. Adicionalmente propondrán un problema que les permita el desarrollo de la metodológica estadística. 
+
+<br/><br/>
+
+## **3. Duración**
+
+La presente  unidad será desarrollada durante la  primera semana del semestre ( 26 de julio  al 01  de agosto de 2021). Ademas del material suministrado  contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entregables para esta unidad deberán ser entregados a través de la plataforma Brightspace hasta el  01 de agosto. 
+
+Para alcanzar los objetivos planteados se propone realizar las siguientes actividades
+
+<br/><br/>
+
+## **4. Cronograma de trabajo**
+
+
+|Actividad101   | Descripción                    | 
+|:--------------|:-----------------------------  |
+|Individual     |  **Metodología estadística:** : Formular un  problema que le permita  desarrollar un  ejercicio académico durante  el  semestre a través de  la recolección  de información (primaria o secundaria), Ademas deberá establecer los  objetivos y las  variables de  interés , para las  cuales  deberá  identificar el tipo de  variable  y su  escala  de medición.  El resultado  de esta actividad deberá se entregado  en archivo pdf con  nombre: **actividad101.pdf** |
+| Recursos      | Metodología.pdf |
+| Fecha         | 01 de agosto de 2021 |
+| Hora          | 23:59                |
+
+<br/> 
+
+|Actividad102   | Descripción                    | 
+|:--------------|:-----------------------------  |
+|Individual     |  **Base de datos** : Deberá  buscar una  base de  datos  de su interés  en el  portal  [Datos Abiertos Colombia](https://www.datos.gov.co/),  depuarla  y  documentarla  si es  necesario. A partir de la información  recolectada deberá construir la ficha técnica de  la base. El resultado  de esta actividad deberá se entregado  en archivo pdf con  nombre: **actividad102.pdf** |
+| Recurso       | Video: [Como descargar datos abiertos](https://www.youtube.com/watch?v=lRftK2mL3Sw) 
+|               | Formato ficha : [Ficha técnica](https://drive.google.com/file/d/1O1eaS8y6olf5o_42ehgDgVZ4q1dganbd/view?usp=sharing) |
+|               | Excel |
+|               | RStudio |
+|Fecha          | 01 de agosto  2021 |
+|Hora           |  23:59 hora local  |
+
+<br/> 
+
+|Actividad103   | Descripción                    | 
+|:--------------|:-----------------------------  |
+|Individual     |**Instalación de R y RStudio** : Para el  desarrollo  de las  actividades del curso deberá instalar las últimas  versiones  de [R CRAN](https://www.r-project.org/) y de  [RStudio](https://rstudio.com/). Para su correcta instalación  existen varios videos en  YouTube que le permitirán realizarlo de una manera correcta   | 
+|Recursos       | [DESCARGAR e instalar R y RStudio 2021 -Video Rafa Gonzalez Gouveia](https://www.youtube.com/watch?v=Nmu4WPdJBRo) |
+|               | [R download](https://cran.r-project.org/) |
+|               | [RStudio download](https://rstudio.com/products/rstudio/download/) |
+| Fecha         | 01 de agosto 2021 |
+| Hora          | 23:59 hora local |
+
+<br/><br/>
+
+## **5. Criterios de evaluación**
+
+* Reconocer la relación existente ente la  definición del problema, el planteamiento de los objetivos y la  definición de las variables de interés dentro de la  Metodología Estadística.
+
+* Reconocer e identificar los diferentes tipos de variables  y sus respectivas escalas de medición.
+
+* Identificar la estructura de una base de datos
+
+<br/> 
+Los entregables completos y enviados dentro de los tiempos establecidos  otorgarán 10 puntos en cada caso, para un  total de 20 puntos. 
+
+
+<br/><br/>
+
+## **6. Entregables** 
+
+| Entregable |  Descripción                    |
+|:--------------|:-----------------------------|
+|**actividad1.pdf** | Documento que contenga: Formulación de problema propuesto, definición  de los objetivos y definición de variables de interés. En este último caso detallar para cada variable su  tipo ( cualitativa o cuantitativa ) y su escala de medición ( nominal, ordinal, de intervalo o de razón).|
+|**actividad2.pdf**| Ficha técnica de  la base seleccionada |
+|||
+|**Fecha** |Domingo 01 de agosto de 2021| 
+|**Hora límite**| 23:59  hora  local|
+|||
+

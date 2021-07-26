@@ -1,0 +1,217 @@
+---
+title: "**Sumatorias y Productoria**"
+author: "dgonzalez"
+subtitle: "**Módulo 0- Unidad 0.1**" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
+```
+
+# **Guía 0.1**
+
+<br/>
+<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f1f8e38264b0b0d6efb29aa" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
+
+<br/><br/>
+
+# **Sumatoria**
+
+
+El **sumatorio** o **sumatoria** también conocida como operador de suma, notación sigma o símbolo de suma, es una notación matemática que permite representar una suma de varios sumandos, n o incluso infinitos sumandos son colocar puntos suspensivos. Se expresa mediante la letra sigma mayúscula.
+
+Wikipedia
+
+Este operador será utilizado en el curso en la construcción de conceptos como media aritmética, varianza, covarianza, correlación, estimación de los coeficientes del modelo de regresión entre otros
+
+<br/><br/>
+
+## **Definición**
+
+Se define como 
+ 
+ $$\sum_{i=1}^{n} a_{i} = a_{1} + a_{2} + a_{3} + \cdots + a_{n}$$
+
+Esta forma de expresión matemática nos ayuda a resumir la escritura de series de sucesiones matemáticas, las cuales puede ser finitas o infinitas como:
+ 
+ + Finita :  $\displaystyle\sum_{i=1}^{n} a_{i} = a_{1} + a_{2} + a_{3} + ... + a_{n}$
+ 
+ + Infinita :  $\displaystyle\sum_{i=1}^{n} a_{i} = a_{1} + a_{2} + a_{3} + ...$
+ 
+ 
+ Ahora si se quiere representar la suma de los primeros 100 números enteros se escribe:
+ 
+ $$\sum_{i=1}^{100} x = 1 + 2 + 3 + 4 + 5 + \cdots + 99 +100$$
+```{r}
+sum(1:100)
+```
+ <br/><br/>
+
+### **Ejemplo 1:**
+
+Si se tienen las notas de un examen de 12 estudiantes como:
+
+3.4, 4.2, 2.5, 4.1, 3.0, 4.2, 4.7, 3.3, 4.5, 5.0, 2.5, 4.8
+ 
+Y se desea calcular la media de las notas, primero se deben sumar todas las notas y el resultado dividirlo por el numero de notas. 
+ 
+
+$$\bar{x} = \dfrac{1}{12}\displaystyle\sum_{i=1}^{12} x_{i}$$
+En este caso $3.4$ representa el primer termino de la suma $x_1$ , el segundo término $x_2 = 4.2$, asi, hasta el final donde $4.8$ representa $x_{12}$. Lo cual equivale a :
+
+$$\dfrac{(3.4 + 4.2 + 2.5 + 4.1 + 3.0 + 4.2 + 4.7 + 3.3 + 4.5 + 5.0 + 2.5 + 4.8)}{12}=\dfrac{46.2}{12}$$
+
+```{r}
+x=c(3.4 + 4.2 + 2.5 + 4.1 + 3.0 + 4.2 + 4.7 + 3.3 + 4.5 + 5.0 + 2.5 + 4.8)
+sum(x)/12
+```
+<br/><br/>
+
+## **Propiedades** 
+
++ $\displaystyle\sum_{i=1}^{n} k = nk$, 
+
++ $\displaystyle\sum_{i=1}^{n} kx_{i} = k \displaystyle\sum_{i=1}^{n} x_{i}$, 
+
++ $\displaystyle\sum_{i=1}^{n} (ax_{i}+by_{i}) = a\displaystyle\sum_{i=1}^{n} x_{i} + b\displaystyle\sum_{i=1}^{n} y_{i}$
+
+
+donde $k$, $a$ y $b$ son constantes y $x_i$ y $y_{i}$ corresponden a lod terminod i-esimo de los conjuntos de datos
+
+<br/><br/>
+
+### **Ejemplo 2:**
+
+$\displaystyle\sum_{i=1}^{5} 3 = 15$, ¿ Porqué ?
+
+<br/><br/>
+
+### **Ejemplo 3:**
+
+$\displaystyle\sum_{i=1}^{10} 10x = 550$, ¿ Porqué ?
+
+<br/><br/>
+
+### **Ejemplo 4:**
+
+ $\displaystyle\sum_{i=1}^{10} (3x_{i}+2y_{i}) =475$, ¿ Porqué ?
+ 
+ donde  $\displaystyle\sum_{i=1}^{10} x_{i} =55$ y $\displaystyle\sum_{i=1}^{10} y_{i}=155$ 
+ 
+<br/><br/> 
+
+## **Problemas propuestos**
+
+1. Calcular las siguientes sumatorias:
+
+a.  $\displaystyle\sum_{i=1}^{10} (3i+5)$
+
+b.  $\displaystyle\sum_{t=0}^{2} 2^{t}$
+
+c.  $\displaystyle\sum_{w=0}^{6} 3w^{2}$
+
+2. Para los siguientes conjuntos de datos:
+```{r}
+x = c(3.6, 3.5, 3.6, 3.5, 3.0, 4.0, 3.2, 3.8, 3.5, 3.3, 3.4, 3.8, 3.4, 3.4, 3.1)
+y = c(3.4, 4.3, 4.5, 4.1, 4.5, 4.1, 3.4, 4.0, 4.2, 4.6, 3.5, 3.8, 4.5, 3.5, 4.1)
+```
+
+
+
+Determine los valores de :
+
+a. $\displaystyle\sum_{i=1}^{15} x_{i}$
+
+
+b. $\displaystyle\sum_{w=1}^{15} y_{i}$
+
+
+c. $\dfrac{1}{14}\displaystyle\sum_{i=1}^{15}(y_{i}-4.0)^{2}$
+
+
+d. $\displaystyle\sum_{i=1}^{15} (x_{i}-3.5)$
+
+
+e. $\dfrac{1}{14}\displaystyle\sum_{i=1}^{15}(x_{i}-3.5)(y_{i}-4.0)$
+
+
+f. $\displaystyle\sum_{i=1}^{15} \dfrac{(x_{i}-3.5)(y_{i}-4.0)}{(x_{i}-3.5)^{2}}$
+
+
+<br/><br/>
+
+# **Productoria**
+
+El productorio o productoria, también conocido como multiplicatorio, multiplicatoria o simplemente producto es una notación matemática que representa una multiplicación de una cantidad arbitraria finita o infinita.
+ 
+Wikipedia
+
+
+Este operador será utilizado para desarrollar el método de estimación de Máxima Verosimilitud, soporte de la inferencia estadística abordado en la Unidad 4.1 del Módulo 4.
+
+<br/><br/><br/> 
+
+## **Definición**
+
+Se define como:
+
+$$\displaystyle\prod_{i=1}^n a_{i}   = a_1 \times a_2 \times a_3 \times  \cdots \times a_n$$
+El operador consiste en multiplicar un numero de veces establecido los términos $a_i$
+Una de las aplicaciones más conocida de la productoria son los números factoriales
+
+$$n! = \displaystyle\prod_{i=1}^n i = 1 \times 2 \times 3 \cdots \times n$$    
+Este operador también se utiliza para multiplicar funciones, matrices como por ejemplo:
+
+$$\displaystyle\prod_{i=1}^n f(x_i) = f(x_1) \times f(x_2) \times f(x_3) \cdots \times f(x_n)$$    
+Para el caso de $f(x) = \exp\{x\}$ tenemos:
+
+
+$$\displaystyle\prod_{i=1}^n \exp\{x_i\} = \exp\{x_1\} \times \exp\{x_2\} \times \exp\{x_3\} \cdots \times \exp\{x_n\}$$    
+
+Al tener la misma base con diferente exponente, el resultado se obtiene al colocar la misma base y sumar los exponentes,
+
+$$\exp\{\displaystyle\sum_{i=1}^{n} x_{i}\}$$ 
+
+<br/><br/>
+
+### **Ejemplo 1:**
+
+Encontrar la multiplicación de los 10 primeros números
+
+$$\displaystyle\prod_{x=1}^n x = 1 \times 2 \times 3 \times 4 \times 5 \times 6 \times 7 \times 8 \times 9 \times 10 $$
+
+```{r}
+prod(1:10)
+```
+
+<br/><br/>
+
+## **Problemas propuestos**
+
+1.  $\displaystyle\prod_{k=1}^{20} 2^{k}$
+<br/> <br/> 
+2. $\displaystyle\prod_{i=1}^{20} k 2^{k}$
+<br/> <br/> 
+3. $\displaystyle\prod_{i=1}^n f(x_{i})$ para las siguientes funciones:
+
+  a. $f(x) = \dfrac{1}{60}$
+  
+  b. $f(x_{i}) = \dfrac{1}{x_{i}}$
+  
+  c. $f(x_{i} = \dfrac{1}{\sqrt{2\pi}} \exp\{\frac{1}{2}x^{2}\}$
+
