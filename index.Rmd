@@ -37,5 +37,8 @@ knitr::opts_chunk$set(echo = TRUE)
 </html>
 
 
+# **Calendario 2021-2**
+
+<img src="img/calendario20212.png" width="900">
 
 

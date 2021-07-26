@@ -10,7 +10,7 @@ output:
     theme: cosmo
 ---
 
-![](img/logoR.png)  
+<img src="img/logoR.png" width="100">
 
 # **Que es R** 
 

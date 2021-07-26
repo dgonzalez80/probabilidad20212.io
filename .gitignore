@@ -4,10 +4,6 @@
 .Ruserdata
 data/
 img/
-.aux
-.log
-.out
-.tex
 .gz
 .Rproj
 .css
