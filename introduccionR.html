@@ -595,7 +595,8 @@ y=rep(x, times=4)
 x</code></pre>
 <pre><code>## [1] &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;</code></pre>
 <pre class="r"><code>y</code></pre>
-<pre><code>##  [1] &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;  &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;  &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;  &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;</code></pre>
+<pre><code>##  [1] &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;  &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;  &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot; 
+## [10] &quot;rojo&quot;  &quot;verde&quot; &quot;azul&quot;</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="listas" class="section level2">
@@ -628,7 +629,8 @@ iris[1,5]</code></pre>
 fx(100) # funcion evaluada en x=100</code></pre>
 <pre><code>## [1] 0.0001020304</code></pre>
 <p>En este caso la función es evaluada dentro de un otra función en la construcción de un gráfico</p>
-<pre class="r"><code>plot(1:10, fx(1:10), type=&quot;l&quot;, col=&quot;red&quot;)</code></pre>
+<pre class="r"><code>x=seq(from=2,to=10, by=0.01)  # genera secuencia de numeros entre 2 y 10 con paso 0.01
+plot(x, fx(x), type=&quot;l&quot;, col=&quot;red&quot;) # genera grafica</code></pre>
 <p><img src="introduccionR_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>El siguiente ejemplo construye una función para la realización de un gráfico. En este caso los valores de entrada estan conformados por un vector de datos y un color</p>
 <pre class="r"><code>y=sample(1:6,100, replace = T)  # generacion de datos

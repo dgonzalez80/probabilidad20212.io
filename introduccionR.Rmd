@@ -171,7 +171,8 @@ fx(100) # funcion evaluada en x=100
 En este caso la función es evaluada dentro de un otra función en la construcción de un gráfico
 
 ```{r }
-plot(1:10, fx(1:10), type="l", col="red")
+x=seq(from=2,to=10, by=0.01)  # genera secuencia de numeros entre 2 y 10 con paso 0.01
+plot(x, fx(x), type="l", col="red") # genera grafica
 ```
 
 El siguiente ejemplo construye una función para la realización de un gráfico. En este caso los valores de entrada estan conformados por un vector de datos y un color
