@@ -73,7 +73,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |Actividad101   | Descripción                    | 
 |:--------------|:-----------------------------  |
 |Individual     |  **Metodología estadística:** : Formular un  problema que le permita  desarrollar un  ejercicio académico durante  el  semestre a través de  la recolección  de información (primaria o secundaria), Ademas deberá establecer los  objetivos y las  variables de  interés , para las  cuales  deberá  identificar el tipo de  variable  y su  escala  de medición.  El resultado  de esta actividad deberá se entregado  en archivo pdf con  nombre: **actividad101.pdf** |
-| Recursos      | Metodología.pdf |
+| Recursos      | [**Metodología**](https://view.genial.ly/5f1ba8da1829700da368b4ab/horizontal-infographic-review-metodologia) |
 | Fecha         | 01 de agosto de 2021 |
 | Hora          | 23:59                |
 
