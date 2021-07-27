@@ -63,7 +63,17 @@ En los siguientes enlaces se pueden descargar los programas :
 
 + [RStudio download](https://rstudio.com/products/rstudio/download/)
 
+<br/>
 
+Bilbiografia recomendada:
+
++ [**R para principiantes**](https://cran.r-project.org/doc/contrib/rdebuts_es.pdf)
+
++ [**Manual de R**](https://fhernanb.github.io/Manual-de-R/index.html)
+
++ [**Curso de R** - Videos -Rafa Gonzalez Gouveia](https://www.youtube.com/watch?v=k3tiNvTmug8&list=PLbDLkhJ5sFvCWFbP4tAFALHkNWNFo_FiL)
+
+<br/>
 A continuación se relacionan algunas ayudas para la iniciación del lenguaje
 
 <br/><br/>
