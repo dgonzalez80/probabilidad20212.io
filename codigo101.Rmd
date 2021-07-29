@@ -9,5 +9,238 @@ output:
     toc_float: yes
     theme: cosmo
 ---
-[Código 1](https://github.com/dgonzalez80/presentacionespye.io/blob/main/codigo101a.R)
+```{r setup, include=FALSE}
+library(RColorBrewer)
+library(readxl)
+library(summarytools)
+library(knitr)
+library(readxl)
+library(tidyverse)
+Colombia<- readRDS("data/Colombia.RDS")
+```
 
+
+
+
+# **1. Importar datos en R**  
+
+ Se puede realizar de formas diferntes :
+ 
+1. Utilizando RStudio : 
+
++ *File /Import Dataset/From text (base)*. En el caso de que los datos en forato csv
+
++ *File/ Import Dataset/ From Excel*. En caso de estar en fomato xlsx. Aparece una ventana de dialogo para dar los parametros
+ 
+2. Utilizando el paquete Rcmdr y RcomdrMisc que activa una interfas de R que trabaja con menus y ventanas con un proceso parecido al anterio
+
+Los anteriores caso implican que tengamos la base de datos descargada en una carpeta de nuestro PC
+
+3. Podemos importar la base de datos de un repositorio que maneje API que es un permiso a traves de un token. En este caso debemos solicitar el token e instalar el paquete RSocrata
+
+Por ejemplo
+
+Instalación de paquetes requeridos
+
+```{r, eval=FALSE }
+install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
+library(RSocrata)    # llamado de libreria
+token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
+Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura 
+```
+
+Este proceso tarde unos minutos pues  la base es grande
+
+Para guardar el archivo en mi PC, el formarto RDS es menos pesado En ete caso se guarda el archivo con el nombre de *Colombia.RDS* en la carpeta *data/*
+
+```{r, eval=FALSE}
+saveRDS(Colombia, file = "data/Colombia.RDS") 
+```
+
+4. Podemos trabajar con Dataset disponible en los paquetes de R. Para ello solo utilizamos la función data
+
+```{r}
+data(iris)  # data set iris
+data(cars)  # data set cars
+```
+
+
+Ahora si tengo un archivo en mi PC, puedo utilizar la siguinte función para conocer la ruta donde esta  el archivo  y luego copiando la ruta obtenida con Ctrl+C, 
+
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+file.choose()
+```
+
+En mi caso se genera la ruta "data/Colombia.RDS"
+
+
+```{r, eval=FALSE}
+Colombia<- readRDS("data/Colombia.RDS")
+```
+
+
+# **2. Revisión y arreglo de los datos**
+
+Después de bajar la data es necesario revisar que no tenga problemas como:
+
++ variables con cadenas escritas de diferente forma, p.ej.: casa, CASA, Casa. esta revisión la podemos hacer rápidamente con la función *summary()*
+
+```{r}
+summary(iris)
+```
+
+
+```{r}
+summary(cars)
+```
+
+```{r, echo=FALSE}
+summary(Colombia)
+```
+
+
+Por otro lado la función *View()* permite visualizar la base en una ventana de manera separada
+
+
+```{r, eval=FALSE}
+View(Colombia)  
+```
+
+```{r,eval=FALSE}
+View(iris
+```
+
+Podemos visualizar los primeros 6 registros con el nombre de las variables
+
+```{r}
+head(iris) 
+```
+
+y los últimos seis registros  
+
+```{r}
+tail(iris)
+```
+
+Para realizar una revisión de una variable cualitativa utilizamos la función *table()*, la cual construye una tabla de frecuencias 
+
+```{r}
+table(Colombia$ubicacion)
+```
+
+Observemos aparecen valores diferentes para una sola categoría de la variable:
+
++ casa         
++ Casa         
++ CASA    
+
+Es necesario estandarizar estos valores y convertirlos en este caso a todos los valores en *casa* (en minúsculas). Para vamos a utilizar la función : *str_to_lower()* del paquete *stringr*, guardandolo dentro de la misma variable
+
+Inicialmente debemos de instalar y activar el paquete *tidyverse* que es un paquete que contiene ocho  paquetes todos enfocados al análisis de datos:
+
++ ggplot2 - construcción de gráficos     
++ purrr   - herramientas para programación funcional
++ tibble  - manejo de data frames    
++ dplyr   - manejo de datos
++ tidyr    - manejo de datos     
++ stringr  - manejo de cadenas
++ readr    - lectura de datos     
++ forcats  -  pronósticos de series de tiempo y modelos lineales
+
+
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+install.packages("tidyverse", dependencies = TRUE)
+library(tidyverse)
+```
+
+
+Despues de activar el conjunto de librerías, procedemos a realizar el arreglo de la variable  *Colombia$ubucacion*
+
+ Ahora arreglamos el problema presentado en la variable *ubucacion*, primero unificando todos los valores a  en minúscula
+
+```{r}
+Colombia$ubicacion=str_to_lower(Colombia$ubicacion)
+```
+
+Para verificar los arreglo volvemos a construir la tabla
+
+```{r}
+table(Colombia$ubicacion)
+```
+Después de esto realizamos en cambio de *n/a* por *NA*
+
+```{r}
+Colombia$ubicacion[Colombia$ubicacion=="n/a"]=NA
+table(Colombia$ubicacion)
+```
+
+Otro problema que presenta la base de datos es que la variable edad es en formato *chr* y debería ser numérica. Para cambiar el formato utilizamos la función *as.numeric()* y la guardamos en la misma variable
+
+```{r}
+class(Colombia$edad)
+Colombia$edad=as.integer(Colombia$edad)
+class(Colombia$edad)
+```
+
+De igual manera procedemos con las demás variables
+
+```{r}
+Colombia$sexo=str_to_lower(Colombia$sexo)
+Colombia$estado=str_to_lower(Colombia$estado)
+Colombia$estado[Colombia$estado=="n/a"]=NA
+Colombia$recuperado=str_to_lower(Colombia$recuperado)
+Colombia$recuperado[Colombia$recuperado=="n/a"]=NA
+```
+
+Verificamos los cambios 
+
+```{r}
+table(Colombia$sexo)
+table(Colombia$estado)
+table(Colombia$recuperado)
+```
+Finalmente convertimos todas las variables fecha en formado date
+
+```{r, warning=FALSE, message=FALSE}
+Colombia$fecha_reporte_web=lubridate::dmy(Colombia$fecha_reporte_web)
+Colombia$fecha_de_notificaci_n=lubridate::dmy(Colombia$fecha_de_notificaci_n)
+Colombia$fecha_inicio_sintomas=lubridate::dmy(Colombia$fecha_inicio_sintomas)
+Colombia$fecha_diagnostico=lubridate::dmy(Colombia$fecha_diagnostico)
+Colombia$fecha_recuperado=lubridate::dmy(Colombia$fecha_recuperado)
+Colombia$fecha_muerte=lubridate::dmy(Colombia$fecha_muerte)
+```
+
+
+**YA ESTA LISTA LA BASE !!!! **
+
+# **3. Guardar la base de datos**
+
+Este un trabajo que demanda mucho tiempo, pero que es necesario para  tener una buena calidad en los datos. Cuando la base esta bien, podemos continuar con los demás procesos y también  guardar  la base transformada para una posterior procesamiento 
+
+En este caso la se guarda en formato *csv*
+
+```{r}
+write_csv(Colombia, "data/Colombia.csv")
+```
+
+o en formato RDS
+
+```{r}
+saveRDS(Colombia, file = "data/Colombia.RDS")
+```
+
+**LISITO !!!! **
+
+**TENEMOS LA BASE DEL COVID.19 ACTUALIZADA Y ARREGLADA**
+
+En caso de querer seleccionar una parte de la data, por ejemplo los datos de CALI utilizamos en siguiente código
+
+
+```{r}
+Cali=Colombia[Colombia$ciudad_municipio_nom=="CALI",]
+```
+
+
+```{r}
+Valle=subset(Colombia, departamento=="76")
+```
