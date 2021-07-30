@@ -24,13 +24,19 @@ Colombia<- readRDS("data/Colombia.RDS")
 
 # **1. Importar datos en R**  
 
- Se puede realizar de formas diferntes :
+ Se puede realizar de formas diferentes :
  
-1. Utilizando RStudio : 
+1. Utilizando el menú RStudio 
 
-+ *File /Import Dataset/From text (base)*. En el caso de que los datos en forato csv
++ Caso formato .csv : *File /Import Dataset/From text (base)*. 
 
-+ *File/ Import Dataset/ From Excel*. En caso de estar en fomato xlsx. Aparece una ventana de dialogo para dar los parametros
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g8p_Rn8C6oU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
++ Caso formato .xlsx : *File/ Import Dataset/ From Excel*. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wB7zmFKRjFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
  
 2. Utilizando el paquete Rcmdr y RcomdrMisc que activa una interfas de R que trabaja con menus y ventanas con un proceso parecido al anterio
 
