@@ -25,7 +25,17 @@ c5="#BC2B6A" # MORADO
 
 # **1. Introducción** 
 
+Al tener una base de datos se requiere resumirlos en una tabla o en indicadores que faciliten su análisis, dependiendo el tipo de variable ( cualitativas o cuantitativas) la tabla puede tener diferentes columnas. 
 
+En el caso de los indicadores las variables cualitativas se les resumen en el nivel con mayor frecuencias a la que se le llama **MODA**
+
+Las variables cuantitativas tiene un gran número de indicadores que se dividien en tres categorias:
+
++ Indicadores de tendencia central
++ Indicadores de dispersión
++ Indicadores de forma
+
+A continuación se indica como realizar el proceso utilizando RStudio, bajo el supuesto que se cuenta con una base de datos que se ha importado en RStudio.
 
 
 <br/><br/>
@@ -148,7 +158,15 @@ FreRAc=cumsum(FreRel)
 data.frame(LI,LS,FreAbs,FreRel, FreAbAc, FreRAc)
 ```
 
+## **Tablas de doble entrada**
 
+```{r}
+table(Colombia$ubicacion, Colombia$estado)
+```
+```{r}
+tabla1=table(Colombia$ubicacion, Colombia$estado)
+prop.table(tabla1)
+```
 
 
 <br/><br/>
@@ -162,9 +180,18 @@ En el caso de las variables cualitativas en escala nominal, se pueden representa
 En el caso de las variables cuantitativas debemos de construirlos 
 
 
+
 ```{r}
 summary(Colombia$edad)
 ```
+
+```{r}
+psych::describe(Colombia$edad)
+```
+```{r}
+psych::describe.by(Colombia$edad, group = Colombia$ubicacion)
+```
+
 
 
 ```{r}

@@ -226,3 +226,47 @@ Objeto para series de tiempo
 |  %%  | módulo             | !=   | diferente de       |        |             |
 |  %/% | división enteros   |      |                    |        |             |
 
+<br/><br/>
+
+# **Instalación de paquetes en R**
+
+
+El lenguaje **R** esta conformado por miles de paquetes o **Packages** construidos por investigadores en diversos temas y área del conocimiento
+
+Al instalar inicialmente R contiene una serie de funciones listas para ser utiliadas las que llamamos -**base** con el que R funciona de manera adecuada para dar respuesta a problemas básicos, sin embargo en algunos casos es necesario instalar paquetes adicionales, los cuales iremos anunciando en la medida que sean necesario.
+
+Para instalar un paquete lo podemos hacer de dos formas : 
+
+
+1. Utilizando la vengtana **Packages** ubicada en la parte inferior derecha de RStudio
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D5MfQu__FJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+2. Digitando en la consola la función **install.packages ()** 
+
+```{r, eval=FALSE}
+install.packages("ggplot2")
+```
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4KY2xFm05JA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+### **Paquetes más utilizados** 
+
+#### **Análisis descriptivo**
+
++ agricolate
++ spych
++ summarytools
++ ggplot2
+
+
++ flexdashboard
++ Rmarkdown
+
+[Paquetes RStudio](https://gallery.shinyapps.io/087-crandash/)
+

@@ -128,7 +128,7 @@ cada caso, para un total de 40 puntos.
 
 ## **8. Caso 101**
 
-**Caso de estudio : CONSUMO DE CERVEZA**
+**Caso de estudio : CARACTERISTICAS DE LA CERVEZA**
 
 ![](img/cerveza.png)
 
@@ -162,5 +162,5 @@ Finalmente adjunte un análisis de los resultados obtenidos.
 |...|...|...|...|...|..|
 |...|...|...|...|...|..|
 
-[beer.xlsx](https://docs.google.com/spreadsheets/d/1z_Ynldg1inVVledxoy1qEujiHgSGAm7GnrqedMOd_-Y/edit?usp=sharing)
+[DATOS: beer.xlsx](https://docs.google.com/spreadsheets/d/1z_Ynldg1inVVledxoy1qEujiHgSGAm7GnrqedMOd_-Y/edit?usp=sharing)
 
