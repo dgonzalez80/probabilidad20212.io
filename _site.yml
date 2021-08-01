@@ -72,7 +72,7 @@ navbar:
         - text: "Código u1.1"
           href: codigo101.html
         - text: "Código u1.2"
-          href: codigo102 .html  
+          href: codigo102.html  
         - text: "Código u1.3"
           href: codigo103.html
 output:
