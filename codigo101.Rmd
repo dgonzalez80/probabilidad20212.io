@@ -11,7 +11,6 @@ output:
 ---
 ```{r setup, include=FALSE}
 library(RColorBrewer)
-library(readxl)
 library(summarytools)
 library(knitr)
 library(readxl)
@@ -49,10 +48,10 @@ Por ejemplo
 Instalación de paquetes requeridos
 
 ```{r, eval=FALSE }
-install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
-library(RSocrata)    # llamado de libreria
-token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
-Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura 
+# install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
+ library(RSocrata)    # llamado de libreria
+ token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
+ Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura 
 ```
 
 Este proceso tarde unos minutos pues  la base es grande
