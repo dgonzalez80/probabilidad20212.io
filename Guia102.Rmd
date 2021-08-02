@@ -72,8 +72,8 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |Actividad103   | Descripción                    | 
 |:--------------|:-----------------------------  |
 |Trabajo individual| **Actividad 103** - **Caso 101** :  Realice las actividades consignadas en el caso101, adjunte y envíe las respuesta a la plataforma de Brightspace en formato pdf |
-|Recursos       |Video indicadores estadísticos         |
-|| Vídeo calculo indicadores con tablas de distribución|
+|Recursos       |[Video indicadores estadísticos](https://youtu.be/dWVs-M7oCh4)         |
+|| [Vídeo calculo indicadores con tablas de distribución](https://youtu.be/n2UCDZNncls)|
 | Fecha         | 08 de agosto de 2021          |
 | Hora          | 23:59                         |
 
@@ -163,4 +163,6 @@ Finalmente adjunte un análisis de los resultados obtenidos.
 |...|...|...|...|...|..|
 
 [DATOS: beer.xlsx](https://docs.google.com/spreadsheets/d/1z_Ynldg1inVVledxoy1qEujiHgSGAm7GnrqedMOd_-Y/edit?usp=sharing)
+
+
 
