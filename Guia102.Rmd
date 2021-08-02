@@ -1,5 +1,5 @@
 ---
-title: "**Tablas de frecuencia e indicadores estadiísticos**"
+title: "**Tablas de frecuencia e indicadores estadísticos**"
 author: "dgonzalez"
 subtitle: "**Modulo 1- Unidad 1.2**" 
 output:
