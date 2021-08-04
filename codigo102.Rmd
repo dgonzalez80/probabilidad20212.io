@@ -202,3 +202,97 @@ summarytools::descr(Colombia$edad)
 <br/><br/>
 **YA ESTAMOS LISTOS PARA INTERPRETAR LA INFORMACION**
 
+# **4. Documentos pdf**
+
+A través de RStudio se pueden construir documentos en formatos **PDF**, **DOC**, **HTML** entre otros. En esta ocasión se describe como realizar un informe utilizando para ello un archivo Rmd en RStudio.
+
+Inicialmente en RStudio abrimos un nuevo archivo en formato Rmd 
+
+File/New File/ R Markdown...
+
+Al hacerlo se despliega la siguiente ventana
+
+![](img/Rmd1.png){width=300px}
+
+En este caso seleccionamos  **PDF** para abrir una plantilla que nos ofrece el programa para orientar nuestros primeros pasos
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rl1xsFMxJuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/>
+
+```
+---
+title: "Untitled"
+author: "dgonzalez"
+date: "3/8/2021"
+output: pdf_document
+---
+```
+<br/>
+
+El primer bloque contiene información sobre el titulo del documento, el autor, la fecha y el formato de salida 
+
+Podemos tambien abregar un  subtitulo: subtitle: "Subtitulo"
+
+
+Despues de este bloque encontramos el cuerpo del documento que puede contener texto escrito de manera normal, código html, código Markdown y LaTeX
+
+Algunas de las principales instrucciones para empezar son 
+
+### Titulos 
+
+```
+# Título 1
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+#####  Títuñlo 6
+```
+### Listas
+
+```
++ Punto 1
++ Punto 2
++ Punto 3
+  + Punto 3.1
+  + Punto 3.2
+```
+
+  
+Tambien se pueden hacer numerada
+
+```
+1. Punto 1
+2. Punto 2
+3. Punto 3
+```
+1. Punto 1
+2. Punto 2
+3. Punto 3
+
+Permite tambien escribir ecuaciones en codigo LaTeX, como por ejemplo
+ 
+```
+$$\dfrac{1}{n}\sum_{i=1}^{n} x_{i} = \bar{x}$$
+```
+
+$$\dfrac{1}{n}\sum_{i=1}^{n} x_{i} = \bar{x}$$
+
+Una de sus principales ventajas es el de permitir correr código **R** y de otros lenguajes como Phyton, SQL, entre otros
+
+Para ello utilizamos el botón **+c** ubicado en la barra superior de la ventana **Source** 
+
+![](img/Rmd2.png){width=70px}
+
+
+Dentro de este bloque podemos correr codigo R y asi ubicar dentro del documento tablas, indicadores o gráficos
+
+![](img/Rmd3.png){width=300px} 
+
+
+En la siguiente página pueden encotrar resumen de varios paquetes de R dentro de los cuales está RMardown
+
+https://www.rstudio.com/resources/cheatsheets/
+
