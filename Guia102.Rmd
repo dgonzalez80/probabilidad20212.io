@@ -118,13 +118,20 @@ cada caso, para un total de 40 puntos.
 |**Fecha**      |Domingo 08 de agosto de 2021    | 
 |**Hora límite**| 23:59  hora  local             |
 
-<br/><br/>
+<br/><br/><br/><br/>
 
 ## **7. Presentaciones**
 
 [**Presentación 104 - ago 01 2021**](https://dgonzalez80.github.io/presentacionespye.io/punidad104.html#1)
-<br/><br/><br/>
+<br/><br/>
 
+[**Presentación 105 - ago 04 2021**](https://dgonzalez80.github.io/presentacionespye.io/punidad105.html#1)
+<br/>
+[Actividad 105](https://github.com/dgonzalez80/presentacionespye.io/blob/main/Actividad_p105.Rmd)
+<br/>
+[R en linea](https://www.jdoodle.com/execute-r-online/)
+
+<br/><br/><br/><br/>
 
 ## **8. Caso 101**
 
