@@ -284,12 +284,12 @@ Una de sus principales ventajas es el de permitir correr código **R** y de otro
 
 Para ello utilizamos el botón **+c** ubicado en la barra superior de la ventana **Source** 
 
-![](img/Rmd2.png){width=70px}
+![](img/Rmd2.png){width=120px}
 
 
 Dentro de este bloque podemos correr codigo R y asi ubicar dentro del documento tablas, indicadores o gráficos
 
-![](img/Rmd3.png){width=300px} 
+![](img/Rmd3.png){width=400px} 
 
 
 En la siguiente página pueden encotrar resumen de varios paquetes de R dentro de los cuales está RMardown
