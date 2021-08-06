@@ -81,10 +81,10 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |Fecha  | 17 de agosto  de 2021 |
 |Hora   | 23:59 hora local |
 
-|Actividad107   | Descripción                    | 
-|:--------------|:-----------------------------  |
-||[Taller Módulo 1](
-https://github.com/dgonzalez80/presentacionespye.io/blob/main/pdf/Taller_M%C3%B3dilo_1.pdf)|
+|Actividad107   | Descripción                  | 
+|:--------------|:-----------------------------|
+|[Taller M1](https://github.com/dgonzalez80/presentacionespye.io/blob/main/pdf/Taller_M%C3%B3dilo_1.pdf) |  Actividad que tiene como  finalidad preparar la primera evaluación parcial|
+ 
 <br/><br/>
 
 ## **5. Criterios de evaluación**
