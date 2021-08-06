@@ -493,7 +493,176 @@ div.tocify {
 </div>
 
 
+<div id="variable-cualitativa-nominal" class="section level1">
+<h1><strong>Variable cualitativa-nominal</strong></h1>
+<div id="gráfico-de-tortas" class="section level2">
+<h2><strong>1. Gráfico de tortas</strong></h2>
+<pre class="r"><code>cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 
+     30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 
+     20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 
+     20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 
+     30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20) 
+t1=table(cc)
+pie(t1)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 
+     30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 
+     20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 
+     20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 
+     30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20) 
+labs=c(&quot;Ing. Mecánica&quot;,&quot;Ing. Civil &quot;,&quot;Ing.Sistemas&quot;) 
+pct=round(table(cc)/sum(table(cc))*100) 
+labs=paste(labs, pct);labs=paste(labs, &quot;%&quot;, sep = &quot; &quot;) 
+t1=table(cc)
+pie(t1, 
+    labels=labs, 
+    main=&quot; Distribución por carrera&quot;)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+</div>
+<div id="variable-cualitativa-ordinal" class="section level1">
+<h1><strong>Variable cualitativa-ordinal</strong></h1>
+<div id="gráfico-de-barras" class="section level2">
+<h2><strong>2.Gráfico de barras</strong></h2>
+<pre class="r"><code>ev=table(rbinom(90,5,0.70))
+barplot(ev)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>ev=table(rbinom(90,5,0.70))
+names(ev)=c(&quot;MR&quot;,&quot;R&quot;,&quot;B&quot;,&quot;MB&quot;,&quot;E&quot;)
+barplot(ev, col=c(&quot;red&quot;,&quot;yellow&quot;,&quot;orange&quot;,&quot;green&quot;,&quot;blue&quot;), 
+        main = &quot;Evaluación proceso de inducción&quot;,
+        las=1)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="gráfico-de-barras-2" class="section level2">
+<h2><strong>3. Gráfico de barras 2 </strong></h2>
+<pre class="r"><code>conteo &lt;- table(mtcars$vs, mtcars$gear)
+barplot(conteo)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>counts &lt;- table(mtcars$vs, mtcars$gear)
+rownames(counts)=c(&quot;Montor en linea&quot;, &quot;Motor en V&quot;)
+barplot(counts, main=&quot;Número de cambios adelante por Tipo de motor&quot;,  
+        xlab=&quot;Número de cambios adelante &quot;,
+        col=c(&quot;dodgerblue3&quot;,&quot;orange&quot;),
+        legend = rownames(counts),
+        las=1)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+</div>
+<div id="variables-cuantitativas" class="section level1">
+<h1><strong>Variables cuantitativas</strong></h1>
+<div id="diagrama-de-tallos-y-hojas" class="section level2">
+<h2><strong>4. Diagrama de tallos y hojas</strong></h2>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
+     3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
+     3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
+     3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4,
+     3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
+     3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 
+# Diagrama de tallos y hojas
+stem(nf)</code></pre>
+<pre><code>## 
+##   The decimal point is at the |
+## 
+##   1 | 67
+##   2 | 00012244444
+##   2 | 555677777778
+##   3 | 0000000000000011111111222222223344
+##   3 | 555555566677777777888999
+##   4 | 0111123</code></pre>
+</div>
+<div id="histograma" class="section level2">
+<h2><strong>5. Histograma</strong></h2>
+<pre class="r"><code>hist(nf)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>h1=hist(nf, 
+        main = &quot;Nota final matemáticas fundamentales&quot;, 
+        xlab = &quot;nota&quot;, ylab=&quot;frecuencias absolutas&quot;, 
+        labels=TRUE, 
+        col=&quot;dodgerblue3&quot;,
+        ylim = c(0,30))
+abline(v=3,col=&quot;red&quot;)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="diagrama-de-densidad" class="section level2">
+<h2><strong>6. Diagrama de densidad</strong></h2>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
+     3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5,
+     3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
+     3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 
+     3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
+     3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+plot(density(nf))</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>plot(density(nf),
+     main=&quot;Distribución notas de matemátias fundamentales&quot;, 
+     col=&quot;dodgerblue3&quot;, 
+     lwd=5,
+     las=1, 
+     xlab = &quot;Nota&quot;,
+     ylab = &quot;Densidad&quot;)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="diagrama-de-cajas" class="section level2">
+<h2><strong>7. Diagrama de cajas</strong></h2>
+<pre class="r"><code>boxplot(nf)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>boxplot(nf, main=&quot;Nota final matemáticas fundamentales&quot;,
+        col=&quot;dodgerblue3&quot;,
+        las=1)
+abline(h=3, col=&quot;red&quot;)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="comparación-diagrama-de-cajas" class="section level2">
+<h2><strong>8. Comparación diagrama de cajas</strong></h2>
+<pre class="r"><code>boxplot(nf~cc)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
+     3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
+     3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
+     3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4,
+     3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0,
+     3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+
+cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 
+     30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 
+     20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10,
+     20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30,
+     30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
+labs=c(&quot;Ing. Mecánica&quot;,&quot;Ing. Civil &quot;,&quot;Ing.Sistemas&quot;) 
+boxplot((nf~cc),main=&quot;Nota final matemáticas fundamentales por carrera&quot;, 
+        col=&quot;dodgerblue3&quot;)
+abline(h=3, col=&quot;red&quot;)
+abline(h=4, col=&quot;blue&quot;)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+<div id="gráfico-de-series-de-tiempo" class="section level2">
+<h2><strong>9. Gráfico de series de tiempo</strong></h2>
+<pre class="r"><code>t=1:300 ; x=w=rnorm(300,0,1); x&lt;-w; for(t in 2:300) x[t]&lt;-x[t-1]+w[t]
+
+plot(x, type=&quot;l&quot;,
+     main=&quot;Número de pasajeros&quot;, 
+     col=&quot;dodgerblue3&quot;, 
+     lwd = 4)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="resumen" class="section level2">
+<h2><strong>10. Resumen</strong></h2>
+<pre><code>## 
+##   The decimal point is 1 digit(s) to the right of the |
+## 
+##    4 | 587
+##    6 | 12340022378
+##    8 | 14466777888999900123334445556669999
+##   10 | 00112233446667788899011225666889
+##   12 | 012244556781467
+##   14 | 1128</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre><code>## null device 
+##           1</code></pre>
+</div>
+</div>
 
 
 

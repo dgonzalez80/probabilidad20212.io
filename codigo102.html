@@ -591,10 +591,13 @@ summarytools::freq(Colombia$edadR)</code></pre>
 <pre class="r"><code>h$breaks   # puntos de corte</code></pre>
 <pre><code>##  [1]   0   5  10  15  20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95 100 105 110 115</code></pre>
 <pre class="r"><code>h$counts   # frecuencias absolutas en cada intervalo</code></pre>
-<pre><code>##  [1]  79922  99711 144402 261117 477845 575649 542170 506221 420984 359468 342077 300979 216693 149301 105604  72856  49847  28193  11478   2799    403     48      8</code></pre>
+<pre><code>##  [1]  79922  99711 144402 261117 477845 575649 542170 506221 420984 359468 342077 300979 216693
+## [14] 149301 105604  72856  49847  28193  11478   2799    403     48      8</code></pre>
 <pre class="r"><code>h$density  # densidad en cada intervalo</code></pre>
-<pre><code>##  [1] 3.366714e-03 4.200325e-03 6.082934e-03 1.099955e-02 2.012922e-02 2.424921e-02 2.283891e-02 2.132456e-02 1.773395e-02 1.514259e-02 1.440999e-02 1.267874e-02
-## [13] 9.128192e-03 6.289304e-03 4.448568e-03 3.069059e-03 2.099805e-03 1.187630e-03 4.835107e-04 1.179079e-04 1.697637e-05 2.022000e-06 3.370000e-07</code></pre>
+<pre><code>##  [1] 3.366714e-03 4.200325e-03 6.082934e-03 1.099955e-02 2.012922e-02 2.424921e-02 2.283891e-02
+##  [8] 2.132456e-02 1.773395e-02 1.514259e-02 1.440999e-02 1.267874e-02 9.128192e-03 6.289304e-03
+## [15] 4.448568e-03 3.069059e-03 2.099805e-03 1.187630e-03 4.835107e-04 1.179079e-04 1.697637e-05
+## [22] 2.022000e-06 3.370000e-07</code></pre>
 <p>Seria de interés tambien construir una tabla con las edades de las personas fallecidas por covid en Colombia, para lo cual debemos primero seleccionar la base de datos de las fallecidas y luego en ello construir la tabla</p>
 <p>En este caso vamos a seleccionar los rangos de edad y luego construimos la tabla</p>
 <pre class="r"><code>Fallecidos=subset(Colombia, estado==&quot;fallecido&quot;)
@@ -674,15 +677,15 @@ prop.table(tabla1)</code></pre>
 ## group: casa
 ##    vars       n  mean    sd median trimmed   mad min max range skew kurtosis   se
 ## X1    1 4587162 38.71 17.25     37   38.04 17.79   1 114   113 0.38    -0.15 0.01
-## --------------------------------------------------------------------------------------------------------------------------- 
+## --------------------------------------------------------------------------- 
 ## group: fallecido
 ##    vars      n mean    sd median trimmed   mad min max range  skew kurtosis   se
 ## X1    1 119482 67.6 15.19     69   68.44 14.83   1 110   109 -0.52     0.15 0.04
-## --------------------------------------------------------------------------------------------------------------------------- 
+## --------------------------------------------------------------------------- 
 ## group: hospital
 ##    vars     n  mean    sd median trimmed   mad min max range  skew kurtosis   se
 ## X1    1 21235 49.69 19.97     51   50.41 19.27   1 111   110 -0.32    -0.25 0.14
-## --------------------------------------------------------------------------------------------------------------------------- 
+## --------------------------------------------------------------------------- 
 ## group: hospital uci
 ##    vars    n  mean    sd median trimmed   mad min max range  skew kurtosis   se
 ## X1    1 3972 51.87 16.45     53   52.64 16.31   1  98    97 -0.51     0.47 0.26</code></pre>

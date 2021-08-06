@@ -1,36 +1,10 @@
----
-title: "Código 3"
-author: "dgonzalez "
-subtitle: "Módulo 1- Unidad 1.1" 
-output:
-  html_document:
-    toc: yes
-    toc_depth: 2
-    toc_float: yes
-    theme: cosmo
----
-
-# **Variable cualitativa-nominal**
-
-## **1. Gráfico de tortas**
-
-```{r}
+# Variable cualitativa, escala nominal
 cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 
      30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 
      20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 
      20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 
      30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20) 
-t1=table(cc)
-pie(t1)
-```
 
-
-```{r}
-cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 
-     30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 
-     20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 
-     20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 
-     30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20) 
 labs=c("Ing. Mecánica","Ing. Civil ","Ing.Sistemas") 
 pct=round(table(cc)/sum(table(cc))*100) 
 labs=paste(labs, pct);labs=paste(labs, "%", sep = " ") 
@@ -38,55 +12,23 @@ t1=table(cc)
 pie(t1, 
     labels=labs, 
     main=" Distribución por carrera")
-```
-
-
-
-# **Variable cualitativa-ordinal**
-
-## **2.Gráfico de barras**
-
-```{r}
-ev=table(rbinom(90,5,0.70))
-barplot(ev)
-```
-
-
-
-
-```{r}
+#-------------------------------------------------------------------------------
+# Variabel cualitativa escala ordinal
 ev=table(rbinom(90,5,0.70))
 names(ev)=c("MR","R","B","MB","E")
 barplot(ev, col=c("red","yellow","orange","green","blue"), 
-        main = "Evaluación proceso de inducción",
-        las=1)
-```
+        main = "Evaluación proceso de inducción")
 
-## **3. Gráfico de barras 2 **
+#·-----------------------------------------------------------------------------
 
-
-```{r}
-conteo <- table(mtcars$vs, mtcars$gear)
-barplot(conteo)
-
-```
-
-
-```{r}
 counts <- table(mtcars$vs, mtcars$gear)
 rownames(counts)=c("Montor en linea", "Motor en V")
 barplot(counts, main="Número de cambios adelante por Tipo de motor",  
         xlab="Número de cambios adelante ",
         col=c("dodgerblue3","orange"),
-        legend = rownames(counts),
-        las=1)
-```
+        legend = rownames(counts))
 
-# **Variables cuantitativas**
-
-## **4. Diagrama de tallos y hojas**
-
-```{r}
+#·-----------------------------------------------------------------------------
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
      3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
      3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
@@ -96,19 +38,7 @@ nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
 
 # Diagrama de tallos y hojas
 stem(nf)
-```
-
-
-## **5. Histograma**
-
-```{r}
-hist(nf)
-```
-
-
-
-
-```{r}
+#·-----------------------------------------------------------------------------
 h1=hist(nf, 
         main = "Nota final matemáticas fundamentales", 
         xlab = "nota", ylab="frecuencias absolutas", 
@@ -116,57 +46,28 @@ h1=hist(nf,
         col="dodgerblue3",
         ylim = c(0,30))
 abline(v=3,col="red")
-```
-
-## **6. Diagrama de densidad**
-
-```{r}
+#·-----------------------------------------------------------------------------
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
      3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5,
      3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
      3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 
      3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
      3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
-plot(density(nf))
-```
-
-
-
-
-```{r}
-plot(density(nf),
+plot(density(nf), 
      main="Distribución notas de matemátias fundamentales", 
      col="dodgerblue3", 
-     lwd=5,
-     las=1, 
-     xlab = "Nota",
-     ylab = "Densidad")
-```
-
-
-## **7. Diagrama de cajas** 
-
-```{r}
-boxplot(nf)
-```
-
-
-```{r}
+     lwd=5 )
+#·-----------------------------------------------------------------------------
+nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
+     3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
+     3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
+     3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4,
+     3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
+     3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 boxplot(nf, main="Nota final matemáticas fundamentales",
-        col="dodgerblue3",
-        las=1)
+        col="dodgerblue3")
 abline(h=3, col="red")
-```
-
-## **8. Comparación diagrama de cajas**
-
-```{r}
-boxplot(nf~cc)
-```
-
-
-
-```{r}
+#·-----------------------------------------------------------------------------
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
      3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
      3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
@@ -184,23 +85,24 @@ boxplot((nf~cc),main="Nota final matemáticas fundamentales por carrera",
         col="dodgerblue3")
 abline(h=3, col="red")
 abline(h=4, col="blue")
-```
-
-## **9. Gráfico de series de tiempo**
-
-```{r}
-t=1:300 ; x=w=rnorm(300,0,1); x<-w; for(t in 2:300) x[t]<-x[t-1]+w[t]
-
-plot(x, type="l",
-     main="Número de pasajeros", 
+#·-----------------------------------------------------------------------------
+ed=round(rnorm(90,18,1),1)
+plot(ed,nf, 
+     main="Edad vs Nota final matemáticas fundamentales", 
+     ylim = c(0,5), 
+     xlab = "Edad", 
+     ylab = "Nota final",
+     col="dodgerblue3",
+     pch=19, 
+     las=1)
+grid()
+#·-----------------------------------------------------------------------------
+plot(AirPassengers, 
+     main="Número de pasajeros por mes", 
      col="dodgerblue3", 
-     lwd = 4)
-```
+     lwd = 2)
 
-
-## **10. Resumen**
-
-```{r, echo=FALSE}
+# Resumen --------------------------------------------------------------------
 x=rnorm(100,100,20)
 y=rnorm(100,100,25)
 z=rbinom(100,4,0.30)
@@ -215,6 +117,4 @@ plot(x,y)
 plot(t,y, type="l")
 plot(density(x))
 dev.off() # resetea formato
-```
-
-
+# ------------------------------------------------------------------------------
