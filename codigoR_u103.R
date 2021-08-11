@@ -5,9 +5,13 @@ cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20,
      20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 
      30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20) 
 
+t=table(cc)
+pie(t)
 labs=c("Ing. Mecánica","Ing. Civil ","Ing.Sistemas") 
-pct=round(table(cc)/sum(table(cc))*100) 
-labs=paste(labs, pct);labs=paste(labs, "%", sep = " ") 
+names(t)=labs
+pct=round(t/sum(t)*100) 
+labs=paste(labs, pct)
+labs=paste(labs, "%", sep = " ") 
 t1=table(cc)
 pie(t1, 
     labels=labs, 
@@ -15,9 +19,12 @@ pie(t1,
 #-------------------------------------------------------------------------------
 # Variabel cualitativa escala ordinal
 ev=table(rbinom(90,5,0.70))
+barplot(ev)
+
+
 names(ev)=c("MR","R","B","MB","E")
 barplot(ev, col=c("red","yellow","orange","green","blue"), 
-        main = "Evaluación proceso de inducción")
+        main = "Evaluación proceso de inducción",las=1)
 
 #·-----------------------------------------------------------------------------
 
@@ -26,7 +33,7 @@ rownames(counts)=c("Montor en linea", "Motor en V")
 barplot(counts, main="Número de cambios adelante por Tipo de motor",  
         xlab="Número de cambios adelante ",
         col=c("dodgerblue3","orange"),
-        legend = rownames(counts))
+        legend = rownames(counts), las=1, ylim = c(0,20))
 
 #·-----------------------------------------------------------------------------
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
@@ -39,6 +46,9 @@ nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
 # Diagrama de tallos y hojas
 stem(nf)
 #·-----------------------------------------------------------------------------
+hist(nf)
+
+
 h1=hist(nf, 
         main = "Nota final matemáticas fundamentales", 
         xlab = "nota", ylab="frecuencias absolutas", 
@@ -53,6 +63,10 @@ nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
      3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 
      3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
      3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+
+d=density(nf)
+plot(d)
+
 plot(density(nf), 
      main="Distribución notas de matemátias fundamentales", 
      col="dodgerblue3", 
@@ -64,8 +78,11 @@ nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
      3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4,
      3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
      3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+
+boxplot(nf)
+
 boxplot(nf, main="Nota final matemáticas fundamentales",
-        col="dodgerblue3")
+        col="dodgerblue3",las=1)
 abline(h=3, col="red")
 #·-----------------------------------------------------------------------------
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
@@ -80,6 +97,9 @@ cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20,
      20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10,
      20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30,
      30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
+
+boxplot(nf~cc)
+
 labs=c("Ing. Mecánica","Ing. Civil ","Ing.Sistemas") 
 boxplot((nf~cc),main="Nota final matemáticas fundamentales por carrera", 
         col="dodgerblue3")
@@ -87,6 +107,8 @@ abline(h=3, col="red")
 abline(h=4, col="blue")
 #·-----------------------------------------------------------------------------
 ed=round(rnorm(90,18,1),1)
+plot(ed, nf)
+
 plot(ed,nf, 
      main="Edad vs Nota final matemáticas fundamentales", 
      ylim = c(0,5), 

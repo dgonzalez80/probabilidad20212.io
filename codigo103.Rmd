@@ -10,6 +10,37 @@ output:
     theme: cosmo
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+casas=read.csv("data/casas.csv")
+```
+
+# **Introducción**
+
+La visualización de datos es una de partes más importantes del análisis de datos, que permite de manera gráfica representar la información con fines de poder 
+
+
+Algunas consideraciones
+
+<br/><br/>
+
+|Tipo de variable | Tipos de escala  |  Tipo de gráfico            |  Sintaxis R          | 
+|:----------------|:-----------------|:----------------------------|:---------------------|
+| Cualitativa     | Nominal          |  diagrama de torta          |  pie(table(x))       |
+|                 |                  |                             |                      |
+|                 | Ordinal          |  diagrama de barras         |  barplot(table(x))   |
+|                 |                  |                             |                      |
+|Cuantitativa     | De intervalo     |  diagrama de tallos y hojas | stem(x)              |
+|                 |                  |  hist(x)                    | hist(x)              | 
+|                 | De razón         |  diagrama de puntos         | plot(x,y)            |
+|                 |                  |  diagrama de densidad       | density(x)           |
+|                 |                  |  diagrama de cajas          | boxplot(x)           |
+|                 |                  |  diagrama de linea          | plot(x, type="l")    |
+|                 |                  |                             |                      |
+ 
+<br/><br/><br/>
+
 # **Variable cualitativa-nominal**
 
 ## **1. Gráfico de tortas**
@@ -40,7 +71,7 @@ pie(t1,
     main=" Distribución por carrera")
 ```
 
-
+<br/><br/><br/>
 
 # **Variable cualitativa-ordinal**
 
@@ -61,6 +92,7 @@ barplot(ev, col=c("red","yellow","orange","green","blue"),
         main = "Evaluación proceso de inducción",
         las=1)
 ```
+<br/><br/><br/>
 
 ## **3. Gráfico de barras 2 **
 
@@ -82,6 +114,8 @@ barplot(counts, main="Número de cambios adelante por Tipo de motor",
         las=1)
 ```
 
+<br/><br/><br/>
+
 # **Variables cuantitativas**
 
 ## **4. Diagrama de tallos y hojas**
@@ -98,6 +132,7 @@ nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
 stem(nf)
 ```
 
+<br/><br/><br/>
 
 ## **5. Histograma**
 
@@ -117,6 +152,7 @@ h1=hist(nf,
         ylim = c(0,30))
 abline(v=3,col="red")
 ```
+<br/><br/><br/>
 
 ## **6. Diagrama de densidad**
 
@@ -143,6 +179,7 @@ plot(density(nf),
      ylab = "Densidad")
 ```
 
+<br/><br/><br/>
 
 ## **7. Diagrama de cajas** 
 
@@ -157,6 +194,8 @@ boxplot(nf, main="Nota final matemáticas fundamentales",
         las=1)
 abline(h=3, col="red")
 ```
+
+<br/><br/><br/>
 
 ## **8. Comparación diagrama de cajas**
 
@@ -186,6 +225,8 @@ abline(h=3, col="red")
 abline(h=4, col="blue")
 ```
 
+<br/><br/><br/>
+
 ## **9. Gráfico de series de tiempo**
 
 ```{r}
@@ -198,14 +239,15 @@ plot(x, type="l",
 ```
 
 
+<br/><br/><br/>
+
 ## **10. Resumen**
 
-```{r, echo=FALSE}
+```{r, eval=FALSE }
 x=rnorm(100,100,20)
 y=rnorm(100,100,25)
 z=rbinom(100,4,0.30)
 t=1:100
-par(mfrow=c(2, 2))
 pie(table(z))
 barplot(table(z))
 stem(x)
@@ -214,7 +256,157 @@ boxplot(x)
 plot(x,y)
 plot(t,y, type="l")
 plot(density(x))
-dev.off() # resetea formato
+```
+
+<br/><br/>
+
+# **Paquetes adicionales**
+
+Hasta el momento se ha utilizado R base para la elaboración de gráficos, a continuación se presentan algunos paquetes que mejoran la construcción de gráficos y su visualización :
+
+<br/><br/>
+
+## **ggplot2**. 
+
+Este paquete de R permite la construcción de gráficos utilizando para ello una "grámatica" de los grafocos, la cual incorpora componentes como : los datos (data), un conjunto de coordenadas ( ), una serie de geometrias (geoms)  
+
+Componentes de un gráfico en ggplot2:
+
++ **Data**: capa de los datos
+
++ **Aesthetics**: capa estetica (aes), definimos las variables a utilizar en el gráfico
+
++ **Geometries**: capa de geometrias, se define el tipo de gráfica a realizar
+
++ **Facets**: capa de facetas, permite detallar la gráfica por categorias
+
++ **Statistics**: capa de estadística, permite agregar modelos
+
++ ***Coordinates**: capa de coordenadas, permite ajustar las escalas de los ejes
+
++ **Theme**: capas de características del gráfico que no dependen de los datos
+
+<br/><br/>
+
+Para empezar, inicialmente se instalar el paquete
+
+```{r, eval=FALSE}
+install.packages("ggplo2")
+```
+Y luego habilitarlo para su uso
+
+```{r}
+library(ggplot2)
+```
+
+Se empieza con el primero de los lienzo, donde se declara la data que vamos a utilizar
+
+![](img/ge_data.png){width=50%}
+
+```{r}
+casas=read.csv("data/casas.csv")
+fig=ggplot(data=casas)
+fig
 ```
 
 
+Como segundo paso se definen las variables que se van a utilizar en la construcción del gráfico
+
+![](img/ge_aes.png){width=50%}
+
+```{r}
+fig=ggplot(data=casas,  aes(x=areaconst , y=precio))
+fig
+```
+
+Luego de tener definida la base y las variables a utilizar se indica la geometria a utilizar, en este caso se trata de puntos
+
+![](img/ge_geom.png){width=50%}
+
+```{r}
+fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+  geom_point()
+fig
+```
+
+Otros elementos a utilizar son :
+
+### **facet**  que nos ayuda a visualizar el gráfico por factor, construyendo la gráfica para cada mes en este caso
+
+
+![](img/ge_facet.png){width=50%}
+
+```{r}
+fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+  geom_point() + facet_wrap(~ mes)
+fig
+```
+
+### **stat** permite realizar modelos lineales y mostrar asi la relación existente entre las variables 
+
+![](img/ge_stats.png){width=50%}
+
+```{r}
+fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+  geom_point() + facet_wrap(~ mes)+stat_smooth(method = "loess" , formula =y ~ x)
+fig
+```
+
+### **coordinates**  la cual permite ajustar los ejes , por ejemplo podemos determian el rango de que queremos presentar en la gráfica
+
+![](img/ge_coord.png){width=50%}
+
+```{r}
+fig=ggplot(data=casas,  aes(x=areaconst , y=precio)) + geom_point() +
+        facet_wrap(~ mes) + 
+        stat_smooth(method = "loess" , formula =y ~ x) +
+        coord_cartesian(xlim = c(1500,3000))
+fig
+```
+
+### **themes**  finalmente la capa del tema o fondo de la gráfica
+
+
+![](img/ge_themes.png){width=50%}
+
+```{r}
+fig=ggplot(data=casas,  aes(x=areaconst , y=precio)) + geom_point() +
+        facet_wrap(~ mes) + 
+        stat_smooth(method = "loess" , formula =y ~ x) +
+        coord_cartesian(xlim = c(1500,3000)) +
+        theme_classic()
+fig
+```
+
+
+### **Otros ejemplos de ggplor2**
+
+```{r}
+casas$mes=as.factor(casas$mes)
+fig = ggplot(data=casas, aes(x=precio, y=mes)) +
+  geom_boxplot(fill="lightSalmon", 
+               color="black")+
+  geom_point(color="blue")+
+  ggtitle("Precio de casas por mes")+
+  labs(x="miles de pesos " , y="mes")
+  
+
+
+fig        
+  
+```
+
+
+```{r}
+ggplot(casas, aes(antigüedad)) +
+       geom_histogram(bins = 7,fill="#69b3a2", color="#e9ecef", alpha=0.9)+
+       theme_minimal() +
+       labs(x = "años", y = "frecuencia absoluta") +
+       ggtitle("Antigüedad de las casas")
+```
+
+## **highcharter**
+
+
+## **plotly**
+ 

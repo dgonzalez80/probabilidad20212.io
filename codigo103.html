@@ -493,6 +493,91 @@ div.tocify {
 </div>
 
 
+<div id="introducción" class="section level1">
+<h1><strong>Introducción</strong></h1>
+<p>La visualización de datos es una de partes más importantes del análisis de datos, que permite de manera gráfica representar la información con fines de poder</p>
+<p>Algunas consideraciones</p>
+<p><br/><br/></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Tipo de variable</th>
+<th align="left">Tipos de escala</th>
+<th align="left">Tipo de gráfico</th>
+<th align="left">Sintaxis R</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cualitativa</td>
+<td align="left">Nominal</td>
+<td align="left">diagrama de torta</td>
+<td align="left">pie(table(x))</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Ordinal</td>
+<td align="left">diagrama de barras</td>
+<td align="left">barplot(table(x))</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Cuantitativa</td>
+<td align="left">De intervalo</td>
+<td align="left">diagrama de tallos y hojas</td>
+<td align="left">stem(x)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">hist(x)</td>
+<td align="left">hist(x)</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">De razón</td>
+<td align="left">diagrama de puntos</td>
+<td align="left">plot(x,y)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de densidad</td>
+<td align="left">density(x)</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de cajas</td>
+<td align="left">boxplot(x)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de linea</td>
+<td align="left">plot(x, type=“l”)</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/><br/></p>
+</div>
 <div id="variable-cualitativa-nominal" class="section level1">
 <h1><strong>Variable cualitativa-nominal</strong></h1>
 <div id="gráfico-de-tortas" class="section level2">
@@ -518,6 +603,7 @@ pie(t1,
     labels=labs, 
     main=&quot; Distribución por carrera&quot;)</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
 </div>
 </div>
 <div id="variable-cualitativa-ordinal" class="section level1">
@@ -532,7 +618,7 @@ names(ev)=c(&quot;MR&quot;,&quot;R&quot;,&quot;B&quot;,&quot;MB&quot;,&quot;E&qu
 barplot(ev, col=c(&quot;red&quot;,&quot;yellow&quot;,&quot;orange&quot;,&quot;green&quot;,&quot;blue&quot;), 
         main = &quot;Evaluación proceso de inducción&quot;,
         las=1)</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-4-1.png" width="672" /> <br/><br/><br/></p>
 </div>
 <div id="gráfico-de-barras-2" class="section level2">
 <h2><strong>3. Gráfico de barras 2 </strong></h2>
@@ -547,6 +633,7 @@ barplot(counts, main=&quot;Número de cambios adelante por Tipo de motor&quot;,
         legend = rownames(counts),
         las=1)</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
 </div>
 </div>
 <div id="variables-cuantitativas" class="section level1">
@@ -571,6 +658,7 @@ stem(nf)</code></pre>
 ##   3 | 0000000000000011111111222222223344
 ##   3 | 555555566677777777888999
 ##   4 | 0111123</code></pre>
+<p><br/><br/><br/></p>
 </div>
 <div id="histograma" class="section level2">
 <h2><strong>5. Histograma</strong></h2>
@@ -583,7 +671,7 @@ stem(nf)</code></pre>
         col=&quot;dodgerblue3&quot;,
         ylim = c(0,30))
 abline(v=3,col=&quot;red&quot;)</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-9-1.png" width="672" /> <br/><br/><br/></p>
 </div>
 <div id="diagrama-de-densidad" class="section level2">
 <h2><strong>6. Diagrama de densidad</strong></h2>
@@ -603,6 +691,7 @@ plot(density(nf))</code></pre>
      xlab = &quot;Nota&quot;,
      ylab = &quot;Densidad&quot;)</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
 </div>
 <div id="diagrama-de-cajas" class="section level2">
 <h2><strong>7. Diagrama de cajas</strong></h2>
@@ -613,6 +702,7 @@ plot(density(nf))</code></pre>
         las=1)
 abline(h=3, col=&quot;red&quot;)</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
 </div>
 <div id="comparación-diagrama-de-cajas" class="section level2">
 <h2><strong>8. Comparación diagrama de cajas</strong></h2>
@@ -636,6 +726,7 @@ boxplot((nf~cc),main=&quot;Nota final matemáticas fundamentales por carrera&quo
 abline(h=3, col=&quot;red&quot;)
 abline(h=4, col=&quot;blue&quot;)</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
 </div>
 <div id="gráfico-de-series-de-tiempo" class="section level2">
 <h2><strong>9. Gráfico de series de tiempo</strong></h2>
@@ -646,21 +737,129 @@ plot(x, type=&quot;l&quot;,
      col=&quot;dodgerblue3&quot;, 
      lwd = 4)</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
 </div>
 <div id="resumen" class="section level2">
 <h2><strong>10. Resumen</strong></h2>
-<pre><code>## 
-##   The decimal point is 1 digit(s) to the right of the |
-## 
-##    4 | 587
-##    6 | 12340022378
-##    8 | 14466777888999900123334445556669999
-##   10 | 00112233446667788899011225666889
-##   12 | 012244556781467
-##   14 | 1128</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
-<pre><code>## null device 
-##           1</code></pre>
+<pre class="r"><code>x=rnorm(100,100,20)
+y=rnorm(100,100,25)
+z=rbinom(100,4,0.30)
+t=1:100
+pie(table(z))
+barplot(table(z))
+stem(x)
+hist(x)
+boxplot(x)
+plot(x,y)
+plot(t,y, type=&quot;l&quot;)
+plot(density(x))</code></pre>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="paquetes-adicionales" class="section level1">
+<h1><strong>Paquetes adicionales</strong></h1>
+<p>Hasta el momento se ha utilizado R base para la elaboración de gráficos, a continuación se presentan algunos paquetes que mejoran la construcción de gráficos y su visualización :</p>
+<p><br/><br/></p>
+<div id="ggplot2." class="section level2">
+<h2><strong>ggplot2</strong>.</h2>
+<p>Este paquete de R permite la construcción de gráficos utilizando para ello una “grámatica” de los grafocos, la cual incorpora componentes como : los datos (data), un conjunto de coordenadas ( ), una serie de geometrias (geoms)</p>
+<p>Componentes de un gráfico en ggplot2:</p>
+<ul>
+<li><p><strong>Data</strong>: capa de los datos</p></li>
+<li><p><strong>Aesthetics</strong>: capa estetica (aes), definimos las variables a utilizar en el gráfico</p></li>
+<li><p><strong>Geometries</strong>: capa de geometrias, se define el tipo de gráfica a realizar</p></li>
+<li><p><strong>Facets</strong>: capa de facetas, permite detallar la gráfica por categorias</p></li>
+<li><p><strong>Statistics</strong>: capa de estadística, permite agregar modelos</p></li>
+<li><p>*<strong>Coordinates</strong>: capa de coordenadas, permite ajustar las escalas de los ejes</p></li>
+<li><p><strong>Theme</strong>: capas de características del gráfico que no dependen de los datos</p></li>
+</ul>
+<p><br/><br/></p>
+<p>Para empezar, inicialmente se instalar el paquete</p>
+<pre class="r"><code>install.packages(&quot;ggplo2&quot;)</code></pre>
+<p>Y luego habilitarlo para su uso</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<p>Se empieza con el primero de los lienzo, donde se declara la data que vamos a utilizar</p>
+<p><img src="img/ge_data.png" style="width:50.0%" /></p>
+<pre class="r"><code>casas=read.csv(&quot;data/casas.csv&quot;)
+fig=ggplot(data=casas)
+fig</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>Como segundo paso se definen las variables que se van a utilizar en la construcción del gráfico</p>
+<p><img src="img/ge_aes.png" style="width:50.0%" /></p>
+<pre class="r"><code>fig=ggplot(data=casas,  aes(x=areaconst , y=precio))
+fig</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Luego de tener definida la base y las variables a utilizar se indica la geometria a utilizar, en este caso se trata de puntos</p>
+<p><img src="img/ge_geom.png" style="width:50.0%" /></p>
+<pre class="r"><code>fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+  geom_point()
+fig</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>Otros elementos a utilizar son :</p>
+<div id="facet-que-nos-ayuda-a-visualizar-el-gráfico-por-factor-construyendo-la-gráfica-para-cada-mes-en-este-caso" class="section level3">
+<h3><strong>facet</strong> que nos ayuda a visualizar el gráfico por factor, construyendo la gráfica para cada mes en este caso</h3>
+<p><img src="img/ge_facet.png" style="width:50.0%" /></p>
+<pre class="r"><code>fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+  geom_point() + facet_wrap(~ mes)
+fig</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="stat-permite-realizar-modelos-lineales-y-mostrar-asi-la-relación-existente-entre-las-variables" class="section level3">
+<h3><strong>stat</strong> permite realizar modelos lineales y mostrar asi la relación existente entre las variables</h3>
+<p><img src="img/ge_stats.png" style="width:50.0%" /></p>
+<pre class="r"><code>fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+  geom_point() + facet_wrap(~ mes)+stat_smooth(method = &quot;loess&quot; , formula =y ~ x)
+fig</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+</div>
+<div id="coordinates-la-cual-permite-ajustar-los-ejes-por-ejemplo-podemos-determian-el-rango-de-que-queremos-presentar-en-la-gráfica" class="section level3">
+<h3><strong>coordinates</strong> la cual permite ajustar los ejes , por ejemplo podemos determian el rango de que queremos presentar en la gráfica</h3>
+<p><img src="img/ge_coord.png" style="width:50.0%" /></p>
+<pre class="r"><code>fig=ggplot(data=casas,  aes(x=areaconst , y=precio)) + geom_point() +
+        facet_wrap(~ mes) + 
+        stat_smooth(method = &quot;loess&quot; , formula =y ~ x) +
+        coord_cartesian(xlim = c(1500,3000))
+fig</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+</div>
+<div id="themes-finalmente-la-capa-del-tema-o-fondo-de-la-gráfica" class="section level3">
+<h3><strong>themes</strong> finalmente la capa del tema o fondo de la gráfica</h3>
+<p><img src="img/ge_themes.png" style="width:50.0%" /></p>
+<pre class="r"><code>fig=ggplot(data=casas,  aes(x=areaconst , y=precio)) + geom_point() +
+        facet_wrap(~ mes) + 
+        stat_smooth(method = &quot;loess&quot; , formula =y ~ x) +
+        coord_cartesian(xlim = c(1500,3000)) +
+        theme_classic()
+fig</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+<div id="otros-ejemplos-de-ggplor2" class="section level3">
+<h3><strong>Otros ejemplos de ggplor2</strong></h3>
+<pre class="r"><code>casas$mes=as.factor(casas$mes)
+fig = ggplot(data=casas, aes(x=precio, y=mes)) +
+  geom_boxplot(fill=&quot;lightSalmon&quot;, 
+               color=&quot;black&quot;)+
+  geom_point(color=&quot;blue&quot;)+
+  ggtitle(&quot;Precio de casas por mes&quot;)+
+  labs(x=&quot;miles de pesos &quot; , y=&quot;mes&quot;)
+  
+
+
+fig        </code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(casas, aes(antigüedad)) +
+       geom_histogram(bins = 7,fill=&quot;#69b3a2&quot;, color=&quot;#e9ecef&quot;, alpha=0.9)+
+       theme_minimal() +
+       labs(x = &quot;años&quot;, y = &quot;frecuencia absoluta&quot;) +
+       ggtitle(&quot;Antigüedad de las casas&quot;)</code></pre>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+</div>
+<div id="highcharter" class="section level2">
+<h2><strong>highcharter</strong></h2>
+</div>
+<div id="plotly" class="section level2">
+<h2><strong>plotly</strong></h2>
 </div>
 </div>
 
