@@ -13,7 +13,9 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
-casas=read.csv("data/casas.csv")
+casas=read.csv("data/casas.csv", header = TRUE, sep=",")
+beer=read.csv("data/beer.csv",header=TRUE, sep = ";")
+
 ```
 
 # **Introducción**
@@ -30,9 +32,11 @@ Algunas consideraciones
 | Cualitativa     | Nominal          |  diagrama de torta          |  pie(table(x))       |
 |                 |                  |                             |                      |
 |                 | Ordinal          |  diagrama de barras         |  barplot(table(x))   |
+|                 |                  |  diag.barras dobles         |  barplot(table(x,y)) |
+|                 |                  |  diag. mosaico              |  plot(x,y)           |
 |                 |                  |                             |                      |
 |Cuantitativa     | De intervalo     |  diagrama de tallos y hojas | stem(x)              |
-|                 |                  |  hist(x)                    | hist(x)              | 
+|                 |                  |  histograma                 | hist(x)              | 
 |                 | De razón         |  diagrama de puntos         | plot(x,y)            |
 |                 |                  |  diagrama de densidad       | density(x)           |
 |                 |                  |  diagrama de cajas          | boxplot(x)           |
@@ -114,11 +118,22 @@ barplot(counts, main="Número de cambios adelante por Tipo de motor",
         las=1)
 ```
 
+
+## ** 4. Diagrama de mosaico **
+
+
+```{r}
+mosaicplot(~gear + vs, 
+           data = mtcars, 
+           color =  c("dodgerblue3","orange"), 
+           las = 1) 
+```
+
 <br/><br/><br/>
 
 # **Variables cuantitativas**
 
-## **4. Diagrama de tallos y hojas**
+## **5. Diagrama de tallos y hojas**
 
 ```{r}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
@@ -134,7 +149,7 @@ stem(nf)
 
 <br/><br/><br/>
 
-## **5. Histograma**
+## **6. Histograma**
 
 ```{r}
 hist(nf)
@@ -154,7 +169,7 @@ abline(v=3,col="red")
 ```
 <br/><br/><br/>
 
-## **6. Diagrama de densidad**
+## **7. Diagrama de densidad**
 
 ```{r}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8,
@@ -181,7 +196,7 @@ plot(density(nf),
 
 <br/><br/><br/>
 
-## **7. Diagrama de cajas** 
+## **8. Diagrama de cajas** 
 
 ```{r}
 boxplot(nf)
@@ -197,7 +212,7 @@ abline(h=3, col="red")
 
 <br/><br/><br/>
 
-## **8. Comparación diagrama de cajas**
+## **9. Comparación diagrama de cajas**
 
 ```{r}
 boxplot(nf~cc)
@@ -227,7 +242,7 @@ abline(h=4, col="blue")
 
 <br/><br/><br/>
 
-## **9. Gráfico de series de tiempo**
+## **10. Gráfico de series de tiempo**
 
 ```{r}
 t=1:300 ; x=w=rnorm(300,0,1); x<-w; for(t in 2:300) x[t]<-x[t-1]+w[t]
@@ -239,9 +254,23 @@ plot(x, type="l",
 ```
 
 
+
 <br/><br/><br/>
 
-## **10. Resumen**
+## **11. Gráfico de radar**
+
+
+
+
+
+
+
+
+
+
+<br/><br/><br/>
+
+## **12. Resumen**
 
 ```{r, eval=FALSE }
 x=rnorm(100,100,20)
@@ -267,6 +296,8 @@ Hasta el momento se ha utilizado R base para la elaboración de gráficos, a con
 <br/><br/>
 
 ## **ggplot2**. 
+
+![](img/ggplot2.png)
 
 Este paquete de R permite la construcción de gráficos utilizando para ello una "grámatica" de los grafocos, la cual incorpora componentes como : los datos (data), un conjunto de coordenadas ( ), una serie de geometrias (geoms)  
 
@@ -383,30 +414,120 @@ fig
 
 ```{r}
 casas$mes=as.factor(casas$mes)
-fig = ggplot(data=casas, aes(x=precio, y=mes)) +
+fig2 = ggplot(data=casas, aes(x=precio, y=mes)) +
   geom_boxplot(fill="lightSalmon", 
                color="black")+
   geom_point(color="blue")+
   ggtitle("Precio de casas por mes")+
   labs(x="miles de pesos " , y="mes")
   
-
-
-fig        
-  
+fig2        
 ```
 
 
 ```{r}
-ggplot(casas, aes(antigüedad)) +
+fig3=ggplot(casas, aes(antigüedad)) +
        geom_histogram(bins = 7,fill="#69b3a2", color="#e9ecef", alpha=0.9)+
        theme_minimal() +
        labs(x = "años", y = "frecuencia absoluta") +
        ggtitle("Antigüedad de las casas")
+fig3 
 ```
 
-## **highcharter**
+
+```{r}
+fig=ggplot(data = diamonds, aes(x = cut, fill = color)) + 
+      geom_bar(colour= "black", size = 0.3 ) +  
+  coord_polar()
+fig
+```
+
+
+
+## **highcharter**  
+
+![](img/highcharter.png)
+
+Este es un paquete especializado en la creación de gráficos dinámicos que emplea inrnamente  javascript.
+
+Este paquete permite crear varios tipos de gráficos como: diagramas de dispersión, de burbuja, de línea, serie de tiempo, mapas de calor, treemap, gráficos de barras, redes, entre otros.
+
+Gran parte de los gráficos se realizan con la función : ** hchart() ** que es aplicada a objetos 
+
+Inicialmente se instala el paquete por una única vez
+
+```{r, eval=FALSE}
+install.packages("highcharter")
+```
+
+Luego se carga para utilizar sus funciones
+
+```{r, message=FALSE,warning=FALSE}
+library(highcharter)
+```
+
+
+```{r, message=FALSE,warning=FALSE}
+hchart(casas, "scatter", hcaes(x = precio, y = areaconst, group = mes)) %>%
+  hc_title(text = "Precio por área construida") 
+```
 
 
 ## **plotly**
  
+ ![](img/plotly.png)
+
+
+## **fmsb** 
+
+Paquete para el trabajo en Estadística Medica que se utiliza para la construcción de un diagrama de radar
+
+```{r}
+# install.packages("fmsb")
+library(fmsb)
+
+set.seed(1)
+df <- data.frame(rbind(rep(10, 8), rep(0, 8),
+                       matrix(sample(0:10, 8),
+                              nrow = 1)))
+colnames(df) <- paste("Var", 1:8)
+
+radarchart(df,
+           cglty = 1, cglcol = "gray",
+           pcol = 4, plwd = 2,
+           pfcol = rgb(0, 0.4, 1, 0.25)) 
+
+```
+<br/>
+Tomado de : https://r-charts.com/es/ranking/radar-chart/
+ 
+ ## 
+ 
+```{r, message=FALSE, warning=FALSE}
+# install.packages("sf")
+library(sf)
+# install.packages("dplyr")
+library(dplyr)
+# install.packages("giscoR")
+library(giscoR)
+
+año_ref <- 2013
+
+nuts2_IT <- gisco_get_nuts(
+  year = año_ref,
+  resolution = 20, 
+  nuts_level = 2,
+  country = "Italy") %>%
+  select(NUTS_ID, NAME_LATN)
+
+plot(st_geometry(nuts2_IT)) 
+ 
+
+```
+ 
+ 
+ 
+ 
+## Margenes de los graficos
+
+https://r-charts.com/es/r-base/margenes/
