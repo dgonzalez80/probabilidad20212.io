@@ -35,13 +35,23 @@ c5="#BC2B6A" # MORADO
 
 ## **1. Introducción**
 
+El concepto de probabilidad constituye uno de los  pilares de la estadística que permiten la construcción de  conceptos posteriores como el de  **Variable Aleatoria** e **Inferencia Estadística**. Se parte de  los  conceptos básicos para lo cual se requiere revisar los temas de teoría de  conjuntos y técnicas de conteo del **Módulo 0** (**Unidad 0.2**). 
+
+En esta unidad se consideran los conceptos básicos de probabilidad, los axiomas que la rigen y los diferentes enfoques para su calculo.
+
 <br/><br/>
 
 ## **2. Objetivos de la unidad**
 
+Al finalizar la  unidad el estudiante estará en capacidad de DESARROLLAR el pensamiento probabilístico mediante el calculo e interpretación de probabilidades mediante la  comprensión de los CONCEPTOS BÁSICOS, los diferentes ENFOQUES y TIPOS de probabilidad  que le ayuden a cuantificar el riesgo para la toma de decisiones.
+
 <br/><br/>
 
 ## **3. Duración**
+
+La presente  unidad será desarrollada durante la  cuarta semana del semestre (18 al 23 de agosto  de 2021). Ademas del material suministrado  contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entregables para esta unidad podrán enviarse a través de la plataforma Brightspace hasta el  23 de agosto.
+
+Para alcanzar los objetivos planteados se propone realizar las siguientes actividades
 
 <br/><br/>
 
@@ -50,15 +60,31 @@ c5="#BC2B6A" # MORADO
 
 |Actividad      | Descripción                    | 
 |:--------------|:-----------------------------  |
+| Actividad 201 |[**Taller201**](https://github.com/dgonzalez80/presentacionespye.io/blob/main/Taller_201.pdf).  Resuelva las preguntas del siguiente  taller y entregue su solución  en formato **pdf**  en el enlace correspondiente de Brightspace.|
+|Fecha  |  23 de agosto de 2021 |
+|Hora   |  23:59 hora local     |
+|||
 
-<br/><br/>
 
 ## **5. Criterios de evaluación**
 
+El **taller201** de la unidad 2.1 recoge los elementos estudiados y por tanto  tiene objetivo la revisión de los principales conceptos tratados.
+
++ Reconocer los principales conceptos de  probabilidad y su efecto sobre la toma de decisiones informadas.
+
++ Reconocer e identificar los diferentes tipos de probabilidad  y sus respectivas interpretación.
+	
+	
 <br/><br/>
 
 ## **6. Entregables** 
 
+| Entregable |  Descripción                    |
+|:--------------|:-----------------------------|
+| Actividad201    | Actividad201.pdf : Solucionario taller 201 | 
+| Fecha           |Martes  23 de agosto de 2021 | 
+|Hora límite      | 23:59  hora  local |
+ 
 <br/><br/><br/><br/>
 
 ## **7. Presentaciones**

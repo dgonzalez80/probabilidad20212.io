@@ -410,7 +410,7 @@ fig
 ```
 
 
-### **Otros ejemplos de ggplor2**
+### **Otros ejemplos de ggplot2**
 
 ```{r}
 casas$mes=as.factor(casas$mes)
@@ -487,9 +487,9 @@ Paquete para el trabajo en Estadística Medica que se utiliza para la construcci
 library(fmsb)
 
 set.seed(1)
-df <- data.frame(rbind(rep(10, 8), rep(0, 8),
-                       matrix(sample(0:10, 8),
-                              nrow = 1)))
+df <- data.frame(rbind(rep(10, 8), 
+                       rep(0, 8),
+                       matrix(sample(0:10, 8),nrow = 1)))
 colnames(df) <- paste("Var", 1:8)
 
 radarchart(df,
@@ -501,33 +501,83 @@ radarchart(df,
 <br/>
 Tomado de : https://r-charts.com/es/ranking/radar-chart/
  
- ## 
+ <br/><br/><br/>
  
-```{r, message=FALSE, warning=FALSE}
-# install.packages("sf")
-library(sf)
-# install.packages("dplyr")
-library(dplyr)
-# install.packages("giscoR")
-library(giscoR)
-
-año_ref <- 2013
-
-nuts2_IT <- gisco_get_nuts(
-  year = año_ref,
-  resolution = 20, 
-  nuts_level = 2,
-  country = "Italy") %>%
-  select(NUTS_ID, NAME_LATN)
-
-plot(st_geometry(nuts2_IT)) 
+##   **Mapas** 
  
+ 
+ 
+<br/><br/><br/> 
+
+#  **Margenes de los gráficos**
+
+```{r}
+# Grafico normal
+x=rnorm(100,100,20)
+plot(density(x))
+```
+
+### **margenes de la grafica  c(bottom, left, top, right)**
+
+```{r}
+
+par(mar = c(5, 4, 4, 2) + 0.1)
+x=rnorm(100,100,20)
+plot(density(x))
+```
+
+###  **margenes de la gráfica**
+
+```{r}
+
+par(mai = c(1.5, 1.5, 1.5, 1.5))
+x=rnorm(100,100,20)
+plot(density(x))
 
 ```
  
- 
- 
- 
-## Margenes de los graficos
+ ### **Matriz de gráficos mfrow = c(2, 2)**
+
+```{r}
+x=rnorm(100,100,20)
+y=rnorm(100,100,25)
+z=rbinom(100,4,0.30)
+t=1:100
+par(mfrow = c(2, 2) ) # definición de la matriz
+
+plot(density(x))
+barplot(table(z))
+hist(x)
+plot(x,y)
+```
+
+
+### **margenes exteriores c(bottom, left, top, right)**
+
+```{r}
+
+par(mfrow = c(2, 2),   # matriz de graficos 2x2
+    oma = c(3, 5, 2, 4) )  # margenes de la imagen
+plot(density(x))
+barplot(table(z))
+hist(x)
+plot(x,y)
+
+```
+
+# **Tamaño texto**
+
+
+```{r}
+x=rnorm(100,100,20)
+plot(density(x),cex.lab=.8,  # tamaño de etiqueta ejes
+                cex.axis=2, # tamaño escalas de los ejes 
+                cex.main=1.5, # tamaño del titulo
+                cex.sub=1)    # tamaño del subtitulo
+```
+
+
+
+
 
 https://r-charts.com/es/r-base/margenes/

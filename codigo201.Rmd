@@ -1,0 +1,18 @@
+---
+title: "Código 4"
+author: "dgonzalez "
+subtitle: "Módulo 2- Unidad 2.1" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
