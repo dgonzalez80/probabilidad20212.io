@@ -577,7 +577,43 @@ plot(density(x),cex.lab=.8,  # tamaño de etiqueta ejes
 ```
 
 
-
-
-
 https://r-charts.com/es/r-base/margenes/
+
+
+
+# **Flexdashboard**
+
+Este paquete permite la construcción de tableros que pueden ser publicados en formato html. A continuación se describen las principales características y la forma que podemos construir un tablero
+
+Iniciaremos cargando el paquete (por una única vez)
+```{r, eval=FALSE, message=FALSE, warning=FALSE}
+install.packages("flexdashboard")
+```
+
+Tambien debemos activarlo, aunque este procedimiento viene en el formato que nos proporciona RStudio 
+
+```{r, eval=FALSE, message=FALSE, warning=FALSE}
+library(flexdashboard)
+```
+
+
+Inicialmente utilizamos la plantilla que para este propósito tiene RStudio, entrando por el menú : **File/ New file /  RMarkdown..**
+
+![](img/flexdashboard1.png){width=50%}
+
+![](img/flexdashboard2.png){width=50%}
+
+Este procedimiento genera un formato para un tablero que puede ser modificado o ajustado a nuestras necesidades
+
+![](img/flexdashboard3.png){width=60%}
+
+
+En este formato podemos distinguir varias partes :
+
++ Encabezado :  donde se define la estructura del tablero y los temas 
++ Bloque setup . Donde colocamos las instrucciones generales de R , como puede ser cargar las bases de datos que seran utilizadas durante todo el documento, ademas de cargar las librerias necesarias  
++ Definicion de columnas o filas del tablero y hojas del tablero
++ Bloques de R con el contenido
+
+
+

@@ -75,6 +75,12 @@ navbar:
           href: codigo102.html  
         - text: "Código u1.3"
           href: codigo103.html
+        - text: "Código u2.1"
+          href: codigo201.html
+          
+          
+          
+          
 output:
   html_document:
     theme: cosmos

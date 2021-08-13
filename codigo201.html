@@ -472,6 +472,9 @@ div.tocify {
     <li>
       <a href="codigo103.html">Código u1.3</a>
     </li>
+    <li>
+      <a href="codigo201.html">Código u2.1</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -493,7 +496,93 @@ div.tocify {
 </div>
 
 
-
+<div id="experimentos-aleatorios" class="section level1">
+<h1>Experimentos aleatorios</h1>
+<p>Como se menciona en la Guía 2.1, un <strong>Experimento aleatorio</strong> se puede definir como una acción que podemos repetir en iguales condiciones muchas veces y cuyo resultado no conocemos anticipadamente</p>
+<p>Un ejemplo de ello es cuando estamos jugando parques y un jugador lanza dos dados, el resultado solo es posible de observar después de haber realizado la acción de lanzarlos.</p>
+<p>Al conjunto de todos los posibles valores que puede tomar el experimento aleatorio se le denomina <strong>Espacio muestral</strong>, que se denota por la letra mayuscula <strong>S</strong>.</p>
+<p><img src="img/dados.gif" /></p>
+<p><br/></p>
+<p>Para este ejemplo :</p>
+<p><span class="math display">\[S=\{ 2,3,4,5,6,7,8,9,10,11,12 \}\]</span></p>
+<div id="lanzamiento-de-un-dados" class="section level2">
+<h2><strong>Lanzamiento de un dados</strong></h2>
+<pre class="r"><code>n=20000000
+x=sample(1:6,n, replace = TRUE)
+td1=prop.table(table(x))
+barplot(td1, las=1)</code></pre>
+<p><img src="codigo201_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="lanzamiento-de-dos-dados" class="section level2">
+<h2><strong>Lanzamiento de dos dados</strong></h2>
+<pre class="r"><code>n=20000000
+d1=sample(1:6,n, replace = TRUE)
+d2=sample(1:6,n, replace = TRUE)
+dados=data.frame(d1,d2)
+suma=apply(dados, 1, sum)
+barplot(table(suma), las=1,cex.axis=0.7)</code></pre>
+<p><img src="codigo201_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>prop.table(table(suma))</code></pre>
+<pre><code>## suma
+##          2          3          4          5          6          7          8          9         10 
+## 0.02777335 0.05559795 0.08338320 0.11113310 0.13882525 0.16661895 0.13905080 0.11108175 0.08325140 
+##         11         12 
+## 0.05547060 0.02781365</code></pre>
+<p>Procedimiento alternativo</p>
+<pre class="r"><code>t=sapply(1:200000, function(x){sum(sample(1:6,2,rep=T))})
+barplot(table(t), las=1, cex.axis=0.7)</code></pre>
+<p><img src="codigo201_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="urna" class="section level2">
+<h2><strong>Urna</strong></h2>
+<p>Simulación de urna con: 3 bolas Blancas, 5 Rojas y 4 Azules</p>
+<p>1 representa las bolas blancas 2 representa las bolas rojas 3 representa las bolas azules</p>
+<pre class="r"><code>sample(c(1,2,3),2,rep=T,prob=c(3,5,4))</code></pre>
+<pre><code>## [1] 3 3</code></pre>
+<p>La misma simulación con palabras</p>
+<pre class="r"><code>sample(c(&quot;Blanca&quot;,&quot;Roja&quot;,&quot;Azul&quot;),2,rep=T,prob=c(3,5,4))</code></pre>
+<pre><code>## [1] &quot;Azul&quot; &quot;Roja&quot;</code></pre>
+</div>
+</div>
+<div id="tablas-de-contingencia" class="section level1">
+<h1>Tablas de contingencia</h1>
+<p>Las tablas de contingencia o tablas cruzadas se basan en las tablas de frecuencia para dos variables cualitativas o cuantitativas con pocos valores. En ellas se representan probabilidades conjuntas, marginales y condicionales</p>
+<p>Inicialmente construimos una tabla con los valores de las frecuencias relativas conjuntas</p>
+<pre class="r"><code>x=c(20,60,100,30,140,50)
+    m=matrix(x,ncol=2)
+    rownames(m)=c(&quot;Adminitrativo&quot;,&quot;Operativo&quot;,&quot;Vendedor&quot;)
+    colnames(m)=c(&quot;Mujer&quot;,&quot;Hombre&quot;)
+    m</code></pre>
+<pre><code>##               Mujer Hombre
+## Adminitrativo    20     30
+## Operativo        60    140
+## Vendedor        100     50</code></pre>
+<p>En este caso se adicionan las frecuencias relativas marginales</p>
+<pre class="r"><code>addmargins(m)</code></pre>
+<pre><code>##               Mujer Hombre Sum
+## Adminitrativo    20     30  50
+## Operativo        60    140 200
+## Vendedor        100     50 150
+## Sum             180    220 400</code></pre>
+<p>Para convertirlas en probabilidades utilizamos la funcion <strong>prop.table()</strong></p>
+<pre class="r"><code>prop.table(m)</code></pre>
+<pre><code>##               Mujer Hombre
+## Adminitrativo  0.05  0.075
+## Operativo      0.15  0.350
+## Vendedor       0.25  0.125</code></pre>
+<p>Esta funcion tambien se utiliza para calcular las probabilidades condicionales por filas</p>
+<pre class="r"><code>prop.table(m,1)</code></pre>
+<pre><code>##                   Mujer    Hombre
+## Adminitrativo 0.4000000 0.6000000
+## Operativo     0.3000000 0.7000000
+## Vendedor      0.6666667 0.3333333</code></pre>
+<p>o las probabilidades condicionales por columnas</p>
+<pre class="r"><code>prop.table(m,2)</code></pre>
+<pre><code>##                   Mujer    Hombre
+## Adminitrativo 0.1111111 0.1363636
+## Operativo     0.3333333 0.6363636
+## Vendedor      0.5555556 0.2272727</code></pre>
+</div>
 
 
 

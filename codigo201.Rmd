@@ -12,7 +12,119 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 
 ```
 
+# Experimentos aleatorios
+
+Como se menciona en la Guía 2.1, un **Experimento aleatorio** se puede definir como una acción que podemos repetir en iguales condiciones muchas veces y cuyo resultado no conocemos anticipadamente
+
+Un ejemplo de ello es cuando estamos jugando parques y un jugador lanza dos dados, el resultado solo es posible de observar después de haber realizado la acción de lanzarlos. 
+
+Al conjunto de todos los posibles valores que puede tomar el experimento aleatorio se le denomina **Espacio muestral**, que se denota por la letra mayuscula **S**.
+
+
+![](img/dados.gif)
+
+<br/>
+
+Para este ejemplo :
+
+$$S=\{ 2,3,4,5,6,7,8,9,10,11,12 \}$$
+
+
+## **Lanzamiento de un dados**
+
+
+
+```{r}
+n=20000000
+x=sample(1:6,n, replace = TRUE)
+td1=prop.table(table(x))
+barplot(td1, las=1)
+```
+
+## **Lanzamiento de dos dados**
+
+```{r}
+n=20000000
+d1=sample(1:6,n, replace = TRUE)
+d2=sample(1:6,n, replace = TRUE)
+dados=data.frame(d1,d2)
+suma=apply(dados, 1, sum)
+barplot(table(suma), las=1,cex.axis=0.7)
+prop.table(table(suma))
+
+```
+
+
+Procedimiento alternativo
+
+```{r}
+t=sapply(1:200000, function(x){sum(sample(1:6,2,rep=T))})
+barplot(table(t), las=1, cex.axis=0.7)
+```
+
+
+
+
+##  **Urna** 
+
+Simulación de urna con:  3 bolas Blancas, 5 Rojas y 4 Azules
+
+1 representa las bolas blancas
+2 representa las bolas rojas
+3 representa las bolas azules
+
+```{r}
+sample(c(1,2,3),2,rep=T,prob=c(3,5,4))
+```
+
+La misma simulación con palabras
+
+```{r}
+sample(c("Blanca","Roja","Azul"),2,rep=T,prob=c(3,5,4))
+```
+ 
+
+
+# Tablas de contingencia
+
+Las tablas de contingencia o tablas cruzadas se basan en las tablas de frecuencia para dos variables cualitativas o cuantitativas con pocos valores. En ellas se representan probabilidades conjuntas, marginales y condicionales
+
+Inicialmente construimos una tabla con los valores de las frecuencias relativas conjuntas
+
+```{r}
+x=c(20,60,100,30,140,50)
+	m=matrix(x,ncol=2)
+	rownames(m)=c("Adminitrativo","Operativo","Vendedor")
+	colnames(m)=c("Mujer","Hombre")
+	m
+```
+
+
+En este caso se adicionan las frecuencias relativas marginales
+
+```{r}
+addmargins(m)
+```
+
+Para convertirlas en probabilidades utilizamos la funcion **prop.table()**
+
+```{r}
+prop.table(m)
+```
+
+Esta funcion tambien se utiliza para calcular las probabilidades condicionales por filas
+
+```{r}
+prop.table(m,1)
+```
+
+o las probabilidades condicionales por columnas
+
+```{r}
+prop.table(m,2)
+```
 
