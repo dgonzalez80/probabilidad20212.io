@@ -25,7 +25,7 @@ c5="#BC2B6A" # MORADO
 
 
 
-## **Guía de aprendizaje 2.1**
+# **Guía de aprendizaje 2.1**
 
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f4c855734dcc71ce637fbe4" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
 
@@ -89,4 +89,135 @@ El **taller201** de la unidad 2.1 recoge los elementos estudiados y por tanto  t
 
 ## **7. Presentaciones**
 
+<br/><br/>
 
+# **Recursos**
+
+La probabilidad es un concepto que se empieza a trabajar en los años   cuando  , caballero de Mered solicita a b. Pascal le ayude a resolver un problema relacionado con juegos de mesa. En particular este callero manifestaba que las Matemáticas presentaban un vacio, pues sus calculos no coincidian con lo que pasaba en la realidad y como consecuencia de ellos perdia dinero en las apuestas que se presentaban en el juego. 
+
+Encomendado Pascal de esta tarea empieza a compartir su trabajo con Fermat, matematico y de la correspondencia de estos dos brillantes matematicos nace los principios y fundamentos de  lo que hoy conocemos como probabilidad
+
+<br/><br/>
+
+**Problema**: 
+
+Los dados, tal y como los conocemos hoy  en día, se hicieron muy populares en la edad media.  En esta época un caballero llamado Chevalier de Mere propuso el siguiente problema: 
+ 			
+Qué es más probable : 
+
++ Sacar al menos un seis en cuatro tiradas con un solo dado o  
+
++ Sacar al menos un doble seis en 24 tiradas con dos dados? 
+
+El caballero  afirmaba que este problema generaba una solución matemática que difería de la observación empírica
+
+Este problema se retoma mas adelante
+
+Iniciaremos con algunos conceptos basicos que nos permiten la contrucion de sus funtamentos.
+
+<br/><br/>
+
+## **Conceptos básicos**
+
+<br/><br/>
+
+### **Experimento aleatorio** 
+
+Acción que puede ser replicada bajo las  mismas condiciones y cuyo resultado no se conoce por anticipado.
+
++ $E_{1}$: Lanzar una moneda dos veces y observar los resultados obtenidos en sus caras superiores 
+
++ $E_{2}$: Lanzar dos dados y observar la suma de los resultados superiores 
+
++ $E_{3}$: Realizar un examen de estadística y observar el resultado obtenido  
+
++ $E_{4}$: En una salida de campo, observo si se cumple o no, totalmente el objetivo planteado 
+
++ $E_{5}$: Observo el número total de ensayos de laboratorio exitosos en  20 intentos realizados. 
+
+<br/><br/>
+
+## **Espacio muestral** 
+
+Conjunto de todos los posibles valores que puede tomar el experimento aleatorio. Este conjunto se nombra conuna letra mayuscula $S$ o tambien con **$\Omega$**
+
++ $S_{1}$]= $\{ (cc), (cs), (sc), (ss) \}$  
+
++ $S_{2}$]= $\{ 2,3,4,5,6,7,8,9,10,11,12 \}$ 
+
++ $S_{3}$]= $\{ x \in \mathbb{R} | 0 \leq x \leq 5   \}$ 
+
++ $S_{4}$]= $\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}$ 
+
++ $S_{5}$]= $\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}$
+
+<br/><br/>
+
+## **Evento aleatorio** 
+
+Subconjunto del espacio muestral que es de nuestro interés. Como todo conjunto se nombra con una letra mayuscula por lo general las primeras letras del alfabeto
+
++ $A_{1}$: Se obtienen solo caras 
+
++ $A_{2}$: La suma de los resultados es inferior a 6 
+
++ $A_{3}$: Se gana el examen 
+
++ $A_{4}$: Se cumple el objetivo de la salida 
+
++ $A_{5}$: Se obtener más de 5 ensayos éxitos
+
+<br/><br/>
+
+## **Enfoques de probabilidad**
+
+<br/><br/>
+
+### **Enfoque clásico**  
+
+Es el enfoque más antiguo de probabilidad. La probabilidad bajo ese enfoque para el evento A se calcula como: 
+		
+$P(A)=\dfrac{n(A)}{n(S)}$
+			
+$A_{1}$: Se obtienen solo caras  
+
+$A_{2}$: La suma de los resultados es inferior a 6
+
+<br/><br/> 
+
+### **Enfoque frecuentista** 
+
+
+Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un tamaño de muestra determinado $n$.
+
+			
+$\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{n} \Bigg]$
+
+<br/><br/>
+
+### **Enfoque subjetivo** 
+
+En este caso la probabilidad es valorada y asignada por un EXPERTO, como un médico, un ingeniero, un abogado, ......
+
+<br/><br/>
+
+## **Axiomas de  probabilidad**
+
++ $A_{1}$ Sea $S$ un espacio muestral  asociado a un experimento. Entonces $P(S)=1$ 
+
++ $A_{2}$ Para cualquier evento $A$, se cumple que $0 \leq P(A) \leq 1$ 
+
++ $A_{3}$ Si $A$ y $B$ son dos eventos mutuamente excluyentes, entonces: $P(A \cup B) = P(A) + P(B)$ ( En general $P(A \cup B) = P(A)+ P(B) - P(A \cap B)$ ) 
+
++ $A_{4}$ Para cualquier evento $A$, $P(A^{c})=1-P(A) $
+
++ $A_{5}$ La probabilidad de $P(\phi) =0$   
+	
+<br/><br/>
+
+## **Tipos de probabilidad**
+
+<br/><br/>
+
+
+## **Ejercicios propuestos**

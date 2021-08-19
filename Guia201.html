@@ -496,8 +496,8 @@ div.tocify {
 </div>
 
 
-<div id="guía-de-aprendizaje-2.1" class="section level2">
-<h2><strong>Guía de aprendizaje 2.1</strong></h2>
+<div id="guía-de-aprendizaje-2.1" class="section level1">
+<h1><strong>Guía de aprendizaje 2.1</strong></h1>
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;">
 <video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%">
 <source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />
@@ -509,7 +509,6 @@ Your browser does not support the video tag.</video>
 <script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
 <p><br/><br/></p>
 <p><br/><br/></p>
-</div>
 <div id="introducción" class="section level2">
 <h2><strong>1. Introducción</strong></h2>
 <p>El concepto de probabilidad constituye uno de los pilares de la estadística que permiten la construcción de conceptos posteriores como el de <strong>Variable Aleatoria</strong> e <strong>Inferencia Estadística</strong>. Se parte de los conceptos básicos para lo cual se requiere revisar los temas de teoría de conjuntos y técnicas de conteo del <strong>Módulo 0</strong> (<strong>Unidad 0.2</strong>).</p>
@@ -597,6 +596,106 @@ Your browser does not support the video tag.</video>
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="recursos" class="section level1">
+<h1><strong>Recursos</strong></h1>
+<p>La probabilidad es un concepto que se empieza a trabajar en los años cuando , caballero de Mered solicita a b. Pascal le ayude a resolver un problema relacionado con juegos de mesa. En particular este callero manifestaba que las Matemáticas presentaban un vacio, pues sus calculos no coincidian con lo que pasaba en la realidad y como consecuencia de ellos perdia dinero en las apuestas que se presentaban en el juego.</p>
+<p>Encomendado Pascal de esta tarea empieza a compartir su trabajo con Fermat, matematico y de la correspondencia de estos dos brillantes matematicos nace los principios y fundamentos de lo que hoy conocemos como probabilidad</p>
+<p><br/><br/></p>
+<p><strong>Problema</strong>:</p>
+<p>Los dados, tal y como los conocemos hoy en día, se hicieron muy populares en la edad media. En esta época un caballero llamado Chevalier de Mere propuso el siguiente problema:</p>
+<p>Qué es más probable :</p>
+<ul>
+<li><p>Sacar al menos un seis en cuatro tiradas con un solo dado o</p></li>
+<li><p>Sacar al menos un doble seis en 24 tiradas con dos dados?</p></li>
+</ul>
+<p>El caballero afirmaba que este problema generaba una solución matemática que difería de la observación empírica</p>
+<p>Este problema se retoma mas adelante</p>
+<p>Iniciaremos con algunos conceptos basicos que nos permiten la contrucion de sus funtamentos.</p>
+<p><br/><br/></p>
+<div id="conceptos-básicos" class="section level2">
+<h2><strong>Conceptos básicos</strong></h2>
+<p><br/><br/></p>
+<div id="experimento-aleatorio" class="section level3">
+<h3><strong>Experimento aleatorio</strong></h3>
+<p>Acción que puede ser replicada bajo las mismas condiciones y cuyo resultado no se conoce por anticipado.</p>
+<ul>
+<li><p><span class="math inline">\(E_{1}\)</span>: Lanzar una moneda dos veces y observar los resultados obtenidos en sus caras superiores</p></li>
+<li><p><span class="math inline">\(E_{2}\)</span>: Lanzar dos dados y observar la suma de los resultados superiores</p></li>
+<li><p><span class="math inline">\(E_{3}\)</span>: Realizar un examen de estadística y observar el resultado obtenido</p></li>
+<li><p><span class="math inline">\(E_{4}\)</span>: En una salida de campo, observo si se cumple o no, totalmente el objetivo planteado</p></li>
+<li><p><span class="math inline">\(E_{5}\)</span>: Observo el número total de ensayos de laboratorio exitosos en 20 intentos realizados.</p></li>
+</ul>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="espacio-muestral" class="section level2">
+<h2><strong>Espacio muestral</strong></h2>
+<p>Conjunto de todos los posibles valores que puede tomar el experimento aleatorio. Este conjunto se nombra conuna letra mayuscula <span class="math inline">\(S\)</span> o tambien con <strong><span class="math inline">\(\Omega\)</span></strong></p>
+<ul>
+<li><p><span class="math inline">\(S_{1}\)</span>]= <span class="math inline">\(\{ (cc), (cs), (sc), (ss) \}\)</span></p></li>
+<li><p><span class="math inline">\(S_{2}\)</span>]= <span class="math inline">\(\{ 2,3,4,5,6,7,8,9,10,11,12 \}\)</span></p></li>
+<li><p><span class="math inline">\(S_{3}\)</span>]= <span class="math inline">\(\{ x \in \mathbb{R} | 0 \leq x \leq 5 \}\)</span></p></li>
+<li><p><span class="math inline">\(S_{4}\)</span>]= <span class="math inline">\(\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}\)</span></p></li>
+<li><p><span class="math inline">\(S_{5}\)</span>]= <span class="math inline">\(\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}\)</span></p></li>
+</ul>
+<p><br/><br/></p>
+</div>
+<div id="evento-aleatorio" class="section level2">
+<h2><strong>Evento aleatorio</strong></h2>
+<p>Subconjunto del espacio muestral que es de nuestro interés. Como todo conjunto se nombra con una letra mayuscula por lo general las primeras letras del alfabeto</p>
+<ul>
+<li><p><span class="math inline">\(A_{1}\)</span>: Se obtienen solo caras</p></li>
+<li><p><span class="math inline">\(A_{2}\)</span>: La suma de los resultados es inferior a 6</p></li>
+<li><p><span class="math inline">\(A_{3}\)</span>: Se gana el examen</p></li>
+<li><p><span class="math inline">\(A_{4}\)</span>: Se cumple el objetivo de la salida</p></li>
+<li><p><span class="math inline">\(A_{5}\)</span>: Se obtener más de 5 ensayos éxitos</p></li>
+</ul>
+<p><br/><br/></p>
+</div>
+<div id="enfoques-de-probabilidad" class="section level2">
+<h2><strong>Enfoques de probabilidad</strong></h2>
+<p><br/><br/></p>
+<div id="enfoque-clásico" class="section level3">
+<h3><strong>Enfoque clásico</strong></h3>
+<p>Es el enfoque más antiguo de probabilidad. La probabilidad bajo ese enfoque para el evento A se calcula como:</p>
+<p><span class="math inline">\(P(A)=\dfrac{n(A)}{n(S)}\)</span></p>
+<p><span class="math inline">\(A_{1}\)</span>: Se obtienen solo caras</p>
+<p><span class="math inline">\(A_{2}\)</span>: La suma de los resultados es inferior a 6</p>
+<p><br/><br/></p>
+</div>
+<div id="enfoque-frecuentista" class="section level3">
+<h3><strong>Enfoque frecuentista</strong></h3>
+<p>Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un tamaño de muestra determinado <span class="math inline">\(n\)</span>.</p>
+<p><span class="math inline">\(\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{n} \Bigg]\)</span></p>
+<p><br/><br/></p>
+</div>
+<div id="enfoque-subjetivo" class="section level3">
+<h3><strong>Enfoque subjetivo</strong></h3>
+<p>En este caso la probabilidad es valorada y asignada por un EXPERTO, como un médico, un ingeniero, un abogado, ……</p>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="axiomas-de-probabilidad" class="section level2">
+<h2><strong>Axiomas de probabilidad</strong></h2>
+<ul>
+<li><p><span class="math inline">\(A_{1}\)</span> Sea <span class="math inline">\(S\)</span> un espacio muestral asociado a un experimento. Entonces <span class="math inline">\(P(S)=1\)</span></p></li>
+<li><p><span class="math inline">\(A_{2}\)</span> Para cualquier evento <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(0 \leq P(A) \leq 1\)</span></p></li>
+<li><p><span class="math inline">\(A_{3}\)</span> Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son dos eventos mutuamente excluyentes, entonces: <span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span> ( En general <span class="math inline">\(P(A \cup B) = P(A)+ P(B) - P(A \cap B)\)</span> )</p></li>
+<li><p><span class="math inline">\(A_{4}\)</span> Para cualquier evento <span class="math inline">\(A\)</span>, $P(A^{c})=1-P(A) $</p></li>
+<li><p><span class="math inline">\(A_{5}\)</span> La probabilidad de <span class="math inline">\(P(\phi) =0\)</span></p></li>
+</ul>
+<p><br/><br/></p>
+</div>
+<div id="tipos-de-probabilidad" class="section level2">
+<h2><strong>Tipos de probabilidad</strong></h2>
+<p><br/><br/></p>
+</div>
+<div id="ejercicios-propuestos" class="section level2">
+<h2><strong>Ejercicios propuestos</strong></h2>
+</div>
 </div>
 
 
