@@ -14,7 +14,7 @@
 
 <title>Teoría de conjuntos y técnicas de conteo</title>
 
-<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -496,7 +496,6 @@ div.tocify {
 </div>
 
 
-<p><span style="color:#E77C00"><strong>En construcción</strong></span></p>
 <div id="guía-0.2" class="section level1">
 <h1><strong>Guía 0.2</strong></h1>
 <br/>
@@ -514,13 +513,14 @@ Your browser does not support the video tag.</video>
 <div id="teoría-de-conjuntos" class="section level1">
 <h1><strong>Teoría de conjuntos</strong></h1>
 <div id="introducción" class="section level2">
-<h2><strong>Introducción</strong></h2>
+<h2><strong>1. Introducción</strong></h2>
 <p>A continuación se relacionan las principales características de los conjuntos y sus principales relaciones. Estos conceptos serán importante en el momento de abordar los conceptos básicos de probabilidad que serán expuestos en el Modulo 2.</p>
 <p>En pesaremos con su definición</p>
 </div>
 <div id="definición-de-conjunto" class="section level2">
-<h2><strong>Definición de conjunto</strong></h2>
-<p>Un conjunto es una colección de objetos que se denota con una letra mayúscula (comúnmente las primeras letras del alfabeto A,B,C..) . Se pueden escribir por:</p>
+<h2><strong>2. Definición de conjunto</strong></h2>
+<p>Un conjunto es una colección de objetos que se denota con una letra mayúscula (comúnmente las primeras letras del alfabeto A,B,C..) .</p>
+<p>Se pueden escribir por:</p>
 <ul>
 <li><p><strong>por extensión</strong> : <span class="math inline">\(A=\{0,1,2,3,4,5,6,7,8,9\}\)</span>, escribiendo todos los elementos que lo conforman.</p></li>
 <li><p><strong>por su nombre</strong> : los dígitos</p></li>
@@ -529,27 +529,49 @@ Your browser does not support the video tag.</video>
 <p>Al comparar o combinar conjuntos debemos hacer uso de sus propiedades y operaciones, dentro de las cuales se encuentran <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(A \cap B\)</span>,</p>
 </div>
 <div id="unión-del-conjunto" class="section level2">
-<h2><strong>Unión del conjunto</strong></h2>
+<h2><strong>3. Unión del conjunto</strong></h2>
 <p>Unión del <span class="math inline">\(A\)</span> con el conjunto <span class="math inline">\(B\)</span>. <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(\overline{A}\)</span> ,<span class="math inline">\(A - B\)</span>, entre otras. La zona sombreada en la siguiente figura representa estas operación</p>
 <p><img src="img/union.png" style="width:50.0%" /></p>
+<p>Ejemplo: Supongamos los siguientes conjuntos :</p>
+<ul>
+<li><span class="math inline">\(A = \{a,e,i,o,u \}\)</span></li>
+<li><span class="math inline">\(B = \{1,2,3,4,5,6,7,8,9,0\}\)</span></li>
+</ul>
+<p><span class="math inline">\(A \cup B \{a,e,i,o,u, 1,2,3,4,5,6,7,8,9,0 \}\)</span></p>
+<p><br/><br/></p>
 </div>
 <div id="intersección" class="section level2">
-<h2><strong>Intersección</strong></h2>
+<h2><strong>4. Intersección</strong></h2>
 <p>La intersección entre el conjunto <span class="math inline">\(A\)</span> y el <span class="math inline">\(B\)</span> se denota por : <span class="math inline">\(A \cap B\)</span> y se representa por la siguiente zona sombreada</p>
 <p><img src="img/interseccion.png" style="width:50.0%" /></p>
+<p>Ejemplo: Supongamos los siguientes conjuntos :</p>
+<ul>
+<li><span class="math inline">\(A = \{1,2,3,4,5,6 \}\)</span></li>
+<li><span class="math inline">\(B = \{2,4,6,8,10,12,14,16,18,20 \}\)</span></li>
+</ul>
+<p><span class="math inline">\(A \cap B = \{ 2,4,6 \}\)</span></p>
+<p><br/><br/></p>
 </div>
 <div id="complemento" class="section level2">
-<h2><strong>Complemento</strong></h2>
+<h2><strong>4. Complemento</strong></h2>
 <p>El complemento del conjunto <span class="math inline">\(A\)</span> se escribe como: <span class="math inline">\(\overline{A}\)</span> y se representa por la siguiente zona sombreada</p>
 <p><img src="img/complemento.png" style="width:50.0%" /></p>
+<p><br/><br/></p>
 </div>
 <div id="resta" class="section level2">
-<h2><strong>Resta</strong></h2>
+<h2><strong>5. Resta</strong></h2>
 <p>La resta del conjunto <span class="math inline">\(B\)</span> menos el conjunto <span class="math inline">\(A\)</span> : <span class="math inline">\(B-A\)</span> , está representada por la zona sombreada en la siguiente figura</p>
 <p><img src="img/resta.png" style="width:50.0%" /></p>
+<p>Ejemplo: Supongamos los siguientes conjuntos :</p>
+<ul>
+<li><span class="math inline">\(A = \{1,2,3,4,5,6 \}\)</span></li>
+<li><span class="math inline">\(B = \{2,4,6,8,10,12,14,16,18,20 \}\)</span></li>
+</ul>
+<p><span class="math inline">\(B-A =\{ 8,10,12,14,16,18,20 \}\)</span></p>
+<p><br/><br/></p>
 </div>
 <div id="problemas-propuestos" class="section level2">
-<h2><strong>Problemas propuestos</strong></h2>
+<h2><strong>6. Problemas propuestos</strong></h2>
 <ol style="list-style-type: decimal">
 <li><strong>Lanzamiento de un dado</strong>: Un experimento consiste en lanzar un dado. Algunos eventos que se pueden definir a partir del experimento pueden ser:</li>
 </ol>
@@ -568,11 +590,11 @@ Your browser does not support the video tag.</video>
 </li>
 <li>En cada caso representelos en un diagrama de Venn</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Lanzamiento de monedas</strong> :Calcule la probabilidad de sacar más de una cara en el lanzamiento de una moneda tres veces. Utilice un diagrama de árbol para realizar el calculo.</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Eventos equiprobables</strong> :Un experimento da como resultado uno de cinco eventos simples equiprobables : <span class="math inline">\(E_{1}, E_{2}, E_{3}, E_{4}, E_{5}\)</span>. A partir de ellos se definen los sigueintes eventos:</li>
 </ol>
@@ -602,7 +624,10 @@ Your browser does not support the video tag.</video>
 </li>
 <li><span class="math inline">\((A\cap \overline{B})\)</span></li>
 </ol>
-<p><br/> 3. Un estudio sobre la conducta realizado a 1000 delincuentes adictos a las drogas hace pensar que la probabilidad de una condena de dos años después de un tratamiento podría depender del nivel de educación del delincuente. Las proporciones del número total de casos que caen en cuatro categorías de educación y condena que se muestra a continuación:</p>
+<p><br/><br/></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Un estudio sobre la conducta realizado a 1000 delincuentes adictos a las drogas hace pensar que la probabilidad de una condena de dos años después de un tratamiento podría depender del nivel de educación del delincuente. Las proporciones del número total de casos que caen en cuatro categorías de educación y condena que se muestra a continuación:</li>
+</ol>
 <table>
 <thead>
 <tr class="header">
@@ -637,36 +662,36 @@ Your browser does not support the video tag.</video>
 <li><span class="math inline">\((A \cap \overline{B})\)</span></li>
 <li><span class="math inline">\(\overline{A} \cup \overline{B}\)</span></li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="4" style="list-style-type: decimal">
-<li>Suponga que cierta enfermedad está presente en 10% de la población y que hay una prueba diseñada para detectarla. La prueba no siempre funciona de modo perfecto. Algunas veces la prueba es negativa cuando la enfermedad está presente, y otras positivas cuando no hay la enfermedad. En la siguiente tabla se muestra los resultados obtenidos en un estudio realizado:</li>
+<li>Suponga que cierta enfermedad está presente en 10 por ciento de la población y que hay una prueba diseñada para detectarla. La prueba no siempre funciona de modo perfecto. Algunas veces la prueba es negativa cuando la enfermedad está presente, y otras positivas cuando no hay la enfermedad. En la siguiente tabla se muestra los resultados obtenidos en un estudio realizado:</li>
 </ol>
 <table>
 <tbody>
 <tr class="odd">
 <td align="left"></td>
-<td align="right">La prueba</td>
-<td align="right">La prueba</td>
+<td align="right">La prueba es positiva (<span class="math inline">\(P\)</span>)</td>
+<td align="right">La prueba es negativa (<span class="math inline">\(N\)</span>)</td>
 </tr>
 <tr class="even">
-<td align="left"></td>
-<td align="right">es positiva (<span class="math inline">\(P\)</span>)</td>
-<td align="right">es negativa (<span class="math inline">\(N\)</span>)</td>
-</tr>
-<tr class="odd">
 <td align="left">La enfermedad está presente (<span class="math inline">\(D\)</span>)</td>
 <td align="right">0.08</td>
 <td align="right">0.22</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">La enfermedad está ausente (<span class="math inline">\(\overline{D}\)</span>)</td>
 <td align="right">0.05</td>
 <td align="right">0.65</td>
 </tr>
+<tr class="even">
+<td align="left"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
 </tbody>
 </table>
-<pre><code>A partir de esta información construya por lo menos tres eventos simples y tres eventos compuestos. En cada caso determine su probabilidad</code></pre>
-<p><br/></p>
+<p>A partir de esta información construya por lo menos tres eventos simples y tres eventos compuestos. En cada caso determine su probabilidad</p>
+<p><br/><br/></p>
 <ol start="5" style="list-style-type: decimal">
 <li>En un experimento sobre preferencia de colores en los niños, se colocan quince juguetes en un recipiente. Los juguetes son idénticos excepto por el color. Seis son rojos, cuatro son blancos y cinco son azules. Se le pide a un niño elegir un juguete <strong>al azar</strong> ¿cuál es la probabilidad de que el niño elija el rojo?. ¿cuál de que sea el blanco? ¿cuál el que sea el azul?. ¿que no sea rojo ? ¿que no sea rojo ni azul?</li>
 </ol>
@@ -679,9 +704,9 @@ Your browser does not support the video tag.</video>
 <p>Las técnicas de conteo constituyen una serie de estrategias que permiten a través de reglas establecer el numero de elementos de un conjunto finito.</p>
 <p>Inicialmente empezaremos por definir dos reglas:</p>
 <div id="principio-de-la-adicción" class="section level2">
-<h2><strong>Principio de la adicción</strong></h2>
+<h2><strong>1. Principio de la adicción</strong></h2>
 <p>Supongamos que un procedimiento, designado con <span class="math inline">\(P_1\)</span>, se puede hacer de <span class="math inline">\(n_1\)</span> manera diferentes. Supongamos que un segundo procedimiento <span class="math inline">\(P_2\)</span> se puede realizar de <span class="math inline">\(n_2\)</span> maneras diferentes. Ademas suponga que los dos procedimientos no se pueden realizar juntos. Entonces el numero de formas diferentes como se puede realizar el procedimiento <span class="math inline">\(P_1\)</span> o el procedimiento <span class="math inline">\(P_2\)</span> es de <span class="math inline">\(n_1 + n_2\)</span> maneras diferentes.</p>
-<p><br/></p>
+<p><br/><br/></p>
 <div id="ejemplo" class="section level3">
 <h3><strong>Ejemplo</strong></h3>
 <p>Un estudiante tiene dos posibilidades de ir de su casa a la universidad: En transporte público o en transporte particular. Para el caso del transporte público existen 5 alternativas. Para el caso de transporte particular tienen 6 alternativas. En este caso <span class="math inline">\(n_{1}=5\)</span> y <span class="math inline">\(n_{2}=6\)</span>. El número de maneras como se puede transportar de la casa a la universidad será <span class="math inline">\(n=n_{1}+n_{2}=11\)</span> formas diferentes de ir a la U.\</p>
@@ -689,9 +714,9 @@ Your browser does not support the video tag.</video>
 </div>
 </div>
 <div id="principio-de-la-multiplicación" class="section level2">
-<h2><strong>Principio de la multiplicación</strong></h2>
+<h2><strong>2. Principio de la multiplicación</strong></h2>
 <p>Supongamos que un procedimiento <span class="math inline">\(P1\)</span> , se puede realizar de <span class="math inline">\(n_1\)</span> maneras diferentes y que otro procedimiento <span class="math inline">\(P2\)</span> se puede realizar de <span class="math inline">\(n_2\)</span> maneras diferentes, Ahora supongamos que la manera de realizar los procedimientos es uno después del otro. Entonces el numero de formas diferentes como se pueden realizar los procedimientos <span class="math inline">\(P1\)</span> y <span class="math inline">\(P2\)</span> de manera consecutiva es <span class="math inline">\(n1*n2\)</span> formas diferentes.</p>
-<p><br/></p>
+<p><br/><br/></p>
 <div id="ejemplo-1" class="section level3">
 <h3><strong>Ejemplo</strong>:</h3>
 <p>En el proceso de fabricación de una silla se diferencian las siguientes etapas: El diseño de la silla (<span class="math inline">\(P_{1}\)</span>) y el proceso de pintado (<span class="math inline">\(P_{2}\)</span>). El proceso <span class="math inline">\(P_{1}\)</span> se puede realizar de 3 formas diferentes. Para el proceso <span class="math inline">\(P_{2}\)</span> se puede optar por 4 formas diferentes. El número de posibles formas como puede fabricar una silla será: <span class="math inline">\(n_{1} \times n_{2} = 3 \times 4 = 14\)</span></p>
@@ -700,7 +725,7 @@ Your browser does not support the video tag.</video>
 </div>
 </div>
 <div id="otras-técnicas-de-conteo" class="section level2">
-<h2><strong>Otras técnicas de conteo</strong></h2>
+<h2><strong>3. Otras técnicas de conteo</strong></h2>
 <p>Para explicar un poco los otros casos de conteo utilizaremos el siguiente experimento aleatorio:</p>
 <p>Se tiene una urna que contiene {} elementos todos numerables ( se pueden contar) y de ellos se quiere seleccionar {} elementos como se muestra en la siguiente figura.</p>
 <p><img src="img/urna.png" /></p>
@@ -725,35 +750,35 @@ Your browser does not support the video tag.</video>
 <h3><strong>Importa el orden sin sustitución</strong></h3>
 <p><span class="math display">\[\mathcal{P}(n,k) = n \times ()n-1) \times (n-2)  ........ (n-k) = \dfrac{n!}{(n-k)!}\]</span></p>
 <p>El numero de maneras diferentes como se puede extraer una muestra de tamaño k de una urna que contiene n elementos importando el orden y sin sustitución es: <span class="math inline">\(\dfrac{n!}{(n-k)!}\)</span>, el cual se lee n permutado con k.</p>
-<p><br/></p>
+<p><br/><br/></p>
 </div>
 <div id="ejemplo-2" class="section level3">
 <h3><strong>Ejemplo</strong></h3>
 <p>Un Ingeniero debe realizar visitas a 6 aéreas de trabajo diferentes durante el día. A fin de impedir a los funcionarios que sepan cuando realizara su visita, varía el orden de sus visitas. De cuantas maneras puede hacerlo?</p>
 <p><span class="math display">\[ _{6}\mathcal{P}_{6} = \dfrac{6!}{(6-6)!}=6! =720\]</span></p>
-<p><br/></p>
+<p><br/><br/></p>
 </div>
 <div id="no-importa-el-orden-sin-sustitución" class="section level3">
 <h3><strong>No importa el orden sin sustitución</strong></h3>
 <p><span class="math display">\[\mathcal{C}(n,k) = \dfrac{n!}{(n-k)! k!}= \binom{n}{k}\]</span></p>
 <p>El número de maneras diferentes como se puede extraer una muestra de tamaño k de una urna que contiene n elementos importando el orden y sin sustitución es: <span class="math inline">\(\binom{n}{k}\)</span>, el cual se lee n combinado con k</p>
-<p><br/></p>
+<p><br/><br/></p>
 </div>
 <div id="ejemplo-3" class="section level3">
 <h3><strong>Ejemplo</strong></h3>
 <p>El juego del Baloto está conformado por una urna que contiene 45 bolas numeradas del 1 al 46, de las cueles se eligen 6 sin importar el orden y sin que ninguna de las bolas se repita. Este experimento cumple con las condiciones de una combinación. El número de formas diferentes como se puede salir el resultado del Baloto será:</p>
 <p><span class="math display">\[_{45}\mathcal{C}_{6} = \binom{45}{6}=8&#39;145,060\]</span></p>
-<p><br/></p>
+<p><br/><br/></p>
 </div>
 <div id="no-importa-el-orden-con-sustitución" class="section level3">
 <h3><strong>No importa el orden con sustitución</strong></h3>
 <p><span class="math display">\[n(\mathcal{C}(n,k)) = \binom{n+k-1}{k}\]</span></p>
 <p>El numero de maneras diferentes como se puede extraer una muestra de tamaño k de una urna que contiene n elementos importando el orden y sin sustitución</p>
-<p><br/></p>
+<p><br/><br/></p>
 </div>
 </div>
 <div id="problemas-propuestos-1" class="section level2">
-<h2><strong>Problemas propuestos</strong></h2>
+<h2><strong>4. Problemas propuestos</strong></h2>
 <ol style="list-style-type: decimal">
 <li>Cuántos números de 4 dígitos se pueden formar con los números 0,1,2,3,4,5,6,7?</li>
 </ol>
@@ -761,7 +786,7 @@ Your browser does not support the video tag.</video>
 <li>Cuántos de los anteriores números son impares?</li>
 <li>Cuántos son mayores o iguales a 1420?</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="2" style="list-style-type: decimal">
 <li>¿Cuántas placas para automóvil pueden ser diseñadas si deben contener tres letras (mayúsculas) seguidas de tres dígitos?</li>
 </ol>
@@ -771,7 +796,7 @@ Your browser does not support the video tag.</video>
 <li>Cuántas de las placas diseñadas en el punto (b) empiezan por la letra K y termina en cero,</li>
 <li>Cuantas de las placas diseñadas en el inciso (a) empiezan por la letra K seguida de la L.</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="3" style="list-style-type: decimal">
 <li>¿Cuántos números para telefónicos móviles son posible diseñar, si una de las líneas debe constar de siete dígitos?,</li>
 </ol>
@@ -781,11 +806,11 @@ Your browser does not support the video tag.</video>
 <li>¿Cuántos de los números telefónicos del inciso (b) terminan en siete?.</li>
 <li>¿Cuántos de los números telefónicos del inciso (b) forman un número impar?.</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="4" style="list-style-type: decimal">
 <li>¿Cuántas maneras diferentes hay de asignar las posiciones de salida de 8 autos que participan en una carrera de fórmula uno? (Considere que las posiciones de salida de los autos. participantes en la carrera son dadas totalmente al azar), ¿Cuántas maneras diferentes hay de asignar los primeros tres premios de esta carrera de fórmula uno?</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="5" style="list-style-type: decimal">
 <li>En la configuración de un sistema de computo, para que la empresa lo use en su departamento de control de calidad, un ingeniero tiene cuatro opciones de computadora: IVM, VAX, QELL, o PH. Seis las marcas de monitores: M1 M2 M3 M4 M5 M6 y tres los tipos de impresoras gráficas: P1 P2 P3.</li>
 </ol>
@@ -793,7 +818,7 @@ Your browser does not support the video tag.</video>
 <li>Si todo el equipo es compatible, ¿en cuántas formas puede diseñarse el sistema?</li>
 <li>Si el ingeniero necesita usar un paquete de software estadístico que está disponible sólo par equipos IVM o QELL, ¿De cuantas maneras puede configurar el sistema?</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Se realizarán pruebas con cinco recubrimientos usados en la protección de cables de fibra óptica contra el frio extremo. Las pruebas se efectuaran en orden aleatorio.</li>
 </ol>
@@ -801,7 +826,7 @@ Your browser does not support the video tag.</video>
 <li>¿En cuántos órdenes pueden llevarse a cabo las pruebas?</li>
 <li>Si dos de los recubrimientos son de un fabricante, ¿De cuantas maneras se puede presentar que las pruebas de esos recubrimientos se realicen una después de la otra?</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="7" style="list-style-type: decimal">
 <li>Una multinacional tiene 10 ingenieros industriales, ocho economistas, cuatro administradores y tres contadores. Se elegirá un equipo para un nuevo proyecto de largo plazo. El equipo consistirá entre ingenieros industriales, dos economistas, dos administradores y un contador.</li>
 </ol>
@@ -809,7 +834,7 @@ Your browser does not support the video tag.</video>
 <li>¿En cuántas formas puede seleccionarse el equipo?</li>
 <li>Si el gerente insiste en que se incluya en el proyecto a un ingeniero industrial con el que ha trabajado anteriormente, ¿de cuántas maneras puede seleccionarse al equipo?</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="8" style="list-style-type: decimal">
 <li>El Departamento de Ingeniería Industrial de una Universidad tiene 10 profesores Ph.D. De estos, cuatro son mujeres y seis hombres. Todos cuentan con las capacidades necesarias para ser elegidos como coordinadores de las 3 áreas con que cuenta el Departamento. En una selección aleatoria de 3 de estos profesores.</li>
 </ol>
@@ -817,7 +842,7 @@ Your browser does not support the video tag.</video>
 <li>¿Cuál es la probabilidad que en el grupo no haya mujeres?</li>
 <li>¿Es lógico pensar que ninguna mujer sea elijada bajo tales circunstancias?</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="9" style="list-style-type: decimal">
 <li>En un plano hay 10 puntos denominados A, B, C, D, E, F, G, H, J, K. en una misma línea no hay más de dos puntos.</li>
 </ol>
@@ -826,7 +851,7 @@ Your browser does not support the video tag.</video>
 <li>¿Cuántos de los triángulos contienen el punto A?</li>
 <li>¿Cuántos de los triángulos tienen el lado AB?.</li>
 </ol>
-<p><br/></p>
+<p><br/><br/></p>
 <ol start="10" style="list-style-type: decimal">
 <li>Supongamos que el CSI de la universidad le pide construya una contraseña que consista en cinco letras seguidas de un dígito.</li>
 </ol>

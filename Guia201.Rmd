@@ -23,7 +23,7 @@ c5="#BC2B6A" # MORADO
 
 ```
 
- <span style="color:#E77C00">**En construcción**</span>
+
 
 ## **Guía de aprendizaje 2.1**
 

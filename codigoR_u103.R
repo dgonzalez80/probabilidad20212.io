@@ -139,5 +139,5 @@ plot(x,y)
 plot(t,y, type="l")
 plot(density(x))
 dev.off() # resetea formato
-# hoLA MUNDO
+
 # ------------------------------------------------------------------------------

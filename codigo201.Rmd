@@ -13,10 +13,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+Colombia=read.csv("data/Colombia.csv")
 
 ```
 
-# Experimentos aleatorios
+# **Experimentos aleatorios**
 
 Como se menciona en la Guía 2.1, un **Experimento aleatorio** se puede definir como una acción que podemos repetir en iguales condiciones muchas veces y cuyo resultado no conocemos anticipadamente
 
@@ -54,7 +55,7 @@ d2=sample(1:6,n, replace = TRUE)
 dados=data.frame(d1,d2)
 suma=apply(dados, 1, sum)
 barplot(table(suma), las=1,cex.axis=0.7)
-prop.table(table(suma))
+data.frame(prop.table(table(suma)))
 
 ```
 
@@ -89,7 +90,7 @@ sample(c("Blanca","Roja","Azul"),2,rep=T,prob=c(3,5,4))
  
 
 
-# Tablas de contingencia
+# **Tablas de contingencia**
 
 Las tablas de contingencia o tablas cruzadas se basan en las tablas de frecuencia para dos variables cualitativas o cuantitativas con pocos valores. En ellas se representan probabilidades conjuntas, marginales y condicionales
 
@@ -110,7 +111,7 @@ En este caso se adicionan las frecuencias relativas marginales
 addmargins(m)
 ```
 
-Para convertirlas en probabilidades utilizamos la funcion **prop.table()**
+Para convertirlas en probabilidades utilizamos la función **prop.table()**
 
 ```{r}
 prop.table(m)
@@ -126,5 +127,35 @@ o las probabilidades condicionales por columnas
 
 ```{r}
 prop.table(m,2)
+```
+
+
+## **Ejemplo**
+
+```{r}
+# Colombia= read.csv("data/Colombia.csv")
+t21=table(Colombia$ubicacion, Colombia$estado)
+(t22=addmargins(t21))
+
+```
+
+```{r}
+t23=prop.table(t21)
+round(t23, 4)
+```
+
+```{r}
+t31=table(Colombia$departamento_nom,Colombia$estado)
+t32=prop.table(t31,1)
+t33=addmargins(t32,2)
+round(t33,4)
+```
+
+```{r}
+t31=table(Colombia$departamento_nom,Colombia$estado)
+t34=prop.table(t31,2)
+t35=addmargins(t34,1)
+round(t35,4)
+
 ```
 

@@ -23,8 +23,6 @@ c5="#BC2B6A" # MORADO
 
 ```
 
-<span style="color:#E77C00">**En construcción**</span>
-
 # **Guía 0.2**
 
 <br/>
@@ -35,15 +33,16 @@ c5="#BC2B6A" # MORADO
 
 # **Teoría de conjuntos**
 
-## **Introducción** 
+## **1. Introducción** 
 
 A continuación se relacionan las principales características de los conjuntos y sus principales relaciones. Estos conceptos serán importante en el momento de abordar los conceptos básicos de  probabilidad que serán expuestos en el Modulo 2. 
 
 En pesaremos con su definición
 
-## **Definición de conjunto**
+## **2. Definición de conjunto**
 
 Un conjunto es una colección de objetos que se denota con una letra mayúscula (comúnmente las primeras letras del alfabeto A,B,C..) . 
+
 Se pueden escribir por:
 
 + **por extensión** :  $A=\{0,1,2,3,4,5,6,7,8,9\}$, escribiendo todos los elementos que lo conforman.
@@ -54,34 +53,62 @@ Se pueden escribir por:
 
 Al  comparar o combinar conjuntos debemos hacer uso de sus propiedades y operaciones, dentro de  las  cuales se encuentran $A \cup B$, $A \cap B$, 
 
-## **Unión del conjunto**
+## **3. Unión del conjunto**
 
 Unión del $A$ con el conjunto $B$.\hspace{.4cm} $A \cup B$, $\overline{A}$ ,$A - B$, entre  otras. La zona sombreada en la siguiente figura representa estas operación
 
 ![](img/union.png){width=50%}
 
-## **Intersección** 
+Ejemplo:  Supongamos los siguientes conjuntos :
+ 
++ $A = \{a,e,i,o,u \}$
++ $B = \{1,2,3,4,5,6,7,8,9,0\}$
+ 
+ $A \cup B \{a,e,i,o,u, 1,2,3,4,5,6,7,8,9,0 \}$ 
+ 
+ <br/><br/>
+ 
+## **4. Intersección** 
 
 La intersección entre el conjunto $A$ y el $B$ se denota por : $A \cap B$ y se representa por la siguiente zona sombreada
 
 ![](img/interseccion.png){width=50%}
 
-## **Complemento**
+
+Ejemplo:  Supongamos los siguientes conjuntos :
+ 
++ $A = \{1,2,3,4,5,6 \}$ 
++ $B = \{2,4,6,8,10,12,14,16,18,20 \}$ 
+
+$A \cap B = \{ 2,4,6 \}$ 
+
+<br/><br/>
+
+## **4. Complemento**
 
 El complemento del conjunto $A$ se escribe como: $\overline{A}$ y se representa por la siguiente zona sombreada
 
 ![](img/complemento.png){width=50%}
 
+<br/><br/>
 
-## **Resta**
+## **5. Resta**
  
 La resta del conjunto $B$ menos el conjunto $A$ : $B-A$ , está representada por la zona sombreada en la siguiente figura
  
  ![](img/resta.png){width=50%}
 
+Ejemplo:  Supongamos los siguientes conjuntos :
+
++ $A = \{1,2,3,4,5,6 \}$ 
++ $B = \{2,4,6,8,10,12,14,16,18,20 \}$ 
 
 
-##  **Problemas propuestos** 
+$B-A =\{ 8,10,12,14,16,18,20 \}$
+
+<br/><br/>
+
+##  **6. Problemas propuestos** 
 
 1. **Lanzamiento de un dado**: Un experimento consiste en lanzar un dado. Algunos eventos que se pueden definir a partir del experimento pueden ser:
 
@@ -97,11 +124,11 @@ b. Liste los eventos de cada uno de los eventos $A$ a $F$
 c. Calcule la probabilidad de los seis eventos de $A$ hasta $F$  
 d. En cada caso representelos en un diagrama de Venn
 
-<br/>
+<br/><br/>
 
 2.	**Lanzamiento de monedas** :Calcule la probabilidad de sacar más de una cara en el lanzamiento de una moneda tres veces. Utilice un diagrama de árbol para realizar el calculo.
 
-<br/>
+<br/><br/>
 
 3. **Eventos equiprobables** :Un experimento da como resultado uno de cinco eventos simples equiprobables : $E_{1}, E_{2}, E_{3}, E_{4}, E_{5}$. A partir de ellos se definen los sigueintes eventos:
 
@@ -110,7 +137,8 @@ d. En cada caso representelos en un diagrama de Venn
 + C: $E_{3},E_{4}$             
 + $P(A)=0.4$ 
 + $P(B)=0.8$
-+ $P(C)=0.4$ <br/><br/>
++ $P(C)=0.4$ 
+<br/><br/>
 
 Encuentre a las probabilidades asociadas a estos eventos compuestos listando los eventos simples de cada uno:
 
@@ -122,7 +150,8 @@ e. $B\cap C$
 f. $A\cup B\cup C$  
 g. $(A\cap \overline{B})$  
 
-<br/>
+<br/><br/>
+
 3. Un estudio sobre la conducta realizado a 1000  delincuentes adictos a las drogas hace pensar que la probabilidad de una condena de dos años después de un tratamiento podría depender del nivel de educación del delincuente. Las proporciones del número total de casos que caen en cuatro categorías de educación y condena que se muestra a continuación: 
 
 |               | Condiciones dos años |después del tratamiento| 
@@ -142,20 +171,20 @@ b. $A \cup B$
 c. $(A \cap \overline{B})$
 d. $\overline{A} \cup \overline{B}$
 
-<br/>
+<br/><br/>
 
-4. Suponga que cierta enfermedad está presente en 10\% de la población y que hay una prueba diseñada para detectarla. La prueba no siempre funciona de modo perfecto. Algunas veces la prueba es negativa cuando la enfermedad está presente, y otras positivas cuando no hay la enfermedad. En la siguiente tabla se muestra los resultados obtenidos en un estudio realizado:
+4. Suponga que cierta enfermedad está presente en 10 por ciento de la población y que hay una prueba diseñada para detectarla. La prueba no siempre funciona de modo perfecto. Algunas veces la prueba es negativa cuando la enfermedad está presente, y otras positivas cuando no hay la enfermedad. En la siguiente tabla se muestra los resultados obtenidos en un estudio realizado:
 
-|           |                 |                  |
-|:----------|----------------:|-----------------:|
-|   		    | La prueba       | La prueba        |
-|    		    |es positiva ($P$)| es negativa ($N$)|
-|La enfermedad está presente ($D$)| 0.08  | 0.22|
-|La enfermedad está ausente  ($\overline{D}$) | 0.05|0.65 |
+|                                 |                             |                             |
+|:--------------------------------|----------------------------:|----------------------------:|
+|   		                          | La prueba es positiva ($P$) | La prueba es negativa ($N$) |       
+|La enfermedad está presente ($D$)|                       0.08  |               0.22          |
+|La enfermedad está ausente  ($\overline{D}$) | 0.05            |0.65                         |
+||||
 
-	A partir de esta información construya por lo menos tres eventos simples y tres eventos compuestos. En cada caso determine su probabilidad
+A partir de esta información construya por lo menos tres eventos simples y tres eventos compuestos. En cada caso determine su probabilidad
 
-<br/>
+<br/><br/>
 
 5. En un experimento sobre preferencia de colores en los niños, se colocan quince juguetes en un recipiente. Los juguetes son idénticos excepto por el color. Seis son rojos, cuatro son blancos y cinco son azules. Se le pide a un niño elegir un juguete **al azar** ¿cuál es la probabilidad de que el niño elija el rojo?. ¿cuál de que sea el blanco? ¿cuál el que sea el azul?. ¿que no sea rojo ? ¿que no sea rojo ni azul?
 
@@ -171,10 +200,10 @@ Las técnicas de conteo constituyen una serie de estrategias que permiten a trav
 
 Inicialmente empezaremos por definir dos reglas:
 
-## **Principio de la adicción**
+## **1. Principio de la adicción**
 Supongamos que un  procedimiento, designado con $P_1$, se puede hacer de $n_1$ manera diferentes. Supongamos que un  segundo  procedimiento $P_2$ se puede  realizar de $n_2$ maneras diferentes. Ademas suponga que los dos procedimientos no  se  pueden realizar juntos. Entonces  el numero de formas diferentes como se puede  realizar el procedimiento $P_1$ o el procedimiento  $P_2$ es de $n_1 + n_2$ maneras diferentes. 	
 
-<br/>
+<br/><br/>
 
 ### **Ejemplo** 
 Un estudiante tiene dos posibilidades de ir de su casa a la universidad: En transporte público o en transporte particular. Para el caso del transporte público existen 5 alternativas. Para el caso de transporte particular tienen 6 alternativas. En este caso $n_{1}=5$ y $n_{2}=6$. El número de maneras como se puede transportar de la casa a la universidad será $n=n_{1}+n_{2}=11$ formas diferentes de ir a la U.\\
@@ -182,11 +211,11 @@ Un estudiante tiene dos posibilidades de ir de su casa a la universidad: En tran
 ![](img/psuma.png){width=50%}
 <br/><br/>
 
-## **Principio de la multiplicación**
+## **2. Principio de la multiplicación**
 
 Supongamos que un  procedimiento $P1$ , se  puede realizar de $n_1$ maneras diferentes y que  otro procedimiento $P2$ se puede realizar de $n_2$ maneras diferentes, Ahora supongamos que la  manera  de  realizar  los procedimientos es  uno  después del  otro. Entonces el numero  de  formas  diferentes como  se  pueden  realizar los procedimientos $P1$ y  $P2$ de manera consecutiva es $n1*n2$ formas diferentes.	
 
-<br/>
+<br/><br/>
 
 ###  **Ejemplo**: 
 
@@ -197,7 +226,7 @@ En el proceso de fabricación de una silla se diferencian las siguientes etapas:
 
 <br/><br/>
 
-## **Otras técnicas de conteo** 
+## **3. Otras técnicas de conteo** 
 
 Para explicar un poco los otros casos de conteo utilizaremos el siguiente experimento aleatorio:
 
@@ -247,14 +276,14 @@ $$\mathcal{P}(n,k) = n \times ()n-1) \times (n-2)  ........ (n-k) = \dfrac{n!}{(
 El numero de  maneras diferentes como  se  puede extraer  una  muestra de tamaño k de una urna que contiene n  elementos importando el orden y sin  sustitución es:  $\dfrac{n!}{(n-k)!}$,  el cual se lee n permutado con  k.	
 
  
-<br/>
+<br/><br/>
  
 ### **Ejemplo** 
 Un Ingeniero debe realizar  visitas a 6 aéreas de trabajo diferentes durante el día. A fin de impedir a los funcionarios que sepan cuando realizara su visita, varía el orden de sus visitas. De cuantas maneras puede hacerlo?
 
 $$ _{6}\mathcal{P}_{6} = \dfrac{6!}{(6-6)!}=6! =720$$
 
-<br/>
+<br/><br/>
 
 ### **No importa el orden sin  sustitución**
 	
@@ -263,14 +292,14 @@ $$\mathcal{C}(n,k) = \dfrac{n!}{(n-k)! k!}= \binom{n}{k}$$
 El número de  maneras diferentes como  se  puede extraer  una  muestra de tamaño k de una urna que contiene n  elementos importando el orden y sin sustitución es:  $\binom{n}{k}$, el cual se lee n  combinado con  k
 
 
-<br/>
+<br/><br/>
 
 ### **Ejemplo** 
 El juego del Baloto está conformado por una urna que contiene 45 bolas numeradas del 1 al 46, de las cueles se eligen 6 sin importar el orden y sin que ninguna de las bolas se repita. Este experimento cumple con las condiciones de una combinación. El número de formas diferentes como se puede salir el resultado del Baloto será:
 
 $$_{45}\mathcal{C}_{6} = \binom{45}{6}=8'145,060$$
 
-<br/>
+<br/><br/>
 
 ### **No importa el orden con  sustitución** 
 	
@@ -278,15 +307,15 @@ $$n(\mathcal{C}(n,k)) = \binom{n+k-1}{k}$$
 	
 El numero de  maneras diferentes como  se  puede extraer  una  muestra de tamaño k de una urna que contiene n  elementos importando el orden y sin  sustitución 	
 
-<br/>
+<br/><br/>
 
-## **Problemas propuestos** 
+## **4. Problemas propuestos** 
 
 1. Cuántos números de 4 dígitos se pueden formar con los números 0,1,2,3,4,5,6,7? 
   a. Cuántos de los anteriores números son impares? 
   b. Cuántos son mayores o iguales a 1420? 
 
-<br/>
+<br/><br/>
 
 2. ¿Cuántas placas para automóvil pueden ser diseñadas si deben contener tres letras (mayúsculas)    seguidas de tres dígitos?
  
@@ -295,7 +324,7 @@ b.  No es posible repetir letras y números.
 c. Cuántas de las placas diseñadas en el punto (b)  empiezan por la letra K y termina en   cero,
 d. Cuantas de las placas diseñadas en el inciso (a) empiezan por la letra K seguida de la L.
 
-<br/>
+<br/><br/>
 
 3.   ¿Cuántos números para telefónicos móviles son posible diseñar, si una de las líneas debe constar de siete dígitos?,
 
@@ -304,46 +333,46 @@ b. El número empieza por 312 y no es posible repetir dígitos.
 c. ¿Cuántos de los números telefónicos del inciso (b) terminan  en  siete?.
 d. ¿Cuántos de los números telefónicos del inciso (b) forman un número impar?.
 
-<br/>
+<br/><br/>
 
 4. ¿Cuántas maneras diferentes hay de asignar las posiciones de salida de 8 autos que participan en una carrera de fórmula uno? (Considere que las posiciones de salida de los autos.  participantes en la carrera son dadas totalmente al azar), ¿Cuántas maneras diferentes hay de asignar los primeros tres premios de esta carrera de   fórmula uno? 
 
-<br/>
+<br/><br/>
 
 5. En la configuración de un sistema de computo, para que la empresa lo use en su departamento de control de calidad, un ingeniero tiene cuatro opciones de computadora: IVM, VAX, QELL, o PH. Seis las marcas de monitores: M1 M2 M3 M4 M5 M6 y tres los tipos de impresoras gráficas: P1 P2 P3. 
 
 a. Si todo el equipo es compatible, ¿en cuántas formas puede diseñarse el sistema?
 b. Si el ingeniero necesita usar un paquete de software estadístico que está disponible sólo par    equipos IVM o QELL, ¿De cuantas maneras puede configurar el sistema? 
 
-<br/>
+<br/><br/>
 
 6. Se realizarán pruebas con cinco recubrimientos usados en la protección de cables de fibra óptica contra el frio extremo. Las pruebas se efectuaran en orden aleatorio. 
 
 a. ¿En cuántos órdenes pueden llevarse a cabo las pruebas? 
 b. Si dos de los recubrimientos son de un fabricante, ¿De cuantas maneras se puede presentar que las pruebas de esos recubrimientos se realicen una después de la otra?
 
-<br/>
+<br/><br/>
 
 7. Una multinacional  tiene 10 ingenieros industriales, ocho economistas, cuatro administradores y tres contadores. Se elegirá un equipo para un nuevo proyecto de largo plazo. El equipo consistirá entre ingenieros industriales, dos economistas, dos administradores y un contador.
 
 a. ¿En cuántas formas puede seleccionarse el equipo? 
 b. Si el gerente insiste en que se incluya en el proyecto a un ingeniero industrial con el que ha trabajado anteriormente, ¿de cuántas maneras puede seleccionarse al equipo? 
 
-<br/>
+<br/><br/>
 
 8. El Departamento de Ingeniería Industrial de una Universidad tiene 10 profesores Ph.D. De estos, cuatro son mujeres y seis hombres. Todos cuentan con las capacidades necesarias para ser elegidos como coordinadores de las 3 áreas con que cuenta el Departamento. En una selección aleatoria de 3 de estos profesores. 
 
 a. ¿Cuál es la probabilidad que en el grupo no haya mujeres? 
 b. ¿Es  lógico pensar que ninguna mujer sea elijada  bajo tales circunstancias?
 
-<br/>
+<br/><br/>
 
 9. En un plano hay 10 puntos denominados A, B, C, D, E, F, G, H, J, K. en una misma línea no hay más de dos puntos. 
 a. ¿Cuántos triángulos pueden ser trazados a partir de los puntos? 
 b. ¿Cuántos de los triángulos contienen el punto A? 
 c. ¿Cuántos de los triángulos tienen el lado AB?. 
 
-<br/>
+<br/><br/>
 
 10. Supongamos que el CSI de la universidad le pide construya una contraseña que consista en cinco letras seguidas de un dígito. 
 a. ¿Cuántas contraseñas son posibles? 
