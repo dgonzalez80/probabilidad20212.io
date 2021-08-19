@@ -141,15 +141,15 @@ Acción que puede ser replicada bajo las  mismas condiciones y cuyo resultado no
 
 Conjunto de todos los posibles valores que puede tomar el experimento aleatorio. Este conjunto se nombra conuna letra mayuscula $S$ o tambien con **$\Omega$**
 
-+ $S_{1}$]= $\{ (cc), (cs), (sc), (ss) \}$  
++ $S_{1}$= $\{ (cc), (cs), (sc), (ss) \}$  
 
-+ $S_{2}$]= $\{ 2,3,4,5,6,7,8,9,10,11,12 \}$ 
++ $S_{2}$= $\{ 2,3,4,5,6,7,8,9,10,11,12 \}$ 
 
-+ $S_{3}$]= $\{ x \in \mathbb{R} | 0 \leq x \leq 5   \}$ 
++ $S_{3}$= $\{ x \in \mathbb{R} | 0 \leq x \leq 5   \}$ 
 
-+ $S_{4}$]= $\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}$ 
++ $S_{4}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}$ 
 
-+ $S_{5}$]= $\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}$
++ $S_{5}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}$
 
 <br/><br/>
 
@@ -157,17 +157,28 @@ Conjunto de todos los posibles valores que puede tomar el experimento aleatorio.
 
 Subconjunto del espacio muestral que es de nuestro interés. Como todo conjunto se nombra con una letra mayuscula por lo general las primeras letras del alfabeto
 
-+ $A_{1}$: Se obtienen solo caras 
++ $A_{1}$: Obtiener solo caras 
 
-+ $A_{2}$: La suma de los resultados es inferior a 6 
++ $A_{2}$: Sacar un resultados es inferior a 6 
 
-+ $A_{3}$: Se gana el examen 
++ $A_{3}$: Ganar el examen 
 
-+ $A_{4}$: Se cumple el objetivo de la salida 
++ $A_{4}$: Cumplir el objetivo de la salida 
 
-+ $A_{5}$: Se obtener más de 5 ensayos éxitos
++ $A_{5}$: Obtener más de 5 ensayos éxitos
 
 <br/><br/>
+
+
+Resumiendo:
+
+|Experimento aleatorio| Espacio muestral | Evento aleatorio |
+|:--------------------|:-----------------|:-----------------|
+|Lanzar una moneda dos veces y observar los resultados obtenidos en sus caras superiores| $S_{1}$= $\{ (cc), (cs), (sc), (ss) \}$ | Obtiener solo caras |
+|Lanzar dos dados y observar la suma de los resultados superiores| $S_{2}$= $\{ 2,3,4,5,6,7,8,9,10,11,12 \}$ | Sacar un resultados es inferior a 6 |
+|Realizar un examen de estadística y observar el resultado obtenido|  $S_{3}$= $\{ x \in \mathbb{R} | 0 \leq x \leq 5 \}$| Ganar el examen|
+|En una salida de campo, observo si se cumple o no, totalmente el objetivo planteado| $S_{4}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}$| Cumplir el objetivo de la salida |
+|Observo el número total de ensayos de laboratorio exitosos en  20 intentos realizados| $S_{5}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}$| Obtener más de 5 ensayos éxitos |
 
 ## **2.2 Enfoques de probabilidad**
 
@@ -178,11 +189,16 @@ Subconjunto del espacio muestral que es de nuestro interés. Como todo conjunto 
 Es el enfoque más antiguo de probabilidad. La probabilidad bajo ese enfoque para el evento A se calcula como: 
 		
 $P(A)=\dfrac{n(A)}{n(S)}$
-			
-$A_{1}$: Se obtienen solo caras  
+	
+En el caso :
+
+$A_{1}$: Se obtienen solo caras  : $A_{1}=\{(c,c)\} $
+
+$P(A_{1}=\dfrac{n(A_{1})}{n(S_{1})}=\dfrac{1}{4}=0.25$ 
 
 $A_{2}$: La suma de los resultados es inferior a 6
 
+$P(A_{2})=\dfrac{n(A_{2})}{n(S_{2})}=\dfrac{9}{36}=0.25 $
 <br/><br/> 
 
 ### **2.2.2 Enfoque frecuentista** 
@@ -197,21 +213,21 @@ $\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{
 
 ### **2.2.3 Enfoque subjetivo** 
 
-En este caso la probabilidad es valorada y asignada por un EXPERTO, como un médico, un ingeniero, un abogado, ......
+En este caso la probabilidad es valorada y asignada por un EXPERTO, como un médico, un ingeniero, un abogado, un economista, un  estadístico ......
 
 <br/><br/>
 
 ## **2.3 Axiomas de  probabilidad**
 
-+ $A_{1}$ Sea $S$ un espacio muestral  asociado a un experimento. Entonces $P(S)=1$ 
++ $A_{1}$ : Sea $S$ un espacio muestral  asociado a un experimento. Entonces $P(S)=1$ 
 
-+ $A_{2}$ Para cualquier evento $A$, se cumple que $0 \leq P(A) \leq 1$ 
++ $A_{2}$ : Para cualquier evento $A$, se cumple que $0 \leq P(A) \leq 1$ 
 
-+ $A_{3}$ Si $A$ y $B$ son dos eventos mutuamente excluyentes, entonces: $P(A \cup B) = P(A) + P(B)$ ( En general $P(A \cup B) = P(A)+ P(B) - P(A \cap B)$ ) 
++ $A_{3}$ : Si $A$ y $B$ son dos eventos mutuamente excluyentes, entonces: $P(A \cup B) = P(A) + P(B)$ ( En general $P(A \cup B) = P(A)+ P(B) - P(A \cap B)$ ) 
 
-+ $A_{4}$ Para cualquier evento $A$, $P(A^{c})=1-P(A) $
++ $A_{4}$ : Para cualquier evento $A$, $P(\bar{A})=1-P(A)$
 
-+ $A_{5}$ La probabilidad de $P(\phi) =0$   
++ $A_{5}$ : La probabilidad de $P(\phi) =0$   
 	
 <br/><br/>
 
