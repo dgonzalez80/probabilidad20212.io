@@ -192,7 +192,7 @@ $P(A)=\dfrac{n(A)}{n(S)}$
 	
 En el caso :
 
-$A_{1}$: Se obtienen solo caras  : $A_{1}=\{(c,c)\} $
+$A_{1}$: Se obtienen solo caras  : $A_{1}=\{(c,c)\}$
 
 $P(A_{1}=\dfrac{n(A_{1})}{n(S_{1})}=\dfrac{1}{4}=0.25$ 
 
