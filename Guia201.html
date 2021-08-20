@@ -726,6 +726,20 @@ Your browser does not support the video tag.</video>
 <p>Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un tamaño de muestra determinado <span class="math inline">\(n\)</span>.</p>
 <p><span class="math inline">\(\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{n} \Bigg]\)</span></p>
 <p><br/><br/></p>
+<pre class="r"><code>Colombia=readRDS(&quot;data/Colombia.RDS&quot;)
+summarytools::freq(Colombia$ubicacion, cumul = FALSE)</code></pre>
+<pre><code>## Frequencies  
+## 
+##                         Freq   % Valid   % Total
+## ------------------ --------- --------- ---------
+##               casa   4587162    96.942    96.617
+##          fallecido    119482     2.525     2.517
+##           hospital     21235     0.449     0.447
+##       hospital uci      3972     0.084     0.084
+##               &lt;NA&gt;     15924               0.335
+##              Total   4747775   100.000   100.000</code></pre>
+<p>Con base en esta tabla podríamos pensar que la probabilidad de que una persona muera a causa del Covid es de 0.02525. Valor que se obtiene al dividir el número de personas fallecidas y el número total de personas que se han contraído covid. Claro bajo el supuesto de que todos las personas tenemos la misma probabilidad de fallecer. Hecho que se discutirá mas adelante.</p>
+<p><br/><br/></p>
 </div>
 <div id="enfoque-subjetivo" class="section level3">
 <h3><strong>2.2.3 Enfoque subjetivo</strong></h3>
@@ -747,9 +761,70 @@ Your browser does not support the video tag.</video>
 <div id="tipos-de-probabilidad" class="section level2">
 <h2><strong>2.4 Tipos de probabilidad</strong></h2>
 <p><br/><br/></p>
+<p><img src="img/tabla1.png" style="width:60.0%" /></p>
+<p><br/><br/></p>
+<div id="probabilidad-simple-o-marginal" class="section level3">
+<h3><strong>Probabilidad simple o marginal</strong></h3>
+<ul>
+<li><p><span class="math inline">\(P(A)\)</span> : probabilidad de que ocurra A</p></li>
+<li><p><span class="math inline">\(P(A&#39;)\)</span> : probabilidad de que NO ocurra A</p></li>
+<li><p><span class="math inline">\(P(B)\)</span> : probabilidad de que ocurra B</p></li>
+<li><p><span class="math inline">\(P(B&#39;)\)</span> : probabilidad de que NO ocurra B</p></li>
+</ul>
+<p><br/><br/></p>
+</div>
+<div id="probabilidad-conjunta" class="section level3">
+<h3><strong>Probabilidad conjunta</strong></h3>
+<ul>
+<li><p><span class="math inline">\(P(A \cap B)\)</span> : probabilidad de que ocurra A y B</p></li>
+<li><p><span class="math inline">\(P(A&#39; \cap B)\)</span> : probabilidad de que NO ocurra A y ocurra B</p></li>
+<li><p><span class="math inline">\(P(A \cap B&#39;)\)</span> : probabilidad de que ocurra A y NO ocurra B</p></li>
+<li><p><span class="math inline">\(P(A&#39; \cap B&#39;)\)</span> : probabilidad de que NO ocurra A ni B</p></li>
+</ul>
+<p><br/><br/></p>
+</div>
+<div id="probabilidad-condicional" class="section level3">
+<h3><strong>Probabilidad condicional</strong></h3>
+<p>$P(B|A)= $</p>
+<p><br/><br/></p>
+</div>
+<div id="probabilidad-total" class="section level3">
+<h3><strong>Probabilidad total</strong></h3>
+<p><span class="math inline">\(P(B) = P(A_{1} \cap B) + P(A_{1} \cap B) + \dots +P(A_{m} \cap B)\)</span></p>
+<p><span class="math inline">\(P(B) = P(A_{1})\times P(B|A_{1}) + \dots+P(A_{1})\times P(B|A_{m})\)</span></p>
+<p><span class="math inline">\(P(B) = \sum\limits_{i=1}^{m} P(A_{i}) \times P(B|A_{i})\)</span></p>
+<p><br/><br/></p>
+</div>
+<div id="teorema-de-bayes" class="section level3">
+<h3><strong>Teorema de Bayes</strong></h3>
+<p><span class="math inline">\(P(A_{i}|B)=\dfrac{P(A_{i}\cap B)}{P(B)}= \dfrac{P(A_{1}) \times P(B|A_{1})}{\sum\limits_{i=1}^{m} P(A_{i}) \times P(B|A_{i})}\)</span></p>
+<p><br/><br/></p>
+</div>
 </div>
 <div id="ejercicios-propuestos" class="section level2">
 <h2><strong>2.5 Ejercicios propuestos</strong></h2>
+<ol style="list-style-type: decimal">
+<li><strong>Lanzamiento de un dado</strong>: Un experimento consiste en lanzar un dado y observar el número de puntos en su cara superior. Algunos eventos aleatorios que se pueden definir a partir de este experimento pueden ser: <strong>A</strong> : sacar 2 <strong>B</strong> : sacar un número par <strong>C</strong> : sacar un número mayor a 2 <strong>D</strong> : obtener A y B <strong>E</strong> : obtener A o B o ambos <strong>F</strong> : obtener A y C</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Describa el espacio muestral asociado al experimento aleatorio</li>
+<li>Liste cada uno de los eventos aleatorios A hasta F</li>
+<li>Represéntelos mediante un diagrama de Ven</li>
+<li>Determine en cada caso las probabilidades asociadas a cada evento aleatorio</li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Faltar a clases</strong> : En un grupo de 100 estudiantes 30 residen por fuera de la ciudad, de los cuales 10 presentan altos niveles de inasistencia a clases, mientras que 35 de los que residen dentro de la ciudad también presentan altos niveles de inasistencia a clases.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Construya una tabla de probabilidades con la información anterior.</li>
+<li>Represente también la información mediante un diagrama de Venn.</li>
+<li>Identifique dos eventos simples y dos eventos conjuntos En cada caso escriba en palabras la probabilidad y su resultado</li>
+<li>¿Se podría afirmar que residir en la ciudad y no tener altos niveles de inasistencia a clases son eventos independientes?</li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Sobre costos en la construcción</strong>: Una empresa de construcción local descubrió a través de una investigación que solo el 20% de todos los trabajos son terminados a tiempo, mientras que el 30% sufrían sobrecostos. Además, los sobrecostos se presentan en el 75% de las veces en la que los trabajos se terminaron a tiempo. Carlos, gerente de la empresa desea conocer que tan probable es que un proyecto no tenga sobrecostos y se termine a tiempo y le permita tomar decisiones en caso de ser necesario. Ayude a Carlos a resolver su interrogante.</p></li>
+<li><p><strong>Muertes por accidentes de transito</strong> : Se sabe que el 65% de los accidentes de tránsito que se producen en la ciudad ocurren durante la noche de los sábados y se deben a la ingesta excesiva de alcohol, un 25% se deben a la imprudencia del conductor y el resto a otras causas, (fallo mecánico…etc.). En estos accidentes, el resultado es nefasto en el 30% de las veces para el primer caso, un 20% en el segundo y el 5% en el tercero. Una empresa de salud que presta servicios de ambulancias quiere que Usted le ayude a pronosticar cuál es la causa del accidente más probable, sabiendo que este hecho ha tenido resultados nefastos. Con esta información la empresa pretende tomar decisiones sobre el equipamiento que deben tener sus vehículos, dando prioridad a los elementos relacionados con mayor probabilidad de ocurrencia. Ayude a la compañía de salud a establecer el orden de estas prioridades</p></li>
+</ol>
 </div>
 </div>
 

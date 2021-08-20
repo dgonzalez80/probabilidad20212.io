@@ -233,7 +233,7 @@ $\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{
 <br/><br/>
 
 ```{r}
-#Colombia=readRDS("data/Colombia.RDS")
+Colombia=readRDS("data/Colombia.RDS")
 summarytools::freq(Colombia$ubicacion, cumul = FALSE)
 ```
 
@@ -266,5 +266,79 @@ En este caso la probabilidad es valorada y asignada por un EXPERTO, como un méd
 
 <br/><br/>
 
+![](img/tabla1.png){width=60%}
+
+<br/><br/>
+
+### **Probabilidad simple o marginal**
+			
++ $P(A)$ : probabilidad de que ocurra A 
+
++ $P(A')$ : probabilidad de que NO ocurra A 
+
++ $P(B)$ : probabilidad de que ocurra B 
+
++ $P(B')$ : probabilidad de que NO ocurra B 
+			
+<br/><br/>
+
+### **Probabilidad conjunta** 
+			
++ $P(A \cap B)$ : probabilidad de que ocurra A y B 
+			
++ $P(A' \cap B)$ : probabilidad de que NO ocurra A y ocurra B 
+
++ $P(A \cap B')$ : probabilidad de que ocurra A y NO ocurra B 
+
++ $P(A' \cap B')$ : probabilidad de que NO ocurra A ni B 
+
+<br/><br/>
+
+### **Probabilidad condicional** 
+
+$P(B|A)=\dfrac{P(A \cap B)}{P(A)} $ 
+	
+<br/><br/>
+
+### **Probabilidad total**
+
+$P(B) = P(A_{1} \cap B) + P(A_{1} \cap B) + \dots +P(A_{m} \cap B)$ 
+
+$P(B) = P(A_{1})\times P(B|A_{1}) + \dots+P(A_{1})\times P(B|A_{m})$
+
+$P(B)  = \sum\limits_{i=1}^{m} P(A_{i}) \times P(B|A_{i})$
+
+<br/><br/>
+
+### **Teorema de Bayes** 
+
+$P(A_{i}|B)=\dfrac{P(A_{i}\cap B)}{P(B)}= \dfrac{P(A_{1}) \times P(B|A_{1})}{\sum\limits_{i=1}^{m} P(A_{i}) \times P(B|A_{i})}$
+
+<br/><br/>
 
 ## **2.5 Ejercicios propuestos**
+
+1. **Lanzamiento de un dado**: Un experimento consiste en lanzar un dado y observar el número de puntos en su cara superior. Algunos eventos aleatorios que se pueden definir a partir de este experimento pueden ser:
+**A** : sacar 2
+**B** : sacar un número par
+**C** : sacar un número mayor a 2
+**D** : obtener A y B
+**E** : obtener A o B o ambos
+**F** : obtener A y C 
+
+a. Describa el espacio muestral asociado al experimento aleatorio
+b. Liste cada uno de los eventos aleatorios A hasta F
+c. Represéntelos mediante un diagrama de Ven
+d. Determine en cada caso las probabilidades asociadas a cada evento aleatorio
+
+	
+2. **Faltar a clases** : En un grupo de  100 estudiantes 30 residen por fuera de la ciudad, de los cuales 10 presentan altos niveles de inasistencia a clases, mientras que 35 de los que residen dentro de la ciudad también presentan altos niveles de inasistencia a clases.
+			
+a. Construya una tabla de probabilidades con la información anterior.
+b. Represente también la información mediante un diagrama de Venn. 
+c. Identifique dos eventos simples y dos eventos conjuntos En cada caso escriba en palabras la probabilidad y su resultado
+d. ¿Se podría afirmar que residir en la ciudad y no tener altos niveles de inasistencia a clases son eventos independientes?
+
+3. **Sobre costos en la construcción**: Una empresa de construcción local descubrió a través de una investigación que solo el 20\% de todos los trabajos son terminados a tiempo, mientras que el 30% sufrían sobrecostos. Además, los sobrecostos se presentan en el 75% de las veces en la que los trabajos se terminaron a tiempo.  Carlos, gerente de la empresa desea conocer que tan probable es que un proyecto no tenga sobrecostos y se termine a tiempo y le permita tomar decisiones en caso de ser necesario. Ayude a Carlos a resolver su interrogante.
+			
+4. **Muertes por accidentes de transito** : Se sabe que el 65% de los accidentes de tránsito que se producen en la ciudad ocurren durante la noche de los sábados y se deben a la ingesta excesiva de alcohol, un 25% se deben a la imprudencia del conductor y el resto a otras causas, (fallo mecánico…etc.). En estos accidentes, el resultado es nefasto en el 30% de las veces para el primer caso, un 20% en el segundo y el 5% en el tercero. Una empresa de salud que presta servicios de ambulancias quiere que Usted le ayude a pronosticar cuál es la causa del accidente más probable, sabiendo que este hecho ha tenido resultados nefastos. Con esta información la empresa pretende tomar decisiones sobre el equipamiento que deben tener sus vehículos, dando prioridad a los elementos relacionados con mayor probabilidad de ocurrencia. Ayude a la compañía de salud a establecer el orden de estas prioridades
