@@ -727,17 +727,25 @@ Your browser does not support the video tag.</video>
 <div id="otras-técnicas-de-conteo" class="section level2">
 <h2><strong>3. Otras técnicas de conteo</strong></h2>
 <p>Para explicar un poco los otros casos de conteo utilizaremos el siguiente experimento aleatorio:</p>
-<p>Se tiene una urna que contiene {} elementos todos numerables ( se pueden contar) y de ellos se quiere seleccionar {} elementos como se muestra en la siguiente figura.</p>
+<p>Se tiene una urna que contiene <span class="math inline">\(n\)</span> elementos todos numerables ( se pueden contar) y de ellos se quiere seleccionar <span class="math inline">\(k\)</span> elementos como se muestra en la siguiente figura.</p>
 <p><img src="img/urna.png" /></p>
 <p>Este procedimiento se puede realizar de varias formas:</p>
-<p>A. Importando el orden + <span class="math inline">\(\mathcal{P}&#39;(n,k)\)</span> Con repetición o también llanada con sustitución + <span class="math inline">\(\mathcal{P}(n,k)\)</span> Sin repetición o sin sustitución</p>
-<p>B. Sin importar el orden + <span class="math inline">\(\mathcal{C}&#39;(n,k)\)</span> Con repetición o también llanada con sustitución + <span class="math inline">\(\mathcal{C}(n,k)\)</span> Sin repetición o sin sustitución</p>
+<p>A. Importando el orden</p>
+<ul>
+<li><p><span class="math inline">\(\mathcal{P}&#39;(n,k)\)</span> Con repetición o también llanada con sustitución</p></li>
+<li><p><span class="math inline">\(\mathcal{P}(n,k)\)</span> Sin repetición o sin sustitución</p></li>
+</ul>
+<p>B. Sin importar el orden</p>
+<ul>
+<li><p><span class="math inline">\(\mathcal{C}&#39;(n,k)\)</span> Con repetición o también llanada con sustitución</p></li>
+<li><p><span class="math inline">\(\mathcal{C}(n,k)\)</span> Sin repetición o sin sustitución</p></li>
+</ul>
 <p><br/><br/></p>
 <p>Es decir que se definen los siguientes procedimientos:</p>
-<p><strong>A1</strong> : $’(n,k) $: Conjunto formado por todas las manera posible como se puede seleccionar una muestra de tamaño k de una urna que contiene n elementos importando el orden, con sustitución. En este procedimiento se hace diferencia de la posición que tienen los elementos al ser seleccionados y también que después de la extracción de un elemento, este se regresa a la urna antes de la siguiente selección. Esto implica que hay siempre en la urna n elementos antes de la cada selección.</p>
-<p><strong>A2</strong> : $(n,k) $: Conjunto de todas la formas posibles como se puede seleccionar una muestra de tamaño k de una urna que contiene n elementos importando el orden, sin sustitución. En este caso los elementos que son seleccionados van quedando por fuera de la urna y no participan en la siguiente selección.</p>
-<p><strong>B1</strong> : $’(n,k) $: Conjunto de todas las maneras posible como se puede seleccionar una muestra de tamaño k de una urna que contiene n elementos sin importar el orden pero con sustitución. En esta caso no tiene importancia el orden en que se seleccionan los elementos de la urna, pero los elementos seleccionados regresan a la urna y podrían se seleccionados nuevamente.</p>
-<p><strong>B2</strong> : $(n,k) $: Conjunto de todas las formas posibles como se puede selecciona una muestra de tamaño k de una urna que contiene n elementos, sin importar el orden, pero en este caso los elementos seleccionados previamente son excluidos de la siguiente selección.</p>
+<p><strong>A1</strong> : <span class="math inline">\(\mathcal{P}&#39;(n,k)\)</span>: Conjunto formado por todas las manera posible como se puede seleccionar una muestra de tamaño k de una urna que contiene n elementos importando el orden, con sustitución. En este procedimiento se hace diferencia de la posición que tienen los elementos al ser seleccionados y también que después de la extracción de un elemento, este se regresa a la urna antes de la siguiente selección. Esto implica que hay siempre en la urna n elementos antes de la cada selección.</p>
+<p><strong>A2</strong> : <span class="math inline">\(\mathcal{P}(n,k)\)</span>: Conjunto de todas la formas posibles como se puede seleccionar una muestra de tamaño k de una urna que contiene n elementos importando el orden, sin sustitución. En este caso los elementos que son seleccionados van quedando por fuera de la urna y no participan en la siguiente selección.</p>
+<p><strong>B1</strong> : <span class="math inline">\(\mathcal{C}&#39;(n,k)\)</span>: Conjunto de todas las maneras posible como se puede seleccionar una muestra de tamaño k de una urna que contiene n elementos sin importar el orden pero con sustitución. En esta caso no tiene importancia el orden en que se seleccionan los elementos de la urna, pero los elementos seleccionados regresan a la urna y podrían se seleccionados nuevamente.</p>
+<p><strong>B2</strong> : <span class="math inline">\(\mathcal{C}(n,k)\)</span>: Conjunto de todas las formas posibles como se puede selecciona una muestra de tamaño k de una urna que contiene n elementos, sin importar el orden, pero en este caso los elementos seleccionados previamente son excluidos de la siguiente selección.</p>
 <p>Contemplados estos casos vamos a definir la forma en que se pueden contar los conjuntos anteriores</p>
 <p><br/><br/></p>
 <div id="importa-el-orden-con-sustitución" class="section level3">

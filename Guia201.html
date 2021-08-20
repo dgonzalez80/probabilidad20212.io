@@ -603,7 +603,7 @@ Your browser does not support the video tag.</video>
 <h1><strong>2. Recursos</strong></h1>
 <p>La probabilidad es un concepto que se empieza a trabajar en los años cuando , caballero de Mered solicita a b. Pascal le ayude a resolver un problema relacionado con juegos de mesa. En particular este callero manifestaba que las Matemáticas presentaban un vacio, pues sus calculos no coincidian con lo que pasaba en la realidad y como consecuencia de ellos perdia dinero en las apuestas que se presentaban en el juego.</p>
 <p>Encomendado Pascal de esta tarea empieza a compartir su trabajo con Fermat, matematico y de la correspondencia de estos dos brillantes matematicos nace los principios y fundamentos de lo que hoy conocemos como probabilidad</p>
-<p><br/><br/></p>
+<p><br/><br/> <img src="img/pascal.png" /></p>
 <p><strong>Problema</strong>:</p>
 <p>Los dados, tal y como los conocemos hoy en día, se hicieron muy populares en la edad media. En esta época un caballero llamado Chevalier de Mere propuso el siguiente problema:</p>
 <p>Qué es más probable :</p>
@@ -634,11 +634,21 @@ Your browser does not support the video tag.</video>
 <h3><strong>2.1.2 Espacio muestral</strong></h3>
 <p>Conjunto de todos los posibles valores que puede tomar el experimento aleatorio. Este conjunto se nombra conuna letra mayuscula <span class="math inline">\(S\)</span> o tambien con <strong><span class="math inline">\(\Omega\)</span></strong></p>
 <ul>
-<li><p><span class="math inline">\(S_{1}\)</span>= <span class="math inline">\(\{ (cc), (cs), (sc), (ss) \}\)</span></p></li>
-<li><p><span class="math inline">\(S_{2}\)</span>= <span class="math inline">\(\{ 2,3,4,5,6,7,8,9,10,11,12 \}\)</span></p></li>
-<li><p><span class="math inline">\(S_{3}\)</span>= <span class="math inline">\(\{ x \in \mathbb{R} | 0 \leq x \leq 5 \}\)</span></p></li>
-<li><p><span class="math inline">\(S_{4}\)</span>= <span class="math inline">\(\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}\)</span></p></li>
-<li><p><span class="math inline">\(S_{5}\)</span>= <span class="math inline">\(\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}\)</span></p></li>
+<li><p><span class="math inline">\(S_{1}\)</span>= <span class="math inline">\(\{ (cc), (cs), (sc), (ss) \}\)</span><br />
+<br/></p></li>
+<li><p><span class="math inline">\(\begin{equation*}  S_{2}=\left\{  \begin{array}{cccccc}  &amp;(1,1),(1,2),(1,3),(1,4),(1,5),(1,6)&amp;\\  &amp;(2,1),(2,2),(2,3),(2,4),(2,5),(2,6)&amp;\\  &amp;(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)&amp;\\  &amp;(4,1),(4,2),(4,3),(4,4),(4,5),(4,6)&amp;\\  &amp;(5,1),(5,2),(5,3),(5,4),(5,5),(5,6)&amp;\\  &amp;(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)&amp;  \end{array}  \right\}  \end{equation*}\)</span></p></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(S_{3}\)</span>= <span class="math inline">\(\{ x \in \mathbb{R} | 0 \leq x \leq 5 \}\)</span></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(S_{4}\)</span>= <span class="math inline">\(\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}\)</span></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(S_{5}\)</span>= <span class="math inline">\(\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}\)</span></li>
 </ul>
 <p><br/><br/></p>
 </div>
@@ -675,7 +685,7 @@ Your browser does not support the video tag.</video>
 </tr>
 <tr class="even">
 <td align="left">Lanzar dos dados y observar la suma de los resultados superiores</td>
-<td align="left"><span class="math inline">\(S_{2}\)</span>= <span class="math inline">\(\{ 2,3,4,5,6,7,8,9,10,11,12 \}\)</span></td>
+<td align="left"><span class="math inline">\(S_{2}\)</span>= <span class="math inline">\(\{(1,1),(1,2), \dots, (6,6) \}\)</span></td>
 <td align="left">Sacar un resultados es inferior a 6</td>
 </tr>
 <tr class="odd">
@@ -702,16 +712,17 @@ Your browser does not support the video tag.</video>
 <p><br/><br/></p>
 <div id="enfoque-clásico" class="section level3">
 <h3><strong>2.2.1 Enfoque clásico</strong></h3>
-<p>Es el enfoque más antiguo de probabilidad. La probabilidad bajo ese enfoque para el evento A se calcula como:</p>
+<p>Es el enfoque más antiguo de probabilidad y que está basado en el supuesto de eventos individuales igualmente probables. La probabilidad bajo ese enfoque para el evento <span class="math inline">\(A\)</span> se calcula como la fracción entre el número de elementos del conjunto <span class="math inline">\(A\)</span>, <span class="math inline">\(n(A)\)</span> y el número de elementos del espacio muestral <span class="math inline">\(n(S)\)</span>:</p>
 <p><span class="math inline">\(P(A)=\dfrac{n(A)}{n(S)}\)</span></p>
-<p>En el caso :</p>
-<p><span class="math inline">\(A_{1}\)</span>: Se obtienen solo caras : <span class="math inline">\(A_{1}=\{(c,c)\}\)</span></p>
+<p>En el caso del evento <span class="math inline">\(A_{1}=\{(c,c)\}\)</span>, su probabilidad se obtiene como:</p>
 <p><span class="math inline">\(P(A_{1}=\dfrac{n(A_{1})}{n(S_{1})}=\dfrac{1}{4}=0.25\)</span></p>
-<p><span class="math inline">\(A_{2}\)</span>: La suma de los resultados es inferior a 6</p>
+<p>Para <span class="math inline">\(A_{2}\)</span>, la suma de los resultados es inferior a 6, se obtiene de la siguiente forma</p>
 <p>$P(A_{2})===0.25 $ <br/><br/></p>
 </div>
 <div id="enfoque-frecuentista" class="section level3">
 <h3><strong>2.2.2 Enfoque frecuentista</strong></h3>
+<p>En la gran mayoria de casos no se cumplen los supuestos anteriores, pues se tienen eventos que no son igualmente probables, lo cual impide que podamos utilizar el enfoque frecuentista.</p>
+<p>Ahora suponemos que lo ocurrió en el pasado segirá pasando y asi estudiando la información recogida podemos predecir la posibilidad de ocurrencia de un evento futuro</p>
 <p>Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un tamaño de muestra determinado <span class="math inline">\(n\)</span>.</p>
 <p><span class="math inline">\(\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{n} \Bigg]\)</span></p>
 <p><br/><br/></p>

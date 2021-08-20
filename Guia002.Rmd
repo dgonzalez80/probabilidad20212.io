@@ -230,31 +230,35 @@ En el proceso de fabricación de una silla se diferencian las siguientes etapas:
 
 Para explicar un poco los otros casos de conteo utilizaremos el siguiente experimento aleatorio:
 
-Se tiene una urna  que contiene {\bf $n$} elementos todos numerables ( se pueden contar) y de ellos se quiere seleccionar {\bf$k$} elementos como se muestra en  la siguiente figura.
+Se tiene una urna  que contiene $n$ elementos todos numerables ( se pueden contar) y de ellos se quiere seleccionar $k$ elementos como se muestra en  la siguiente figura.
 
 ![](img/urna.png)
 
 Este procedimiento se puede realizar de varias  formas:
 
 A. Importando el  orden
+
 + $\mathcal{P}'(n,k)$ Con repetición o también llanada con sustitución
+
 + $\mathcal{P}(n,k)$ Sin repetición o sin sustitución 
 
 B. Sin importar el  orden
+
 + $\mathcal{C}'(n,k)$ Con repetición o también llanada con sustitución 
+
 + $\mathcal{C}(n,k)$ Sin repetición o sin sustitución 
 
 <br/><br/>
 
 Es decir que se definen  los siguientes procedimientos:
 
-**A1** : $\mathcal{P}'(n,k) $: Conjunto formado por todas las manera posible como se puede seleccionar una  muestra de tamaño k de una urna que contiene n elementos importando el  orden, con  sustitución. En este procedimiento se hace diferencia de la posición que tienen los elementos al ser seleccionados y también que después de  la extracción de un elemento, este se regresa  a la urna antes  de  la siguiente selección. Esto implica que hay siempre en la urna n  elementos antes de la cada selección.
+**A1** : $\mathcal{P}'(n,k)$: Conjunto formado por todas las manera posible como se puede seleccionar una  muestra de tamaño k de una urna que contiene n elementos importando el  orden, con  sustitución. En este procedimiento se hace diferencia de la posición que tienen los elementos al ser seleccionados y también que después de  la extracción de un elemento, este se regresa  a la urna antes  de  la siguiente selección. Esto implica que hay siempre en la urna n  elementos antes de la cada selección.
 
-**A2** : $\mathcal{P}(n,k) $: Conjunto de todas la formas posibles como se puede seleccionar una muestra de tamaño k de una urna que  contiene n elementos importando el orden, sin  sustitución. En este caso los elementos que son  seleccionados van  quedando por fuera de  la urna  y no participan en la siguiente selección.
+**A2** : $\mathcal{P}(n,k)$: Conjunto de todas la formas posibles como se puede seleccionar una muestra de tamaño k de una urna que  contiene n elementos importando el orden, sin  sustitución. En este caso los elementos que son  seleccionados van  quedando por fuera de  la urna  y no participan en la siguiente selección.
 
-**B1** : $\mathcal{C}'(n,k) $: Conjunto de  todas las maneras  posible como se puede  seleccionar una  muestra de tamaño k de una urna que contiene n  elementos sin importar el orden pero con  sustitución. En  esta  caso  no  tiene importancia el orden en que se seleccionan los elementos de la urna, pero  los elementos seleccionados  regresan  a  la  urna y podrían se seleccionados nuevamente.
+**B1** : $\mathcal{C}'(n,k)$: Conjunto de  todas las maneras  posible como se puede  seleccionar una  muestra de tamaño k de una urna que contiene n  elementos sin importar el orden pero con  sustitución. En  esta  caso  no  tiene importancia el orden en que se seleccionan los elementos de la urna, pero  los elementos seleccionados  regresan  a  la  urna y podrían se seleccionados nuevamente.
 
-**B2** : $\mathcal{C}(n,k) $: Conjunto  de  todas  las formas posibles como se puede selecciona una  muestra de tamaño k de una  urna que contiene n elementos, sin importar el  orden, pero en este caso los elementos seleccionados previamente son excluidos de la siguiente selección.
+**B2** : $\mathcal{C}(n,k)$: Conjunto  de  todas  las formas posibles como se puede selecciona una  muestra de tamaño k de una  urna que contiene n elementos, sin importar el  orden, pero en este caso los elementos seleccionados previamente son excluidos de la siguiente selección.
 
 Contemplados estos casos vamos a definir la  forma  en  que se pueden contar  los conjuntos anteriores
 

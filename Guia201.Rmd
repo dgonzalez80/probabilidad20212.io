@@ -98,6 +98,8 @@ La probabilidad es un concepto que se empieza a trabajar en los años   cuando  
 Encomendado Pascal de esta tarea empieza a compartir su trabajo con Fermat, matematico y de la correspondencia de estos dos brillantes matematicos nace los principios y fundamentos de  lo que hoy conocemos como probabilidad
 
 <br/><br/>
+![](img/pascal.png)
+
 
 **Problema**: 
 
@@ -142,12 +144,30 @@ Acción que puede ser replicada bajo las  mismas condiciones y cuyo resultado no
 Conjunto de todos los posibles valores que puede tomar el experimento aleatorio. Este conjunto se nombra conuna letra mayuscula $S$ o tambien con **$\Omega$**
 
 + $S_{1}$= $\{ (cc), (cs), (sc), (ss) \}$  
+<br/>
 
-+ $S_{2}$= $\{ 2,3,4,5,6,7,8,9,10,11,12 \}$ 
++ $\begin{equation*}
+	S_{2}=\left\{
+	\begin{array}{cccccc}
+	&(1,1),(1,2),(1,3),(1,4),(1,5),(1,6)&\\
+	&(2,1),(2,2),(2,3),(2,4),(2,5),(2,6)&\\
+	&(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)&\\
+	&(4,1),(4,2),(4,3),(4,4),(4,5),(4,6)&\\
+	&(5,1),(5,2),(5,3),(5,4),(5,5),(5,6)&\\
+	&(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)&
+	\end{array}
+	\right\}
+	\end{equation*}$ 
+
+<br/>
 
 + $S_{3}$= $\{ x \in \mathbb{R} | 0 \leq x \leq 5   \}$ 
 
+<br/>
+
 + $S_{4}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}$ 
+
+<br/>
 
 + $S_{5}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}$
 
@@ -175,7 +195,7 @@ Resumiendo:
 |Experimento aleatorio| Espacio muestral | Evento aleatorio |
 |:--------------------|:-----------------|:-----------------|
 |Lanzar una moneda dos veces y observar los resultados obtenidos en sus caras superiores| $S_{1}$= $\{ (cc), (cs), (sc), (ss) \}$ | Obtiener solo caras |
-|Lanzar dos dados y observar la suma de los resultados superiores| $S_{2}$= $\{ 2,3,4,5,6,7,8,9,10,11,12 \}$ | Sacar un resultados es inferior a 6 |
+|Lanzar dos dados y observar la suma de los resultados superiores| $S_{2}$= $\{(1,1),(1,2), \dots, (6,6) \}$ | Sacar un resultados es inferior a 6 |
 |Realizar un examen de estadística y observar el resultado obtenido|  $S_{3}$= $\{ x \in \mathbb{R} | 0 \leq x \leq 5 \}$| Ganar el examen|
 |En una salida de campo, observo si se cumple o no, totalmente el objetivo planteado| $S_{4}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 1 \}$| Cumplir el objetivo de la salida |
 |Observo el número total de ensayos de laboratorio exitosos en  20 intentos realizados| $S_{5}$= $\{ x \in \mathbb{N}| 0 \leq x \leq 20 \}$| Obtener más de 5 ensayos éxitos |
@@ -186,23 +206,24 @@ Resumiendo:
 
 ### **2.2.1 Enfoque clásico**  
 
-Es el enfoque más antiguo de probabilidad. La probabilidad bajo ese enfoque para el evento A se calcula como: 
+Es el enfoque más antiguo de probabilidad y que está basado en el supuesto de eventos individuales igualmente probables. La probabilidad bajo ese enfoque para el evento $A$ se calcula como la fracción entre el número de elementos del conjunto $A$, $n(A)$ y el número de elementos del espacio muestral $n(S)$: 
 		
 $P(A)=\dfrac{n(A)}{n(S)}$
 	
-En el caso :
-
-$A_{1}$: Se obtienen solo caras  : $A_{1}=\{(c,c)\}$
+En el caso del evento $A_{1}=\{(c,c)\}$, su probabilidad se obtiene como: 
 
 $P(A_{1}=\dfrac{n(A_{1})}{n(S_{1})}=\dfrac{1}{4}=0.25$ 
 
-$A_{2}$: La suma de los resultados es inferior a 6
+Para $A_{2}$, la suma de los resultados es inferior a 6, se obtiene de la siguiente forma
 
 $P(A_{2})=\dfrac{n(A_{2})}{n(S_{2})}=\dfrac{9}{36}=0.25 $
 <br/><br/> 
 
 ### **2.2.2 Enfoque frecuentista** 
 
+En la gran mayoria de casos no se cumplen los supuestos anteriores, pues se tienen eventos que no son igualmente probables, lo cual impide que podamos utilizar el enfoque frecuentista. 
+
+Ahora suponemos que lo ocurrió en el pasado segirá pasando y asi estudiando la información recogida podemos predecir la posibilidad de ocurrencia de un evento futuro
 
 Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un tamaño de muestra determinado $n$.
 
@@ -210,6 +231,16 @@ Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un ta
 $\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{n} \Bigg]$
 
 <br/><br/>
+
+```{r}
+#Colombia=readRDS("data/Colombia.RDS")
+summarytools::freq(Colombia$ubicacion, cumul = FALSE)
+```
+
+Con base en esta tabla podríamos pensar que la probabilidad de que una persona muera a causa del Covid es de 0.02525. Valor que se obtiene al dividir el número de personas fallecidas y el número total de personas que se han contraído covid. Claro bajo el supuesto de que todos las personas tenemos la misma probabilidad de fallecer. Hecho que se discutirá mas adelante.
+
+<br/><br/>
+
 
 ### **2.2.3 Enfoque subjetivo** 
 
