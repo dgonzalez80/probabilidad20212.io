@@ -82,7 +82,7 @@ pie(t1,
 ## **2.Gráfico de barras**
 
 ```{r}
-ev=table(rbinom(90,5,0.70))
+ev=c(5,13,30,52,35)
 barplot(ev)
 ```
 
@@ -90,7 +90,8 @@ barplot(ev)
 
 
 ```{r}
-ev=table(rbinom(90,5,0.70))
+ev=c(5,13,30,52,35)
+ev=as.table(ev)
 names(ev)=c("MR","R","B","MB","E")
 barplot(ev, col=c("red","yellow","orange","green","blue"), 
         main = "Evaluación proceso de inducción",
@@ -119,7 +120,7 @@ barplot(counts, main="Número de cambios adelante por Tipo de motor",
 ```
 
 
-## ** 4. Diagrama de mosaico **
+## **4. Diagrama de mosaico **
 
 
 ```{r}
