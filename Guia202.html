@@ -597,12 +597,63 @@ Your browser does not support the video tag.</video>
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>1.7. Presentaciones</strong></h2>
+<p><br/><br/></p>
 </div>
 </div>
 <div id="recursos" class="section level1">
 <h1><strong>2. Recursos</strong></h1>
+<p><br/><br/></p>
+<p>En la guía 2.1 se habló de los conceptos básicos (Experimento aleatorio, Espacio muestral y Evento aleatorio), de los diferentes enfoque de probabilidad ( Clásico, frecuentista y Subjetivo) y de los tipos de probabilidad simple o marginal (<span class="math inline">\(P(A)\)</span>) y probabilidad conjunta <span class="math inline">\(P(A \cap B)\)</span>.</p>
+<p>En esta guía se hará en énfasis en otro tipo de probabilidad llamada <strong>probabilidad condicional</strong></p>
+<p><br/><br/></p>
+<div id="probabilidad-condicional" class="section level2">
+<h2><strong>Probabilidad condicional</strong></h2>
 <p><img src="img/def201.png" style="width:60.0%" /></p>
-<p><img src="img/def202.png" style="width:60.0%" /> <img src="img/def203.png" style="width:60.0%" /> <img src="img/def204.png" style="width:60.0%" /> <img src="img/def205.png" style="width:60.0%" /></p>
+<p><br/></p>
+<p><span class="math inline">\(P(B|A)\)</span> se puede leer como :</p>
+<ul>
+<li><p>Probabilidad de que ocurra <span class="math inline">\(B\)</span> dado que el evento <span class="math inline">\(A\)</span> ya ocurrió</p></li>
+<li><p>Probabilidad de que ocurra <span class="math inline">\(B\)</span> sabiendo previamente que ocurrió el evento <span class="math inline">\(A\)</span></p></li>
+<li><p>Si sabemos que ha ocurrido el evento <span class="math inline">\(A\)</span>, la probabilidad de que ocurra <span class="math inline">\(B\)</span></p></li>
+</ul>
+<p><br/><br/></p>
+<p>El efecto de conocer la ocurrencia del evento <span class="math inline">\(A\)</span> hace que el espacio muestral de referencia pase de ser <span class="math inline">\(S\)</span> a solo <span class="math inline">\(A\)</span>. Ahora dentro de este nuevo espacio muestal de referencia se debe establecer la probabilidad de que ocurra <span class="math inline">\(B\)</span></p>
+<p>De esta manera la probabilidad se expresa como la razón entre la probabilidad conjunta <span class="math inline">\(P(A \cap B)\)</span> con la probabilidad de <span class="math inline">\(A\)</span></p>
+<p><br/><br/></p>
+<p>Ejemplo:</p>
+<p>Supongamos que se tiene la siguiente información escrita en una tabla de doble entrada o tabla cruzada que contiene dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> :</p>
+<pre class="r"><code>x=c(460,140,40,260)
+m=matrix(x,nrow = 2) 
+rownames(m) = c(&quot;B&quot;, &quot;B*&quot;)
+colnames(m) = c(&quot;A&quot;, &quot;A*&quot;)
+m</code></pre>
+<pre><code>##      A  A*
+## B  460  40
+## B* 140 260</code></pre>
+<p>En la siguiente tabla se representan los tres tipos de probabilidad : <br/> <img src="img/tabla2031.png" style="width:70.0%" /> <br/> Esta información tambien se puede representar como un diagrama de árbol</p>
+<p><img src="img/arbol2031.png" style="width:70.0%" /> <br/><br/></p>
+<p>O también como un diagrama de Venn:</p>
+<p><img src="img/venn.png" style="width:70.0%" /> <br/><br/></p>
+<p>Por despeje se pueden obtener la llanada regla de la multiplicación : <img src="img/def202.png" style="width:60.0%" /></p>
+<p><br/><br/> En el caso que se requiera evaluar si dos eventos son independientes o no, partiendo de la definición de probabilidad condicional se podría obtener la siguiente regla al despejar <span class="math inline">\(P(A \cap B\)</span> de la ecuación para obtener : <span class="math inline">\(P(A \cap B) = P(A) * P(B|A)\)</span>. En caso de que la ocurrencia del evento <span class="math inline">\(A\)</span> previamente al evento <span class="math inline">\(B\)</span>, no cambie su probabilidad, se podría escribir que <span class="math inline">\(P(B|A)= P(B)\)</span> y en este caso la regla indica que la probablidad conjunta de los eventos A y B es igual a la probabilidad de sus probabilidades marginales :</p>
+<p><br/><br/></p>
+<p><img src="img/def203.png" style="width:60.0%" /></p>
+<p><br/><br/></p>
+</div>
+<div id="probabilidad-total" class="section level2">
+<h2><strong>Probabilidad Total</strong></h2>
+<p>Ahora sopongamos que no de los eventos lo podemos representar como una partición del conjunto <span class="math inline">\(S\)</span> así :</p>
+<p><img src="img/particion1.png" style="width:50.0%" /></p>
+<p><img src="img/particion2.png" style="width:50.0%" /></p>
+<p><img src="img/particion3.png" style="width:50.0%" /></p>
+<p><img src="img/def204.png" style="width:60.0%" /></p>
+<p><br/><br/></p>
+</div>
+<div id="teorema-de-bayes" class="section level2">
+<h2><strong>Teorema de Bayes</strong></h2>
+<p><img src="img/def205.png" style="width:60.0%" /></p>
+<p><br/><br/></p>
+</div>
 </div>
 
 

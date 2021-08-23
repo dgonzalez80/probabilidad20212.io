@@ -90,13 +90,103 @@ El taller del Modulo 2 recoge los elementos estudiados y por tanto  tiene objeti
 
 ## **1.7. Presentaciones**
 
+<br/><br/>
 
 # **2. Recursos**
+<br/><br/>
+
+En la guía 2.1 se habló de los conceptos básicos (Experimento aleatorio, Espacio muestral y Evento aleatorio), de los diferentes enfoque de probabilidad ( Clásico, frecuentista y Subjetivo) y de los tipos de probabilidad simple o marginal ($P(A)$) y probabilidad conjunta $P(A \cap B)$.
+
+En esta guía se hará en énfasis en otro tipo de probabilidad llamada **probabilidad condicional**
+
+<br/><br/>
+
+## **Probabilidad condicional**
 
 ![](img/def201.png){width=60%}
 
+<br/>
+
+$P(B|A)$ se puede leer como :
+
++ Probabilidad de que ocurra $B$ dado que el evento $A$ ya ocurrió
+
++ Probabilidad de que ocurra $B$ sabiendo previamente que ocurrió el evento $A$
+
++ Si sabemos que ha ocurrido el evento $A$, la probabilidad de que ocurra $B$
+
+<br/><br/>
+
+El efecto de conocer la ocurrencia del evento $A$ hace que el espacio muestral de referencia pase de ser $S$ a solo $A$.  Ahora dentro de este nuevo espacio muestal de referencia se debe establecer la probabilidad de que ocurra $B$
+
+De esta manera la probabilidad se expresa como la razón entre la probabilidad conjunta 
+$P(A \cap B)$ con la probabilidad de $A$
+
+<br/><br/>
+
+Ejemplo:
+
+Supongamos que se tiene la siguiente información escrita en una tabla de doble entrada o tabla cruzada que contiene dos eventos $A$ y $B$ :
+
+```{r}
+x=c(460,140,40,260)
+m=matrix(x,nrow = 2) 
+rownames(m) = c("B", "B*")
+colnames(m) = c("A", "A*")
+m
+```
+
+En la siguiente tabla se representan los tres tipos de probabilidad :
+<br/>
+![](img/tabla2031.png){width=70%}
+<br/>
+Esta información tambien se puede representar como un diagrama de árbol 
+
+![](img/arbol2031.png){width=70%}
+<br/><br/>
+
+O también como un diagrama de Venn:
+
+![](img/venn.png){width=70%}
+<br/><br/>
+
+
+Por despeje se pueden obtener la llanada regla de la multiplicación :
 ![](img/def202.png){width=60%}
+
+<br/><br/>
+En el caso que se requiera evaluar si dos eventos son independientes o no, partiendo de la definición de probabilidad condicional se podría obtener la siguiente regla al despejar $P(A \cap B$ de la ecuación para obtener : $P(A \cap B) = P(A) * P(B|A)$. En caso de que la ocurrencia del evento $A$ previamente al evento $B$, no cambie su probabilidad, se podría escribir que $P(B|A)= P(B)$ y en este caso la regla indica que la probablidad conjunta de los eventos A y B es igual a la probabilidad de sus probabilidades marginales :
+
+
+
+<br/><br/>
+
 ![](img/def203.png){width=60%}
+
+<br/><br/>
+
+## **Probabilidad Total**
+
+Ahora sopongamos que no de los eventos lo podemos representar como una partición del conjunto $S$ así :
+
+![](img/particion1.png){width=50%}
+ 
+ ![](img/particion2.png){width=50%}
+ 
+ 
+ ![](img/particion3.png){width=50%}
+ 
+ 
+ 
+ 
+ 
+ 
 ![](img/def204.png){width=60%}
+
+<br/><br/>
+
+## **Teorema de Bayes**
+
 ![](img/def205.png){width=60%}
 
+<br/><br/>
