@@ -132,6 +132,8 @@ prop.table(m,2)
 
 ## **Ejemplo**
 
+### Ubicación por estado contagiados de Covid en Colombia
+
 ```{r}
 # Colombia= read.csv("data/Colombia.csv")
 t21=table(Colombia$ubicacion, Colombia$estado)
@@ -139,23 +141,10 @@ t21=table(Colombia$ubicacion, Colombia$estado)
 
 ```
 
+La tabla de frecuencias la convertimos en tabla de probabilidades
+
 ```{r}
 t23=prop.table(t21)
 round(t23, 4)
-```
-
-```{r}
-t31=table(Colombia$departamento_nom,Colombia$estado)
-t32=prop.table(t31,1)
-t33=addmargins(t32,2)
-round(t33,4)
-```
-
-```{r}
-t31=table(Colombia$departamento_nom,Colombia$estado)
-t34=prop.table(t31,2)
-t35=addmargins(t34,1)
-round(t35,4)
-
 ```
 
