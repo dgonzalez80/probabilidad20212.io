@@ -95,7 +95,7 @@ El taller del Modulo 2 recoge los elementos estudiados y por tanto  tiene objeti
 # **2. Recursos**
 <br/><br/>
 
-En la guía 2.1 se habló de los conceptos básicos (Experimento aleatorio, Espacio muestral y Evento aleatorio), de los diferentes enfoque de probabilidad ( Clásico, frecuentista y Subjetivo) y de los tipos de probabilidad simple o marginal ($P(A)$) y probabilidad conjunta $P(A \cap B)$.
+En la guía 2.1 se habló de los conceptos básicos (Experimento aleatorio, Espacio muestral y Evento aleatorio), de los diferentes enfoque de probabilidad ( Clásico, Frecuentista y Subjetivo) y de los tipos de probabilidad simple o marginal ($P(A)$) y probabilidad conjunta $P(A \cap B)$.
 
 En esta guía se hará en énfasis en otro tipo de probabilidad llamada **probabilidad condicional**
 
@@ -103,7 +103,7 @@ En esta guía se hará en énfasis en otro tipo de probabilidad llamada **probab
 
 ## **Probabilidad condicional**
 
-![](img/def201.png){width=60%}
+![](img/def201.png){width=70%}
 
 <br/>
 
@@ -138,55 +138,148 @@ m
 
 En la siguiente tabla se representan los tres tipos de probabilidad :
 <br/>
-![](img/tabla2031.png){width=70%}
-<br/>
+![](img/tabla2031.png){width=80%}
+<br/><br/>
 Esta información tambien se puede representar como un diagrama de árbol 
+<br/>
 
-![](img/arbol2031.png){width=70%}
+![](img/arbol2031.png){width=80%}
 <br/><br/>
 
 O también como un diagrama de Venn:
-
-![](img/venn.png){width=70%}
+<br/>
+![](img/venn.png){width=80%}
 <br/><br/>
 
 
 Por despeje se pueden obtener la llanada regla de la multiplicación :
+<br/>
 ![](img/def202.png){width=60%}
 
 <br/><br/>
 En el caso que se requiera evaluar si dos eventos son independientes o no, partiendo de la definición de probabilidad condicional se podría obtener la siguiente regla al despejar $P(A \cap B$ de la ecuación para obtener : $P(A \cap B) = P(A) * P(B|A)$. En caso de que la ocurrencia del evento $A$ previamente al evento $B$, no cambie su probabilidad, se podría escribir que $P(B|A)= P(B)$ y en este caso la regla indica que la probablidad conjunta de los eventos A y B es igual a la probabilidad de sus probabilidades marginales :
 
+<br/>
+
+![](img/def203.png){width=70%}
+
+<br/><br/>
+**Ejemplo :**
+
+El departamento de crédito de la universidad, informa que el 30% de los pagos realizados en la universidad se efectuan en efectivo, un 40% con tarjeta de crédito y el resto con tarjeta debito. En todos los casos estos pagos solo son recibidos en la caja ubicada en la oficina de Registro Académico de la universidad.
+
+Tambien se conoce que 20% de los pagos realizados en efectivo, 70% de los pagos realizados contarjeta de crédito y el 80% de los pagos realizados con tarjeta debito, corresponden a pagos por valores superiores a $800
+
+Con el fin de mejorar el servicio, se esta diseñando un sistema de turnos que agilice el procedimiento de atención . El ingeniero a cargo del diseño de sistema requiere le ayude a valorar las prioridades para las personas que deben pagar mas de $500 mil pesos, pues el ingeniero sospecha que es más probable que una persona requiere pagar más de $500 mil pesos,  lo haga con efectivo.  Ayude al ingeniero con la información necesaria que le permita reafirmar su sospecha o por el contrario a valorar las diferentes posibilidades
+<br/><br/>
+
+**Solución:**
+<br/>
+Definimos los siguientes eventos :
+
++ **E**  : El pago se realiza en efectivo
++ **TC** : El pago se realiza con tarjeta de crédito
++ **TD** : El pago se realiza con tarjeta débito
++ **+5** : El pago es por una cantidad superior a $500 mil pesos
 
 
 <br/><br/>
-
-![](img/def203.png){width=60%}
+![](img/ejemplo1.png){width=70%}
+![](img/ejemplo2.png){width=70%}
 
 <br/><br/>
 
 ## **Probabilidad Total**
 
-Ahora sopongamos que no de los eventos lo podemos representar como una partición del conjunto $S$ así :
+Ahora supongamos que el espacio muestral esta formado por un conjunto de eventos lo podemos representar como una partición del conjunto $S$ así :
 
 ![](img/particion1.png){width=50%}
+<br/><br/>
+
+**Nota:**  Una partición de un conjunto de $S$ está formada por subconjuntos $A_{1}$, $A_{2}$, $\dots$ , $A_{n}$, qie deben cumplir las siguiente propiedades :
+
++ $A_{1} \cup A_{2} \cup \dots \cup A_{n}=S$
+
++ $A_{i} \cap A_{j} = \phi$ , para todo $i \neq j$
  
- ![](img/particion2.png){width=50%}
++ $A_{i} \neq \phi$ 
  
+ <br/><br/>
+ En nuestro caso podemos tener solo cinco particiones para simplificar el procedimiento
+ <br/>
  
- ![](img/particion3.png){width=50%}
+ ![](img/particion2.png){width=60%}
+ <br/><br/>
  
+ Pdemos reasaltar los conjuntos que conforman a $B$ :
  
+ ![](img/particion3.png){width=60%}
  
+ <br/><br/>
  
+ Tambien podemos recostruir $B$ como :
  
+ $B = (A_{1} \cap B) \cup (A_{2} \cap B) \cup (A_{3} \cap B) \cup (A_{4} \cap B) \cup (A_{5} \cap B)$
  
-![](img/def204.png){width=60%}
+<br/><br/>
+En terminos de probabilidad  tenemos
+  
+$P(B) = P(A_{1} \cap B) + P(A_{2} \cap B) + P(A_{3} \cap B) + P(A_{4} \cap B) + P(A_{5} \cap B)$
+
+Este resultado se puede expresar en otros terminos de la regla de la multiplicacion:
+
+$P(B) = P(A_{1})P(B|A_{1}) + P(A_{2})P(B|A_{2})  +P(A_{3})P(B|A_{})  + P(A_{4})P(B|A_{4}) + P(A_{5})P(B|A_{5})$
 
 <br/><br/>
+En general :
+   
+ <br/>  
+ 
+![](img/def204.png){width=70%}
+
+<br/><br/>
+
+**Ejemplo**
+
+En el caso que en el ejemplo anterior se requiere calcular la probabilidad $P(+5)$ utilizamos la regla de la probabilidad total:
+
+
+$P(+5) = P(E)P(+5|E) + P(TC)P(+5|TC)  +P(TD)P(+5|TD)$
+
+$P(+5) = P(E)P(+5|E) + P(TC)P(+5|TC)  +P(TD)P(+5|TD)$
+
+$P(+5) = 0.30 \times 0.20 + 0.40 \times 0.70 + 0.30 \times 0.80$
+
+$P(+5) = 0.06 + 0.28 +0.24 = 0.58$
+
+<br/><br/> 
 
 ## **Teorema de Bayes**
 
-![](img/def205.png){width=60%}
+![](img/Thomas_Bayes.gif)
+<br/>
+**Thomas Bayes** (Londres, Inglaterra, ~1702 - Tunbridge Wells, 1761) fue un matemático británico y ministro presbiteriano. Su obra más conocida es el Teorema de Bayes.
+
+<br/><br/> 
+El teorema de Bayes, que lleva el nombre del matemático británico del siglo XVIII **Thomas Bayes**, es una fórmula matemática para determinar la probabilidad condicional . La probabilidad condicional es la probabilidad de que ocurra un resultado, basada en un resultado previo. El teorema de Bayes proporciona una forma de revisar las predicciones o teorías existentes (actualizar las probabilidades) dada la evidencia nueva o adicional. En finanzas, el teorema de Bayes se puede utilizar para calificar el riesgo de prestar dinero a posibles prestatarios.
+
+Tomado de  : https://www.investopedia.com/terms/b/bayes-theorem.asp <br/> 
+Lectura recomendada : https://blogs.scientificamerican.com/cross-check/bayes-s-theorem-what-s-the-big-deal/
+
+
+<br/><br/> 
+
+![](img/def205.png){width=70%}
 
 <br/><br/>
+
+**Ejemplo** 
+<br/>
+Continuando con el ejemplo anterior puede ser necesario calcular la probabilidad : $P(E|+5)$ para lo cual utilizamos el Teorema de Bayes
+
+
+$P(E|+5) = \dfrac{P(E \cap +5)}{P(+5)} = \dfrac{P(E)P(+5|E)}{P(E)P(+5|E) + P(TC)P(+5|TC)  +P(TD)P(+5|TD)}$
+
+$P(E|+5) = \dfrac{0.30 \times 0.20}{0.30 \times 0.20 + 0.40 \times 0.70 + 0.30 \times 0.80} = \dfrac{0.06}{0.58} = 0.1034$
+
+
