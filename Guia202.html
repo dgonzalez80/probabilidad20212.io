@@ -607,7 +607,7 @@ Your browser does not support the video tag.</video>
 <p>En esta guía se hará en énfasis en otro tipo de probabilidad llamada <strong>probabilidad condicional</strong></p>
 <p><br/><br/></p>
 <div id="probabilidad-condicional" class="section level2">
-<h2><strong>Probabilidad condicional</strong></h2>
+<h2><strong>2.1. Probabilidad condicional</strong></h2>
 <p><img src="img/def201.png" style="width:70.0%" /></p>
 <p><br/></p>
 <p><span class="math inline">\(P(B|A)\)</span> se puede leer como :</p>
@@ -620,7 +620,8 @@ Your browser does not support the video tag.</video>
 <p>El efecto de conocer la ocurrencia del evento <span class="math inline">\(A\)</span> hace que el espacio muestral de referencia pase de ser <span class="math inline">\(S\)</span> a solo <span class="math inline">\(A\)</span>. Ahora dentro de este nuevo espacio muestal de referencia se debe establecer la probabilidad de que ocurra <span class="math inline">\(B\)</span></p>
 <p>De esta manera la probabilidad se expresa como la razón entre la probabilidad conjunta <span class="math inline">\(P(A \cap B)\)</span> con la probabilidad de <span class="math inline">\(A\)</span></p>
 <p><br/><br/></p>
-<p>Ejemplo:</p>
+<div id="ejemplo" class="section level3">
+<h3><strong>Ejemplo:</strong></h3>
 <p>Supongamos que se tiene la siguiente información escrita en una tabla de doble entrada o tabla cruzada que contiene dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> :</p>
 <pre class="r"><code>x=c(460,140,40,260)
 m=matrix(x,nrow = 2) 
@@ -637,7 +638,7 @@ m</code></pre>
 <p><br/><br/> En el caso que se requiera evaluar si dos eventos son independientes o no, partiendo de la definición de probabilidad condicional se podría obtener la siguiente regla al despejar <span class="math inline">\(P(A \cap B\)</span> de la ecuación para obtener : <span class="math inline">\(P(A \cap B) = P(A) * P(B|A)\)</span>. En caso de que la ocurrencia del evento <span class="math inline">\(A\)</span> previamente al evento <span class="math inline">\(B\)</span>, no cambie su probabilidad, se podría escribir que <span class="math inline">\(P(B|A)= P(B)\)</span> y en este caso la regla indica que la probablidad conjunta de los eventos A y B es igual a la probabilidad de sus probabilidades marginales :</p>
 <p><br/></p>
 <p><img src="img/def203.png" style="width:70.0%" /></p>
-<p><br/><br/> <strong>Ejemplo :</strong></p>
+<p><br/><br/> ### <strong>Ejemplo :</strong></p>
 <p>El departamento de crédito de la universidad, informa que el 30% de los pagos realizados en la universidad se efectuan en efectivo, un 40% con tarjeta de crédito y el resto con tarjeta debito. En todos los casos estos pagos solo son recibidos en la caja ubicada en la oficina de Registro Académico de la universidad.</p>
 <p>Tambien se conoce que 20% de los pagos realizados en efectivo, 70% de los pagos realizados contarjeta de crédito y el 80% de los pagos realizados con tarjeta debito, corresponden a pagos por valores superiores a $800</p>
 <p>Con el fin de mejorar el servicio, se esta diseñando un sistema de turnos que agilice el procedimiento de atención . El ingeniero a cargo del diseño de sistema requiere le ayude a valorar las prioridades para las personas que deben pagar mas de $500 mil pesos, pues el ingeniero sospecha que es más probable que una persona requiere pagar más de $500 mil pesos, lo haga con efectivo. Ayude al ingeniero con la información necesaria que le permita reafirmar su sospecha o por el contrario a valorar las diferentes posibilidades <br/><br/></p>
@@ -651,8 +652,9 @@ m</code></pre>
 <p><br/><br/> <img src="img/ejemplo1.png" style="width:70.0%" /> <img src="img/ejemplo2.png" style="width:70.0%" /></p>
 <p><br/><br/></p>
 </div>
+</div>
 <div id="probabilidad-total" class="section level2">
-<h2><strong>Probabilidad Total</strong></h2>
+<h2><strong>2.2. Probabilidad Total</strong></h2>
 <p>Ahora supongamos que el espacio muestral esta formado por un conjunto de eventos lo podemos representar como una partición del conjunto <span class="math inline">\(S\)</span> así :</p>
 <p><img src="img/particion1.png" style="width:50.0%" /> <br/><br/></p>
 <p><strong>Nota:</strong> Una partición de un conjunto de <span class="math inline">\(S\)</span> está formada por subconjuntos <span class="math inline">\(A_{1}\)</span>, <span class="math inline">\(A_{2}\)</span>, <span class="math inline">\(\dots\)</span> , <span class="math inline">\(A_{n}\)</span>, qie deben cumplir las siguiente propiedades :</p>
@@ -676,7 +678,8 @@ m</code></pre>
 <p><br/></p>
 <p><img src="img/def204.png" style="width:70.0%" /></p>
 <p><br/><br/></p>
-<p><strong>Ejemplo</strong></p>
+<div id="ejemplo-1" class="section level3">
+<h3><strong>Ejemplo</strong></h3>
 <p>En el caso que en el ejemplo anterior se requiere calcular la probabilidad <span class="math inline">\(P(+5)\)</span> utilizamos la regla de la probabilidad total:</p>
 <p><span class="math inline">\(P(+5) = P(E)P(+5|E) + P(TC)P(+5|TC) +P(TD)P(+5|TD)\)</span></p>
 <p><span class="math inline">\(P(+5) = P(E)P(+5|E) + P(TC)P(+5|TC) +P(TD)P(+5|TD)\)</span></p>
@@ -684,17 +687,29 @@ m</code></pre>
 <p><span class="math inline">\(P(+5) = 0.06 + 0.28 +0.24 = 0.58\)</span></p>
 <p><br/><br/></p>
 </div>
+</div>
 <div id="teorema-de-bayes" class="section level2">
-<h2><strong>Teorema de Bayes</strong></h2>
+<h2><strong>2.3. Teorema de Bayes</strong></h2>
 <p><img src="img/Thomas_Bayes.gif" /> <br/> <strong>Thomas Bayes</strong> (Londres, Inglaterra, ~1702 - Tunbridge Wells, 1761) fue un matemático británico y ministro presbiteriano. Su obra más conocida es el Teorema de Bayes.</p>
 <p><br/><br/> El teorema de Bayes, que lleva el nombre del matemático británico del siglo XVIII <strong>Thomas Bayes</strong>, es una fórmula matemática para determinar la probabilidad condicional . La probabilidad condicional es la probabilidad de que ocurra un resultado, basada en un resultado previo. El teorema de Bayes proporciona una forma de revisar las predicciones o teorías existentes (actualizar las probabilidades) dada la evidencia nueva o adicional. En finanzas, el teorema de Bayes se puede utilizar para calificar el riesgo de prestar dinero a posibles prestatarios.</p>
 <p>Tomado de : <a href="https://www.investopedia.com/terms/b/bayes-theorem.asp" class="uri">https://www.investopedia.com/terms/b/bayes-theorem.asp</a> <br/> Lectura recomendada : <a href="https://blogs.scientificamerican.com/cross-check/bayes-s-theorem-what-s-the-big-deal/" class="uri">https://blogs.scientificamerican.com/cross-check/bayes-s-theorem-what-s-the-big-deal/</a></p>
 <p><br/><br/></p>
 <p><img src="img/def205.png" style="width:70.0%" /></p>
 <p><br/><br/></p>
-<p><strong>Ejemplo</strong> <br/> Continuando con el ejemplo anterior puede ser necesario calcular la probabilidad : <span class="math inline">\(P(E|+5)\)</span> para lo cual utilizamos el Teorema de Bayes</p>
+<div id="ejemplo-2" class="section level3">
+<h3><strong>Ejemplo</strong></h3>
+<p><br/> Continuando con el ejemplo anterior puede ser necesario calcular la probabilidad : <span class="math inline">\(P(E|+5)\)</span> para lo cual utilizamos el Teorema de Bayes</p>
 <p><span class="math inline">\(P(E|+5) = \dfrac{P(E \cap +5)}{P(+5)} = \dfrac{P(E)P(+5|E)}{P(E)P(+5|E) + P(TC)P(+5|TC) +P(TD)P(+5|TD)}\)</span></p>
 <p><span class="math inline">\(P(E|+5) = \dfrac{0.30 \times 0.20}{0.30 \times 0.20 + 0.40 \times 0.70 + 0.30 \times 0.80} = \dfrac{0.06}{0.58} = 0.1034\)</span></p>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="reto" class="section level2">
+<h2><strong>2.4. Reto</strong></h2>
+<p><br/><br/> Entre Bogotá D.E., Medellín y Cali, En cuál ciudad se tiene la mayor probabilidad de contraer Covid? Indique los cálculos realizados.</p>
+<p><br/><br/><br/><br/> Aplicaciones :</p>
+<p>Árboles de decisión <a href="https://rpubs.com/jboscomendoza/arboles_decision_clasificacion" class="uri">https://rpubs.com/jboscomendoza/arboles_decision_clasificacion</a></p>
+<p><a href="https://bookdown.org/content/2031/arboles-de-decision-parte-ii.html" class="uri">https://bookdown.org/content/2031/arboles-de-decision-parte-ii.html</a></p>
 </div>
 </div>
 

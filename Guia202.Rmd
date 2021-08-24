@@ -101,7 +101,7 @@ En esta guía se hará en énfasis en otro tipo de probabilidad llamada **probab
 
 <br/><br/>
 
-## **Probabilidad condicional**
+## **2.1. Probabilidad condicional**
 
 ![](img/def201.png){width=70%}
 
@@ -124,7 +124,7 @@ $P(A \cap B)$ con la probabilidad de $A$
 
 <br/><br/>
 
-Ejemplo:
+### **Ejemplo:**
 
 Supongamos que se tiene la siguiente información escrita en una tabla de doble entrada o tabla cruzada que contiene dos eventos $A$ y $B$ :
 
@@ -164,7 +164,7 @@ En el caso que se requiera evaluar si dos eventos son independientes o no, parti
 ![](img/def203.png){width=70%}
 
 <br/><br/>
-**Ejemplo :**
+### **Ejemplo :**
 
 El departamento de crédito de la universidad, informa que el 30% de los pagos realizados en la universidad se efectuan en efectivo, un 40% con tarjeta de crédito y el resto con tarjeta debito. En todos los casos estos pagos solo son recibidos en la caja ubicada en la oficina de Registro Académico de la universidad.
 
@@ -189,7 +189,7 @@ Definimos los siguientes eventos :
 
 <br/><br/>
 
-## **Probabilidad Total**
+## **2.2. Probabilidad Total**
 
 Ahora supongamos que el espacio muestral esta formado por un conjunto de eventos lo podemos representar como una partición del conjunto $S$ así :
 
@@ -239,7 +239,7 @@ En general :
 
 <br/><br/>
 
-**Ejemplo**
+### **Ejemplo**
 
 En el caso que en el ejemplo anterior se requiere calcular la probabilidad $P(+5)$ utilizamos la regla de la probabilidad total:
 
@@ -254,7 +254,7 @@ $P(+5) = 0.06 + 0.28 +0.24 = 0.58$
 
 <br/><br/> 
 
-## **Teorema de Bayes**
+## **2.3. Teorema de Bayes**
 
 ![](img/Thomas_Bayes.gif)
 <br/>
@@ -273,7 +273,7 @@ Lectura recomendada : https://blogs.scientificamerican.com/cross-check/bayes-s-t
 
 <br/><br/>
 
-**Ejemplo** 
+### **Ejemplo** 
 <br/>
 Continuando con el ejemplo anterior puede ser necesario calcular la probabilidad : $P(E|+5)$ para lo cual utilizamos el Teorema de Bayes
 
@@ -282,4 +282,19 @@ $P(E|+5) = \dfrac{P(E \cap +5)}{P(+5)} = \dfrac{P(E)P(+5|E)}{P(E)P(+5|E) + P(TC)
 
 $P(E|+5) = \dfrac{0.30 \times 0.20}{0.30 \times 0.20 + 0.40 \times 0.70 + 0.30 \times 0.80} = \dfrac{0.06}{0.58} = 0.1034$
 
+<br/><br/>
 
+## **2.4. Reto**
+
+<br/><br/>
+Entre Bogotá D.E., Medellín y Cali, En cuál ciudad se tiene la mayor probabilidad de contraer Covid?
+Indique los cálculos realizados.
+
+
+<br/><br/><br/><br/>
+Aplicaciones :
+
+Árboles de decisión
+https://rpubs.com/jboscomendoza/arboles_decision_clasificacion
+
+https://bookdown.org/content/2031/arboles-de-decision-parte-ii.html
