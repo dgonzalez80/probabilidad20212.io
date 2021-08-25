@@ -196,11 +196,12 @@ $P(A \cap B) = P(A) P(B)$ o  $P(B|A)=P(B)$
 
 
 <br/><br/>
+
 ### **Ejemplo :**
 
-El departamento de crédito de la universidad, informa que el 30% de los pagos realizados en la universidad se efectuan en efectivo, un 40% con tarjeta de crédito y el resto con tarjeta debito. En todos los casos estos pagos solo son recibidos en la caja ubicada en la oficina de Registro Académico de la universidad.
+El departamento de crédito de la universidad, informa que el 30% de los pagos realizados en la universidad se efectúan en efectivo, un 40% con tarjeta de crédito y el resto con tarjeta débito. En todos los casos estos pagos solo son recibidos en la caja ubicada en la oficina de Registro Académico de la universidad.
 
-Tambien se conoce que 20% de los pagos realizados en efectivo, 70% de los pagos realizados contarjeta de crédito y el 80% de los pagos realizados con tarjeta debito, corresponden a pagos por valores superiores a $800
+Tambien se conoce que 20% de los pagos realizados en efectivo, 70% de los pagos realizados con tarjeta de crédito y el 80% de los pagos realizados con tarjeta débito, corresponden a pagos por valores superiores a $500
 
 Con el fin de mejorar el servicio, se esta diseñando un sistema de turnos que agilice el procedimiento de atención . El ingeniero a cargo del diseño de sistema requiere le ayude a valorar las prioridades para las personas que deben pagar mas de $500 mil pesos, pues el ingeniero sospecha que es más probable que una persona requiere pagar más de $500 mil pesos,  lo haga con efectivo.  Ayude al ingeniero con la información necesaria que le permita reafirmar su sospecha o por el contrario a valorar las diferentes posibilidades
 <br/><br/>
@@ -313,7 +314,7 @@ Lectura recomendada : https://blogs.scientificamerican.com/cross-check/bayes-s-t
 
 Dado una serie de eventos que conforma una partición $E_{1}$, $E_{2}$, $E_{3}$, $\dots$, $E_{k}$ , que son mutuamente excluyentes y exhautivos, con probabilidad a priori $P(E_{1})$, $P(E_{2})$ $P(E_{3})$, $\dots$, $P(E_{k})$. Si ocurre un evento $A$, la probabilidad a posteriori de $E_{i}$ dados $A$, es la probabilidad condicional :
 
-$$P(E_{i}|A)=\dfrac{P(E_{i} \cap A)}{P(A)}= \dfrac{P(E_{i} P(A|E_{i}))}{\displaystyle\sum_{j=1}^{k} P(E_{j})P(A|E_{j})} $$
+$$P(E_{i}|A)=\dfrac{P(E_{i} \cap A)}{P(A)}= \dfrac{P(E_{i}) P(A|E_{i})}{\displaystyle\sum_{j=1}^{k} P(E_{j})P(A|E_{j})} $$
 
 </div>
 
@@ -333,7 +334,7 @@ $P(E|+5) = \dfrac{0.30 \times 0.20}{0.30 \times 0.20 + 0.40 \times 0.70 + 0.30 \
 ## **2.4. Reto**
 
 <br/><br/>
-Entre Bogotá D.E., Medellín y Cali, En cuál ciudad se tiene la mayor probabilidad de contraer Covid?
+Entre Bogotá D.E., Medellín y Cali, En cuál ciudad en la que se tiene la mayor probabilidad de contraer Covid?
 Indique los cálculos realizados.
 
 

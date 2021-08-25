@@ -655,9 +655,11 @@ m</code></pre>
 <p>Dos eventos A y B son independientes si y solo si la probabiliad del evento B no es afectada por la ocurrencia del evento A o viceversa.</p>
 <p><span class="math inline">\(P(A \cap B) = P(A) P(B)\)</span> o <span class="math inline">\(P(B|A)=P(B)\)</span></p>
 </div>
-<p><br/><br/> ### <strong>Ejemplo :</strong></p>
-<p>El departamento de crédito de la universidad, informa que el 30% de los pagos realizados en la universidad se efectuan en efectivo, un 40% con tarjeta de crédito y el resto con tarjeta debito. En todos los casos estos pagos solo son recibidos en la caja ubicada en la oficina de Registro Académico de la universidad.</p>
-<p>Tambien se conoce que 20% de los pagos realizados en efectivo, 70% de los pagos realizados contarjeta de crédito y el 80% de los pagos realizados con tarjeta debito, corresponden a pagos por valores superiores a $800</p>
+<p><br/><br/></p>
+<div id="ejemplo-1" class="section level3">
+<h3><strong>Ejemplo :</strong></h3>
+<p>El departamento de crédito de la universidad, informa que el 30% de los pagos realizados en la universidad se efectúan en efectivo, un 40% con tarjeta de crédito y el resto con tarjeta débito. En todos los casos estos pagos solo son recibidos en la caja ubicada en la oficina de Registro Académico de la universidad.</p>
+<p>Tambien se conoce que 20% de los pagos realizados en efectivo, 70% de los pagos realizados con tarjeta de crédito y el 80% de los pagos realizados con tarjeta débito, corresponden a pagos por valores superiores a $500</p>
 <p>Con el fin de mejorar el servicio, se esta diseñando un sistema de turnos que agilice el procedimiento de atención . El ingeniero a cargo del diseño de sistema requiere le ayude a valorar las prioridades para las personas que deben pagar mas de $500 mil pesos, pues el ingeniero sospecha que es más probable que una persona requiere pagar más de $500 mil pesos, lo haga con efectivo. Ayude al ingeniero con la información necesaria que le permita reafirmar su sospecha o por el contrario a valorar las diferentes posibilidades <br/><br/></p>
 <p><strong>Solución:</strong> <br/> Definimos los siguientes eventos :</p>
 <ul>
@@ -668,6 +670,7 @@ m</code></pre>
 </ul>
 <p><br/><br/> <img src="img/ejemplo1.png" style="width:70.0%" /> <img src="img/ejemplo2.png" style="width:70.0%" /></p>
 <p><br/><br/></p>
+</div>
 </div>
 <div id="probabilidad-total" class="section level2">
 <h2><strong>2.2. Probabilidad Total</strong></h2>
@@ -699,7 +702,7 @@ m</code></pre>
 <p><span class="math display">\[P(A)=P(E_{1})P(A|E_{1})+ P(E_{2})P(A|E_{2})+ P(E_{3})P(A|E_{3})+ \dots P(E_{k})P(A|E_{k})\]</span></p>
 </div>
 <p><br/><br/></p>
-<div id="ejemplo-1" class="section level3">
+<div id="ejemplo-2" class="section level3">
 <h3><strong>Ejemplo</strong></h3>
 <p>En el caso que en el ejemplo anterior se requiere calcular la probabilidad <span class="math inline">\(P(+5)\)</span> utilizamos la regla de la probabilidad total:</p>
 <p><span class="math inline">\(P(+5) = P(E)P(+5|E) + P(TC)P(+5|TC) +P(TD)P(+5|TD)\)</span></p>
@@ -718,10 +721,10 @@ m</code></pre>
 <div id="definición-teorema-de-bayes" class="section level3" style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #4169e1; border-color: #ffff00;">
 <h3><strong>Definición: Teorema de Bayes </strong></h3>
 <p>Dado una serie de eventos que conforma una partición <span class="math inline">\(E_{1}\)</span>, <span class="math inline">\(E_{2}\)</span>, <span class="math inline">\(E_{3}\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(E_{k}\)</span> , que son mutuamente excluyentes y exhautivos, con probabilidad a priori <span class="math inline">\(P(E_{1})\)</span>, <span class="math inline">\(P(E_{2})\)</span> <span class="math inline">\(P(E_{3})\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(P(E_{k})\)</span>. Si ocurre un evento <span class="math inline">\(A\)</span>, la probabilidad a posteriori de <span class="math inline">\(E_{i}\)</span> dados <span class="math inline">\(A\)</span>, es la probabilidad condicional :</p>
-<p><span class="math display">\[P(E_{i}|A)=\dfrac{P(E_{i} \cap A)}{P(A)}= \dfrac{P(E_{i} P(A|E_{i}))}{\displaystyle\sum_{j=1}^{k} P(E_{j})P(A|E_{j})} \]</span></p>
+<p><span class="math display">\[P(E_{i}|A)=\dfrac{P(E_{i} \cap A)}{P(A)}= \dfrac{P(E_{i}) P(A|E_{i})}{\displaystyle\sum_{j=1}^{k} P(E_{j})P(A|E_{j})} \]</span></p>
 </div>
 <p><br/><br/></p>
-<div id="ejemplo-2" class="section level3">
+<div id="ejemplo-3" class="section level3">
 <h3><strong>Ejemplo</strong></h3>
 <p><br/> Continuando con el ejemplo anterior puede ser necesario calcular la probabilidad : <span class="math inline">\(P(E|+5)\)</span> para lo cual utilizamos el Teorema de Bayes</p>
 <p><span class="math inline">\(P(E|+5) = \dfrac{P(E \cap +5)}{P(+5)} = \dfrac{P(E)P(+5|E)}{P(E)P(+5|E) + P(TC)P(+5|TC) +P(TD)P(+5|TD)}\)</span></p>
@@ -731,7 +734,7 @@ m</code></pre>
 </div>
 <div id="reto" class="section level2">
 <h2><strong>2.4. Reto</strong></h2>
-<p><br/><br/> Entre Bogotá D.E., Medellín y Cali, En cuál ciudad se tiene la mayor probabilidad de contraer Covid? Indique los cálculos realizados.</p>
+<p><br/><br/> Entre Bogotá D.E., Medellín y Cali, En cuál ciudad en la que se tiene la mayor probabilidad de contraer Covid? Indique los cálculos realizados.</p>
 <p><br/><br/><br/><br/> Aplicaciones :</p>
 <p>Árboles de decisión <a href="https://rpubs.com/jboscomendoza/arboles_decision_clasificacion" class="uri">https://rpubs.com/jboscomendoza/arboles_decision_clasificacion</a></p>
 <p><a href="https://bookdown.org/content/2031/arboles-de-decision-parte-ii.html" class="uri">https://bookdown.org/content/2031/arboles-de-decision-parte-ii.html</a></p>
