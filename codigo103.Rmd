@@ -618,3 +618,6 @@ En este formato podemos distinguir varias partes :
 
 
 
+## **Uso de color**
+
+https://r-charts.com/colors/
