@@ -50,8 +50,8 @@ Instalación de paquetes requeridos
 ```{r, eval=FALSE }
 # install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
  library(RSocrata)    # llamado de libreria
- token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
- Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura 
+ # token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
+ # Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura 
 ```
 
 Este proceso tarde unos minutos pues  la base es grande
@@ -252,20 +252,24 @@ Valle=subset(Colombia, departamento=="76")
 
 
 
-#### Quitar atipicos
+## **Quitar atipicos**
 
 https://rpubs.com/ydmarinb/429759
 
 
-####  Manejo de MAYUSCULAS y minusculas
+## **Manejo de MAYUSCULAS y minusculas**
 
-```{r}
+```{r, echo=FALSE}
 library(stringr)
-texto <- "probabilidad y estadistica es una asignatura importante en la formación de todo profesional"
+texto <- "probabilidad y estadística es una asignatura importante en la formación de todo profesional"
 str_to_upper(texto)
+#[1] "PROBABILIDAD Y ESTADISTICA ES UNA ASIGNATURA IMPORTANTE EN LA FORMACIÓN DE TODO PROFESIONAL"
 str_to_lower(texto)
+#[1] "probabilidad y estadística es una asignatura importante en la formación de todo profesional"
 str_to_title(texto)
+#[1] "Probabilidad Y Estadística Es Una Asignatura Importante En La Formación De Todo Profesional"
 str_to_sentence(texto)
+#[1] "Probabilidad y estadística es una asignatura importante en la formación de todo profesional"
 ```
 
 

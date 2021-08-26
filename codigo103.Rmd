@@ -255,23 +255,9 @@ plot(x, type="l",
 ```
 
 
-
 <br/><br/><br/>
 
-## **11. Gráfico de radar**
-
-
-
-
-
-
-
-
-
-
-<br/><br/><br/>
-
-## **12. Resumen**
+## **11. Resumen**
 
 ```{r, eval=FALSE }
 x=rnorm(100,100,20)
@@ -601,16 +587,7 @@ mapco@data$fallecidos=fallecidos # se adiciona variable con 33 valores = 33 dpto
 spplot(mapco[,6], col.regions = mi.palette, cuts = 6)  # mapa
 ```
 
- <br/>
- 
-
- 
-
- 
 <br/><br/><br/> 
-
-
-
 
 #  **Margenes de los gráficos**
 
