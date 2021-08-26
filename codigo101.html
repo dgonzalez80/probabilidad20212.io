@@ -560,54 +560,38 @@ data(cars)  # data set cars</code></pre>
 ##  Mean   :15.4   Mean   : 42.98  
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
-<pre><code>##  fecha_reporte_web  id_de_caso        fecha_de_notificaci_n departamento      
-##  Min.   :NA        Length:4747775     Min.   :NA            Length:4747775    
-##  1st Qu.:NA        Class :character   1st Qu.:NA            Class :character  
-##  Median :NA        Mode  :character   Median :NA            Mode  :character  
-##  Mean   :NA                           Mean   :NA                              
-##  3rd Qu.:NA                           3rd Qu.:NA                              
-##  Max.   :NA                           Max.   :NA                              
-##  NA&#39;s   :4747775                      NA&#39;s   :4747775                         
-##  departamento_nom   ciudad_municipio   ciudad_municipio_nom      edad      
-##  Length:4747775     Length:4747775     Length:4747775       Min.   :  1.0  
-##  Class :character   Class :character   Class :character     1st Qu.: 27.0  
-##  Mode  :character   Mode  :character   Mode  :character     Median : 37.0  
-##                                                             Mean   : 39.6  
-##                                                             3rd Qu.: 52.0  
-##                                                             Max.   :114.0  
-##                                                                            
-##  unidad_medida          sexo           fuente_tipo_contagio  ubicacion        
-##  Length:4747775     Length:4747775     Length:4747775       Length:4747775    
-##  Class :character   Class :character   Class :character     Class :character  
-##  Mode  :character   Mode  :character   Mode  :character     Mode  :character  
-##                                                                               
-##                                                                               
-##                                                                               
-##                                                                               
-##     estado          pais_viajo_1_cod   pais_viajo_1_nom    recuperado       
-##  Length:4747775     Length:4747775     Length:4747775     Length:4747775    
-##  Class :character   Class :character   Class :character   Class :character  
-##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-##                                                                             
-##                                                                             
-##                                                                             
-##                                                                             
-##  fecha_inicio_sintomas fecha_diagnostico fecha_recuperado  tipo_recuperacion 
-##  Min.   :NA            Min.   :NA        Min.   :NA        Length:4747775    
-##  1st Qu.:NA            1st Qu.:NA        1st Qu.:NA        Class :character  
-##  Median :NA            Median :NA        Median :NA        Mode  :character  
-##  Mean   :NA            Mean   :NA        Mean   :NA                          
-##  3rd Qu.:NA            3rd Qu.:NA        3rd Qu.:NA                          
-##  Max.   :NA            Max.   :NA        Max.   :NA                          
-##  NA&#39;s   :4747775       NA&#39;s   :4747775   NA&#39;s   :4747775                     
-##    per_etn_          nom_grupo_         fecha_muerte    
-##  Length:4747775     Length:4747775     Min.   :NA       
-##  Class :character   Class :character   1st Qu.:NA       
-##  Mode  :character   Mode  :character   Median :NA       
-##                                        Mean   :NA       
-##                                        3rd Qu.:NA       
-##                                        Max.   :NA       
-##                                        NA&#39;s   :4747775</code></pre>
+<pre><code>##  fecha_reporte_web  id_de_caso        fecha_de_notificaci_n departamento       departamento_nom   ciudad_municipio  
+##  Min.   :NA        Length:4747775     Min.   :NA            Length:4747775     Length:4747775     Length:4747775    
+##  1st Qu.:NA        Class :character   1st Qu.:NA            Class :character   Class :character   Class :character  
+##  Median :NA        Mode  :character   Median :NA            Mode  :character   Mode  :character   Mode  :character  
+##  Mean   :NA                           Mean   :NA                                                                    
+##  3rd Qu.:NA                           3rd Qu.:NA                                                                    
+##  Max.   :NA                           Max.   :NA                                                                    
+##  NA&#39;s   :4747775                      NA&#39;s   :4747775                                                               
+##  ciudad_municipio_nom      edad       unidad_medida          sexo           fuente_tipo_contagio  ubicacion        
+##  Length:4747775       Min.   :  1.0   Length:4747775     Length:4747775     Length:4747775       Length:4747775    
+##  Class :character     1st Qu.: 27.0   Class :character   Class :character   Class :character     Class :character  
+##  Mode  :character     Median : 37.0   Mode  :character   Mode  :character   Mode  :character     Mode  :character  
+##                       Mean   : 39.6                                                                                
+##                       3rd Qu.: 52.0                                                                                
+##                       Max.   :114.0                                                                                
+##                                                                                                                    
+##     estado          pais_viajo_1_cod   pais_viajo_1_nom    recuperado        fecha_inicio_sintomas fecha_diagnostico
+##  Length:4747775     Length:4747775     Length:4747775     Length:4747775     Min.   :NA            Min.   :NA       
+##  Class :character   Class :character   Class :character   Class :character   1st Qu.:NA            1st Qu.:NA       
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character   Median :NA            Median :NA       
+##                                                                              Mean   :NA            Mean   :NA       
+##                                                                              3rd Qu.:NA            3rd Qu.:NA       
+##                                                                              Max.   :NA            Max.   :NA       
+##                                                                              NA&#39;s   :4747775       NA&#39;s   :4747775  
+##  fecha_recuperado  tipo_recuperacion    per_etn_          nom_grupo_         fecha_muerte    
+##  Min.   :NA        Length:4747775     Length:4747775     Length:4747775     Min.   :NA       
+##  1st Qu.:NA        Class :character   Class :character   Class :character   1st Qu.:NA       
+##  Median :NA        Mode  :character   Mode  :character   Mode  :character   Median :NA       
+##  Mean   :NA                                                                 Mean   :NA       
+##  3rd Qu.:NA                                                                 3rd Qu.:NA       
+##  Max.   :NA                                                                 Max.   :NA       
+##  NA&#39;s   :4747775                                                            NA&#39;s   :4747775</code></pre>
 <p>Por otro lado la función <em>View()</em> permite visualizar la base en una ventana de manera separada</p>
 <pre class="r"><code>View(Colombia)  </code></pre>
 <pre class="r"><code>View(iris</code></pre>
@@ -720,6 +704,23 @@ Colombia$fecha_muerte=lubridate::dmy(Colombia$fecha_muerte)</code></pre>
 <p>En caso de querer seleccionar una parte de la data, por ejemplo los datos de CALI utilizamos en siguiente código</p>
 <pre class="r"><code>Cali=Colombia[Colombia$ciudad_municipio_nom==&quot;CALI&quot;,]</code></pre>
 <pre class="r"><code>Valle=subset(Colombia, departamento==&quot;76&quot;)</code></pre>
+<div id="quitar-atipicos" class="section level4">
+<h4>Quitar atipicos</h4>
+<p><a href="https://rpubs.com/ydmarinb/429759" class="uri">https://rpubs.com/ydmarinb/429759</a></p>
+</div>
+<div id="manejo-de-mayusculas-y-minusculas" class="section level4">
+<h4>Manejo de MAYUSCULAS y minusculas</h4>
+<pre class="r"><code>library(stringr)
+texto &lt;- &quot;probabilidad y estadistica es una asignatura importante en la formación de todo profesional&quot;
+str_to_upper(texto)</code></pre>
+<pre><code>## [1] &quot;PROBABILIDAD Y ESTADISTICA ES UNA ASIGNATURA IMPORTANTE EN LA FORMACIÓN DE TODO PROFESIONAL&quot;</code></pre>
+<pre class="r"><code>str_to_lower(texto)</code></pre>
+<pre><code>## [1] &quot;probabilidad y estadistica es una asignatura importante en la formación de todo profesional&quot;</code></pre>
+<pre class="r"><code>str_to_title(texto)</code></pre>
+<pre><code>## [1] &quot;Probabilidad Y Estadistica Es Una Asignatura Importante En La Formación De Todo Profesional&quot;</code></pre>
+<pre class="r"><code>str_to_sentence(texto)</code></pre>
+<pre><code>## [1] &quot;Probabilidad y estadistica es una asignatura importante en la formación de todo profesional&quot;</code></pre>
+</div>
 </div>
 
 

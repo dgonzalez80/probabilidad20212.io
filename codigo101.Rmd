@@ -249,3 +249,23 @@ Cali=Colombia[Colombia$ciudad_municipio_nom=="CALI",]
 ```{r}
 Valle=subset(Colombia, departamento=="76")
 ```
+
+
+
+#### Quitar atipicos
+
+https://rpubs.com/ydmarinb/429759
+
+
+####  Manejo de MAYUSCULAS y minusculas
+
+```{r}
+library(stringr)
+texto <- "probabilidad y estadistica es una asignatura importante en la formación de todo profesional"
+str_to_upper(texto)
+str_to_lower(texto)
+str_to_title(texto)
+str_to_sentence(texto)
+```
+
+

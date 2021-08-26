@@ -504,11 +504,113 @@ Tomado de : https://r-charts.com/es/ranking/radar-chart/
  
  <br/><br/><br/>
  
-##   **Mapas** 
+# **Mapas** 
  
+En el siguiente enlace encontrará los archivos para la construcción de los mapas en formato .shp (debe copiar los cuatro archivos)
+
+Archivos .shp : https://sites.google.com/site/seriescol/shapes
  
+A continuación el código para el mapa de Cali sin información
+ 
+<br/>
+
+### **Mapa de Cali** 
+```{r, warning=FALSE, message=FALSE}
+require(sp)
+require(rgdal)
+require(raster)
+
+cali=shapefile("map/cali/cali.shp")  # importa mapa en formato .shp
+plot(cali)                      # gráfico de Cali
+
+```
+ <br/>
+ 
+ ### **Mapa de Cali con indice**
+ 
+Para mostrar la información se debe incorporar un vector al objeto **cali** que contiene la información para el mapa. este objeto en formato lista tiene incorporada una data que contiene varias columnas al cual se le adiciona la información a publicar.  
+
+En el caso de Cali tiene 22 comunas se adiciona un vector con 22 valores con el nombre de indice
+ 
+<br/><br/>
+
+```{r, warning=FALSE, message=FALSE}
+cali=shapefile("map/cali/cali.shp")  # importa mapa en formato .shp
+cali@data$indice=rnorm(22)      # se genera variable a ilustrar
+spplot(cali[,21]) 
+```
+<br/><br/>
+
+### **Mapa de Colombia**
+
+Para el caso de Colombia se obtiene el archivo depto.shp que contiene la información de Colombia por departamentos (33)
+
+<br/><br/>
+```{r, warning=FALSE, message=FALSE}
+require(sp)
+require(rgdal)
+require(raster)
+
+mapco=shapefile("map/colombia/depto.shp")  # importa mapa en formato .shp
+plot(mapco)                      # gráfico de Colombia
+
+```
+<br/>
+Para representar información en el mapa seden ingresar una vector con 33 valores, igual numero de departamentos en el mismo orden en que se encuentran los nombre de los departamento en el archivo mapco
+
+<br/>
+
+```{r}
+mapco$NOMBRE_DPT
+```
+<br/>
+
+ Si quiereramos representar un mapa con las muertes causadas por covid en Colombia por departamento debemos crear una tabla con la información relacionada con esta variable por departamento en el mismo orden contenida en el archivo **depto.shp** y adicionarla como variable : mapcol@data$muertes
+
+De la base de datos abiertos Colombia se obtiene la siguiente información correspondiente al número de fallecidos por Covid19, durante el periodo marzo 2019 a agosto 25 de 2021
+
+```{r}
+# colombia=readRDS("data/Colombia.RDS")
+# colombia$departamento_nom= str_to_upper(colombia$departamento_nom)
+# t=table(colombia$departamento_nom,colombia$estado)
+
+fallecidos=c(15174,3876,26516,807,2417,2151,880,1333,2388,3487,6495,382,2880,
+             1296,1380,2076,2861,3961,1635,2119,6934,1546,3411,11929,400,844,
+             620,249,29,87,17,45,133)
+
+```
+ 
+
+<br/><br/>
+
+```{r, warning=FALSE, message=FALSE}
+require(sp)
+require(rgdal)
+require(raster)
+require(RColorBrewer)
+
+mi.palette <- brewer.pal(n = 7, name = "OrRd")   # paleta de colores
+mapco=shapefile("map/colombia/depto.shp")  # importa mapa en formato .shp
+# colombia=readRDS("data/Colombia.RDS")
+# colombia$departamento_nom= str_to_upper(colombia$departamento_nom)
+# t=table(colombia$departamento_nom,colombia$estado)
+fallecidos=c(15174,3876,26516,807,2417,2151,880,1333,2388,3487,6495,382,2880,
+             1296,1380,2076,2861,3961,1635,2119,6934,1546,3411,11929,400,844,
+             620,249,29,87,17,45,133) # vector con información
+mapco@data$fallecidos=fallecidos # se adiciona variable con 33 valores = 33 dptos, en mismo orden
+spplot(mapco[,6], col.regions = mi.palette, cuts = 6)  # mapa
+```
+
+ <br/>
+ 
+
+ 
+
  
 <br/><br/><br/> 
+
+
+
 
 #  **Margenes de los gráficos**
 
