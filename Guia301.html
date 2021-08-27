@@ -550,11 +550,331 @@ Your browser does not support the video tag.</video>
 </div>
 <div id="recursos" class="section level1">
 <h1><strong>2. Recursos</strong></h1>
+<div id="variables-aleatorias" class="section level2">
+<h2><strong>Variables aleatorias</strong> \</h2>
+<div id="introducción-1" class="section level3">
+<h3><strong>3.1 Introducción</strong></h3>
+<p>El concepto de variable aleatoria constituye uno de los conceptos principales de la probabilidad y estadística. A este concepto se pueden asociar dos paradigmas de evolución histórica segun J.A. Alberth &amp; B. Ruiz (2013) , El primero basada en el resultado de fenómenos aleatorios y por otro lado el proceso que relaciona los conjuntos de espacio muestral y sus respectivas probabilidades, para definir el concepto de variable aleatória como función de números reales y el espacio para el sustento matemático.</p>
+<p>Ahora, se puede relacionar el concepto de variable aleatoria a diferentes contextos donde se requiere dar respuesta a preguntas relacionadas con la ocurrencia o no de fenómenos aleatorios que eventualmente se presentarán en el futuro, como por ejemplo: \</p>
+<ul>
+<li>¿Cuánto tiempo se tarda un estudiante en ir a la universidad?</li>
+<li>¿Cuál será el resultado en mi próximo examen de estadística?</li>
+<li>El dueño de la cafetería se puede preguntar ¿Cúantas botellas de agua se venderán esta semana?</li>
+<li>¿Cuánto tiempo tardaría la entrega de un paquete una empresa de mensajería?</li>
+<li>¿Cuánto tiempo dura la bombilla de un vehículo?</li>
+<li>¿Qué diámetro tendrá la perforación de una máquina en una lámina de acero que hace parte de una puerta de un vehículo?</li>
+<li>¿ cuanto tiempo tardara la creación de la vacuna para el Covid-19?</li>
+</ul>
+<p>En todos los casos se trata de preguntas que tienen diferentes respuestas, o que no tienen un único valor como respuesta. En este documento se estudiará el concepto de variable aleatoria y mediante la definición de una función matemática que nos permita caracterizar su comportamiento, realizaremos diferentes cálculos de probabilidades de interés. Para ello será necesario retomar conocimientos de cálculo integral que serán expuestos en su momento mediante funciones de fácil manejo.</p>
+<p>En esta unidad se tratará el caso univariado discreto, luego el caso continuo,con sus principales características, conceptos relacionados con los vistos en el modulo anterior.</p>
+<p><br/><br/></p>
+</div>
+<div id="definición-variable-aleatoria" class="section level3" style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
+<h3><strong>Definición: Variable aleatoria</strong></h3>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> es una función que asigna a cada valor de un espacio muestral <span class="math inline">\(S\)</span> un numero . El conjunto formado por estos números conforman un subconjunto de los reales llamado rango de la variable X, (<span class="math inline">\(R_{_{X}}\)</span>)</p>
+</div>
+<p>Las variables aleatorias se clasifican teniendo en cuenta las características de su rango en discretas, continuas. La distribución de una variable aleatoria será univariada si se estudia el comportamiento de una sola variable y serán multivariadas si se considera el comportamiento conjunto de varias variables definidas sobre el mismo espacio muestral.Este ultimo caso sera tratado en la unidad 3.2\</p>
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
+<p><strong>Tipos de variables</strong></p>
+<ul>
+<li>Una variable <span class="math inline">\(X\)</span> se considera discreta si su rango <span class="math inline">\(R_{_{X}}\)</span> es un conjunto finito o infinito numerable de valores.</li>
+<li>Se considera continua si su rango <span class="math inline">\(R_{_{X}}\)</span> es un conjunto de valores infinito no numerable y generalmente corresponde a unión de intervalos.</li>
+</ul>
+</div>
+<p>El siguiente ejemplo ilustra el concepto de variable discreta:</p>
+<p><strong>Ejemplo :</strong> Un experimento aleatorio <span class="math inline">\(E\)</span>, consiste en lanzar una moneda balanceada al aire tres veces y observar el orden de caras (<span class="math inline">\(c\)</span>) y sellos (<span class="math inline">\(s\)</span>) que se obtienen en los tres lanzamientos. El espacio muestral <span class="math inline">\(S\)</span> de <span class="math inline">\(E\)</span>, estará dado por:</p>
+<p><span class="math display">\[S =\{(s,s,s),(s,s,c),(s,c,s),(s,c,c),(c,s,s),(c,s,c),(c,c,s),(c,c,c)\} \]</span></p>
+<p><img src="%22img/Figura301.pdf%22" /></p>
+<p>Sea <span class="math inline">\(X\)</span> la variable que asigna a cada resultado el número de caras en los tres lanzamientos de la moneda. En este caso el rango asociado a la variable será <span class="math inline">\(R_{_{X}}=\{0,1,2,3\}\)</span> determinado por la regla de asignación: número de caras en los tres lanzamientos de la moneda. A cada valor <span class="math inline">\(X\)</span> en <span class="math inline">\(R_{_{X}}\)</span> le corresponde un valor de probabilidad <span class="math inline">\(f_{_{X}}(x)=P(X=x)\)</span> conformando de esta manera una función. La expresión <span class="math inline">\((X=x)\)</span> hace referencia al evento que contiene todos los resultados en <span class="math inline">\(S\)</span> y que tiene como imagen el número real <span class="math inline">\(x\)</span>. En este ejemplo <span class="math inline">\((X=0)=\{(s,s,s)\}\)</span> ; <span class="math inline">\((X=1)=\{(s,s,c),(s,c,s),(c,s,s)\}\)</span> ; $(X=2)={(s,c,c),(c,s,c),(c,c,s) } $ y <span class="math inline">\((X=3) =\{(c,c,c) \}\)</span>. Bajo el supuesto que la moneda es balanceada, se cumple que los resultados en <span class="math inline">\(S\)</span> son igualmente posibles y por lo tanto:</p>
+<p><span class="math display">\[f_{_{X}}(0) =P(X=0)= \frac{1}{8} \hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(1) = P(X=1)=\frac{3}{8},\]</span> <span class="math display">\[f_{_{X}}(2) = P(X=2)=\frac{3}{8}\hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(3) =P(X=3)= \frac{1}{8}\]</span></p>
+<p>En la figura 3.1 se aprecia la relación entre el dominio, el rango y la regla de asignación antes mencionados.</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  \%%%%%%%%%%%%%</p>
+<p>%—————————————————————————————— \%%%%%%%%%%%%% </p>
+<p>%———————————————————————————————</p>
+<p>En el ejemplo 3.1 se puede resumir de la figura 3.1 de la siguiente manera:</p>
+<p>La función <span class="math inline">\(f_{_{X}}\)</span> definida se denomina función de distribución de probabilidad de la variable <span class="math inline">\(X\)</span> y como se mencionó en dicho ejemplo establece la probabilidad de que la variable tome el valor respectivo, es decir <span class="math inline">\(f_{_{X}}(x)=P(X=x)\)</span>. El siguiente ejemplo ilustra con mayor detalle la forma de encontrar funciones de probabilidad.\</p>
+<p>%——————-ejemplo 3.2 ——————————————————  Suponga que se lanza mil doscientas veces un dado legal <span class="math inline">\((m=1200)\)</span> y se obtienen los resultados consignados en la Tabla 3.1</p>
+<p>% tabla 3.1——————————————————————–</p>
+<pre><code>\begin{center}
+    Tabla 3.1 Resultados en experimento de simulación del lanzamiento de un dado $1200$ veces  y frecuencias esperadas.\\
+    {\footnotesize 
+    \begin{tabular}{ccccc}
+        \hline
+    %   &amp;&amp;&amp;&amp;\\
+        número de puntos &amp; frecuencia  &amp; frecuencia  &amp; probabilidad  &amp; frecuencia \\ 
+        en cara superior &amp; absoluta    &amp; relativa    &amp; de ocurrencia &amp; esperada   \\    
+        $x$ &amp; $n$ &amp; $f_{n}$ &amp; $f_{_{X}}(x)$ &amp; $m \times f_{_{X}}(x)$ \\
+    %   &amp;&amp;&amp;&amp;\\
+        \hline 
+        1     &amp; 207   &amp; 207/1200 = 0.1725  &amp; 1/6 &amp; 200 \\ %\hline
+        2     &amp; 206   &amp; 206/1200 = 0.1767  &amp; 1/6 &amp; 200 \\ %\hline
+        3     &amp; 195   &amp; 195/1200 = 0.1625  &amp; 1/6 &amp; 200 \\ %\hline
+        4     &amp; 200   &amp; 200/1200 = 0.1667  &amp; 1/6 &amp; 200 \\ %\hline
+        5     &amp; 202   &amp; 202/1200 = 0.1683  &amp; 1/6 &amp; 200 \\ %\hline
+        6     &amp; 190   &amp; 190/1200 = 0.1533  &amp; 1/6 &amp; 120 \\ %\hline
+        Total &amp; 1200  &amp; 1062/1062 = 1.0000 &amp; 1   &amp; 1200 \\ \hline
+    \end{tabular}
+}
+\end{center}</code></pre>
+<p>El siguiente código en R genera replicas del experimento planteado en el ejemplo 3.2\</p>
+<p>La segunda columna de la tabla 3.1 recoge el número de ocurrencias de cada resultado del experimento planteado, lo cual indica que de los 1200 lanzamientos: el uno salió 207 veces, el dos un total de 206, el tres 195 veces, el cuatro 200 veces, el cinco 202 veces y finalmente el seis ocurrió un total de 190 veces. Para calcular la distribución de frecuencias relativas (tercera columna) se divide cada frecuencia absoluta por el total de lanzamientos realizados en el experimento <span class="math inline">\(f_{n}(x)=n/N\)</span> . Por ejemplo para la primera frecuencia relativa <span class="math inline">\(17.25\%\)</span> de todas las veces que se lanzó el dado en la cara superior apareció el 1. El <span class="math inline">\(16.83\%\)</span> de las veces el dado arrojó 5 puntos. \</p>
+<p>La probabilidad teórica de que la variable <span class="math inline">\(X\)</span> tome cada uno de los valores <span class="math inline">\(x\)</span> es la misma e igual a <span class="math inline">\(1/6\)</span>, bajo el supuesto de que el dado está balanceado, esto es: $f_{<em>{X}}(1) = f</em>{<em>{X}}(2) = f</em>{<em>{X}}(3) = f</em>{<em>{X}}(4) = f</em>{<em>{X}}(5) = f</em>{_{X}}(6) = 1/6 $ es por esto que se afirma que los eventos simples son igualmente probables o posibles (equiprobables). \</p>
+De acuerdo con lo anterior la frecuencia absoluta esperada para cada resultado es igual a <span class="math inline">\(1/6 \times 1200 = 200\)</span>. Estos valores se representan en la última columna de la Tabla 3.1 \ %% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55 %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%<br />
+% figura 3.2———————————————————-
+% figura 3.3 ———————————————————
+<p>La relación entre <span class="math inline">\(X(S)\)</span> y <span class="math inline">\(f(x)\)</span> se conoce como {} <span class="math inline">\(f_{_{X}}(x)\)</span> la cual puede ser representada de la siguiente forma:</p>
+<p><span class="math display">\[f_{_X}(x)= \begin{cases}
+    \cfrac{1}{6} \hspace{1cm} \textnormal{ si } x \in \lbrace1,2,3,4,5,6\rbrace\\
+    \\
+    0 \hspace{1cm}\textnormal{ en otro caso }
+\end{cases}
+\]</span> % Las representaciones gráficas de las frecuencias absolutas observadas y los valores esperados para cada resultado obtenido de manera empírica se presentan en la figura 3.2 y para el resultado teórico en la figura 3.3 . Se puede observar que a cada valor de la variable aleatoria <span class="math inline">\(X\)</span> le corresponde un valor de probabilidad de ocurrencia <span class="math inline">\(f_{_{X}}(x) =P(X=x)\)</span>. Como se dijo en el párrafo anterior esta relación entre <span class="math inline">\(X\)</span> y <span class="math inline">\(P(X=x)\)</span> se conoce como {} de la variable aleatoria <span class="math inline">\(X\)</span> y se denota por <span class="math inline">\(f_{_{X}}(x)\)</span>. \</p>
+<p>Es de observar que para <span class="math inline">\(m=1200\)</span> veces que se repitió el experimento aleatorio, la distribución de frecuencias absolutas observadas ofrece valores aproximados a los cálculos teóricos de las probabilidades, puesto que el experimento se repite un número grande de veces (1200).\</p>
+<p>La representación gráfica más habitual de la función de probabilidad es un diagrama de barras no acumulativo aunque no del todo correcto, pues se trata de una representación discreta, como el presentado la figura 3.3\</p>
+<p>Por otro lado, si se comparan las alturas de las barras de las figuras 3.2 y 3.3 , los valores son muy similares.</p>
+<p>La figura 3.2 corresponde a la aproximación a la frecuencia absoluta de cada valor posible de <span class="math inline">\(X\)</span> a partir de la frecuencia relativa cuando el experimento se repite <span class="math inline">\(1200\)</span> veces. Es así como la distribución de frecuencias relativas para diferentes valores de <span class="math inline">\(X\)</span> cuando <span class="math inline">\(m\)</span> es grande, permite aproximar la {}. \</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % En resumen la función de distribución de probabilidad para la variable aleatoria <span class="math inline">\(X\)</span> número de puntos obtenidos al lanzar un dado es:\ % <span class="math display">\[f(x) = 
+\left \{ \begin{matrix} 
+    1/6 &amp; \mbox{ , } x=\{1,2,3,4,5,6\} \\
+    0 &amp; \mbox{ , }  \mbox{ en cualquier otro caso }
+\end{matrix}\right. \]</span> % la cual cumple las condiciones para ser una función de distribución de probabilidad <span class="math inline">\(f(x)\)</span>\</p>
+% figura 3.4 ————————————————–
+<p>La figura 3.4 representa los valores de <span class="math inline">\(P(X=1)\)</span> simulados para diferentes tamaños de replicas. En ella se observa la tendencia a un valor estable en la probabilidad (<span class="math inline">\(1/6\)</span>).\</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \ %%%%%%%%%%%%%%%%%%</p>
+<p>El concepto de función de distribución acumulada se introduce mediante la continuación del ejemplo 3.1\</p>
+<p>%% %% ——————– Se construye ahora la Tabla 3.2, a partir de la Tabla 3.1 . En la nueva tabla se suman las frecuencias relativas <span class="math inline">\(f_n(x)\)</span> de manera consecutivas para obtener las frecuencias relativas acumuladas <span class="math inline">\(F_n(x)\)</span>. También se calculan las sumas de las probabilidades consecutivas de <span class="math inline">\(f_{_X}(x)\)</span>, para de esta forma determinar <span class="math inline">\(F_{_{X}}(x)=P(X\leq x)\)</span>, para cada valor de <span class="math inline">\(R_{_{X}}\)</span>.\</p>
+<p>Los resultados de las Tabla 3.2 se ilustran en las figuras 3.5 y 3.6 . En el eje <span class="math inline">\(x\)</span>, se ubican los valores posibles de la variable aleatoria <span class="math inline">\(X\)</span> y en el eje <span class="math inline">\(y\)</span> los valores de <span class="math inline">\(F_{n}(x)\)</span> y <span class="math inline">\(F_{_X}(x)\)</span> respectivamente. </p>
+<p>% tabla 3.2 ——————————————————————–</p>
+<pre><code>\begin{center}</code></pre>
+Tabla 3.2 Resultados de la simulación y teóricos obtenidos al lanzar un dado balanceado 1200 veces \  {
+<p>} \end{center}</p>
+<p>%%</p>
+<p>%</p>
+<p>% % En la Figura 3.5 se aprecia que en el <span class="math inline">\(17.3\%\)</span> de los lanzamientos se obtuvo un <span class="math inline">\(1\)</span>, en el <span class="math inline">\(34.4\%\)</span> de los lanzamientos se obtuvo el <span class="math inline">\(1\)</span> o el <span class="math inline">\(2\)</span>, en el <span class="math inline">\(50.7\%\)</span> de los casos se obtuvo 1 o 2 o 3, y en el <span class="math inline">\(100\%\)</span> de los casos se obtuvo máximo <span class="math inline">\(6\)</span> en la cara superior del dado.\</p>
+<p>De la Figura 3.6 se puede concluir, por ejemplo, que la probabilidad que al lanzar un dado se obtenga un puntaje inferior a <span class="math inline">\(3\)</span> es <span class="math inline">\(0.3333\)</span>, la probabilidad que se obtenga un puntaje igual o inferior a <span class="math inline">\(4\)</span> es de <span class="math inline">\(0.6667\)</span>.\ % %%<br />
+La función de probabilidad acumulada para <span class="math inline">\(X\)</span> puede representarse mediante la siguiente función definida a trozos: %<br />
+<span class="math display">\[F_{_X}(x)= \begin{cases}
+    0  \textnormal{ si } x&lt;1 \\
+    1/6 \textnormal{ si }  1\leq x&lt;2  \\
+    2/6 \textnormal{ si }  2\leq x&lt;3 \\
+    3/6\textnormal{ si }  3\leq x&lt;4 \\
+    4/6\textnormal{ si }  4\leq x&lt;5 \\
+    5/6\textnormal{ si }  5\leq x&lt;6 \\
+    1\textnormal{ si } x\geq6  \\
+\end{cases}
+\]</span></p>
+<p>De manera general:</p>
+<p>%% La representación gráfica de <span class="math inline">\(F(x)\)</span> tiene forma escalonada (figura 3.6), siendo los saltos coincidentes con las probabilidades <span class="math inline">\(f_{_{X}}(x)\)</span> correspondientes a cada valor <span class="math inline">\(x\)</span> .\</p>
+<p>Por definición <span class="math inline">\(F_{_{X}}(x)=P(X \leq x)\)</span> , entonces, para el ejemplo 3.2 \ % <span class="math inline">\(F_{_{X}}(1) = P(X \leq 1) = P(X=1)=1/6\)</span> \ <span class="math inline">\(F_{_{X}}(2) = P( X\leq 2) = P(X=1)+P(X=2)=2/6\)</span> \ <span class="math inline">\(F_{_{X}}(3) = P( X\leq 3) = P(X=1)+P(X=2)+ P(X=3)=3/6\)</span> \ <span class="math inline">\(F_{_{X}}(4) = P( X\leq 4) = P(X=1)+P(X=2)+P(X=3)+P(X=4)=4/6\)</span> <span class="math inline">\(F_{_{X}}(5)=5/6\)</span> \ <span class="math inline">\(F_{_{X}}(6)=1\)</span> \ %</p>
+%%% %%%———————–ejemplo 3.3—————————–  Suponga que la probabilidad de que una máquina importada llegue en buenas condiciones y funcione adecuadamente sin que se realicen ajustes es de <span class="math inline">\(0.70\)</span>. En un envio de 5 de estas máquinas se define la variable <span class="math inline">\(X\)</span> como el número de máquinas que funcionan adecuadamente al llegar a su destino. Hallar:\ %%<br />
+%<br />
+%
+<p>%\end{enumerate}</p>
+\ Note que al revisar las máquinas podría encontrarse que todas funcionen correctamente o solo una funcione o en el peor de los casos ninguna funcione adecuadamente. %%<br />
+
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</p>
+<p>\%%%%%%%%%%%%%%% </p>
+<p>\%%%%%%%%%%%%%%%%% <br />
+Se estudió previamente para las variables discretas la distribución de probabilidad, donde se asignaba un valor de probabilidad a cada valor que tomaba la variable en un conjunto finito o infinito numerable de valores. Al considerar las variables continuas, los valores que toma están en un conjunto infinito no numerable y por tanto la forma de considerarlos debe ser diferente al caso discreto.\</p>
+<p>%%% %%——————–ejemplo 3.4  Una empresa de mensajería registra el peso de los paquetes enviados por sus clientes para destinatiarios en la misma ciudad en un periodo de una semana. Los datos se han agrupado en una distribución de frecuencias considerando intervalos de cinco kilogramos. %% %%  % tabla 3.5 ———————————————————-</p>
+<pre><code>\begin{center}</code></pre>
+Tabla 3.5 Distribución pesos de paquetes\ {
+<p>} \end{center}</p>
+<p>%%</p>
+<p>Los datos de la Tabla 3.5 se representan en el histograma de la figura 3.9.</p>
+<p>Para encontrar una función que permita calcular la probabilidad de que un paquete escogido al azar sea entregado en menos de un tiempo dado <span class="math inline">\(x\)</span>, se recurre a la densidad del intervalo, la cual se obtiene dividiendo la frecuencia relativa entre el ancho del intervalo (<span class="math inline">\(D=f_n/A\)</span>). \ %</p>
+Aplicando la fórmula anterior para calcular frecuencia relativa y densidad de cada intervalo de tiempo de la Tabla 3.5 Los resultados de tales cálculos se encuentran en la Tabla 3.6 \ %<br />
+% % tabla 3.6 —————————————————————-
+<p>Para obtener una aproximación de la curva de densidad de los tiempos de entrega a partir del histograma se utilizan intervalos con amplitud más pequeños, por ejemplo de amplitud <span class="math inline">\(1\)</span>; <span class="math inline">\(0.5\)</span>; <span class="math inline">\(0.3\)</span> o menos.\</p>
+El histograma de las densidades de frecuencia (<span class="math inline">\(f\)</span>) de los pesos con intervalos más pequeños se presenta en la figura 3.10 , donde se observa que el área de cada rectángulo bajo la curva es <span class="math inline">\(f_n \cdot A\)</span>, donde altura del rectángulo es igual a la densidad y base del rectángulo es igual a la amplitud. \ %<br />
+
+<p>La probabilidad de que ocurra un evento se calcula determinando el área de las barras del histograma de densidades. Cuando los intervalos tienen una amplitud que tiende a cero, la curva aproximada con el histograma tiende mejor a la función de densidad. Por tanto, la probabilidad de que un evento ocurra en un intervalo <span class="math inline">\((a,b)\)</span> es el área bajo la curva de la función de densidad en ese intervalo (figura 3.11), que se obtiene integrando:</p>
+<p><span class="math display">\[P(a&lt;X&lt;b)=\int \limits_{a}^{b} f_{_{X}}(x)\:dx \]</span> %</p>
+<pre><code>\begin{center}
+    \includegraphics[scale=0.7]{Figura310b.png} \\</code></pre>
+<p>Figura 3.11 Pobabilidad como área bajo la curva f(x) . ejemplo 3.4  \end{center}</p>
+<p>% %</p>
+<p> es la función de densidad de la distribución probabilística correspondiente, para la cual se cumple que: <span class="math display">\[P(X=a)=\int \limits_{a}^{a}f_{_{X}}(x)\:dx=0\]</span></p>
+<p>Porque no hay superficie en una línea cualquiera trazada.\</p>
+<p>\</p>
+La función de distribución para una variable continúa <span class="math inline">\(X\)</span>, siempre verifica las siguientes propiedades:
+<p>%%%%<br />
+%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55 %%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  %% %%———————–ejemplo 3.5 : Sea <span class="math inline">\(X\)</span> una variable aleatoria cuya función de densidad viene dada por <span class="math inline">\(f\)</span>. Determinar su función de distribución acumulada %<br />
+<span class="math display">\[\begin{equation*}
+    f_{_X}(x)=\left\lbrace
+    \begin{array}{lcl}
+        \dfrac{x}{2}&amp;,&amp; 0\leq x\leq 2 \\
+        0&amp;,&amp; \mbox{en cualquier otro caso}
+    \end{array}
+    \right.
+\end{equation*}\]</span></p>
+<p>\</p>
+<p>Por definición la función de distribución está dada por,</p>
+<pre><code>\begin{center}
+    \begin{tabular}{ccc}
+        \includegraphics[scale=0.34]{figura311a.pdf} &amp;
+        \includegraphics[scale=0.34]{figura311b.pdf}&amp;
+        \includegraphics[scale=0.34]{figura311c.pdf}\\
+        (a) &amp; (b) &amp; (c)\\
+    \end{tabular}\\</code></pre>
+<p>Figuras 3.12 de las funciones <span class="math inline">\(f_{_{X}}(x)\)</span> , <span class="math inline">\(F_{_{X}}(x)\)</span> y <span class="math inline">\(F_{_{X}}(1)\)</span> del ejemplo 3.5 \end{center}</p>
+% <span class="math display">\[F_{_X}(x)=\int \limits_{-\infty}^{x}f(t)\:dt=\int \limits_{-\infty}^{x}\frac{t}{2}\:dt=\frac{x^{2}}{4}\]</span> La cual está representada en la Figura 3.12 (b) y se presenta de manera completa como : %<br />
+<span class="math display">\[\begin{equation*}
+    F_{_X}(x)=\left\lbrace
+    \begin{array}{lcl}
+        0  &amp;,&amp;  x&lt;0 \\
+        %&amp;&amp;\\
+        x^{2}/4&amp;, &amp; 0\leq x &lt; 2 \\
+        %&amp;&amp;\\
+        1 &amp;,&amp; x \geq 2
+    \end{array}
+    \right.
+\end{equation*}\]</span> %%<br />
+%<br />
+Observe que la función <span class="math inline">\(F_{_{X}}(x)\)</span> representada en la figura 3.12 (b) es no decreciente. Se puede apreciar directamente en el gráfico los valores de la probabilidad acumulada, por ejemplo <span class="math inline">\(F_{_X}(1)= 1/4\)</span>, de acuerdo con eso, para valores inferiores a cero la probabilidad acumulada es cero, mientras que para valores superiores o iguales a 2, la probabilidad acumulada es 1.\ %<br />
+% %<br />
+En la Figura 3.12 el área bajo la curva antes de un valor <span class="math inline">\(X=x_0\)</span>, representa la probabilidad acumulada hasta <span class="math inline">\(x_0\)</span>, es decir <span class="math inline">\(F(x_0)=P(X \leq x_0)\)</span>, entonces %<br />
+<span class="math display">\[F_{_X}(1)=\int_{-\infty}^{1} f_{X}(x)\: dx = \int_{0}^{1} \dfrac{x}{2}\: dx = \dfrac{x^{2}}{4}\]</span> %<br />
+y corresponde al área del triángulo de base <span class="math inline">\(1\)</span> y altura <span class="math inline">\(1/2\)</span> que se forma bajo la función <span class="math inline">\(f(x)\)</span> como se indica en la Figura 3.12 (c), por tanto <span class="math inline">\(F_{_X}(1)=\dfrac{1 \times 1/2 }{2}=\dfrac{1}{4}\)</span>.\ %%<br />
+
+<p>%%<br />
+<br />
+%%%—————-ejemplo 3.6  La variable aleatoria continua <span class="math inline">\(X\)</span> denota el diámetro de un agujero taladrado en un componente metálico. El diámetro especificado es 12,5 milímetros. Por experiencia se sabe que la mayoría de las perturbaciones aleatorias del proceso resultan en diámetros mayores. Datos históricos indican que la distribución de <span class="math inline">\(X\)</span> puede modelarse con la función de densidad de probabilidad siguiente: \</p>
+<p><span class="math display">\[f_{_X}(x)=20e^{-20(x-12.5)}, x \geq 12.5\]</span></p>
+%
+<p>%\end{enumerate} %%%%</p>
+<p>\ Los cálculos de probabilidad asociados a variables continuas se realizan mediante la función de distribución acumulada por lo que inicialmente se determina esta función () <span class="math inline">\(F_{_X}(x)\)</span>= <span class="math inline">\(P(X \leq x)\)</span>). Para hallarla se realiza la siguiente integral:\ %<br />
+<span class="math display">\[F_{_X}(x)=\int_{12.5}^{x}20e^{-20t + 250} \hspace{.2cm}dt\]</span> %<br />
+Entonces %<br />
+<span class="math display">\[F_{_X}(x) =  \left[ -e^{-20t + 250} \right]_{12.5}^{x}\]</span> %<br />
+<span class="math display">\[P(X \leq x)= F_{_X}(x) = 1 - e^{-20x + 250}\]</span></p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \</p>
+<p>El valor esperado o esperanza matemática y la varianza corresponden a dos de los conceptos principales asociados a una variable aleatoria. El concepto de esperanza tiene sus principios en los juegos de azar, pues los jugadores querían conocer cual era el valor esperado de ganar cuando jugaban un gran número de veces. \</p>
+<p>Se puede considerar un juego en el que, si se gana, se obtienen <span class="math inline">\(a\)</span> unidades monetarias y, si se pierde, se abonan <span class="math inline">\(b\)</span> unidades monetarias. Si la probabilidad de ganar el juego fuese <span class="math inline">\(1\)</span>, y por tanto la probabilidad de perderlo es igual a <span class="math inline">\(0\)</span>, ¿Cuánto estaría dispuesto a apostar un participante en este juego? la respuesta muy probable sería que todo lo que tenga, pues es completamente seguro de que ganará. \</p>
+<p>¿Qué ocurre si la probabilidad de ganar el juego es nula?, es decir <span class="math inline">\(0\)</span> y la de perder en consecuencia <span class="math inline">\(1\)</span>. Entonces, un jugador conocedor de esta información no participaría en el juego, pues es consiente que perderá en todos los casos. \ \</p>
+<p>Lo que se observa en lo que se llama realidad es que la probabilidad de ganar (<span class="math inline">\(p\)</span>), es un valor entre cero y uno, desconocido y que es de interes para un jugador y que le ayudaría a decidir si participa o no y por otro lado cuanto valor arriesga en el juego en caso de participar.</p>
+<p>En este caso el valor esperado luego de la apuesta le indicaría al jugador el valor promedio de su ganancia o perdida si participara muchas veces en el juego.</p>
+<p>A continuación se presenta el código en R de la simulación de 100 partidas de juego, donde la probabilidad de ganar en cada paratida se supone de 0.70 y se señala con cero la partida en que el jugador pierde y con uno las partidas exitosas.</p>
+<p>Al final de esta simulación se observa que en 72 ocasiones el jugador pierde y en 28 gana. Si por cada juego ganado el jugador gana <span class="math inline">\(a\)</span> unidades y cada juego perdido le genera una perdida de <span class="math inline">\(b\)</span> unidades monerarias, en total esta cenda de juegos simulados representaria que su ganancia estaría representada por: <span class="math inline">\(G= 28* a -78 * b\)</span>. En caso de que <span class="math inline">\(a=2\)</span> y <span class="math inline">\(b=1\)</span>, se tendía un resultado de : <span class="math inline">\(G=28 \times 2 -78 \times 1 =-22\)</span> . \</p>
+<p>En general si <span class="math inline">\(X\)</span> representa la variable aleatoria que toma valores <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, es decir <span class="math inline">\(x_{1}=a\)</span>, <span class="math inline">\(x_{2}=b\)</span> , con sus respectivos valores de probabilidad <span class="math inline">\(f_{_{X}}(x_{1}),\ f_{_{X}}(x_{2})\)</span>. Entonces,</p>
+<p><span class="math display">\[E(X)=\mu=x_{1}f(x_{1})+x_{2}f(x_{2})\]</span></p>
+<p>entonces,</p>
+<p><span class="math display">\[E(X)=\sum\limits_{i=1}^{n}x_{i} \hspace{.1cm}f(x_{i})\]</span></p>
+<p>La esperanza matemática puede interpretarse intuitivamente como el valor medio de infinitas observaciones <span class="math display">\[E(X)=\lim_{n \rightarrow\infty} \sum\limits_{i=1}^{n}x_{i} \hspace{.1cm} f(x_{i})\]</span></p>
+<p>Aplicando la noción frecuentista de la probabilidad, y considerando <span class="math inline">\(k\)</span> posibles valores en el juego, se obtiene que,</p>
+<p><span class="math display">\[\mu=\sum\limits_{i=1}^{k} x_{i}\hspace{.1cm} P(X=x_{i})\]</span></p>
+%
+<p>% Ahora bien, ello es válido para transformaciones de la variable aleatoria, de forma que <span class="math inline">\(h(x)\)</span>, respresenta una función de la variable <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[E[h(X)]=\sum_{x=x_{(1)}}^{x_{(n)}}h(x)f(x)\:dx\]</span></p>
+<p><span class="math display">\[E[h(X)]=\int\limits_{-\infty}^{+\infty}h(x)f(x)\:dx\]</span></p>
+<p>En el caso continuo y similarmente para el caso discreto.\</p>
+<p>%  Si <span class="math inline">\(X\)</span> es el número de puntos obtenidos al lanzar un dado legal, encontremos los valores espeados de las variables <span class="math inline">\(X\)</span> y de <span class="math inline">\(h(x)=X^{2}\)</span>.\</p>
+<p> La función de probabilidad de <span class="math inline">\(X\)</span> es <span class="math inline">\(f(x)=1/6\)</span> si $ x=1,2,3,4,5,6$ y cero en cualquier otro caso.\</p>
+<p>La función de probabilidad de <span class="math inline">\(Y=X^{2}\)</span> es entonces <span class="math inline">\(f(y) = 1/6\)</span> si <span class="math inline">\(y=1,4,9,16,25,36,\)</span> y cero en cualquier otro caso. Así,</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E(X)&amp;=&amp;\sum\limits_{i=1}^{6} x_{i} f(x_{i})\\
+    &amp;=&amp; 1 \times \left(\frac{1}{6}\right) + 2 \times \left(\frac{1}{6}\right)  + 3 \times  \left(\frac{1}{6}\right)  + 4 \times \left(\frac{1}{6}\right)  + 5 \times \left(\frac{1}{6}\right)  + 6 \times \left(\frac{1}{6}\right)  \\
+    &amp;=&amp; 3.5
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E(Y)&amp;=&amp;\sum\limits_{i=1}^{6} y_{i} f(y_{i})\\
+    &amp;=&amp;\sum\limits_{i=1}^{6} x{i}^{2} f(x_{i})\\
+    &amp;=&amp;1 \times \left(\frac{1}{6}\right)+4 \times \left(\frac{1}{6}\right)+ 9 \times \left(\frac{1}{6}\right)+ 16 \times \left(\frac{1}{6}\right)
+    +25 \times \left(\frac{1}{6}\right)+36 \times \left(\frac{1}{6}\right)\\
+    &amp;&amp;\\
+    &amp;=&amp;15.1667
+\end{eqnarray*}\]</span></p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \</p>
+<p>Otra manera de calcular la varianza es a partir del segundo y primer momento.</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5</p>
+<p> Calcular el valor esperado y la varianza para la variable aleatoria del ejemplo 3.6 \</p>
+<p>\</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E[X] = \int_{0}^{2} x f(x) \:dx = \int_{0}^{2} \dfrac{x^{2}}{2} \:dx = \dfrac{x^{3}}{6}\Bigg|^{2}_{0} = \dfrac{8}{6} = 0.75
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    V[X] = E[X^{2}] - E[X]^{2} = \int_{0}^{2} x^{2} f(x) \:dx - (0.75)^{2}  = \dfrac{x^{4}}{8}\Bigg|_{0}^{2} - (0.75)^{2} = 1.4375
+\end{eqnarray*}\]</span></p>
+<p>: El tiempo de reparación (en minutos) de unas máquinas fotocopiadora tiene una función de densidad,</p>
+<p><span class="math display">\[
+f(x) = \left \{ 
+\begin{matrix} 
+    \dfrac{1}{22}\exp{\{-x/22}\},   &amp; \hspace{.3cm} x&gt;0  \\ 
+    &amp;\\
+    0  &amp; \mbox{en otro caso }
+\end{matrix}\right.  
+\]</span></p>
+<p>Cuando el profesor de estadística se preparaba para imprimir el cuestionario del segundo examen parcial, fue enterado por la secretaria del departamento que la máquina fotocopiadora se había averiado y que el técnico había acabado de llegar en ese instante y empezado a repararla. El profesor debe contar con por lo menos 10 minutos extras - tiempo de fotocopiado de los 35 exámenes, organizar sus respectivas hojas de respuesta, sumado el tiempo de su desplazamiento hasta el salón de clase, arreglo de los escritorios y entrega de los cuestionarios a los estudiantes. Al mirar su reloj, el profesor observa que faltan 20 minutos para la hora en que debe empezar el examen y decide esperar a que el técnico arregle la máquina. ¿Es acertada o no la decisión que tomó el profesor?. Justifique su respuesta.</p>
+ Para tener idea de como es la función de densidad de probabilidad, se construye con la grafica de <span class="math inline">\(f(x)\)</span>. \
+<p>La cual describe un comportamiento decreciente de la probabilidad con respecto al aumento del tiempo.\</p>
+{
+<p>}</p>
+<p>Para valorar la decisión tomada por el profesor es necesario calcula la probabilidad de que el técnico tarde 10 o menos minutos en reparar la maquina, lo cual se representa como <span class="math inline">\(P(X \leq 10) =F(10)\)</span> \</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    P(X \leq 10) &amp;=&amp; F(10) = \int_{0}^{10} \dfrac{1}{22} \exp\{-x/22\} dx \\
+    &amp;=&amp; 1-\exp\{-x/22\} \Bigg|_{0}^{10}   \\
+    &amp;=&amp; 0.36526
+\end{eqnarray*}\]</span></p>
+<p>Como <span class="math inline">\(P(X \leq 10) = 0.36526\)</span>, entonces $P(X&gt;10) =1-0.36526 = 0.63474 $, lo que indica que es mas probable que el técnico demore mas de 10 minutos en reparar la maquina y por tanto la decisión del profesor no es acertada, pues corre mucho riesgo de llegar tarde al salon producto del retardo presentado en la reparación de la maquina. \</p>
+<p>Se puede también argumentar mediante el calculo del valor promedio de la variable ( <span class="math inline">\(\mu= E[X]\)</span>) este desacierto.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E[X] &amp; = &amp; \mu \\
+         &amp; = &amp; \int_{0}^{\infty} \dfrac{x}{22} \exp\{-x/22\} dx\\
+         &amp;&amp;\\
+         &amp; = &amp; \dfrac{1}{22} \exp\{-x/22\} (-22x-484) \Big|_{0}^{\infty}\\
+         &amp;&amp;\\
+         &amp; = &amp; 22 \\
+\end{eqnarray*}\]</span> % Este resultado indica que el técnico se tarda en promedio 22 minutos en realizar una reparación similar a la que se propone realizar, pero el profesor cuenta con 10 minutos o menos.\</p>
+<p>Con fines académicos se presenta a continuación el calculo de la varianza de <span class="math inline">\(X\)</span>\ % <span class="math display">\[\begin{eqnarray*}
+    E[X^{2}] &amp; = &amp; \mu^{2} \\
+    &amp; = &amp; \int_{0}^{\infty} \dfrac{x^{2}}{22} \exp\{-x/22\} dx\\
+    &amp;&amp;\\
+    &amp; = &amp; \dfrac{1}{22} \exp\{-x/22\} (-22x^{2}-968x-21296)\Big|_{0}^{\infty} \\
+    &amp;&amp;\\
+    &amp; = &amp; 968 \\
+\end{eqnarray*}\]</span></p>
+<pre><code>\begin{eqnarray*}
+V[X] &amp; = &amp; E[X^2] - E[X]^2 = E[X^2] - \mu^2 \\
+&amp; = &amp; 968 - 22^2\\
+&amp; = &amp; 484 \\</code></pre>
+<p>\end{eqnarray*}</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   Una preocupación que tienen los padres hoy en día esta relacionada con el tiempo que pasan sus hijos usando el celular. Un estudio determino qu e el numero de llamadas que un joven realiza durante un día es una variable aleatoria (X) con función de distribución de probabilidad:</p>
+<p><span class="math display">\[f(x)=  \left \{ 
+\begin{matrix} 
+    \dfrac{8^{x} \exp\{-8\}}{x!},   &amp; \hspace{.3cm} x=0,1,2,3,4.... \\ 
+    &amp;\\
+    0  &amp; \mbox{en otro caso }
+\end{matrix}\right.  
+\]</span></p>
+<p>El estudio afirma también que los jóvenes en promedio reciben al rededor de 12 llamadas por día, valor que es considerado muy alto, debido a que a esa edad por lo regular no se tienen actividades que lo ameriten. También mencionan debido a que se ha logrado identificar la función de distribución de probabilidad es fácil establecer que se trata de una variable con un comportamiento homogéneo. ¿ Esta de acuerdo con la información suministrada en el articulo?. Justifique su respuesta.</p>
+<p>\</p>
+<p>Con el fin de verificar si la afirmación realizada es cierta debemos calcular el coeficiente de varianza <span class="math inline">\(CV = \dfrac{\sigma}{\mu} \times 100\)</span> %</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E[X] &amp; = &amp; \sum_{x_i=0}^{\infty} x_{i} f(x_{i}) \\
+     &amp;&amp;\\
+         &amp; = &amp; 0 \times f(0) + 1 \times f(1) + 2 \times f(2) + ....... \\  
+          &amp;&amp;\\
+         &amp; = &amp; \exp\{-8\} \sum_{x_i=1}^{\infty} \dfrac{8^{x_{i}}x_{i} }{x_{i}!} \\
+         &amp;&amp;\\
+        &amp; = &amp; \exp\{-8\}\times 8 \times \sum_{x_i=1}^{\infty} \dfrac{8^{x_{i}-1}}{(x_{i}-1)!} \\
+        &amp;&amp;\\
+        &amp;=&amp; \exp\{-8\} \times 8 \times \Big(\exp\{8\}\Big) \\
+        &amp; = &amp; 8 \\
+\end{eqnarray*}\]</span></p>
+<p>De igual manera para <span class="math inline">\(E[X^{2}] =72\)</span>\</p>
+<p><span class="math display">\[V[X] = 72 - 8^{2} = 8 \]</span></p>
+<p><span class="math display">\[ CV= \dfrac{\sqrt{8}}{8} \times 100 \% = 3.54 \%\]</span></p>
+<p>Este resultado indica la variable es muy homogénea.\</p>
+<p>: <span class="math inline">\(\exp\{x\} = \displaystyle\sum_{i=1}^{\infty} \dfrac{x^{k}}{k!}\)</span></p>
+{
+<p>}</p>
+\begin{Box3}{Codigo WolframAlpha} {
 <br/><br/>
 <div id="definición" class="section level3" style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
 <h3><strong>Definición: </strong></h3>
 </div>
 <p><br/><br/></p>
+</div>
 </div>
 
 

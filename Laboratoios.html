@@ -12,7 +12,7 @@
 <meta name="author" content="dgonzalez" />
 
 
-<title>Código 4</title>
+<title>Laboratorios</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -501,132 +501,15 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Código 4</h1>
-<h3 class="subtitle">Módulo 2- Unidad 2.1</h3>
+<h1 class="title toc-ignore">Laboratorios</h1>
+<h3 class="subtitle">Módulos 1 y 2</h3>
 <h4 class="author">dgonzalez</h4>
 
 </div>
 
 
-<div id="experimentos-aleatorios" class="section level1">
-<h1><strong>Experimentos aleatorios</strong></h1>
-<p>Como se menciona en la Guía 2.1, un <strong>Experimento aleatorio</strong> se puede definir como una acción que podemos repetir en iguales condiciones muchas veces y cuyo resultado no conocemos anticipadamente</p>
-<p>Un ejemplo de ello es cuando estamos jugando parques y un jugador lanza dos dados, el resultado solo es posible de observar después de haber realizado la acción de lanzarlos.</p>
-<p>Al conjunto de todos los posibles valores que puede tomar el experimento aleatorio se le denomina <strong>Espacio muestral</strong>, que se denota por la letra mayuscula <strong>S</strong>.</p>
-<p><img src="img/dados.gif" /></p>
-<p><br/></p>
-<p>Para este ejemplo :</p>
-<p><span class="math display">\[S=\{ 2,3,4,5,6,7,8,9,10,11,12 \}\]</span></p>
-<div id="lanzamiento-de-un-dados" class="section level2">
-<h2><strong>Lanzamiento de un dados</strong></h2>
-<pre class="r"><code>n=20000000
-x=sample(1:6,n, replace = TRUE)
-td1=prop.table(table(x))
-barplot(td1, las=1)</code></pre>
-<p><img src="codigo201_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-</div>
-<div id="lanzamiento-de-dos-dados" class="section level2">
-<h2><strong>Lanzamiento de dos dados</strong></h2>
-<pre class="r"><code>n=20000000
-d1=sample(1:6,n, replace = TRUE)
-d2=sample(1:6,n, replace = TRUE)
-dados=data.frame(d1,d2)
-suma=apply(dados, 1, sum)
-barplot(table(suma), las=1,cex.axis=0.7)</code></pre>
-<p><img src="codigo201_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<pre class="r"><code>data.frame(prop.table(table(suma)))</code></pre>
-<pre><code>##    suma       Freq
-## 1     2 0.02777330
-## 2     3 0.05559795
-## 3     4 0.08338310
-## 4     5 0.11113305
-## 5     6 0.13882550
-## 6     7 0.16661890
-## 7     8 0.13905100
-## 8     9 0.11108150
-## 9    10 0.08325140
-## 10   11 0.05547065
-## 11   12 0.02781365</code></pre>
-<p>Procedimiento alternativo</p>
-<pre class="r"><code>t=sapply(1:200000, function(x){sum(sample(1:6,2,rep=T))})
-barplot(table(t), las=1, cex.axis=0.7)</code></pre>
-<p><img src="codigo201_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-</div>
-<div id="urna" class="section level2">
-<h2><strong>Urna</strong></h2>
-<p>Simulación de urna con: 3 bolas Blancas, 5 Rojas y 4 Azules</p>
-<p>1 representa las bolas blancas 2 representa las bolas rojas 3 representa las bolas azules</p>
-<pre class="r"><code>sample(c(1,2,3),2,rep=T,prob=c(3,5,4))</code></pre>
-<pre><code>## [1] 2 3</code></pre>
-<p>La misma simulación con palabras</p>
-<pre class="r"><code>sample(c(&quot;Blanca&quot;,&quot;Roja&quot;,&quot;Azul&quot;),2,rep=T,prob=c(3,5,4))</code></pre>
-<pre><code>## [1] &quot;Roja&quot; &quot;Azul&quot;</code></pre>
-</div>
-</div>
-<div id="tablas-de-contingencia" class="section level1">
-<h1><strong>Tablas de contingencia</strong></h1>
-<p>Las tablas de contingencia o tablas cruzadas se basan en las tablas de frecuencia para dos variables cualitativas o cuantitativas con pocos valores. En ellas se representan probabilidades conjuntas, marginales y condicionales</p>
-<p>Inicialmente construimos una tabla con los valores de las frecuencias relativas conjuntas</p>
-<pre class="r"><code>x=c(20,60,100,30,140,50)
-    m=matrix(x,ncol=2)
-    rownames(m)=c(&quot;Adminitrativo&quot;,&quot;Operativo&quot;,&quot;Vendedor&quot;)
-    colnames(m)=c(&quot;Mujer&quot;,&quot;Hombre&quot;)
-    m</code></pre>
-<pre><code>##               Mujer Hombre
-## Adminitrativo    20     30
-## Operativo        60    140
-## Vendedor        100     50</code></pre>
-<p>En este caso se adicionan las frecuencias relativas marginales</p>
-<pre class="r"><code>addmargins(m)</code></pre>
-<pre><code>##               Mujer Hombre Sum
-## Adminitrativo    20     30  50
-## Operativo        60    140 200
-## Vendedor        100     50 150
-## Sum             180    220 400</code></pre>
-<p>Para convertirlas en probabilidades utilizamos la función <strong>prop.table()</strong></p>
-<pre class="r"><code>prop.table(m)</code></pre>
-<pre><code>##               Mujer Hombre
-## Adminitrativo  0.05  0.075
-## Operativo      0.15  0.350
-## Vendedor       0.25  0.125</code></pre>
-<p>Esta funcion tambien se utiliza para calcular las probabilidades condicionales por filas</p>
-<pre class="r"><code>prop.table(m,1)</code></pre>
-<pre><code>##                   Mujer    Hombre
-## Adminitrativo 0.4000000 0.6000000
-## Operativo     0.3000000 0.7000000
-## Vendedor      0.6666667 0.3333333</code></pre>
-<p>o las probabilidades condicionales por columnas</p>
-<pre class="r"><code>prop.table(m,2)</code></pre>
-<pre><code>##                   Mujer    Hombre
-## Adminitrativo 0.1111111 0.1363636
-## Operativo     0.3333333 0.6363636
-## Vendedor      0.5555556 0.2272727</code></pre>
-<div id="ejemplo" class="section level2">
-<h2><strong>Ejemplo</strong></h2>
-<div id="ubicación-por-estado-contagiados-de-covid-en-colombia" class="section level3">
-<h3>Ubicación por estado contagiados de Covid en Colombia</h3>
-<pre class="r"><code># Colombia= read.csv(&quot;data/Colombia.csv&quot;)
-t21=table(Colombia$ubicacion, Colombia$estado)
-(t22=addmargins(t21))</code></pre>
-<pre><code>##               
-##                fallecido   grave    leve moderado     Sum
-##   casa                 0       0 4587162        0 4587162
-##   fallecido       119482       0       0        0  119482
-##   hospital             0       0       0    21235   21235
-##   hospital uci         0    3972       0        0    3972
-##   Sum             119482    3972 4587162    21235 4731851</code></pre>
-<p>La tabla de frecuencias la convertimos en tabla de probabilidades</p>
-<pre class="r"><code>t23=prop.table(t21)
-round(t23, 4)</code></pre>
-<pre><code>##               
-##                fallecido  grave   leve moderado
-##   casa            0.0000 0.0000 0.9694   0.0000
-##   fallecido       0.0253 0.0000 0.0000   0.0000
-##   hospital        0.0000 0.0000 0.0000   0.0045
-##   hospital uci    0.0000 0.0008 0.0000   0.0000</code></pre>
-</div>
-</div>
-</div>
+<p><a href="https://colab.research.google.com/drive/1SqxWR-__bhV4weE2XgjfBMny1EukneaF?usp=sharing">Laboraorio 1</a></p>
+<p>Descargue el siguiente laboratorio en su Drive, para lo cual debe tener abierto un producto de google</p>
 
 
 
