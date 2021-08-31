@@ -591,29 +591,27 @@ summarytools::freq(Colombia$edadR)</code></pre>
 ## 
 ##                                Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
 ## ------------------------- --------- --------- -------------- --------- --------------
-##         1. (0  a 5  años]     79922      1.68           1.68      1.68           1.68
-##         2. (5  a 11 años]    124756      2.63           4.31      2.63           4.31
-##         3. (11 a 17 años]    196657      4.14           8.45      4.14           8.45
-##         4. (17 a 26 años]    775415     16.33          24.79     16.33          24.79
-##         5. (26 a 59 años]   2879512     60.65          85.44     60.65          85.44
-##       6. (Más de 59 años]    691513     14.56         100.00     14.56         100.00
+##         1. (0  a 5  años]     83381      1.70           1.70      1.70           1.70
+##         2. (5  a 11 años]    130703      2.67           4.37      2.67           4.37
+##         3. (11 a 17 años]    206389      4.21           8.58      4.21           8.58
+##         4. (17 a 26 años]    802979     16.38          24.96     16.38          24.96
+##         5. (26 a 59 años]   2965082     60.50          85.46     60.50          85.46
+##       6. (Más de 59 años]    712629     14.54         100.00     14.54         100.00
 ##                      &lt;NA&gt;         0                               0.00         100.00
-##                     Total   4747775    100.00         100.00    100.00         100.00</code></pre>
+##                     Total   4901163    100.00         100.00    100.00         100.00</code></pre>
 <p>Esta tabla nos permite identificar los rangos de mayor frecuencia</p>
 <p>Tambien podemo realizar una tabla sin tener que realizar la recodificacion. Esto se logra con la función <strong>hist()</strong></p>
 <pre class="r"><code>h=hist(Colombia$edad)</code></pre>
 <p><img src="codigo102_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre class="r"><code>h$breaks   # puntos de corte</code></pre>
-<pre><code>##  [1]   0   5  10  15  20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95 100 105
-## [23] 110 115</code></pre>
+<pre><code>##  [1]   0   5  10  15  20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95 100 105 110 115</code></pre>
 <pre class="r"><code>h$counts   # frecuencias absolutas en cada intervalo</code></pre>
-<pre><code>##  [1]  79922  99711 144402 261117 477845 575649 542170 506221 420984 359468 342077 300979
-## [13] 216693 149301 105604  72856  49847  28193  11478   2799    403     48      8</code></pre>
+<pre><code>##  [1]  83381 104467 151417 272367 494326 594185 559792 522204 433966 369419 350262 308510 222922 153642 108879
+## [16]  75301  51625  29198  11935   2889    418     49      9</code></pre>
 <pre class="r"><code>h$density  # densidad en cada intervalo</code></pre>
-<pre><code>##  [1] 3.366714e-03 4.200325e-03 6.082934e-03 1.099955e-02 2.012922e-02 2.424921e-02
-##  [7] 2.283891e-02 2.132456e-02 1.773395e-02 1.514259e-02 1.440999e-02 1.267874e-02
-## [13] 9.128192e-03 6.289304e-03 4.448568e-03 3.069059e-03 2.099805e-03 1.187630e-03
-## [19] 4.835107e-04 1.179079e-04 1.697637e-05 2.022000e-06 3.370000e-07</code></pre>
+<pre><code>##  [1] 3.402499e-03 4.262947e-03 6.178819e-03 1.111438e-02 2.017178e-02 2.424669e-02 2.284323e-02 2.130939e-02
+##  [9] 1.770869e-02 1.507475e-02 1.429302e-02 1.258926e-02 9.096698e-03 6.269614e-03 4.442986e-03 3.072781e-03
+## [17] 2.106643e-03 1.191472e-03 4.870273e-04 1.178904e-04 1.705718e-05 1.999525e-06 3.672598e-07</code></pre>
 <p>Seria de interés tambien construir una tabla con las edades de las personas fallecidas por covid en Colombia, para lo cual debemos primero seleccionar la base de datos de las fallecidas y luego en ello construir la tabla</p>
 <p>En este caso vamos a seleccionar los rangos de edad y luego construimos la tabla</p>
 <pre class="r"><code>Fallecidos=subset(Colombia, estado==&quot;fallecido&quot;)
@@ -624,19 +622,19 @@ summarytools::freq(Edad.fallecidos)</code></pre>
 ## 
 ##                     Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
 ## --------------- -------- --------- -------------- --------- --------------
-##          (0,10]      126      0.11           0.11      0.11           0.11
-##         (10,20]      211      0.18           0.28      0.18           0.28
-##         (20,30]     1550      1.30           1.58      1.30           1.58
-##         (30,40]     4449      3.72           5.30      3.72           5.30
-##         (40,50]     9724      8.14          13.44      8.14          13.44
-##         (50,60]    19609     16.41          29.85     16.41          29.85
-##         (60,70]    29099     24.35          54.21     24.35          54.21
-##         (70,80]    29187     24.43          78.64     24.43          78.64
-##         (80,90]    20507     17.16          95.80     17.16          95.80
-##        (90,100]     4877      4.08          99.88      4.08          99.88
-##       (100,110]      143      0.12         100.00      0.12         100.00
+##          (0,10]      134      0.11           0.11      0.11           0.11
+##         (10,20]      224      0.18           0.29      0.18           0.29
+##         (20,30]     1646      1.32           1.61      1.32           1.61
+##         (30,40]     4726      3.79           5.40      3.79           5.40
+##         (40,50]    10291      8.26          13.66      8.26          13.66
+##         (50,60]    20359     16.33          29.99     16.33          29.99
+##         (60,70]    30207     24.23          54.22     24.23          54.22
+##         (70,80]    30406     24.39          78.62     24.39          78.62
+##         (80,90]    21399     17.17          95.78     17.17          95.78
+##        (90,100]     5105      4.10          99.88      4.10          99.88
+##       (100,110]      151      0.12         100.00      0.12         100.00
 ##            &lt;NA&gt;        0                               0.00         100.00
-##           Total   119482    100.00         100.00    100.00         100.00</code></pre>
+##           Total   124648    100.00         100.00    100.00         100.00</code></pre>
 <p>O tambien</p>
 <pre class="r"><code>h=hist(Colombia$edad, breaks = c(0,4.9, 11.9,17.9,26.9, 59.9,115))</code></pre>
 <p><img src="codigo102_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
@@ -649,30 +647,30 @@ FreAbAc=cumsum(FreAbs)
 FreRAc=cumsum(FreRel)
 data.frame(LI,LS,FreAbs,FreRel, FreAbAc, FreRAc)</code></pre>
 <pre><code>##     LI    LS  FreAbs FreRel FreAbAc FreRAc
-## 1  0.0   4.9   63113 0.0133   63113 0.0133
-## 2  4.9  11.9  141565 0.0298  204678 0.0431
-## 3 11.9  17.9  196657 0.0414  401335 0.0845
-## 4 17.9  26.9  775415 0.1633 1176750 0.2478
-## 5 26.9  59.9 2879512 0.6065 4056262 0.8543
-## 6 59.9 115.0  691513 0.1456 4747775 0.9999</code></pre>
+## 1  0.0   4.9   65850 0.0134   65850 0.0134
+## 2  4.9  11.9  148234 0.0302  214084 0.0436
+## 3 11.9  17.9  206389 0.0421  420473 0.0857
+## 4 17.9  26.9  802979 0.1638 1223452 0.2495
+## 5 26.9  59.9 2965082 0.6050 4188534 0.8545
+## 6 59.9 115.0  712629 0.1454 4901163 0.9999</code></pre>
 </div>
 <div id="tablas-de-doble-entrada" class="section level2">
 <h2><strong>Tablas de doble entrada</strong></h2>
 <pre class="r"><code>table(Colombia$ubicacion, Colombia$estado)</code></pre>
 <pre><code>##               
 ##                fallecido   grave    leve moderado
-##   casa                 0       0 4587162        0
-##   fallecido       119482       0       0        0
-##   hospital             0       0       0    21235
-##   hospital uci         0    3972       0        0</code></pre>
+##   casa                 0       0 4740572        0
+##   fallecido       124648       0       0        0
+##   hospital             0       0       0    16317
+##   hospital uci         0    2288       0        0</code></pre>
 <pre class="r"><code>tabla1=table(Colombia$ubicacion, Colombia$estado)
 prop.table(tabla1)</code></pre>
 <pre><code>##               
 ##                   fallecido        grave         leve     moderado
-##   casa         0.0000000000 0.0000000000 0.9694223254 0.0000000000
-##   fallecido    0.0252505838 0.0000000000 0.0000000000 0.0000000000
-##   hospital     0.0000000000 0.0000000000 0.0000000000 0.0044876730
-##   hospital uci 0.0000000000 0.0008394178 0.0000000000 0.0000000000</code></pre>
+##   casa         0.0000000000 0.0000000000 0.9706678679 0.0000000000
+##   fallecido    0.0255226180 0.0000000000 0.0000000000 0.0000000000
+##   hospital     0.0000000000 0.0000000000 0.0000000000 0.0033410288
+##   hospital uci 0.0000000000 0.0004684853 0.0000000000 0.0000000000</code></pre>
 <p><br/><br/></p>
 </div>
 </div>
@@ -683,37 +681,37 @@ prop.table(tabla1)</code></pre>
 <p>En el caso de las variables cuantitativas debemos de construirlos</p>
 <pre class="r"><code>summary(Colombia$edad)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##     1.0    27.0    37.0    39.6    52.0   114.0</code></pre>
+##    1.00   27.00   37.00   39.53   52.00  114.00</code></pre>
 <pre class="r"><code>psych::describe(Colombia$edad)</code></pre>
-<pre><code>##    vars       n mean    sd median trimmed   mad min max range skew kurtosis   se
-## X1    1 4747775 39.6 17.89     37   38.81 17.79   1 114   113 0.41    -0.17 0.01</code></pre>
+<pre><code>##    vars       n  mean    sd median trimmed   mad min max range skew kurtosis   se
+## X1    1 4901163 39.53 17.92     37   38.74 17.79   1 114   113 0.41    -0.17 0.01</code></pre>
 <pre class="r"><code>psych::describe.by(Colombia$edad, group = Colombia$ubicacion)</code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: casa
 ##    vars       n  mean    sd median trimmed   mad min max range skew kurtosis   se
-## X1    1 4587162 38.71 17.25     37   38.04 17.79   1 114   113 0.38    -0.15 0.01
-## --------------------------------------------------------------------- 
+## X1    1 4740572 38.66 17.27     37   37.97 17.79   1 114   113 0.39    -0.15 0.01
+## ------------------------------------------------------------------------------------- 
 ## group: fallecido
-##    vars      n mean    sd median trimmed   mad min max range  skew kurtosis   se
-## X1    1 119482 67.6 15.19     69   68.44 14.83   1 110   109 -0.52     0.15 0.04
-## --------------------------------------------------------------------- 
+##    vars      n  mean    sd median trimmed   mad min max range  skew kurtosis   se
+## X1    1 124648 67.55 15.25     69    68.4 14.83   1 110   109 -0.52     0.14 0.04
+## ------------------------------------------------------------------------------------- 
 ## group: hospital
 ##    vars     n  mean    sd median trimmed   mad min max range  skew kurtosis   se
-## X1    1 21235 49.69 19.97     51   50.41 19.27   1 111   110 -0.32    -0.25 0.14
-## --------------------------------------------------------------------- 
+## X1    1 16317 48.49 20.62     50   49.16 20.76   1 104   103 -0.26    -0.37 0.16
+## ------------------------------------------------------------------------------------- 
 ## group: hospital uci
 ##    vars    n  mean    sd median trimmed   mad min max range  skew kurtosis   se
-## X1    1 3972 51.87 16.45     53   52.64 16.31   1  98    97 -0.51     0.47 0.26</code></pre>
+## X1    1 2288 51.53 18.31     54   52.57 17.79   1  98    97 -0.54     0.16 0.38</code></pre>
 <pre class="r"><code>summarytools::descr(Colombia$edad)</code></pre>
 <pre><code>## Descriptive Statistics  
 ## value  
-## N: 4747775  
+## N: 4901163  
 ## 
 ##                          value
 ## ----------------- ------------
-##              Mean        39.60
-##           Std.Dev        17.89
+##              Mean        39.53
+##           Std.Dev        17.92
 ##               Min         1.00
 ##                Q1        27.00
 ##            Median        37.00
@@ -725,7 +723,7 @@ prop.table(tabla1)</code></pre>
 ##          Skewness         0.41
 ##       SE.Skewness         0.00
 ##          Kurtosis        -0.17
-##           N.Valid   4747775.00
+##           N.Valid   4901163.00
 ##         Pct.Valid       100.00</code></pre>
 <p><br/><br/> <strong>YA ESTAMOS LISTOS PARA INTERPRETAR LA INFORMACION</strong></p>
 </div>

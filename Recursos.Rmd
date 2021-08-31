@@ -49,7 +49,7 @@ En esta unidad se tratará el  caso univariado discreto, luego el caso continuo,
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
 
-### **Definición:  Variable aleatoria**
+## **2.2 Definición:  Variable aleatoria**
 
 Una variable aleatoria $X$ es una función que asigna a cada valor de un espacio muestral $S$ un numero . El conjunto formado por estos números conforman un subconjunto de los  reales llamado rango de la variable X, ($R_{_{X}}$) 
 
@@ -57,13 +57,13 @@ Una variable aleatoria $X$ es una función que asigna a cada valor de un espacio
 
  Las variables aleatorias se clasifican teniendo en cuenta las características de su rango en discretas, continuas. La distribución de una variable aleatoria será univariada si se estudia el comportamiento de una sola variable y serán multivariadas si se considera el comportamiento conjunto de varias variables definidas sobre el mismo espacio muestral.Este ultimo caso sera tratado en la unidad 3.2
 
+**2.3 Tipos de variables**
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
 
-**Tipos de variables**
++ Una variable $X$ se considera **DISCRETA** si su rango $R_{_{X}}$ es un conjunto finito o infinito numerable de valores.
 
-+ Una variable $X$ se considera discreta si su rango $R_{_{X}}$ es un conjunto finito o infinito numerable de valores.
-+ Se considera continua si su rango $R_{_{X}}$ es un conjunto de valores infinito no numerable y generalmente corresponde a unión de intervalos.
-
++ Se considera **CONTINUA** si su rango $R_{_{X}}$ es un conjunto de valores infinito no numerable y generalmente corresponde a unión de intervalos.
 </div> 
 
 
@@ -85,78 +85,65 @@ Sea $X$ la variable que asigna a cada resultado el número de caras en los tres 
 $$f_{_{X}}(0) =P(X=0)= \frac{1}{8} \hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(1) = P(X=1)=\frac{3}{8},$$
 $$f_{_{X}}(2) = P(X=2)=\frac{3}{8}\hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(3) =P(X=3)= \frac{1}{8}$$
 
-En la figura 1  se aprecia la relación entre el dominio, el rango y la regla de asignación antes mencionados. 
-
 <br/><br/>
 
-##  **2.2 Variables aleatorias discretas** 
+##  **2.4 Variables aleatorias discretas** 
 <br/><br/>
 
-## **2.2.1  Función de distribución de probabilidad**
+### **Función de distribución de probabilidad**
 <br/><br/>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
 
 **Definición: Función de distribución de probabilidad**
 
-Para $X$ un variable aleatoria discreta, su función de distribución de probabilidad estará dada por $f(x)$, la cual proporciona las probabilidades asociadas a todos los valores de su rango $R_{X}$ . Esta función debe cumplir las siguientes propiedades:\\
+Para $X$ un variable aleatoria discreta, su función de distribución de probabilidad estará dada por $f(x)$, la cual proporciona las probabilidades asociadas a todos los valores de su rango $R_{X}$ . Esta función debe cumplir las siguientes propiedades:
 
 + $f(x) = P(X=x) > 0$
 
 + $\sum_{R_X} f(x) =1$
 
+</Adv>
+
 <br/><br/>
 En el Ejemplo 1 se puede resumir  de la figura 1  de la siguiente manera:
-<br/>
 
 |$x_i$  |$n_i$  | $f(x_i)$ |  $F(x_i)$     |
 |:-----:|------:|---------:|--------------:|
-|1      |203    |0.1691667 |  0.1691667    |
-|2      |189    |0.1575000 |  0.3266667    |
-|3      |208    |0.1733333 |  0.5000000    |
-|4      |232    |0.1933333 |  0.6933333    |
-|5      |200    |0.1666667 |  0.8600000    |
-|6      |168    |0.1400000 |  1.0000000    |
+|1      |200    |0.1666667 |  0.1691667    |
+|2      |200    |0.1666667 |  0.3333333    |
+|3      |200    |0.1666667 |  0.5000000    |
+|4      |200    |0.1666667 |  0.6666667    |
+|5      |200    |0.1666667 |  0.8333333    |
+|6      |200    |0.1666667 |  1.0000000    |
 |Total  |1200   |1.0000000 |  1.0000000    |
+<br/>
 
-<br/><br/>
 
-La función $f_{_{X}}$ definida se denomina función de distribución de probabilidad de la variable $X$ y como se mencionó en dicho ejemplo establece	la probabilidad de que la variable tome el valor respectivo, es decir $f_{_{X}}(x)=P(X=x)$. El siguiente ejemplo ilustra con mayor detalle la forma de encontrar funciones de probabilidad.
 
-**Ejemplo 2 ** : Suponga que se lanza mil doscientas veces un dado legal  $(m=1200)$ y se obtienen los resultados consignados en la Tabla 1 
-
-```{r}
-x=sample(1:6,1200, rep=TRUE)
-# Tabla 1 Resultados en experimento de simulación del lanzamiento de un dado $1200$ veces  y frecuencias esperadas
-t=summarytools::freq(x)
-t=as.table(t)
-t[,2:5]=t[,2:5]/100
-t=t[,c(1,2,3)]
-t
-
-```
-
-La segunda columna  de la tabla 1 recoge el número de ocurrencias de cada resultado del experimento planteado ($n_i$), 
-lo cual indica el número de lanzamientos de los 1200 ($N$) en que salieron el 1,2,3,4,5 y 6.  
- Para calcular  la distribución de frecuencias relativas (tercera columna) se divide cada frecuencia absoluta por el total de lanzamientos realizados en el experimento $f_{n}(x)=n/N$ . 
+La función $f_{_{X}}$ definida se denomina función de distribución de probabilidad de la variable $X$ y establece	la probabilidad de que la variable tome el valor respectivo, es decir $f_{_{X}}(x)=P(X=x)$. El siguiente ejemplo ilustra con mayor detalle la forma de encontrar funciones de probabilidad.
 
 La probabilidad teórica de que la variable $X$ tome cada uno de los valores $x$  es la misma e igual a $1/6$, bajo el supuesto de que el dado está balanceado, esto es: $f_{_{X}}(1) = f_{_{X}}(2) = f_{_{X}}(3) = f_{_{X}}(4) = f_{_{X}}(5) = f_{_{X}}(6) = 1/6 $ es por esto que se afirma que los eventos simples son igualmente probables o posibles (equiprobables). 
 
-De acuerdo con lo anterior la frecuencia absoluta esperada para cada resultado es igual a $1/6 \times 1200 = 200$. Estos valores se representan en la última columna de la Tabla 3.1  
-
-```{r}
-labsx=1:6
-t=table(x)
-barplot(t, names.arg=labsx, las=1)
-```
-<br/>
-Figura 2 Frecuencias empíricas para cada resultado posible al lanzar 1200 veces un dado legal. Ejemplo 2
+De acuerdo con lo anterior la frecuencia absoluta esperada para cada resultado es igual a $1/6 \times 1200 = 200$. 
 
 
 ```{r}
-x=c(200,200,200,200,200,200)
-labsx=1:6
-barplot(x, names.arg=labsx, las=1)
+x=1:6
+fx=c(200,200,200,200,200,200)/1200
+plot(x,fx, names.arg=labsx, las=1, ylim=c(0,0.20),pch=19)
 ```
 <br/>
+
+```{r}
+library(ggplot2)
+x=1:6
+fx=c(200,200,200,200,200,200)/1200
+ggplot(aes(x,fx ), color="red")) +
+  geom_point()
+```
+
+
 Figura 3 Frecuencia esperada para los posibles resultados al lanzar un dado legal 1200 veces.
 
 La relación entre $X(S)$ y $f(x)$ se conoce como **función de probabilidad** $f_{_{X}}(x)$  la cual puede ser representada de la siguiente forma:
