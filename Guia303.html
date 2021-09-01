@@ -477,6 +477,18 @@ div.tocify {
     </li>
   </ul>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Lab
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Laboratorios.html">Loratorios</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -547,6 +559,198 @@ Your browser does not support the video tag.</video>
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
+<p> \</p>
+<p>A continuación se presentan los principales conceptos teóricos de esta unidad, acompañados de ejemplos resueltos. \</p>
+<p>\</p>
+<p>En las unidades abordadas previamente a esta se han trabajado las características de variables aleatorias tanto discretas como continuas dentro de las cuales están: la función de distribución de probabilidad <span class="math inline">\(f(x)\)</span> , para el caso discreto y la función de densidad de probabilidad para las variables continuas. En ambos casos la función de probabilidad acumulada <span class="math inline">\(F(x)\)</span> que representa <span class="math inline">\(P(X \leq x)\)</span>, el valor esperado <span class="math inline">\(E[X]\)</span>, la varianza <span class="math inline">\(V[X]\)</span>, y en el caso de las variables conjuntas la función de distribución conjunta y la función de densidad conjunta para los casos discreto-discreto y continuo-continuo, respectivamente <span class="math inline">\(f_{_{XY}}(x,y)\)</span>. También característica de ellas como son: el valor esperado conjunto <span class="math inline">\(E[XY]\)</span> , la covarianza <span class="math inline">\(Cov[XY]\)</span> y el coeficiente de correlación <span class="math inline">\(\rho_{_{XY}}\)</span> para las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.</p>
+<p>Ahora, el siguiente modelo : <span class="math display">\[f(x)= \frac{1}{50}e^{-(\frac{x}{50})} \]</span></p>
+<p>Llamado exponencial, puede ser estudiado y asociado a sucesos que ocurren diariamente a nuestro alrededor.</p>
+<p>Tener una variable cuyo comportamiento se puede caracterizar tiene la ventaja de conocer fácilmente el recorrido teórico en la construcción del modelo, las propiedades, tendencias, valor esperado, varianza, función de distribución, estimadores de sus parámetros, alternativas que facilitan el cálculo de probabilidades, su afinidad con otras variables, entre otras, características que facilitan actividades como la simulación. \</p>
+<p>El siguiente diagrama presenta los principales modelo de probabilidad y sus diferentes relaciones</p>
+<p>\begin{center}  { {Fuente: construccion propia. basado en Univariate Distribution Relationships (Lawrence M. LEEMIS and Jacquelyn T. MCQUESTON)} \end{center}</p>
+\begin{center}
+&amp;
+<p>&amp;</p>
+<p>\  \end{tabular} \end{center}</p>
+<p>A continuación se presentan los modelos más comunes con sus principales características:\</p>
+<p>\</p>
+<p>%———————————————————————- Hemos clasificado como variables discretas aquellas cuyo rango <span class="math inline">\(R_{X}\)</span>, corresponde a un conjunto de valores finito o infinito numerables. También es común que estas variables sean asociadas con el conteo, por lo que en su mayoría contienen la palabras {} \</p>
+<p>A continuación se presentan los principales modelos discretos.\</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %  \</p>
+<p>Empezaremos enunciando el modelo Bernoulli, aunque algunos autores no lo reconocen como modelo, ayuda en la compresión de los modelos siguientes. Toma su nombre del matemático Jacob Bernoulli.\</p>
+%ejemplo 1 ================================================================================  \<br />
+Un biólogo realiza una salida de campo para estudiar el comportamiento del cucarachero común. Se considera éxito si puede filmar al animal y fracaso si no puede hacerlo. Por información suministrada en artículos científicos la probabilidad de lograrlo se estima en 0.20. \
+<p>\ Se requiere examinar si dentro de este contexto existe una variable que proceda de un experimento Bernoulli y ese caso como se podría caracterizar.\</p>
+<p>Primero es necesario revisar las características de un experimento Bernoulli y confrontarlas contra el contexto presentado en el ejemplo. \</p>
+<p>Primero existe un solo ensayo o salida de campo, durante después de la salida de campo se pueden obtener dos resultados posibles: lograr el objetivo de visualizar y filmar al animal (Éxito) y por otro lado el no lograrlo (Fracaso). También se posee la probabilidad de éxito (<span class="math inline">\(0.20\)</span>), este caso establecida mediante el enfoque subjetivo de un experto en un artículo científico. Lo anterior nos permite poder asociar la variable que llamaremos <span class="math inline">\(X\)</span> asociada con el poder o no realizar la filmación.</p>
+<p>La variable aleatoria se define en este caso como:\</p>
+$ X =
+<span class="math display">\[\begin{array}{lll}
+    1 &amp; \mbox{si se realiza la filmación del ave}   \\
+    0 &amp; \mbox{si no se logra realizar la filmación}
+\end{array}\]</span>
+<p>. $</p>
+<p>y su función de distribución de probabilidad está dada por:</p>
+<p><span class="math display">\[f(x)= 0.2^{x} (1-0.2)^{1-x} ,\text{ si } x=0,1.\]</span></p>
+<p><span class="math display">\[ E[X]=p =0.20 \hspace{.5cm} V[X] =p(1-p)= 0.16\]</span> \  %==================================================================================== % %</p>
+<p>\</p>
+<p>El segundo modelo que abordaremos corresponde al modelo binomial, que puede verse como una generalización del modelo Bernoulli, pasando de un ensayo a <span class="math inline">\(n\)</span> ensayos. Fue investigada y analizada por el físico y matemático suizo Jakob Bernoulli en relación con problemas presentados en los juegos de azar. Su trabajo fue presentado en 1713. \</p>
+<p>%ejemplo 2 ================================================================================   \ Un sistema de seguridad para casas está diseñado para tener una confiabilidad del 90% . Suponga que nueve casas equipadas con este dispositivo sufrieron tentativa de robo. Se requiere calcular la probabilidad de que en siete de las nueve, la alarma se activará. \</p>
+<p>\ En este caso la variable <span class="math inline">\(X\)</span> se define como el número de casas de las nueve en las que se activa el sistema de alarma. Observe que en cada caso se puede presentar dos posibles resultados frente a la tentativa de robo :</p>
+<p>Por las anteriores razones, el proceso enunciado corresponde a un experimento binomial y por tanto podemos afirmar que la variable X: número de sistemas que se activan ante la tentativa de robo, es una variable con distribución binomial con parámetros <span class="math inline">\(n=9\)</span> y <span class="math inline">\(p=0.90\)</span>.</p>
+<p>Para calcular la probabilidad requerida utilizamos la función de distribución de probabilidad del modelo Binomial</p>
+<p><span class="math display">\[\begin{equation*}
+    \begin{array}{lcl}
+        P(X=7)&amp;=&amp; \displaystyle\binom{9}{7} 0.90^{7} 0.10^{2} \\
+        &amp;=&amp; 0.17218688 
+    \end{array}
+\end{equation*}\]</span></p>
+<p>En R se corre el siguiente código:\</p>
+La siguiente gráfica corresponde a la función de distribución de probabilidad del ejemplo2 :binomial con <span class="math inline">\(n=9\)</span> y <span class="math inline">\(p=0.90\)</span>\
+<p>%=========================================================================================== %  \</p>
+El siguiente modelo fue plantea por el físico y matemático francés Siméon-Denis Poissonen uno de sus trabajos presentado en 1838 relacionado con temas sobre juicios en temas criminales y civiles. Es utilizado para resolver problemas asociados con el número de eventos que ocurren en un intervalo de tiempo o espacio, como por ejemplo:
+<p>%=======================================================================================00 %ejemplo 3 ================================================================================   \ Se estima que en el cruce más importante de la cuidad, ocurren 2 accidentes por día y se desea valorar la probabilidad de que en un día cualquiera no ocurra ningún accidente en dicho cruce.\</p>
+<p>%ejemplo 2 ================================================================================  \ El número de accidentes que pueden ocurrir en este cruce, para un dia cualquiera, se puede considerar como una variable aleatoria con distribución Poisson, pues la variable hace referencia al número de eventos que se pueden presentar en un determinado espacio de tiempo. Para calcular la probabilidad de que no ocurra ningún evento, utilizamos el modelo Poisson: <span class="math display">\[P(X = 0) = \dfrac{2^{0}}{0!} \hspace{.2cm} e^{-2}=0.135335\]</span></p>
+La siguiente gráfica representa la distribución de masa de una variable de Poisson con media 2. \ 
+<p>%============================================================================================= %  \</p>
+<p>Este modelo nace de la necesidad de modelar eventos Bernoulli con probabilidad no constante generados en elecciones sin repetición.</p>
+<p>% ejemplo4 3-92. Mongomery %ejemplo 4 ================================================================================   \ Las tarjetas de circuito impreso se someten a una prueba de funcionamiento antes de ser ensambladas en un dispositivo de seguridad, después de ser rellenado con chips semiconductores. Un lote de estas tarjetas contiene 140 unidades y se seleccionan aleatoriamente 20 sin reemplazo para realizar una prueba de control de calidad internacional. Si 5 tarjetas son defectuosas, ¿cuál es la probabilidad de que al menos 1 tarjeta defectuosa aparezca en la muestra?</p>
+<p>\ <span class="math display">\[\begin{eqnarray*}
+    P(X\geq 1)=1-P(X=0)
+    &amp;=&amp; 1 - \dfrac{\displaystyle\binom{5}{0}\displaystyle\binom{135}{5}}{\displaystyle\binom{140}{5}}\\
+    &amp;=&amp; 1-\Bigg[\frac{1  \times 346700277}{416965528} \Bigg] \\
+    &amp;=&amp; 1 - 0.83148427 \\
+    &amp;=&amp; 0.16851573
+\end{eqnarray*}\]</span></p>
+<p>%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \</p>
+<p>La distribución geométrica también conocida como distribución de Pascal, fue esbozada en el escrito El arte de la conjetura, escrita por Jakob Bernoulli. Esta distribución modela el número de ensayos Bernoulli necesarios para obtener el primer éxito. Los valores que puede tomar esta variable son:\</p>
+<p>La variable X toma el valor de 1 cuando el éxito ocurre en el primer intento. Cuando el primer éxito ocurre en el evento dos, X es igual a 2, es decir que la variable con distribución geométrica corresponde al numero del evento donde ocurre el primer éxito.</p>
+<p>%ejemplo5 %ejemplo 5 ================================================================================   \ En un estudio realizado en peces, los animales son sometidos a pruebas para determinar si poseen o no un gen que aumenta el riesgo de una enfermedad mortal. la probabilidad de que una animal de la especie en estudio tenga el gen es 0,5. Cuál es la probabilidad de que 3 o más animales deban ser sometidos a pruebas antes de detectar el primer pez con el gen objeto de estudio?</p>
+<p>\ <span class="math display">\[\begin{eqnarray*}
+    P(X\geq 3)&amp;=&amp; 1-P(X\leq 2)\\
+    &amp;=&amp; 1-[p(1)+p(2)] \\
+    &amp;=&amp; 1-[0.5+0.5 \times 0.5] \\
+    &amp;=&amp;0.25 
+\end{eqnarray*}\]</span></p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %  \</p>
+<p>La distribución binomial negativa esta relacionada con la distribución geométrica\</p>
+<p>%ejemplo 6 ================================================================================   \ Un sitio Web está soportado por tres servidores idénticos. Sólo uno de ellos se utiliza para operar el sitio, y los otros dos son de repuesto, los cuales se activan en caso de que el sistema principal falle. La probabilidad de falla en el sistema principal (o cualquier otro sistema de repuesto activado) ante una solicitud de servicio es 0,0005. Suponiendo que cada solicitud representa un juicio independiente, cuál es el número medio de solicitudes que se espera hasta el fracaso de los tres servidores? </p>
+<p>\ <span class="math display">\[E[X]=\dfrac{3}{0.0005}= 6000 \]</span></p>
+<p>%============================================================================================ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %============================================================================================ </p>
+<p>\</p>
+<p>Las variables continuas proceden en su mayoría de la medición y se clasifican así debido a que su rango esta formado por un conjunto infinito no numerable. A continuación se presentan los principales modelos continuos.\</p>
+<p>%======================================================================================== \</p>
+<p>%ejemplo 7 ================================================================================   \ En la fabricación de portaobjetos, que son láminas rectangulares de vidrio muy delgada (76x26 mm y 1 mm de espesor), utilizados para la observación de sustancias en el microscopio. Una de sus principales características está relacionada con su espesor (<span class="math inline">\(X\)</span>), el cual tiene una distribución uniforme entre 0.95 mm y 1.05 mm. Determine la probabilidad de que un portaobjeto determinado tenga un espesor superior a 1.03 mm. \</p>
+<p>\ <span class="math display">\[P(X\geq 1.03)= (1.05-1.03) \times \frac{1}{0.10}=0.20 \]</span></p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % \</p>
+<p>La distribución normal es uno de los modelos más utilizados en las aplicaciones de la Estadística. Estas aplicaciones están relacionadas con:</p>
+<p>Su distribución fué planteada por el matemático francés del siglo 18, Abraham de Moivre, quien a partir de la distribución Binomial, con <span class="math inline">\(n=2\)</span> empezó a aumentar su tamaño hasta observar que se formaba una distribución en forma de campana. Este mismo comportamiento fué detectado por Galileo en el siglo 17, al observar los errores producto de sus mediciones en astronomía. El modelo como se conoce actualmente fue propuesto de manera simultánea por los cientificos Robert Adrain y Carl Friedrich Gauss, quien finalmente le dió el nombre. Su función de densidad esta dada por:</p>
+<p>En la siguente gráfica se muestra el efecto en la curva normal, producto de cambios en la media o en la varianza. A mayor valor de la media la curva se desplaza a la derecha, mientras que a menor varianza la curva se vuelve mas angosta o puntiaguda</p>
+<p>Dentro del sin número de posibles curvas que se pueden obtener con los parámetros <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^{2}\)</span>, existe una muy especial. Normal estándar (<span class="math inline">\(N(0,1)\)</span>) con <span class="math inline">\(\mu=0\)</span> y <span class="math inline">\(\sigma^{2}=1\)</span>. La gran mayoría de libros de Estadística poseen tablas de la función de distribución acumulada de la normal estándar.\</p>
+<p>Su función de distribución esta dada por : <span class="math display">\[f(x)= \dfrac{1}{\sqrt{2\pi}} \hspace{.1cm} e^{-\big(\frac{1}{2}(x-\mu)^{2}\big)}   \hspace{.5cm}  -\infty \leq  x \leq \infty \]</span></p>
+<p>Si <span class="math inline">\(X \sim N(\mu, \sigma^{2})\)</span>, entonces \</p>
+<p><span class="math display">\[Z= \dfrac{X-\mu}{\sigma} \sim N(0,1)\]</span></p>
+<p>a este proceso se le llama comúnmente estandarizar.\</p>
+<p>La propiedad empírica de la distribución normal es de gran ayuda cuando una variable de interés se puede aproximar al modelo normal. Ella establece un intervalo formado por la media mas o menos una desviación estándar contiene el 68% de los datos. Si el intervalo tiene un ancho de 4 desviaciones estándar contendrá el 95% de los datos y si este intervalo corresponde a los valores de la media mas o menos 3 desviaciones estándar contendrá el 99% de los datos que se representa en la siguiente gráfica.</p>
+<p>%ejemplo 8 ================================================================================  \ La velocidad de transferencia de archivos desde un servidor en el campus de la universidad a un ordenador personal en casa de un estudiante en un día laborable, se distribuye normalmente con una media de 60 kilobits por segundo y una desviación estándar de 4 kilobits por segundo. ¿Cuál es la probabilidad de que el archivo se transfiera a una velocidad de 70 kilobits por segundo o más? </p>
+<p>\ Para una variable <span class="math inline">\(X\)</span> con distribución <span class="math inline">\(N(60,16)\)</span>, debemos calcular la probabilidad <span class="math inline">\(P(X \geq 70)\)</span> \ <span class="math display">\[\begin{eqnarray*}
+    P(X \geq 70)&amp;=&amp;P\Bigg(\dfrac{X-\mu}{\sigma} \geq \dfrac{70-60}{4}\Bigg)\\
+    &amp;=&amp; P\Bigg(Z \geq \dfrac{70-60}{4}\Bigg)\\
+    &amp;=&amp; P(Z\geq 2.5)=1-P(Z &lt; 2.5 )\\
+    &amp;=&amp; 1-0.9938=0.0062
+\end{eqnarray*}\]</span></p>
+En R se utiliza el siguiente código:
+<p>% comando en R %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % </p>
+<p>\</p>
+<p>Este modelo fue planteado por el matemático estadístico e ingeniero Agner Kraru Erlang, experto en el trafico de las comunicaciones y la teoría de colas. Distribución utilizada para modelar el tiempo entre dos eventos consecutivos. \</p>
+<p>%ejemplo 8 4-77 mongomery %ejemplo 9 ================================================================================  \ El tiempo entre llamadas de los clientes a una empresa de turismo ecológico tiene una distribución exponencial con un tiempo medio entre llamadas de 15 minutos. ¿Cuál es la probabilidad de que transcurra más de 20 minutos antes de que se realiza una nueva llamada?\</p>
+<p>\ X: el tiempo entre dos llamadas consecutivas <span class="math inline">\(\lambda=\frac{1}{15}\)</span> minutos. <span class="math display">\[\begin{eqnarray}
+    P(X \geq 20) &amp;=&amp; 1-P(X &lt; 20) \\
+    &amp;=&amp; 1-(1-e^{-\frac{20}{15}}) \\
+    &amp;=&amp; 0.2636 
+\end{eqnarray}\]</span></p>
+<p>En R se utiliza el siguiente código:</p>
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Para tratar las distribuciones Gamma y Weibull, es necesario definir la función Gamma como: <span class="math display">\[\Gamma(r)= \int_{0}^{\infty} t^{r-1} e^{t} \,dt \]</span> Con las siguientes propiedades:
+<p>\</p>
+<p>Esta distribucion tiene su origen en la familia de curvas sesgadas propuestas por Karl Pearson. Esta distribución es otra alternativa para modelar los tiempos de espera de ocurrencia de sucesos o eventos. En ocasiones puede relacionarse con la suma de los tiempos de variables exponenciales sucesivas con igual media.\</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% La distribución Gamma se obtiene al sumar <span class="math inline">\(r\)</span> variables con distribución exponencial con parámetro <span class="math inline">\(\lambda\)</span>.</p>
+<p>algunos autores utilizan <span class="math inline">\(\frac{1}{\beta}\)</span> en lugar de <span class="math inline">\(\lambda\)</span> y <span class="math inline">\(\alpha\)</span> en lugar de <span class="math inline">\(r\)</span></p>
+<p><span class="math display">\[E[X]=\dfrac{r}{\lambda}  \hspace{2cm} V[X]= \dfrac{r}{\lambda^{2}}\]</span></p>
+<p>%ejemplo 11 ================================================================================  \ En cierta ciudad el consumo diario de energía eléctrica, en millones de kilovatios por hora, puede considerarse como una variable aleatoria con distribución Gamma de parámetros <span class="math inline">\(r= 3\)</span> y <span class="math inline">\(\lambda= 0.5\)</span>. La planta de energía de esta ciudad tiene una capacidad diaria de 10 millones de KW/hora ¿Cuál es la probabilidad de que este abastecimientos sea insuficiente en un día cualquiera?.\</p>
+<p>\ <span class="math inline">\(\emph{X: consumo diario de energia}\)</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    P(X &gt; 10)&amp;=&amp; 1-P(X \leq 10) \\
+    &amp;=&amp; 1 - \dfrac{1}{\Gamma(3)} \int_{0}^{10} (0.5)^{3}  x^{3-1} e^{-0.5x} \,dx \\
+    &amp;=&amp; 0.124652
+\end{eqnarray*}\]</span> %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %</p>
+<p>\  % a localizacion % b forma</p>
+<p>Esta distribución fue descubierta Maurice Frechet matemático francés y luego trabajada por Rosin y Rammler quienes en 1933 estudiaron el tamaño de una partícula y posteriormente recibe su nombre del ingeniero y matemático Waloddi Weibull . Esta distribución se utiliza para modelar el tiempo de vida de algunos componentes. La Weibull tiene dos parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>. Su función de distribución y sus principales características son:\</p>
+La siguiente gráfica corresponde a varias conformaciones de los parámetros de esta distribución.
+<p>%ejemplo 11 ================================================================================  \ La duración de una batería se modela mediante una distribución Weibull con parámetros: <span class="math inline">\(\alpha=0.1\)</span> y <span class="math inline">\(\beta=2\)</span>. Determine la probabilidad de que una batería dure más de 10 horas. Determine la proporción de baterías que durarán más de 10 horas.</p>
+<p>\ <span class="math display">\[\begin{eqnarray*}
+    P(X &gt; 10) &amp;=&amp; 1- F(10)\\
+    &amp;=&amp; 1-\Big(1-e^{-[10/2]^{0.1}}\Big)\\
+    &amp;=&amp; -e^{[5]^{0.1}}\\
+    &amp;=&amp; 0.3089367 
+\end{eqnarray*}\]</span></p>
+En R se utiliza el siguiente código:
+<p>En este caso tambien se puede obtener la tasa de fallos esta determinada por: <span class="math display">\[\begin{eqnarray*}
+    h(10)&amp;=&amp;\dfrac{f(10)}{1-F(10)}\\
+    &amp;=&amp; \dfrac{0.003628829}{1-0.6910633}\\
+    &amp;=&amp; 0.01174619
+\end{eqnarray*}\]</span></p>
+<div style="page-break-after: always;"></div>
+<p>% \</p>
+<p>Empezaremos por recordar algunas instrucciones en R\</p>
+En {} los nombres de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes: la primera parte con el propósito de la función (primera letra) y la segunda parte hace referencia al modelo a utilizar ( {} para el calculo de probabilidad de una variable aleatoria con distribución binimial) \ En cada caso si no recuerda las sintaxis de la función puede hacer uso de las ayudas de R así:
+<p>\ Sea una variables con distribución binomial con parámetros <span class="math inline">\(n=20\)</span> y <span class="math inline">\(p=0.30\)</span> , lo cual se puede simbolizar como : <span class="math inline">\(X\sim b(x; 20,0.30)\)</span> \</p>
+<p>En este caso se requieren realizar los siguientes procesos:</p>
+<ol style="list-style-type: decimal">
+<li>Calcular la probabilidad de <span class="math display">\[ P(X=7) = \dbinom{20}{7} 0.30^{7} (10.30)^{(20-7)}\]</span></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Calcular la probabilidad acumulada <span class="math display">\[P(X \leq 7) = \displaystyle\sum_{x=0}^{x=7} \dbinom{20}{x} 0.30^{x} (1-0.30)^{(20-x)}\]</span></li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>Construir la tabla de los valores de <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(F(x)\)</span> para todo el rango de la variable\<br />
+</li>
+<li>Generar 15 números aleatorios a partir de esta distribución \</li>
+<li>Constuir la gráfica de la función de distribución de probabilidad <span class="math inline">\(f(x)\)</span> para <span class="math inline">\(X\)</span> \</li>
+<li>Construir la gráfica de la función de distribución acumulada <span class="math inline">\(F(x)\)</span>\</li>
+<li>Para construir una gráfica mas elaborada se puede utilizar el siguiente código</li>
+</ol>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \ Ahora supongamos que se tiene una variable continua con distribución normal, con media 50 y varianza 100, es decir desviación estándar 10, lo cual se puede representar como <span class="math inline">\(X\sim N(50,100)\)</span>\.</p>
+<p>En este caso vamos a hallar los siguientes valores:</p>
+<ol style="list-style-type: decimal">
+<li>Calcular la probabilidad de que un valor de <span class="math inline">\(X\)</span> sea menor o igual a 70, <span class="math display">\[P(X&lt;70) =\displaystyle\int_{-\infty}^{70} \dfrac{1}{\sqrt{200 \pi }} \exp{\frac{1}{200 }(x-50)^{2}} \:dx\]</span> \</li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Calcular la probabilidad de que la variable sea mayor a 70: <span class="math inline">\(P(X&gt;70)\)</span> \</li>
+<li>Genere 10 números aleatorios de la variables <span class="math inline">\(X\)</span></li>
+<li>Generar la gráfica de la función de densidad de la variable <span class="math inline">\(X\)</span>, <span class="math inline">\(f(x)\)</span></li>
+<li>Generar la gráfica de la función de probabilidad acumulada de la variable <span class="math inline">\(X\)</span>, <span class="math inline">\(F(x)\)</span></li>
+<li>Para realizar un gráfico mas elaborado podemos utilizar el siguiente código
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5 Por otro lado el proceso de simulación de variables estadisticas esta relacionado con los experimentos llamados de Montecarlo, a continuación se describe brevemente su origen. \</li>
+</ol>
+<p>METODO DE MONTECARLO : Es un método no determinista o estadístico numérico, usado para aproximar expresiones matemáticas complejas y costosas de evaluar con exactitud. El método se llamó así en referencia al Casino de Montecarlo (Mónaco) por ser “la capital del juego de azar”, al ser la ruleta un generador simple de números aleatorios. El nombre y el desarrollo sistemático de los métodos de Montecarlo datan aproximadamente de 1944 y se mejoraron enormemente con el desarrollo de la computadora. \</p>
+<p>El uso de los métodos de Montecarlo como herramienta de investigación, proviene del trabajo realizado en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial en el Laboratorio Nacional de Los Álamos en EE. UU. Este trabajo conllevaba la simulación de problemas probabilísticos de hidrodinámica concernientes a la difusión de neutrones en el material de fisión. Esta difusión posee un comportamiento eminentemente aleatorio.<br />
+(tomado de Wikipedia) \</p>
+<p>Como ejemplo se presentan los siguientes problemas tomados de Navidi. </p>
+<p>\</p>
+Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen como <span class="math inline">\(N(2.0; 0.01)\)</span> y cuyos anchos se distribuyen <span class="math inline">\(N(3.0; 0.04)\)</span>. Suponga que las longitudes y los anchos son independientes. El área de una placa esta dada por <span class="math inline">\(A=XY\)</span>.
+<p>Problema 3 capitulo 4 Navidi(2006) \</p>
+<div style="page-break-after: always;"></div>
+<p>\</p>
+<p>Al correr el código en el programa RStudio arroja los siguientes resultados:</p>
+<p>\</p>
+<p>Tanto el histograma como el gráfico de normalidad indican que las áreas tienen aproximadamente una distribucián normal com media 6.016 y una desviación de 0.495</p>
+<p>\</p>
+<p>\</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \end{document}</p>
+<p>% Revista de estadistica y sociedad % <a href="http://www.revistaindice.com/numero42/" class="uri">http://www.revistaindice.com/numero42/</a> % <a href="http://www.revistaindice.com/numero42/p2.pdf" class="uri">http://www.revistaindice.com/numero42/p2.pdf</a></p>
+<p>% videos % uniforme . <a href="https://youtu.be/6iDQHdqAwyQ" class="uri">https://youtu.be/6iDQHdqAwyQ</a> %** uniforme . <a href="https://youtu.be/e4U3YX4fXrQ" class="uri">https://youtu.be/e4U3YX4fXrQ</a> % ** normal . <a href="https://youtu.be/NlD5jbLc2-A" class="uri">https://youtu.be/NlD5jbLc2-A</a> % normal . <a href="https://youtu.be/llhl115ltbY" class="uri">https://youtu.be/llhl115ltbY</a> % ** normal . <a href="https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation" class="uri">https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation</a> % normal . <a href="https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation" class="uri">https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation</a> % exponencial . <a href="https://youtu.be/6O_3ogub5Nw" class="uri">https://youtu.be/6O_3ogub5Nw</a> %** exponencial . <a href="https://youtu.be/ZPxY9sbClJo" class="uri">https://youtu.be/ZPxY9sbClJo</a> % ** lognormal . <a href="https://youtu.be/wK7q-XJnsN4" class="uri">https://youtu.be/wK7q-XJnsN4</a> % lognormal . <a href="https://youtu.be/XtACgL4eVvk" class="uri">https://youtu.be/XtACgL4eVvk</a> % beta . <a href="https://youtu.be/KBiu4mu1Wng" class="uri">https://youtu.be/KBiu4mu1Wng</a> % gumbel . <a href="https://youtu.be/2NEw7SZeNZU" class="uri">https://youtu.be/2NEw7SZeNZU</a> % weibull . <a href="https://youtu.be/FI5zZYr1p7s" class="uri">https://youtu.be/FI5zZYr1p7s</a></p>
+<p>% t-Student . <a href="https://youtu.be/ZYYDhGXOcX8" class="uri">https://youtu.be/ZYYDhGXOcX8</a> % chi2 . % F . <a href="https://youtu.be/rC8C_e8L1xc" class="uri">https://youtu.be/rC8C_e8L1xc</a> % % % geometrica . <a href="https://youtu.be/u5lLIlxknOk" class="uri">https://youtu.be/u5lLIlxknOk</a> % ** geometrica . <a href="https://youtu.be/oiGEQTRfQLo" class="uri">https://youtu.be/oiGEQTRfQLo</a> % poisson . <a href="https://youtu.be/6ZFx954dOcM" class="uri">https://youtu.be/6ZFx954dOcM</a> % ** hipergeometrica. <a href="https://youtu.be/pKjW3jtR7YI" class="uri">https://youtu.be/pKjW3jtR7YI</a> % % binomial -uniforme . <a href="https://youtu.be/Wub6Rhacj3g" class="uri">https://youtu.be/Wub6Rhacj3g</a> % % *** binomial . <a href="https://youtu.be/VcUxRQ-fvWo" class="uri">https://youtu.be/VcUxRQ-fvWo</a> % binomial. <a href="https://youtu.be/_SJ9AhKOGVQ" class="uri">https://youtu.be/_SJ9AhKOGVQ</a> % binomial .. <a href="https://youtu.be/TrimcQJFThU" class="uri">https://youtu.be/TrimcQJFThU</a> % binomial negativa . <a href="https://youtu.be/vm1V9XZVC_Y" class="uri">https://youtu.be/vm1V9XZVC_Y</a> % ** binomial negativa. <a href="https://youtu.be/1WEEGkkIcCE" class="uri">https://youtu.be/1WEEGkkIcCE</a> %<br />
+% % % % %</p>
 </div>
 
 

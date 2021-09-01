@@ -19,7 +19,7 @@ c1="#E77C00" # NARANJA
 c2="#6666FF" # AZUL  
 c3="#4CBFBA" # VERDE CLARO  
 c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c5="#BC2B6A" # MORADO 
 
 ```
 

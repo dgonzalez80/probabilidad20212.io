@@ -104,10 +104,9 @@ En esta guía se hará en énfasis en otro tipo de probabilidad llamada **probab
 
 ## **2.1. Probabilidad condicional**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
-
-### **Definición : Probabilidad condicional**
+**Definición : Probabilidad condicional**
 
 La probabilidad condicional de $B$, dado $A$, se denota como $P(B|A)$, se define como:
 
@@ -167,10 +166,9 @@ O también como un diagrama de Venn:
 Por despeje se pueden obtener la llanada regla de la multiplicación :
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
-
-### **Definición: Regla de la multiplicación de eventos**
+**Definición: Regla de la multiplicación de eventos**
 
 La probabilidad de que ocurra A y B asociados a un experimento aleatorio es :
 
@@ -187,10 +185,10 @@ $$P(A \cap B) = P(A) P(B)$$
 En el caso que se requiera evaluar si dos eventos son independientes o no, partiendo de la definición de probabilidad condicional se podría obtener la siguiente regla al despejar $P(A \cap B$ de la ecuación para obtener : $P(A \cap B) = P(A) * P(B|A)$. En caso de que la ocurrencia del evento $A$ previamente al evento $B$, no cambie su probabilidad, se podría escribir que $P(B|A)= P(B)$ y en este caso la regla indica que la probablidad conjunta de los eventos A y B es igual a la probabilidad de sus probabilidades marginales :
 
 <br/>
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
-### **Definición: Independencia de eventos**
+**Definición: Independencia de eventos**
 
 Dos eventos A y B son independientes si y solo si la probabiliad del evento B no es afectada por la ocurrencia del evento A o viceversa.
 
@@ -271,14 +269,15 @@ $P(B) = P(A_{1})P(B|A_{1}) + P(A_{2})P(B|A_{2})  +P(A_{3})P(B|A_{})  + P(A_{4})P
 En general :
    
  <br/>  
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
-### **Definición: Regla de la probabilidad total**
+**Definición: Regla de la probabilidad total**
 
 Dado una serie de eventos que conforman una partición $E_{1}$, $E_{2}$, $E_{3}$, $\dots$, $E_{k}$, que son mutuamente excluyentes y exaustivos y un evento A, la probabilidad del evento A se expresa como :
 
 $$P(A)=P(E_{1})P(A|E_{1})+ P(E_{2})P(A|E_{2})+ P(E_{3})P(A|E_{3})+ \dots P(E_{k})P(A|E_{k})$$
+
 </div>
 
 
@@ -313,9 +312,9 @@ Lectura recomendada : https://blogs.scientificamerican.com/cross-check/bayes-s-t
 
 
 <br/><br/> 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #ffff00; background-color: #27408b; border-color: #ffff00;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
-### **Definición: Teorema de Bayes **
+**Definición: Teorema de Bayes **
 
 Dado una serie de eventos que conforma una partición $E_{1}$, $E_{2}$, $E_{3}$, $\dots$, $E_{k}$ , que son mutuamente excluyentes y exhautivos, con probabilidad a priori $P(E_{1})$, $P(E_{2})$ $P(E_{3})$, $\dots$, $P(E_{k})$. Si ocurre un evento $A$, la probabilidad a posteriori de $E_{i}$ dados $A$, es la probabilidad condicional :
 

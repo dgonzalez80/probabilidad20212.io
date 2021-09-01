@@ -125,9 +125,13 @@ Iniciaremos con algunos conceptos basicos que nos permiten la contrucion de sus 
 
 <br/><br/>
 
-### **2.1.1 Experimento aleatorio** 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+
+**Experimento aleatorio** 
 
 Acción que puede ser replicada bajo las  mismas condiciones y cuyo resultado no se conoce por anticipado.
+
+</div>
 
 + $E_{1}$: Lanzar una moneda dos veces y observar los resultados obtenidos en sus caras superiores 
 
@@ -137,13 +141,16 @@ Acción que puede ser replicada bajo las  mismas condiciones y cuyo resultado no
 
 + $E_{4}$: En una salida de campo, observo si se cumple o no, totalmente el objetivo planteado 
 
-+ $E_{5}$: Observo el número total de ensayos de laboratorio exitosos en  20 intentos realizados. 
++ $E_{5}$: Observo el número total de ensayos de laboratorio exitosos en  20 intentos realizados.
 
 <br/><br/>
 
-### **2.1.2 Espacio muestral** 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+
+**Espacio muestral** 
 
 Conjunto de todos los posibles valores que puede tomar el experimento aleatorio. Este conjunto se nombra conuna letra mayuscula $S$ o tambien con **$\Omega$**
+</div>
 
 + $S_{1}$= $\{ (cc), (cs), (sc), (ss) \}$  
 <br/>
@@ -175,9 +182,13 @@ Conjunto de todos los posibles valores que puede tomar el experimento aleatorio.
 
 <br/><br/>
 
-### **2.1.3 Evento aleatorio** 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
-Subconjunto del espacio muestral que es de nuestro interés. Como todo conjunto se nombra con una letra mayuscula por lo general las primeras letras del alfabeto
+**Evento aleatorio** 
+
+Subconjunto del espacio muestral que es de nuestro interés. Como todo conjunto se nombra con una letra mayúscula por lo general las primeras letras del alfabeto
+
+</div>
 
 + $A_{1}$: Obtiener solo caras 
 
@@ -206,11 +217,15 @@ Resumiendo:
 
 <br/><br/>
 
-### **2.2.1 Enfoque clásico**  
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+
+**Enfoque clásico**  
 
 Es el enfoque más antiguo de probabilidad y que está basado en el supuesto de eventos individuales igualmente probables. La probabilidad bajo ese enfoque para el evento $A$ se calcula como la fracción entre el número de elementos del conjunto $A$, $n(A)$ y el número de elementos del espacio muestral $n(S)$: 
 		
 $P(A)=\dfrac{n(A)}{n(S)}$
+
+</div>
 	
 En el caso del evento $A_{1}=\{(c,c)\}$, su probabilidad se obtiene como: 
 
@@ -221,16 +236,21 @@ Para $A_{2}$, la suma de los resultados es inferior a 6, se obtiene de la siguie
 $P(A_{2})=\dfrac{n(A_{2})}{n(S_{2})}=\dfrac{9}{36}=0.25 $
 <br/><br/> 
 
-### **2.2.2 Enfoque frecuentista** 
 
 En la gran mayoria de casos no se cumplen los supuestos anteriores, pues se tienen eventos que no son igualmente probables, lo cual impide que podamos utilizar el enfoque frecuentista. 
 
 Ahora suponemos que lo ocurrió en el pasado segirá pasando y asi estudiando la información recogida podemos predecir la posibilidad de ocurrencia de un evento futuro
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+
+**Enfoque Frecuentista**
+
 Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un tamaño de muestra determinado $n$.
 
 			
 $\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{n} \Bigg]$
+
+</div>
 
 <br/><br/>
 
@@ -243,14 +263,19 @@ Con base en esta tabla podríamos pensar que la probabilidad de que una persona 
 
 <br/><br/>
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
-### **2.2.3 Enfoque subjetivo** 
+**Enfoque subjetivo** 
 
 En este caso la probabilidad es valorada y asignada por un EXPERTO, como un médico, un ingeniero, un abogado, un economista, un  estadístico ......
+
+</div>
 
 <br/><br/>
 
 ## **2.3 Axiomas de  probabilidad**
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
 
 + $A_{1}$ : Sea $S$ un espacio muestral  asociado a un experimento. Entonces $P(S)=1$ 
 
@@ -261,7 +286,9 @@ En este caso la probabilidad es valorada y asignada por un EXPERTO, como un méd
 + $A_{4}$ : Para cualquier evento $A$, $P(\bar{A})=1-P(A)$
 
 + $A_{5}$ : La probabilidad de $P(\phi) =0$   
-	
+
+</div>
+
 <br/><br/>
 
 ## **2.4 Tipos de probabilidad**
