@@ -23,7 +23,6 @@ c5="#BC2B6A" # MORADO
 
 ```
 
-<span style="color:#E77C00">**En construcción**</span>
 
 # **1. Guía de aprendizaje 3.1**
 
@@ -57,7 +56,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 |Actividad      | Descripción                    | 
 |:--------------|:-----------------------------  |
-|Individual     |**Taller 301**: El siguiente taller recoge los principales conceptos relacionados con variables aleatorias, tanto discretas como continuas y sus aplicaciones en la estimación de probabilidades|
+|Individual     |[**Taller301**](https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Taller3.01.pdf): El siguiente taller recoge los principales conceptos relacionados con variables aleatorias, tanto discretas como continuas y sus aplicaciones en la estimación de probabilidades|
 |Reursos        | Guía 3.1 | 
 |               |Capitulo  2 Navidi. Navidi, W. estadística para ingenieros y científicos. Editorial Mc Graw Hill. 2006. |
 |               | Capitulos  3 y 4 Walpole. Walpole, R. Myers, R. Myers, S. Ye, K. Probabilidad y Estadística para ingeniería y Ciencias.8 Ed. Editorial Pearson. 2007 |
