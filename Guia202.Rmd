@@ -104,7 +104,7 @@ En esta guía se hará en énfasis en otro tipo de probabilidad llamada **probab
 
 ## **2.1. Probabilidad condicional**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Definición : Probabilidad condicional**
 
@@ -166,7 +166,7 @@ O también como un diagrama de Venn:
 Por despeje se pueden obtener la llanada regla de la multiplicación :
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Definición: Regla de la multiplicación de eventos**
 
@@ -186,7 +186,7 @@ En el caso que se requiera evaluar si dos eventos son independientes o no, parti
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Definición: Independencia de eventos**
 
@@ -270,7 +270,7 @@ En general :
    
  <br/>  
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Definición: Regla de la probabilidad total**
 
@@ -312,7 +312,7 @@ Lectura recomendada : https://blogs.scientificamerican.com/cross-check/bayes-s-t
 
 
 <br/><br/> 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Definición: Teorema de Bayes **
 

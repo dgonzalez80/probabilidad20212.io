@@ -77,13 +77,9 @@ navbar:
           href: codigo103.html
         - text: "Código u2.1"
           href: codigo201.html
-    - text: "Lab"
-      menu:
-        - text: "Loratorios"
-          href: Laboratorios.html
+        - text: "Código u3.1"
+          href: codigo301.html
 
-          
-          
 output:
   html_document:
     theme: cosmos

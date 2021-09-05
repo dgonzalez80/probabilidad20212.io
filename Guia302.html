@@ -475,6 +475,9 @@ div.tocify {
     <li>
       <a href="codigo201.html">Código u2.1</a>
     </li>
+    <li>
+      <a href="codigo301.html">Código u3.1</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -497,8 +500,8 @@ div.tocify {
 
 
 <p><span style="color:#E77C00"><strong>En construcción</strong></span></p>
-<div id="guía-de-aprendizaje-3.2" class="section level2">
-<h2><strong>Guía de aprendizaje 3.2</strong></h2>
+<div id="guía-de-aprendizaje" class="section level1">
+<h1><strong>1. Guía de aprendizaje</strong></h1>
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;">
 <video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%">
 <source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />
@@ -510,21 +513,20 @@ Your browser does not support the video tag.</video>
 <script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
 <p><br/><br/></p>
 <p><br/><br/></p>
-</div>
 <div id="introducción" class="section level2">
-<h2><strong>1. Introducción</strong></h2>
+<h2><strong>1.1. Introducción</strong></h2>
 <p><br/><br/></p>
 </div>
 <div id="objetivos-de-la-unidad" class="section level2">
-<h2><strong>2. Objetivos de la unidad</strong></h2>
+<h2><strong>1.2. Objetivos de la unidad</strong></h2>
 <p><br/><br/></p>
 </div>
 <div id="duración" class="section level2">
-<h2><strong>3. Duración</strong></h2>
+<h2><strong>1.3. Duración</strong></h2>
 <p><br/><br/></p>
 </div>
 <div id="cronograma-de-trabajo" class="section level2">
-<h2><strong>4. Cronograma de trabajo</strong></h2>
+<h2><strong>1.4. Cronograma de trabajo</strong></h2>
 <table>
 <thead>
 <tr class="header">
@@ -538,15 +540,287 @@ Your browser does not support the video tag.</video>
 <p><br/><br/></p>
 </div>
 <div id="criterios-de-evaluación" class="section level2">
-<h2><strong>5. Criterios de evaluación</strong></h2>
+<h2><strong>1.5. Criterios de evaluación</strong></h2>
 <p><br/><br/></p>
 </div>
 <div id="entregables" class="section level2">
-<h2><strong>6. Entregables</strong></h2>
+<h2><strong>1.6. Entregables</strong></h2>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="presentaciones" class="section level2">
-<h2><strong>7. Presentaciones</strong></h2>
+<h2><strong>1.7. Presentaciones</strong></h2>
+</div>
+</div>
+<div id="recursos" class="section level1">
+<h1><strong>2. Recursos </strong></h1>
+<div id="introducción-1" class="section level2">
+<h2><strong>2.1 Introducción</strong></h2>
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+
+</div>
+</div>
+<div id="variables-aleatorias-conjuntas" class="section level2">
+<h2><strong>Variables aleatorias conjuntas</strong></h2>
+<div id="distribución-de-probabilidad-conjunta" class="section level3">
+<h3><strong>Distribución de probabilidad conjunta</strong></h3>
+<p>Los resultados de un experimento pueden ser causa de múltiples variables como ocurre con el precio de un producto y sus ventas, el tiempo de preparación de un examen y su nota final, la cantidad de arena y de cemento en concreto, la cantidad de abono suministrado a una planta y su producción final. En estos casos se requiere una función de densidad que describa la variación de la probabilidad de ocurrencia de ambas variables, probabilidad que describe el comportamiento conjunto de las variables.</p>
+<p>La función que tiene en cuenta efectos múltiples de variables aleatorias se denomina distribución de probabilidad conjunta. esta función puede ser una combinación de variables continua-continua, discreta-discreta o continua-discreta, dependiendo del experimento, en el caso bivariado.</p>
+<p>En esta guía se presentan los casos : discreta-discreta y el caso continua-continua.</p>
+</div>
+<div id="distribución-de-probabilidad-conjunta-variables-aleatorias-discretas" class="section level3">
+<h3><strong>Distribución de probabilidad conjunta variables aleatorias discretas</strong></h3>
+<p>Si se dispone de dos variables aleatorias se puede definir distribuciones bidimensionales de forma semejante al caso unidimensional. Para el caso discreto-discreto se define:</p>
+<p><strong>Función de distribución conjunta</strong> <span class="math display">\[f_{_{X,Y}}(x,y)=P(X=x,Y=y)\]</span></p>
+<p>la cual debe cumplir con las siguientes características:</p>
+<ul>
+<li><p><span class="math inline">\(\displaystyle\sum\limits_{x=x_{(1)}}^{x_{(n)}}\displaystyle\sum\limits_{y=y_{(1)}}^{y_{(n)}}f_{_{X,Y}}(x,y)=1\)</span></p></li>
+<li><p><span class="math inline">\(f(x,y)\geq 0\)</span></p></li>
+</ul>
+<p>Ejemplo 1</p>
+<p>Se considera el experimento aleatorio que consiste en el lanzamiento de dos dados distinguibles, legales donde se registran los resultados de los puntos obtenidos en las caras superiores de los dados. Para este experimento el espacio muestral es <span class="math inline">\(S\)</span> y se presenta a continuación:</p>
+<p><span class="math display">\[\begin{equation*}
+    S=\left\{
+    \begin{array}{cccccc}
+        &amp;(1,1),(1,2),(1,3),(1,4),(1,5),(1,6)&amp;\\
+        &amp;(2,1),(2,2),(2,3),(2,4),(2,5),(2,6)&amp;\\
+        &amp;(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)&amp;\\
+        &amp;(4,1),(4,2),(4,3),(4,4),(4,5),(4,6)&amp;\\
+        &amp;(5,1),(5,2),(5,3),(5,4),(5,5),(5,6)&amp;\\
+        &amp;(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)&amp;
+    \end{array}
+    \right\}
+\end{equation*}\]</span></p>
+<p>Cada pareja <span class="math inline">\((i,j)\)</span> representa un posible resultado al lanzar dos dados, donde el valor <span class="math inline">\(i\)</span> corresponde al resultado del dado 1 y el valor <span class="math inline">\(j\)</span> al resultado del dado 2.</p>
+<p>Puede resultar interesante determinar la probabilidad que el primer dado caiga en <span class="math inline">\(5\)</span> y el segundo en <span class="math inline">\(6\)</span> o que el primero caiga en <span class="math inline">\(2\)</span> y la suma del número de puntos que aparecen en los dos dados sea <span class="math inline">\(5\)</span>. De acuerdo con este interés se definen las variables y la función que las modela.</p>
+<p>Para la segunda situación se puede definir las variables + <span class="math inline">\(X_1:\)</span> número de puntos de la cara superior del primer dado.</p>
+<ul>
+<li><span class="math inline">\(X_2:\)</span> Suma de puntos de las caras superiores de los dos dados.</li>
+</ul>
+<p>De acuerdo con la definición de las variables, los resultados posibles para cada una de ellas son los siguientes:</p>
+<p><span class="math display">\[\begin{align*}
+    &amp;R_{X_{1}}:\left\{1,2,3,4,5,6\right\}\\
+    &amp;R_{X_{2}}:\left\{2,3,4,5,6,7,8,9,10,11,12\right\}
+\end{align*}\]</span></p>
+<p>Para cada par ordenado posible <span class="math inline">\((x_1,x_2)\)</span> se determina el valor de la probabilidad conjunta <span class="math inline">\(P(X_1=x_1 ; X_2=x_2)\)</span> que se puede denotar por <span class="math inline">\(f_{_{X_1,X_2}}(x_1,x_2)\)</span>.</p>
+<p>En particular para los pares <span class="math inline">\((1,2),(1,3)\)</span> y <span class="math inline">\((6,12)\)</span> las probabilidades conjuntas son <span class="math inline">\(1/36\)</span> y se muestran a continuación</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    f_{_{X_1,X_2}}(1,2)&amp;=&amp;P(X_1=1,X_2=2)=1/36\\
+    f_{_{X_1,X_2}}(1,3)&amp;=&amp;P(X_1=1,X_2=3)=1/36\\
+    \vdots\\
+    f_{_{X_1,X_2}}(x_i,x_j)&amp;=&amp;P(X_1=x_i,X_2=x_j)=1/36\\
+    \vdots\\
+    f_{_{X_1,X_2}}(6,12)&amp;=&amp;P(X_1=6,X_2=12)=1/36\\
+\end{eqnarray*}\]</span></p>
+<p>En la Tabla 1 se presentan todos los pares posibles <span class="math inline">\((x_1,x_2)\)</span> con sus respectivas probabilidades conjuntas, los casos imposibles tienen asignados probabilidad de cero.</p>
+<p>Función de probabilidad conjunta <span class="math inline">\(f_{_{X_{1},X_{2}}}\)</span> para el Ejemplo 1</p>
+<p>tab1.png</p>
+Tabla 1. Función de probabilidad conjunta <span class="math inline">\(f_{_{X_{1},X_{2}}}\)</span> para el Ejemplo 1\
+<p>\end{center}</p>
+<p>El primer caso, <span class="math inline">\(f_{_{X_{1},X_{2}}}(1,2)=1/36\)</span> y se lee de la siguiente manera: la probabilidad de que la variable <span class="math inline">\(X_{1}\)</span> tome el valor de <span class="math inline">\(1\)</span> y la variable <span class="math inline">\(X_{2}\)</span> el valor de <span class="math inline">\(2\)</span>, es igual a <span class="math inline">\(1/36\)</span>. En contexto, la probabilidad de que al lanzar dos dados legales distinguibles, el número de puntos del dado1 sea <span class="math inline">\(1\)</span> y la suma de puntos de los dos dados sea igual a <span class="math inline">\(2\)</span>, es de <span class="math inline">\(1/36\)</span>. Es decir, cuando se lanzan un número grande de veces dos dados distinguibles y legales aproximadamente el <span class="math inline">\(2.77\%\)</span> de las veces el número de puntos del dado1 es uno y la suma de los puntos de los dos dados es dos. \ % En el caso bidimensional la altura representa la probabilidad del evento determinado por el par ordenado <span class="math inline">\((x_1,x_2)\)</span>, es decir <span class="math inline">\(f_{_{X_{1},X_{2}}}(x_{1},x_{2})\)</span>. También se pueden dibujar los puntos en lugar de segmentos de rectas. Sin embargo la lectura es menos fácil. El gráfico solamente se puede hacer para el caso de dos variables, dado que solo podemos representar graficamente tres dimensiones. (<span class="math inline">\(R^{3}\)</span>)\</p>
+<p>En la Figura 1 se representa gráficamente la función de probabilidad conjunta <span class="math inline">\(f_{_{X_{1},X_{2}}}\)</span> del Ejemplo 1. En el eje <span class="math inline">\(y\)</span> se encuentran los valores <span class="math inline">\(f_{_{X_{1},X_{2}}}(x_1,x_2)\)</span> y están representados por segmentos de rectas verticales.</p>
+<p>gej1.pdf Figura 1. Función de probabilidad conjunta <span class="math inline">\(X_{1},X_{2}\)</span>en el ejemplo</p>
+<p>%<br />
+Cada una de las propiedades se puede ilustrar con la función <span class="math inline">\(f_{_{X_1X_2}}(x_1,x_2)\)</span> del Ejemplo 1 y los valores de la Tabla 1, pues en efecto cada valor <span class="math inline">\(f_{_{X_1X_2}}(x_1,x_2)\)</span> está entre 0 y 1 y la suma de todos ellos es exactamente 1. %%</p>
+<p>Se puede encontrar las funciones de distribución de probabilidad para la variable <span class="math inline">\(X\)</span> y también para la variable <span class="math inline">\(Y\)</span> por separado a partir de la función de distribución de probabilidad conjunta. A esta funciones se les llama función de distribución marginal de <span class="math inline">\(X\)</span> y función de distribución marginal de <span class="math inline">\(Y\)</span>.</p>
+<p>%%% tabla 3.</p>
+<p>En la Tabla 2 se presenta ademas de la funcion de distribucion de probabilidad conjunta de <span class="math inline">\(X,Y\)</span>, las distribuciones marginales para la variable <span class="math inline">\(X\)</span> y par a la variable <span class="math inline">\(Y\)</span></p>
+<pre><code>\begin{center}
+Tabla 2. Función de probabilidad conjunta $f_{_{X_1,X_2}}$ y funciones de probabilidad marginal $g$ y $h$ del Ejemplo 1  \\
+    \begin{tabular}{c|c}
+        
+        $f_{_{XY}}(x,y)$&amp; \textcolor{col5}{\bf $x_{1}$} \\  
+        \hline 
+        \textcolor{col4}{\bf $x_{2}$}&amp;  
+        \begin{tabular}{ccccccc|c}
+            &amp; \textcolor{col5}{\bf 1} &amp; \textcolor{col5}{\bf 2} &amp; \textcolor{col5}{\bf 3} &amp; \textcolor{col5}{\bf 4} &amp; \textcolor{col5}{\bf 5} &amp; \textcolor{col5}{\bf 6} &amp;  \textcolor{col4}{\bf  h($x_{2}$)} \\ 
+            \textcolor{col4}{\bf 2} &amp;    $1/36$&amp;  0&amp;  0&amp;  0&amp;  0&amp; 0 &amp;  \textcolor{col4}{\bf 1/36} \\
+            \textcolor{col4}{\bf 3} &amp;     $1/36$&amp;  $1/36$&amp;  0&amp;  0&amp;  0&amp; 0&amp; \textcolor{col4}{\bf 2/36} \\
+            \textcolor{col4}{\bf 4} &amp;     $1/36$&amp;  $1/36$ &amp;  $1/36$&amp;  0&amp;  0&amp; 0&amp; \textcolor{col4}{\bf 3/36} \\
+            \textcolor{col4}{\bf 5} &amp;     $1/36$&amp;   $1/36$&amp;   $1/36$&amp;   $1/36$&amp;  0&amp; 0&amp; \textcolor{col4}{\bf 4/36} \\
+            \textcolor{col4}{\bf 6} &amp;     $1/36$&amp;   $1/36$&amp;   $1/36$&amp;   $1/36$&amp;   $1/36$&amp; 0&amp; \textcolor{col4}{\bf 5/36} \\
+            \textcolor{col4}{\bf 7} &amp;     $1/36$&amp;   $1/36$&amp;   $1/36$&amp;   $1/36$&amp;  $1/36$&amp; $1/36$&amp; \textcolor{col4}{\bf 6/36} \\
+            \textcolor{col4}{\bf 8} &amp;    0&amp;   $1/36$&amp;   $1/36$&amp;  $1/36$&amp;   $1/36$&amp;  $1/36$&amp; \textcolor{col4}{\bf 5/36} \\
+            \textcolor{col4}{\bf 9} &amp;    0&amp;  0&amp;  $1/36$&amp;  $1/36$&amp;   $1/36$&amp;  $1/36$ &amp;\textcolor{col4}{\bf 4/36} \\
+            \textcolor{col4}{\bf 10}&amp;    0&amp;  0&amp;  0&amp; $1/36$&amp;   $1/36$&amp;  $1/36$ &amp;\textcolor{col4}{\bf 3/36} \\
+            \textcolor{col4}{\bf 11}&amp;    0&amp;  0&amp;  0&amp;  0&amp;  $1/36$&amp;  $1/36$ &amp;\textcolor{col4}{\bf 2/36} \\
+            \textcolor{col4}{\bf 12}&amp;    0&amp;  0&amp;  0&amp;  0&amp;  0&amp;  $1/36$ &amp;\textcolor{col4}{\bf 1/36} \\
+            \hline
+            \textcolor{col5}{\bf  g($x_{1}$)}&amp;\textcolor{col5}{\bf  6/36}&amp; \textcolor{col5}{\bf  6/36} &amp; \textcolor{col5}{\bf  6/36} &amp; \textcolor{col5}{\bf  6/36} &amp; \textcolor{col5}{\bf  6/36} &amp; \textcolor{col5}{\bf  6/36}  &amp; 1\\
+        \end{tabular}   
+        \\
+    \end{tabular}   
+    %\includegraphics[scale=.27]{tab2.png}
+\end{center}</code></pre>
+<p>Al igual que se presento en el modulo 2, se puede requerir calcular probabilidades condicionales de <span class="math inline">\(X|Y=y_{o}\)</span>, o de <span class="math inline">\(Y|X=x_{o}\)</span>. Para ello es necesario construir las respectivas funciones de distribución de probabilidad condicionales</p>
+<p>Por ejemplo en el caso del ejemplo 1 podríamos requerir determinar <span class="math inline">\(P(X=5|X_{2}=8)\)</span>. Para realizar el calculo, primero construiremos la función condicional <span class="math inline">\(f_{X_{1}|X_{2}=8}(x_{1},x_{2})\)</span>.</p>
+<p>De acuerdo con lo visto en el modulo 2 tenemos que:\</p>
+<p>$P(B|A)= $ en este caso <span class="math inline">\(P(X_{1}=5|X_{2}=8) = \dfrac{P(X_{1}=5;X_{2}=8)}{P(X_{2}=8)}\)</span></p>
+<p>De donde se obtiene que : <span class="math display">\[P(X_{1}=5|X_{2}=8) = \dfrac{1}{5}\]</span> %%%</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %</p>
+<p>\ </p>
+<p>En el caso de variables continuas se utilizan los mismo conceptos vistos en el caso discreto-discreto, haciendo el cambio de las sumatorias por integrales definidas. \</p>
+<p>En particular para <span class="math inline">\(f_{_{X,Y}}(x,y)\)</span> definida en una región <span class="math inline">\(R\)</span>, se cumple que la integral doble de <span class="math inline">\(f_{_{X,Y}}(x,y)\)</span> en la región <span class="math inline">\(R\)</span> proporciona la probabilidad de que las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> asuman los valores <span class="math inline">\((x,y)\)</span> en la región <span class="math inline">\(R\)</span>. Esta integral puede interpretarse como el volumen bajo la superficie <span class="math inline">\(f_{_{X,Y}}(x,y)\)</span> en la región <span class="math inline">\(R\)</span>.\</p>
+<p>En esta ocasión empezaremos con un ejemplo para posteriormente definir los conceptos. \</p>
+<p>%%<br />
+%%%—————-ejemplo 3.11  </p>
+<p>Una mezcla se forma con la combinación de 2 ácidos en dos litros de agua. La cantidad de ácido <span class="math inline">\((X)\)</span> y la cantidad de ácido <span class="math inline">\((Y)\)</span>, en litros, que se vierten en una mezcla se modela con la función <span class="math inline">\(f_{_{XY}}\)</span> como se presenta a continuación</p>
+<span class="math display">\[\begin{equation*}
+    f_{_{X,Y}}(x,y)=\left\lbrace
+    \begin{array}{ccl}
+        k(x+y)&amp;;&amp; 0\leq x\leq 1\:,\:0\leq y\leq 1\\
+        &amp;&amp;\\
+        0&amp;;&amp; \mbox{ en otro caso}
+    \end{array}
+    \right.
+\end{equation*}\]</span> <br />
+
+\ En este experimento las variables <span class="math inline">\(X\)</span> cantidad del primer ácido y <span class="math inline">\(Y\)</span> la cantidad del segundo ácido son variables aleatorias continuas y su función de densidad de probabilidad depende de una constante <span class="math inline">\(k\)</span> que es necesario identificar para resolver los puntos b) y c). \ %<br />
+Las anteriores preguntas equivalen a responder lo siguiente: %<br />
+
+%<br />
+Antes de dar respuesta a los interrogantes, es conveniente representar gráficamente la región donde está definida la función <span class="math inline">\(f_{_{X,Y}}\)</span> que corresponde a un cuadrado con <span class="math inline">\(0\leq x\leq 1\)</span> y <span class="math inline">\(0\leq y\leq 1\)</span>. Esto se presenta en la Figura 2 %<br />
+%<br />
+
+<p>La figura 2 representa la función de densidad conjunta de <span class="math inline">\(f_{_{X,Y}}\)</span> en su dominio debe determinar un sólido de volumen igual a 1, esto en concordancia con las propiedades de una función de densidad conjunta.</p>
+%<br />
+
+<p>%%<br />
+Aproximadamente el <span class="math inline">\(33.3\%\)</span> de las veces que se viertan dos ácidos se tiene a lo sumo un litro de ácidos entre los dos ácidos. Esto cuando se vierten ácidos bajo las mismas condiciones un número grande de veces. \ %<br />
+Al igual que para las variables discretas, para las variables continuas también se definen las funciones de densidad marginal y condicional.\</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \</p>
+En el caso continuo- continuo las distribuciones de densidad marginales se pueden encontrar a partir de la funcion de densidad conjunta %%%<br />
+
+<p>% </p>
+<p>En el caso del Ejemplo 2 las funciones marginales se obtiene de la siguiente manera: <span class="math display">\[g(x)=f_{_{X}}(x)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dy = \int_{0}^{1} (x+y) \:dy = xy+\dfrac{y^{2}}{2}\Bigg|_{0}^{1}= x+\dfrac{1}{2} \]</span></p>
+<p><span class="math display">\[\begin{equation*}
+    g(x)=\left\lbrace
+    \begin{array}{ccl}
+        x+\dfrac{1}{2} &amp;;&amp; 0 \leq x \leq 1 \\
+        &amp;&amp;\\
+        0 &amp;;&amp;\mbox{en otro caso}
+    \end{array}
+    \right.
+\end{equation*}\]</span></p>
+<p>Para el caso de <span class="math inline">\(h(y)\)</span> se tiene: <span class="math display">\[h(y)=f_{_{Y}}(y)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dx = \int_{0}^{1} (x+y) \:dx = \dfrac{x^{2}}{2}+yx \Bigg|_{0}^{1}= \dfrac{1}{2}+y \]</span></p>
+<p><span class="math display">\[\begin{equation*}
+    h(y)=\left\lbrace
+    \begin{array}{ccl}
+        y+\dfrac{1}{2} &amp;;&amp; 0 \leq y \leq 1 \\
+        &amp;&amp;\\
+        0 &amp;;&amp;\mbox{en otro caso}
+    \end{array}
+    \right.
+\end{equation*}\]</span> %</p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  \%</p>
+<p></p>
+<p>Si se desea construir la función de <span class="math inline">\(X|Y=0.5\)</span>, para la función de densidad conjunta del ejemplo 2:\ </p>
+<p></p>
+<p><span class="math display">\[f {_{X|Y}}(x,0.5)= \dfrac{f_{XY}(x,0.5)}{h(0.5)}= \dfrac{(x+0.5)}{0.5+0.5} = x+0.5\]</span></p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  </p>
+<p>Para <span class="math inline">\(F_{_{X,Y}}(x,y)=P(X\leq x, Y\leq y)\)</span> se tiene en el caso de variables aleatorias continuas <span class="math display">\[F_{_{X,Y}}(x,y)=\int_{-\infty}^{x} \int_{-\infty}^{y} f(s,t) \:ds \:dt\]</span></p>
+<p></p>
+<p>Para la función descrita en el ejemplo 2 determinar <span class="math inline">\(F(1/2, 1/4)\)</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    F(1/2,1/4)&amp;=&amp; P(X \leq 1/2 ; Y \leq 1/4) \\
+              &amp;=&amp;\\
+              &amp;=&amp;   \displaystyle\int_{0}^{1/2} \displaystyle\int_{0}^{1/4} (x+y) \:dy \:dx  =
+              \displaystyle\int_{0}^{1/2} \Bigg(xy+\dfrac{y^{2}}{2} \Bigg|_{0}^{1/4} \Bigg)\:dx\\
+              &amp;&amp;\\
+              &amp;=&amp; \displaystyle\int_{0}^{1/2} \Bigg(\dfrac{x}{4}+\dfrac{1}{32} \Bigg)\:dx =
+                  \Bigg( \dfrac{x^{2}}{8}+\dfrac{x}{32} \Bigg) \Bigg|_{0}^{1/2}\\
+              &amp;&amp;\\
+              &amp;=&amp; \dfrac{1}{32}+\dfrac{1}{64} = \dfrac{3}{64} =  0.046875\\
+\end{eqnarray*}\]</span></p>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  \</p>
+<p>La covarianza es una medida de variación conjunta entre dos variables aleatorias con respecto a sus medias.</p>
+<p>Si los puntos de la distribución de probabilidad conjunta de <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> que reciben una probabilidad positiva tienden a caer en una recta con pendiente positiva (o negativa), entonces <span class="math inline">\(\sigma_{_{XY}}\)</span> es positiva o (negativa). Si los puntos tienden a caer en una recta con pendiente positiva, <span class="math inline">\(X\)</span> tiende a ser mayor que <span class="math inline">\(\mu_{X}\)</span> cuando <span class="math inline">\(Y\)</span> es mayor que <span class="math inline">\(\mu_{Y}\)</span>. Por lo tanto, el producto de los dos términos <span class="math inline">\(x-\mu_{_{X}}\)</span> y <span class="math inline">\(y-\mu_{_{Y}}\)</span> tiende a ser positivo. Si los puntos tienden a caer en una recta con pendiente negativa, entonces <span class="math inline">\(x-\mu_{_{X}}\)</span> tiende a ser positiva cuando <span class="math inline">\(y-\mu_{_{Y}}\)</span> es negativa, y viceversa. Por lo tanto, el producto de <span class="math inline">\(x-\mu_{X}\)</span> y <span class="math inline">\(y-\mu_{_{Y}}\)</span> tiende a ser negativo. En este sentido, la covarianza entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> describe la variación entre las dos variables aleatorias.\ % Tanto en el caso continuo como discreto, se cumple</p>
+<p><span class="math display">\[\sigma_{_{XY}}=E\left(XY\right)-E\left(X\right)E\left(Y\right)\]</span></p>
+<p>A partir de la definición del concepto de covarianza, podemos enunciar la siguiente propiedad de las varianzas:</p>
+<p><span class="math display">\[V(aX \pm bY)=a^{2}V(X)+b^{2}V(Y) \pm 2ab \hspace{.2cm}Cov(XY)\]</span></p>
+<p>En el caso de la covarianza como en el de la varianza, ambas se expresan en términos del producto de las unidades de medida de ambas variables, lo cual no siempre es fácilmente interpretable. Por otra parte también es difícil comparar situaciones diferentes entre sí. En este caso, ambos problemas se solucionan de una vez mediante la definición del  <span class="math inline">\(\rho\)</span>, que se define como el cociente entre la covarianza y el producto de las desviaciones típicas de las dos variables.</p>
+<p>La correlacion simplemente escala la covarianza por la desviación estándar de cada variable. Por consiguiente, la correlación es una cantidad adimensional que puede usarse para comparar las relaciones lineales entre pares de variables con unidades diferentes.\ % Si los puntos de la distribución de probabilidad conjunta de <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> que reciben una probabilidad positiva tienden a caer en una recta con pendiente positiva (o negativa), entonces <span class="math inline">\(\rho_{_{XY}}\)</span> esta cerca de <span class="math inline">\(+1\)</span> (o de <span class="math inline">\(-1\)</span>). Si <span class="math inline">\(\rho_{_{XY}}\)</span> es igual a <span class="math inline">\(+1\)</span> o <span class="math inline">\(-1\)</span>, entonces puede demostrarse que los puntos de la distribución de probabilidad conjunta que reciben una probabilidad positiva caen exactamente en una linea recta. Se dice que dos variables aleatorias con correlación diferente de cero están correlacionadas. En forma similar a la covarianza, la correlación es una medida de relación lineal entre variables aleatorias.\ % La representación gráfica para difernes valores de correlación nos ayuda a entender el mismo concepto de relación entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.\</p>
+Valores cercanos cero, indican que no existe una relación lineal entre las variables. Valores positivos indican una relación lineal entre las variables, es decir que cuando una variable aumenta la otra también aumenta. Una manera de interpretar los valores obtenidos para el coeficiente de correlación <span class="math inline">\(\rho\)</span> se presentan en la Figura 6 %
+<p>%</p>
+<p>\ Sean <span class="math inline">\(X\)</span> el número de veces en que una máquina presenta una falla y <span class="math inline">\(Y\)</span> el número de veces en que se debe llamar a un ingeniero para que la repare, variables aleatorias con distribución de probabilidad conjunta como se indica en la Tabla XX, encuentre la covarianza entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> <span class="math inline">\(Cov(XY)\)</span> y la correlación entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> <span class="math inline">\(Cor(XY)\)</span></p>
+<p>% : \</p>
+<p>Para calcular la covarianza se utiliza la forma <span class="math inline">\(Cov(XY)=E[XY]-E[X]E[Y]\)</span> \</p>
+<p>Inicialmente se calcula <span class="math inline">\(E[XY]\)</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E(XY)&amp;=&amp;\sum\limits_{x=0}^{2}\sum\limits_{y=0}^{2}xy \hspace{.2cm}f(x,y)\\
+    &amp;=&amp;(0)(0)f(0,0)+(0)(1)f(0,1)+(0)(2)f(0,2)+(1)(0)f(1,0)+(1)(1)f(1,1)+\\
+    &amp;=&amp;(1)(2)f(1,2)+(2)(0)f(2,0)+(2)(1)f(2,1)+(2)(2)f(2,2)\\
+    &amp;=&amp;3/14 
+\end{eqnarray*}\]</span></p>
+<p>Los valores de <span class="math inline">\(E[X]\)</span> y <span class="math inline">\(E[Y]\)</span>, se calculan a partir de las respectivas distribuciones marginales <span class="math inline">\(g(X)\)</span> y <span class="math inline">\(h(Y)\)</span>.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E(X)&amp;=&amp;\sum\limits_{x=0}^{2}x  \hspace{.2cm}f(x)\\
+    &amp;=&amp;(0)f(0)+(1)f(1)+(2)f(2) =  (0)5/14+(1) 15/28 +(2) 3/28 \\
+    &amp;=&amp; 21/28
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E(X^{2})&amp;=&amp;\sum\limits_{x=0}^{2}x^{2}  \hspace{.2cm}f(x)\\
+    &amp;=&amp;(0^{2})f(0)+(1^{2})f(1)+(2^{2})f(2) =  (0)5/14+(1) 15/28 +(4) 3/28 \\
+    &amp;=&amp; 27/28
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E(Y)&amp;=&amp;\sum\limits_{y=0}^{2}x  \hspace{.2cm}f(y)\\
+    &amp;=&amp;(0)f(0)+(1)f(1)+(2)f(2) = (0)15/28+(1) 3/7 +(2) 1/28 \\
+    &amp;=&amp; 14/28
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E(Y {2})&amp;=&amp;\sum\limits_{y=0}^{2}y^{2}  \hspace{.2cm}f(y)\\
+    &amp;=&amp;(0^{2})f(0)+(1^{2})f(1)+(2^{2})f(2) = (0)15/28+(1) 3/7 +(4) 1/28 \\
+    &amp;=&amp; 16/28
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    V[X]&amp;=&amp;E[X^{2}]-E[X]^{2}= 27/28 - (21/28)^{2} = 0.4017857
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    V[Y]&amp;=&amp;E[Y^{2}]-E[Y]^{2}= 16/28 - (14/28)^{2} = 0.3214286
+\end{eqnarray*}\]</span></p>
+<p>Por tanto <span class="math inline">\(Cov(XY)\)</span> será:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    Cov(XY)&amp;=&amp;E(XY)-E(X)E(Y) =3/14-(31/28)(14/28)\\
+           &amp;=&amp; 3/14 - (21/28) (14/28) =  -9/56 \\
+\end{eqnarray*}\]</span></p>
+<p>Ahora la ccorrelación <span class="math inline">\(Cor(XY)\)</span> <span class="math display">\[\begin{eqnarray*}
+    \rho_{_{XY}} &amp;=&amp;\dfrac{E(XY)-E(X)E(Y)}{\sqrt{V(X)V(Y)}} \\ 
+    &amp;=&amp; \dfrac{-9/56}{\sqrt{0.4017857 \times 0.3214286}} = -0.4472136
+\end{eqnarray*}\]</span></p>
+<p>\</p>
+<p>Para el caso continuo-continuo se retoma el Ejemplo 2 con función de distribución conjunta <span class="math inline">\(f(x,y)=x+y\)</span> con <span class="math inline">\(0\leq x \leq 1\)</span> y <span class="math inline">\(0\leq y \leq 1\)</span>. \</p>
+<p>\</p>
+<p>Primero se calculan para cada una de las variables los valores esperados y sus varianzas a partir de las funciones de densidad marginales <span class="math inline">\(g(x)\)</span> y <span class="math inline">\(h(y)\)</span> , halladas con anterioridad.</p>
+<p><span class="math display">\[E[X]= \int_{0}^{1} x g(x) \;dx = \int_{0}^{1} x (x+y) \;dx = \int_{0}^{1} x^{2}+\dfrac{x}{2} \;dx = \dfrac{x^{3}}{3}+\dfrac{x^{2}}{4} \Bigg|_{0}^{1} = \dfrac{7}{12}\]</span></p>
+<p><span class="math display">\[E[Y]= \int_{0}^{1} y h(y) \;dx = \int_{0}^{1} y (x+y) \;dx = \int_{0}^{1} y^{2}+\dfrac{y}{2} \;dx = \dfrac{y^{3}}{3}+\dfrac{y^{2}}{4} \Bigg|_{0}^{1} = \dfrac{7}{12}\]</span></p>
+<p><span class="math display">\[E[X^{2}]= \int_{0}^{1} x^{2} g(x) \;dx = \int_{0}^{1} x^{2} (x+y) \;dx = \int_{0}^{1} x^{3}+\dfrac{x^{2}}{2} \;dx = \dfrac{x^{4}}{3}+\dfrac{x^{3}}{4} \Bigg|_{0}^{1} = \dfrac{9}{18} = \dfrac{1}{2}\]</span></p>
+<p><span class="math display">\[E[Y^{2}]= \int_{0}^{1} y^{2} h(y) \;dy = \int_{0}^{1} y^{2} (x+y) \;dy = \int_{0}^{1} y^{3}+\dfrac{y^{2}}{2} \;dx = \dfrac{y^{4}}{3}+\dfrac{y^{3}}{4} \Bigg|_{0}^{1} = \dfrac{9}{18} = \dfrac{1}{2}\]</span></p>
+<p><span class="math display">\[V[X] = E[X^{2}]-\Big(E[X]\Big)^{2}= \dfrac{1}{2}-\Big(\dfrac{7}{12} \Big)^{2} = \dfrac{1}{2}- \dfrac{49}{144} = \dfrac{23}{144} \]</span></p>
+<p><span class="math display">\[V[Y] = E[Y^{2}]-\Big(E[Y]\Big)^{2}= \dfrac{1}{2}-\Big(\dfrac{7}{12} \Big)^{2} = \dfrac{1}{2}- \dfrac{49}{144} = \dfrac{23}{144} \]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+    E[XY] &amp;=&amp; \int_{0}^{1} \int_{0}^{1} xy f(x,y) \;dx \;dy \\
+    &amp;=&amp; \int_{0}^{1} \int_{0}^{1} xy (x+y) \;dx \;dy  \\
+    &amp;=&amp; \int_{0}^{1} \int_{0}^{1} x^{2}y+y^{2}x \;dx \;dy\\
+    &amp;=&amp; \int_{0}^{1} \Bigg(\dfrac{x^{3}y}{3}+\dfrac{y^{2}x^{2}}{2} \Big|_{0}^{1}\Bigg) \;dy\\
+    &amp;=&amp;  \int_{0}^{1} \Bigg( \dfrac{y}{3}+\dfrac{y^{2}}{2}\Bigg) \;dy \\
+    &amp;=&amp; \dfrac{1}{6}+\dfrac{1}{6} \Big|_{0}^{1} =  \dfrac{1}{3}\\ 
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[Cov[XY] = E[XY]-E[X]E[Y] = \dfrac{1}{3} -\dfrac{7}{12}\times  \dfrac{7}{12} = \dfrac{1}{3}- \dfrac{49}{144} = \dfrac{1}{144}\]</span></p>
+<p><span class="math display">\[  \rho_{_{XY}} = \dfrac{Cov[XY]}{\sqrt{V[X]V[Y]}} = \dfrac{1/144}{\sqrt{23/144 \times 23/144}} = \dfrac{1}{23} = 0.04\]</span></p>
+<p>De acuerdo con la escala representada en la Tabla 3 este valor se puede interpretar como una relación muy débil de asociación lineal entre las dos variables .\</p>
+<p> \</p>
+<p>La independencia de dos variables se puede determinar mediante el coeficiente de correlacion (<span class="math inline">\(\rho =0\)</span>), pero también si se cumple la siguiente condición.</p>
+<p>\ Determinar si las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> del ejemplo 2 son independientes estadisticamente.</p>
+<p>\</p>
+<p>Debemos determinar si se cumple la condicion de independencia</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    g(x)h(y) &amp;=&amp; \Bigg(x+\dfrac{1}{2}\Bigg) \Bigg(y + \dfrac{1}{2}\Bigg)\\
+    &amp;&amp;\\
+       &amp;=&amp; xy + \dfrac{x}{2}+\dfrac{y}{2} + \dfrac{1}{4}\\
+\end{eqnarray*}\]</span></p>
+<p>Como el resultado es diferente a <span class="math inline">\(f(xy)\)</span> , se concluye que las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> no son independientes estadisticamente.</p>
+</div>
+</div>
 </div>
 
 

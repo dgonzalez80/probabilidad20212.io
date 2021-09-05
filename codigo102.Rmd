@@ -12,6 +12,9 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
+library(psych)
+library(summarytools)
+
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA

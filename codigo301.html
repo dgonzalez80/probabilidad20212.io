@@ -12,7 +12,7 @@
 <meta name="author" content="dgonzalez" />
 
 
-<title>Recursos</title>
+<title>Código 5</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -475,17 +475,8 @@ div.tocify {
     <li>
       <a href="codigo201.html">Código u2.1</a>
     </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Lab
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="Laboratorios.html">Loratorios</a>
+      <a href="codigo301.html">Código u3.1</a>
     </li>
   </ul>
 </li>
@@ -501,136 +492,109 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Recursos</strong></h1>
-<h3 class="subtitle"><strong>Módulo 3- Unidad 3.1</strong></h3>
+<h1 class="title toc-ignore">Código 5</h1>
+<h3 class="subtitle">Módulo 3- Unidad 3.1</h3>
 <h4 class="author">dgonzalez</h4>
 
 </div>
 
 
-<div id="recursos" class="section level1">
-<h1><strong>2. Recursos</strong></h1>
-<div id="variables-aleatorias" class="section level2">
-<h2><strong>Variables aleatorias</strong></h2>
-<p><img src="img/variables1.png" /></p>
-<div id="introducción" class="section level3">
-<h3><strong>2.1 Introducción</strong></h3>
-<p>El concepto de variable aleatoria constituye uno de los conceptos principales de la probabilidad y estadística. A este concepto se pueden asociar dos paradigmas de evolución histórica segun J.A. Alberth &amp; B. Ruiz (2013) , El primero basada en el resultado de fenómenos aleatorios y por otro lado el proceso que relaciona los conjuntos de espacio muestral y sus respectivas probabilidades, para definir el concepto de variable aleatória como función de números reales y el espacio para el sustento matemático.</p>
-<p>Ahora, se puede relacionar el concepto de variable aleatoria a diferentes contextos donde se requiere dar respuesta a preguntas relacionadas con la ocurrencia o no de fenómenos aleatorios que eventualmente se presentarán en el futuro, como por ejemplo:</p>
-<ul>
-<li><p>¿Cuánto tiempo se tarda un estudiante en ir a la universidad?</p></li>
-<li><p>¿Cuál será el resultado en mi próximo examen de estadística?</p></li>
-<li><p>El dueño de la cafetería se puede preguntar ¿Cúantas botellas de agua se venderán esta semana?</p></li>
-<li><p>¿Cuánto tiempo tardaría la entrega de un paquete una empresa de mensajería?</p></li>
-<li><p>¿Cuánto tiempo dura la bombilla de un vehículo?</p></li>
-<li><p>¿Qué diámetro tendrá la perforación de una máquina en una lámina de acero que hace parte de una puerta de un vehículo?</p></li>
-<li><p>¿ cuanto tiempo tardara la creación de la vacuna para el Covid-19?</p></li>
-</ul>
-<p>En todos los casos se trata de preguntas que tienen diferentes respuestas, o que no tienen un único valor como respuesta. En este documento se estudiará el concepto de variable aleatoria y mediante la definición de una función matemática que nos permita caracterizar su comportamiento, realizaremos diferentes cálculos de probabilidades de interés. Para ello será necesario retomar conocimientos de cálculo integral que serán expuestos en su momento mediante funciones de fácil manejo.</p>
-<p>En esta unidad se tratará el caso univariado discreto, luego el caso continuo,con sus principales características, conceptos relacionados con los vistos en el modulo anterior.</p>
-<p><br/></p>
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
-<p><strong>Definición: Variable aleatoria</strong></p>
-<p>Una variable aleatoria <span class="math inline">\(X\)</span> es una función que asigna a cada valor de un espacio muestral <span class="math inline">\(S\)</span> un numero . El conjunto formado por estos números conforman un subconjunto de los reales llamado rango de la variable X, (<span class="math inline">\(R_{_{X}}\)</span>)</p>
-</div>
-<p>Las variables aleatorias se clasifican teniendo en cuenta las características de su rango en discretas, continuas. La distribución de una variable aleatoria será univariada si se estudia el comportamiento de una sola variable y serán multivariadas si se considera el comportamiento conjunto de varias variables definidas sobre el mismo espacio muestral.Este ultimo caso sera tratado en la unidad 3.2</p>
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
-<p><strong>Tipos de variables</strong></p>
-<ul>
-<li><p>Una variable <span class="math inline">\(X\)</span> se considera <strong>DISCRETA</strong> si su rango <span class="math inline">\(R_{_{X}}\)</span> es un conjunto finito o infinito numerable de valores.</p></li>
-<li><p>Se considera <strong>CONTINUA</strong> si su rango <span class="math inline">\(R_{_{X}}\)</span> es un conjunto de valores infinito no numerable y generalmente corresponde a unión de intervalos.</p></li>
-</ul>
-</div>
-<p>El siguiente ejemplo ilustra el concepto de variable discreta:</p>
-<p><strong>Ejemplo 1 :</strong> Un experimento aleatorio <span class="math inline">\(E\)</span>, consiste en lanzar una moneda balanceada al aire tres veces y observar el orden de caras (<span class="math inline">\(c\)</span>) y sellos (<span class="math inline">\(s\)</span>) que se obtienen en los tres lanzamientos. El espacio muestral <span class="math inline">\(S\)</span> de <span class="math inline">\(E\)</span>, estará dado por:</p>
-<p><span class="math display">\[S =\{(s,s,s),(s,s,c),(s,c,s),(s,c,c),(c,s,s),(c,s,c),(c,c,s),(c,c,c)\} \]</span></p>
-<center>
-<p><img src="img/Figura301.png" style="width:60.0%" /><br/></p>
-Figura 1
-</center>
-<p><br/></p>
-<p>Sea <span class="math inline">\(X\)</span> la variable que asigna a cada resultado el número de caras en los tres lanzamientos de la moneda. En este caso el rango asociado a la variable será <span class="math inline">\(R_{_{X}}=\{0,1,2,3\}\)</span> determinado por la regla de asignación: número de caras en los tres lanzamientos de la moneda. A cada valor <span class="math inline">\(X\)</span> en <span class="math inline">\(R_{_{X}}\)</span> le corresponde un valor de probabilidad <span class="math inline">\(f_{_{X}}(x)=P(X=x)\)</span> conformando de esta manera una función. La expresión <span class="math inline">\((X=x)\)</span> hace referencia al evento que contiene todos los resultados en <span class="math inline">\(S\)</span> y que tiene como imagen el número real <span class="math inline">\(x\)</span>. En este ejemplo <span class="math inline">\((X=0)=\{(s,s,s)\}\)</span> ; <span class="math inline">\((X=1)=\{(s,s,c),(s,c,s),(c,s,s)\}\)</span> ; $(X=2)={(s,c,c),(c,s,c),(c,c,s) } $ y <span class="math inline">\((X=3) =\{(c,c,c) \}\)</span>. Bajo el supuesto que la moneda es balanceada, se cumple que los resultados en <span class="math inline">\(S\)</span> son igualmente posibles y por lo tanto:</p>
-<p><span class="math display">\[f_{_{X}}(0) =P(X=0)= \frac{1}{8} \hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(1) = P(X=1)=\frac{3}{8},\]</span> <span class="math display">\[f_{_{X}}(2) = P(X=2)=\frac{3}{8}\hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(3) =P(X=3)= \frac{1}{8}\]</span></p>
+<p>Para el desarrollo del Módulo 3, requerimos poder evaluar y representar funciones de variables tanto discretas como continuas.</p>
+<div id="caso-discreto" class="section level2">
+<h2><strong>Caso discreto</strong></h2>
+<pre class="r"><code>x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  </code></pre>
+<p>Para verificar que es una función de distribucion de probabilidad sumamos todos sus valores</p>
+<pre class="r"><code>sum(fx)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>Para representar gráficamente la función utilizamos la función <strong>plot</strong></p>
+<pre class="r"><code>x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  
+plot(x,fx, las=1, ylab=&quot;f(x)&quot;, xlab=&quot;número personas que asisten&quot;, pch=19)
+lines(x, fx, type=&quot;h&quot;, col=2)</code></pre>
+<p><img src="codigo301_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><br/><br/></p>
+<p>Tambien podemos utilizar el paquete ggplot2 <br/></p>
+<pre class="r"><code>library(ggplot2)
+x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = &quot;orange&quot;, size = 4) +
+  scale_x_continuous(limits = c(0, 10),
+                     breaks = c(0,1,2,3,4,5,6,7,8,9), 
+                     labels = c(&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;))</code></pre>
+<p><img src="codigo301_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><br/><br/></p>
+<p>Tambien podemos construir una tabla con las probabilidades asignadas a cada valor de <span class="math inline">\(X\)</span> <br/></p>
+<pre class="r"><code>x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  
+Fx=cumsum(fx)
+dt=data.frame(x,fx,Fx)
+dt</code></pre>
+<pre><code>##     x           fx           Fx
+## 1   0 0.0001048576 0.0001048576
+## 2   1 0.0015728640 0.0016777216
+## 3   2 0.0106168320 0.0122945536
+## 4   3 0.0424673280 0.0547618816
+## 5   4 0.1114767360 0.1662386176
+## 6   5 0.2006581248 0.3668967424
+## 7   6 0.2508226560 0.6177193984
+## 8   7 0.2149908480 0.8327102464
+## 9   8 0.1209323520 0.9536425984
+## 10  9 0.0403107840 0.9939533824
+## 11 10 0.0060466176 1.0000000000</code></pre>
 <p><br/><br/></p>
 </div>
-</div>
-<div id="variables-aleatorias-discretas" class="section level2">
-<h2><strong>2.4 Variables aleatorias discretas</strong></h2>
+<div id="caso-continuo" class="section level2">
+<h2><strong>Caso continuo</strong></h2>
+<p><br/><br/></p>
+<div id="gráficos" class="section level3">
+<h3><strong>Gráficos</strong></h3>
+<p>Las variables aleatorios continuas requieren el uso de integrales y por tanto su representación gráfica corresponde a una área bajo la <span class="math inline">\(f(x)\)</span></p>
+<p><br/><br/></p>
+<pre class="r"><code>curve(1/4*exp(-x/4) , from=0, to=20, n=300, xlab=&quot;x&quot;, ylab=&quot;f(x)&quot;, 
+             col=&quot;blue&quot;, lwd=3, main=&quot;f(x)=1/4*exp(-x/4)&quot;, las=1  )</code></pre>
+<p><img src="codigo301_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p><br/></p>
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
-<p><strong>Definición: Función de distribución de probabilidad</strong></p>
-<p>Para <span class="math inline">\(X\)</span> un variable aleatoria discreta, su función de distribución de probabilidad estará dada por <span class="math inline">\(f(x)\)</span>, la cual proporciona las probabilidades asociadas a todos los valores de su rango <span class="math inline">\(R_{X}\)</span> . Esta función debe cumplir las siguientes propiedades:</p>
-<ul>
-<li><p><span class="math inline">\(f(x) = P(X=x) &gt; 0\)</span></p></li>
-<li><p><span class="math inline">\(\sum_{R_X} f(x) =1\)</span></p></li>
-</ul>
-</div>
-<p><br/><br/> En el Ejemplo 1 se puede resumir de la figura 1 de la siguiente manera:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(x_i\)</span></th>
-<th align="right"><span class="math inline">\(n_i\)</span></th>
-<th align="right"><span class="math inline">\(f(x_i)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1</td>
-<td align="right">200</td>
-<td align="right">0.1666667</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td align="right">200</td>
-<td align="right">0.1666667</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td align="right">200</td>
-<td align="right">0.1666667</td>
-</tr>
-<tr class="even">
-<td align="center">4</td>
-<td align="right">200</td>
-<td align="right">0.1666667</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td align="right">200</td>
-<td align="right">0.1666667</td>
-</tr>
-<tr class="even">
-<td align="center">6</td>
-<td align="right">200</td>
-<td align="right">0.1666667</td>
-</tr>
-<tr class="odd">
-<td align="center"></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-<tr class="even">
-<td align="center">Total</td>
-<td align="right">1200</td>
-<td align="right">1.0000000</td>
-</tr>
-</tbody>
-</table>
+<pre class="r"><code>x=seq(from = 0, to = 20, by = 0.1)
+y=function(y){1/4*exp(-y/4)}
+fx=y(x)
+plot(x,fx, xlab=&quot;x&quot;, ylab=&quot;f(x)&quot;, type=&quot;l&quot;,
+             col=&quot;blue&quot;, lwd=3, main=&quot;f(x)=1/4*exp(-x/4)&quot;, las=1  )
+x1=c(0,x,0)
+fx1=c(0,fx,0)
+polygon(x1, fx1,col = &quot;#1b98e0&quot;) </code></pre>
+<p><img src="codigo301_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p><br/></p>
-<p>La función <span class="math inline">\(f_{_{X}}\)</span> definida se denomina función de distribución de probabilidad de la variable <span class="math inline">\(X\)</span> y establece la probabilidad de que la variable tome el valor respectivo, es decir <span class="math inline">\(f_{_{X}}(x)=P(X=x)\)</span>. El siguiente ejemplo ilustra con mayor detalle la forma de encontrar funciones de probabilidad.</p>
-<p>La probabilidad teórica de que la variable <span class="math inline">\(X\)</span> tome cada uno de los valores <span class="math inline">\(x\)</span> es la misma e igual a <span class="math inline">\(1/6\)</span>, bajo el supuesto de que el dado está balanceado, esto es: <span class="math inline">\(f_{_{X}}(1) = f_{_{X}}(2) = f_{_{X}}(3) = f_{_{X}}(4) = f_{_{X}}(5) = f_{_{X}}(6) = 1/6\)</span> es por esto que se afirma que los eventos simples son igualmente probables o posibles (equiprobables).</p>
-<p>De acuerdo con lo anterior la frecuencia absoluta esperada para cada resultado es igual a <span class="math inline">\(1/6 \times 1200 = 200\)</span>.</p>
-<pre class="r"><code>x=1:6
-fx=c(200,200,200,200,200,200)
-data=data.frame(x,fx)
-fig=ggplot(data=data,  aes(x , fx))+
-   theme_minimal() +
-   geom_point(color=&quot;blue&quot;)+
-   ggtitle(&quot;Frecuencia esperada para los posibles resultados al lanzar un dado legal&quot;)+
-   labs(x=&quot;puntos&quot; , y=&quot;f(x)&quot;)
-fig</code></pre>
-<p><img src="Recursos_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Si se requiere una parte sombreada reducimos el rango de los dos conjuntos</p>
+<pre class="r"><code>x=seq(from = 0, to = 20, by = 0.1)
+y=function(y){1/4*exp(-y/4)}
+fx=y(x)
+plot(x,fx, xlab=&quot;x&quot;, ylab=&quot;f(x)&quot;, type=&quot;l&quot;,
+             col=&quot;blue&quot;, lwd=3, main=&quot;f(x)=1/4*exp(-x/4)&quot;, las=1  )
+x1=seq(from=0, to=5,by=0.1)
+fx1=y(x1)
+x1=c(0,x1,5)
+fx1=c(0,fx1,0)
+polygon(x1, fx1,col = &quot;#4876FF&quot;) </code></pre>
+<p><img src="codigo301_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><br/><br/></p>
+<p>Se puede utilizar la libreria de <strong>ggplot2</strong></p>
+<pre class="r"><code>library(ggplot2)
+ggplot(data.frame(x=c(0, 20)), aes(x)) + 
+    stat_function(fun=function(x){1/4*exp(-x/4)},colour=&quot;blue&quot;, size=1,
+                  geom=&quot;area&quot;, fill=&quot;#4876FF&quot;, alpha=0.5) </code></pre>
+<p><img src="codigo301_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="integración" class="section level3">
+<h3><strong>Integración</strong></h3>
+<p><br/></p>
+<p><span class="math inline">\(\displaystyle\int\limits_{0}^{+\infty} \dfrac{1}{4} e^{-y/4} \:dx\)</span></p>
+<pre class="r"><code>fy=function(y){1/4*exp(-y/4)}
+integrate(fy, lower=0,upper=Inf)</code></pre>
+<pre><code>## 1 with absolute error &lt; 2.7e-05</code></pre>
+<p><br/><br/> <a href="https://ggplot2tutor.com/tutorials/sampling_distributions" class="uri">https://ggplot2tutor.com/tutorials/sampling_distributions</a></p>
 </div>
 </div>
 

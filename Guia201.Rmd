@@ -125,7 +125,7 @@ Iniciaremos con algunos conceptos basicos que nos permiten la contrucion de sus 
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Experimento aleatorio** 
 
@@ -145,7 +145,7 @@ Acción que puede ser replicada bajo las  mismas condiciones y cuyo resultado no
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Espacio muestral** 
 
@@ -182,7 +182,7 @@ Conjunto de todos los posibles valores que puede tomar el experimento aleatorio.
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Evento aleatorio** 
 
@@ -217,7 +217,7 @@ Resumiendo:
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Enfoque clásico**  
 
@@ -241,7 +241,7 @@ En la gran mayoria de casos no se cumplen los supuestos anteriores, pues se tien
 
 Ahora suponemos que lo ocurrió en el pasado segirá pasando y asi estudiando la información recogida podemos predecir la posibilidad de ocurrencia de un evento futuro
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Enfoque Frecuentista**
 
@@ -263,7 +263,7 @@ Con base en esta tabla podríamos pensar que la probabilidad de que una persona 
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 **Enfoque subjetivo** 
 
@@ -275,7 +275,7 @@ En este caso la probabilidad es valorada y asignada por un EXPERTO, como un méd
 
 ## **2.3 Axiomas de  probabilidad**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #4876FF; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
 
 + $A_{1}$ : Sea $S$ un espacio muestral  asociado a un experimento. Entonces $P(S)=1$ 
 

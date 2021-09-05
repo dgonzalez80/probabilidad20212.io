@@ -1,0 +1,150 @@
+---
+title: "Código 5"
+author: "dgonzalez "
+subtitle: "Módulo 3- Unidad 3.1" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+
+```
+
+
+Para el desarrollo del Módulo 3, requerimos poder evaluar y representar funciones de variables tanto discretas como continuas. 
+
+
+## **Caso discreto**
+
+```{r}
+x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  
+```
+
+Para verificar que es una función de distribucion de probabilidad sumamos todos sus valores
+
+```{r}
+sum(fx)
+```
+
+Para representar gráficamente la función utilizamos la función **plot**
+
+
+```{r}
+x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  
+plot(x,fx, las=1, ylab="f(x)", xlab="número personas que asisten", pch=19)
+lines(x, fx, type="h", col=2)
+```
+
+<br/><br/>
+
+Tambien podemos utilizar el paquete ggplot2
+<br/>
+```{r}
+library(ggplot2)
+x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
+  scale_x_continuous(limits = c(0, 10),
+                     breaks = c(0,1,2,3,4,5,6,7,8,9), 
+                     labels = c('0','1','2','3','4','5','6','7','8','9'))
+```
+
+<br/><br/>
+
+Tambien podemos construir una tabla con las probabilidades asignadas a cada valor de $X$
+<br/>
+```{r}
+x=0:10
+fx=choose(10,x)*0.60^x*0.40^(10-x)  
+Fx=cumsum(fx)
+dt=data.frame(x,fx,Fx)
+dt
+```
+
+<br/><br/>
+
+## **Caso continuo**
+
+<br/><br/>
+
+### **Gráficos**
+
+Las variables aleatorios continuas requieren el uso de integrales y por tanto su representación gráfica corresponde a una área bajo la $f(x)$ 
+
+<br/><br/>
+
+```{r}
+curve(1/4*exp(-x/4) , from=0, to=20, n=300, xlab="x", ylab="f(x)", 
+             col="blue", lwd=3, main="f(x)=1/4*exp(-x/4)", las=1  )
+```
+
+<br/>
+
+```{r}
+x=seq(from = 0, to = 20, by = 0.1)
+y=function(y){1/4*exp(-y/4)}
+fx=y(x)
+plot(x,fx, xlab="x", ylab="f(x)", type="l",
+             col="blue", lwd=3, main="f(x)=1/4*exp(-x/4)", las=1  )
+x1=c(0,x,0)
+fx1=c(0,fx,0)
+polygon(x1, fx1,col = "#1b98e0") 
+
+```
+
+<br/>
+
+Si se requiere una parte sombreada reducimos el rango de los dos conjuntos
+
+```{r}
+x=seq(from = 0, to = 20, by = 0.1)
+y=function(y){1/4*exp(-y/4)}
+fx=y(x)
+plot(x,fx, xlab="x", ylab="f(x)", type="l",
+             col="blue", lwd=3, main="f(x)=1/4*exp(-x/4)", las=1  )
+x1=seq(from=0, to=5,by=0.1)
+fx1=y(x1)
+x1=c(0,x1,5)
+fx1=c(0,fx1,0)
+polygon(x1, fx1,col = "#4876FF") 
+```
+
+<br/><br/>
+
+Se puede utilizar la libreria de **ggplot2**
+
+```{r}
+library(ggplot2)
+ggplot(data.frame(x=c(0, 20)), aes(x)) + 
+    stat_function(fun=function(x){1/4*exp(-x/4)},colour="blue", size=1,
+                  geom="area", fill="#4876FF", alpha=0.5) 
+    
+```
+
+<br/><br/>
+
+### **Integración**
+
+<br/>
+
+$\displaystyle\int\limits_{0}^{+\infty} \dfrac{1}{4} e^{-y/4} \:dx$
+
+```{r}
+fy=function(y){1/4*exp(-y/4)}
+integrate(fy, lower=0,upper=Inf)
+```
+
+
+<br/><br/>
+https://ggplot2tutor.com/tutorials/sampling_distributions
+

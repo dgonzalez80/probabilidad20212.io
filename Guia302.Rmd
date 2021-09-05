@@ -20,12 +20,12 @@ c2="#6666FF" # AZUL
 c3="#4CBFBA" # VERDE CLARO  
 c4="#E09600" # AMARILLO  
 c5="#BC2B6A" # MORADO  
-
+cbox="#007FFF"  # AZUL BOX
 ```
 
 <span style="color:#E77C00">**En construcción**</span>
 
-## **Guía de aprendizaje 3.2**
+# **1. Guía de aprendizaje**
 
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f1f8393c43a880d757f9166" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
 
@@ -33,19 +33,19 @@ c5="#BC2B6A" # MORADO
 
 <br/><br/>
 
-## **1. Introducción**
+## **1.1. Introducción**
 
 <br/><br/>
 
-## **2. Objetivos de la unidad**
+## **1.2. Objetivos de la unidad**
 
 <br/><br/>
 
-## **3. Duración**
+## **1.3. Duración**
 
 <br/><br/>
 
-## **4. Cronograma de trabajo**
+## **1.4. Cronograma de trabajo**
 
 
 |Actividad      | Descripción                    | 
@@ -53,52 +53,55 @@ c5="#BC2B6A" # MORADO
 
 <br/><br/>
 
-## **5. Criterios de evaluación**
+## **1.5. Criterios de evaluación**
 
 <br/><br/>
 
-## **6. Entregables** 
+## **1.6. Entregables** 
 
 <br/><br/><br/><br/>
 
-## **7. Presentaciones**
+## **1.7. Presentaciones**
 
-\textcolor{col4}{\LARGE \bf Variables aleatorias conjuntas} \\
 
-\vspace{.5cm} 
-\textcolor{col4}{\large \bf Distribución de probabilidad conjunta}\\
-%\vspace{.5cm}
-Los resultados de un experimento pueden ser causa de múltiples variables como ocurre con el precio de un producto y sus ventas, el tiempo de preparación de un examen y su nota final, la cantidad de arena y de cemento en concreto, la cantidad de abono suministrado a una planta y su producción final. En estos casos se requiere una función de densidad que describa la variación de la probabilidad  de ocurrencia de ambas variables, probabilidad que describe el comportamiento conjunto de las variables. \\
+# **2. Recursos **
 
-La función que tiene en cuenta efectos múltiples de variables aleatorias se denomina distribución de probabilidad conjunta. esta función puede ser una combinación de variables continua-continua, discreta-discreta o continua-discreta, dependiendo del experimento, en el caso bivariado.\\
+## **2.1 Introducción**
 
-En esta guía se presentan los casos : discreta-discreta y el caso continua-continua. \\
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 
-\vspace{.5cm} 
-\textcolor{col4}{\large \bf Distribución de probabilidad conjunta variables aleatorias discretas}\\
+
+</div> 
+
+
+## **Variables aleatorias conjuntas**
+
+### **Distribución de probabilidad conjunta**
+
+Los resultados de un experimento pueden ser causa de múltiples variables como ocurre con el precio de un producto y sus ventas, el tiempo de preparación de un examen y su nota final, la cantidad de arena y de cemento en concreto, la cantidad de abono suministrado a una planta y su producción final. En estos casos se requiere una función de densidad que describa la variación de la probabilidad  de ocurrencia de ambas variables, probabilidad que describe el comportamiento conjunto de las variables. 
+
+La función que tiene en cuenta efectos múltiples de variables aleatorias se denomina distribución de probabilidad conjunta. esta función puede ser una combinación de variables continua-continua, discreta-discreta o continua-discreta, dependiendo del experimento, en el caso bivariado.
+
+En esta guía se presentan los casos : discreta-discreta y el caso continua-continua. 
+
+ 
+### **Distribución de probabilidad conjunta variables aleatorias discretas**
 	
 Si se dispone de dos variables aleatorias se puede definir distribuciones bidimensionales de forma semejante al caso unidimensional. Para el caso discreto-discreto se define:
 
-\begin{Box4}{Función de distribución conjunta}
+**Función de distribución conjunta**
 $$f_{_{X,Y}}(x,y)=P(X=x,Y=y)$$
 
 la cual debe cumplir con las siguientes características:
 
-%\begin{center}
-%	\begin{itemize}
-%	\item
- $$\displaystyle\sum\limits_{x=x_{(1)}}^{x_{(n)}}\displaystyle\sum\limits_{y=y_{(1)}}^{y_{(n)}}f_{_{X,Y}}(x,y)=1$$
-%	\item 
-\vspace{.3cm}
-$$f(x,y)\geq 0$$
-%\end{itemize}
-%\end{center}
-\end{Box4}
-%-----------------ejemplo1
-\vspace{.5cm}
-\textcolor{col3}{\bf Ejemplo 1}\\
- Se considera el experimento aleatorio que consiste en el lanzamiento de dos dados distinguibles, legales donde se registran los resultados de los puntos obtenidos 	en las caras superiores de los dados. Para este experimento el espacio muestral es $S$ y se presenta a continuación:
-%
++ $\displaystyle\sum\limits_{x=x_{(1)}}^{x_{(n)}}\displaystyle\sum\limits_{y=y_{(1)}}^{y_{(n)}}f_{_{X,Y}}(x,y)=1$
+
++ $f(x,y)\geq 0$ 
+
+Ejemplo 1
+
+Se considera el experimento aleatorio que consiste en el lanzamiento de dos dados distinguibles, legales donde se registran los resultados de los puntos obtenidos 	en las caras superiores de los dados. Para este experimento el espacio muestral es $S$ y se presenta a continuación:
+
 \begin{equation*}
 	S=\left\{
 	\begin{array}{cccccc}
@@ -112,16 +115,15 @@ $$f(x,y)\geq 0$$
 	\right\}
 \end{equation*}
 
-\vspace{.5cm}
-Cada pareja $(i,j)$ representa un posible resultado al lanzar dos dados, donde el valor $i$ corresponde al resultado del dado 1 y el valor $j$ al resultado del dado 2.\\
+Cada pareja $(i,j)$ representa un posible resultado al lanzar dos dados, donde el valor $i$ corresponde al resultado del dado 1 y el valor $j$ al resultado del dado 2.
 
-Puede resultar interesante determinar la probabilidad que el primer dado caiga en $5$ y el segundo en $6$ o que el primero caiga en $2$ y la suma del número de puntos que aparecen  en los dos dados sea $5$. De acuerdo con este interés se definen las variables y la función que las modela.\\
+Puede resultar interesante determinar la probabilidad que el primer dado caiga en $5$ y el segundo en $6$ o que el primero caiga en $2$ y la suma del número de puntos que aparecen  en los dos dados sea $5$. De acuerdo con este interés se definen las variables y la función que las modela.
 
-Para la segunda situación se puede  definir las variables:\\
-\begin{itemize}
-	\item[$X_1:$] número de puntos de la cara superior del primer dado.
-	\item[$X_2:$] Suma de puntos de las caras superiores de los dos dados.
-\end{itemize}
+Para la segunda situación se puede  definir las variables
++ $X_1:$ número de puntos de la cara superior del primer dado.
+
++ $X_2:$ Suma de puntos de las caras superiores de los dos dados.
+
 De acuerdo con la definición de las variables, los resultados posibles para cada una de ellas son los siguientes:
 
 \begin{align*}
@@ -129,7 +131,7 @@ De acuerdo con la definición de las variables, los resultados posibles para cad
 	&R_{X_{2}}:\left\{2,3,4,5,6,7,8,9,10,11,12\right\}
 \end{align*}
 	
-Para cada par ordenado posible $(x_1,x_2)$ se determina el valor de la probabilidad conjunta $P(X_1=x_1 ; X_2=x_2)$ que se puede denotar por $f_{_{X_1,X_2}}(x_1,x_2)$.\\
+Para cada par ordenado posible $(x_1,x_2)$ se determina el valor de la probabilidad conjunta $P(X_1=x_1 ; X_2=x_2)$ que se puede denotar por $f_{_{X_1,X_2}}(x_1,x_2)$.
 
 En particular para los pares $(1,2),(1,3)$ y $(6,12)$ las probabilidades conjuntas son $1/36$ y se muestran a continuación
 
@@ -141,17 +143,16 @@ En particular para los pares $(1,2),(1,3)$ y $(6,12)$ las probabilidades conjunt
 	\vdots\\
 	f_{_{X_1,X_2}}(6,12)&=&P(X_1=6,X_2=12)=1/36\\
 \end{eqnarray*}
-%%	
+
 En la Tabla 1 se presentan todos los pares posibles $(x_1,x_2)$ con sus respectivas probabilidades conjuntas, los casos imposibles tienen asignados probabilidad de cero.
-%% tabla 3.10  ------------------------------------------------------------
-%\begin{center}
-%Función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ para el Ejemplo 1\\	
-%		\includegraphics[scale=.4]{tab1.png}
-%	\end{center}
-\vspace{.5cm}	
-\begin{center}
+
+Función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ para el Ejemplo 1	
+
+tab1.png
+
+	
 Tabla 1. Función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ para el Ejemplo 1\\
-	\begin{tabular}{c|c}
+\begin{tabular}{c|c}
 		
 		$f_{_{X_1 X_2}}(x_{1},x_{2})$& \textcolor{col5}{\bf $x_{1}$} \\	
 		\hline 
@@ -173,19 +174,16 @@ Tabla 1. Función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ para el Ejemplo 
 		\\
 	\end{tabular}	
 \end{center}
-\vspace{.5cm}
-%
-%	
+	
 El primer caso, $f_{_{X_{1},X_{2}}}(1,2)=1/36$ y se lee de la siguiente manera: la probabilidad de que la variable $X_{1}$ tome el valor de $1$ y la variable $X_{2}$ el valor de $2$, es igual a $1/36$. En contexto, la probabilidad de que al lanzar dos dados legales distinguibles, el número de puntos del dado1 sea $1$ y la suma de puntos de los dos dados sea igual a $2$, es de $1/36$. Es decir, cuando se lanzan un número grande de veces dos dados distinguibles y legales aproximadamente el $2.77\%$ de las veces el número de  puntos del dado1 es uno y la suma de los puntos de los dos dados es dos. \\
 %
 En el caso bidimensional la altura representa la probabilidad del evento determinado por el par ordenado $(x_1,x_2)$, es decir $f_{_{X_{1},X_{2}}}(x_{1},x_{2})$. También se pueden dibujar los puntos en lugar de segmentos de rectas. Sin embargo la lectura es menos fácil. El gráfico solamente se puede hacer para el caso de dos variables, dado que solo podemos representar graficamente tres dimensiones. ($R^{3}$)\\
 
 En la Figura 1 se representa gráficamente la función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ del Ejemplo 1. En el eje $y$ se encuentran los valores $f_{_{X_{1},X_{2}}}(x_1,x_2)$ y están representados por segmentos de rectas verticales.
 
-\begin{center}
-\includegraphics[scale=0.5]{gej1.pdf} \\
+
+gej1.pdf 
 Figura 1. Función de probabilidad conjunta $X_{1},X_{2}$en el ejemplo 
-\end{center}
 
 %			
 Cada una de las propiedades se puede ilustrar con la función $f_{_{X_1X_2}}(x_1,x_2)$ del Ejemplo 1 y los valores de la Tabla 1, pues en efecto cada valor $f_{_{X_1X_2}}(x_1,x_2)$ está entre 0 y 1 y la suma de todos ellos es exactamente 1.
