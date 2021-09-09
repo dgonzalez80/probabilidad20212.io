@@ -314,7 +314,11 @@ grid()
 x=0:40
 fx=round(choose(40,x)*0.70^x*0.30^(40-x),6)  
 Fx=round(cumsum(fx),4)
-data.frame(x,fx,Fx)
+
+cat("P(X=0)  = ",fx[1], "\n")
+cat("P(X=25) = ", fx[26], "\n")
+cat("P(X<25) = P(X<=24) = ", Fx[25], "\n")
+cat("P(X >25) = 1 - P(X<=24) =", 1-Fx[25])
 ```
 
 <br/><br/>
