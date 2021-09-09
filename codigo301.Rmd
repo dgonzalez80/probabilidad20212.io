@@ -20,8 +20,16 @@ library(tidyverse)
 
 Para el desarrollo del Módulo 3, requerimos poder evaluar y representar funciones de variables tanto discretas como continuas. 
 
+<br/><br/>
 
 ## **Caso discreto**
+
+<br/>
+Supongamos que $X$ es una variable aleatoria discreta con función de distribución de probabilidad dada por :
+
+$f(x)=\binom{10}{x} 0.60^{x} 0.40^{10-x}$
+
+<br/><br/>
 
 ```{r}
 x=0:10
@@ -72,6 +80,12 @@ dt
 ```
 
 <br/><br/>
+
+Nota: En este caso $\binom{n}{k}$, corresponde a la combinatoria de $n$ con $k$, que representa el número de maneras diferentes como se puede seleccionar una muestra de tamaño $k$ de una urna que contiene $n$ elementos son importar el orden y sin repetición.  
+
+
+
+
 
 ## **Caso continuo**
 

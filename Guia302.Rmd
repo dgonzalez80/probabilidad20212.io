@@ -35,29 +35,55 @@ cbox="#007FFF"  # AZUL BOX
 
 ## **1.1. Introducción**
 
+El concepto de variable  aleatoria  conjunta y sus principales características como la correlación constituyen las bases para aplicaciones estadísticas como los modelos de regresión.  
+
+En esta  unidad se presentan las principales características de las variables aleatorias conjuntas, mas precisamente bivariadas $(X,Y)$
+
 <br/><br/>
 
 ## **1.2. Objetivos de la unidad**
+
+Al finalizar la unidad los estudiantes estarán  en  capacidad de IDENTIFICAR, CALCULAR y APLICAR los conceptos y las principales características  de las VARIABLE ALEATORIA CONJUNTAS para representar situaciones reales en la búsqueda de soluciones a problemas o valorar los riesgos que se pueden presentar en la toma de decisiones.
 
 <br/><br/>
 
 ## **1.3. Duración**
 
+La presente  unidad será desarrollada durante la semana séptima del semestre ( 13 al 19 de septiembre  de 2021). Ademas del material suministrado  contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entregables para esta unidad podrán enviarse a través de la plataforma Brightspace hasta el  13 de septiembre.
+
+Para alcanzar los objetivos planteados se propone realizar las siguientes actividades
+
 <br/><br/>
 
 ## **1.4. Cronograma de trabajo**
 
-
-|Actividad      | Descripción                    | 
-|:--------------|:-----------------------------  |
+|Actividad        | Descripción                    | 
+|:----------------|:-----------------------------  |
+|Actividad 302    |
+|Trabajo en grupo | **Taller 302** El siguiente taller recoge los principales conceptos relacionados con variables aleatorias, tanto discretas como continuas y sus aplicaciones en la estimación de probabilidades. Actividad realizada en grupos de dos estudiantes. |
+|Recursos         | **Guía 3.2** | 
+|                 | Capitulo  2 Navidi (Navidi, W. estadística para ingenieros y científicos. Editorial Mc Graw Hill. 2006. ) |
+|                 | Capítulos  3 y 4 Walpole  (Walpole, R. Myers, R. Myers, S. Ye, K. Probabilidad y Estadística para ingeniería y Ciencias.8 Ed. Editorial Pearson. 2007)|
+|||
+|Fecha            |  13 de septiembre de 2021
+|Hora             |  23:59 hora local 
 
 <br/><br/>
 
 ## **1.5. Criterios de evaluación**
 
++ Reconoce las principales características de las variables conjuntas 
+
++ Utiliza las herramientas estadística apropiadas en el calculo de probabilidades en la solución de problemas en contexto
+
++ Utiliza herramientas computacionales que le permiten representar y calcular probabilidades en la solución de problemas en contexto
+
++ Interpreta y expresa el desarrollo de los problemas con el lenguaje propio de la estadística
 <br/><br/>
 
 ## **1.6. Entregables** 
+
+**Taller 302.pdf** El taller tiene un valor de 30 puntos si es resuelto completamente y enviado dentro de los tiempos establecidos
 
 <br/><br/><br/><br/>
 
@@ -66,30 +92,48 @@ cbox="#007FFF"  # AZUL BOX
 
 # **2. Recursos **
 
+
+
+
+```{r, echo=FALSE}
+# tomada de:
+# http://pj.freefaculty.org/R/WorkingExamples/plot-3d-MVNormal-1.R
+library("mvtnorm")
+
+N=50
+x <- seq(-3,3, length=N)
+y <- seq(-3,3,length=N)
+z <- matrix(0, N, N)
+for (i in 1:N) for (j in 1:N) {
+  z[i,j]=dmvnorm(c(x[i],y[j]), c(0,0),
+        matrix(c(1,0.5,0.5,1),2,2))}
+persp(x,y,z,theta=20, phi=15, 
+      xlab="x", 
+      ylab="y", 
+      zlab="f(x,y)",
+      scale=TRUE,
+      expand=.4,
+      axes=TRUE,
+      col=cbox)
+```
+
+
 ## **2.1 Introducción**
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
-
-
-</div> 
-
-
-## **Variables aleatorias conjuntas**
-
-### **Distribución de probabilidad conjunta**
 
 Los resultados de un experimento pueden ser causa de múltiples variables como ocurre con el precio de un producto y sus ventas, el tiempo de preparación de un examen y su nota final, la cantidad de arena y de cemento en concreto, la cantidad de abono suministrado a una planta y su producción final. En estos casos se requiere una función de densidad que describa la variación de la probabilidad  de ocurrencia de ambas variables, probabilidad que describe el comportamiento conjunto de las variables. 
 
 La función que tiene en cuenta efectos múltiples de variables aleatorias se denomina distribución de probabilidad conjunta. esta función puede ser una combinación de variables continua-continua, discreta-discreta o continua-discreta, dependiendo del experimento, en el caso bivariado.
 
-En esta guía se presentan los casos : discreta-discreta y el caso continua-continua. 
+En esta guía se presentan los casos : discreta-discreta y el caso continua-continua.
 
- 
-### **Distribución de probabilidad conjunta variables aleatorias discretas**
-	
+
+## **2.2 Discreto-Discreto**
+
 Si se dispone de dos variables aleatorias se puede definir distribuciones bidimensionales de forma semejante al caso unidimensional. Para el caso discreto-discreto se define:
 
-**Función de distribución conjunta**
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+
+**Función de distribución de probabilidad conjunta**
 $$f_{_{X,Y}}(x,y)=P(X=x,Y=y)$$
 
 la cual debe cumplir con las siguientes características:
@@ -98,412 +142,118 @@ la cual debe cumplir con las siguientes características:
 
 + $f(x,y)\geq 0$ 
 
-Ejemplo 1
-
-Se considera el experimento aleatorio que consiste en el lanzamiento de dos dados distinguibles, legales donde se registran los resultados de los puntos obtenidos 	en las caras superiores de los dados. Para este experimento el espacio muestral es $S$ y se presenta a continuación:
-
-\begin{equation*}
-	S=\left\{
-	\begin{array}{cccccc}
-		&(1,1),(1,2),(1,3),(1,4),(1,5),(1,6)&\\
-		&(2,1),(2,2),(2,3),(2,4),(2,5),(2,6)&\\
-		&(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)&\\
-		&(4,1),(4,2),(4,3),(4,4),(4,5),(4,6)&\\
-		&(5,1),(5,2),(5,3),(5,4),(5,5),(5,6)&\\
-		&(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)&
-	\end{array}
-	\right\}
-\end{equation*}
-
-Cada pareja $(i,j)$ representa un posible resultado al lanzar dos dados, donde el valor $i$ corresponde al resultado del dado 1 y el valor $j$ al resultado del dado 2.
-
-Puede resultar interesante determinar la probabilidad que el primer dado caiga en $5$ y el segundo en $6$ o que el primero caiga en $2$ y la suma del número de puntos que aparecen  en los dos dados sea $5$. De acuerdo con este interés se definen las variables y la función que las modela.
-
-Para la segunda situación se puede  definir las variables
-+ $X_1:$ número de puntos de la cara superior del primer dado.
-
-+ $X_2:$ Suma de puntos de las caras superiores de los dos dados.
-
-De acuerdo con la definición de las variables, los resultados posibles para cada una de ellas son los siguientes:
-
-\begin{align*}
-	&R_{X_{1}}:\left\{1,2,3,4,5,6\right\}\\
-	&R_{X_{2}}:\left\{2,3,4,5,6,7,8,9,10,11,12\right\}
-\end{align*}
-	
-Para cada par ordenado posible $(x_1,x_2)$ se determina el valor de la probabilidad conjunta $P(X_1=x_1 ; X_2=x_2)$ que se puede denotar por $f_{_{X_1,X_2}}(x_1,x_2)$.
-
-En particular para los pares $(1,2),(1,3)$ y $(6,12)$ las probabilidades conjuntas son $1/36$ y se muestran a continuación
-
-\begin{eqnarray*}
-	f_{_{X_1,X_2}}(1,2)&=&P(X_1=1,X_2=2)=1/36\\
-	f_{_{X_1,X_2}}(1,3)&=&P(X_1=1,X_2=3)=1/36\\
-	\vdots\\
-	f_{_{X_1,X_2}}(x_i,x_j)&=&P(X_1=x_i,X_2=x_j)=1/36\\
-	\vdots\\
-	f_{_{X_1,X_2}}(6,12)&=&P(X_1=6,X_2=12)=1/36\\
-\end{eqnarray*}
-
-En la Tabla 1 se presentan todos los pares posibles $(x_1,x_2)$ con sus respectivas probabilidades conjuntas, los casos imposibles tienen asignados probabilidad de cero.
-
-Función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ para el Ejemplo 1	
-
-tab1.png
-
-	
-Tabla 1. Función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ para el Ejemplo 1\\
-\begin{tabular}{c|c}
-		
-		$f_{_{X_1 X_2}}(x_{1},x_{2})$& \textcolor{col5}{\bf $x_{1}$} \\	
-		\hline 
-		\textcolor{col4}{\bf $x_{2}$}&	
-		\begin{tabular}{ccccccc}
-			& \textcolor{col5}{\bf 1} & \textcolor{col5}{\bf 2} & \textcolor{col5}{\bf 3} & \textcolor{col5}{\bf 4} & \textcolor{col5}{\bf 5} & \textcolor{col5}{\bf 6} \\	
-			\textcolor{col4}{\bf 2} &    $1/36$&  0&  0&  0&  0& 0 \\
-			\textcolor{col4}{\bf 3} &     $1/36$&  $1/36$&  0&  0&  0& 0 \\
-			\textcolor{col4}{\bf 4} &     $1/36$&  $1/36$ &  $1/36$&  0&  0& 0 \\
-			\textcolor{col4}{\bf 5} &     $1/36$&   $1/36$&   $1/36$&   $1/36$&  0& 0 \\
-			\textcolor{col4}{\bf 6} &     $1/36$&   $1/36$&   $1/36$&   $1/36$&   $1/36$& 0 \\
-			\textcolor{col4}{\bf 7} &     $1/36$&   $1/36$&   $1/36$&   $1/36$&  $1/36$& $1/36$ \\
-			\textcolor{col4}{\bf 8} &    0&   $1/36$&   $1/36$&  $1/36$&   $1/36$&  $1/36$ \\
-			\textcolor{col4}{\bf 9} &    0&  0&  $1/36$&  $1/36$&   $1/36$&  $1/36$ \\
-			\textcolor{col4}{\bf 10}&    0&  0&  0& $1/36$&   $1/36$&  $1/36$ \\
-			\textcolor{col4}{\bf 11}&    0&  0&  0&  0&  $1/36$&  $1/36$ \\
-			\textcolor{col4}{\bf 12}&    0&  0&  0&  0&  0&  $1/36$ \\
-		\end{tabular}	
-		\\
-	\end{tabular}	
-\end{center}
-	
-El primer caso, $f_{_{X_{1},X_{2}}}(1,2)=1/36$ y se lee de la siguiente manera: la probabilidad de que la variable $X_{1}$ tome el valor de $1$ y la variable $X_{2}$ el valor de $2$, es igual a $1/36$. En contexto, la probabilidad de que al lanzar dos dados legales distinguibles, el número de puntos del dado1 sea $1$ y la suma de puntos de los dos dados sea igual a $2$, es de $1/36$. Es decir, cuando se lanzan un número grande de veces dos dados distinguibles y legales aproximadamente el $2.77\%$ de las veces el número de  puntos del dado1 es uno y la suma de los puntos de los dos dados es dos. \\
-%
-En el caso bidimensional la altura representa la probabilidad del evento determinado por el par ordenado $(x_1,x_2)$, es decir $f_{_{X_{1},X_{2}}}(x_{1},x_{2})$. También se pueden dibujar los puntos en lugar de segmentos de rectas. Sin embargo la lectura es menos fácil. El gráfico solamente se puede hacer para el caso de dos variables, dado que solo podemos representar graficamente tres dimensiones. ($R^{3}$)\\
-
-En la Figura 1 se representa gráficamente la función de probabilidad conjunta $f_{_{X_{1},X_{2}}}$ del Ejemplo 1. En el eje $y$ se encuentran los valores $f_{_{X_{1},X_{2}}}(x_1,x_2)$ y están representados por segmentos de rectas verticales.
+</div>
 
 
-gej1.pdf 
-Figura 1. Función de probabilidad conjunta $X_{1},X_{2}$en el ejemplo 
 
-%			
-Cada una de las propiedades se puede ilustrar con la función $f_{_{X_1X_2}}(x_1,x_2)$ del Ejemplo 1 y los valores de la Tabla 1, pues en efecto cada valor $f_{_{X_1X_2}}(x_1,x_2)$ está entre 0 y 1 y la suma de todos ellos es exactamente 1.
-%%	
+**Ejemplo 1**
 
-Se puede encontrar las funciones de distribución de probabilidad para la variable $X$ y también para la variable $Y$ por separado a partir de la función de distribución de probabilidad conjunta. A esta funciones se les llama función de distribución  marginal de $X$ y función de distribución marginal de $Y$.
-	
-\begin{Box4}{Funciones de probabilidad marginales}
-%				
+El número de veces que falla una máquina $X$ con $R_{X}=\{1,2,3\}$ durante un dia y el número de veces en que el operario requiere llamar al técnico para su arreglo esta dado por $Y$ con $R_{Y}=\{1,2,3\}$. Su función de probabilidad conjunta para $X,Y$ está dada por :
+
+|    |        |       |  $x$ |      |
+|:--:|:------:|:-----:|:----:|:----:|
+|    |$f(x,y)$| 1     |  2   |  3   |
+|$y$ |  1     | 0.05  | 0.05 | 0.10 |
+|    |  2     | 0.050 | 0.10 | 0.35 |
+|    |  3     | 0     | 0.20 | 0.10 |
+ 
+
+Para verificar que $f(xy)$ conforme una función de distribución de probabilidad conjunta verificamos que la suma de todas las probabilidades de 1
+
+```{r}
+fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
+fxy
+sum(fxy)
+```
+
+
+<br/><br/>
+
+### **Probabilidad marginales ** 
+
+A partir de la función de distribución conjunta se pueden obtener las distribuciones marginales correspondientes a las variables $X$ y $Y$, denotadas por $g(x)$ y $h(y)$ respectivamente.
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+
 Si $X$, $Y$ son dos variables aleatorias discretas, entonces se puede definir la función de probabilidad marginal de $X$ (función de probabilidad de $X$ al margen de $Y$) como
-\[g(x)=f_{_{X}}(x)=\sum_{y=y_{(1)}}^{y_{(n)}}f_{_{X,Y}}(x,y)\]
-%$\displaystyle\sum\limits_{x=x_{(1)}}^{x_{(n)}}\displaystyle\sum\limits_{y=y_{(1)}}^{y_{(n)}}f_{_{X,Y}}(x,y)				
+
+$$g(x)=f_{_{X}}(x)=\sum_{y=y_{(1)}}^{y_{(n)}}f_{_{X,Y}}(x,y)$$
+
 La función de probabilidad marginal de $Y$ (función de probabilidad de $Y$ al margen de $X$) como
-\[h(y)=f_{_{Y}}(y)=\sum_{x=x_{(1)}}^{x_{(n)}}f_{_{X,Y}}(x,y)\]
-\end{Box4}
+$$h(y)=f_{_{Y}}(y)=\sum_{x=x_{(1)}}^{x_{(n)}}f_{_{X,Y}}(x,y)$$
 
-%%% tabla 3.       
+</div> 
 
-En la Tabla 2 se presenta ademas de la funcion de distribucion de probabilidad conjunta de $X,Y$, las distribuciones marginales para la variable $X$ y par a la variable $Y$
-
-	\begin{center}
-	Tabla 2. Función de probabilidad conjunta $f_{_{X_1,X_2}}$ y funciones de probabilidad marginal $g$ y $h$ del Ejemplo 1  \\
-		\begin{tabular}{c|c}
-			
-			$f_{_{XY}}(x,y)$& \textcolor{col5}{\bf $x_{1}$} \\	
-			\hline 
-			\textcolor{col4}{\bf $x_{2}$}&	
-			\begin{tabular}{ccccccc|c}
-				& \textcolor{col5}{\bf 1} & \textcolor{col5}{\bf 2} & \textcolor{col5}{\bf 3} & \textcolor{col5}{\bf 4} & \textcolor{col5}{\bf 5} & \textcolor{col5}{\bf 6} &  \textcolor{col4}{\bf  h($x_{2}$)} \\	
-				\textcolor{col4}{\bf 2} &    $1/36$&  0&  0&  0&  0& 0 &  \textcolor{col4}{\bf 1/36} \\
-				\textcolor{col4}{\bf 3} &     $1/36$&  $1/36$&  0&  0&  0& 0& \textcolor{col4}{\bf 2/36} \\
-				\textcolor{col4}{\bf 4} &     $1/36$&  $1/36$ &  $1/36$&  0&  0& 0& \textcolor{col4}{\bf 3/36} \\
-				\textcolor{col4}{\bf 5} &     $1/36$&   $1/36$&   $1/36$&   $1/36$&  0& 0& \textcolor{col4}{\bf 4/36} \\
-				\textcolor{col4}{\bf 6} &     $1/36$&   $1/36$&   $1/36$&   $1/36$&   $1/36$& 0& \textcolor{col4}{\bf 5/36} \\
-				\textcolor{col4}{\bf 7} &     $1/36$&   $1/36$&   $1/36$&   $1/36$&  $1/36$& $1/36$& \textcolor{col4}{\bf 6/36} \\
-				\textcolor{col4}{\bf 8} &    0&   $1/36$&   $1/36$&  $1/36$&   $1/36$&  $1/36$& \textcolor{col4}{\bf 5/36} \\
-				\textcolor{col4}{\bf 9} &    0&  0&  $1/36$&  $1/36$&   $1/36$&  $1/36$ &\textcolor{col4}{\bf 4/36} \\
-				\textcolor{col4}{\bf 10}&    0&  0&  0& $1/36$&   $1/36$&  $1/36$ &\textcolor{col4}{\bf 3/36} \\
-				\textcolor{col4}{\bf 11}&    0&  0&  0&  0&  $1/36$&  $1/36$ &\textcolor{col4}{\bf 2/36} \\
-				\textcolor{col4}{\bf 12}&    0&  0&  0&  0&  0&  $1/36$ &\textcolor{col4}{\bf 1/36} \\
-				\hline
-				\textcolor{col5}{\bf  g($x_{1}$)}&\textcolor{col5}{\bf  6/36}& \textcolor{col5}{\bf  6/36} & \textcolor{col5}{\bf  6/36} & \textcolor{col5}{\bf  6/36} & \textcolor{col5}{\bf  6/36} & \textcolor{col5}{\bf  6/36}  & 1\\
-			\end{tabular}	
-			\\
-		\end{tabular}	
-		%\includegraphics[scale=.27]{tab2.png}
-	\end{center}
-	
-
-Al igual que se presento en el modulo 2, se puede requerir calcular probabilidades condicionales de $X|Y=y_{o}$, o de $Y|X=x_{o}$. Para ello es necesario construir las respectivas funciones de distribución de probabilidad condicionales
-
-\vspace{1cm}
-\begin{Box4}{Función de probabilidad condicional}
-	
-La función de probabilidad condicional de $X$ dado que $Y=y_0$ está dada por:
-\begin{equation*}
-	f_{_{X|Y}}(x|y_{0})=\left\{
-	\begin{array}{ccl}
-		\dfrac{f_{_{X,Y}}(x,y_0)}{h(y_{0})}&;\;h(y_{0})>0&\\
-		&&\\
-		0&;\;\mbox{en otro caso}&
-	\end{array}
-	\right.
-\end{equation*}
-
-La función de probabilidad condicional de $Y$ dado que $X=x_0$ está dada por:
-\begin{equation*}
-	f_{Y|X}(y|x_{0})=\left\{
-	\begin{array}{ccl}
-		\dfrac{f_{_{X,Y}}(x_0,y)}{g(x_0)}&;\;g(x_0)>0&\\
-		&&\\
-		0&;\;\mbox{en otro caso}&
-	\end{array}
-	\right.
-\end{equation*}
-\end{Box4}
-
-	
-Por ejemplo en el caso del ejemplo 1 podríamos requerir determinar $P(X=5|X_{2}=8)$. Para realizar el calculo, primero construiremos la función condicional $f_{X_{1}|X_{2}=8}(x_{1},x_{2})$.
-
-De acuerdo con lo visto en el modulo 2 tenemos que:\\
-
-$P(B|A)=\dfrac{P(A \cap B)}{P(A)} $ en este caso $P(X_{1}=5|X_{2}=8) = \dfrac{P(X_{1}=5;X_{2}=8)}{P(X_{2}=8)}$
-
-\begin{center}
-Tabla 3. Función de probabilidad condicional $f_{_{X_{1}|X_{2}=8}}(x_{1},x_{2})$ del Ejemplo 1  \\
-\begin{tabular}{c|c}
-	
-	$f_{_{X|X_{2}=5}}(x,x_{2})$& \textcolor{col5}{\bf $x_{1}$} \\	
-	\hline 
-	\textcolor{col4}{\bf $x_{2}$}&	
-\begin{tabular}{ccccccc|c}
-& \textcolor{col5}{\bf 1} & \textcolor{col5}{\bf 2} & \textcolor{col5}{\bf 3} & \textcolor{col5}{\bf 4} & \textcolor{col5}{\bf 5} & \textcolor{col5}{\bf 6} &  \textcolor{col4}{\bf}   \\
-	%			
-\textcolor{col4}{\bf 8} &    0& $\dfrac{1/36}{5/36}$&    $\dfrac{1/36}{5/36}$&   $\dfrac{1/36}{5/36}$&    
-\textcolor{col2}{\bf $\dfrac{1/36}{5/36}$}
-&   $\dfrac{1/36}{5/36}$& \textcolor{col4}{\bf $\dfrac{5/36}{5/36}$}\\
-\end{tabular}	
-
-\\ 
-\hline 
-\end{tabular}	
-%\includegraphics[scale=.27]{tab2.png}
-\end{center}		
-
-De donde se obtiene que :
-$$P(X_{1}=5|X_{2}=8) = \dfrac{1}{5}$$
-%%%				
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-
-
-\vspace{1cm}
-\textcolor{col4}{\bf \Large Variables aleatorias conjuntas continuas}\\
-\vspace{.5cm}
-
-En el caso de variables continuas se utilizan los mismo conceptos vistos en el caso discreto-discreto, haciendo el cambio de las sumatorias por integrales definidas. \\
-
-En particular para $f_{_{X,Y}}(x,y)$ definida en una región $R$, se cumple que la integral doble de $f_{_{X,Y}}(x,y)$ en la región $R$ proporciona la probabilidad de que las variables $X$ y $Y$ asuman los valores $(x,y)$ en la región $R$. Esta integral puede interpretarse como el volumen bajo la superficie $f_{_{X,Y}}(x,y)$ en la región $R$.\\
-
-En esta ocasión empezaremos con un ejemplo para posteriormente definir los conceptos. \\			
-	
-%%				
-%%%----------------ejemplo 3.11
-\vspace{.5cm}
-\textcolor{col3}{\bf \large Ejemplo 2}
-
-Una mezcla se forma con la combinación de 2 ácidos en dos litros de agua. La cantidad de ácido $(X)$ y la cantidad de ácido $(Y)$, en litros, que se vierten en una mezcla se modela con la función $f_{_{XY}}$ como se presenta a continuación
-
-\vspace{.5cm}		
-\begin{equation*}
-	f_{_{X,Y}}(x,y)=\left\lbrace
-	\begin{array}{ccl}
-		k(x+y)&;& 0\leq x\leq 1\:,\:0\leq y\leq 1\\
-		&&\\
-		0&;& \mbox{ en otro caso}
-	\end{array}
-	\right.
-\end{equation*}
-\vspace{.5cm}			
-\begin{enumerate}[(a)]
-	\item Determinar el valor de $k$ para que $f_{_{XY}(x,y)}$ sea una función de densidad conjunta que modela la cantidad de ácidos vertidos en la mezcla.
-	\item ¿Qué porcentaje de las veces se vierte entre medio y un litro de cada ácido?
-	\item ¿Qué porcentaje de las veces que se vierten los ácidos se obtiene a lo sumo un litro entre ambos ácidos?
-\end{enumerate}
-
-\vspace{.5cm}	
-\textcolor{col3}{\bf \large Solución:}\\
-En este experimento las variables  $X$ cantidad del  primer ácido  y $Y$ la cantidad del segundo ácido son  variables  aleatorias continuas y su  función de densidad de probabilidad depende de una  constante $k$  que es necesario identificar para resolver los puntos b) y c). \\
-%				
-Las anteriores preguntas equivalen a responder lo siguiente:
-%				
-\begin{itemize}
-	\item[(a)]Calcular el valor de $k$ para el cual $f_{_{X,Y}}$ es función de densidad.
-	\item[(b)]$P(0.5 \leq X \leq 1; 0.5 \leq Y \leq 1)$
-	\item[(c)]$P(X + Y \leq 1)$
-\end{itemize}
-%				
-Antes de dar respuesta a los interrogantes, es conveniente representar gráficamente la región donde está definida la función $f_{_{X,Y}}$ que corresponde a un cuadrado con $0\leq x\leq 1$ y $0\leq y\leq 1$. Esto se presenta en la Figura 2
-%				
-%				
-\begin{center}
-\includegraphics[scale=0.35]{figura317.png}\\
-		%%						\includegraphics[scale=0.35]{figura317B.pdf}
-		%%						\includegraphics[scale=0.15]{figura317B2.pdf}
-		%%%							\includegraphics[scale=0.4]{Figura317a.pdf}
-		%						\\
-Figura 2 Dominio de $f_{_{X,Y}}$ del Ejemplo 2
-\end{center}
-
-La figura 2  representa la  función de densidad conjunta de $f_{_{X,Y}}$ en su dominio debe determinar un sólido de volumen igual a 1, esto en concordancia con las propiedades de una función de densidad conjunta.
-		
-%		
-\begin{itemize}
-	\item[(a)] La segunda propiedad para el caso particular $n=2$ (dos variables ) que debe cumplir una función de densidad conjunta es:
-	$$\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dx\:dy=1$$
-	Por lo que
-	\begin{eqnarray*}
-		\Rightarrow 1&=&\int_{0}^{1}\int_{0}^{1}k(x+y)\:dx\:dy\\
-		&=&k\int_{0}^{1}\left[\frac{x^2}{2}+yx\right]_{0}^{1}\:dy\\
-		&=&k\int_{0}^{1}\left[\frac{1^2}{2}+y\right]\:dy\\
-		&=&k\left[\frac{1}{2}y+\frac{y^2}{2}\right]_{0}^{1}\\
-		&=&k\left(\frac{1}{2}+\frac{1}{2}\right)=k(1)\Rightarrow k=1
-	\end{eqnarray*}
-%	%					
-	La función de densidad conjunta que modela las cantidades  de  ácido X y Y  en la mezcla es:
-	%					
-	\begin{equation*}
-		f_{_{XY}}(x,y)=\left\lbrace
-		\begin{array}{ccl}
-			x + y&;& 0 \leq x \leq 1 ; 0 \leq y \leq 1\\
-			0 &;&\mbox{en otro caso}
-		\end{array}
-		\right.
-	\end{equation*}
-	%					
-	El gráfico de $f_{_{X,Y}}$ se presenta en la Figura 2 y el volumen del sólido debajo del plano en la región $0\leq x\leq 1$, $0\leq y\leq 1$ es igual a $1$.
-	%					
-
-		\begin{center}
-			\includegraphics[scale=0.3]{figura318.png} \\
-Figura 3 Superficie $f_{_{X,Y}}(x,y)$ cuando $0\leq x\leq 1$ y $0\leq y\leq 1$.
-		\end{center}
-%
-%	
-\item[(b)] Para determinar $P(0.5 \leq X \leq 1, 0.5 \leq Y \leq 1)$ se debe calcular el volumen del sólido determinado por la superficie $f_{_{X,Y}}(x,y)$ en la región $0.5 \leq X \leq 1, 0.5 \leq Y \leq 1$, esta región se presenta en la Figura 4. Si $x$ varía entre $0$ y $1$ entonces $y$ varía entre $0$ y $-x+1$, luego $P(X+Y)$ se calcula como sigue
-%		
-\begin{center}
-\includegraphics[scale=0.4]{figura319.png}\\
-Figura 4 Región intersección entre el dominio de $f_{_{X,Y}}(x,y)$, $0.5 \leq X \leq 1$ y $ 0.5 \leq Y \leq 1$
-\end{center}
-%
-	El cálculo del volumen lleva a: 
-	%					
-	\begin{eqnarray*}
-		P(0.5\leq X\leq 1; \:0.5\leq Y\leq 1)&=&\int_{0.5}^{1}\int_{0.5}^{1}(x+y)\:dx\:dy\\
-		&=&\int_{0.5}^{1}\left[\frac{x^2}{2}+xy\right]_{0.5}^{1}\:dy\\
-		&=&\int_{0.5}^{1}\left[\left(\frac{1}{2}+y\right)-\left(\frac{1}{8}+\frac{y}{2}\right)\right]\:dy\\
-		&=&\int_{0.5}^{1}\left(\frac{y}{2}+\frac{3}{8}\right)\:dy=\left[\frac{y^2}{4}+\frac{3}{8}y\right]_{0.5}^{1}\\
-		&=&\frac{4}{16}+\frac{6}{16}-\frac{4}{16}=\frac{6}{16}=0.375
-	\end{eqnarray*}
-	%					
-	Aproximadamente el $37.5\%$ de las veces que se vierten los dos ácidos en la mezcla se vierte entre medio y un litro de cada ácido. Esto es cierto cuando se vierte un número grande de veces ambos ácidos en la mezcla.\\
-	%					
-	\item[(c)] Para calcular $P(X+Y\leq 1)$ se debe determinar la región de integración determinada por $0\leq x\leq 1$, $0\leq y\leq 1$ y $x+y\leq 1$. Para esto en el rectángulo $0\leq x\leq 1$ y $0\leq y\leq 1$ se dibuja la recta $y=-x+1$. Al reemplazar $(0,0)$ en la desigualdad $x+y\leq 1$, el par $(0,0)$ satisface la desigualdad, por tanto la región intersección es la sombreada y el volumen correspondiente a la probabilidad requerida se presentan en el Figura xx.
-	%					
-
-\begin{center}
-\includegraphics[scale=0.5]{figura322.png} \\
-Figura 5 Región determinada por $0 \leq x \leq 1$, $0 \leq y \leq 1$ y $x + y \leq 1$.
-\end{center}	
-
-%	
-%	%							%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%				
-	En la Figura 5 se observa que mientras la variable $X$ toma valores entre $0$ y $1$, la variable $Y$ depende de los valores de $X$ , con $Y=1-X$ . Es asi como $Y$ varía entre $0$ y $Y=1-X$. En ella se ilustra el volumen a calcular para determinar la  probabilidad de $P(X+Y \leq 1)$. De acudrdo con esta región, X varia entre $0$ y $1$,  luego $P(X+Y)\leq 1)$
-	
-	%					
-	\begin{eqnarray*}
-		P(X+Y\leq 1)&=&\int_{0}^{1}\int_{0}^{-x+1}(x+y)\:dy\:dx\\
-		&=&\int_{0}^{1}\left[xy+\frac{y^2}{2}\right]_{y=0}^{y=-x+1}\:dx\\
-		&=&\int_{0}^{1}\left[\frac{(-x+1)^2}{2}+x(-x+1)\right]\:dx\\
-		&=&\int_{0}^{1}\left(\frac{-x^2+1}{2}\right)\:dx\\
-		&=&\left[\frac{-x^3}{6}+\frac{x}{2}\right]_{0}^{1}\\
-		&=&-\frac{1}{6}+\frac{1}{2}=\frac{1}{3}\approx 0.333
-	\end{eqnarray*}
-	%					
-\end{itemize}
-%%				
-Aproximadamente el $33.3\%$ de las veces que se viertan dos ácidos se tiene a lo sumo un litro de ácidos entre los dos ácidos. Esto cuando se vierten ácidos bajo las mismas condiciones un número grande de veces. \\
-%				
-Al igual que para las variables discretas,  para las  variables continuas también se definen las funciones de densidad marginal y condicional.\\
-
-\begin{Box4}{Probabilidades conjuntas}
-$$P(a<X<b ; c<Y<d) = \int_{a}^{b} \int_{c}^{d} f(x,y) \:dy \:dx$$
-\end{Box4}
-\vspace{1cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{col4}{\bf \large Funciones de densidad marginales}\\
-
-En el caso continuo- continuo las distribuciones de densidad marginales se pueden encontrar a partir de la funcion de densidad conjunta 
-%%%				
-\begin{Box4}{Función de densidad marginal}
-
-Si $X$ y $Y$ son dos variables aleatorias continuas, entonces se define:\newline
-
-La función de densidad marginal de $X$ como:
-$$g(x)=f_{_{X}}(x)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dy$$
-
-\vspace{.3cm}
-La función de densidad marginal de $Y$ como:
-$$h(y)=f_{_{Y}}(y)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dx$$
+Para el ejemplo podemos establecer las funciones marginales para las variables $X$ y $Y$ sumando por columnas en el caso de $Y$ y por filas en el caso de la variable $X$
+ 
+```{r}
+fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
+gx=addmargins(fxy,1)
+rownames(gx)=c("1","2","3","g(x)")
+gx
+```
 
 
 
-\end{Box4}
-%
-\textcolor{col3}{\bf \large Ejemplo 3}
+Ahora para el caso de $h(y)$
 
-En el caso del Ejemplo 2 las funciones marginales se obtiene de la siguiente manera:
-$$g(x)=f_{_{X}}(x)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dy = \int_{0}^{1} (x+y) \:dy = xy+\dfrac{y^{2}}{2}\Bigg|_{0}^{1}= x+\dfrac{1}{2} $$
-
-
-\begin{equation*}
-	g(x)=\left\lbrace
-	\begin{array}{ccl}
-		x+\dfrac{1}{2} &;& 0 \leq x \leq 1 \\
-		&&\\
-		0 &;&\mbox{en otro caso}
-	\end{array}
-	\right.
-\end{equation*}
-
-Para el caso de $h(y)$ se tiene:
-$$h(y)=f_{_{Y}}(y)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dx = \int_{0}^{1} (x+y) \:dx = \dfrac{x^{2}}{2}+yx \Bigg|_{0}^{1}= \dfrac{1}{2}+y $$
-
-\begin{equation*}
-	h(y)=\left\lbrace
-	\begin{array}{ccl}
-		y+\dfrac{1}{2} &;& 0 \leq y \leq 1 \\
-		&&\\
-		0 &;&\mbox{en otro caso}
-	\end{array}
-	\right.
-\end{equation*}
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{1cm}
-\textcolor{col4}{\bf \large Función de densidad condicional}\\%
+```{r}
+fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
+hy=addmargins(fxy,2)
+colnames(hy)=c("1","2","3","h(y)")
+hy
+```
 
 
-\begin{Box4}{Función de densidad condicional}
+ 
+<br/><br/>
+
+
+### **Probabilidad acumulada**
+
+
+$$F_{_{X,Y}}(x,y)=\sum_{-\infty}^{x} \sum_{-\infty}^{y} f(x,y)$$
+
+Para el ejemplo se construye la función de distribución acumulada sumando tanto por columna com fila hasta la posición de los valores observados, por ejemplo .
+
+$$F(2,2)= F_{_{X,Y}}(x,y)=\sum_{x=1}^{2} \sum_{y=1}^{2} f(x,y)  = f(1,1) + f(1,2) + f(2,1) + f(2,2) = 0.05 + 0.05 + 0.05 + 0.10 = 0.25$$
+
+```{r}
+fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
+fxy=addmargins(fxy,c(1,2))
+colnames(fxy)=c("1","2","3","h(y)")
+rownames(fxy)=c("1","2","3","g(x)")
+fxy
+```
+
+
+
+```{r}
+Fxy=matrix(c(0.05,0.10,0.10,0.10,0.25,0.45,0.20,0.70,1.00), ncol=3 )
+colnames(Fxy)=c("1","2","3")
+rownames(Fxy)=c("1","2","3")
+Fxy
+```
+
+
+
+
+### **Probabilidad condicional**
+
+En el caso de la probabilidad condicional se opera de la misma forma que se vió en el Módulo 2, en el cual se definió  como :
+
+$$P(B|A)=\dfrac{P(A \cap B)}{P(A)}$$
+
+Para el caso de las funciones de distribución de probabilida se opera de la misma manera :
+
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+
+**Función de densidad condicional** 
+<br/><br/>
+
 La función de densidad condicional de $X$ dado que $Y=y_0$ está dada por:
-\begin{equation*}
+$$\begin{equation*}
 	f_{_{X|Y}}(x|y_{0})=\left\lbrace
 	\begin{array}{ccl}
 		\dfrac{f_{_{X,Y}}(x,y_0)}{h(y_0)}&;& h(y_0) > 0\\
@@ -511,9 +261,10 @@ La función de densidad condicional de $X$ dado que $Y=y_0$ está dada por:
 		0 &;&\mbox{en otro caso}
 	\end{array}
 	\right.
-\end{equation*}
+\end{equation*}$$
+<br/><br/>
 La función de densidad condicional de $Y$ dado que $X=x_0$ está dada por:
-\begin{equation*}
+$$\begin{equation*}
 	f_{Y|X}(y|x_{0})=\left\lbrace
 	\begin{array}{ccl}
 		\dfrac{f_{_{X,Y}}(x_0,y)}{g(x_0)}\:&;&\:g(x_0)>0\\
@@ -521,388 +272,150 @@ La función de densidad condicional de $Y$ dado que $X=x_0$ está dada por:
 		0\:&;&\:\mbox{en otro caso}
 	\end{array}
 	\right.
-\end{equation*}
-\end{Box4}
+\end{equation*}$$
 
-\textcolor{col3}{\bf \large Ejemplo 4} 
-
-Si se desea construir la función de $X|Y=0.5$, para la función de densidad conjunta del ejemplo 2:\\
-\vspace{.5cm} 
-
-\textcolor{col3}{\bf \large Solución}
-
-$$f {_{X|Y}}(x,0.5)= \dfrac{f_{XY}(x,0.5)}{h(0.5)}= \dfrac{(x+0.5)}{0.5+0.5} = x+0.5$$
+</div> 
 
 
+Para ilustrarlo utilizamos la función del Ejemplo 1 para la función condicional $f(x|y=2)$
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-\vspace{1cm} 
-\textcolor{col4}{\large \bf Función de densidad conjunta acumulada}
+
+|    |        |       |  $x$ |      | $h(y)$ |
+|:---|:-------|:------|:-----|:-----|:-------|
+|    |$f(x,y)$| 1     |  2   |  3   |        |
+|$y$ |  2     | 0.050 | 0.10 | 0.35 |  0.50  |
+
+
+
+|        |          |                     |  $x$                |                     |
+|:------:|:---------|:--------------------|:--------------------|:--------------------|
+|        |$f(x|y=2)$| 1                   |                 2   |                 3   |
+|$x|y=2$ |          | $\dfrac{0.05}{0.50}=0.10$| $\dfrac{0.10}{0.50}=0.20$| $\dfrac{0.35}{0.50}=0.70$| 
+
+
+
+
+
+
+
+
+<br/><br/>
+
+#########################################################################################
+
+## **2.3 Caso Continuo-Continuo**
+
+
+En el caso de variables continuas se utilizan los mismo conceptos vistos en el caso discreto-discreto, haciendo el cambio de las sumatorias por integrales definidas. 
+
+En particular para $f_{_{X,Y}}(x,y)$ definida en una región $R$, se cumple que la integral doble de $f_{_{X,Y}}(x,y)$ en la región $R$ proporciona la probabilidad de que las variables $X$ y $Y$ asuman los valores $(x,y)$ en la región $R$. Esta integral puede interpretarse como el volumen bajo la superficie $f_{_{X,Y}}(x,y)$ en la región $R$.
+
+
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+
+**Función de densidad conjunta**
+
+Lafunción de densidad conjunta para las variables $X$ y $Y$ $f(x,y)$ debe cumplir las siguientes condiciones.
+
+
+* $f(x,y) \geq 0$, para todo valor de $(x,y)$
+
+* $\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y) \:dx \:dy  = 1$
+
+</div> 
+
+<br/><br/>
+
+**Ejemplo 2**
+
+Una empresa prestadora se servicios a domicilio tienen dos lineas telefónicas para que los clientes puedan realizar sus pedidos. Sea X y Y la proporción del tiempo en que las lineas se encuentran ocupadas. La función de densidad conjunta que modela $f(x,y)$ esta dada por:
+
+$$f(x,y) = \left \{ \begin{matrix} \dfrac{3}{2}(x^{2}+y^{2}) & \mbox{ } 0 \leq x \leq 1\\ 
+                                     & \mbox{ } 0 \leq y \leq 1 \\
+                                     &\\
+                                   0 & \mbox{ en otro caso }\end{matrix}\right.  $$
+
+
+Inicialmente debemos de verificar que se trata de una función de densidad 
+
+
+ $\displaystyle\int_{0}^{1} \displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) \:dx \:dy  = \displaystyle\int_{0}^{1}  \dfrac{3}{2}\Bigg( \dfrac{x^{3}}{3}+ y^{2}x \Bigg|_{0}^{1}  \Bigg) \:dy$
+ 
+ $\displaystyle\int_{0}^{1}  \dfrac{3}{2}\Bigg( \dfrac{{1}}{3}+ y^{2} \Bigg) \:dy = \dfrac{3}{2} \Bigg(\dfrac{y}{3} + \dfrac{y^{3}}{3} \Bigg|_{0}^{1} \Bigg) = \dfrac{3}{2}\times  \dfrac{2}{3} = 1$
+
+
+
+
+
+## **Densidad marginales**
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+
+
+</div> 
+
+<br/><br/>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+
+**Función de densidad conjunta acumulada**
 
 Para $F_{_{X,Y}}(x,y)=P(X\leq x, Y\leq y)$ se tiene en el caso de variables aleatorias continuas
+
 $$F_{_{X,Y}}(x,y)=\int_{-\infty}^{x} \int_{-\infty}^{y} f(s,t) \:ds \:dt$$
 
 
-\begin{Box2}{Propiedades de la función de distribución conjunta}
-\begin{itemize}
-	\item $F_{_{X,Y}}(x,y)$ es una función no decreciente.
-	\item $F_{_{X,Y}}(x,-\infty)=0$\\
-	$F_{_{X,Y}}(-\infty,y)=0$\\
-	$F_{_{X,Y}}(-\infty,x)=0$\\
-	$F_{_{X,Y}}(\infty,\infty)=1$
-	%\item$F_{_{X,Y}}(\infty,y)=F_{Y}(y)F_{_{X,Y}}(x,\infty)=F_{X}(x)$
+Propiedades de la función de distribución conjunta
+
+* $F_{_{X,Y}}(x,y)$ es una función no decreciente.
+
+* $F_{_{X,Y}}(x,-\infty)=0$
+
+* $F_{_{X,Y}}(-\infty,y)=0$
+
+* $F_{_{X,Y}}(-\infty,x)=0$
+
+* $F_{_{X,Y}}(\infty,\infty)=1$
+
+* $F_{_{X,Y}}(\infty,y)=F_{Y}(y)F_{_{X,Y}}(x,\infty)=F_{X}(x)$
 	
-	\item $P(x_1<X\leq x_2, y_1<Y\leq y_2)=\\F_{_{X,Y}}(x_2,y_2)-F_{_{X,Y}}(x_1,y_2)-F_{_{X,Y}}(x_2,y_1)+F_{_{X,Y}}(x_1,y_1)$	
-	\item Para todo par de variables aleatorias continuas, si $F_{_{XY}}$ tiene derivadas parciales de orden superior a dos, se cumple que:
-	\[f_{_{X,Y}}(x,y)=\frac{\partial^{2} F_{_{X,Y}}(x,y)}{\partial x \hspace{.2cm}\partial y}\]
-\end{itemize}
-\end{Box2}
-
-\textcolor{col3}{\bf \large Ejemplo 5}
-
-Para la función descrita en el ejemplo 2 determinar $F(1/2, 1/4)$
-
-
-\begin{eqnarray*}
-	F(1/2,1/4)&=& P(X \leq 1/2 ; Y \leq 1/4) \\
-	          &=&\\
-	          &=& 	\displaystyle\int_{0}^{1/2} \displaystyle\int_{0}^{1/4} (x+y) \:dy \:dx  =
-	          \displaystyle\int_{0}^{1/2} \Bigg(xy+\dfrac{y^{2}}{2} \Bigg|_{0}^{1/4} \Bigg)\:dx\\
-	          &&\\
-	          &=& \displaystyle\int_{0}^{1/2} \Bigg(\dfrac{x}{4}+\dfrac{1}{32} \Bigg)\:dx =
-	              \Bigg( \dfrac{x^{2}}{8}+\dfrac{x}{32} \Bigg) \Bigg|_{0}^{1/2}\\
-	          &&\\
-	          &=& \dfrac{1}{32}+\dfrac{1}{64} = \dfrac{3}{64} =  0.046875\\
-\end{eqnarray*}
-
-\vspace{1cm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{1cm}
-\textcolor{col4}{\bf \large Covarianza y correlación $Cov(XY)=\sigma_{_{XY}}$}\\
-
-La  covarianza es una  medida de variación  conjunta entre  dos  variables  aleatorias con respecto a sus medias.
-
-\begin{Box4}{Definición : Covarianza} 
-	
-Sean $X$ y $Y$ variables aleatorias con distribución de probabilidad conjunta $f_{X,Y}(x,y)$. La covarianza de $X$ y $Y$ es:
-
-\begin{eqnarray*}
-	Cov(XY)=\sigma_{xy}&=&E\left[(x-\mu_{x})(y-\mu_{y})\right] = E[XY]-E[X] E[Y]
-\end{eqnarray*}
-
-
-
-\begin{eqnarray*}
-	\sigma_{xy}&=&\sum\limits_{x}^{}\sum\limits_{y}^{}(x-\mu_{x})(y-\mu_{y})f_{_{XY}}(x,y) \hspace{1cm} \text{si $X$ y $Y$ son discretas}
-\end{eqnarray*}
-
-\begin{eqnarray*}
-	\sigma_{_{XY}}&=&\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}(x-\mu_{_{X}})(y-\mu_{_{Y}})f_{_{XY}}(x,y)\:dx\:dy \hspace{1cm} \text{ si $X$ y $Y$ son continuas}
-\end{eqnarray*}
-\end{Box4}
-\vspace{.5cm}
-
-Si los puntos de la distribución de probabilidad conjunta de $X$ y $Y$ que reciben una probabilidad positiva tienden a caer en una recta con pendiente positiva (o negativa), entonces $\sigma_{_{XY}}$ es positiva o (negativa). Si los puntos tienden a caer en una recta con pendiente positiva, $X$ tiende a ser mayor que $\mu_{X}$ cuando $Y$ es mayor que $\mu_{Y}$. Por lo tanto, el producto de los dos términos $x-\mu_{_{X}}$ y $y-\mu_{_{Y}}$ tiende a ser positivo. Si los puntos tienden a caer en una recta con pendiente negativa, entonces $x-\mu_{_{X}}$ tiende a ser positiva cuando $y-\mu_{_{Y}}$ es negativa, y viceversa. Por lo tanto, el producto de $x-\mu_{X}$ y $y-\mu_{_{Y}}$ tiende a ser negativo. En este sentido, la covarianza entre $X$ y $Y$ describe la variación entre las dos variables aleatorias.\\
-%
-Tanto en el caso continuo como discreto, se cumple
-
-\[\sigma_{_{XY}}=E\left(XY\right)-E\left(X\right)E\left(Y\right)\]
-
-A partir de la definición del concepto de covarianza, podemos enunciar la siguiente propiedad de las varianzas:
-
-$$V(aX \pm bY)=a^{2}V(X)+b^{2}V(Y) \pm 2ab \hspace{.2cm}Cov(XY)$$
-
-\begin{Box2}{Propiedades de la covarianza}
-	
-La covarianza es una medida de la variación común a dos variables y, es una medida del grado de relación lineal entre las dos variables.
-
-\begin{itemize}
-	\item $\sigma_{_{XY}}$ es positiva si los valores altos de $X$ están asociados a los valores altos de $Y$  y viceversa.	
-	\item $\sigma_{_{XY}}$ es negativa si los valores altos de $X$ están asociados a los valores bajos de $Y$ y viceversa.	
-	\item Si $X$ e $Y$ son variables aleatorias independientes $\sigma_{_{XY}}=0$.	
-	\item La independencia es condición suficiente pero no necesaria para que la $\sigma_{_{XY}}$ sea nula.
-\end{itemize}
-
-\end{Box2}
-\vspace{.5cm} 
-
-En el caso de la covarianza como en el de la varianza, ambas se expresan en términos del producto de las unidades de medida de ambas variables, lo cual no siempre es fácilmente interpretable. Por otra parte también es difícil comparar situaciones diferentes entre sí. En este caso, ambos problemas se solucionan de una vez mediante la definición del \textbf{coeficiente de correlación} $\rho$, que se define como el cociente entre la covarianza y el producto de las desviaciones típicas de las dos variables.
-
-\vspace{.5cm} 
-
-\begin{Box4}{Coeficiente de correlación}
-\begin{eqnarray*}
-	\rho_{_{XY}}=\frac{\sigma_{_{XY}}}{\sigma_{_{X}}\sigma_{_{Y}}} = \dfrac{E(XY)-E(X)E(Y)}{\sqrt{V(X)V(Y)}}\\
-\end{eqnarray*}
-
-$$-1<\rho_{_{_{XY}}}<1$$
-\end{Box4}
-
-\vspace{.5cm}
-La correlacion simplemente escala la covarianza por la desviación estándar de cada variable. Por consiguiente, la correlación es una cantidad adimensional que puede usarse para comparar las relaciones lineales entre pares de variables con unidades diferentes.\\
-%
-Si los puntos de la distribución de probabilidad conjunta de $X$ y $Y$ que reciben una probabilidad positiva tienden a caer en una recta con pendiente positiva (o negativa), entonces $\rho_{_{XY}}$ esta cerca de $+1$ (o de $-1$). Si $\rho_{_{XY}}$ es igual a $+1$ o $-1$, entonces puede demostrarse que los puntos de la distribución de probabilidad conjunta que reciben una probabilidad positiva caen exactamente en una linea recta. Se dice que dos variables aleatorias con correlación diferente de cero están correlacionadas. En forma similar a la covarianza, la correlación es una medida de relación lineal entre variables aleatorias.\\
-%
-La representación gráfica para difernes valores de correlación nos ayuda a entender el mismo concepto de relación entre $X$ y $Y$.\\
-
-Valores cercanos  cero, indican que no existe una relación lineal entre las variables.  Valores  positivos indican una relación lineal entre las variables, es decir que cuando una variable aumenta la  otra también  aumenta. Una manera de interpretar los valores obtenidos para el coeficiente de correlación $\rho$ se presentan en la Figura  6
-%
-\begin{center} 
-Tabla 3 . Interpretación de valores del coeficiente de correlación \\	
-{\tiny 
-	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-		\hline 
-		-1       & -0-90     & -75         & -0.50     & -0.25    & -0.10     & 0           & 0.10      & 0.25     & 0.50     & 0.75         & 0.90       & 1.0      \\ \hline 
-		Negativa & Negativa  & Negativa    & Negativa  & Negativa & Negativa  & No existe   & Positiva  & Positiva & Positiva & Positiva     & Positiva   & Positiva \\ %\hline 
-		perfecta & muy fuerte& considerable& media	   & debil    & muy debil & correlación & muy debil & debil    & media    & considerable & muy fuerte & perfecta \\ \hline 
-	\end{tabular}
-}
-	\end{center}
-
-\begin{center}
-\begin{tabular}{ccc}
-\includegraphics[scale=.25]{Rho_m1.pdf} & 
-\includegraphics[scale=.25]{Rho_m09.pdf} &
-\includegraphics[scale=.25]{Rho_m075.pdf} \\  
-
-\includegraphics[scale=.25]{Rho_m050.pdf} & 
-\includegraphics[scale=.25]{Rho_m025.pdf} &
-\includegraphics[scale=.25]{Rho_0.pdf} \\
-\end{tabular}	
-\end{center}
-
-\begin{center}
-	\begin{tabular}{ccc}
-\includegraphics[scale=.25]{Rho_010.pdf} & 
-\includegraphics[scale=.25]{Rho_025.pdf} &
-\includegraphics[scale=.25]{Rho_m050.pdf} \\
-
-
-\includegraphics[scale=.25]{Rho_075.pdf} & 
-\includegraphics[scale=.25]{Rho_090.pdf} &
-\includegraphics[scale=.25]{Rho_1.pdf} \\
-  
-\end{tabular}	
-\end{center}
-
+$P(x_1<X\leq x_2, y_1<Y\leq y_2)=F_{_{X,Y}}(x_2,y_2)-F_{_{X,Y}}(x_1,y_2)-F_{_{X,Y}}(x_2,y_1)+F_{_{X,Y}}(x_1,y_1)$	
 
-%
+Para todo par de variables aleatorias continuas, si $F_{_{XY}}$ tiene derivadas parciales de orden superior a dos, se cumple que:
 
-\textcolor{col3}{\bf \large Ejemplo 6}\\
- Sean $X$ el  número de veces en que una  máquina presenta una falla  y $Y$ el número de veces en que se debe llamar a un ingeniero para que la repare, variables aleatorias con distribución de probabilidad conjunta como se indica en la Tabla  XX, encuentre la covarianza entre $X$ y $Y$ $Cov(XY)$ y la correlación  entre $X$ y $Y$ $Cor(XY)$ 
+$f_{_{X,Y}}(x,y)=\frac{\partial^{2} F_{_{X,Y}}(x,y)}{\partial x \hspace{.2cm}\partial y}$
 
+</div> 
 
-\begin{center}
-	\begin{tabular}{c|c}
-		
-		$f_{_{XY}}(x,y)$& \textcolor{col5}{\bf $x$} \\	
-		\hline 
-		\textcolor{col4}{\bf $y$}&	
-		\begin{tabular}{ccccc}
-			& \textcolor{col5}{\bf 0}   & \textcolor{col5}{\bf 1}    & \textcolor{col5}{\bf 2} &  \textcolor{col4}{\bf $h(y)$}\\	 
-			\textcolor{col4}{\bf 0}& 3/28 & 9/28 & 3/28  & 	\textcolor{col4}{\bf15/28}\\
-			\textcolor{col4}{\bf 1}&6/28 & 6/28 & 0  & 	\textcolor{col4}{\bf 12/28}\\
-			\textcolor{col4}{\bf 2}&1/28 & 0 & 0  &  	\textcolor{col4}{\bf 1/28}\\
-			\textcolor{col5}{\bf $g(x)$}& 	\textcolor{col5}{\bf10/28} & 	\textcolor{col5}{\bf 15/28} & 	\textcolor{col5}{\bf 3/28} & {\bf 1 }\\
-		\end{tabular}	
-		\\
-	\end{tabular}	
-\end{center}
-%
-\textcolor{col3}{\bf \large Solución}: \\
+<br/><br/>
 
-Para  calcular la covarianza se utiliza la  forma $Cov(XY)=E[XY]-E[X]E[Y]$ \\
 
-Inicialmente se calcula $E[XY]$ 
 
-\begin{eqnarray*}
-	E(XY)&=&\sum\limits_{x=0}^{2}\sum\limits_{y=0}^{2}xy \hspace{.2cm}f(x,y)\\
-	&=&(0)(0)f(0,0)+(0)(1)f(0,1)+(0)(2)f(0,2)+(1)(0)f(1,0)+(1)(1)f(1,1)+\\
-	&=&(1)(2)f(1,2)+(2)(0)f(2,0)+(2)(1)f(2,1)+(2)(2)f(2,2)\\
-	&=&3/14 
-\end{eqnarray*}
+### **Densidad condicionales  **
 
-Los valores de $E[X]$ y $E[Y]$, se calculan a  partir de  las respectivas distribuciones marginales $g(X)$ y $h(Y)$.
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 
-\begin{eqnarray*}
-	E(X)&=&\sum\limits_{x=0}^{2}x  \hspace{.2cm}f(x)\\
-	&=&(0)f(0)+(1)f(1)+(2)f(2) =  (0)5/14+(1) 15/28 +(2) 3/28 \\
-	&=& 21/28
-\end{eqnarray*}
 
-\begin{eqnarray*}
-	E(X^{2})&=&\sum\limits_{x=0}^{2}x^{2}  \hspace{.2cm}f(x)\\
-	&=&(0^{2})f(0)+(1^{2})f(1)+(2^{2})f(2) =  (0)5/14+(1) 15/28 +(4) 3/28 \\
-	&=& 27/28
-\end{eqnarray*}
+</div> 
 
+<br/><br/>
 
-\begin{eqnarray*}
-	E(Y)&=&\sum\limits_{y=0}^{2}x  \hspace{.2cm}f(y)\\
-	&=&(0)f(0)+(1)f(1)+(2)f(2) = (0)15/28+(1) 3/7 +(2) 1/28 \\
-	&=& 14/28
-\end{eqnarray*}	
+## **2.4 Covarianza y correlación**
 
-\begin{eqnarray*}
-	E(Y {2})&=&\sum\limits_{y=0}^{2}y^{2}  \hspace{.2cm}f(y)\\
-	&=&(0^{2})f(0)+(1^{2})f(1)+(2^{2})f(2) = (0)15/28+(1) 3/7 +(4) 1/28 \\
-	&=& 16/28
-\end{eqnarray*}
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 
+</div>
 
-\begin{eqnarray*}
-	V[X]&=&E[X^{2}]-E[X]^{2}= 27/28 - (21/28)^{2} = 0.4017857
-\end{eqnarray*}	
 
-\begin{eqnarray*}
-	V[Y]&=&E[Y^{2}]-E[Y]^{2}= 16/28 - (14/28)^{2} = 0.3214286
-\end{eqnarray*}	
+ 
 
+<br/><br/>
 
+## **2.5 Independencia**
 
-Por tanto $Cov(XY)$ será:
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 
-\begin{eqnarray*}
-	Cov(XY)&=&E(XY)-E(X)E(Y) =3/14-(31/28)(14/28)\\
-	       &=& 3/14 - (21/28) (14/28) =  -9/56 \\
-\end{eqnarray*}		
 
-Ahora la ccorrelación $Cor(XY)$
-\begin{eqnarray*}
-	\rho_{_{XY}} &=&\dfrac{E(XY)-E(X)E(Y)}{\sqrt{V(X)V(Y)}} \\ 
-	&=& \dfrac{-9/56}{\sqrt{0.4017857 \times 0.3214286}} = -0.4472136
-\end{eqnarray*}	
-
-
-\vspace{1cm}
-\textcolor{col3}{\bf \large Ejemplo 7}\\
-
-Para el caso continuo-continuo se retoma el Ejemplo 2 con función de distribución conjunta $f(x,y)=x+y$ con $0\leq x \leq 1$ y  $0\leq y \leq 1$. \\
-
-\vspace{.5cm}
-\textcolor{col3}{\bf \large Solución }\\
-
-
-Primero se calculan para cada una de las variables los valores esperados y sus varianzas a partir de las funciones de densidad marginales $g(x)$ y $h(y)$ , halladas con anterioridad.
-
-$$E[X]= \int_{0}^{1} x g(x) \;dx = \int_{0}^{1} x (x+y) \;dx = \int_{0}^{1} x^{2}+\dfrac{x}{2} \;dx = \dfrac{x^{3}}{3}+\dfrac{x^{2}}{4} \Bigg|_{0}^{1} = \dfrac{7}{12}$$   	
-
-$$E[Y]= \int_{0}^{1} y h(y) \;dx = \int_{0}^{1} y (x+y) \;dx = \int_{0}^{1} y^{2}+\dfrac{y}{2} \;dx = \dfrac{y^{3}}{3}+\dfrac{y^{2}}{4} \Bigg|_{0}^{1} = \dfrac{7}{12}$$  	
-
-$$E[X^{2}]= \int_{0}^{1} x^{2} g(x) \;dx = \int_{0}^{1} x^{2} (x+y) \;dx = \int_{0}^{1} x^{3}+\dfrac{x^{2}}{2} \;dx = \dfrac{x^{4}}{3}+\dfrac{x^{3}}{4} \Bigg|_{0}^{1} = \dfrac{9}{18} = \dfrac{1}{2}$$   	
-
-
-$$E[Y^{2}]= \int_{0}^{1} y^{2} h(y) \;dy = \int_{0}^{1} y^{2} (x+y) \;dy = \int_{0}^{1} y^{3}+\dfrac{y^{2}}{2} \;dx = \dfrac{y^{4}}{3}+\dfrac{y^{3}}{4} \Bigg|_{0}^{1} = \dfrac{9}{18} = \dfrac{1}{2}$$   				
-
-
-$$V[X] = E[X^{2}]-\Big(E[X]\Big)^{2}= \dfrac{1}{2}-\Big(\dfrac{7}{12} \Big)^{2} = \dfrac{1}{2}- \dfrac{49}{144} = \dfrac{23}{144} $$
-
-$$V[Y] = E[Y^{2}]-\Big(E[Y]\Big)^{2}= \dfrac{1}{2}-\Big(\dfrac{7}{12} \Big)^{2} = \dfrac{1}{2}- \dfrac{49}{144} = \dfrac{23}{144} $$
-
-\begin{eqnarray*}
-	E[XY] &=& \int_{0}^{1} \int_{0}^{1} xy f(x,y) \;dx \;dy \\
-	&=& \int_{0}^{1} \int_{0}^{1} xy (x+y) \;dx \;dy  \\
-	&=& \int_{0}^{1} \int_{0}^{1} x^{2}y+y^{2}x \;dx \;dy\\
-	&=& \int_{0}^{1} \Bigg(\dfrac{x^{3}y}{3}+\dfrac{y^{2}x^{2}}{2} \Big|_{0}^{1}\Bigg) \;dy\\
-	&=&  \int_{0}^{1} \Bigg( \dfrac{y}{3}+\dfrac{y^{2}}{2}\Bigg) \;dy \\
-	&=& \dfrac{1}{6}+\dfrac{1}{6} \Big|_{0}^{1} =  \dfrac{1}{3}\\ 
-\end{eqnarray*}
-
-
-$$Cov[XY] = E[XY]-E[X]E[Y] = \dfrac{1}{3} -\dfrac{7}{12}\times  \dfrac{7}{12} = \dfrac{1}{3}- \dfrac{49}{144} = \dfrac{1}{144}$$
-
-$$	\rho_{_{XY}} = \dfrac{Cov[XY]}{\sqrt{V[X]V[Y]}} = \dfrac{1/144}{\sqrt{23/144 \times 23/144}} = \dfrac{1}{23} = 0.04$$
-
-De acuerdo con la escala representada en la Tabla 3  este valor se puede interpretar como una relación muy débil de asociación lineal entre las dos variables .\\
-
-\vspace{1cm}
-
-\textcolor{col4}{\bf \large Independencia}	\\		
-
-La independencia de dos variables se puede determinar  mediante el coeficiente de correlacion ($\rho =0$), pero también si se cumple la siguiente condición.
-
-\begin{Box4}{Independencia de variables}
-	
-Sean $X$ y $Y$ dos variables aleatorias discretas o continuas con función de probabilidad conjunta $f(x,y)$ y funciones de probabilidad marginales $g(x)$ y $h(y)$, respectivas, entonces se dice que las variables X y Y son estadisticamente independientes si:
-$$f(x,y)= g(x) h(y) $$
-\end{Box4}	
-
-
-\vspace{1cm}
-\textcolor{col3}{\bf \large Ejemplo 8}\\
-Determinar si las variables $X$ y $Y$ del ejemplo 2 son independientes estadisticamente.
-
-\vspace{.5cm}
-\textcolor{col3}{\bf \large Solución }\\
-
-Debemos determinar si se cumple la condicion de independencia
-
-\begin{eqnarray*}
-	g(x)h(y) &=& \Bigg(x+\dfrac{1}{2}\Bigg) \Bigg(y + \dfrac{1}{2}\Bigg)\\
-	&&\\
-	   &=& xy + \dfrac{x}{2}+\dfrac{y}{2} + \dfrac{1}{4}\\
-\end{eqnarray*}
-
-Como el resultado es diferente a $f(xy)$ , se concluye que las variables $X$ y $Y$ no son independientes estadisticamente.
-
-\vspace{1cm}
-
-\begin{Box3}{Código R gráfico 1}
-{\small 
-\begin{verbatim}
-	x=c(1,1,1,1,1,1,1,1,1,1,1)
-	x1=c(1*x,2*x,3*x,4*x,5*x,6*x)
-	y=2:12
-	x2=c(y,y,y,y,y,y)
-	fx1x2=c(1,1,1,1,1,1,0,0,0,0,0,
-	0,1,1,1,1,1,1,0,0,0,0,
-	0,0,1,1,1,1,1,1,0,0,0,
-	0,0,0,1,1,1,1,1,1,0,0,
-	0,0,0,0,1,1,1,1,1,1,0,
-	0,0,0,0,0,1,1,1,1,1,1)/36
-	
-	library(plot3D)
-	scatter3D(x1, x2, fx1x2, colvar = NULL, col = "blue",
-	          pch = 19, cex = 1.5,
-	          phi = 30, theta = 40,  
-	          zlab="f(xy)", xlab="x1", ylab="x2",
-	          bty = "g",
-	          col.panel ="steelblue",
-	          col.grid = "darkblue",
-	          add_lines=TRUE)
-\end{verbatim}	
-}
-\end{Box3}	
-
-
-\begin{Box3}{Código R gráfico 2}
-{\small 
-\begin{verbatim}
-	library("scatterplot3d")
-	x <- c(0,1,1,0,0) 
-	y <- c(0,0,1,1,0) 
-	z <- c(0,1,2,1,0) 
-	s <- scatterplot3d(x,y,z, type='l',
-	xlim=c(0,1),ylim=c(0,1),zlim=c(0,2), angle=60,
-	xlab="x", ylab="y", zlab="f(x,y)",
-	scale.y=0.4,cex.axis=1, cex.names = 1,
-	grid=TRUE, box=TRUE,
-	label.tick.marks=TRUE)
-	
-		x0=c(0,1,1,0)
-	y0=c(0,0,1,1)
-	z0=c(0,0,0,0)
-	polygon(s$xyz.convert(x0,y0,z0),col="#0000ff22") # morado
-		
-	x1=c(0,1,1,0)
-	y1=c(0,0,1,1)
-	z1=c(0,1,2,1)
-	polygon(s$xyz.convert(x,y,z),col="#80FF8099") # verde
-\end{verbatim}		
-}
-\end{Box3}
-
-
+</div> 
 
