@@ -839,15 +839,38 @@ Fxy</code></pre>
                                      &amp; \mbox{ } 0 \leq y \leq 1 \\
                                      &amp;\\
                                    0 &amp; \mbox{ en otro caso }\end{matrix}\right.  \]</span></p>
+<p><br/></p>
 <p>Inicialmente debemos de verificar que se trata de una función de densidad</p>
 <p><span class="math inline">\(\displaystyle\int_{0}^{1} \displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) \:dx \:dy = \displaystyle\int_{0}^{1} \dfrac{3}{2}\Bigg( \dfrac{x^{3}}{3}+ y^{2}x \Bigg|_{0}^{1} \Bigg) \:dy\)</span></p>
+<p><br/></p>
 <p><span class="math inline">\(\displaystyle\int_{0}^{1} \dfrac{3}{2}\Bigg( \dfrac{{1}}{3}+ y^{2} \Bigg) \:dy = \dfrac{3}{2} \Bigg(\dfrac{y}{3} + \dfrac{y^{3}}{3} \Bigg|_{0}^{1} \Bigg) = \dfrac{3}{2}\times \dfrac{2}{3} = 1\)</span></p>
+<p><br/><br/></p>
+<pre class="r"><code>library(cubature)
+fxy&lt;- function(x){3/2* (x[1]^2 + x[2]^2)}
+Ifxy=adaptIntegrate(fxy,lowerLimit=c(0,0),upperLimit=c(1,1))
+Ifxy$integral</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="densidad-marginales" class="section level2">
 <h2><strong>Densidad marginales</strong></h2>
+<p>En el caso continuo- continuo las distribuciones de densidad marginales se pueden encontrar a partir de la funcion de densidad conjunta</p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
-
+<p><strong>Función de densidad marginal</strong></p>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son dos variables aleatorias continuas, entonces se define:</p>
+<p>La función de densidad marginal de <span class="math inline">\(X\)</span> como: <span class="math display">\[g(x)=f_{_{X}}(x)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dy\]</span></p>
+<p>La función de densidad marginal de <span class="math inline">\(Y\)</span> como: <span class="math display">\[h(y)=f_{_{Y}}(y)=\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dx\]</span></p>
 </div>
+<p><br/><br/></p>
+<p>Para el ejemplo 2 tenemos:</p>
+<p><span class="math inline">\(g(x) = \int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) dy = \dfrac{3}{2} \Bigg( x^{2}y + \dfrac{y^{2}}{3} \Bigg) \Bigg|_{0}^{1} = \dfrac{3}{2} \Bigg(x^{2}+\dfrac{1}{3}\Bigg)\)</span></p>
+<p><span class="math display">\[g(x) = \left \{ \begin{matrix} \dfrac{3}{2}\Bigg(x^{2}+ \dfrac{1}{3}\Bigg) &amp; \mbox{ } 0 \leq x \leq 1\\ 
+                                  &amp;\\
+                                   0 &amp; \mbox{ en otro caso }\end{matrix}\right.  \]</span></p>
+<p><span class="math inline">\(h(y) = \int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) dx = \dfrac{3}{2} \Bigg( \dfrac{x^{3}}{3} + \dfrac{y^{2}x} \Bigg) \Bigg|_{0}^{1} = \dfrac{3}{2} \Bigg(\drac{1}{3}+y^{2}\Bigg)\)</span></p>
+<p><span class="math display">\[g(x) = \left \{ \begin{matrix} \dfrac{3}{2}\Bigg(x^{2}+ \dfrac{1}{3}\Bigg) &amp; \mbox{ } 0 \leq x \leq 1\\ 
+                                  &amp;\\
+                                   0 &amp; \mbox{ en otro caso }\end{matrix}\right.  \]</span></p>
 <p><br/><br/></p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 <p><strong>Función de densidad conjunta acumulada</strong></p>
