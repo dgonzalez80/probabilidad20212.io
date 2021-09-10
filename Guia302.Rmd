@@ -89,6 +89,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 ## **1.7. Presentaciones**
 
+<br/><br/><br/><br/>
 
 # **2. Recursos **
 
@@ -117,6 +118,7 @@ persp(x,y,z,theta=20, phi=15,
       col=cbox)
 ```
 
+<br/><br/>
 
 ## **2.1 Introducción**
 
@@ -126,9 +128,12 @@ La función que tiene en cuenta efectos múltiples de variables aleatorias se de
 
 En esta guía se presentan los casos : discreta-discreta y el caso continua-continua.
 
+<br/><br/>
 
 ## **2.2 Discreto-Discreto**
 
+
+### **Función de distribución de probabilidad conjunta**
 Si se dispone de dos variables aleatorias se puede definir distribuciones bidimensionales de forma semejante al caso unidimensional. Para el caso discreto-discreto se define:
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
@@ -308,6 +313,8 @@ Para ilustrarlo utilizamos la función del Ejemplo 1 para la función condiciona
 
 En el caso de variables continuas se utilizan los mismo conceptos vistos en el caso discreto-discreto, haciendo el cambio de las sumatorias por integrales definidas. 
 
+### **Función de densidad conjunta**
+
 En particular para $f_{_{X,Y}}(x,y)$ definida en una región $R$, se cumple que la integral doble de $f_{_{X,Y}}(x,y)$ en la región $R$ proporciona la probabilidad de que las variables $X$ y $Y$ asuman los valores $(x,y)$ en la región $R$. Esta integral puede interpretarse como el volumen bajo la superficie $f_{_{X,Y}}(x,y)$ en la región $R$.
 
 
@@ -359,7 +366,7 @@ Ifxy$integral
 
 <br/><br/>
 
-## **Densidad marginales**
+### **Densidad marginales**
 
 En el caso continuo- continuo las distribuciones de densidad marginales se pueden encontrar a partir de la funcion de densidad conjunta 
 
@@ -375,6 +382,7 @@ $$g(x)=f_{_{X}}(x)=\displaystyle\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dy$$
 
 
 La función de densidad marginal de $Y$ como:
+
 $$h(y)=f_{_{Y}}(y)=\displaystyle\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dx$$
 
 </div> 
@@ -382,20 +390,12 @@ $$h(y)=f_{_{Y}}(y)=\displaystyle\int_{-\infty}^{\infty}f_{_{X,Y}}(x,y)\:dx$$
 
 <br/><br/>
 
-Para el ejemplo 2 tenemos:
+Para el **Ejemplo 2** tenemos:
 
 
-$g(x) = \displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) dy = \dfrac{3}{2} \Bigg( x^{2}y + \dfrac{y^{2}}{3} \Bigg) \Bigg|_{0}^{1} = \dfrac{3}{2} \Bigg(x^{2}+\dfrac{1}{3}\Bigg)$
+$$g(x) = \displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) dy = \dfrac{3}{2} \Bigg( x^{2}y + \dfrac{y^{2}}{3} \Bigg) \Bigg|_{0}^{1} = \dfrac{3}{2} \Bigg(x^{2}+\dfrac{1}{3}\Bigg)$$
 
-
-$$g(x) = \left \{ \begin{matrix} \dfrac{3}{2}\Bigg(x^{2}+ \dfrac{1}{3}\Bigg) & \mbox{ } 0 \leq x \leq 1\\ 
-                                  &\\
-                                   0 & \mbox{ en otro caso }\end{matrix}\right.  $$
-
-
-
-$h(y) =\displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) dx = \dfrac{3}{2} \Bigg( \dfrac{x^{3}}{3} + \dfrac{y^{2} x} \Bigg) \Bigg|_{0}^{1} = \dfrac{3}{2} \Bigg(\drac{1}{3}+y^{2}\Bigg)$
-
+<br/>
 
 $$g(x) = \left \{ \begin{matrix} \dfrac{3}{2}\Bigg(x^{2}+ \dfrac{1}{3}\Bigg) & \mbox{ } 0 \leq x \leq 1\\ 
                                   &\\
@@ -403,6 +403,19 @@ $$g(x) = \left \{ \begin{matrix} \dfrac{3}{2}\Bigg(x^{2}+ \dfrac{1}{3}\Bigg) & \
 
 
 <br/><br/>
+
+ $$h(y)=\displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2})\:dx =\dfrac{3}{2}\Bigg(\dfrac{x^{3}}{3}+y^{2} x \Bigg) \Bigg|_{0}^{1} = \dfrac{3}{2} \Bigg(\dfrac{1}{3}+y^{2}\Bigg)$$
+
+<br/><br/>
+
+$$h(y) = \left \{ \begin{matrix} \dfrac{3}{2}\Bigg(\dfrac{1}{3}+y^{2}\Bigg) & \mbox{ } 0 \leq x \leq 1\\ 
+                                  &\\
+                                   0 & \mbox{ en otro caso }\end{matrix}\right.  $$
+
+
+<br/><br/>
+
+### **Función de densidad de probabilidad conjunta acumulada**
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 
@@ -439,13 +452,36 @@ $f_{_{X,Y}}(x,y)=\frac{\partial^{2} F_{_{X,Y}}(x,y)}{\partial x \hspace{.2cm}\pa
 
 
 
-### **Densidad condicionales  **
-
-
+### **Función de densidad condicionales  **
 
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 
+**Función de densidad condicional**
+
+La función de densidad condicional de $X$ dado que $Y=y_0$ está dada por:
+
+\begin{equation*}
+	f_{_{X|Y}}(x|y_{0})=\left\lbrace
+	\begin{array}{ccl}
+		\dfrac{f_{_{X,Y}}(x,y_0)}{h(y_0)}&;& h(y_0) > 0\\
+		&&\\
+		0 &;&\mbox{en otro caso}
+	\end{array}
+	\right.
+\end{equation*}
+
+La función de densidad condicional de $Y$ dado que $X=x_0$ está dada por:
+
+\begin{equation*}
+	f_{Y|X}(y|x_{0})=\left\lbrace
+	\begin{array}{ccl}
+		\dfrac{f_{_{X,Y}}(x_0,y)}{g(x_0)}\:&;&\:g(x_0)>0\\
+		&&\\
+		0\:&;&\:\mbox{en otro caso}
+	\end{array}
+	\right.
+\end{equation*}
 
 </div> 
 
@@ -469,3 +505,12 @@ $f_{_{X,Y}}(x,y)=\frac{\partial^{2} F_{_{X,Y}}(x,y)}{\partial x \hspace{.2cm}\pa
 
 </div> 
 
+# **3 Resumen**
+
+## **3.1 Caso Discreta-Discreta**
+
+
+
+## **3.2 Caso Continua-Continua**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YYgn3BBqfuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -323,6 +323,8 @@ cat("P(X >25) = 1 - P(X<=24) =", 1-Fx[25])
 
 <br/><br/>
 
+
+
 ## **2.3 Variables continuas**
 
 Como se mencionó se considera una variable como continua cuando el conjunto de valores que puede tomar es un conjunto infinito no numerable, es decir que siempre podrá haber un valor entre dos valores de ella.
@@ -520,6 +522,21 @@ cat("V[X] = ", Ey2$value-Ey$value^2)
 Esto nos indica que el valor esperado correspondiente al tiempo en que una lavadora requiere una reparación mayor es de 4 años.  Para la interpretación de la variaza podemos utilizar el concepto de desviación estandar o de coeficiente de variación
 
 
+# **3. Resumen**
 
 
+## **3.1 Variables aleatorias**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ABhDYVIfF0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br/><br/>
+
+## **3.2 Variables discretas**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CUMJ-MUiMaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<br/><br/>
+
+## **3.3 Variables continuas**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rlBxuLdOUt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
