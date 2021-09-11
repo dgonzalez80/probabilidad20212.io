@@ -213,7 +213,7 @@ Como complemento de $f(x)$ y debido a que puede resultar más interesante calcul
 **Función de probabilidad acumulada**
 Sea $X$ una variable aleatoria continua con función de densidad $f_{X}(x)$, se define la  función de distribución acumulada, $F_{X}(x)$, como:
 
-$$F_{_X}(x)=P(X\leq x)=\int \limits_{-\infty}^{x}f_{_X}(t)\:dt$$
+$$F(x)=P(X\leq x)=\sum _{t \leq x}f(t)$$
 
 </div> 
 
