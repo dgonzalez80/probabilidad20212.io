@@ -167,7 +167,7 @@ En este ejemplo $(X=0)=\{(s,s,s)\}$ ; $(X=1)=\{(s,s,c),(s,c,s),(c,s,s)\}$ ;  $(X
 $$f_{_{X}}(0) =P(X=0)= \frac{1}{8} \hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(1) = P(X=1)=\frac{3}{8},$$
 $$f_{_{X}}(2) = P(X=2)=\frac{3}{8}\hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(3) =P(X=3)= \frac{1}{8}$$
 
-<br/><br/>
+<br/><br/><br/><br/>
 
 
 ##  **2.2 Variables discretas** 
@@ -321,8 +321,7 @@ cat("P(X<25) = P(X<=24) = ", Fx[25], "\n")
 cat("P(X >25) = 1 - P(X<=24) =", 1-Fx[25])
 ```
 
-<br/><br/>
-
+<br/><br/><br/><br/>
 
 
 ## **2.3 Variables continuas**
@@ -416,10 +415,9 @@ Al igual que R se puede utilizar SimboLab (https://es.symbolab.com/),
 O tambien utilizando la plataforma Wolfram Alpha (https://www.wolframalpha.com/)
 
 ![](img/walpha.png)
-<br/><br/>
 
+<br/><br/><br/><br/>
 
-<br/><br/>
 
 ## **2.4 Valor esperado**
 
@@ -435,8 +433,8 @@ La esperanza matemática de una variable aleatoria X,  corresponde a un valor qu
 
 Sea $X$ una variable aleatoria discreta o continua. La esperanza matemática de $X$ o valor esperado, $E(X)$ o bien $\mu$, se define respectivamente como,
 \begin{eqnarray*}
-	E(X)&=&\sum\limits_{x}^{}x_{i}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
-	E(X)&=&\int\limits_{-\infty}^{+\infty}x f(x)dx \hspace{1cm} \text{Caso continuo} 
+	E(X)&=&\displaystyle\sum\limits_{x}^{}x_{i}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
+	E(X)&=&\displaystyle\int\limits_{-\infty}^{+\infty}x f(x)dx \hspace{1cm} \text{Caso continuo} 
 \end{eqnarray*}
 
 </div> 
@@ -458,7 +456,7 @@ En el caso continuo y similarmente para el caso discreto.
 + $E(XY) = E(X)E(Y)$, 	unicamente en el caso que $X$ e $Y$ sean variables aleatorias independientes
 </div> 
 
-<br/><br/>
+<br/><br/><br/><br/>
 
 
 ## **2.5 Varianza**
@@ -471,8 +469,8 @@ Otra caracteristica importante de las variables aleatorias corresponde a la vari
 
 Sea $X$ una variable aleatoria discreta o continua. El momento de orden $k$ se define como:
 \begin{eqnarray*}
-	E(X^{k})&=&\sum\limits_{x}^{}x_{i}^{k}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
-	E(X^{k})&=&\int\limits_{-\infty}^{+\infty}x^{k} f(x)dx \hspace{1cm} \text{Caso continuo} 
+	E(X^{k})&=&\displaystyle\sum\limits_{x}^{}x_{i}^{k}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
+	E(X^{k})&=&\displaystyle\int\limits_{-\infty}^{+\infty}x^{k} f(x)dx \hspace{1cm} \text{Caso continuo} 
 \end{eqnarray*}
 </div> 
 
@@ -521,6 +519,7 @@ cat("V[X] = ", Ey2$value-Ey$value^2)
 
 Esto nos indica que el valor esperado correspondiente al tiempo en que una lavadora requiere una reparación mayor es de 4 años.  Para la interpretación de la variaza podemos utilizar el concepto de desviación estandar o de coeficiente de variación
 
+<br/><br/><br/><br/>
 
 # **3. Resumen**
 

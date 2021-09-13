@@ -499,7 +499,6 @@ div.tocify {
 </div>
 
 
-<p><span style="color:#E77C00"><strong>En construcción</strong></span></p>
 <div id="guía-de-aprendizaje" class="section level1">
 <h1><strong>1. Guía de aprendizaje</strong></h1>
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;">
@@ -933,8 +932,19 @@ Ifxy$integral</code></pre>
 </div>
 <div id="covarianza-y-correlación" class="section level2">
 <h2><strong>2.4 Covarianza y correlación</strong></h2>
+<p>Para definir el concepto de covarianza se requiere el concepto de valor esperado conjunto:</p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
-
+<p><strong>Caso Discreta-Discreta</strong></p>
+<p><span class="math display">\[E[X,Y]=\displaystyle\sum_{R_{X}}\displaystyle\sum_{R_{Y}} xy f(x,y)\]</span></p>
+<p><strong>Caso Continua-Continua</strong></p>
+<p><span class="math display">\[E[XY]= \displaystyle\int_{-\infty}^{\infty} \displaystyle\int_{-\infty}^{\infty} x.y.f(x,y) \,dx \,dy\]</span></p>
+</div>
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<p>Covarianza entre las variables <span class="math inline">\(X\)</span>,<span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[COV[X,Y]=E[XY]-E[X]E[Y]\]</span></p>
+</div>
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<p>Correlación entre las variables <span class="math inline">\(X\)</span>,<span class="math inline">\(Y\)</span> <span class="math display">\[\rho=\displaystyle\frac{COV[XY]}{\displaystyle\sqrt{V[X].V[Y]}} \]</span> La correlación es una medida que mide el grado de asociación lineal entre dos variables. <span class="math inline">\(0 \leq \rho \leq 1\)</span></p>
 </div>
 <p><br/><br/></p>
 </div>

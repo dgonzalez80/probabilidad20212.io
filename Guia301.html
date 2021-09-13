@@ -644,7 +644,7 @@ Your browser does not support the video tag.</video>
 <p><br/><br/></p>
 <p>En este ejemplo <span class="math inline">\((X=0)=\{(s,s,s)\}\)</span> ; <span class="math inline">\((X=1)=\{(s,s,c),(s,c,s),(c,s,s)\}\)</span> ; $(X=2)={(s,c,c),(c,s,c),(c,c,s) } $ y <span class="math inline">\((X=3) =\{(c,c,c) \}\)</span>. Bajo el supuesto que la moneda es balanceada, se cumple que los resultados en <span class="math inline">\(S\)</span> son igualmente posibles y por lo tanto:</p>
 <p><span class="math display">\[f_{_{X}}(0) =P(X=0)= \frac{1}{8} \hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(1) = P(X=1)=\frac{3}{8},\]</span> <span class="math display">\[f_{_{X}}(2) = P(X=2)=\frac{3}{8}\hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(3) =P(X=3)= \frac{1}{8}\]</span></p>
-<p><br/><br/></p>
+<p><br/><br/><br/><br/></p>
 </div>
 <div id="variables-discretas" class="section level2">
 <h2><strong>2.2 Variables discretas</strong></h2>
@@ -781,7 +781,7 @@ cat(&quot;P(X=0)  = &quot;,fx[1], &quot;\n&quot;)</code></pre>
 <pre><code>## P(X&lt;25) = P(X&lt;=24) =  0.1151</code></pre>
 <pre class="r"><code>cat(&quot;P(X &gt;25) = 1 - P(X&lt;=24) =&quot;, 1-Fx[25])</code></pre>
 <pre><code>## P(X &gt;25) = 1 - P(X&lt;=24) = 0.8849</code></pre>
-<p><br/><br/></p>
+<p><br/><br/><br/><br/></p>
 </div>
 </div>
 <div id="variables-continuas" class="section level2">
@@ -837,8 +837,8 @@ integrate(fy, lower=0,upper=Inf)</code></pre>
 <p>Al igual que R se puede utilizar SimboLab (<a href="https://es.symbolab.com/" class="uri">https://es.symbolab.com/</a>),</p>
 <p><img src="img/symbolab.png" /> <br/></p>
 <p>O tambien utilizando la plataforma Wolfram Alpha (<a href="https://www.wolframalpha.com/" class="uri">https://www.wolframalpha.com/</a>)</p>
-<p><img src="img/walpha.png" /> <br/><br/></p>
-<p><br/><br/></p>
+<p><img src="img/walpha.png" /></p>
+<p><br/><br/><br/><br/></p>
 </div>
 <div id="valor-esperado" class="section level2">
 <h2><strong>2.4 Valor esperado</strong></h2>
@@ -848,8 +848,8 @@ integrate(fy, lower=0,upper=Inf)</code></pre>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 <p><strong>Definición : Valor Esperado</strong></p>
 <p>Sea <span class="math inline">\(X\)</span> una variable aleatoria discreta o continua. La esperanza matemática de <span class="math inline">\(X\)</span> o valor esperado, <span class="math inline">\(E(X)\)</span> o bien <span class="math inline">\(\mu\)</span>, se define respectivamente como, <span class="math display">\[\begin{eqnarray*}
-    E(X)&amp;=&amp;\sum\limits_{x}^{}x_{i}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
-    E(X)&amp;=&amp;\int\limits_{-\infty}^{+\infty}x f(x)dx \hspace{1cm} \text{Caso continuo} 
+    E(X)&amp;=&amp;\displaystyle\sum\limits_{x}^{}x_{i}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
+    E(X)&amp;=&amp;\displaystyle\int\limits_{-\infty}^{+\infty}x f(x)dx \hspace{1cm} \text{Caso continuo} 
 \end{eqnarray*}\]</span></p>
 </div>
 <p>En el caso continuo y similarmente para el caso discreto.</p>
@@ -863,7 +863,7 @@ integrate(fy, lower=0,upper=Inf)</code></pre>
 <li><p><span class="math inline">\(E(XY) = E(X)E(Y)\)</span>, unicamente en el caso que <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> sean variables aleatorias independientes</p></li>
 </ul>
 </div>
-<p><br/><br/></p>
+<p><br/><br/><br/><br/></p>
 </div>
 <div id="varianza" class="section level2">
 <h2><strong>2.5 Varianza</strong></h2>
@@ -871,8 +871,8 @@ integrate(fy, lower=0,upper=Inf)</code></pre>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 <p><strong>Definición : Momento</strong></p>
 <p>Sea <span class="math inline">\(X\)</span> una variable aleatoria discreta o continua. El momento de orden <span class="math inline">\(k\)</span> se define como: <span class="math display">\[\begin{eqnarray*}
-    E(X^{k})&amp;=&amp;\sum\limits_{x}^{}x_{i}^{k}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
-    E(X^{k})&amp;=&amp;\int\limits_{-\infty}^{+\infty}x^{k} f(x)dx \hspace{1cm} \text{Caso continuo} 
+    E(X^{k})&amp;=&amp;\displaystyle\sum\limits_{x}^{}x_{i}^{k}f(x_{i}) \hspace{1cm} \text{Caso discreto} \\
+    E(X^{k})&amp;=&amp;\displaystyle\int\limits_{-\infty}^{+\infty}x^{k} f(x)dx \hspace{1cm} \text{Caso continuo} 
 \end{eqnarray*}\]</span></p>
 </div>
 <p><br/><br/></p>
@@ -904,6 +904,7 @@ cat(&quot;E[X] = &quot;, Ey$value,&quot;\n&quot;)</code></pre>
 <pre class="r"><code>cat(&quot;V[X] = &quot;, Ey2$value-Ey$value^2)</code></pre>
 <pre><code>## V[X] =  16</code></pre>
 <p>Esto nos indica que el valor esperado correspondiente al tiempo en que una lavadora requiere una reparación mayor es de 4 años. Para la interpretación de la variaza podemos utilizar el concepto de desviación estandar o de coeficiente de variación</p>
+<p><br/><br/><br/><br/></p>
 </div>
 </div>
 <div id="resumen" class="section level1">

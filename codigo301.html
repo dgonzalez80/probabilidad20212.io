@@ -504,7 +504,7 @@ div.tocify {
 <div id="caso-discreto" class="section level2">
 <h2><strong>Caso discreto</strong></h2>
 <p><br/> Supongamos que <span class="math inline">\(X\)</span> es una variable aleatoria discreta con función de distribución de probabilidad dada por :</p>
-<p><span class="math inline">\(f(x)=\binom{10}{x} 0.60^{x} 0.40^{10-x}\)</span></p>
+<p><span class="math inline">\(f(x)=\displaystyle\binom{10}{x} 0.60^{x} 0.40^{10-x}\)</span>, para <span class="math inline">\(x = 0,1,2,3,4,5,6,7,8,9,10\)</span></p>
 <p><br/><br/></p>
 <pre class="r"><code>x=0:10
 fx=choose(10,x)*0.60^x*0.40^(10-x)  </code></pre>

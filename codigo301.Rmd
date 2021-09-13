@@ -27,7 +27,7 @@ Para el desarrollo del Módulo 3, requerimos poder evaluar y representar funcion
 <br/>
 Supongamos que $X$ es una variable aleatoria discreta con función de distribución de probabilidad dada por :
 
-$f(x)=\binom{10}{x} 0.60^{x} 0.40^{10-x}$
+$f(x)=\displaystyle\binom{10}{x} 0.60^{x} 0.40^{10-x}$,  para $x = 0,1,2,3,4,5,6,7,8,9,10$
 
 <br/><br/>
 
