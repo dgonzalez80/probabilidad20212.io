@@ -518,18 +518,34 @@ $$COV[X,Y]=E[XY]-E[X]E[Y]$$
 	La correlación es una medida que mide el grado de asociación lineal entre dos variables. $0 \leq \rho \leq 1$
 </div>
 <br/><br/>
+**Escala para interpretación** : $\rho$ <br/>
+<img src="img/Rho.png" width="900">
+
+<br/><br/>
+<img src="img/Rho1.png" width="900">
+<br/>
+<img src="img/Rho2.png" width="900">
+
+<br/><br/>
 
 ## **2.5 Independencia**
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 
+**Independencia de variables**
+	
+Sean $X$ y $Y$ dos variables aleatorias discretas o continuas con función de probabilidad conjunta $f(x,y)$ y funciones de probabilidad marginales $g(x)$ y $h(y)$, respectivas, entonces se dice que las variables X y Y son estadísticamente independientes si:
 
+$$f(x,y)= g(x) h(y) $$
 </div> 
 
-# **3 Resumen**
+<br/><br/><br/>
 
+# **3 Resumen**
+<br/><br/>
 ## **3.1 Caso Discreta-Discreta**
 
+<br/><br/>
 
 
 ## **3.2 Caso Continua-Continua**
