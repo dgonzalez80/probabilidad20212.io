@@ -1,0 +1,16 @@
+---
+title: "Covid Co"
+author: "dgonzalez80"
+subtitle: " " 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
