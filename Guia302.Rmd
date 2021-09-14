@@ -672,15 +672,20 @@ $$f(x,y)= g(x) h(y) $$
 
 <br/><br/><br/>
 
-# **3 Resumen**
+# **3. Solución Taller 301**
+
+![](img/Taller301.png)
+[**Solución**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Taller301.pdf)
+
+<br/><br/><br/>
+
+# **4. Video**
+
+## **Caso Continua-Continua**
 
 <br/><br/>
-
-## **3.1 Caso Discreta-Discreta**
-
-<br/><br/>
-
-
-## **3.2 Caso Continua-Continua**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YYgn3BBqfuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+

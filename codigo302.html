@@ -502,6 +502,174 @@ div.tocify {
 <div id="caso-discreto-discreto" class="section level1">
 <h1><strong>Caso Discreto-Discreto</strong></h1>
 <p><br/><br/></p>
+<p><strong>Ejemplo 1</strong></p>
+<p>El número de veces que falla una máquina <span class="math inline">\(X\)</span> con <span class="math inline">\(R_{X}=\{1,2,3\}\)</span> durante un dia y el número de veces en que el operario requiere llamar al técnico para su arreglo esta dado por <span class="math inline">\(Y\)</span> con <span class="math inline">\(R_{Y}=\{1,2,3\}\)</span>. Su función de probabilidad conjunta para <span class="math inline">\(X,Y\)</span> está dada por :</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(f(x,y)\)</span></td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y\)</span></td>
+<td align="center">1</td>
+<td align="center">0.05</td>
+<td align="center">0.05</td>
+<td align="center">0.10</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">2</td>
+<td align="center">0.050</td>
+<td align="center">0.10</td>
+<td align="center">0.35</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">3</td>
+<td align="center">0</td>
+<td align="center">0.20</td>
+<td align="center">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Función de distribución de probabilidad conjunta</p>
+<pre class="r"><code>fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
+fxy</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,] 0.05 0.05 0.10
+## [2,] 0.05 0.10 0.35
+## [3,] 0.00 0.20 0.10</code></pre>
+<pre class="r"><code>sum(fxy)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>Funciones distribución marginales</p>
+<pre class="r"><code>fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
+fxy=addmargins(fxy,c(1,2))
+colnames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;h(y)&quot;)
+rownames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;g(x)&quot;)
+fxy</code></pre>
+<pre><code>##         1    2    3 h(y)
+## 1    0.05 0.05 0.10  0.2
+## 2    0.05 0.10 0.35  0.5
+## 3    0.00 0.20 0.10  0.3
+## g(x) 0.10 0.35 0.55  1.0</code></pre>
+<p>Representación gráfica de <span class="math inline">\(f(x,y)\)</span></p>
+<p>Para construir la gráfica de X y Y debemos crear los vectores</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center">x</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">y</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">fxy</td>
+<td align="center">0.15</td>
+<td align="center">0.05</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0.20</td>
+<td align="center">0.35</td>
+<td align="center">0</td>
+<td align="center">0.10</td>
+<td align="center">0.15</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>x=0:2
+y=0:2
+x=rep(x,each=3)
+y=rep(y,3)
+fxy=c(0.15,0.05,0, 0,0.20,0.35, 0,0.10,0.15)
+
+plot3D::scatter3D(x, y, fxy,
+          colvar = NULL, 
+          col = &quot;blue&quot;,
+          pch = 19, cex = 1.5,
+          phi = 20, theta = 60,  
+          zlab=&quot;f(xy)&quot;, xlab=&quot;x&quot;, ylab=&quot;y&quot;,
+          bty = &quot;b2&quot;,
+          col.panel =&quot;steelblue&quot;,
+          col.grid = &quot;darkblue&quot;,
+          add_lines=TRUE)</code></pre>
+<p><img src="codigo302_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
+fxy=addmargins(fxy,c(1,2))
+colnames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;h(y)&quot;)
+rownames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;g(x)&quot;)
+fxy</code></pre>
+<pre><code>##         1    2    3 h(y)
+## 1    0.05 0.05 0.10  0.2
+## 2    0.05 0.10 0.35  0.5
+## 3    0.00 0.20 0.10  0.3
+## g(x) 0.10 0.35 0.55  1.0</code></pre>
+<pre class="r"><code>x=c(0,1,2) 
+y=c(0,1,2)
+fxy=matrix(c(0.15,0.05,0,0,0.20,0.35,0,0.10,0.15), ncol=3 )
+
+fxy=addmargins(fxy,c(1,2))
+colnames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;h(y)&quot;)
+rownames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;g(x)&quot;)
+
+fxy=as.table(fxy)
+gx=fxy[,4]
+hy=fxy[4,]
+
+
+Ex=sum(x*gx)
+Ex2=sum(x^2*gx)
+Vx=Ex2-(Ex)^2
+
+Ey=sum(y*hy)
+Ey2=sum(y^2*hy)
+Vy=Ey2-(Ey)^2
+
+x=rep(x,each=3)
+y=rep(y,3)
+fxy=c(0.15,0.05,0,0,0.20,0.35,0,0.10,0.15)
+Exy=sum(x*y*fxy)
+CovXY=Exy-Ex*Ey
+Rho=CovXY/sqrt(Vx*Vy)</code></pre>
+<pre><code>## E(X) =  1.35</code></pre>
+<pre><code>## E(X2) =  2.35</code></pre>
+<pre><code>## V(X) =  0.5275</code></pre>
+<pre><code>## E(Y) =  1.05</code></pre>
+<pre><code>## E(Y2) =  1.55</code></pre>
+<pre><code>## V(Y) =  0.4475</code></pre>
+<pre><code>## E(XY) =  1.7</code></pre>
+<pre><code>## Cov(XY) =  0.2825</code></pre>
+<pre><code>## Rho =  0.5814478</code></pre>
 <p><br/><br/><br/></p>
 </div>
 <div id="caso-continuo-continuo" class="section level1">
