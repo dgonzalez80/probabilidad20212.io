@@ -680,6 +680,22 @@ fxy</code></pre>
 ## [3,] 0.00 0.20 0.10</code></pre>
 <pre class="r"><code>sum(fxy)</code></pre>
 <pre><code>## [1] 1</code></pre>
+<p>El gráfico de la función de distribución conjunta se puede realizar de la siguiente forma:</p>
+<pre class="r"><code>x=c(0,0,0,1,1,1,2,2,2)
+y=c(0,1,2,0,1,2,0,1,2)
+fxy=c(0.05,0.05,0, 0.05,0.10,0.20, 0.10,0.35,0.10)
+
+plot3D::scatter3D(x, y, fxy,
+          colvar = NULL, 
+          col = &quot;blue&quot;,
+          pch = 19, cex = 1.5,
+          phi = 20, theta = 60,  
+          zlab=&quot;f(xy)&quot;, xlab=&quot;x&quot;, ylab=&quot;y&quot;,
+          bty = &quot;b2&quot;,
+          col.panel =&quot;steelblue&quot;,
+          col.grid = &quot;darkblue&quot;,
+          add_lines=TRUE)</code></pre>
+<p><img src="Guia302_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="probabilidad-marginales" class="section level3">
@@ -861,6 +877,8 @@ Ifxy=adaptIntegrate(fxy,lowerLimit=c(0,0),upperLimit=c(1,1))
 Ifxy$integral</code></pre>
 <pre><code>## [1] 1</code></pre>
 <p><br/><br/></p>
+<p>Su representación gráfica</p>
+<p><img src="img/figura317.png" /></p>
 </div>
 <div id="densidad-marginales" class="section level3">
 <h3><strong>Densidad marginales</strong></h3>
@@ -950,10 +968,77 @@ Ifxy$integral</code></pre>
 <p><span class="math display">\[COV[X,Y]=E[XY]-E[X]E[Y]\]</span></p>
 </div>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
-<p>Correlación entre las variables <span class="math inline">\(X\)</span>,<span class="math inline">\(Y\)</span> <span class="math display">\[\rho=\displaystyle\frac{COV[XY]}{\displaystyle\sqrt{V[X].V[Y]}} \]</span> La correlación es una medida que mide el grado de asociación lineal entre dos variables. <span class="math inline">\(0 \leq \rho \leq 1\)</span></p>
+<p>Correlación entre las variables <span class="math inline">\(X\)</span>,<span class="math inline">\(Y\)</span> <span class="math display">\[\rho=\displaystyle\frac{COV[XY]}{\displaystyle\sqrt{V[X].V[Y]}} \]</span> La correlación es una medida que mide el grado de asociación lineal entre dos variables. <span class="math inline">\(-1 \leq \rho \leq 1\)</span></p>
 </div>
-<p><br/><br/> <strong>Escala para interpretación</strong> : <span class="math inline">\(\rho\)</span> <br/> <img src="img/Rho.png" width="900"></p>
-<p><br/><br/> <img src="img/Rho1.png" width="900"> <br/> <img src="img/Rho2.png" width="900"></p>
+<p><br/><br/> <strong>Escala para interpretación</strong> : <span class="math inline">\(\rho\)</span> <br/></p>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="7%" />
+<col width="8%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="8%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">-1</th>
+<th align="center">-0.90</th>
+<th align="center">-0.75</th>
+<th align="center">-0.50</th>
+<th align="center">-0.25</th>
+<th align="center">-0.10</th>
+<th align="center">0</th>
+<th align="center">0.10</th>
+<th align="center">0.25</th>
+<th align="center">0.50</th>
+<th align="center">0.75</th>
+<th align="center">0.90</th>
+<th align="center">1.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Negativa perfecta</td>
+<td align="center">Negativa muy fuerte</td>
+<td align="center">Negativa considerable</td>
+<td align="center">Negativa media</td>
+<td align="center">Negativa debil</td>
+<td align="center">Negativa muy debil</td>
+<td align="center">No existe correlación</td>
+<td align="center">Positiva muy debil</td>
+<td align="center">Positiva debil</td>
+<td align="center">Positiva media</td>
+<td align="center">Positiva considerable</td>
+<td align="center">Positiva muy fuerte</td>
+<td align="center">Positiva perfecta</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<p><img src="Guia302_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="Guia302_files/figure-html/unnamed-chunk-9-2.png" width="672" /><img src="Guia302_files/figure-html/unnamed-chunk-9-3.png" width="672" /><img src="Guia302_files/figure-html/unnamed-chunk-9-4.png" width="672" /><img src="Guia302_files/figure-html/unnamed-chunk-9-5.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="independencia" class="section level2">
@@ -968,8 +1053,11 @@ Ifxy$integral</code></pre>
 </div>
 <div id="resumen" class="section level1">
 <h1><strong>3 Resumen</strong></h1>
-<p><br/><br/> ## <strong>3.1 Caso Discreta-Discreta</strong></p>
 <p><br/><br/></p>
+<div id="caso-discreta-discreta" class="section level2">
+<h2><strong>3.1 Caso Discreta-Discreta</strong></h2>
+<p><br/><br/></p>
+</div>
 <div id="caso-continua-continua" class="section level2">
 <h2><strong>3.2 Caso Continua-Continua</strong></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YYgn3BBqfuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>

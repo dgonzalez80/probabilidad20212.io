@@ -183,6 +183,30 @@ fxy
 sum(fxy)
 ```
 
+El gráfico de la función de distribución conjunta se puede realizar de la siguiente forma:
+
+
+```{r}
+x=c(0,0,0,1,1,1,2,2,2)
+y=c(0,1,2,0,1,2,0,1,2)
+fxy=c(0.05,0.05,0, 0.05,0.10,0.20, 0.10,0.35,0.10)
+
+plot3D::scatter3D(x, y, fxy,
+          colvar = NULL, 
+          col = "blue",
+          pch = 19, cex = 1.5,
+          phi = 20, theta = 60,  
+          zlab="f(xy)", xlab="x", ylab="y",
+          bty = "b2",
+          col.panel ="steelblue",
+          col.grid = "darkblue",
+          add_lines=TRUE)
+
+
+```
+
+
+
 
 <br/><br/>
 
@@ -357,6 +381,7 @@ $$f(x,y) = \left \{ \begin{matrix} \dfrac{3}{2}(x^{2}+y^{2}) & \mbox{ } 0 \leq x
 
 <br/>
 
+
 Inicialmente debemos de verificar que se trata de una función de densidad 
 
 
@@ -377,6 +402,14 @@ Ifxy$integral
 ```
 
 <br/><br/>
+
+Su representación gráfica 
+
+
+![](img/figura317.png)
+
+
+
 
 ### **Densidad marginales**
 
@@ -529,16 +562,100 @@ $$COV[X,Y]=E[XY]-E[X]E[Y]$$
 
  Correlación entre las variables $X$,$Y$
 	$$\rho=\displaystyle\frac{COV[XY]}{\displaystyle\sqrt{V[X].V[Y]}} $$
-	La correlación es una medida que mide el grado de asociación lineal entre dos variables. $0 \leq \rho \leq 1$
+	La correlación es una medida que mide el grado de asociación lineal entre dos variables. $-1 \leq \rho \leq 1$
 </div>
 <br/><br/>
 **Escala para interpretación** : $\rho$ <br/>
-<img src="img/Rho.png" width="900">
+
+ 
+|-1        | -0.90    | -0.75      | -0.50    | -0.25     | -0.10    | 0         | 0.10     | 0.25     | 0.50     | 0.75       | 0.90      | 1.0      |
+|:--------:|:--------:|:--------:|:--------:|:---------:|:--------:|:---------:|:--------:|:--------:|:--------:|:----------:|:---------:|:--------:|
+|	Negativa perfecta| Negativa muy fuerte | Negativa considerable| Negativa  media|  Negativa debil| Negativa muy debil | No existe correlación| Positiva muy debil| Positiva debil| Positiva media |  Positiva considerable |  Positiva muy fuerte | Positiva perfecta| 
+|	 | | | 	|    | |   |  |     |   |  |  | | 
+
 
 <br/><br/>
-<img src="img/Rho1.png" width="900">
-<br/>
-<img src="img/Rho2.png" width="900">
+
+```{r, echo=FALSE}
+gen.corr.data<- function(rho,n){
+  x <- rnorm(n)
+  z <- rnorm(n)
+  y<- rho*x + sqrt(1-rho^2)*z
+    result <-cbind(y,x)
+  return(result)
+}
+par(mfrow = c(1, 2),
+    mar = c(5, 4, 4, 2) + 0.1,
+                cex.lab=.5,  # tamaño de etiqueta ejes
+                cex.axis=.5, # tamaño escalas de los ejes 
+                cex.main=.5, # tamaño del titulo
+                cex.sub=.5)
+
+muestra<-gen.corr.data(-1,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=-1.0")
+grid()
+
+muestra<-gen.corr.data(-0.90,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=-0.9")
+grid()
+
+muestra<-gen.corr.data(-0.7,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=-0.70")
+grid()
+
+muestra<-gen.corr.data(-0.50,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=-0.50")
+grid()
+
+muestra<-gen.corr.data(-0.25,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=-0.25")
+grid()
+
+muestra<-gen.corr.data(0,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=0")
+grid()
+
+
+muestra<-gen.corr.data(0.3,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=0.30")
+grid()
+
+
+muestra<-gen.corr.data(0.60,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=0.60")
+grid()
+
+
+muestra<-gen.corr.data(0.8,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=0.80")
+grid()
+
+muestra<-gen.corr.data(1,200)
+x=muestra[,2]+100
+y=muestra[,1]+100
+plot(x,y, pch=19,main="Correlación Rho=1.0")
+grid()
+
+```
+
 
 <br/><br/>
 
@@ -556,7 +673,9 @@ $$f(x,y)= g(x) h(y) $$
 <br/><br/><br/>
 
 # **3 Resumen**
+
 <br/><br/>
+
 ## **3.1 Caso Discreta-Discreta**
 
 <br/><br/>

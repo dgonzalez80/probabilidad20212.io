@@ -1,0 +1,34 @@
+---
+title: "Código 6"
+author: "dgonzalez "
+subtitle: "Módulo 3- Unidad 3.2" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+
+```
+
+
+# **Caso Discreto-Discreto**
+<br/><br/>
+
+```{r}
+
+```
+
+
+<br/><br/><br/>
+
+# **Caso Continuo-continuo**
+
+
+<br/><br/>
