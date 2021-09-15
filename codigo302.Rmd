@@ -19,9 +19,10 @@ library(tidyverse)
 
 
 # **Caso Discreto-Discreto**
+
 <br/><br/>
 
-**Ejemplo 1**
+### **Ejemplo 1**
 
 El número de veces que falla una máquina $X$ con $R_{X}=\{1,2,3\}$ durante un dia y el número de veces en que el operario requiere llamar al técnico para su arreglo esta dado por $Y$ con $R_{Y}=\{1,2,3\}$. Su función de probabilidad conjunta para $X,Y$ está dada por :
 
@@ -41,8 +42,9 @@ fxy
 sum(fxy)
 ```
 
+<br/><br/>
 
-Funciones distribución marginales 
+### **Funciones distribución marginales**
 
 ```{r}
 fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
@@ -53,7 +55,7 @@ fxy
 ```
 
 
-Representación gráfica de $f(x,y)$
+### **Representación gráfica de $f(x,y)$**
 
 Para construir la gráfica de X y Y debemos crear los vectores
 
@@ -62,6 +64,8 @@ Para construir la gráfica de X y Y debemos crear los vectores
 |x     | 0    |     0|     0|     1|     1|     1|     2|     2|     2|
 |y     | 0    |     1|     2|     0|     1|     2|     0|     1|     2|
 |fxy   |  0.15|  0.05|     0|     0|  0.20|  0.35|     0|  0.10|  0.15|
+
+
 
 ```{r}
 x=0:2
@@ -84,6 +88,8 @@ plot3D::scatter3D(x, y, fxy,
 
 ```
 
+### **Funciones de distribución marginal**
+
 ```{r}
 fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
 fxy=addmargins(fxy,c(1,2))
@@ -92,6 +98,8 @@ rownames(fxy)=c("1","2","3","g(x)")
 fxy
 ```
 
+
+### **Covarianza y Correlación**
 
 ```{r, warning=FALSE, message=FALSE}
 x=c(0,1,2) 
@@ -187,5 +195,15 @@ persp(x,y,z,theta = 30, phi = 30,expand=0.5, col = "orange",
 
 ```
 
+Nota: basada en : https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.html
 
+<br/><br/>
 
+### **Otras alternativas**
+
+<br/>
+
+![](img/walpha2.png)
+<br/>
+
+![](img/symbolab2.png)

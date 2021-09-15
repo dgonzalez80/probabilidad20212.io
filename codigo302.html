@@ -505,7 +505,8 @@ div.tocify {
 <div id="caso-discreto-discreto" class="section level1">
 <h1><strong>Caso Discreto-Discreto</strong></h1>
 <p><br/><br/></p>
-<p><strong>Ejemplo 1</strong></p>
+<div id="ejemplo-1" class="section level3">
+<h3><strong>Ejemplo 1</strong></h3>
 <p>El número de veces que falla una máquina <span class="math inline">\(X\)</span> con <span class="math inline">\(R_{X}=\{1,2,3\}\)</span> durante un dia y el número de veces en que el operario requiere llamar al técnico para su arreglo esta dado por <span class="math inline">\(Y\)</span> con <span class="math inline">\(R_{Y}=\{1,2,3\}\)</span>. Su función de probabilidad conjunta para <span class="math inline">\(X,Y\)</span> está dada por :</p>
 <table>
 <thead>
@@ -557,7 +558,10 @@ fxy</code></pre>
 ## [3,] 0.00 0.20 0.10</code></pre>
 <pre class="r"><code>sum(fxy)</code></pre>
 <pre><code>## [1] 1</code></pre>
-<p>Funciones distribución marginales</p>
+<p><br/><br/></p>
+</div>
+<div id="funciones-distribución-marginales" class="section level3">
+<h3><strong>Funciones distribución marginales</strong></h3>
 <pre class="r"><code>fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
 fxy=addmargins(fxy,c(1,2))
 colnames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;h(y)&quot;)
@@ -568,7 +572,9 @@ fxy</code></pre>
 ## 2    0.05 0.10 0.35  0.5
 ## 3    0.00 0.20 0.10  0.3
 ## g(x) 0.10 0.35 0.55  1.0</code></pre>
-<p>Representación gráfica de <span class="math inline">\(f(x,y)\)</span></p>
+</div>
+<div id="representación-gráfica-de-fxy" class="section level3">
+<h3><strong>Representación gráfica de <span class="math inline">\(f(x,y)\)</span></strong></h3>
 <p>Para construir la gráfica de X y Y debemos crear los vectores</p>
 <table>
 <tbody>
@@ -627,6 +633,9 @@ plot3D::scatter3D(x, y, fxy,
           col.grid = &quot;darkblue&quot;,
           add_lines=TRUE)</code></pre>
 <p><img src="codigo302_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="funciones-de-distribución-marginal" class="section level3">
+<h3><strong>Funciones de distribución marginal</strong></h3>
 <pre class="r"><code>fxy=matrix(c(0.05,0.05,0,0.05,0.10,0.20,0.10,0.35,0.10), ncol=3 )
 fxy=addmargins(fxy,c(1,2))
 colnames(fxy)=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;h(y)&quot;)
@@ -637,6 +646,9 @@ fxy</code></pre>
 ## 2    0.05 0.10 0.35  0.5
 ## 3    0.00 0.20 0.10  0.3
 ## g(x) 0.10 0.35 0.55  1.0</code></pre>
+</div>
+<div id="covarianza-y-correlación" class="section level3">
+<h3><strong>Covarianza y Correlación</strong></h3>
 <pre class="r"><code>x=c(0,1,2) 
 y=c(0,1,2)
 fxy=matrix(c(0.15,0.05,0,0,0.20,0.35,0,0.10,0.15), ncol=3 )
@@ -675,6 +687,7 @@ Rho=CovXY/sqrt(Vx*Vy)</code></pre>
 <pre><code>## Rho =  0.5814478</code></pre>
 <p><br/><br/><br/></p>
 </div>
+</div>
 <div id="caso-continuo-continuo" class="section level1">
 <h1><strong>Caso Continuo-continuo</strong></h1>
 <p><br/><br/></p>
@@ -710,6 +723,14 @@ z=outer(x, y, fxy)
 persp(x,y,z,theta = 30, phi = 30,expand=0.5, col = &quot;orange&quot;,
       main=&quot; &quot;, col.main=&quot;blue&quot;)</code></pre>
 <p><img src="codigo302_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Nota: basada en : <a href="https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.html" class="uri">https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.html</a></p>
+<p><br/><br/></p>
+<div id="otras-alternativas" class="section level3">
+<h3><strong>Otras alternativas</strong></h3>
+<p><br/></p>
+<p><img src="img/walpha2.png" /> <br/></p>
+<p><img src="img/symbolab2.png" /></p>
+</div>
 </div>
 
 
