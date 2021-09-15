@@ -79,6 +79,8 @@ navbar:
           href: codigo201.html
         - text: "Código u3.1"
           href: codigo301.html
+        - text: "Código u3.2"
+          href: codigo302.html
 
 output:
   html_document:

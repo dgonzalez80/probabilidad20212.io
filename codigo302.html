@@ -478,6 +478,9 @@ div.tocify {
     <li>
       <a href="codigo301.html">Código u3.1</a>
     </li>
+    <li>
+      <a href="codigo302.html">Código u3.2</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -675,6 +678,38 @@ Rho=CovXY/sqrt(Vx*Vy)</code></pre>
 <div id="caso-continuo-continuo" class="section level1">
 <h1><strong>Caso Continuo-continuo</strong></h1>
 <p><br/><br/></p>
+<p><strong>Ejemplo 2</strong></p>
+<p>Una empresa prestadora se servicios a domicilio tienen dos lineas telefónicas para que los clientes puedan realizar sus pedidos. Sea X y Y la proporción del tiempo en que las lineas se encuentran ocupadas. La función de densidad conjunta que modela <span class="math inline">\(f(x,y)\)</span> esta dada por:</p>
+<p><span class="math display">\[f(x,y) = \left \{ \begin{matrix} \dfrac{3}{2}(x^{2}+y^{2}) &amp; \mbox{ } 0 \leq x \leq 1\\ 
+                                     &amp; \mbox{ } 0 \leq y \leq 1 \\
+                                     &amp;\\
+                                   0 &amp; \mbox{ en otro caso }\end{matrix}\right.  \]</span> <br/><br/></p>
+<p>Inicialmente se verifica la condición :</p>
+<p><span class="math inline">\(\displaystyle\int_{0}^{1} \displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) \:dx \:dy = 1\)</span></p>
+<pre class="r"><code>library(cubature) 
+fxy &lt;- function(x) { 3/2*(x[1]^2 + x[2]^2)} # 
+adaptIntegrate(fxy, lowerLimit = c(0, 0), upperLimit = c(1, 1))</code></pre>
+<pre><code>## $integral
+## [1] 1
+## 
+## $error
+## [1] 2.220446e-16
+## 
+## $functionEvaluations
+## [1] 17
+## 
+## $returnCode
+## [1] 0</code></pre>
+<p>basado en : <a href="http://homepages.math.uic.edu/~jyang06/stat401/handouts/handout8.pdf" class="uri">http://homepages.math.uic.edu/~jyang06/stat401/handouts/handout8.pdf</a></p>
+<p><br/><br/></p>
+<p>Ahora su representación gráfica</p>
+<pre class="r"><code>x=seq(0,1,length=10)
+y=seq(0,1,length=10)
+fxy=function(x,y){3/2*(x^2+y^2)}
+z=outer(x, y, fxy)
+persp(x,y,z,theta = 30, phi = 30,expand=0.5, col = &quot;orange&quot;,
+      main=&quot; &quot;, col.main=&quot;blue&quot;)</code></pre>
+<p><img src="codigo302_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 
 
