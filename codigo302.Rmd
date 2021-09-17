@@ -207,8 +207,9 @@ Nota: basada en : https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.htm
 ![](img/walpha2.png)
 <br/>
 
-![](img/symbolab2.png
+![](img/symbolab2.png)
 
+<br/><br/>
 
 ## **Otros gráficos**
 
@@ -243,6 +244,9 @@ z1=c(0,1,2,1)
 polygon(s$xyz.convert(x1,y1,z1),col="#8080FF99") # morado 
 
 ```
+
+<br/><br/>
+
 
 $$P(X \geq 0.5 ; Y \geq 0.5) = \int_{0.5}^{1} \int_{0.5}^{1} \dfrac{2}{3}\Big(x+2y\Big) \:dx \:dy$$
 
@@ -283,6 +287,22 @@ polygon(s$xyz.convert(x7,y7,z7)) #
 ```
 
 
+<br/><br/>
+
+ $$f_{XY}(x,y)=\left\{\begin{matrix}\ \dfrac{48}{49} xy^{2} & 3\leq x \leq 4, \hspace{.5cm} 0.5 \leq y \leq 1 \\ & \\
+ 0 & \mbox{para cualquier otro caso} \end{matrix}\right.$$
+
+```{r}
+ library(lattice)
+x=seq(3,4,by=0.03)
+y=seq(0.5,1,by=0.03)
+fun=function(x,y){48*x*y^2/49}
+z=outer(x,y,fun)
+wireframe(z,xlab="x",ylab="y",zlab="f(x,y)",col="blue")
+```
+
+
+<br/><br/>
 
 
 ```{r}

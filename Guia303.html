@@ -553,31 +553,106 @@ Your browser does not support the video tag.</video>
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
-<p> \</p>
+</div>
+<div id="modelos-especiales" class="section level1">
+<h1><strong>Modelos especiales</strong></h1>
 <p>A continuación se presentan los principales conceptos teóricos de esta unidad, acompañados de ejemplos resueltos. \</p>
-<p>\</p>
+<div id="introducción-1" class="section level2">
+<h2><strong>Introducción</strong></h2>
 <p>En las unidades abordadas previamente a esta se han trabajado las características de variables aleatorias tanto discretas como continuas dentro de las cuales están: la función de distribución de probabilidad <span class="math inline">\(f(x)\)</span> , para el caso discreto y la función de densidad de probabilidad para las variables continuas. En ambos casos la función de probabilidad acumulada <span class="math inline">\(F(x)\)</span> que representa <span class="math inline">\(P(X \leq x)\)</span>, el valor esperado <span class="math inline">\(E[X]\)</span>, la varianza <span class="math inline">\(V[X]\)</span>, y en el caso de las variables conjuntas la función de distribución conjunta y la función de densidad conjunta para los casos discreto-discreto y continuo-continuo, respectivamente <span class="math inline">\(f_{_{XY}}(x,y)\)</span>. También característica de ellas como son: el valor esperado conjunto <span class="math inline">\(E[XY]\)</span> , la covarianza <span class="math inline">\(Cov[XY]\)</span> y el coeficiente de correlación <span class="math inline">\(\rho_{_{XY}}\)</span> para las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.</p>
 <p>Ahora, el siguiente modelo : <span class="math display">\[f(x)= \frac{1}{50}e^{-(\frac{x}{50})} \]</span></p>
 <p>Llamado exponencial, puede ser estudiado y asociado a sucesos que ocurren diariamente a nuestro alrededor.</p>
-<p>Tener una variable cuyo comportamiento se puede caracterizar tiene la ventaja de conocer fácilmente el recorrido teórico en la construcción del modelo, las propiedades, tendencias, valor esperado, varianza, función de distribución, estimadores de sus parámetros, alternativas que facilitan el cálculo de probabilidades, su afinidad con otras variables, entre otras, características que facilitan actividades como la simulación. \</p>
+<p>Tener una variable cuyo comportamiento se puede caracterizar tiene la ventaja de conocer fácilmente el recorrido teórico en la construcción del modelo, las propiedades, tendencias, valor esperado, varianza, función de distribución, estimadores de sus parámetros, alternativas que facilitan el cálculo de probabilidades, su afinidad con otras variables, entre otras, características que facilitan actividades como la simulación.</p>
 <p>El siguiente diagrama presenta los principales modelo de probabilidad y sus diferentes relaciones</p>
-<p>\begin{center}  { {Fuente: construccion propia. basado en Univariate Distribution Relationships (Lawrence M. LEEMIS and Jacquelyn T. MCQUESTON)} \end{center}</p>
-\begin{center}
-&amp;
-<p>&amp;</p>
-<p>\  \end{tabular} \end{center}</p>
-<p>A continuación se presentan los modelos más comunes con sus principales características:\</p>
-<p>\</p>
-<p>%———————————————————————- Hemos clasificado como variables discretas aquellas cuyo rango <span class="math inline">\(R_{X}\)</span>, corresponde a un conjunto de valores finito o infinito numerables. También es común que estas variables sean asociadas con el conteo, por lo que en su mayoría contienen la palabras {} \</p>
+<p><img src="img/poster.png" /> Fuente: construcción propia. basado en Univariate Distribution Relationships (Lawrence M. LEEMIS and Jacquelyn T. MCQUESTON)}</p>
+<p><strong>Algunos modelos discretos</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center">Bernoulli</td>
+<td align="center">Binomial</td>
+<td align="center">Poisson</td>
+<td align="center">Hipergeométrico</td>
+<td align="center">Geométrico o de Pascal</td>
+<td align="center">Binomial negativo</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Algunos modelos continuos</strong></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center">Uniforme</td>
+<td align="center">Normal</td>
+<td align="center">Exponencial</td>
+<td align="center">Gamma</td>
+<td align="center">Weibull</td>
+<td align="center">Cauchy</td>
+</tr>
+<tr class="even">
+<td align="center">Lognormal</td>
+<td align="center">Beta</td>
+<td align="center">Erlang</td>
+<td align="center">Gumbel</td>
+<td align="center">Kernel</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>A continuación se presentan los modelos más comunes con sus principales características:</p>
+</div>
+<div id="distribuciones-discretas" class="section level2">
+<h2><strong>Distribuciones discretas</strong></h2>
+<p>Hemos clasificado como variables discretas aquellas cuyo rango <span class="math inline">\(R_{X}\)</span>, corresponde a un conjunto de valores finito o infinito numerables. También es común que estas variables sean asociadas con el conteo, por lo que en su mayoría contienen la palabras <strong>número de…</strong></p>
 <p>A continuación se presentan los principales modelos discretos.\</p>
-<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %  \</p>
+<div id="distribución-bernoulli" class="section level3">
+<h3><strong>Distribución Bernoulli</strong></h3>
 <p>Empezaremos enunciando el modelo Bernoulli, aunque algunos autores no lo reconocen como modelo, ayuda en la compresión de los modelos siguientes. Toma su nombre del matemático Jacob Bernoulli.\</p>
-%ejemplo 1 ================================================================================  \<br />
-Un biólogo realiza una salida de campo para estudiar el comportamiento del cucarachero común. Se considera éxito si puede filmar al animal y fracaso si no puede hacerlo. Por información suministrada en artículos científicos la probabilidad de lograrlo se estima en 0.20. \
-<p>\ Se requiere examinar si dentro de este contexto existe una variable que proceda de un experimento Bernoulli y ese caso como se podría caracterizar.\</p>
-<p>Primero es necesario revisar las características de un experimento Bernoulli y confrontarlas contra el contexto presentado en el ejemplo. \</p>
+<p>Distribución Bernoulli</p>
+<p>Una variable que se distribuye Bernoulli, procede de un experimento Bernoulli, descrito por las siguientes características:</p>
+<ul>
+<li><p>El experimento consta de un ensayo.</p></li>
+<li><p>El ensayo solo tiene dos posible resultados: éxito (E), fracaso (F).</p></li>
+<li><p>La probabilidad de éxito es <span class="math inline">\(p\)</span>, la probabilidad de fracaso es <span class="math inline">\(1-p=q\)</span></p></li>
+</ul>
+<p>La variable objeto de estudio es <span class="math inline">\(X\)</span>: hay o no éxito éxitos en un ensayo de Bernoulli. Sus principales características son:</p>
+<p>Rango : <span class="math inline">\(R_{X}=\{0,1 \}\)</span>, Función de distribución de probabilidad $</p>
+<p><span class="math inline">\(\begin{equation*}  f(x)=\left\lbrace  \begin{array}{lll}  p &amp; \mbox{si } x=1 \\  q &amp; \mbox{si } x=0  \end{array}  \right. \end{equation*}\)</span></p>
+<p>Valor esperado : <span class="math inline">\(E[X]= p\)</span></p>
+<p>Varianza : <span class="math inline">\(V[X]= pq\)</span></p>
+<p><strong>Ejemplo 1</strong></p>
+<p>Un biólogo realiza una salida de campo para estudiar el comportamiento del cucarachero común. Se considera éxito si puede filmar al animal y fracaso si no puede hacerlo. Por información suministrada en artículos científicos la probabilidad de lograrlo se estima en 0.20.</p>
+<p><img src="img/cucarachero.png" /></p>
+<p></p>
+<p>*<strong>Solución</strong></p>
+<p>Se requiere examinar si dentro de este contexto existe una variable que proceda de un experimento Bernoulli y ese caso como se podría caracterizar.</p>
+<p>Primero es necesario revisar las características de un experimento Bernoulli y confrontarlas contra el contexto presentado en el ejemplo.</p>
 <p>Primero existe un solo ensayo o salida de campo, durante después de la salida de campo se pueden obtener dos resultados posibles: lograr el objetivo de visualizar y filmar al animal (Éxito) y por otro lado el no lograrlo (Fracaso). También se posee la probabilidad de éxito (<span class="math inline">\(0.20\)</span>), este caso establecida mediante el enfoque subjetivo de un experto en un artículo científico. Lo anterior nos permite poder asociar la variable que llamaremos <span class="math inline">\(X\)</span> asociada con el poder o no realizar la filmación.</p>
-<p>La variable aleatoria se define en este caso como:\</p>
+<p>La variable aleatoria se define en este caso como:</p>
 $ X =
 <span class="math display">\[\begin{array}{lll}
     1 &amp; \mbox{si se realiza la filmación del ave}   \\
@@ -586,10 +661,26 @@ $ X =
 <p>. $</p>
 <p>y su función de distribución de probabilidad está dada por:</p>
 <p><span class="math display">\[f(x)= 0.2^{x} (1-0.2)^{1-x} ,\text{ si } x=0,1.\]</span></p>
-<p><span class="math display">\[ E[X]=p =0.20 \hspace{.5cm} V[X] =p(1-p)= 0.16\]</span> \  %==================================================================================== % %</p>
-<p>\</p>
-<p>El segundo modelo que abordaremos corresponde al modelo binomial, que puede verse como una generalización del modelo Bernoulli, pasando de un ensayo a <span class="math inline">\(n\)</span> ensayos. Fue investigada y analizada por el físico y matemático suizo Jakob Bernoulli en relación con problemas presentados en los juegos de azar. Su trabajo fue presentado en 1713. \</p>
-<p>%ejemplo 2 ================================================================================   \ Un sistema de seguridad para casas está diseñado para tener una confiabilidad del 90% . Suponga que nueve casas equipadas con este dispositivo sufrieron tentativa de robo. Se requiere calcular la probabilidad de que en siete de las nueve, la alarma se activará. \</p>
+<p><span class="math display">\[ E[X]=p =0.20 \hspace{.5cm} V[X] =p(1-p)= 0.16\]</span> 1.2 Distribución binomial</p>
+<p>El segundo modelo que abordaremos corresponde al modelo binomial, que puede verse como una generalización del modelo Bernoulli, pasando de un ensayo a <span class="math inline">\(n\)</span> ensayos. Fue investigada y analizada por el físico y matemático suizo Jakob Bernoulli en relación con problemas presentados en los juegos de azar. Su trabajo fue presentado en 1713.</p>
+<p>Distribución binomial</p>
+<pre><code>Una variable con distribución binomial es aquella que procede de un experimento binomial. 
+
+Ahora un experimento binomial tiene las siguientes características: </code></pre>
+<p>El experimento consta de <span class="math inline">\(n\)</span> ensayos Cada ensayo tiene solo dos posible resultados: éxito (E) o fracaso (F) (experimento Bernoulli), La probabilidad de éxito es igual a <span class="math inline">\(p\)</span> y se mantiene fija para todos los ensayos P(E). La probabilidad de fracaso es <span class="math inline">\((1-p)=q\)</span>, Los ensayos son independientes, La variable objeto de estudio <span class="math inline">\(X\)</span>, corresponde al número de éxitos obtenidos en los <span class="math inline">\(n\)</span> ensayos.</p>
+<p>Se puede decir que la suma de <span class="math inline">\(n\)</span> variables independientes con distribución Bernoulli(<span class="math inline">\(p\)</span>), se distribuye de manera Bionomial(<span class="math inline">\(n,p\)</span>)</p>
+<p>La función de distribución de probabilidad está dada por:</p>
+<pre><code>\begin{equation*}
+    f(x)=\left\lbrace
+    \begin{array}{lll}
+        \displaystyle\binom{n}{x} p^{x} (1-p)^{n-x} &amp;,&amp; x=0,1,2, \ldots, n   \\
+        %&amp;&amp;\\
+        0 &amp;,&amp; \mbox{en otro caso}
+    \end{array}
+    \right.
+\end{equation*}</code></pre>
+<p><span class="math display">\[E[X]=np \hspace{.5cm} V[X]= np(1-p) \]</span></p>
+<p>Ejemplo 2   \ Un sistema de seguridad para casas está diseñado para tener una confiabilidad del 90% . Suponga que nueve casas equipadas con este dispositivo sufrieron tentativa de robo. Se requiere calcular la probabilidad de que en siete de las nueve, la alarma se activará. \</p>
 <p>\ En este caso la variable <span class="math inline">\(X\)</span> se define como el número de casas de las nueve en las que se activa el sistema de alarma. Observe que en cada caso se puede presentar dos posibles resultados frente a la tentativa de robo :</p>
 <p>Por las anteriores razones, el proceso enunciado corresponde a un experimento binomial y por tanto podemos afirmar que la variable X: número de sistemas que se activan ante la tentativa de robo, es una variable con distribución binomial con parámetros <span class="math inline">\(n=9\)</span> y <span class="math inline">\(p=0.90\)</span>.</p>
 <p>Para calcular la probabilidad requerida utilizamos la función de distribución de probabilidad del modelo Binomial</p>
@@ -745,6 +836,8 @@ Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen com
 <p>% videos % uniforme . <a href="https://youtu.be/6iDQHdqAwyQ" class="uri">https://youtu.be/6iDQHdqAwyQ</a> %** uniforme . <a href="https://youtu.be/e4U3YX4fXrQ" class="uri">https://youtu.be/e4U3YX4fXrQ</a> % ** normal . <a href="https://youtu.be/NlD5jbLc2-A" class="uri">https://youtu.be/NlD5jbLc2-A</a> % normal . <a href="https://youtu.be/llhl115ltbY" class="uri">https://youtu.be/llhl115ltbY</a> % ** normal . <a href="https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation" class="uri">https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation</a> % normal . <a href="https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation" class="uri">https://www.powtoon.com/online-presentation/bza0OBPFvFr/?mode=presentation</a> % exponencial . <a href="https://youtu.be/6O_3ogub5Nw" class="uri">https://youtu.be/6O_3ogub5Nw</a> %** exponencial . <a href="https://youtu.be/ZPxY9sbClJo" class="uri">https://youtu.be/ZPxY9sbClJo</a> % ** lognormal . <a href="https://youtu.be/wK7q-XJnsN4" class="uri">https://youtu.be/wK7q-XJnsN4</a> % lognormal . <a href="https://youtu.be/XtACgL4eVvk" class="uri">https://youtu.be/XtACgL4eVvk</a> % beta . <a href="https://youtu.be/KBiu4mu1Wng" class="uri">https://youtu.be/KBiu4mu1Wng</a> % gumbel . <a href="https://youtu.be/2NEw7SZeNZU" class="uri">https://youtu.be/2NEw7SZeNZU</a> % weibull . <a href="https://youtu.be/FI5zZYr1p7s" class="uri">https://youtu.be/FI5zZYr1p7s</a></p>
 <p>% t-Student . <a href="https://youtu.be/ZYYDhGXOcX8" class="uri">https://youtu.be/ZYYDhGXOcX8</a> % chi2 . % F . <a href="https://youtu.be/rC8C_e8L1xc" class="uri">https://youtu.be/rC8C_e8L1xc</a> % % % geometrica . <a href="https://youtu.be/u5lLIlxknOk" class="uri">https://youtu.be/u5lLIlxknOk</a> % ** geometrica . <a href="https://youtu.be/oiGEQTRfQLo" class="uri">https://youtu.be/oiGEQTRfQLo</a> % poisson . <a href="https://youtu.be/6ZFx954dOcM" class="uri">https://youtu.be/6ZFx954dOcM</a> % ** hipergeometrica. <a href="https://youtu.be/pKjW3jtR7YI" class="uri">https://youtu.be/pKjW3jtR7YI</a> % % binomial -uniforme . <a href="https://youtu.be/Wub6Rhacj3g" class="uri">https://youtu.be/Wub6Rhacj3g</a> % % *** binomial . <a href="https://youtu.be/VcUxRQ-fvWo" class="uri">https://youtu.be/VcUxRQ-fvWo</a> % binomial. <a href="https://youtu.be/_SJ9AhKOGVQ" class="uri">https://youtu.be/_SJ9AhKOGVQ</a> % binomial .. <a href="https://youtu.be/TrimcQJFThU" class="uri">https://youtu.be/TrimcQJFThU</a> % binomial negativa . <a href="https://youtu.be/vm1V9XZVC_Y" class="uri">https://youtu.be/vm1V9XZVC_Y</a> % ** binomial negativa. <a href="https://youtu.be/1WEEGkkIcCE" class="uri">https://youtu.be/1WEEGkkIcCE</a> %<br />
 % % % % %</p>
+</div>
+</div>
 </div>
 
 

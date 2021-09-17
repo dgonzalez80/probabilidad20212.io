@@ -64,11 +64,11 @@ c5="#BC2B6A" # MORADO
 
 ## **7. Presentaciones**
 
-Modelos de probabilidad especiales
+# **Modelos especiales**
 
 A continuación se presentan los principales conceptos teóricos de esta unidad, acompañados de ejemplos resueltos. \\
 
-Introducción
+## **Introducción**
 
 En las unidades abordadas previamente a esta se han trabajado las características de variables aleatorias tanto discretas como continuas dentro de  las cuales están: la función de distribución de probabilidad $f(x)$ , para el caso discreto y la función de densidad de probabilidad para las variables continuas. En ambos casos la función de probabilidad acumulada $F(x)$ que representa $P(X \leq x)$, el valor esperado $E[X]$, la varianza $V[X]$, y en el caso de las variables conjuntas la función de distribución conjunta y la función de densidad conjunta para los casos discreto-discreto y continuo-continuo, respectivamente $f_{_{XY}}(x,y)$. También característica de ellas como son: el valor esperado conjunto $E[XY]$ , la covarianza $Cov[XY]$ y el coeficiente de correlación  $\rho_{_{XY}}$ para las variables $X$ y $Y$. 
 
@@ -81,46 +81,37 @@ Tener una variable cuyo comportamiento se puede caracterizar tiene la ventaja de
 
 El siguiente diagrama presenta los principales modelo de probabilidad y sus diferentes relaciones
 
-\begin{center}
-	\includegraphics[scale=.14]{figure/poster3.pdf}
-	{ {\footnotesize Fuente: construccion propia. basado en Univariate Distribution Relationships  (Lawrence M. LEEMIS and Jacquelyn T. MCQUESTON)}
- \end{center}
+![](img/poster.png)
+Fuente: construcción propia. basado en Univariate Distribution Relationships  (Lawrence M. LEEMIS and Jacquelyn T. MCQUESTON)}
 
-Modelos discretos	
 
-Bernoulli
-Binomial
-Poisson
-Hipergeométrico
-Geométrico o de Pascal
-Binomial negativo
+**Algunos modelos discretos**	
 
-Modelos continuos
+|                 |                 |                 |                 |                 |                 | 
+|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
+| Bernoulli       | Binomial        | Poisson         | Hipergeométrico | Geométrico o de Pascal | Binomial negativo|
+|                 |                 |                 |                 |                 |                 | 
 
-Uniforme
-Normal 
-Exponencial
-Gamma 
-Weibull
-Cauchy
-Lognormal	 
-Beta
-Erlang
-Gumbel
-Kernel	
+**Algunos modelos continuos**
 
+|                 |                 |                 |                 |                 |                 | 
+|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
+| Uniforme        |   Normal        |  Exponencial    |  Gamma          |  Weibull        | Cauchy          |
+| Lognormal       |   Beta          | Erlang          |  Gumbel         |  Kernel	        |                 |
+|                 |                 |                 |                 |                 |                 | 
 
 
 
 A continuación se presentan los modelos más comunes con sus principales características:
 
-1. Distribuciones de tipo discreto 
+## **Distribuciones discretas** 
+
 
 Hemos clasificado como variables discretas aquellas cuyo rango $R_{X}$, corresponde a un conjunto de valores finito o infinito numerables. También es común que estas variables sean asociadas con el conteo, por lo que en su mayoría contienen la palabras **número de...**
 
 A continuación se presentan los principales modelos discretos.\\ 
 
-1.1 Distribución Bernoulli
+### **Distribución Bernoulli**
 
 Empezaremos  enunciando el modelo Bernoulli, aunque algunos autores no lo reconocen como modelo, ayuda en la compresión de los modelos siguientes. Toma  su nombre del matemático Jacob Bernoulli.\\
 
@@ -159,7 +150,8 @@ Varianza : $V[X]= pq$
 
 Un biólogo realiza una salida de campo para estudiar el comportamiento del cucarachero común. Se considera éxito si puede filmar al animal y fracaso si no puede hacerlo. Por información suministrada en artículos científicos la probabilidad de lograrlo se estima en 0.20. 
 
-cucarachero.png
+![](img/cucarachero.png)
+
 \href{https://es.wikipedia.org/wiki/Cistothorus_apolinari}{Tomado de: Wikipedia}
 
 
