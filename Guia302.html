@@ -661,7 +661,7 @@ Your browser does not support the video tag.</video>
 <tr class="odd">
 <td align="center"></td>
 <td align="center">2</td>
-<td align="center">0.050</td>
+<td align="center">0.05</td>
 <td align="center">0.10</td>
 <td align="center">0.35</td>
 </tr>
@@ -684,20 +684,6 @@ fxy</code></pre>
 <pre class="r"><code>sum(fxy)</code></pre>
 <pre><code>## [1] 1</code></pre>
 <p>El gráfico de la función de distribución conjunta se puede realizar de la siguiente forma:</p>
-<pre class="r"><code>x=c(0,0,0,1,1,1,2,2,2)
-y=c(0,1,2,0,1,2,0,1,2)
-fxy=c(0.05,0.05,0, 0.05,0.10,0.20, 0.10,0.35,0.10)
-
-plot3D::scatter3D(x, y, fxy,
-          colvar = NULL, 
-          col = &quot;blue&quot;,
-          pch = 19, cex = 1.5,
-          phi = 20, theta = 60,  
-          zlab=&quot;f(xy)&quot;, xlab=&quot;x&quot;, ylab=&quot;y&quot;,
-          bty = &quot;b2&quot;,
-          col.panel =&quot;steelblue&quot;,
-          col.grid = &quot;darkblue&quot;,
-          add_lines=TRUE)</code></pre>
 <p><img src="Guia302_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>

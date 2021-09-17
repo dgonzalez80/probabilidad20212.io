@@ -207,4 +207,104 @@ Nota: basada en : https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.htm
 ![](img/walpha2.png)
 <br/>
 
-![](img/symbolab2.png)
+![](img/symbolab2.png
+
+
+## **Otros gráficos**
+
+
+
+$$f(x,y) = \left \{ \begin{matrix} \dfrac{2}{3}\Big(x+2y\Big) & \mbox{ } 0 \leq x \leq 1\\ 
+                                     & \mbox{ } 0 \leq y \leq 1 \\
+                                     &\\
+                                   0 & \mbox{ en otro caso }\end{matrix}\right.  $$
+
+
+```{r, warning=FALSE, message=FALSE}
+library("scatterplot3d")
+x <- c(0,1,1,0,0) 
+y <- c(0,0,1,1,0) 
+z <- c(0,1,2,1,0) 
+s <- scatterplot3d(x,y,z, type='l',xlim=c(0,1),ylim=c(0,1),zlim=c(0,2), angle=45,
+                   xlab="x", ylab="y", zlab="f(x,y) ",scale.y=0.7,cex.axis=.7, cex.names = .7, lwd=3,
+                   grid=TRUE, box=TRUE,
+                   label.tick.marks=TRUE)
+
+# plano XY
+x0=c(0,1,1,0)
+y0=c(0,0,1,1)
+z0=c(0,0,0,0)
+polygon(s$xyz.convert(x0,y0,z0),col="#0000ff11") # morado claro
+
+# Funcion de densidad de probabilidad f(x,y)
+x1=c(0,1,1,0)
+y1=c(0,0,1,1)
+z1=c(0,1,2,1)
+polygon(s$xyz.convert(x1,y1,z1),col="#8080FF99") # morado 
+
+```
+
+$$P(X \geq 0.5 ; Y \geq 0.5) = \int_{0.5}^{1} \int_{0.5}^{1} \dfrac{2}{3}\Big(x+2y\Big) \:dx \:dy$$
+
+```{r, warning=FALSE, message=FALSE}
+library("scatterplot3d")
+x <- c(0,1,1,0,0) 
+y <- c(0,0,1,1,0) 
+z <- c(0,1,2,1,0) 
+s <- scatterplot3d(x,y,z, type='l',xlim=c(0,1),ylim=c(0,1),zlim=c(0,2), angle=45,
+                   xlab="x", ylab="y", zlab="f(x,y) ",scale.y=0.7,cex.axis=.7, cex.names = .7,lwd=2,
+                   grid=TRUE, box=TRUE,
+                   label.tick.marks=TRUE)
+
+# plano fxy - techo  
+x4=c(.5,1,1,.5)
+y4=c(.5,.5,1,1)
+z4=c(1 ,1.5,2,1.5)
+polygon(s$xyz.convert(x4,y4,z4),col="#0000ff22", lwd=4)  #violeta
+
+# frente 
+x5=c(0.5,1,1,0.5)
+y5=c(0.5,0.5,0.5,0.5)
+z5=c(0,0,1.5,1)
+polygon(s$xyz.convert(x5,y5,z5),col="#80FFFF99",lwd=4) # azul claro
+
+# lateral derecho 
+x6=c(1,1,1,1)
+y6=c(.5,1,1,.5)
+z6=c(0,0,2,1.5)
+polygon(s$xyz.convert(x6,y6,z6),col="#80FFFF99",lwd=4) # azul claro
+
+# lateral izquierdo si va transparente
+x7=c(.5,.5,.5,.5)
+y7=c(.5,1,1,.5)
+z7=c(0,0,1.5,1)
+polygon(s$xyz.convert(x7,y7,z7)) # 
+
+```
+
+
+
+
+```{r}
+# tomada de:
+# http://pj.freefaculty.org/R/WorkingExamples/plot-3d-MVNormal-1.R
+library("mvtnorm")
+
+N=50
+x <- seq(-3,3, length=N)
+y <- seq(-3,3,length=N)
+z <- matrix(0, N, N)
+for (i in 1:N) for (j in 1:N) {
+  z[i,j]=dmvnorm(c(x[i],y[j]), c(0,0),
+        matrix(c(1,0.5,0.5,1),2,2))}
+persp(x,y,z,theta=20, phi=15, 
+      xlab="x", 
+      ylab="y", 
+      zlab="f(x,y)",
+      scale=TRUE,
+      expand=.4,
+      axes=TRUE,
+      col="#007FFF")
+```
+
+
