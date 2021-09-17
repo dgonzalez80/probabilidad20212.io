@@ -551,13 +551,20 @@ data(cars)  # data set cars</code></pre>
 <li>variables con cadenas escritas de diferente forma, p.ej.: casa, CASA, Casa. esta revisión la podemos hacer rápidamente con la función <em>summary()</em></li>
 </ul>
 <pre class="r"><code>summary(iris)</code></pre>
-<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species  
-##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100   setosa    :50  
-##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300   versicolor:50  
-##  Median :5.800   Median :3.000   Median :4.350   Median :1.300   virginica :50  
-##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199                  
-##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800                  
-##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500</code></pre>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
 <pre class="r"><code>summary(cars)</code></pre>
 <pre><code>##      speed           dist       
 ##  Min.   : 4.0   Min.   :  2.00  
@@ -566,30 +573,62 @@ data(cars)  # data set cars</code></pre>
 ##  Mean   :15.4   Mean   : 42.98  
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
-<pre><code>##  fecha_reporte_web  id_de_caso        fecha_de_notificaci_n departamento       departamento_nom   ciudad_municipio   ciudad_municipio_nom      edad        unidad_medida          sexo          
-##  Min.   :NA        Length:4901163     Min.   :NA            Length:4901163     Length:4901163     Length:4901163     Length:4901163       Min.   :  1.00   Length:4901163     Length:4901163    
-##  1st Qu.:NA        Class :character   1st Qu.:NA            Class :character   Class :character   Class :character   Class :character     1st Qu.: 27.00   Class :character   Class :character  
-##  Median :NA        Mode  :character   Median :NA            Mode  :character   Mode  :character   Mode  :character   Mode  :character     Median : 37.00   Mode  :character   Mode  :character  
-##  Mean   :NA                           Mean   :NA                                                                                          Mean   : 39.53                                        
-##  3rd Qu.:NA                           3rd Qu.:NA                                                                                          3rd Qu.: 52.00                                        
-##  Max.   :NA                           Max.   :NA                                                                                          Max.   :114.00                                        
-##  NA&#39;s   :4901163                      NA&#39;s   :4901163                                                                                                                                           
-##  fuente_tipo_contagio  ubicacion            estado          pais_viajo_1_cod   pais_viajo_1_nom    recuperado        fecha_inicio_sintomas fecha_diagnostico fecha_recuperado 
-##  Length:4901163       Length:4901163     Length:4901163     Length:4901163     Length:4901163     Length:4901163     Min.   :NA            Min.   :NA        Min.   :NA       
-##  Class :character     Class :character   Class :character   Class :character   Class :character   Class :character   1st Qu.:NA            1st Qu.:NA        1st Qu.:NA       
-##  Mode  :character     Mode  :character   Mode  :character   Mode  :character   Mode  :character   Mode  :character   Median :NA            Median :NA        Median :NA       
-##                                                                                                                      Mean   :NA            Mean   :NA        Mean   :NA       
-##                                                                                                                      3rd Qu.:NA            3rd Qu.:NA        3rd Qu.:NA       
-##                                                                                                                      Max.   :NA            Max.   :NA        Max.   :NA       
-##                                                                                                                      NA&#39;s   :4901163       NA&#39;s   :4901163   NA&#39;s   :4901163  
-##  tipo_recuperacion    per_etn_          nom_grupo_         fecha_muerte     confirmados          fallecidos   
-##  Length:4901163     Length:4901163     Length:4901163     Min.   :NA        Length:4901163     Min.   :0.000  
-##  Class :character   Class :character   Class :character   1st Qu.:NA        Class :character   1st Qu.:0.000  
-##  Mode  :character   Mode  :character   Mode  :character   Median :NA        Mode  :character   Median :0.000  
-##                                                           Mean   :NA                           Mean   :0.026  
-##                                                           3rd Qu.:NA                           3rd Qu.:0.000  
-##                                                           Max.   :NA                           Max.   :1.000  
-##                                                           NA&#39;s   :4901163                      NA&#39;s   :17338</code></pre>
+<pre><code>##  fecha_reporte_web  id_de_caso        fecha_de_notificaci_n departamento      
+##  Min.   :NA        Length:4901163     Min.   :NA            Length:4901163    
+##  1st Qu.:NA        Class :character   1st Qu.:NA            Class :character  
+##  Median :NA        Mode  :character   Median :NA            Mode  :character  
+##  Mean   :NA                           Mean   :NA                              
+##  3rd Qu.:NA                           3rd Qu.:NA                              
+##  Max.   :NA                           Max.   :NA                              
+##  NA&#39;s   :4901163                      NA&#39;s   :4901163                         
+##  departamento_nom   ciudad_municipio   ciudad_municipio_nom      edad       
+##  Length:4901163     Length:4901163     Length:4901163       Min.   :  1.00  
+##  Class :character   Class :character   Class :character     1st Qu.: 27.00  
+##  Mode  :character   Mode  :character   Mode  :character     Median : 37.00  
+##                                                             Mean   : 39.53  
+##                                                             3rd Qu.: 52.00  
+##                                                             Max.   :114.00  
+##                                                                             
+##  unidad_medida          sexo           fuente_tipo_contagio  ubicacion        
+##  Length:4901163     Length:4901163     Length:4901163       Length:4901163    
+##  Class :character   Class :character   Class :character     Class :character  
+##  Mode  :character   Mode  :character   Mode  :character     Mode  :character  
+##                                                                               
+##                                                                               
+##                                                                               
+##                                                                               
+##     estado          pais_viajo_1_cod   pais_viajo_1_nom    recuperado       
+##  Length:4901163     Length:4901163     Length:4901163     Length:4901163    
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##                                                                             
+##                                                                             
+##                                                                             
+##                                                                             
+##  fecha_inicio_sintomas fecha_diagnostico fecha_recuperado  tipo_recuperacion 
+##  Min.   :NA            Min.   :NA        Min.   :NA        Length:4901163    
+##  1st Qu.:NA            1st Qu.:NA        1st Qu.:NA        Class :character  
+##  Median :NA            Median :NA        Median :NA        Mode  :character  
+##  Mean   :NA            Mean   :NA        Mean   :NA                          
+##  3rd Qu.:NA            3rd Qu.:NA        3rd Qu.:NA                          
+##  Max.   :NA            Max.   :NA        Max.   :NA                          
+##  NA&#39;s   :4901163       NA&#39;s   :4901163   NA&#39;s   :4901163                     
+##    per_etn_          nom_grupo_         fecha_muerte     confirmados       
+##  Length:4901163     Length:4901163     Min.   :NA        Length:4901163    
+##  Class :character   Class :character   1st Qu.:NA        Class :character  
+##  Mode  :character   Mode  :character   Median :NA        Mode  :character  
+##                                        Mean   :NA                          
+##                                        3rd Qu.:NA                          
+##                                        Max.   :NA                          
+##                                        NA&#39;s   :4901163                     
+##    fallecidos   
+##  Min.   :0.000  
+##  1st Qu.:0.000  
+##  Median :0.000  
+##  Mean   :0.026  
+##  3rd Qu.:0.000  
+##  Max.   :1.000  
+##  NA&#39;s   :17338</code></pre>
 <p>Por otro lado la función <em>View()</em> permite visualizar la base en una ventana de manera separada</p>
 <pre class="r"><code>View(Colombia)  </code></pre>
 <pre class="r"><code>View(iris</code></pre>

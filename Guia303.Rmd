@@ -155,7 +155,7 @@ Un biólogo realiza una salida de campo para estudiar el comportamiento del cuca
 \href{https://es.wikipedia.org/wiki/Cistothorus_apolinari}{Tomado de: Wikipedia}
 
 
-***Solución** 
+**Solución** 
 
 Se requiere examinar si dentro de este contexto existe una variable que proceda de un experimento Bernoulli y ese caso como se podría caracterizar.
 

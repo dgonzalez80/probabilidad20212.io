@@ -694,39 +694,7 @@ f_{_{X,Y}}(x,y)=\left\lbrace
 \right.
 \end{equation*}$$
 
-```{r, echo=FALSE}
-library("scatterplot3d")
 
-x=c(0,0,1)
-y=c(0,1,0)
-z=c(0,0,0)
-
-
-
-x2=c(0,0,1)
-y2=c(0,1,0)
-z2=c(2,2,2)
-
-x3=c(0,1,1,0)
-y3=c(1,0,0,1)
-z3=c(0,0,2,2)
-
-# rango del frente
-x4=c(0,1,1,0)
-y4=c(0,0,0,0)
-z4=c(0,0,2,2)
-
-s <- scatterplot3d(x,y,z, type='l',xlim=c(0,1),ylim=c(0,1),zlim=c(0,2), angle=45,
-                   xlab="x", ylab="y", zlab="f(x,y)",scale.y=1,
-                   label.tick.marks=FALSE, las=1, box = FALSE) # cubo
-
-
-polygon(s$xyz.convert(x,y,z),border = "blue",lwd = 1,col="#8080FF99")  # triangulo base
-polygon(s$xyz.convert(x2,y2,z2),border = "blue",lwd = 2,col="#6666FF")  # triangulo techo
-polygon(s$xyz.convert(x3,y3,z3), border = "blue",lwd = 1)  # pared diagonal
-polygon(s$xyz.convert(x4,y4,z4), border = "blue",lwd = 1)  # pared diagonal
-
-```
 
 
 a) ¿Qué porcentaje de las muestras seleccionadas aleatoriamente tienen menos del setenta y cinco por ciento de ambas sustancias?
@@ -762,7 +730,8 @@ c) Cien paquetes contienen menos de seis kilogramos de maní, ¿cuántos de ello
 
 d) Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos de chocolate, ¿cuántos de ellos contienen más de ocho kilogramos de maní?
 
-	
+<br/><br/>	
+[**Solución Taller 322**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller322.pdf)
 
 <br/><br/><br/>
 
