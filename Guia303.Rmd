@@ -64,11 +64,11 @@ c5="#BC2B6A" # MORADO
 
 ## **7. Presentaciones**
 
-\textcolor{col4}{\LARGE \bf Modelos de probabilidad especiales}    \\
+Modelos de probabilidad especiales
 
 A continuación se presentan los principales conceptos teóricos de esta unidad, acompañados de ejemplos resueltos. \\
 
-\textcolor{col4}{\LARGE \bf Introducción}\\
+Introducción
 
 En las unidades abordadas previamente a esta se han trabajado las características de variables aleatorias tanto discretas como continuas dentro de  las cuales están: la función de distribución de probabilidad $f(x)$ , para el caso discreto y la función de densidad de probabilidad para las variables continuas. En ambos casos la función de probabilidad acumulada $F(x)$ que representa $P(X \leq x)$, el valor esperado $E[X]$, la varianza $V[X]$, y en el caso de las variables conjuntas la función de distribución conjunta y la función de densidad conjunta para los casos discreto-discreto y continuo-continuo, respectivamente $f_{_{XY}}(x,y)$. También característica de ellas como son: el valor esperado conjunto $E[XY]$ , la covarianza $Cov[XY]$ y el coeficiente de correlación  $\rho_{_{XY}}$ para las variables $X$ y $Y$. 
 
@@ -77,7 +77,7 @@ $$f(x)= \frac{1}{50}e^{-(\frac{x}{50})} $$
 
 Llamado exponencial, puede ser estudiado y asociado a sucesos que ocurren diariamente a nuestro alrededor.
 
-Tener una variable cuyo comportamiento se puede caracterizar tiene la ventaja de conocer fácilmente el recorrido teórico en la construcción del modelo, las propiedades, tendencias, valor esperado, varianza, función de distribución, estimadores de sus parámetros, alternativas que facilitan el cálculo de probabilidades, su afinidad con otras variables, entre otras, características que facilitan actividades como la simulación. \\
+Tener una variable cuyo comportamiento se puede caracterizar tiene la ventaja de conocer fácilmente el recorrido teórico en la construcción del modelo, las propiedades, tendencias, valor esperado, varianza, función de distribución, estimadores de sus parámetros, alternativas que facilitan el cálculo de probabilidades, su afinidad con otras variables, entre otras, características que facilitan actividades como la simulación. 
 
 El siguiente diagrama presenta los principales modelo de probabilidad y sus diferentes relaciones
 
@@ -86,103 +86,92 @@ El siguiente diagrama presenta los principales modelo de probabilidad y sus dife
 	{ {\footnotesize Fuente: construccion propia. basado en Univariate Distribution Relationships  (Lawrence M. LEEMIS and Jacquelyn T. MCQUESTON)}
  \end{center}
 
-\begin{center}
-	\begin{tabular}{l|ll}
-	\hline 
-\textcolor{col4}{\bf  Modelos discretos} & \textcolor{col5}{\bf Modelos continuos} & \\	
-\hline
-\begin{tabular}{l}
-	\textcolor{col4}{\bf Bernoulli}\\
-	\textcolor{col4}{\bf Binomial}\\
-	\textcolor{col4}{\bf Poisson}\\
-	\textcolor{col4}{\bf Hipergeométrico}\\
-	\textcolor{col4}{\bf Geométrico o de Pascal}\\
-	\textcolor{col4}{\bf Binomial negativo}\\
-\end{tabular}
-&
-\begin{tabular}{l}
- \textcolor{col5}{\bf Uniforme}\\
- \textcolor{col5}{\bf Normal }\\
- \textcolor{col5}{\bf Exponencial} \\
- \textcolor{col5}{\bf Gamma }\\
- \textcolor{col5}{\bf Weibull} \\
-\end{tabular}
-&
+Modelos discretos	
 
-\begin{tabular}{l}
- \textcolor{col5}{\bf Cauchy}\\
-\textcolor{col5}{\bf Lognormal}\\	 
-\textcolor{col5}{\bf Beta}\\
-\textcolor{col5}{\bf Erlang}\\
-\textcolor{col5}{\bf Gumbel}\\
-\textcolor{col5}{\bf Kernel}\\	
-\end{tabular}
-\\
-\hline 
-\end{tabular}
-\end{center}
+Bernoulli
+Binomial
+Poisson
+Hipergeométrico
+Geométrico o de Pascal
+Binomial negativo
+
+Modelos continuos
+
+Uniforme
+Normal 
+Exponencial
+Gamma 
+Weibull
+Cauchy
+Lognormal	 
+Beta
+Erlang
+Gumbel
+Kernel	
 
 
 
-A continuación se presentan los modelos más comunes con sus principales características:\\
 
-\textcolor{col4}{\LARGE  \bf 1. Distribuciones de tipo discreto }\\
+A continuación se presentan los modelos más comunes con sus principales características:
 
-%----------------------------------------------------------------------
-Hemos clasificado como variables discretas aquellas cuyo rango $R_{X}$, corresponde a un conjunto de valores finito o infinito numerables. También es común que estas variables sean asociadas con el conteo, por lo que en su mayoría contienen la palabras {\bf número de...} \\
+1. Distribuciones de tipo discreto 
+
+Hemos clasificado como variables discretas aquellas cuyo rango $R_{X}$, corresponde a un conjunto de valores finito o infinito numerables. También es común que estas variables sean asociadas con el conteo, por lo que en su mayoría contienen la palabras **número de...**
 
 A continuación se presentan los principales modelos discretos.\\ 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage 
-\vspace{.5cm}
-\textcolor{col4}{\LARGE  \bf 1.1 Distribución Bernoulli}\\
+1.1 Distribución Bernoulli
 
 Empezaremos  enunciando el modelo Bernoulli, aunque algunos autores no lo reconocen como modelo, ayuda en la compresión de los modelos siguientes. Toma  su nombre del matemático Jacob Bernoulli.\\
 
-\begin{Box2}{Distribución Bernoulli}
-	\vspace{.3cm}	
-	Una variable que se distribuye Bernoulli, procede de un experimento Bernoulli, descrito por las siguientes características:
-	\begin{itemize}
-		\item El experimento consta de un ensayo.
-		\item El ensayo solo tiene dos posible resultados: éxito (E), fracaso (F).
-		\item La probabilidad de éxito es $p$, la probabilidad de fracaso es $1-p=q$ 
-	\end{itemize}
-	La variable objeto de estudio es $X$: hay o no éxito éxitos en un ensayo de Bernoulli. Sus principales características son:
-	\begin{itemize}
-		\item Rango : $R_{X}=\{0,1 \}$,
-		\item Función de distribución de probabilidad $
-		%	\begin{equation*}
+Distribución Bernoulli
+		
+Una variable que se distribuye Bernoulli, procede de un experimento Bernoulli, descrito por las siguientes características:
+	
+* El experimento consta de un ensayo.
+
+* El ensayo solo tiene dos posible resultados: éxito (E), fracaso (F).
+
+* La probabilidad de éxito es $p$, la probabilidad de fracaso es $1-p=q$ 
+
+La variable objeto de estudio es $X$: hay o no éxito éxitos en un ensayo de Bernoulli. Sus principales características son:
+
+Rango : $R_{X}=\{0,1 \}$,
+Función de distribución de probabilidad $
+
+$\begin{equation*}
 		f(x)=\left\lbrace
 		\begin{array}{lll}
 			p & \mbox{si } x=1   \\
 			q & \mbox{si } x=0
 		\end{array}
 		\right.
-		%	\end{equation*}
-		$
-		\item Valor esperado : $E[X]= p$
-		\item Varianza : $V[X]= pq$
-	\end{itemize}
-\end{Box2}
+\end{equation*}$
 
-%ejemplo 1 ================================================================================
-\vspace{.5cm} 
-\textcolor{col3}{\bf \large Ejemplo 1.}\\  
-Un biólogo realiza una salida de campo para estudiar el comportamiento del cucarachero común. Se considera éxito si puede filmar al animal y fracaso si no puede hacerlo. Por información suministrada en artículos científicos la probabilidad de lograrlo se estima en 0.20. \\
-\begin{center}
-	\includegraphics[scale=.3]{cucarachero}\\
-	\href{https://es.wikipedia.org/wiki/Cistothorus_apolinari}{Tomado de: Wikipedia}
-\end{center}
+Valor esperado : $E[X]= p$
 
-\textcolor{col3}{\bf \large Solución }\\
-Se requiere examinar si dentro de este contexto existe una variable que proceda de un experimento Bernoulli y ese caso como se podría caracterizar.\\
+Varianza : $V[X]= pq$
 
- Primero es necesario revisar las características de un experimento Bernoulli y confrontarlas contra el contexto presentado en el ejemplo. \\
+
+
+ 
+**Ejemplo 1**
+
+Un biólogo realiza una salida de campo para estudiar el comportamiento del cucarachero común. Se considera éxito si puede filmar al animal y fracaso si no puede hacerlo. Por información suministrada en artículos científicos la probabilidad de lograrlo se estima en 0.20. 
+
+cucarachero.png
+\href{https://es.wikipedia.org/wiki/Cistothorus_apolinari}{Tomado de: Wikipedia}
+
+
+***Solución** 
+
+Se requiere examinar si dentro de este contexto existe una variable que proceda de un experimento Bernoulli y ese caso como se podría caracterizar.
+
+ Primero es necesario revisar las características de un experimento Bernoulli y confrontarlas contra el contexto presentado en el ejemplo. 
 
 Primero existe un solo ensayo o salida de campo, durante después de la salida de campo se pueden obtener dos resultados posibles: lograr el objetivo de visualizar y filmar al animal (Éxito) y por otro lado el no lograrlo (Fracaso). También se posee la probabilidad de éxito ($0.20$), este caso establecida mediante el enfoque subjetivo de un experto en un artículo científico. Lo anterior nos permite poder asociar la variable que llamaremos $X$ asociada con el poder o no realizar la filmación.
 
-La variable aleatoria se define en este caso como:\\
+La variable aleatoria se define en este caso como:
 
 $
 X =\left\lbrace
@@ -198,32 +187,25 @@ y su función de distribución de probabilidad está dada por:
 $$f(x)= 0.2^{x} (1-0.2)^{1-x} ,\text{ si } x=0,1.$$
 
 $$ E[X]=p =0.20 \hspace{.5cm} V[X] =p(1-p)= 0.16$$
-\\
-\vspace{.5cm}
-%====================================================================================
-%\newpage
-%\vspace{1cm}
+1.2 Distribución binomial 
 
-\textcolor{col4}{\LARGE  \bf 1.2 Distribución binomial }\\
+El segundo modelo que abordaremos corresponde al modelo binomial, que puede verse como una generalización del modelo Bernoulli, pasando de un ensayo a $n$ ensayos. Fue investigada y analizada por el físico y matemático suizo Jakob Bernoulli en relación con problemas presentados en los juegos de azar. Su trabajo fue presentado en 1713. 
 
-El segundo modelo que abordaremos corresponde al modelo binomial, que puede verse como una generalización del modelo Bernoulli, pasando de un ensayo a $n$ ensayos. Fue investigada y analizada por el físico y matemático suizo Jakob Bernoulli en relación con problemas presentados en los juegos de azar. Su trabajo fue presentado en 1713. \\
-
-\begin{Box2}{Distribución binomial}
+Distribución binomial
 	
 	Una variable con distribución binomial es aquella que procede de un experimento binomial. 
 	
 	Ahora un experimento binomial tiene las siguientes características: 
 	
-	\begin{itemize}
-		\item El experimento consta de $n$ ensayos 
-		\item Cada ensayo tiene solo dos posible resultados: éxito (E) o fracaso (F) (experimento Bernoulli),
-		\item La probabilidad de éxito es igual a $p$ y se mantiene fija para todos los ensayos P(E). La probabilidad de fracaso es $(1-p)=q$,
-		\item Los ensayos son independientes,
-		\item La variable objeto de estudio $X$, corresponde al número de éxitos obtenidos en los $n$ ensayos.
-	\end{itemize}
-	Se puede decir que la suma de $n$ variables independientes con distribución Bernoulli($p$), se distribuye de manera Bionomial($n,p$)
+El experimento consta de $n$ ensayos 
+Cada ensayo tiene solo dos posible resultados: éxito (E) o fracaso (F) (experimento Bernoulli),
+La probabilidad de éxito es igual a $p$ y se mantiene fija para todos los ensayos P(E). La probabilidad de fracaso es $(1-p)=q$,
+Los ensayos son independientes,
+La variable objeto de estudio $X$, corresponde al número de éxitos obtenidos en los $n$ ensayos.
+
+Se puede decir que la suma de $n$ variables independientes con distribución Bernoulli($p$), se distribuye de manera Bionomial($n,p$)
 	
-	La función de distribución de probabilidad está dada por:
+La función de distribución de probabilidad está dada por:
 	
 	\begin{equation*}
 		f(x)=\left\lbrace
@@ -235,10 +217,10 @@ El segundo modelo que abordaremos corresponde al modelo binomial, que puede vers
 		\right.
 	\end{equation*}
 	
-	$$E[X]=np \hspace{.5cm} V[X]= np(1-p) $$
-\end{Box2}
+$$E[X]=np \hspace{.5cm} V[X]= np(1-p) $$
 
-%ejemplo 2 ================================================================================
+
+Ejemplo 2 
 \vspace{.5cm} 
 \textcolor{col3}{\bf \large Ejemplo 2.} \\
 Un sistema de seguridad para casas está diseñado para tener una confiabilidad del 90\% . Suponga que nueve casas equipadas con este dispositivo sufrieron tentativa de robo. Se requiere calcular la probabilidad de que en siete de las nueve, la alarma se activará. \\

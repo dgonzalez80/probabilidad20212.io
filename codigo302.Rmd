@@ -186,11 +186,12 @@ basado en : http://homepages.math.uic.edu/~jyang06/stat401/handouts/handout8.pdf
 Ahora su representación gráfica
 
 ```{r}
-x=seq(0,1,length=10)
-y=seq(0,1,length=10)
+x=seq(0,1,length=20)
+y=seq(0,1,length=20)
 fxy=function(x,y){3/2*(x^2+y^2)}
 z=outer(x, y, fxy)
 persp(x,y,z,theta = 30, phi = 30,expand=0.5, col = "orange",
+      xlab = "x", ylab ="y", zlab = "f(x,y)",
       main=" ", col.main="blue")
 
 ```

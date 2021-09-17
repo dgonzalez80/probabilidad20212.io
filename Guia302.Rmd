@@ -766,7 +766,14 @@ d) Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos d
 
 <br/><br/><br/>
 
-# **4. Video**
+# **4. Videos**
+
+<br/><br/>
+
+## **Caso Discreto-Discreto**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gvzybhu8GZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## **Caso Continua-Continua**
 
@@ -774,5 +781,5 @@ d) Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos d
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YYgn3BBqfuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+<br/><br/>
 
