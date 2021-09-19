@@ -116,7 +116,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 A continuación se presentan los principales conceptos teóricos de esta unidad, acompañados de ejemplos resueltos. 
 
-## **2.1 Introducción**
+**Introducción**
 
 <br/><br/>
 
@@ -141,7 +141,7 @@ Fuente: construcción propia. basado en Univariate Distribution Relationships  (
 
 <br/><br/>
 
-# **2.2 Algunos modelos discretos**	
+# **2.1 Algunos modelos discretos**	
 
 <br/>
 
@@ -161,7 +161,7 @@ A continuación se presentan los principales modelos discretos.\\
 
 <br/><br/>
 
-## **2.2.1 Bernoulli**
+## **2.1.1 Bernoulli**
 
 <br/>
 
@@ -241,7 +241,7 @@ $$V[X] =p(1-p)= 0.16$$
 <br/><br/>
 
 
-## **2.2.2 binomial** 
+## **2.1.2 binomial** 
 
 <br/>
 
@@ -348,7 +348,7 @@ fig_binom.pdf
 <br/><br/>
 
 
-## **2.2.3 Poisson**
+## **2.1.3 Poisson**
 
 <br/>
 
@@ -434,7 +434,7 @@ dpois(0,2)
 
 <br/><br/>
 
-## **2.2.4 hipergeometrica**
+## **2.1.4 hipergeometrica**
 
 Este modelo nace de la necesidad de modelar eventos Bernoulli con probabilidad no constante generados en elecciones sin repetición. 
 
@@ -499,7 +499,7 @@ $\begin{eqnarray*}
 
 <br/><br/>
 
-## **2.2.5 geométrica o de Pascal**
+## **2.1.5 geométrica o de Pascal**
 
 La distribución geométrica también conocida como distribución de Pascal, fue esbozada en el escrito El arte de la conjetura, escrita por Jakob Bernoulli. Esta distribución modela el número de ensayos Bernoulli necesarios para obtener el primer éxito. Los valores que puede tomar esta variable son:
 
@@ -581,7 +581,7 @@ $$\begin{eqnarray*}
 
 <br/><br/>
 
-## **2.2.6 binomial negativa**
+## **2.1.6 binomial negativa**
 
 <br/>
 
@@ -650,7 +650,7 @@ Un sitio Web está soportado por tres servidores idénticos. Sólo uno de ellos 
 $$E[X]=\dfrac{3}{0.0005}= 6000 $$
 <br/><br/>
 
-# **2.3 Algunos modelos continuos**
+# **2.2 Algunos modelos continuos**
 
 Las variables continuas proceden en su mayoría de la medición y se clasifican así debido a que su rango esta formado por un conjunto infinito no numerable. A continuación se presentan los principales modelos continuos.
 
@@ -665,7 +665,7 @@ Las variables continuas proceden en su mayoría de la medición y se clasifican 
 
 <br/><br/>
 
-## **2.3.1 uniforme**
+## **2.2.1 uniforme**
 
 <br/>
 
@@ -716,7 +716,7 @@ En la fabricación de portaobjetos, que son láminas rectangulares de vidrio muy
 
 <br/><br/>
 
-## **2.3.2 normal**
+## **2.2.2 normal**
 
 La distribución normal es uno de los modelos más utilizados en las aplicaciones de la Estadística. Estas aplicaciones están relacionadas con:
 
@@ -837,7 +837,7 @@ pnorm(c(35), mean=30, sd=5, lower.tail=TRUE)
 <br/><br/>
 
 
-## **2.3.3 exponencial** 
+## **2.2.3 exponencial** 
 
 Este modelo fue  planteado por el matemático estadístico e ingeniero Agner Kraru Erlang, experto en el trafico de las comunicaciones y la teoría de colas. 
 Distribución utilizada para modelar el tiempo entre dos eventos consecutivos. 
@@ -939,7 +939,7 @@ Con las siguientes propiedades:
 
 <br/><br/>
 
-# **2.3.4 gamma**
+## **2.2.4 gamma**
 
 Esta distribución tiene su origen en la familia de curvas sesgadas propuestas por Karl Pearson. Esta distribución es otra alternativa para modelar los tiempos de espera de ocurrencia de sucesos o eventos. En ocasiones puede relacionarse con la suma de los tiempos de variables exponenciales sucesivas con igual media.
 
@@ -1012,7 +1012,7 @@ $$\begin{eqnarray*}
 
 <br/><br/>
 
-## **2.3.5 Weibull** 
+## **2.2.5 Weibull** 
 
 Esta distribución fue descubierta Maurice Frechet matemático francés y luego trabajada por  Rosin y Rammler quienes en 1933 estudiaron el tamaño de una partícula y posteriormente recibe su nombre del  ingeniero y matemático Waloddi Weibull . Esta distribución se utiliza para modelar el tiempo de vida de algunos componentes. La Weibull tiene dos parámetros $\alpha$ y $\beta$. Su función de distribución y sus principales características son:
 
