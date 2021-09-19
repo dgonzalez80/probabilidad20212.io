@@ -46,15 +46,6 @@ navbar:
           href: Guia302.html  
         - text: "Guía 3.3"
           href: Guia303.html
-        - text: "Simulación"
-          href: simulacion.html
-        - text: "Actividad 331"
-          href: actividad331.html
-        - text: "Actividad 332"
-          href: actividad332.html
-          
-          
-          
     - text: "Módulo 4"
       menu:
         - text: "Módulo 4"
@@ -90,7 +81,15 @@ navbar:
           href: codigo301.html
         - text: "Código u3.2"
           href: codigo302.html
-
+        - text: "Simulación"
+          href: simulacion.html 
+    - text: "Actividades"
+      icon: fa-code
+      menu: 
+        - text: "Actividasd 331"
+          href: actividad331.html
+        - text: "Actividad 332"
+          href: actividad332.html
 output:
   html_document:
     theme: cosmos
