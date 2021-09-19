@@ -1,0 +1,244 @@
+---
+title: "Simulacion"
+author: "dgonzalez80"
+date: " "
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# **3. Simulación**
+
+Uso de los modelos estadísticos en simulación
+
+Empezaremos por recordar algunas instrucciones en R
+
+En **R** los nombres de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes: la primera parte con el propósito de la función (primera letra)  y la segunda parte hace referencia al modelo a utilizar (**d** **binom** para el calculo de probabilidad de una variable aleatoria con distribución binomial)
+
+
+En cada caso si no recuerda las sintaxis de la función puede hacer uso de las ayudas de R así:
+
+
+```{r}
+ help("pbinom")
+```
+
+<br/><br/>
+
+|          |                                           |
+|:--------:|:------------------------------------------|
+|	p        | función de distribución acumulada $F(x)$  |
+|	q        | percentil                                 |  
+|	d        | densidad de probabilidad $P(X=x)$         |
+|	r        | variable aleatoria                        |
+
+<br/><br/>
+
+**Ejemplo 11**
+
+Sea una variables con distribución binomial con parámetros $n=20$ y $p=0.30$ , lo cual se puede simbolizar como : $X\sim b(x; 20,0.30)$ 
+
+En este caso se requieren realizar los siguientes procesos:
+
+<br/>
+
+1. Calcular la probabilidad de $$ P(X=7) = \dbinom{20}{7} 0.30^{7} (10.30)^{(20-7)}$$
+
+```{r}
+dbinom(7, 20, 0.30)
+```
+
+<br/>
+
+2. Calcular la probabilidad acumulada $$P(X \leq 7) = \displaystyle\sum_{x=0}^{x=7} \dbinom{20}{x} 0.30^{x} (1-0.30)^{(20-x)}$$
+
+```{r}
+pbinom(7, 20, 0.30)
+```
+
+<br/>
+
+3. Construir la tabla de los  valores de $f(x)$ y $F(x)$ para todo el rango de la variable
+
+```{r}
+x=0:20                     # genera secuencia 0 al 20
+fx=dbinom(x, 20, 0.30)     # evalua f(x)
+fx=round(fx,4)             # redondea a 4 decimales
+Fx=pbinom(x, 20, 0.30)     # evalua en F(x)
+Fx=round(Fx,4)             # redondea a 4 decimales
+data.frame(x,fx,Fx)        # construye tabla
+```
+
+<br/>
+
+4. Generar 15 números aleatorios a partir de esta distribución 
+
+```{r}
+rbinom(15,20,0.30)
+```
+
+<br/>
+
+5. Construir la gráfica de la función de distribución de probabilidad $f(x)$ para $X$ 
+
+```{r}
+plot(x,dbinom(x,20,0.30), "h", 
+	ylab="f(x)", col="red")
+```
+
+<br/>
+
+6. Construir la gráfica de la función de distribución acumulada   $F(x)$
+
+
+```{r}
+	plot(x,pbinom(x,20,0.30), "s", 
+	ylab="f(x)", col="red")
+```
+
+<br/>
+
+7. Para construir una gráfica mas elaborada se puede utilizar el siguiente código
+
+
+```{r}
+library(ggplot2)
+x=0:9
+fx=dbinom(x,9,0.90)
+dat=data.frame(x,fx)
+	
+ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
+       	scale_x_continuous(limits = c(0, 20),
+	      breaks = 0:20, 
+      	labels = c('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14', '15','16','17','18','19','20'))
+```
+
+
+<br/><br/>
+
+**Ejemplo  12**
+
+Ahora supongamos que se tiene una variable continua con distribución normal, con media 50 y varianza 100, es decir desviación estándar 10, lo cual se puede representar como $X\sim N(50,100)$\\. 
+
+En este caso vamos a hallar los siguientes valores: 
+
+<br/>
+
+1. Calcular la probabilidad de que un valor de $X$ sea menor o igual a 70, 
+$$P(X<70) =\displaystyle\int_{-\infty}^{70} \dfrac{1}{\sqrt{200 \pi }} \exp{\frac{1}{200 }(x-50)^{2}} \:dx$$ \\
+
+```{r}
+ pnorm(70,50,sqrt(100))
+```
+
+<br/>
+
+2. Calcular la probabilidad de que la variable sea mayor a 70: $P(X>70)$
+
+```{r}
+pnorm(70,50,sqrt(100),lower.tail=FALSE)
+```
+
+<br/>
+
+3. Genere 10 números aleatorios de la variables $X$
+
+
+```{r}
+rnorm(10,70,sqrt(100))
+```
+
+
+<br/>
+
+4. Generar la gráfica de la función de densidad de la variable $X$,  $f(x)$
+
+```{r}
+curve(dnorm(x,50,sqrt(100)), from=20, to=80, 
+col="red", main="Distribución Normal(50,100)",
+ylab="f(x)")
+```
+
+<br/>
+
+5. Generar la gráfica de la función de probabilidad acumulada de la variable $X$,  $F(x)$
+
+```{r}
+curve(pnorm(x,50,sqrt(100)), from=20, to=80, 
+col="red", main="Distribución Normal(50,100)",
+ylab="f(x)")
+```
+
+<br/>
+
+6. Para realizar un gráfico mas elaborado podemos utilizar el siguiente código
+
+```{r, echo=FALSE}
+# install.package("ggfortify")
+library(ggfortify)
+ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,fill = 'blue')
+```
+
+
+<br/>
+
+Por otro lado el proceso de simulación de variables estadisticas esta relacionado con los experimentos llamados de  Montecarlo, a continuación se describe brevemente su origen. 
+
+## **3.1 Método de Montecarlo**  
+
+Es un método no determinista o estadístico numérico, usado para aproximar expresiones matemáticas complejas y costosas de evaluar con exactitud. El método se llamó así en referencia al Casino de Montecarlo (Mónaco) por ser “la capital del juego de azar”, al ser la ruleta un generador simple de números aleatorios. El nombre y el desarrollo sistemático de los métodos de Montecarlo datan aproximadamente de 1944 y se mejoraron enormemente con el desarrollo de la computadora.  
+
+El uso de los métodos de Montecarlo como herramienta de investigación, proviene del trabajo realizado en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial en el Laboratorio Nacional de Los Álamos en EE. UU. Este trabajo conllevaba la simulación de problemas probabilísticos de hidrodinámica concernientes a la difusión de neutrones en el material de fisión. Esta difusión posee un comportamiento eminentemente aleatorio.	
+(tomado de Wikipedia) 
+
+Como ejemplo se presentan los siguientes problemas tomados de Navidi.
+
+<br/><br/>
+
+**Ejemplo 13** 
+
+Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen como $N(2.0; 0.01)$ y cuyos anchos se distribuyen $N(3.0; 0.04)$. Suponga que las longitudes y los anchos son independientes. El área de una placa esta dada por $A=XY$.
+
+![](img\lamina.png) 
+
+a. Utilice una muestra simulada de tamaño $1000$ para estimar la media y la varianza de $A$.
+
+b. Estime la probabilidad de que $P(5.9 <A<6.1)$.
+
+c. Construya una gráfica de distribución normal $(qqplot)$ para el área. ¿El área de una placa sigue una distribución normal? 
+
+Problema 3 capitulo 4 Navidi(2006) 
+
+**Solución**
+
+```{r}
+	X2=rnorm(1000,mean=2.0,sd=0.1)    #  generación de numeros aleatorios  de X
+	Y2=rnorm(1000,mean=3.0,sd=0.2)    #  generacion de numeros aleatorios  deY
+	Z2=data.frame(X2,Y2)              #  generacion de matriz de X,Y
+	A2=apply(Z2,1,prod)               #  area de la placa A=XY
+	mediaA=mean(A2)                   #  media del vector de areas 
+	varianzaA=var(A2)                 #  varianza del vector de areas 
+	B2=as.numeric(A2>5.9 & A2<6.1)    #  generacion de variable de 0,1, 
+	#  con 1 donde cumplecondicion   
+	Pro3c=sum(B2)/1000                #  calculo de la  probabilidad 
+	hist(A2)                          # histograma del valor de las areas
+	qqnorm(A2)                        # grafico de normalidad del area
+```
+
+Al correr el código en el programa   RStudio arroja los siguientes  resultados:
+
+salida3.png
+
+Tanto el histograma como el gráfico de normalidad indican que las áreas tienen aproximadamente una distribución normal con media 6.016 y una desviación de 0.495
+
+
+

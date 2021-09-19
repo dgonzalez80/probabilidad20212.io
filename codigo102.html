@@ -410,6 +410,15 @@ div.tocify {
     <li>
       <a href="Guia303.html">Guía 3.3</a>
     </li>
+    <li>
+      <a href="simulacion.html">Simulación</a>
+    </li>
+    <li>
+      <a href="actividad331.html">Actividad 331</a>
+    </li>
+    <li>
+      <a href="actividad332.html">Actividad 332</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -539,18 +548,14 @@ ventas &lt;- read_csv(&quot;data/ventas.csv&quot;)</code></pre>
 <p>Utilizaremos en este caso la función <strong>table()</strong></p>
 <pre class="r"><code>table(ventas$Metodo_Pago)</code></pre>
 <pre><code>## 
-## American Express         Discover       MasterCard        Star Card 
-##                4                8               28              140 
-##             Visa 
-##               20</code></pre>
+## American Express         Discover       MasterCard        Star Card             Visa 
+##                4                8               28              140               20</code></pre>
 <p>El resultado corresponde a un conteo de cada uno de los valores de la variable. En caso de que se requiera calcular la proporción que corresponde cada caso utilizamos la función : <strong>prop.table()</strong> y se la aplicamos a la tabla anterior</p>
 <pre class="r"><code>t1=table(ventas$Metodo_Pago)
 prop.table(t1)</code></pre>
 <pre><code>## 
-## American Express         Discover       MasterCard        Star Card 
-##             0.02             0.04             0.14             0.70 
-##             Visa 
-##             0.10</code></pre>
+## American Express         Discover       MasterCard        Star Card             Visa 
+##             0.02             0.04             0.14             0.70             0.10</code></pre>
 <p>Si utilizamos la función <strong>freq</strong> del paquete summarytools, la salida es una tabla más elaborada</p>
 <pre class="r"><code>summarytools::freq(ventas$Metodo_Pago, cumul = F)</code></pre>
 <pre><code>## Frequencies  
@@ -602,17 +607,13 @@ summarytools::freq(Colombia$edadR)</code></pre>
 <pre class="r"><code>h=hist(Colombia$edad)</code></pre>
 <p><img src="codigo102_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre class="r"><code>h$breaks   # puntos de corte</code></pre>
-<pre><code>##  [1]   0   5  10  15  20  25  30  35  40  45  50  55  60  65  70  75  80  85  90
-## [20]  95 100 105 110 115</code></pre>
+<pre><code>##  [1]   0   5  10  15  20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95 100 105 110 115</code></pre>
 <pre class="r"><code>h$counts   # frecuencias absolutas en cada intervalo</code></pre>
-<pre><code>##  [1]  83381 104467 151417 272367 494326 594185 559792 522204 433966 369419
-## [11] 350262 308510 222922 153642 108879  75301  51625  29198  11935   2889
-## [21]    418     49      9</code></pre>
+<pre><code>##  [1]  83381 104467 151417 272367 494326 594185 559792 522204 433966 369419 350262 308510 222922 153642 108879  75301  51625  29198  11935
+## [20]   2889    418     49      9</code></pre>
 <pre class="r"><code>h$density  # densidad en cada intervalo</code></pre>
-<pre><code>##  [1] 3.402499e-03 4.262947e-03 6.178819e-03 1.111438e-02 2.017178e-02
-##  [6] 2.424669e-02 2.284323e-02 2.130939e-02 1.770869e-02 1.507475e-02
-## [11] 1.429302e-02 1.258926e-02 9.096698e-03 6.269614e-03 4.442986e-03
-## [16] 3.072781e-03 2.106643e-03 1.191472e-03 4.870273e-04 1.178904e-04
+<pre><code>##  [1] 3.402499e-03 4.262947e-03 6.178819e-03 1.111438e-02 2.017178e-02 2.424669e-02 2.284323e-02 2.130939e-02 1.770869e-02 1.507475e-02
+## [11] 1.429302e-02 1.258926e-02 9.096698e-03 6.269614e-03 4.442986e-03 3.072781e-03 2.106643e-03 1.191472e-03 4.870273e-04 1.178904e-04
 ## [21] 1.705718e-05 1.999525e-06 3.672598e-07</code></pre>
 <p>Seria de interés tambien construir una tabla con las edades de las personas fallecidas por covid en Colombia, para lo cual debemos primero seleccionar la base de datos de las fallecidas y luego en ello construir la tabla</p>
 <p>En este caso vamos a seleccionar los rangos de edad y luego construimos la tabla</p>
@@ -685,31 +686,23 @@ prop.table(tabla1)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    1.00   27.00   37.00   39.53   52.00  114.00</code></pre>
 <pre class="r"><code>psych::describe(Colombia$edad)</code></pre>
-<pre><code>##    vars       n  mean    sd median trimmed   mad min max range skew kurtosis
-## X1    1 4901163 39.53 17.92     37   38.74 17.79   1 114   113 0.41    -0.17
-##      se
-## X1 0.01</code></pre>
+<pre><code>##    vars       n  mean    sd median trimmed   mad min max range skew kurtosis   se
+## X1    1 4901163 39.53 17.92     37   38.74 17.79   1 114   113 0.41    -0.17 0.01</code></pre>
 <pre class="r"><code>psych::describe.by(Colombia$edad, group = Colombia$ubicacion)</code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: casa
-##    vars       n  mean    sd median trimmed   mad min max range skew kurtosis
-## X1    1 4740572 38.66 17.27     37   37.97 17.79   1 114   113 0.39    -0.15
-##      se
-## X1 0.01
-## ------------------------------------------------------------ 
+##    vars       n  mean    sd median trimmed   mad min max range skew kurtosis   se
+## X1    1 4740572 38.66 17.27     37   37.97 17.79   1 114   113 0.39    -0.15 0.01
+## ------------------------------------------------------------------------------------------------------- 
 ## group: fallecido
-##    vars      n  mean    sd median trimmed   mad min max range  skew kurtosis
-## X1    1 124648 67.55 15.25     69    68.4 14.83   1 110   109 -0.52     0.14
-##      se
-## X1 0.04
-## ------------------------------------------------------------ 
+##    vars      n  mean    sd median trimmed   mad min max range  skew kurtosis   se
+## X1    1 124648 67.55 15.25     69    68.4 14.83   1 110   109 -0.52     0.14 0.04
+## ------------------------------------------------------------------------------------------------------- 
 ## group: hospital
-##    vars     n  mean    sd median trimmed   mad min max range  skew kurtosis
-## X1    1 16317 48.49 20.62     50   49.16 20.76   1 104   103 -0.26    -0.37
-##      se
-## X1 0.16
-## ------------------------------------------------------------ 
+##    vars     n  mean    sd median trimmed   mad min max range  skew kurtosis   se
+## X1    1 16317 48.49 20.62     50   49.16 20.76   1 104   103 -0.26    -0.37 0.16
+## ------------------------------------------------------------------------------------------------------- 
 ## group: hospital uci
 ##    vars    n  mean    sd median trimmed   mad min max range  skew kurtosis   se
 ## X1    1 2288 51.53 18.31     54   52.57 17.79   1  98    97 -0.54     0.16 0.38</code></pre>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="dgonzalez80" />
+
+
+<title>actividad332.knit</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Probabilidad y Estadística 2021-2 </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    PyE
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 0
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo0.html">Módulo 0</a>
+    </li>
+    <li>
+      <a href="Guia001.html">Guía 0.1</a>
+    </li>
+    <li>
+      <a href="Guia002.html">Guía 0.2</a>
+    </li>
+    <li>
+      <a href="Guia003.html">Guía 0.3</a>
+    </li>
+    <li>
+      <a href="Guia004.html">Guía 0.4</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 1
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo1.html">Módulo 1</a>
+    </li>
+    <li>
+      <a href="Guia101.html">Guía 1.1</a>
+    </li>
+    <li>
+      <a href="Guia102.html">Guía 1.2</a>
+    </li>
+    <li>
+      <a href="Guia103.html">Guía 1.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 2
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo2.html">Módulo 2</a>
+    </li>
+    <li>
+      <a href="Guia201.html">Guía 2.1</a>
+    </li>
+    <li>
+      <a href="Guia202.html">Guía 2.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 3
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo3.html">Módulo 3</a>
+    </li>
+    <li>
+      <a href="Guia301.html">Guía 3.1</a>
+    </li>
+    <li>
+      <a href="Guia302.html">Guía 3.2</a>
+    </li>
+    <li>
+      <a href="Guia303.html">Guía 3.3</a>
+    </li>
+    <li>
+      <a href="simulacion.html">Simulación</a>
+    </li>
+    <li>
+      <a href="actividad331.html">Actividad 331</a>
+    </li>
+    <li>
+      <a href="actividad332.html">Actividad 332</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 4
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo4.html">Módulo 4</a>
+    </li>
+    <li>
+      <a href="Guia401.html">Guía 4.1</a>
+    </li>
+    <li>
+      <a href="Guia402.html">Guía 4.2</a>
+    </li>
+    <li>
+      <a href="Guia403.html">Guía 4.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 5
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo5.html">Módulo 5</a>
+    </li>
+    <li>
+      <a href="Guia501.html">Guía 5.1</a>
+    </li>
+    <li>
+      <a href="Guia502.html">Guía 5.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-code"></span>
+     
+    Código R
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="introduccionR.html">Introducción a R</a>
+    </li>
+    <li>
+      <a href="codigo101.html">Código u1.1</a>
+    </li>
+    <li>
+      <a href="codigo102.html">Código u1.2</a>
+    </li>
+    <li>
+      <a href="codigo103.html">Código u1.3</a>
+    </li>
+    <li>
+      <a href="codigo201.html">Código u2.1</a>
+    </li>
+    <li>
+      <a href="codigo301.html">Código u3.1</a>
+    </li>
+    <li>
+      <a href="codigo302.html">Código u3.2</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="actividad-2---simulación" class="section level1">
+<h1><strong>Actividad 2 - Simulación</strong></h1>
+<p>De manera individual deberá seleccionar uno de los siguientes problemas para ser resuelto con ayuda computacional. En un archivo pdf se deberán responder los interrogantes solicitados, adjuntado el código empleado.</p>
+<p><br/><br/></p>
+<div id="ejercicio-1" class="section level2">
+<h2><strong>Ejercicio 1</strong></h2>
+<p>Un cable está compuesto por seis alambres. La fuerza de ruptura de cada alambre es una variable aleatoria distribuida normalmente con media de <span class="math inline">\(10 kN\)</span> y desviación estándar de <span class="math inline">\(1 kN\)</span> (<span class="math inline">\(kN\)</span>=kiloNewton=<span class="math inline">\(10^{3}N\)</span>). Utilizando el método de cable quebradizo, se estima que la fuerza del cable es igual a la fuerza de alambre más frágil multiplicada por el número de alambres.</p>
+<p><img src="img/cable.png" /></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Utilice una muestra simulada de tamaño 1000 para estimar la fuerza media de este tipo de cable.</p></li>
+<li><p>Estime la mediana de la fuerza del cable.</p></li>
+<li><p>Estime la desviación estándar de la fuerza del cable.</p></li>
+<li><p>Para que sea aceptable en cierta obra, la probabilidad de que el cable se rompa con una carga de <span class="math inline">\(70 kN\)</span> debe ser menor a <span class="math inline">\(0.01\)</span>. ¿Parece ser que el cable es aceptable? Explique.</p></li>
+</ol>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="ejercicio-2" class="section level2">
+<h2><strong>Ejercicio 2</strong></h2>
+<p>Estimación del valor de <span class="math inline">\(\pi\)</span> . LA siguiente figura sugiere como estimar el valor de <span class="math inline">\(\pi\)</span> con una simulación. En la figura, un circuíto con un áreaigual a <span class="math inline">\(\pi/4\)</span>, está inscrito en un cuadrado cuya área es igual a 1. Se elige de forma aleatoria 100 puntos dentro del cuadrado . La probabilidad de que un punto esté dentro del círculo es igual a la pracción del área del cuadrado que abarca a este, la cual es <span class="math inline">\(\pi/4\)</span>. Por tanto, se puede estimar el valor de <span class="math inline">\(\pi/4\)</span> al contar el número de puntos dentro del círculo, que es 79 para obtener la estimación de <span class="math inline">\(\pi/4 \approx 0.76\)</span> . De este último resultado se concluye que <span class="math inline">\(\pi \approx 4(0.79) =3.14\)</span> . Este ejercicio presenta un experimento de simulación que fue diseñado para estimar el valor de <span class="math inline">\(\pi\)</span> al generar 1000 puntos en el cuadrado.</p>
+<p><img src="img/fig_pi.png" /></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Genere 1000 coordenadas <span class="math inline">\(x\)</span>: <span class="math inline">\(X_{1}\)</span>, . . . , <span class="math inline">\(X_{1000}\)</span>. Utilice la distribución uniforme con valor mínimo de <span class="math inline">\(0\)</span> y valor máximo de <span class="math inline">\(1\)</span>. La distribución uniforme genera variables aleatorias que tienen la misma probabilidad de venir de cualquier parte del intervalo <span class="math inline">\((0, 1)\)</span>.</p></li>
+<li><p>Genere <span class="math inline">\(1000\)</span> coordenadas <span class="math inline">\(y\)</span> : <span class="math inline">\(Y_{1}, . . . , Y_{1000}\)</span>, utilizando nuevamente la distribución uniforme con valor mínimo de <span class="math inline">\(0\)</span> y valor máximo de <span class="math inline">\(1\)</span>.</p></li>
+<li><p>Cada punto <span class="math inline">\((X_{i},Y_{i})\)</span> se encuentra dentro del círculo si su distancia desde el centro <span class="math inline">\((0.5, 0.5)\)</span> es menor a <span class="math inline">\(0.5\)</span>. Para cada par <span class="math inline">\((X_{i},Y_{i})\)</span> determine si la distancia desde el centro es menor a <span class="math inline">\(0.5\)</span>. Esto último se puede realizar al calcular el valor <span class="math inline">\((X_{i}-0.5)^{2}+(Y_{i}-0.5)^{2}\)</span>, que es el cuadrado de la distancia, y al determinar si es menor que <span class="math inline">\(0.25\)</span>.</p></li>
+<li><p>¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su estimación de <span class="math inline">\(\pi\)</span>? (Nota: Con sólo 1000 puntos, es probable que su estimación sea inferior por 0.05 o más. Una simulación con 10000 y 100000 puntos tiene mayores probabilidades de dar como resultado una estimación muy cercana al valor verdadero</p></li>
+</ol>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="ejercicio-3" class="section level2">
+<h2><strong>Ejercicio 3</strong></h2>
+<p>Tres sistemas están compuestos por los componentes <span class="math inline">\(R1\)</span>,<span class="math inline">\(R2\)</span>,<span class="math inline">\(R3\)</span> y <span class="math inline">\(R4\)</span> conectados, como lo muestra las siguientes figuras. El tiempo de vida en meses de los componentes <span class="math inline">\(R1\)</span> y <span class="math inline">\(R3\)</span> sigue una distribución lognormal con <span class="math inline">\(\mu=1\)</span> y <span class="math inline">\(\sigma=0.5\)</span> y la distribución en meses de los componentes <span class="math inline">\(R2\)</span> y <span class="math inline">\(R4\)</span> una distribución lognormal con <span class="math inline">\(\mu=2\)</span> y <span class="math inline">\(\sigma=1\)</span>. El sistema solo funciona si A y B lo hacen.</p>
+<p><img src="img/circuitos.png" /></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Genere por simulación un gran número (al menos <span class="math inline">\(1000\)</span>) de los tiempos de vida de los sistemas</p></li>
+<li><p>Estime la media del tiempo de vida para cada sistema.</p></li>
+<li><p>Estime la probabilidad de que los sistemas fallen en un tiempo inferior a dos meses.</p></li>
+<li><p>Estime el <span class="math inline">\(20^{o}\)</span> percentil (<span class="math inline">\(P_{20}\)</span>) de los tiempos de vida del primer sistema .</p></li>
+<li><p>Construya una gráfica de probabilidad normal de los tiempo de vida para cada sistema. ¿Los tiempos de vida de los sistemas tienen una distribución aproximadamente normal?</p></li>
+<li><p>Construya un histograma de los tiempos de vida de los sistemas. ¿Están sesgados a la izquierda, sesgados a la derecha, o son aproximadamente simétricos?</p></li>
+</ol>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="ejercicio-4" class="section level2">
+<h2><strong>Ejercicio 4</strong></h2>
+<p>La edad de una antigua pieza de materia orgánica se puede estimar a partir de la tasa a la que emite partículas beta como resultado del decaimiento del carbono-14. Por ejemplo , si X es el número de partículas emitidas durante diez minutos por un fragmento óseo con 10000 años de antigüedad que contiene 1 g de carbono, entonces X tiene una distribución de Poisson con media <span class="math inline">\(\lambda=45.62\)</span> . Un arqueólogo descubrió un pequeño fragmento óseo que contiene 1 g de carbono. Si t es la edad desconocida del hueso, en años, el arqueólogo contar{a el número X de partículas emitidas en diez minutos y calculará una edad estimada <span class="math inline">\(\widehat{t}\)</span> con la fórmula:</p>
+<p><span class="math display">\[\widehat{t}=\dfrac{\ln 15.3 - \ln (X/10)}{0.0001210} \]</span></p>
+<p>El arqueólogo no lo sabe, pero el hueso tiene exactamente <span class="math inline">\(100000\)</span> años de antiguedad, por lo que <span class="math inline">\(X\)</span> tiene una distribución de Poisson con <span class="math inline">\(\lambda=45.62\)</span>.</p>
+<p><img src="img/piezas.png" /></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Genere una muestra simulada de 10000 valores de <span class="math inline">\(X\)</span> y sus correspondientes valores de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
+<li><p>Estime la media de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
+<li><p>Estime la desviación estándar de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
+<li><p>Estime la probabilidad de que <span class="math inline">\(\widehat{t}\)</span> esté a 1000 años con una edad real de 10000 años.</p></li>
+</ol>
+<p><br/><br/></p>
+<p>Ejercicios tomados de Navidi(2006)</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

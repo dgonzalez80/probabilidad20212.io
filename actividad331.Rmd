@@ -1,0 +1,37 @@
+---
+title: "Actividad 331"
+author: "dgonzalez80"
+date: " "
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+---
+
+### **Modelos de probabilidad especiales**
+
+#### **Descripción de la actividad**
+
+Construir un  **poster** para cada uno de los modelos asignados que contenga sus principales caracteristicas
+
+##### * Origen de la distribución
+
+##### * Características principales : f(x), F(x), E[X], V[X], ....
+
+##### * Ejemplo con solución y sintaxis en R
+
+##### * Aplicaciones en el campo de las ingeniería, ciencias, economía, salud...
+
+##### * Relación con otras disrtibuciones (\href{http://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf}{Leemis (2008)- Univariate Distribution Relationships})
+
+##### * Referencias bibliográficas 
+
+
+
