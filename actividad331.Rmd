@@ -15,9 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 ---
 
-### **Modelos de probabilidad especiales**
-
-#### **Descripción de la actividad**
+# **Descripción**
 
 Construir un  **poster** para cada uno de los modelos asignados que contenga sus principales caracteristicas
 
@@ -32,6 +30,129 @@ Construir un  **poster** para cada uno de los modelos asignados que contenga sus
 ##### * Relación con otras disrtibuciones (\href{http://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf}{Leemis (2008)- Univariate Distribution Relationships})
 
 ##### * Referencias bibliográficas 
+
+<br/><br/><br/>
+
+# **Videos PyE 2020-2**
+
+<br/><br/>
+
+## **Distribución uniforme**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6iDQHdqAwyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e4U3YX4fXrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución normal**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NlD5jbLc2-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/llhl115ltbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+### **Distribución exponencial**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZPxY9sbClJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución Lognormal**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wK7q-XJnsN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XtACgL4eVvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución beta**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KBiu4mu1Wng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución Gumbel**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2NEw7SZeNZU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución Weibull**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FI5zZYr1p7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+## **Distribución t-Student**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZYYDhGXOcX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución F**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rC8C_e8L1xc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución geométrica**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u5lLIlxknOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oiGEQTRfQLo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución de Poisson**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6ZFx954dOcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución  hipergeométrica**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pKjW3jtR7YI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución binomial**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VcUxRQ-fvWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_SJ9AhKOGVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TrimcQJFThU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribución binomial negativa**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vm1V9XZVC_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1WEEGkkIcCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+## **Distribuciones binomial y uniforme**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wub6Rhacj3g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 
 

@@ -18,15 +18,68 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # **3. Simulación**
 
-Uso de los modelos estadísticos en simulación
+Existe un grupo de modelos identificados para las variables aleatorias tanto discretas como continuas que son utilizadas con frecuencia en diferentes contextos. A continuación se relacionan los principales modelos:
 
-Empezaremos por recordar algunas instrucciones en R
+#### Modelos discretos:
+
++ Bernoulli, 
++ binomial,
++ Poisson,
++ geometrico,
++ hipergeometrico,
++ binomial negativo.
+
+
+#### Modelos continuos:
+
++ uniforme
++ normal
++ exponencial
++ lognormal
++ gamma
++ beta
++ Weibull
++ Cauchy
++ Gumbel
++ t-Student
++ Ji-cuadrado
++ F de Fisher
++ Empirica o  Kernel
+
+
+En $R$ los nombre de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes:
+
+La primera parte es una letra que identifica el propósito de la función.
+
++ *d* : función de distribución de probabilidad $f(x)= P(X=x)$, para el caso discreto. En el caso de las variables continuas representa la función de densidad de probabilidad $f(x)$
++ *p* : función de probbilidad acumulada $F(x) = P(X \leq x)$
++ *q* : percentil $X_p$
++ *r* : generador de números aleatorios
+
+La siguiene tabla presenta estas las funciones para los principales modelos tanto discretos como continuos
+
+
+*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
+--------------------|----------|----------|----------|-------------|
+binomial            | pbinom   | qbinom   | dbinom   | rbinom      |
+gometrico           | pgeom    | qgeom    | dgeom    | rgeom       |       
+hipergeometrico     | phyper   | qhyper   | dhyper   | rhyper      |
+Poisson             | ppois    | qpois    | dpois    | rpois       |
+binomial negativo   | pnbinom  | qnbinom  | dnbionom | rnbinom     |      
+beta                | pbeta    | qbeta    | dbeta    | rbeta       |
+Cauchy              | pcauchy  | qcauchy  | dcauchy  | rcauchy     |
+exponencial         | pexp     | qexp     | dexp     | rexp        |
+gamma               | pgamma   | qgamma   | dgamma   | rgamma      |
+lognormal           | plnorm   | qlnorm   | dlnorm   | rlnorm      |
+uniforme            | punif    | qunif    | dunif    | runif       |
+Weibull             | pweibull | qweibull | dweibull | rweibull    |
+t-Student           | pt       | qt       | dt       | rt          |
+Ji-cuadrado         | pchisq   | qchisq   | dchisq   | rchisq      |
+F                   | pf       | qf       | df       | rf          |
 
 En **R** los nombres de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes: la primera parte con el propósito de la función (primera letra)  y la segunda parte hace referencia al modelo a utilizar (**d** **binom** para el calculo de probabilidad de una variable aleatoria con distribución binomial)
 
-
 En cada caso si no recuerda las sintaxis de la función puede hacer uso de las ayudas de R así:
-
 
 ```{r}
  help("pbinom")
@@ -43,7 +96,7 @@ En cada caso si no recuerda las sintaxis de la función puede hacer uso de las a
 
 <br/><br/>
 
-**Ejemplo 11**
+**Ejemplo 1**
 
 Sea una variables con distribución binomial con parámetros $n=20$ y $p=0.30$ , lo cual se puede simbolizar como : $X\sim b(x; 20,0.30)$ 
 
@@ -91,8 +144,9 @@ rbinom(15,20,0.30)
 5. Construir la gráfica de la función de distribución de probabilidad $f(x)$ para $X$ 
 
 ```{r}
-plot(x,dbinom(x,20,0.30), "h", 
+plot(x,dbinom(x,20,0.30), pch=19,las=1,  
 	ylab="f(x)", col="red")
+grid()
 ```
 
 <br/>
@@ -101,7 +155,8 @@ plot(x,dbinom(x,20,0.30), "h",
 
 
 ```{r}
-	plot(x,pbinom(x,20,0.30), "s", 
+x=0:20
+	plot(x,pbinom(x,20,0.30), pch=19, "s",
 	ylab="f(x)", col="red")
 ```
 
@@ -112,8 +167,8 @@ plot(x,dbinom(x,20,0.30), "h",
 
 ```{r}
 library(ggplot2)
-x=0:9
-fx=dbinom(x,9,0.90)
+x=0:20
+fx=dbinom(x,20,0.30)
 dat=data.frame(x,fx)
 	
 ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
@@ -125,7 +180,7 @@ ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
 
 <br/><br/>
 
-**Ejemplo  12**
+**Ejemplo  2**
 
 Ahora supongamos que se tiene una variable continua con distribución normal, con media 50 y varianza 100, es decir desviación estándar 10, lo cual se puede representar como $X\sim N(50,100)$\\. 
 
@@ -188,7 +243,11 @@ library(ggfortify)
 ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,fill = 'blue')
 ```
 
-
+```{r}
+# install.package("ggfortify")
+library(ggfortify)
+ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)
+```
 <br/>
 
 Por otro lado el proceso de simulación de variables estadisticas esta relacionado con los experimentos llamados de  Montecarlo, a continuación se describe brevemente su origen. 
@@ -204,7 +263,7 @@ Como ejemplo se presentan los siguientes problemas tomados de Navidi.
 
 <br/><br/>
 
-**Ejemplo 13** 
+**Ejemplo 3 ** 
 
 Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen como $N(2.0; 0.01)$ y cuyos anchos se distribuyen $N(3.0; 0.04)$. Suponga que las longitudes y los anchos son independientes. El área de una placa esta dada por $A=XY$.
 
@@ -234,11 +293,12 @@ Problema 3 capitulo 4 Navidi(2006)
 	qqnorm(A2)                        # grafico de normalidad del area
 ```
 
-Al correr el código en el programa   RStudio arroja los siguientes  resultados:
+```{r}
+summarytools::descr(A2)
+```
 
-salida3.png
 
-Tanto el histograma como el gráfico de normalidad indican que las áreas tienen aproximadamente una distribución normal con media 6.016 y una desviación de 0.495
+
 
 
 

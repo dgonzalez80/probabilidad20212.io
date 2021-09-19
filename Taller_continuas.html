@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="dgonzalez80" />
+
+
+<title>Taller Modelos especiales continuos</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Probabilidad y Estadística 2021-2 </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    PyE
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 0
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo0.html">Módulo 0</a>
+    </li>
+    <li>
+      <a href="Guia001.html">Guía 0.1</a>
+    </li>
+    <li>
+      <a href="Guia002.html">Guía 0.2</a>
+    </li>
+    <li>
+      <a href="Guia003.html">Guía 0.3</a>
+    </li>
+    <li>
+      <a href="Guia004.html">Guía 0.4</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 1
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo1.html">Módulo 1</a>
+    </li>
+    <li>
+      <a href="Guia101.html">Guía 1.1</a>
+    </li>
+    <li>
+      <a href="Guia102.html">Guía 1.2</a>
+    </li>
+    <li>
+      <a href="Guia103.html">Guía 1.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 2
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo2.html">Módulo 2</a>
+    </li>
+    <li>
+      <a href="Guia201.html">Guía 2.1</a>
+    </li>
+    <li>
+      <a href="Guia202.html">Guía 2.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 3
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo3.html">Módulo 3</a>
+    </li>
+    <li>
+      <a href="Guia301.html">Guía 3.1</a>
+    </li>
+    <li>
+      <a href="Guia302.html">Guía 3.2</a>
+    </li>
+    <li>
+      <a href="Guia303.html">Guía 3.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 4
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo4.html">Módulo 4</a>
+    </li>
+    <li>
+      <a href="Guia401.html">Guía 4.1</a>
+    </li>
+    <li>
+      <a href="Guia402.html">Guía 4.2</a>
+    </li>
+    <li>
+      <a href="Guia403.html">Guía 4.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 5
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo5.html">Módulo 5</a>
+    </li>
+    <li>
+      <a href="Guia501.html">Guía 5.1</a>
+    </li>
+    <li>
+      <a href="Guia502.html">Guía 5.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-code"></span>
+     
+    Código R
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="introduccionR.html">Introducción a R</a>
+    </li>
+    <li>
+      <a href="codigo101.html">Código u1.1</a>
+    </li>
+    <li>
+      <a href="codigo102.html">Código u1.2</a>
+    </li>
+    <li>
+      <a href="codigo103.html">Código u1.3</a>
+    </li>
+    <li>
+      <a href="codigo201.html">Código u2.1</a>
+    </li>
+    <li>
+      <a href="codigo301.html">Código u3.1</a>
+    </li>
+    <li>
+      <a href="codigo302.html">Código u3.2</a>
+    </li>
+    <li>
+      <a href="simulacion.html">Simulación</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-chess-pawn"></span>
+     
+    Actividades
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="actividad331.html">Actividasd 331</a>
+    </li>
+    <li>
+      <a href="actividad332.html">Actividad 332</a>
+    </li>
+    <li>
+      <a href="Taller_discretas.html">Taller Discretas</a>
+    </li>
+    <li>
+      <a href="Taller_continuas.html">Taller Continuas</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Taller Modelos especiales continuos</h1>
+<h4 class="author">dgonzalez80</h4>
+
+</div>
+
+
+<pre class="r"><code>library(ggplot2)
+library(ggfortify)</code></pre>
+<div id="distribucion-uniforme" class="section level4">
+<h4>Distribucion uniforme</h4>
+<ol style="list-style-type: decimal">
+<li>Para una variable aleatoria <span class="math inline">\(X\sim unif(x,a,b)\)</span> con <span class="math inline">\(a=10\)</span> y <span class="math inline">\(b=20\)</span> determine:</li>
+</ol>
+<ul>
+<li>(a.) Construya un bosquejo de la gráfica de la función de densidad de probabilidad <span class="math inline">\(f_{_{X}}(x)\)</span>.</li>
+<li>(b.) <span class="math inline">\(P(X \leq 12)\)</span>.</li>
+<li>(c.) <span class="math inline">\(P(13\leq X &lt;15)\)</span>.</li>
+<li>(d.) <span class="math inline">\(P(X\geq 18)\)</span> .</li>
+<li>(e.) $E[X] $ y <span class="math inline">\(V[X]\)</span>.</li>
+</ul>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre><code>## P(X&lt;12)= 0.2</code></pre>
+</div>
+<div id="distribucion-normal" class="section level4">
+<h4>Distribucion normal</h4>
+<ol start="2" style="list-style-type: decimal">
+<li>Para una variable <span class="math inline">\(Z\sim N(0,1)\)</span>, determine el área:</li>
+</ol>
+<ul>
+<li>(a.) A la derecha de <span class="math inline">\(z = - 0.85\)</span>.</li>
+<li>(b.)Entre <span class="math inline">\(z = 0.40\)</span> y <span class="math inline">\(z = 1.30\)</span>.<br />
+</li>
+<li>(c.) Entre <span class="math inline">\(z = -0.30\)</span> y <span class="math inline">\(z = 0.90\)</span>.</li>
+<li>(d.) Desde <span class="math inline">\(z = -1.50\)</span> hasta <span class="math inline">\(z = -0.45\)</span>.\</li>
+</ul>
+<p>Nota: en cada caso realice un bosquejo del área que representa la probabilidad</p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre><code>## [1] 0.8023375</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Para una variable <span class="math inline">\(Z\sim N(0,1)\)</span>, determine el área:</li>
+</ol>
+<ul>
+<li>(a.) A la izquierda de <span class="math inline">\(z = 0.56\)</span>.</li>
+<li>(b.) Entre <span class="math inline">\(z = - 2.93\)</span> y <span class="math inline">\(z = -2.06\)</span>.</li>
+<li>(c.) Entre <span class="math inline">\(z = -1.08\)</span> y <span class="math inline">\(z = 0.70\)</span>.</li>
+<li>(d.) Desde <span class="math inline">\(z = 0.96\)</span> hasta <span class="math inline">\(z = 1.62\)</span>.\</li>
+</ul>
+<p>Nota: En cada caso represente gráficamente los valores solicitados</p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Para una variable aleatoria continua <span class="math inline">\(X\sim norm(\mu=150, \sigma^{2}=1000)\)</span> determine:</li>
+</ol>
+<ul>
+<li>(a.) Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></li>
+<li>(b.) <span class="math inline">\(P(X \leq 100)\)</span>.</li>
+<li>(c.) <span class="math inline">\(P(150 \leq X \leq 200)\)</span>.</li>
+<li>(d.) <span class="math inline">\(P(X\geq 50)\)</span>.<br />
+</li>
+<li>(e.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.90\)</span>.</li>
+<li>(f.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.95\)</span>.</li>
+</ul>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre><code>## P(X&lt;100)= 0.05692315</code></pre>
+</div>
+<div id="distribucion-exponencial" class="section level4">
+<h4>Distribucion exponencial</h4>
+<ol start="5" style="list-style-type: decimal">
+<li>Sea <span class="math inline">\(X\)</span> una variable aleatoria con distribución exponencial . (<span class="math inline">\(X\sim exp(\lambda=2)\)</span>). Determine:</li>
+</ol>
+<ul>
+<li>(a.) <span class="math inline">\(P(X \leq 0)\)</span>.</li>
+<li>(b.) <span class="math inline">\(P(X \geq 2)\)</span>.</li>
+<li>(c.) <span class="math inline">\(P(1 &lt; X &lt; 2)\)</span>.</li>
+<li>(d.) Realice la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ul>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre><code>## P(1&lt;X&lt;2)=F(2)-F(1)= 0.1170196</code></pre>
+</div>
+<div id="distribucion-lognormal" class="section level4">
+<h4>Distribucion lognormal</h4>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con funcion de distribucion lognormal con parametros <span class="math inline">\(\mu=10\)</span> y <span class="math inline">\(\sigma^2=16\)</span>. Determine. + (a) <span class="math inline">\(P(X&lt;10000)\)</span> + (b) <span class="math inline">\(P(X&gt;5000)\)</span> + (c) <span class="math inline">\(P_{75}\)</span> + (d) Regalice una grafica de <span class="math inline">\(f(x)\)</span></p>
+<pre><code>## $title
+## [1] &quot;Distribucion Lognormal (log(20000),1)&quot;
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;labels&quot;</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre><code>## P((X&lt;10000)=  0.2441086</code></pre>
+</div>
+<div id="distribucion-gamma" class="section level4">
+<h4>Distribucion gamma</h4>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con funcion de distribucion gamma parametros <span class="math inline">\(a=3\)</span> y <span class="math inline">\(b=1\)</span>. Determine. + (a) <span class="math inline">\(P(X&lt;5)\)</span> + (b) <span class="math inline">\(P(5&lt;X&gt;7.5)\)</span> + (c) <span class="math inline">\(P_{25}\)</span> + (d) Regalice una grafica de <span class="math inline">\(f(x)\)</span></p>
+<pre class="r"><code>p=ggdistribution(dgamma, seq(0, 10, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;)
+p=ggdistribution(dgamma, seq(0, 5, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion gamma a=3 b=1     P(X&lt;5)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre class="r"><code>cat(&quot;P(X&lt;5)=&quot;, pgamma(5,3,1))</code></pre>
+<pre><code>## P(X&lt;5)= 0.875348</code></pre>
+</div>
+<div id="distribucion-weibull" class="section level4">
+<h4>Distribucion Weibull</h4>
+<p>Sea <span class="math inline">\(X\)</span> una variable con distribucion Weibul con  y . determine:</p>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X&lt;10)\)</span></li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(&gt;9)\)</span></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(8&lt;X&lt;11)\)</span></li>
+</ol></li>
+<li><ol start="4" style="list-style-type: lower-alpha">
+<li>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.9\)</span></li>
+</ol></li>
+<li><ol start="5" style="list-style-type: lower-alpha">
+<li>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></li>
+</ol></li>
+</ul>
+<pre class="r"><code>a=0.01
+b=2
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;)
+p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion Weibull [a=0.01 b=2]&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>cat(&quot;P(X&lt;10)=&quot;, pweibull(10,2,10))</code></pre>
+<pre><code>## P(X&lt;10)= 0.6321206</code></pre>
+</div>
+<div id="distribucion-beta" class="section level4">
+<h4>Distribucion beta</h4>
+<p>Suponga que X tiene una distribucion beta con con parametros a=4, b=2.</p>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X&lt;0.40)\)</span></li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(&gt;0.90)\)</span></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(0.80&lt;X&lt;1)\)</span></li>
+</ol></li>
+<li><ol start="4" style="list-style-type: lower-alpha">
+<li>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.90\)</span></li>
+</ol></li>
+<li><ol start="5" style="list-style-type: lower-alpha">
+<li>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></li>
+</ol></li>
+</ul>
+<pre class="r"><code>p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;)
+p=ggdistribution(dbeta, seq(0, .4, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;,fill =&quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion beta (4,2)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="distribucion-gumbel" class="section level4">
+<h4>Distribucion Gumbel</h4>
+<p>Suponga que X tiene una distribucion beta con con parametros a=3, b=4.</p>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X&lt;10)\)</span></li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(&gt;9)\)</span></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(8&lt;X&lt;10)\)</span></li>
+</ol></li>
+<li><ol start="4" style="list-style-type: lower-alpha">
+<li>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.80\)</span></li>
+</ol></li>
+<li><ol start="5" style="list-style-type: lower-alpha">
+<li>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></li>
+</ol></li>
+</ul>
+<pre class="r"><code>library(dgumbel)
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;)
+  p=ggdistribution(dgumbel, seq(-5, 10, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;, fill = &quot;blue&quot;,p=p)+
+   ggtitle(&quot;Distribucion Gumbel(3,4)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="distribucion-cauchy" class="section level4">
+<h4>Distribucion Cauchy</h4>
+<p>Suponga que <span class="math inline">\(X\)</span> tiene una distribucion de Caucy con parametros <span class="math inline">\(\mu=0.75\)</span> y <span class="math inline">\(\theta =5\)</span>, determine:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X &gt; 7.2)\)</span></li>
+<li><span class="math inline">\(P( 5&lt;X&lt;10)\)</span></li>
+<li><span class="math inline">\(Me=Q_{2}\)</span></li>
+<li>Realice la grafica de <span class="math inline">\(f(x)\)</span></li>
+</ol>
+<pre class="r"><code>dcauchy(9.2,5,0.75)</code></pre>
+<pre><code>## [1] 0.01311536</code></pre>
+<pre class="r"><code>p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;)
+  p=ggdistribution(dcauchy, seq(7.2, 15, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion Cauchy [l=5 s=0.75]&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="ejercicios-propuestos" class="section level3">
+<h3>Ejercicios propuestos</h3>
+<ol start="7" style="list-style-type: decimal">
+<li>Para una variable aleatoria <span class="math inline">\(Y\)</span> que representa las puntuaciones obtenidas en una prueba y cuya distribución es aproximadamente normal con media de <span class="math inline">\(480\)</span> puntos y desviación estándar de <span class="math inline">\(90\)</span> puntos, determine:</li>
+</ol>
+<ul>
+<li>(a.) ¿Cuál es la proporción de puntuaciones mayores a 700?</li>
+<li>(b.) ¿Cuál es el 25o. percentil de las puntuaciones?</li>
+<li>(c.) Si la puntuación de alguien es de 600, ¿en qué percentil se encuentra?</li>
+<li>(d.) ¿Qué proporción de las puntuaciones se encuentra entre 420 y 520?</li>
+</ul>
+<pre><code>## [1] 0.007253771</code></pre>
+<pre><code>## [1] 419.2959</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>Suponga que la estatura de las personas en una población sigue la curva normal con media de 64.3 pulgadas y desviación estándar de 2.6 pulgadas.</li>
+</ol>
+<ul>
+<li>(a.) ¿Qué proporción de personas en esa región tiene estatura entre 60 y 66 pulgadas?</li>
+<li>(b.) La estatura de Juan es 0.5 de desviación estándar mayor a la media. ¿Qué proporción de personas miden más que Juan?</li>
+<li>(c.) ¿Cuánto mide una persona cuya estatura se encuentra en el 90o. percentil?</li>
+<li>(d.) Se elige aleatoriamente una persona de esta población. ¿Cuál es la probabilidad de que ella mida más de 67 pulgadas?</li>
+<li>(e.) Se elige aleatoriamente a cinco personas de esta población. ¿Cuál es la probabilidad de que sólo una de ellas mida más de 67 pulgadas?</li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li>La resistencia de una aleación de aluminio se distribuye normalmente con media de 10 gigapascales (GPa) y desviación estándar de 1.4 GPa.</li>
+</ol>
+<ul>
+<li>(a.) ¿Cuál es la probabilidad de que una muestra de esta aleación tenga resistencia mayor a 12 GPa?</li>
+<li>(b.) Determine el primer cuartil de la resistencia de esta aleación.</li>
+<li>(c.) Determine el 95o. percentil de la resistencia de esta aleación.</li>
+</ul>
+<ol start="10" style="list-style-type: decimal">
+<li>La vida útil de una bombilla de un vehículo opera en un ambiente a alta temperatura dada su cercania al motor del vehículo. Esta variable medida en años sigue aproximadamente una distribución lognormal con media $ $ y varianza <span class="math inline">\(\sigma^{2} =0.4\)</span> .</li>
+</ol>
+<ul>
+<li>(a.) Determine el tiempo medio de vida de la bombilla</li>
+<li>(b.) Determine la probabilidad de que la bombilla dure entre 3 y 6 años</li>
+<li>(c.) Determine el valor de la mediana</li>
+<li>(d.) Determine el percentil 95° de los tiempos de vida</li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li><p>Un indicador importante para el control del estado físico de una persona es el Indice de Masa Corporal (IMC). Este indice se obtiene al dividir el valor de la masa corporal de una persona (<span class="math inline">\(kg\)</span>) entre el cuadrado de la talla de la persona (<span class="math inline">\(m^{2}\)</span>). En su artículo W.Bolch y E Farfan establecen que este indice (en <span class="math inline">\(kg/m^{2}\)</span>)se distribuye aproximadamente lognormal con media <span class="math inline">\(\mu=3.215\)</span> y <span class="math inline">\(\sigma = 0.157\)</span> para hombre con edad entre 17 y 25 años. La organización mundial de la salud ha establecido rangos para este indice y los ha clasificado de acuerdo al riesgo así: De 25.0 a 29.9, sobrepeso o no obeso ; Entre 30 a 34.9 : Obesidad clase 1 o de bajo riesgo. Más de 40: Obesidad clase 3 o de alto riesgo. Con el fin de establecer una campaña sobre buenos hábitos en el deporte y la dieta el Centro de Bienestar Universitario desea conocer las proporciones de una población de jóvenes con estas edades, en cada uno de los rangos establecidos.</p></li>
+<li><p>Un fabricante manifiesta que su producto principal (un ventilador para el hogar ) dura más de 9000 horas.de uso. Que si algún cliente presenta una avería en su producto antes de este tiempo,el garantiza la entrega de otro de similares condiciones como parte de su estrategia de venta. Uno de sus asesores le indica que no es adecuado realizar esta promoción y que será muy costosa realizarla. Con el fin de validad quien tiene la razón, le entregan a Usted la siguiente información: La variable tiempo de vida de un ventilador de similares condiciones se puede modelar mediante una distribución Weibull con parámetros : <span class="math inline">\(\alpha=1.5\)</span> y <span class="math inline">\(\beta=0.0001\)</span> . ¿quien tiene la razón?</p></li>
+<li><p>Una de las dificultades que presentan las Empresas Municipales se relaciona con la reparación de rupturas de tubos de alcantarillados debido especialmente a la antigüedad de las tuberías y a las raíces de los árboles que los rompen y generan suspensiones en el servicio de agua. Para la reparación de estos daños la empresa contrata con terceros los arreglos. La empresa conoce que el tiempo de reparación (en horas) se puede modelar mediante una distribución gamma con parámetros <span class="math inline">\(\alpha=2\)</span> y <span class="math inline">\(\beta=1/2\)</span>, pero además tienen como indicador de calidad que el tiempo máximo de reparación no debe exceder la hora. ¿que tan probable es que se cumpla esta política con las actuales condiciones?</p></li>
+</ol>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

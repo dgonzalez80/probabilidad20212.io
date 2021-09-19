@@ -82,14 +82,19 @@ navbar:
         - text: "Código u3.2"
           href: codigo302.html
         - text: "Simulación"
-          href: simulacion.html 
+          href: simulacion.html
     - text: "Actividades"
-      icon: fa-code
+      icon: fa-chess-pawn
       menu: 
         - text: "Actividasd 331"
           href: actividad331.html
         - text: "Actividad 332"
           href: actividad332.html
+        - text: "Taller Discretas"
+          href: Taller_discretas.html
+        - text: "Taller Continuas"
+          href: Taller_continuas.html
+          
 output:
   html_document:
     theme: cosmos

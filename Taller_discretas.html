@@ -9,11 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="dgonzalez" />
+<meta name="author" content="dgonzalez80" />
 
-<meta name="date" content="2021-01-01" />
 
-<title>Probabilidad y Estadística</title>
+<title>Taller Modelos especiales discretos</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -522,67 +521,216 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Probabilidad y Estadística</strong></h1>
-<h4 class="author">dgonzalez</h4>
-<h4 class="date">2021</h4>
+<h1 class="title toc-ignore">Taller Modelos especiales discretos</h1>
+<h4 class="author">dgonzalez80</h4>
 
 </div>
 
 
-<div id="presentación-curso" class="section level1">
-<h1><strong>Presentación curso</strong></h1>
-<html>
-<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;">
-<video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%">
-<source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />
-Your browser does not support the video tag.</video>
-<div id="5f30aca85962040d95eaeecc" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;">
+<ol style="list-style-type: decimal">
+<li>Para una variable aleatoria con distribución binomial <span class="math inline">\(X \sim binom(x, n=10, p=0.5)\)</span> . Determine: la función de distribución asociada a <span class="math inline">\(X\)</span>.</li>
+</ol>
+<ul>
+<li><span class="math inline">\(P(X = 5)\)</span></li>
+<li><span class="math inline">\(P(X \leq 2)\)</span></li>
+<li><span class="math inline">\(P(3\leq X &lt;5)\)</span></li>
+<li><span class="math inline">\(P(X\geq 8)\)</span></li>
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ul>
+<pre class="r"><code># Distribución binomial
+# X : número de  éxitos en n ensayos
+# f(x)        dbinom(x, size, prob)
+# F(x)        pbinom(q, size, prob, lower.tail = TRUE)
+# Percentil   qbinom(p, size, prob, lower.tail = TRUE)
+# aleatorio   rbinom(n, size, prob)
 
-</div>
-</div>
-<script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
-</html>
-<p><br/><br/><br/></p>
-</div>
-<div id="estructura-del-curso" class="section level1">
-<h1><strong>Estructura del curso</strong></h1>
-<html>
-<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;">
-<video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%">
-<source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />
-Your browser does not support the video tag.</video>
-<div id="5f2ae96b94d21c0d831cdb4c" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;">
+cat(&quot;P(X=5)=&quot;,dbinom(5,10,0.50), &quot;    &quot;)</code></pre>
+<pre><code>## P(X=5)= 0.2460938</code></pre>
+<pre class="r"><code>cat(&quot;P(X&lt;=2)=&quot;,pbinom(2,10,0.50), &quot;    &quot;)</code></pre>
+<pre><code>## P(X&lt;=2)= 0.0546875</code></pre>
+<pre class="r"><code>cat(&quot;P(3&lt;=X&lt;5)=&quot;,dbinom(3,10,0.50)+dbinom(4,10,0.5),&quot;  &quot;)</code></pre>
+<pre><code>## P(3&lt;=X&lt;5)= 0.3222656</code></pre>
+<pre class="r"><code>cat(&quot;P(X&gt;=8)=&quot;,pbinom(7,10,0.50, lower.tail = FALSE))</code></pre>
+<pre><code>## P(X&gt;=8)= 0.0546875</code></pre>
+<pre class="r"><code>x=0:10
+fx=dbinom(x,10,0.50)
+plot(x,fx, pch=19)
+grid()</code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<hr />
+<ol start="2" style="list-style-type: decimal">
+<li>Suponga que X tiene una distribución Poisson con media <span class="math inline">\(\lambda=4\)</span> (<span class="math inline">\(X \sim pois(x,\lambda=4)\)</span>). Determine:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(P(X = 0)\)</span></li>
+<li><span class="math inline">\(P(X = 4)\)</span></li>
+<li><span class="math inline">\(P(X \geq 2)\)</span></li>
+<li><span class="math inline">\(P(X \leq 2)\)</span><br />
+</li>
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ul>
+<pre class="r"><code># Distribución Poisson
+# X :  número de  eventos que ocurren por unidad de tiempo, longitud, superficie o volumen
+# f(x)       dpois(x, lambda)
+# F(x) =P(X&lt;=x) ppois(q, lambda, lower.tail = TRUE)
+# Percentil  qpois(p, lambda, lower.tail = TRUE)
+# aleatorio  rpois(n, lambda)
 
-</div>
-</div>
-<script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
-</html>
-<p><br/><br/><br/></p>
-</div>
-<div id="atención-a-estudiantes" class="section level1">
-<h1><strong>Atención a estudiantes</strong></h1>
-<html>
-<div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;">
-<video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%">
-<source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />
-Your browser does not support the video tag.</video>
-<div id="610c72d82a78730da8805214" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;">
+cat(&quot;(a) P(X = 0)&quot;,dpois(0,4),&quot;  &quot;)</code></pre>
+<pre><code>## (a) P(X = 0) 0.01831564</code></pre>
+<pre class="r"><code>cat(&quot;(b) P(X = 4)&quot;,dpois(4,4),&quot;  &quot;)</code></pre>
+<pre><code>## (b) P(X = 4) 0.1953668</code></pre>
+<pre class="r"><code>cat(&quot;(c) P(X=&gt;2)=&quot;,ppois(1,4,lower.tail = FALSE),&quot;  &quot;)</code></pre>
+<pre><code>## (c) P(X=&gt;2)= 0.9084218</code></pre>
+<pre class="r"><code>cat(&quot;(d) P(X&lt;=2)=&quot;,ppois(2,4))</code></pre>
+<pre><code>## (d) P(X&lt;=2)= 0.2381033</code></pre>
+<pre class="r"><code>x=0:15
+fx=dpois(x,4)
+plot(x,fx, pch=19)
+grid()</code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<hr />
+<ol start="3" style="list-style-type: decimal">
+<li>Sea una variable geométrica <span class="math inline">\(X\sim geomn,(x,p=0.05)\)</span></li>
+</ol>
+<ul>
+<li><span class="math inline">\(P(X = 1)\)</span></li>
+<li><span class="math inline">\(P(X \leq 2)\)</span></li>
+<li><span class="math inline">\(P(X =8)\)</span></li>
+<li><span class="math inline">\(P(X\geq 2)\)</span><br />
+</li>
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ul>
+<pre class="r"><code># Distribución geometrica
+# X : numero del ensayo donde ocurre el primer exito
+# en R x representa el numero de fracasos antes de obtener el primer exito
+# f(x)       dgeom(x, prob)
+# F(x)       pgeom(q, prob, lower.tail = TRUE)
+# Percentil  qgeom(p, prob, lower.tail = TRUE)
+# aleatorio  rgeom(n, prob)
 
-</div>
-</div>
-<script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
-</html>
-<p><br/><br/><br/></p>
-</div>
-<div id="calendario-2021-2" class="section level1">
-<h1><strong>Calendario 2021-2</strong></h1>
-<p><img src="img/calendario.png" width="900"></p>
-</div>
-<div id="semana-diagonal" class="section level1">
-<h1><strong>Semana Diagonal</strong></h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2EiTWQOHq4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-</div>
+cat(&quot;(a) P(X=1)=&quot;,dgeom(0,0.05), &quot;   &quot;)</code></pre>
+<pre><code>## (a) P(X=1)= 0.05</code></pre>
+<hr />
+<ol start="4" style="list-style-type: decimal">
+<li>Suponga que X tiene una distribución hipergeometrica con <span class="math inline">\(N=100\)</span>, <span class="math inline">\(n=4\)</span> y <span class="math inline">\(K=20\)</span>. (<span class="math inline">\(X\sim hyper(x,N=100,n=4,k=20)\)</span>) Determine:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(P(X = 1)\)</span></li>
+<li><span class="math inline">\(P(X = 6)\)</span></li>
+<li><span class="math inline">\(P(X \geq 1)\)</span></li>
+<li><span class="math inline">\(P(X = 4)\)</span><br />
+</li>
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ul>
+<p>Nota: En este caso se debe realizar una conversion de los parametros para utiliar la funcion dhyper de R m = K N = m + n K = n Para este caso : m=20, n=80, k=4 —</p>
+<pre class="r"><code># Distribución hipergeometrica
+# X : número de éxitos encontrados en una muestra de tamaño n (sin orden, sin repetición), 
+#     extraída de una urna que contiene N elementos de los cuales K son éxitos
+# f(x)       dhyper(x, m, n, k)
+# F(x)       phyper(q, m, n, k, lower.tail = TRUE)
+# Percentil  qhyper(p, m, n, k, lower.tail = TRUE)
+# aleatorio  rhyper(nn, m, n, k)
+
+dhyper(1,20,80,4)</code></pre>
+<pre><code>## [1] 0.4190527</code></pre>
+<hr />
+<ol start="5" style="list-style-type: decimal">
+<li>Sea la variable <span class="math inline">\(X\)</span> con distribución binomial negativa con N=100 , K=20, n=5 (<span class="math inline">\(X\sim nbinom(x,n,p,mu)\)</span> )</li>
+</ol>
+<ul>
+<li><span class="math inline">\(P(X = 0)\)</span></li>
+<li><span class="math inline">\(P(X = 6)\)</span></li>
+<li><span class="math inline">\(P(X \geq 10)\)</span></li>
+<li><span class="math inline">\(P(X \leq 12)\)</span></li>
+<li>E[X] y V[X]<br />
+</li>
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ul>
+<pre class="r"><code># Distribución binomial negativa
+# X : número del evento donde ocurre el r-esimo éxito
+# f(x)        dnbinom(x, size, prob)
+# F(x)        pnbinom(q, size, prob, lower.tail = TRUE)
+# Percentil   qnbinom(p, size, prob, lower.tail = TRUE)
+# aleatorio   rnbinom(n, size, prob)</code></pre>
+<hr />
+<ol start="6" style="list-style-type: decimal">
+<li>En un cargamento grande de llantas para automóviles, el 5% tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil. (Sea X el número de llantas con imperfecciones. <span class="math inline">\(X \sim binom(n=4, p=0.05\)</span> )</li>
+</ol>
+<ul>
+<li>¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?</li>
+<li>¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?</li>
+<li>¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?</li>
+</ul>
+<pre class="r"><code># X: numero de llantas con imperfecciones
+cat(&quot;(a) P(X=0)=&quot;, dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
+<pre><code>## (a) P(X=0)= 0.8145062</code></pre>
+<pre class="r"><code>cat(&quot;(b) P(X=1)=&quot;, dbinom(1,4,0.05), &quot;   &quot;)</code></pre>
+<pre><code>## (b) P(X=1)= 0.171475</code></pre>
+<pre class="r"><code>cat(&quot;(c) P(X=&gt;1)=&quot;, 1-dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
+<pre><code>## (c) P(X=&gt;1)= 0.1854938</code></pre>
+<pre class="r"><code>cat(&quot;(d) P(X =&gt;1)=&quot;,pbinom(0,4,0.05, lower.tail = FALSE)) </code></pre>
+<pre><code>## (d) P(X =&gt;1)= 0.1854938</code></pre>
+<hr />
+<ol start="7" style="list-style-type: decimal">
+<li>Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.(<span class="math inline">\(\lambda=8\)</span>)</li>
+</ol>
+<ul>
+<li>Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.</li>
+<li>Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.</li>
+<li>Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.</li>
+<li>Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.</li>
+</ul>
+<pre class="r"><code>cat(&quot;P(X=5&quot;,dpois(5,8), &quot;  &quot;)</code></pre>
+<pre><code>## P(X=5 0.09160366</code></pre>
+<pre class="r"><code>cat(&quot;P(X&lt;=3)=&quot;,ppois(3,8), &quot;  &quot;)</code></pre>
+<pre><code>## P(X&lt;=3)= 0.04238011</code></pre>
+<pre class="r"><code>dpois(2,8*2)</code></pre>
+<pre><code>## [1] 1.44045e-05</code></pre>
+<hr />
+<ol start="8" style="list-style-type: decimal">
+<li>Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90%. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90% es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90%?</li>
+</ol>
+<hr />
+<ol start="9" style="list-style-type: decimal">
+<li>Se sabe que 3% de las personas a las que se les revisa el equipaje en un aeropuerto lleva objetos cuestionables. ¿Cuál es la probabilidad de que una serie de 15 personas cruce sin problemas antes de que se atrape a una con un objeto cuestionable? ¿Cuál es el número esperado de personas que pasarán antes de que se detenga a una?</li>
+</ol>
+<pre class="r"><code>dgeom(15,0.03)</code></pre>
+<pre><code>## [1] 0.01899754</code></pre>
+<hr />
+<ol start="10" style="list-style-type: decimal">
+<li>El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.</li>
+</ol>
+<ul>
+<li>¿Cuál es la probabilidad de que se acepte un lote?</li>
+<li>¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?</li>
+<li>¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?</li>
+</ul>
+<hr />
+<ol start="11" style="list-style-type: decimal">
+<li>Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?</li>
+</ol>
+<hr />
+<ol start="12" style="list-style-type: decimal">
+<li>El número de grietas en un pavimento se estima en guna rieta por cada 100m en promedio(<span class="math inline">\(\lambda=1\)</span>) . Se desea estimar la probabilidad de:</li>
+</ol>
+<ul>
+<li>Halla exactamente 8 grietas en una longitud de 500 m</li>
+<li>No se presente ninguna grieta en 100 m</li>
+<li>Se presenten menos de 2 grietas en 500 m</li>
+</ul>
+<pre class="r"><code># P(X=8)
+dpois(8,1*5)</code></pre>
+<pre><code>## [1] 0.06527804</code></pre>
+<pre class="r"><code>dpois(0,1)</code></pre>
+<pre><code>## [1] 0.3678794</code></pre>
+<pre class="r"><code>ppois(1,1)</code></pre>
+<pre><code>## [1] 0.7357589</code></pre>
+<hr />
+<ol start="13" style="list-style-type: decimal">
+<li>Un científico inocula a varios ratones, uno a la vez, el virus que produce una enfermedad, hasta que encuentra a 2 que contraen la enfermedad. Si la probabilidad de contraer la enfermedad es de 1/6, ¿cuál es la probabilidad de que tenga que inocular a 8 ratones?</li>
+</ol>
+<hr />
 
 
 
