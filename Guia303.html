@@ -488,7 +488,7 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-code"></span>
+    <span class="fa fa-chess-pawn"></span>
      
     Actividades
      
@@ -500,6 +500,12 @@ div.tocify {
     </li>
     <li>
       <a href="actividad332.html">Actividad 332</a>
+    </li>
+    <li>
+      <a href="Taller_discretas.html">Taller Discretas</a>
+    </li>
+    <li>
+      <a href="Taller_continuas.html">Taller Continuas</a>
     </li>
   </ul>
 </li>
@@ -863,8 +869,9 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <pre class="r"><code>dpois(0,2)</code></pre>
 <pre><code>## [1] 0.1353353</code></pre>
 <p><br/><br/></p>
-<div id="hipergeometrica" class="section level3">
-<h3><strong>2.2.4 hipergeometrica</strong></h3>
+</div>
+<div id="hipergeometrica" class="section level2">
+<h2><strong>2.2.4 hipergeometrica</strong></h2>
 <p>Este modelo nace de la necesidad de modelar eventos Bernoulli con probabilidad no constante generados en elecciones sin repetición.</p>
 <p><br/></p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
@@ -890,7 +897,6 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <p><strong>Solución</strong></p>
 <p><span class="math inline">\(\begin{eqnarray*}  P(X\geq 1)=1-P(X=0)  &amp;=&amp; 1 - \dfrac{\displaystyle\binom{5}{0}\displaystyle\binom{135}{5}}{\displaystyle\binom{140}{5}}\\  &amp;=&amp; 1-\Bigg[\frac{1 \times 346700277}{416965528} \Bigg] \\  &amp;=&amp; 1 - 0.83148427 \\  &amp;=&amp; 0.16851573 \end{eqnarray*}\)</span></p>
 <p><br/><br/></p>
-</div>
 </div>
 <div id="geométrica-o-de-pascal" class="section level2">
 <h2><strong>2.2.5 geométrica o de Pascal</strong></h2>
@@ -1062,7 +1068,8 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <p>En la fabricación de portaobjetos, que son láminas rectangulares de vidrio muy delgada (76x26 mm y 1 mm de espesor), utilizados para la observación de sustancias en el microscopio. Una de sus principales características está relacionada con su espesor (<span class="math inline">\(X\)</span>), el cual tiene una distribución uniforme entre 0.95 mm y 1.05 mm. Determine la probabilidad de que un portaobjeto determinado tenga un espesor superior a 1.03 mm.</p>
 <p><img src="img/porta.png" /> <br/><br/></p>
 <p><strong>Solución</strong></p>
-<p><span class="math display">\[P(X\geq 1.03)= (1.05-1.03) \times \frac{1}{0.10}=0.20 \]</span> <br/><br/></p>
+<p><span class="math display">\[P(X\geq 1.03)= (1.05-1.03) \times \frac{1}{0.10}=0.20 \]</span></p>
+<p><br/><br/></p>
 </div>
 <div id="normal" class="section level2">
 <h2><strong>2.3.2 normal</strong></h2>
@@ -1125,7 +1132,6 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <div id="exponencial" class="section level2">
 <h2><strong>2.3.3 exponencial</strong></h2>
 <p>Este modelo fue planteado por el matemático estadístico e ingeniero Agner Kraru Erlang, experto en el trafico de las comunicaciones y la teoría de colas. Distribución utilizada para modelar el tiempo entre dos eventos consecutivos.</p>
-</div>
 <p><br/></p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
 <p><strong>Distribución exponencial</strong></p>
@@ -1174,8 +1180,9 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </ul>
 <p><br/><br/></p>
 </div>
-<div id="gamma" class="section level2">
-<h2><strong>2.3.4 gamma</strong></h2>
+</div>
+<div id="gamma" class="section level1">
+<h1><strong>2.3.4 gamma</strong></h1>
 <p>Esta distribución tiene su origen en la familia de curvas sesgadas propuestas por Karl Pearson. Esta distribución es otra alternativa para modelar los tiempos de espera de ocurrencia de sucesos o eventos. En ocasiones puede relacionarse con la suma de los tiempos de variables exponenciales sucesivas con igual media.</p>
 <p><br/><br/></p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
@@ -1210,7 +1217,6 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
     &amp;=&amp; 0.124652
 \end{eqnarray*}\]</span></p>
 <p><br/><br/></p>
-</div>
 <div id="weibull" class="section level2">
 <h2><strong>2.3.5 Weibull</strong></h2>
 <p>Esta distribución fue descubierta Maurice Frechet matemático francés y luego trabajada por Rosin y Rammler quienes en 1933 estudiaron el tamaño de una partícula y posteriormente recibe su nombre del ingeniero y matemático Waloddi Weibull . Esta distribución se utiliza para modelar el tiempo de vida de algunos componentes. La Weibull tiene dos parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>. Su función de distribución y sus principales características son:</p>

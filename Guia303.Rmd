@@ -434,7 +434,7 @@ dpois(0,2)
 
 <br/><br/>
 
-### **2.2.4 hipergeometrica**
+## **2.2.4 hipergeometrica**
 
 Este modelo nace de la necesidad de modelar eventos Bernoulli con probabilidad no constante generados en elecciones sin repetición. 
 
@@ -713,6 +713,7 @@ En la fabricación de portaobjetos, que son láminas rectangulares de vidrio muy
 **Solución** 
 
  $$P(X\geq 1.03)= (1.05-1.03) \times \frac{1}{0.10}=0.20 $$
+
 <br/><br/>
 
 ## **2.3.2 normal**
@@ -841,7 +842,6 @@ pnorm(c(35), mean=30, sd=5, lower.tail=TRUE)
 Este modelo fue  planteado por el matemático estadístico e ingeniero Agner Kraru Erlang, experto en el trafico de las comunicaciones y la teoría de colas. 
 Distribución utilizada para modelar el tiempo entre dos eventos consecutivos. 
 
-</div> 
 
 <br/>
 
@@ -939,7 +939,7 @@ Con las siguientes propiedades:
 
 <br/><br/>
 
-## **2.3.4 gamma**
+# **2.3.4 gamma**
 
 Esta distribución tiene su origen en la familia de curvas sesgadas propuestas por Karl Pearson. Esta distribución es otra alternativa para modelar los tiempos de espera de ocurrencia de sucesos o eventos. En ocasiones puede relacionarse con la suma de los tiempos de variables exponenciales sucesivas con igual media.
 
