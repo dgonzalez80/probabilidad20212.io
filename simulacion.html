@@ -762,7 +762,7 @@ data.frame(x,fx,Fx)        # construye tabla</code></pre>
 <li>Generar 15 números aleatorios a partir de esta distribución</li>
 </ol>
 <pre class="r"><code>rbinom(15,20,0.30)</code></pre>
-<pre><code>##  [1] 6 6 6 7 6 6 6 6 8 9 6 9 6 7 6</code></pre>
+<pre><code>##  [1] 5 8 5 9 9 5 7 6 8 7 5 7 8 5 8</code></pre>
 <p><br/></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Construir la gráfica de la función de distribución de probabilidad <span class="math inline">\(f(x)\)</span> para <span class="math inline">\(X\)</span></li>
@@ -814,8 +814,7 @@ ggplot(dat) + geom_point(aes(x, fx),colour = &quot;orange&quot;, size = 4) +
 <li>Genere 10 números aleatorios de la variables <span class="math inline">\(X\)</span></li>
 </ol>
 <pre class="r"><code>rnorm(10,70,sqrt(100))</code></pre>
-<pre><code>##  [1] 71.50909 71.49205 84.00347 62.66967 66.42172 77.07393 72.92277 78.43243
-##  [9] 91.16515 87.02169</code></pre>
+<pre><code>##  [1] 77.50811 63.24581 75.02488 72.12223 82.73734 73.37899 64.27605 60.61819 73.92632 60.45647</code></pre>
 <p><br/></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Generar la gráfica de la función de densidad de la variable <span class="math inline">\(X\)</span>, <span class="math inline">\(f(x)\)</span></li>
@@ -880,19 +879,19 @@ ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)</code></pre>
 ## 
 ##                       value
 ## ----------------- ---------
-##              Mean      5.99
-##           Std.Dev      0.50
-##               Min      4.40
-##                Q1      5.66
-##            Median      5.98
-##                Q3      6.31
-##               Max      7.73
-##               MAD      0.48
-##               IQR      0.65
-##                CV      0.08
-##          Skewness      0.12
+##              Mean      6.00
+##           Std.Dev      0.53
+##               Min      4.35
+##                Q1      5.64
+##            Median      5.97
+##                Q3      6.38
+##               Max      7.50
+##               MAD      0.55
+##               IQR      0.73
+##                CV      0.09
+##          Skewness      0.02
 ##       SE.Skewness      0.08
-##          Kurtosis     -0.06
+##          Kurtosis     -0.22
 ##           N.Valid   1000.00
 ##         Pct.Valid    100.00</code></pre>
 </div>
