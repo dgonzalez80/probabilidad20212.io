@@ -74,6 +74,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |                |                                                                         | 
 |:---------------|:------------------------------------------------------------------------|
 |**Activiad 332**| De manera individual deberá seleccionar uno de los siguientes problemas (**Taller de simulación**)  para ser resuelto con ayuda computacional. En un archivo pdf se deberán responder los interrogantes solicitados, adjuntado el código empleado |
+|               | Trabajo individual                                                      |
 |Fecha          | 26 de septiembre                                                        |
 |Hora           | 23:59                                                                   |
 
