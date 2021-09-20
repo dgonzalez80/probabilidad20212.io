@@ -806,7 +806,7 @@ La propiedad empírica de la distribución normal es de gran ayuda cuando una va
 
 **Propiedad empírica de la distribución normal estandar**
 
-![](img/norm01.png) 
+![](img/norm01.png){width=600px} 
 
 <br/><br/>
 
@@ -815,7 +815,7 @@ La propiedad empírica de la distribución normal es de gran ayuda cuando una va
 
 La velocidad de transferencia de archivos desde un servidor en el campus de la universidad a un ordenador personal en casa de un estudiante en un día laborable, se distribuye normalmente con una media de 60 kilobits por segundo y una desviación estándar de 4 kilobits por segundo. ¿Cuál es la probabilidad de que el archivo se transfiera a una velocidad de 70 kilobits por segundo o más?
 
-![](img/sitioweb.jpg)
+![](img/sitioweb.jpg){width=1000px}
 <br/><br/>
 
 **Solución** 
@@ -900,7 +900,7 @@ ggdistribution(pexp, seq(0, 10, 0.1),rate=1 ,colour = 'blue')
 
 El tiempo entre llamadas de los clientes a una empresa de turismo ecológico tiene una distribución exponencial con un tiempo medio entre llamadas de 15 minutos. ¿Cuál es la probabilidad de que transcurra más de 20 minutos antes de que se realiza una nueva llamada? (Ejemplo 8 4-77 Mongomery)
 
-![](img/celular.jpg)
+![](img/celular.jpg){width=1000px}
 
 <br/><br/>
 
@@ -992,13 +992,13 @@ ggdistribution(dgamma, seq(0, 15, 0.1),shape=5,rate=1,colour = 'orange', p=p)
 ```
 
 
-*Ejemplo 10**
+**Ejemplo 10**
 
 En cierta ciudad el consumo diario de energía eléctrica, en millones de kilovatios por hora, puede considerarse como una variable aleatoria con distribución Gamma de parámetros $r= 3$ y $\lambda= 0.5$. La planta de energía de esta ciudad tiene una capacidad diaria de 10 millones de KW/hora
 ¿Cuál es la probabilidad de que este abastecimientos sea insuficiente en un día cualquiera?.
 
 
-![](img/energia.png)
+![](img/energia.png){width=800px}
 <br/><br/>
 
 **Solución**
@@ -1074,6 +1074,7 @@ $$h(t)=\dfrac{f(t)}{1-F(t)} $$
 
 La duración de una batería se modela mediante una distribución Weibull con parámetros: $\alpha=0.1$ y $\beta=2$. Determine la probabilidad de que una batería dure más de 10 horas. Determine la proporción de baterías que durarán más de 10 horas.
 
+![](img/bateria.png){width=300px}
 <br/><br/>
 
 **Solución**
