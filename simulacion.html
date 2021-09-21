@@ -527,11 +527,15 @@ div.tocify {
 </div>
 
 
-<div id="simulación" class="section level1">
-<h1><strong>3. Simulación</strong></h1>
+<div id="funciones-modelos" class="section level1">
+<h1><strong>Funciones modelos</strong></h1>
+<div id="código-r" class="section level4">
+<h4><strong>Código R</strong></h4>
 <p>Existe un grupo de modelos identificados para las variables aleatorias tanto discretas como continuas que son utilizadas con frecuencia en diferentes contextos. A continuación se relacionan los principales modelos:</p>
+<p><br/><br/></p>
+</div>
 <div id="modelos-discretos" class="section level4">
-<h4>Modelos discretos:</h4>
+<h4><strong>Modelos discretos</strong>:</h4>
 <ul>
 <li>Bernoulli,</li>
 <li>binomial,</li>
@@ -540,9 +544,10 @@ div.tocify {
 <li>hipergeometrico,</li>
 <li>binomial negativo.</li>
 </ul>
+<p><br/><br/></p>
 </div>
 <div id="modelos-continuos" class="section level4">
-<h4>Modelos continuos:</h4>
+<h4><strong>Modelos continuos</strong>:</h4>
 <ul>
 <li>uniforme</li>
 <li>normal</li>
@@ -558,15 +563,18 @@ div.tocify {
 <li>F de Fisher</li>
 <li>Empirica o Kernel</li>
 </ul>
+<p><br/><br/></p>
 <p>En <span class="math inline">\(R\)</span> los nombre de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes:</p>
-<p>La primera parte es una letra que identifica el propósito de la función.</p>
+<p>La primera parte es una letra que identifica el propósito de la función. <br/><br/></p>
 <ul>
-<li><em>d</em> : función de distribución de probabilidad <span class="math inline">\(f(x)= P(X=x)\)</span>, para el caso discreto. En el caso de las variables continuas representa la función de densidad de probabilidad <span class="math inline">\(f(x)\)</span></li>
-<li><em>p</em> : función de probbilidad acumulada <span class="math inline">\(F(x) = P(X \leq x)\)</span></li>
-<li><em>q</em> : percentil <span class="math inline">\(X_p\)</span></li>
-<li><em>r</em> : generador de números aleatorios</li>
+<li><p><em>d</em> : función de distribución de probabilidad <span class="math inline">\(f(x)= P(X=x)\)</span>, para el caso discreto. En el caso de las variables continuas representa la función de densidad de probabilidad <span class="math inline">\(f(x)\)</span></p></li>
+<li><p><em>p</em> : función de probbilidad acumulada <span class="math inline">\(F(x) = P(X \leq x)\)</span></p></li>
+<li><p><em>q</em> : percentil <span class="math inline">\(X_p\)</span></p></li>
+<li><p><em>r</em> : generador de números aleatorios</p></li>
 </ul>
+<p><br/><br/></p>
 <p>La siguiene tabla presenta estas las funciones para los principales modelos tanto discretos como continuos</p>
+<p><br/><br/></p>
 <table>
 <thead>
 <tr class="header">
@@ -685,8 +693,10 @@ div.tocify {
 </tr>
 </tbody>
 </table>
+<p><br/><br/></p>
 <p>En <strong>R</strong> los nombres de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes: la primera parte con el propósito de la función (primera letra) y la segunda parte hace referencia al modelo a utilizar (<strong>d</strong> <strong>binom</strong> para el calculo de probabilidad de una variable aleatoria con distribución binomial)</p>
 <p>En cada caso si no recuerda las sintaxis de la función puede hacer uso de las ayudas de R así:</p>
+<p><br/><br/></p>
 <pre class="r"><code> help(&quot;pbinom&quot;)</code></pre>
 <p><br/><br/></p>
 <table>
@@ -710,7 +720,9 @@ div.tocify {
 </tbody>
 </table>
 <p><br/><br/></p>
-<p><strong>Ejemplo 1</strong></p>
+</div>
+<div id="ejemplo-1" class="section level2">
+<h2><strong>Ejemplo 1</strong></h2>
 <p>Sea una variables con distribución binomial con parámetros <span class="math inline">\(n=20\)</span> y <span class="math inline">\(p=0.30\)</span> , lo cual se puede simbolizar como : <span class="math inline">\(X\sim b(x; 20,0.30)\)</span></p>
 <p>En este caso se requieren realizar los siguientes procesos:</p>
 <p><br/></p>
@@ -762,7 +774,7 @@ data.frame(x,fx,Fx)        # construye tabla</code></pre>
 <li>Generar 15 números aleatorios a partir de esta distribución</li>
 </ol>
 <pre class="r"><code>rbinom(15,20,0.30)</code></pre>
-<pre><code>##  [1] 5 8 5 9 9 5 7 6 8 7 5 7 8 5 8</code></pre>
+<pre><code>##  [1]  6  7  5  5  6  4  8  7  3  6  5 12 10  5  5</code></pre>
 <p><br/></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Construir la gráfica de la función de distribución de probabilidad <span class="math inline">\(f(x)\)</span> para <span class="math inline">\(X\)</span></li>
@@ -793,8 +805,10 @@ ggplot(dat) + geom_point(aes(x, fx),colour = &quot;orange&quot;, size = 4) +
           breaks = 0:20, 
         labels = c(&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;,&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;, &#39;15&#39;,&#39;16&#39;,&#39;17&#39;,&#39;18&#39;,&#39;19&#39;,&#39;20&#39;))</code></pre>
 <p><img src="simulacion_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p><br/><br/></p>
-<p><strong>Ejemplo 2</strong></p>
+<p><br/><br/><br/></p>
+</div>
+<div id="ejemplo-2" class="section level2">
+<h2><strong>Ejemplo 2</strong></h2>
 <p>Ahora supongamos que se tiene una variable continua con distribución normal, con media 50 y varianza 100, es decir desviación estándar 10, lo cual se puede representar como <span class="math inline">\(X\sim N(50,100)\)</span>\.</p>
 <p>En este caso vamos a hallar los siguientes valores:</p>
 <p><br/></p>
@@ -814,7 +828,8 @@ ggplot(dat) + geom_point(aes(x, fx),colour = &quot;orange&quot;, size = 4) +
 <li>Genere 10 números aleatorios de la variables <span class="math inline">\(X\)</span></li>
 </ol>
 <pre class="r"><code>rnorm(10,70,sqrt(100))</code></pre>
-<pre><code>##  [1] 77.50811 63.24581 75.02488 72.12223 82.73734 73.37899 64.27605 60.61819 73.92632 60.45647</code></pre>
+<pre><code>##  [1] 57.07296 69.44587 52.43551 65.29131 73.43187 68.31509 79.93121 61.57208
+##  [9] 83.45906 72.99304</code></pre>
 <p><br/></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Generar la gráfica de la función de densidad de la variable <span class="math inline">\(X\)</span>, <span class="math inline">\(f(x)\)</span></li>
@@ -841,15 +856,18 @@ library(ggfortify)
 ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)</code></pre>
 <p><img src="simulacion_files/figure-html/unnamed-chunk-15-1.png" width="672" /> <br/></p>
 <p>Por otro lado el proceso de simulación de variables estadisticas esta relacionado con los experimentos llamados de Montecarlo, a continuación se describe brevemente su origen.</p>
+<p><br/><br/><br/></p>
 </div>
-<div id="método-de-montecarlo" class="section level2">
-<h2><strong>3.1 Método de Montecarlo</strong></h2>
+</div>
+<div id="método-de-montecarlo" class="section level1">
+<h1><strong>Método de Montecarlo</strong></h1>
 <p>Es un método no determinista o estadístico numérico, usado para aproximar expresiones matemáticas complejas y costosas de evaluar con exactitud. El método se llamó así en referencia al Casino de Montecarlo (Mónaco) por ser “la capital del juego de azar”, al ser la ruleta un generador simple de números aleatorios. El nombre y el desarrollo sistemático de los métodos de Montecarlo datan aproximadamente de 1944 y se mejoraron enormemente con el desarrollo de la computadora.</p>
 <p>El uso de los métodos de Montecarlo como herramienta de investigación, proviene del trabajo realizado en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial en el Laboratorio Nacional de Los Álamos en EE. UU. Este trabajo conllevaba la simulación de problemas probabilísticos de hidrodinámica concernientes a la difusión de neutrones en el material de fisión. Esta difusión posee un comportamiento eminentemente aleatorio.<br />
 (tomado de Wikipedia)</p>
 <p>Como ejemplo se presentan los siguientes problemas tomados de Navidi.</p>
 <p><br/><br/></p>
-<p><strong>Ejemplo 3 </strong></p>
+<div id="ejemplo-3" class="section level2">
+<h2><strong>Ejemplo 3</strong></h2>
 <p>Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen como <span class="math inline">\(N(2.0; 0.01)\)</span> y cuyos anchos se distribuyen <span class="math inline">\(N(3.0; 0.04)\)</span>. Suponga que las longitudes y los anchos son independientes. El área de una placa esta dada por <span class="math inline">\(A=XY\)</span>.</p>
 <p><img src="img\lamina.png" /></p>
 <ol style="list-style-type: lower-alpha">
@@ -858,19 +876,19 @@ ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)</code></pre>
 <li><p>Construya una gráfica de distribución normal <span class="math inline">\((qqplot)\)</span> para el área. ¿El área de una placa sigue una distribución normal?</p></li>
 </ol>
 <p>Problema 3 capitulo 4 Navidi(2006)</p>
+<p><br/></p>
 <p><strong>Solución</strong></p>
-<pre class="r"><code>    X2=rnorm(1000,mean=2.0,sd=0.1)    #  generación de numeros aleatorios  de X
-    Y2=rnorm(1000,mean=3.0,sd=0.2)    #  generacion de numeros aleatorios  deY
-    Z2=data.frame(X2,Y2)              #  generacion de matriz de X,Y
-    A2=apply(Z2,1,prod)               #  area de la placa A=XY
-    mediaA=mean(A2)                   #  media del vector de areas 
-    varianzaA=var(A2)                 #  varianza del vector de areas 
-    B2=as.numeric(A2&gt;5.9 &amp; A2&lt;6.1)    #  generacion de variable de 0,1, 
-    #  con 1 donde cumplecondicion   
+<pre class="r"><code>    X2=rnorm(1000,mean=2.0,sd=0.1)    #  generación de números aleatorios  de X
+    Y2=rnorm(1000,mean=3.0,sd=0.2)    #  generación de números aleatorios  de Y
+    Z2=data.frame(X2,Y2)              #  generación de matriz de X,Y
+    A2=apply(Z2,1,prod)               #  área de la placa A=XY
+    mediaA=mean(A2)                   #  media del vector de áreas 
+    varianzaA=var(A2)                 #  varianza del vector de áreas 
+    B2=as.numeric(A2&gt;5.9 &amp; A2&lt;6.1)    #  generación de variable de 0,1. Con valor de 1 cundo se cumple la condición y cero en otros casos
     Pro3c=sum(B2)/1000                #  calculo de la  probabilidad 
-    hist(A2)                          # histograma del valor de las areas</code></pre>
+    hist(A2)                          # histograma del valor de las áreas</code></pre>
 <p><img src="simulacion_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<pre class="r"><code>    qqnorm(A2)                        # grafico de normalidad del area</code></pre>
+<pre class="r"><code>    qqnorm(A2)                        # gráfico de normalidad del área</code></pre>
 <p><img src="simulacion_files/figure-html/unnamed-chunk-16-2.png" width="672" /></p>
 <pre class="r"><code>summarytools::descr(A2)</code></pre>
 <pre><code>## Descriptive Statistics  
@@ -879,19 +897,19 @@ ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)</code></pre>
 ## 
 ##                       value
 ## ----------------- ---------
-##              Mean      6.00
-##           Std.Dev      0.53
-##               Min      4.35
+##              Mean      5.99
+##           Std.Dev      0.49
+##               Min      4.34
 ##                Q1      5.64
-##            Median      5.97
-##                Q3      6.38
-##               Max      7.50
-##               MAD      0.55
-##               IQR      0.73
-##                CV      0.09
-##          Skewness      0.02
+##            Median      5.96
+##                Q3      6.33
+##               Max      7.89
+##               MAD      0.50
+##               IQR      0.68
+##                CV      0.08
+##          Skewness      0.08
 ##       SE.Skewness      0.08
-##          Kurtosis     -0.22
+##          Kurtosis      0.03
 ##           N.Valid   1000.00
 ##         Pct.Valid    100.00</code></pre>
 </div>

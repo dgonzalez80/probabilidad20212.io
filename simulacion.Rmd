@@ -14,13 +14,15 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# **Funciones modelos**
 
-
-# **3. Simulación**
+#### **Código R**
 
 Existe un grupo de modelos identificados para las variables aleatorias tanto discretas como continuas que son utilizadas con frecuencia en diferentes contextos. A continuación se relacionan los principales modelos:
 
-#### Modelos discretos:
+<br/><br/>
+
+#### **Modelos discretos**:
 
 + Bernoulli, 
 + binomial,
@@ -29,8 +31,9 @@ Existe un grupo de modelos identificados para las variables aleatorias tanto dis
 + hipergeometrico,
 + binomial negativo.
 
+<br/><br/>
 
-#### Modelos continuos:
+#### **Modelos continuos**:
 
 + uniforme
 + normal
@@ -46,17 +49,26 @@ Existe un grupo de modelos identificados para las variables aleatorias tanto dis
 + F de Fisher
 + Empirica o  Kernel
 
+<br/><br/>
 
 En $R$ los nombre de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes:
 
 La primera parte es una letra que identifica el propósito de la función.
+<br/><br/>
 
 + *d* : función de distribución de probabilidad $f(x)= P(X=x)$, para el caso discreto. En el caso de las variables continuas representa la función de densidad de probabilidad $f(x)$
+
 + *p* : función de probbilidad acumulada $F(x) = P(X \leq x)$
+
 + *q* : percentil $X_p$
+
 + *r* : generador de números aleatorios
 
+<br/><br/>
+
 La siguiene tabla presenta estas las funciones para los principales modelos tanto discretos como continuos
+
+<br/><br/>
 
 
 *modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
@@ -77,9 +89,13 @@ t-Student           | pt       | qt       | dt       | rt          |
 Ji-cuadrado         | pchisq   | qchisq   | dchisq   | rchisq      |
 F                   | pf       | qf       | df       | rf          |
 
+<br/><br/>
+
 En **R** los nombres de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes: la primera parte con el propósito de la función (primera letra)  y la segunda parte hace referencia al modelo a utilizar (**d** **binom** para el calculo de probabilidad de una variable aleatoria con distribución binomial)
 
 En cada caso si no recuerda las sintaxis de la función puede hacer uso de las ayudas de R así:
+
+<br/><br/>
 
 ```{r}
  help("pbinom")
@@ -96,7 +112,7 @@ En cada caso si no recuerda las sintaxis de la función puede hacer uso de las a
 
 <br/><br/>
 
-**Ejemplo 1**
+## **Ejemplo 1**
 
 Sea una variables con distribución binomial con parámetros $n=20$ y $p=0.30$ , lo cual se puede simbolizar como : $X\sim b(x; 20,0.30)$ 
 
@@ -178,9 +194,9 @@ ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
 ```
 
 
-<br/><br/>
+<br/><br/><br/>
 
-**Ejemplo  2**
+## **Ejemplo  2**
 
 Ahora supongamos que se tiene una variable continua con distribución normal, con media 50 y varianza 100, es decir desviación estándar 10, lo cual se puede representar como $X\sim N(50,100)$\\. 
 
@@ -252,7 +268,9 @@ ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)
 
 Por otro lado el proceso de simulación de variables estadisticas esta relacionado con los experimentos llamados de  Montecarlo, a continuación se describe brevemente su origen. 
 
-## **3.1 Método de Montecarlo**  
+<br/><br/><br/>
+
+# **Método de Montecarlo**  
 
 Es un método no determinista o estadístico numérico, usado para aproximar expresiones matemáticas complejas y costosas de evaluar con exactitud. El método se llamó así en referencia al Casino de Montecarlo (Mónaco) por ser “la capital del juego de azar”, al ser la ruleta un generador simple de números aleatorios. El nombre y el desarrollo sistemático de los métodos de Montecarlo datan aproximadamente de 1944 y se mejoraron enormemente con el desarrollo de la computadora.  
 
@@ -263,7 +281,7 @@ Como ejemplo se presentan los siguientes problemas tomados de Navidi.
 
 <br/><br/>
 
-**Ejemplo 3 ** 
+## **Ejemplo 3** 
 
 Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen como $N(2.0; 0.01)$ y cuyos anchos se distribuyen $N(3.0; 0.04)$. Suponga que las longitudes y los anchos son independientes. El área de una placa esta dada por $A=XY$.
 
@@ -277,20 +295,21 @@ c. Construya una gráfica de distribución normal $(qqplot)$ para el área. ¿El
 
 Problema 3 capitulo 4 Navidi(2006) 
 
+<br/>
+
 **Solución**
 
 ```{r}
-	X2=rnorm(1000,mean=2.0,sd=0.1)    #  generación de numeros aleatorios  de X
-	Y2=rnorm(1000,mean=3.0,sd=0.2)    #  generacion de numeros aleatorios  deY
-	Z2=data.frame(X2,Y2)              #  generacion de matriz de X,Y
-	A2=apply(Z2,1,prod)               #  area de la placa A=XY
-	mediaA=mean(A2)                   #  media del vector de areas 
-	varianzaA=var(A2)                 #  varianza del vector de areas 
-	B2=as.numeric(A2>5.9 & A2<6.1)    #  generacion de variable de 0,1, 
-	#  con 1 donde cumplecondicion   
+	X2=rnorm(1000,mean=2.0,sd=0.1)    #  generación de números aleatorios  de X
+	Y2=rnorm(1000,mean=3.0,sd=0.2)    #  generación de números aleatorios  de Y
+	Z2=data.frame(X2,Y2)              #  generación de matriz de X,Y
+	A2=apply(Z2,1,prod)               #  área de la placa A=XY
+	mediaA=mean(A2)                   #  media del vector de áreas 
+	varianzaA=var(A2)                 #  varianza del vector de áreas 
+	B2=as.numeric(A2>5.9 & A2<6.1)    #  generación de variable de 0,1. Con valor de 1 cundo se cumple la condición y cero en otros casos
 	Pro3c=sum(B2)/1000                #  calculo de la  probabilidad 
-	hist(A2)                          # histograma del valor de las areas
-	qqnorm(A2)                        # grafico de normalidad del area
+	hist(A2)                          # histograma del valor de las áreas
+	qqnorm(A2)                        # gráfico de normalidad del área
 ```
 
 ```{r}
