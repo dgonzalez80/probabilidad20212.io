@@ -31,10 +31,12 @@ Construir un  **poster** para cada uno de los modelos asignados que contenga sus
 
 ##### * Referencias bibliográficas 
 
+<br/><br/><br/>
 
 # **Conformación grupos**
 
-<br/><br/><br/>
+<br/><br/>
+
 
 |Grupo       | Distribuciones                        |
 |:----------:|:--------------------------------------|
