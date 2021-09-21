@@ -1,0 +1,327 @@
+---
+title: "Taller 303-1"
+subtitle: "Probabilidad y Estadística"
+author: "dgonzalez80"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# **Distribuciones discretas**
+
+## **Ejercicio 1**
+
+1.  Para una variable aleatoria con distribución binomial $X \sim binom(x, n=10, p=0.5)$ . Determine: la función de distribución asociada a $X$.
+
+```{=html}
+<!-- -->
+```
+a.  $P(X = 5)$
+
+```{r 1a, exercise=TRUE}
+
+```
+
+b.  $P(X \leq 2)$
+
+```{r 1b, exercise=TRUE}
+
+```
+
+c.  $P(3\leq X <5)$
+
+```{r 1c, exercise=TRUE}
+
+```
+
+d.  $P(X\geq 8)$
+
+```{r 1d, exercise=TRUE}
+
+```
+
+e.  Construya la gráfica de $f_{_{X}}(x)$
+
+```{r 1e, exercise=TRUE}
+
+```
+
+## **Ejercicio 2**
+
+Suponga que X tiene una distribución Poisson con media $\lambda=4$ ($X \sim pois(x,\lambda=4)$). Determine:
+
+a.  $P(X = 0)$
+
+```{r 2a, exercise=TRUE}
+
+```
+
+b.  $P(X = 4)$
+
+```{r 2b, exercise=TRUE}
+
+```
+
+c.  $P(X \geq 2)$
+
+```{r 2c, exercise=TRUE}
+
+```
+
+d.  $P(X \leq 2)$
+
+```{r 2d, exercise=TRUE}
+
+```
+
+e.  Construya la gráfica de $f_{_{X}}(x)$
+
+```{r 2e, exercise=TRUE}
+
+```
+
+## **Ejercicio 3**
+
+3.  Sea una variable geométrica $X\sim geomn,(x,p=0.05)$
+
+```{=html}
+<!-- -->
+```
+a.  $P(X = 1)$
+
+```{r 3a, exercise=TRUE}
+
+```
+
+b.  $P(X \leq 2)$
+
+```{r 3b, exercise=TRUE}
+
+```
+
+c.  $P(X =8)$
+
+```{r 3c, exercise=TRUE}
+
+```
+
+d.  $P(X\geq 2)$
+
+```{r 3d, exercise=TRUE}
+
+```
+
+e.  Construya la gráfica de $f_{_{X}}(x)$
+
+```{r 3e, exercise=TRUE}
+
+```
+
+## **Ejercicio 4**
+
+4.  Suponga que X tiene una distribución hipergeometrica con $N=100$, $n=4$ y $K=20$. ($X\sim hyper(x,N=100,n=4,k=20)$) Determine:
+
+```{=html}
+<!-- -->
+```
+a.  $P(X = 1)$
+
+```{r 4a, exercise=TRUE}
+
+```
+
+**Nota**: En este caso se debe realizar una conversión de los parámetros para utilizar la función dhyper de R m = K N = m + n K = n Para este caso : m=20, n=80, k=4
+
+b.  $P(X = 6)$
+
+```{r 4b, exercise=TRUE}
+
+```
+
+c.  $P(X \geq 1)$
+
+```{r 4c, exercise=TRUE}
+
+```
+
+d.  $P(X = 4)$
+
+```{r 4d, exercise=TRUE}
+
+```
+
+e.  Construya la gráfica de $f_{_{X}}(x)$
+
+## **Ejercicio 5**
+
+5.  Sea la variable $X$ con distribución binomial negativa con N=100 , K=20, n=5 ($X\sim nbinom(x,n,p,mu)$ )
+
+```{=html}
+<!-- -->
+```
+a.  $P(X = 0)$
+
+```{r 5a, exercise=TRUE}
+
+```
+
+b.  $P(X = 6)$
+
+```{r 5b, exercise=TRUE}
+
+```
+
+c.  $P(X \geq 10)$
+
+```{r 5c, exercise=TRUE}
+
+```
+
+d.  $P(X \leq 12)$
+
+```{r 5d, exercise=TRUE}
+
+```
+
+e.  E[X] y V[X]
+
+```{r 5e, exercise=TRUE}
+
+```
+
+f.  Construya la gráfica de $f_{_{X}}(x)$
+
+## **Ejercicio 6**
+
+6.  En un cargamento grande de llantas para automóviles, el 5% tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil. (Sea X el número de llantas con imperfecciones. $X \sim binom(n=4, p=0.05$ )
+
+a.¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?
+
+```{r 6a, exercise=TRUE}
+
+```
+
+b.  ¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?
+
+```{r 6b, exercise=TRUE}
+
+```
+
+c.  ¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?
+
+## **Ejercicio 7**
+
+7.  Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.($\lambda=8$)
+
+```{=html}
+<!-- -->
+```
+a.  Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
+
+```{r 7a, exercise=TRUE}
+
+```
+
+b.  Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.
+
+```{r 7b, exercise=TRUE}
+
+```
+
+c.  Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.
+
+```{r 7c, exercise=TRUE}
+
+```
+
+d.  Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.
+
+```{r 7d, exercise=TRUE}
+
+```
+
+## **Ejercicio 8**
+
+8.  Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90%. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90% es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90%?
+
+```{r 8, exercise=TRUE}
+
+```
+
+## **Ejercicio 9**
+
+9.  Se sabe que 3% de las personas a las que se les revisa el equipaje en un aeropuerto lleva objetos cuestionables. ¿Cuál es la probabilidad de que una serie de 15 personas cruce sin problemas antes de que se atrape a una con un objeto cuestionable? ¿Cuál es el número esperado de personas que pasarán antes de que se detenga a una?
+
+```{r 9, exercise=TRUE}
+
+```
+
+## **Ejercicio 10**
+
+10. El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.
+
+```{=html}
+<!-- -->
+```
+a.  ¿Cuál es la probabilidad de que se acepte un lote?
+
+```{r 10a, exercise=TRUE}
+
+```
+
+b.  ¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?
+
+```{r 10b, exercise=TRUE}
+
+```
+
+c.  ¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?
+
+```{r 10c, exercise=TRUE}
+
+```
+
+## **Ejercicio 11**
+
+11. Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?
+
+```{r 11, exercise=TRUE}
+
+```
+
+## **Ejercicio 12**
+
+12. El número de grietas en un pavimento se estima en guna rieta por cada 100m en promedio($\lambda=1$) . Se desea estimar la probabilidad de:
+
+```{=html}
+<!-- -->
+```
+a.  Halla exactamente 8 grietas en una longitud de 500 m
+
+```{r 12a, exercise=TRUE}
+
+```
+
+b.  No se presente ninguna grieta en 100 m
+
+```{r 12b, exercise=TRUE}
+
+```
+
+c.  Se presenten menos de 2 grietas en 500 m
+
+```{r 12c, exercise=TRUE}
+
+```
+
+## **Ejercicio 13**
+
+13. Un científico inocula a varios ratones, uno a la vez, el virus que produce una enfermedad, hasta que encuentra a 2 que contraen la enfermedad. Si la probabilidad de contraer la enfermedad es de 1/6, ¿cuál es la probabilidad de que tenga que inocular a 8 ratones?
+
+```{r 13, exercise=TRUE}
+
+```
