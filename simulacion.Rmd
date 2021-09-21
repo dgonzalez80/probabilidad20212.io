@@ -266,7 +266,7 @@ ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)
 ```
 <br/>
 
-Por otro lado el proceso de simulación de variables estadisticas esta relacionado con los experimentos llamados de  Montecarlo, a continuación se describe brevemente su origen. 
+Por otro lado el proceso de simulación de variables estadísticas esta relacionado con los experimentos llamados de  Montecarlo, a continuación se describe brevemente su origen. 
 
 <br/><br/><br/>
 
