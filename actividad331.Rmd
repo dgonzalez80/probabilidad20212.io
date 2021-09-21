@@ -1,5 +1,5 @@
 ---
-title: "Actividad 331"
+title: "**Actividad 331**"
 author: "dgonzalez80"
 date: " "
 output:
@@ -27,7 +27,7 @@ Construir un  **poster** para cada uno de los modelos asignados que contenga sus
 
 ##### * Aplicaciones en el campo de las ingeniería, ciencias, economía, salud...
 
-##### * Relación con otras disrtibuciones (\href{http://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf}{Leemis (2008)- Univariate Distribution Relationships})
+##### * Relaciones entre distribuciones univariadas.  [(Artículo)](http://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf)
 
 ##### * Referencias bibliográficas 
 

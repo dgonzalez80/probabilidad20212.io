@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "**Actividad 332**"
 author: "dgonzalez80"
 output:
   html_document:
@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# **Actividad 2 - Simulación**
+# **Simulación**
 
 De manera individual deberá seleccionar uno de los siguientes problemas para ser resuelto con ayuda computacional. En un archivo pdf se deberán responder los interrogantes solicitados, adjuntado el código empleado. 
 
