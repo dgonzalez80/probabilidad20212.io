@@ -17,9 +17,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 1.  Para una variable aleatoria con distribución binomial $X \sim binom(x, n=10, p=0.5)$ . Determine: la función de distribución asociada a $X$.
 
-```{=html}
-<!-- -->
-```
 a.  $P(X = 5)$
 
 ```{r 1a, exercise=TRUE}
