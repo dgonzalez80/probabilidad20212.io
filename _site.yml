@@ -91,9 +91,9 @@ navbar:
         - text: "Actividad 332"
           href: actividad332.html
         - text: "Taller Discretas"
-          href: Taller_discretas.html
+          href: Taller331.html
         - text: "Taller Continuas"
-          href: Taller_continuas.html
+          href: Taller332.html
           
 output:
   html_document:
