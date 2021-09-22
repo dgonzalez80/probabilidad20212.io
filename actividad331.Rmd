@@ -42,59 +42,67 @@ Construir un  **poster** para cada uno de los modelos asignados que contenga sus
 |:----------:|:--------------------------------------|
 | Grupo 1    | distribución 1 : nomal                |
 |            | distribución 2 : geométrica           |
-|            |                                       |
 | Grupo 2    | distribución 1 : exponencial          |
 |            | distribución 2 : binomial             |
-|            |                                       |
 | Grupo 3    | distribución 1 : lognormal            |
 |            | distribución 2 : Poisson              |
-|            |                                       |
 | Grupo 4    | distribución 1 : t-Student            |
 |            | distribución 2 : binomial negativa    |
-|            |                                       |
 | Grupo 5    | distribución 1 : gamma                |
 |            | distribución 2 : hipergeometrica      |
-|            |                                       |
 | Grupo 6    | distribución 1 : beta                 |
 |            | distribución 2 : Poisson              |
-|            |                                       |
 | Grupo 7    | distribución 1 : Gumbel               |
 |            | distribución 2 : binomial negativa    |
-|            |                                       |
 | Grupo 8    | distribución 1 :  Weibull             |
 |            | distribución 2 :  geométrica          |
-|            |                                       |
 | Grupo 9    | distribución 1 : F                    |
 |            | distribución 2 : hipergeométrica      |
-|            |                                       |
 | Grupo 10   | distribución 1 : ji-cuadrado          |
 |            | distribución 2 : hipergeométrica      |
-|            |                                       |
 | Grupo 11   | distribución 1 : normal               |
 |            | distribución 2 : binomial             |
 |            |                                       |
 | Grupo 12   |  distribución 1 : geométrica          |
 |            |  distribución 2 : uniforme continua   |
-|            |                                       |
 | Grupo 13   |  distribución 1 : Poisson             |
 |            |  distribución 2 : exponencial         |
-|            |                                       |
 | Grupo 14  |  distribución 1 : geométrica           |
 |            | distribución 2 : Cauchy               |
-|            |                                       |
 | Grupo 15   |  distribución 1 : binomial negativa   |
 |            |  distribución 2 : lognormal           |
-|            |                                       |
 | Grupo 16   |  distribución 1 : hipergeométrica     |
 |            |  distribución 2 : gamma               |
-|            |                                       |
 | Grupo17    |  distribución 1 : normal              |
 |            |  distribución 2 : binomial            |
-|            |  |
+|            |                                       |
 
 
 <br/><br/><br/>
 
+## **Grupos - 300MAE005 - B**
+
+|**Grupo** | **Nombres** |
+|:---------:|:-------------------------------------------|
+|Grupo 1 | Cristian Duvan Quintero, Juan Esteban Espinosa|
+|Grupo 2 | Juan Felipe Rojas, Camilo Rios|
+|Grupo 3 | Isabella Bonilla, Juan Stevan Marmolejo|
+|Grupo 4 | Daniel Sinisterra, Erika Burckhardt|
+|Grupo 5 | Juan José Soto, Esteban Quintero|
+|Grupo 6 | Nicolas Lozano, Tomas Moreno|
+|Grupo 7 | Stephany Rodríguez Rengifo, Sebastian Mesa|
+|Grupo 8 | Juan Pablo Martinez, Juan Daniel Lopez|
+|Grupo 9 | Jorge Armando Esteban Guevara, Miguel Fernando Ricardo Muñoz|
+|Grupo 10 | Evelyn tatiana tobar vallejo, Daniela Geraldin Escobar vallejo|
+|Grupo 11 | Luis Andrés Mendoza Ortiz, Dilan Andrés Correa Ortiz|
+|Grupo 12 | Dayani Molina, Daniel Palacios|
+|Grupo 13 | José David Benavides, Fabio Camilo prado|
+|Grupo 14 | Juan Camilo Buriticá, Sebastián sierra Lezama|
+|Grupo 15 | Nicole Molineros, NN |
+|Grupo 16 | Maria Jose Suarez, Santiago Torres |
+|Grupo 17 | Mateo Mora, Sebastián Portocarrero|
+
+<br/><br/><br/>
 # **Videos PyE 2020-2**
 
 <br/><br/>
