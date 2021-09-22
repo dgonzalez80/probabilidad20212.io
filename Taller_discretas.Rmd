@@ -33,15 +33,6 @@ output:
  
 (a) $P(X = 0)$
 
-(b) $P(X = 4)$
-
-(c) $P(X \geq 2)$
-
-(d) $P(X \leq 2)$  
-
-(e) Construya la gráfica de $f_{_{X}}(x)$
-
- 
 ```{r}
 # Distribución Poisson
 # X :  número de  eventos que ocurren por unidad de tiempo, longitud, superficie o volumen
@@ -50,16 +41,44 @@ output:
 # Percentil  qpois(p, lambda, lower.tail = TRUE)
 # aleatorio  rpois(n, lambda)
 
-# cat("(a) P(X = 0)",dpois(0,4),"  ")
-# cat("(b) P(X = 4)",dpois(4,4),"  ")
-# cat("(c) P(X=>2)=",ppois(1,4,lower.tail = FALSE),"  ")
-# cat("(d) P(X<=2)=",ppois(2,4))
+cat("P(X = 0)",dpois(0,4),"  ")
+```
 
-# x=0:15
-# fx=dpois(x,4)
-# plot(x,fx, pch=19)
-# grid()
 
+(b) $P(X = 4)$
+
+
+```{r}
+cat("P(X = 4)",dpois(4,4),"  ")
+```
+
+
+(c) $P(X \geq 2)$
+
+
+```{r}
+cat("P(X=>2)=",ppois(1,4,lower.tail = FALSE),"  ")
+```
+
+
+
+(d) $P(X \leq 2)$  
+
+
+
+```{r}
+cat("P(X<=2)=",ppois(2,4))
+```
+
+
+(e) Construya la gráfica de $f_{_{X}}(x)$
+
+
+```{r}
+x=0:15
+fx=dpois(x,4)
+ plot(x,fx, pch=19)
+ grid()
 ```
 
 <br/><br/>
@@ -156,16 +175,30 @@ dhyper(1,20,80,4)
  
 (a) ¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?
 
+```{r}
+# X: numero de llantas con imperfecciones
+ cat("(a) P(X=0)=", dbinom(0,4,0.05),"  ")
+```
+
+
 (b) ¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?
+
+
+```{r}
+cat("(b) P(X=1)=", dbinom(1,4,0.05), "   ")
+```
+
 
 (c) ¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?
  
+
 ```{r}
-# X: numero de llantas con imperfecciones
-# cat("(a) P(X=0)=", dbinom(0,4,0.05),"  ")
-# cat("(b) P(X=1)=", dbinom(1,4,0.05), "   ")
-# cat("(c) P(X=>1)=", 1-dbinom(0,4,0.05),"  ")
-# cat("(d) P(X =>1)=",pbinom(0,4,0.05, lower.tail = FALSE)) 
+cat("(c) P(X=>1)=", 1-dbinom(0,4,0.05),"  ")
+```
+
+
+```{r}
+cat("(d) P(X =>1)=",pbinom(0,4,0.05, lower.tail = FALSE)) 
 ```
 
 <br/><br/>
@@ -174,18 +207,31 @@ dhyper(1,20,80,4)
  
 (a) Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
 
+```{r}
+cat("P(X=5",dpois(5,8), "  ")
+```
+
 (b) Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.
+
+```{r}
+cat("P(X<=3)=",ppois(3,8), "  ")
+```
+
 
 (c) Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.
 
-(d) Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.
- 		
 ```{r}
-# cat("P(X=5",dpois(5,8), "  ")
-# cat("P(X<=3)=",ppois(3,8), "  ")
-# dpois(2,8*2)
+dpois(2,8*2)
 
 ```
+
+(d) Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.
+ 		
+
+
+
+
+
 
 <br/><br/>			
 
@@ -199,7 +245,7 @@ dhyper(1,20,80,4)
 9.  Se sabe que 3\% de las personas a las que se les revisa el equipaje en un aeropuerto lleva objetos cuestionables. ¿Cuál es la probabilidad de que una serie de 15 personas cruce sin problemas antes de que se atrape a una con un objeto cuestionable? ¿Cuál es el número esperado de personas que pasarán antes de que se detenga a una?
 
 ```{r}
-# dgeom(15,0.03)
+ dgeom(15,0.03)
 ```
 
 <br/><br/>
@@ -230,15 +276,23 @@ dhyper(1,20,80,4)
 
 (a) Halla exactamente 8 grietas en una longitud de 500 m
 
+```{r}
+dpois(8,1*5)
+```
+
+
 (b) No se presente ninguna grieta en 100 m
+
+```{r}
+dpois(0,1)
+```
+
 
 (c) Se presenten menos de 2 grietas en 500 m 
 
+
 ```{r}
-# P(X=8)
-# dpois(8,1*5)
-# dpois(0,1)
-# ppois(1,1)
+ppois(1,1)
 ```
 
 <br/><br/>
@@ -254,7 +308,7 @@ dhyper(1,20,80,4)
 # **Resumen**
 <br/>
 
-### *binomial**
+### **binomial**
 
 $X \sim  binom$ cuando procede de un experimento binomial
 
@@ -274,7 +328,7 @@ $X \sim  binom$ cuando procede de un experimento binomial
 
 ### **Poisson**
 
-$X \sim  poiss$, cuando representa el **número de eventos que ocurren en un espacio de tiempo, distancia, area, volumen
+$X \sim  poiss$, cuando representa el número de eventos que ocurren en un espacio de tiempo, distancia, area, volumen
 
 <br/><br/>
 
@@ -307,7 +361,7 @@ gometrico           | pgeom    | qgeom    | dgeom    | rgeom       |
 hipergeometrico     | phyper   | qhyper   | dhyper   | rhyper      |
 Poisson             | ppois    | qpois    | dpois    | rpois       |
 binomial negativo   | pnbinom  | qnbinom  | dnbionom | rnbinom     |      
-beta                | pbeta    | qbeta    | dbeta    | rbeta       |
+
 
 
 

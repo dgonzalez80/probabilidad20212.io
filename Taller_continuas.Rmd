@@ -34,7 +34,7 @@ library(ggfortify)
 
 (e.) $E[X] $ y $V[X]$.
 
-```{r  eval=TRUE, echo=FALSE}
+```{r }
 p=ggdistribution(dunif, seq(10, 20, 0.1),min=10,max=20 ,colour = 'blue')
 p=ggdistribution(dunif, seq(10, 12, 0.1),min=10,max=20 ,colour = 'blue',  fill = "blue",p=p)+  
    ggtitle("Distribucion uniforme [10,20]   P(X<12)")
@@ -59,7 +59,7 @@ cat("P(X<12)=",punif(12,10,20))
 
 Nota: en cada caso realice un  bosquejo del área que representa la probabilidad
 
-```{r  eval=TRUE, echo=FALSE}
+```{r }
 #(a)
 
 p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
@@ -86,7 +86,7 @@ pnorm(-0.85,0,1, lower.tail = FALSE)
 
 Nota: En cada caso represente gráficamente los valores solicitados
 
-```{r  eval=TRUE, echo=FALSE}
+```{r }
 p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')+
    ggtitle("Distribucion Nornal estandar N(0,1)")
 p
@@ -108,7 +108,7 @@ p
 
 (f.) Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.95$.
 
-```{r  eval=TRUE, echo=FALSE}
+```{r  }
 p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = 31.62,colour = 'blue')
 p=ggdistribution(dnorm, seq(50, 100, 0.1), mean = 150, sd = 31.62,colour = 'blue', fill="blue", p=p)+
    ggtitle("Distribucion Nornal estandar N(150,1000)  P(X<100) ")
@@ -131,7 +131,7 @@ cat("P(X<100)=", pnorm(100,150,sqrt(1000)))
 
 (d.) Realice la gráfica de $f_{_{X}}(x)$
 
-```{r  eval=TRUE, echo=FALSE}
+```{r  }
 p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = 'blue')
 p=ggdistribution(dexp, seq(1, 2, 0.1),rate=2 ,colour = 'blue',fill = "blue", p=p)+
    ggtitle("Distribucion exponencial E[X]=2    P(1<X<2)")
@@ -142,7 +142,7 @@ cat("P(1<X<2)=F(2)-F(1)=", pexp(2,2)-pexp(1,2))
 ```
 
 
-```{r  eval=TRUE, echo=FALSE}
+```{r  }
 ```
 
 <br/><br/>
@@ -163,7 +163,7 @@ Sea $X$  una variable aleatoria continua con función de distribución lognormal
 
 
 
-```{r  eval=TRUE, echo=FALSE}
+```{r }
 p=ggdistribution(dlnorm, seq(0, 100000, 0.1),meanlog=log(20000),sdlog=1 ,colour= 'blue')
 p=ggdistribution(dlnorm, seq(0, 10000, 0.1),meanlog=log(20000),sdlog=1 ,colour= 'blue', fill = "blue", p=p)
    ggtitle("Distribucion Lognormal (log(20000),1)")

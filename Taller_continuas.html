@@ -542,7 +542,12 @@ library(ggfortify)</code></pre>
 <p>(c.) <span class="math inline">\(P(13\leq X &lt;15)\)</span>.</p>
 <p>(d.) <span class="math inline">\(P(X\geq 18)\)</span> .</p>
 <p>(e.) $E[X] $ y <span class="math inline">\(V[X]\)</span>.</p>
+<pre class="r"><code>p=ggdistribution(dunif, seq(10, 20, 0.1),min=10,max=20 ,colour = &#39;blue&#39;)
+p=ggdistribution(dunif, seq(10, 12, 0.1),min=10,max=20 ,colour = &#39;blue&#39;,  fill = &quot;blue&quot;,p=p)+  
+   ggtitle(&quot;Distribucion uniforme [10,20]   P(X&lt;12)&quot;)
+p</code></pre>
 <p><img src="Taller_continuas_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>cat(&quot;P(X&lt;12)=&quot;,punif(12,10,20))</code></pre>
 <pre><code>## P(X&lt;12)= 0.2</code></pre>
 <p><br/><br/></p>
 </div>
@@ -556,7 +561,15 @@ library(ggfortify)</code></pre>
 <p>(c.) Entre <span class="math inline">\(z = -0.30\)</span> y <span class="math inline">\(z = 0.90\)</span>.</p>
 <p>(d.) Desde <span class="math inline">\(z = -1.50\)</span> hasta <span class="math inline">\(z = -0.45\)</span>.</p>
 <p>Nota: en cada caso realice un bosquejo del área que representa la probabilidad</p>
+<pre class="r"><code>#(a)
+
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(-0.85, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(Z&gt;-0.85)&quot;)
+
+p</code></pre>
 <p><img src="Taller_continuas_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>pnorm(-0.85,0,1, lower.tail = FALSE)</code></pre>
 <pre><code>## [1] 0.8023375</code></pre>
 <p><br/><br/></p>
 <ol start="3" style="list-style-type: decimal">
@@ -567,6 +580,9 @@ library(ggfortify)</code></pre>
 <p>(c.) Entre <span class="math inline">\(z = -1.08\)</span> y <span class="math inline">\(z = 0.70\)</span>.</p>
 <p>(d.) Desde <span class="math inline">\(z = 0.96\)</span> hasta <span class="math inline">\(z = 1.62\)</span>.</p>
 <p>Nota: En cada caso represente gráficamente los valores solicitados</p>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)+
+   ggtitle(&quot;Distribucion Nornal estandar N(0,1)&quot;)
+p</code></pre>
 <p><img src="Taller_continuas_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p><br/><br/></p>
 <ol start="4" style="list-style-type: decimal">
@@ -578,7 +594,12 @@ library(ggfortify)</code></pre>
 <p>(d.) <span class="math inline">\(P(X\geq 50)\)</span>.</p>
 <p>(e.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.90\)</span>.</p>
 <p>(f.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.95\)</span>.</p>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = 31.62,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(50, 100, 0.1), mean = 150, sd = 31.62,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion Nornal estandar N(150,1000)  P(X&lt;100) &quot;)
+p</code></pre>
 <p><img src="Taller_continuas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>cat(&quot;P(X&lt;100)=&quot;, pnorm(100,150,sqrt(1000)))</code></pre>
 <pre><code>## P(X&lt;100)= 0.05692315</code></pre>
 <p><br/><br/></p>
 </div>
@@ -591,7 +612,12 @@ library(ggfortify)</code></pre>
 <p>(b.) <span class="math inline">\(P(X \geq 2)\)</span>.</p>
 <p>(c.) <span class="math inline">\(P(1 &lt; X &lt; 2)\)</span>.</p>
 <p>(d.) Realice la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p>
+<pre class="r"><code>p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = &#39;blue&#39;)
+p=ggdistribution(dexp, seq(1, 2, 0.1),rate=2 ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion exponencial E[X]=2    P(1&lt;X&lt;2)&quot;)
+p</code></pre>
 <p><img src="Taller_continuas_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>cat(&quot;P(1&lt;X&lt;2)=F(2)-F(1)=&quot;, pexp(2,2)-pexp(1,2))</code></pre>
 <pre><code>## P(1&lt;X&lt;2)=F(2)-F(1)= 0.1170196</code></pre>
 <p><br/><br/></p>
 </div>
@@ -604,12 +630,17 @@ library(ggfortify)</code></pre>
 <li><p><span class="math inline">\(P_{75}\)</span></p></li>
 <li><p>Realice una gráfica de <span class="math inline">\(f(x)\)</span></p></li>
 </ol>
+<pre class="r"><code>p=ggdistribution(dlnorm, seq(0, 100000, 0.1),meanlog=log(20000),sdlog=1 ,colour= &#39;blue&#39;)
+p=ggdistribution(dlnorm, seq(0, 10000, 0.1),meanlog=log(20000),sdlog=1 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p)
+   ggtitle(&quot;Distribucion Lognormal (log(20000),1)&quot;)</code></pre>
 <pre><code>## $title
 ## [1] &quot;Distribucion Lognormal (log(20000),1)&quot;
 ## 
 ## attr(,&quot;class&quot;)
 ## [1] &quot;labels&quot;</code></pre>
+<pre class="r"><code>p</code></pre>
 <p><img src="Taller_continuas_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>cat(&quot;P((X&lt;10000)= &quot;,plnorm(10000, log(20000),1))</code></pre>
 <pre><code>## P((X&lt;10000)=  0.2441086</code></pre>
 <p><br/><br/></p>
 </div>

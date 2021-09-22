@@ -104,6 +104,20 @@ Construir un  **poster** para cada uno de los modelos asignados que contenga sus
 
 <br/><br/><br/>
 
+## **Grupos - 300MAE005 - E**
+
+|**Grupo** | **Nombres** |
+|:---------:|:-------------------------------------------|
+|Grupo 1 |  Ana María Azcarate , Ana María Rubio |
+|Grupo 2 |  Juan Camilo JImenez , Juan José Zuleta |
+|Grupo 3 |  Adrián Timana , Nicolás Bolaños |
+|Grupo 4 |  Jose Olaya , Daniel Moncaleano |
+|Grupo 5 |  Alejandra Aponza , Santiago Ruiz |
+|Grupo 6 |  Santiago García , Daniel Zambrano |
+|Grupo 7 |  Juan Fernando Viteri , Juan José lerma |
+|Grupo 8 |  Luis Rosero , David Velandia |
+|Grupo 9 |  Daniela Espinosa , Gabriel Troncoso |
+
 # **Videos PyE 2020-2**
 
 <br/><br/>

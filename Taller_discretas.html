@@ -545,11 +545,7 @@ div.tocify {
 <li>Suponga que X tiene una distribución Poisson con media <span class="math inline">\(\lambda=4\)</span> (<span class="math inline">\(X \sim pois(x,\lambda=4)\)</span>). Determine:</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X = 0)\)</span></p></li>
-<li><p><span class="math inline">\(P(X = 4)\)</span></p></li>
-<li><p><span class="math inline">\(P(X \geq 2)\)</span></p></li>
-<li><p><span class="math inline">\(P(X \leq 2)\)</span></p></li>
-<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+<li><span class="math inline">\(P(X = 0)\)</span></li>
 </ol>
 <pre class="r"><code># Distribución Poisson
 # X :  número de  eventos que ocurren por unidad de tiempo, longitud, superficie o volumen
@@ -558,15 +554,31 @@ div.tocify {
 # Percentil  qpois(p, lambda, lower.tail = TRUE)
 # aleatorio  rpois(n, lambda)
 
-# cat(&quot;(a) P(X = 0)&quot;,dpois(0,4),&quot;  &quot;)
-# cat(&quot;(b) P(X = 4)&quot;,dpois(4,4),&quot;  &quot;)
-# cat(&quot;(c) P(X=&gt;2)=&quot;,ppois(1,4,lower.tail = FALSE),&quot;  &quot;)
-# cat(&quot;(d) P(X&lt;=2)=&quot;,ppois(2,4))
-
-# x=0:15
-# fx=dpois(x,4)
-# plot(x,fx, pch=19)
-# grid()</code></pre>
+cat(&quot;P(X = 0)&quot;,dpois(0,4),&quot;  &quot;)</code></pre>
+<pre><code>## P(X = 0) 0.01831564</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X = 4)\)</span></li>
+</ol>
+<pre class="r"><code>cat(&quot;P(X = 4)&quot;,dpois(4,4),&quot;  &quot;)</code></pre>
+<pre><code>## P(X = 4) 0.1953668</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \geq 2)\)</span></li>
+</ol>
+<pre class="r"><code>cat(&quot;P(X=&gt;2)=&quot;,ppois(1,4,lower.tail = FALSE),&quot;  &quot;)</code></pre>
+<pre><code>## P(X=&gt;2)= 0.9084218</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \leq 2)\)</span></li>
+</ol>
+<pre class="r"><code>cat(&quot;P(X&lt;=2)=&quot;,ppois(2,4))</code></pre>
+<pre><code>## P(X&lt;=2)= 0.2381033</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ol>
+<pre class="r"><code>x=0:15
+fx=dpois(x,4)
+ plot(x,fx, pch=19)
+ grid()</code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><br/><br/></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Sea una variable geométrica <span class="math inline">\(X\sim geomn,(x,p=0.05)\)</span></li>
@@ -633,28 +645,45 @@ dhyper(1,20,80,4)</code></pre>
 <li>En un cargamento grande de llantas para automóviles, el 5% tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil. (Sea X el número de llantas con imperfecciones. <span class="math inline">\(X \sim binom(n=4, p=0.05\)</span> )</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p>¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?</p></li>
-<li><p>¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?</p></li>
-<li><p>¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?</p></li>
+<li>¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?</li>
 </ol>
 <pre class="r"><code># X: numero de llantas con imperfecciones
-# cat(&quot;(a) P(X=0)=&quot;, dbinom(0,4,0.05),&quot;  &quot;)
-# cat(&quot;(b) P(X=1)=&quot;, dbinom(1,4,0.05), &quot;   &quot;)
-# cat(&quot;(c) P(X=&gt;1)=&quot;, 1-dbinom(0,4,0.05),&quot;  &quot;)
-# cat(&quot;(d) P(X =&gt;1)=&quot;,pbinom(0,4,0.05, lower.tail = FALSE)) </code></pre>
+ cat(&quot;(a) P(X=0)=&quot;, dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
+<pre><code>## (a) P(X=0)= 0.8145062</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?</li>
+</ol>
+<pre class="r"><code>cat(&quot;(b) P(X=1)=&quot;, dbinom(1,4,0.05), &quot;   &quot;)</code></pre>
+<pre><code>## (b) P(X=1)= 0.171475</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?</li>
+</ol>
+<pre class="r"><code>cat(&quot;(c) P(X=&gt;1)=&quot;, 1-dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
+<pre><code>## (c) P(X=&gt;1)= 0.1854938</code></pre>
+<pre class="r"><code>cat(&quot;(d) P(X =&gt;1)=&quot;,pbinom(0,4,0.05, lower.tail = FALSE)) </code></pre>
+<pre><code>## (d) P(X =&gt;1)= 0.1854938</code></pre>
 <p><br/><br/></p>
 <ol start="7" style="list-style-type: decimal">
 <li>Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.(<span class="math inline">\(\lambda=8\)</span>)</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p>Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.</p></li>
-<li><p>Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.</p></li>
-<li><p>Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.</p></li>
-<li><p>Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.</p></li>
+<li>Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.</li>
 </ol>
-<pre class="r"><code># cat(&quot;P(X=5&quot;,dpois(5,8), &quot;  &quot;)
-# cat(&quot;P(X&lt;=3)=&quot;,ppois(3,8), &quot;  &quot;)
-# dpois(2,8*2)</code></pre>
+<pre class="r"><code>cat(&quot;P(X=5&quot;,dpois(5,8), &quot;  &quot;)</code></pre>
+<pre><code>## P(X=5 0.09160366</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.</li>
+</ol>
+<pre class="r"><code>cat(&quot;P(X&lt;=3)=&quot;,ppois(3,8), &quot;  &quot;)</code></pre>
+<pre><code>## P(X&lt;=3)= 0.04238011</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.</li>
+</ol>
+<pre class="r"><code>dpois(2,8*2)</code></pre>
+<pre><code>## [1] 1.44045e-05</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.</li>
+</ol>
 <p><br/><br/></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90%. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90% es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90%?</li>
@@ -663,7 +692,8 @@ dhyper(1,20,80,4)</code></pre>
 <ol start="9" style="list-style-type: decimal">
 <li>Se sabe que 3% de las personas a las que se les revisa el equipaje en un aeropuerto lleva objetos cuestionables. ¿Cuál es la probabilidad de que una serie de 15 personas cruce sin problemas antes de que se atrape a una con un objeto cuestionable? ¿Cuál es el número esperado de personas que pasarán antes de que se detenga a una?</li>
 </ol>
-<pre class="r"><code># dgeom(15,0.03)</code></pre>
+<pre class="r"><code> dgeom(15,0.03)</code></pre>
+<pre><code>## [1] 0.01899754</code></pre>
 <p><br/><br/></p>
 <ol start="10" style="list-style-type: decimal">
 <li>El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.</li>
@@ -682,14 +712,20 @@ dhyper(1,20,80,4)</code></pre>
 <li>El número de grietas en un pavimento se estima en guna rieta por cada 100m en promedio(<span class="math inline">\(\lambda=1\)</span>) . Se desea estimar la probabilidad de:</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p>Halla exactamente 8 grietas en una longitud de 500 m</p></li>
-<li><p>No se presente ninguna grieta en 100 m</p></li>
-<li><p>Se presenten menos de 2 grietas en 500 m</p></li>
+<li>Halla exactamente 8 grietas en una longitud de 500 m</li>
 </ol>
-<pre class="r"><code># P(X=8)
-# dpois(8,1*5)
-# dpois(0,1)
-# ppois(1,1)</code></pre>
+<pre class="r"><code>dpois(8,1*5)</code></pre>
+<pre><code>## [1] 0.06527804</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>No se presente ninguna grieta en 100 m</li>
+</ol>
+<pre class="r"><code>dpois(0,1)</code></pre>
+<pre><code>## [1] 0.3678794</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Se presenten menos de 2 grietas en 500 m</li>
+</ol>
+<pre class="r"><code>ppois(1,1)</code></pre>
+<pre><code>## [1] 0.7357589</code></pre>
 <p><br/><br/></p>
 <ol start="13" style="list-style-type: decimal">
 <li>Un científico inocula a varios ratones, uno a la vez, el virus que produce una enfermedad, hasta que encuentra a 2 que contraen la enfermedad. Si la probabilidad de contraer la enfermedad es de 1/6, ¿cuál es la probabilidad de que tenga que inocular a 8 ratones?</li>
@@ -700,7 +736,7 @@ dhyper(1,20,80,4)</code></pre>
 <h1><strong>Resumen</strong></h1>
 <p><br/></p>
 <div id="binomial" class="section level3">
-<h3>*binomial**</h3>
+<h3><strong>binomial</strong></h3>
 <p><span class="math inline">\(X \sim binom\)</span> cuando procede de un experimento binomial</p>
 <ul>
 <li><p>El experimento consta de <span class="math inline">\(n\)</span> ensayos</p></li>
@@ -714,7 +750,7 @@ dhyper(1,20,80,4)</code></pre>
 </div>
 <div id="poisson" class="section level3">
 <h3><strong>Poisson</strong></h3>
-<p><span class="math inline">\(X \sim poiss\)</span>, cuando representa el **número de eventos que ocurren en un espacio de tiempo, distancia, area, volumen</p>
+<p><span class="math inline">\(X \sim poiss\)</span>, cuando representa el número de eventos que ocurren en un espacio de tiempo, distancia, area, volumen</p>
 <p><br/><br/></p>
 </div>
 <div id="geométrica" class="section level3">
@@ -781,13 +817,6 @@ dhyper(1,20,80,4)</code></pre>
 <td>qnbinom</td>
 <td>dnbionom</td>
 <td>rnbinom</td>
-</tr>
-<tr class="even">
-<td>beta</td>
-<td>pbeta</td>
-<td>qbeta</td>
-<td>dbeta</td>
-<td>rbeta</td>
 </tr>
 </tbody>
 </table>
