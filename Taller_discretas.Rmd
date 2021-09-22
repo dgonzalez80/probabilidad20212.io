@@ -10,43 +10,36 @@ output:
     theme: cosmo
 ---
 
+#  **Problemas**
+
+<br/><br/>
+
 1.  Para una variable aleatoria con distribución binomial $X \sim binom(x, n=10, p=0.5)$  . Determine:  la función de distribución asociada a $X$.
 
-   +  $P(X = 5)$
-   +  $P(X \leq 2)$
-   +  $P(3\leq X <5)$
-   +  $P(X\geq 8)$ 
-   +  Construya la gráfica de $f_{_{X}}(x)$
+(a) $P(X = 5)$
    
-```{r}
-# Distribución binomial
-# X : número de  éxitos en n ensayos
-# f(x)        dbinom(x, size, prob)
-# F(x)        pbinom(q, size, prob, lower.tail = TRUE)
-# Percentil   qbinom(p, size, prob, lower.tail = TRUE)
-# aleatorio   rbinom(n, size, prob)
+(b) $P(X \leq 2)$
 
-cat("P(X=5)=",dbinom(5,10,0.50), "    ")
-cat("P(X<=2)=",pbinom(2,10,0.50), "    ")
-cat("P(3<=X<5)=",dbinom(3,10,0.50)+dbinom(4,10,0.5),"  ")
-cat("P(X>=8)=",pbinom(7,10,0.50, lower.tail = FALSE))
+(c) $P(3\leq X <5)$
 
-x=0:10
-fx=dbinom(x,10,0.50)
-plot(x,fx, pch=19)
-grid()
+(d) $P(X\geq 8)$ 
 
-```
+(e) Construya la gráfica de $f_{_{X}}(x)$
 
----
+
+<br/><br/>
 
 2.  Suponga que X tiene una distribución Poisson con media $\lambda=4$ ($X \sim pois(x,\lambda=4)$). Determine:	
  
-+  $P(X = 0)$
-+  $P(X = 4)$
-+  $P(X \geq 2)$
-+  $P(X \leq 2)$  
-+  Construya la gráfica de $f_{_{X}}(x)$
+(a) $P(X = 0)$
+
+(b) $P(X = 4)$
+
+(c) $P(X \geq 2)$
+
+(d) $P(X \leq 2)$  
+
+(e) Construya la gráfica de $f_{_{X}}(x)$
 
  
 ```{r}
@@ -57,27 +50,31 @@ grid()
 # Percentil  qpois(p, lambda, lower.tail = TRUE)
 # aleatorio  rpois(n, lambda)
 
-cat("(a) P(X = 0)",dpois(0,4),"  ")
-cat("(b) P(X = 4)",dpois(4,4),"  ")
-cat("(c) P(X=>2)=",ppois(1,4,lower.tail = FALSE),"  ")
-cat("(d) P(X<=2)=",ppois(2,4))
+# cat("(a) P(X = 0)",dpois(0,4),"  ")
+# cat("(b) P(X = 4)",dpois(4,4),"  ")
+# cat("(c) P(X=>2)=",ppois(1,4,lower.tail = FALSE),"  ")
+# cat("(d) P(X<=2)=",ppois(2,4))
 
-x=0:15
-fx=dpois(x,4)
-plot(x,fx, pch=19)
-grid()
+# x=0:15
+# fx=dpois(x,4)
+# plot(x,fx, pch=19)
+# grid()
 
 ```
 
----
+<br/><br/>
 
 3.  Sea una variable geométrica $X\sim geomn,(x,p=0.05)$
 
-+  $P(X = 1)$
-+  $P(X \leq 2)$
-+  $P(X =8)$
-+  $P(X\geq 2)$  
-+  Construya la gráfica de $f_{_{X}}(x)$
+(a) $P(X = 1)$
+
+(b) $P(X \leq 2)$
+
+(c) $P(X =8)$
+
+(d) $P(X\geq 2)$  
+
+(e) Construya la gráfica de $f_{_{X}}(x)$
 
 ```{r}
 # Distribución geometrica
@@ -93,15 +90,19 @@ cat("(a) P(X=1)=",dgeom(0,0.05), "   ")
 
 ```
 
----
+<br/><br/>
 
 4.  Suponga que X tiene una distribución hipergeometrica con $N=100$, $n=4$ y $K=20$. ($X\sim hyper(x,N=100,n=4,k=20)$) Determine:
  
-+  $P(X = 1)$
-+  $P(X = 6)$
-+  $P(X \geq 1)$
-+  $P(X = 4)$  
-+  Construya la gráfica de $f_{_{X}}(x)$
+(a) $P(X = 1)$
+
+(b) $P(X = 6)$
+
+(c) $P(X \geq 1)$
+
+(d) $P(X = 4)$  
+
+(e) Construya la gráfica de $f_{_{X}}(x)$
 
 Nota: En este caso se debe realizar una conversion de los parametros para utiliar la funcion dhyper de R
 m = K
@@ -122,16 +123,21 @@ dhyper(1,20,80,4)
 
 ```
 
----
+<br/><br/>
 		
 5.  Sea la variable $X$ con distribución binomial negativa con N=100 , K=20, n=5 ($X\sim nbinom(x,n,p,mu)$ )	
 	
-+  $P(X = 0)$
-+  $P(X = 6)$
-+  $P(X \geq 10)$
-+  $P(X \leq 12)$
-+  E[X] y V[X]  
-+  Construya la gráfica de $f_{_{X}}(x)$
+(a) $P(X = 0)$
+
+(b) $P(X = 6)$
+
+(c) $P(X \geq 10)$
+
+(d) $P(X \leq 12)$
+
+(e) E[X] y V[X]  
+
+(f) Construya la gráfica de $f_{_{X}}(x)$
  	
 ```{r}
 # Distribución binomial negativa
@@ -144,97 +150,164 @@ dhyper(1,20,80,4)
 
 ```
 
----
+<br/><br/>
 
 6.  En un cargamento grande de llantas para automóviles, el 5\% tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil.  (Sea X el número de llantas con imperfecciones. $X \sim binom(n=4, p=0.05$ )
  
-+  ¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?
-+  ¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?
-+  ¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?
+(a) ¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?
+
+(b) ¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?
+
+(c) ¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?
  
 ```{r}
 # X: numero de llantas con imperfecciones
-cat("(a) P(X=0)=", dbinom(0,4,0.05),"  ")
-cat("(b) P(X=1)=", dbinom(1,4,0.05), "   ")
-cat("(c) P(X=>1)=", 1-dbinom(0,4,0.05),"  ")
-cat("(d) P(X =>1)=",pbinom(0,4,0.05, lower.tail = FALSE)) 
+# cat("(a) P(X=0)=", dbinom(0,4,0.05),"  ")
+# cat("(b) P(X=1)=", dbinom(1,4,0.05), "   ")
+# cat("(c) P(X=>1)=", 1-dbinom(0,4,0.05),"  ")
+# cat("(d) P(X =>1)=",pbinom(0,4,0.05, lower.tail = FALSE)) 
 ```
 
----
+<br/><br/>
 
 7.  Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.($\lambda=8$) 
  
-+  Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
-+  Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.
-+  Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.
-+  Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.
+(a) Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
+
+(b) Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.
+
+(c) Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.
+
+(d) Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.
  		
 ```{r}
-cat("P(X=5",dpois(5,8), "  ")
-cat("P(X<=3)=",ppois(3,8), "  ")
-dpois(2,8*2)
+# cat("P(X=5",dpois(5,8), "  ")
+# cat("P(X<=3)=",ppois(3,8), "  ")
+# dpois(2,8*2)
 
 ```
 
----			
+<br/><br/>			
 
 8.  Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90\%. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90\% es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90\%?
 ```{r}
 
 ```
 
----
+<br/><br/>
 
 9.  Se sabe que 3\% de las personas a las que se les revisa el equipaje en un aeropuerto lleva objetos cuestionables. ¿Cuál es la probabilidad de que una serie de 15 personas cruce sin problemas antes de que se atrape a una con un objeto cuestionable? ¿Cuál es el número esperado de personas que pasarán antes de que se detenga a una?
+
 ```{r}
-dgeom(15,0.03)
+# dgeom(15,0.03)
 ```
 
----
+<br/><br/>
 
 10. El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.
  
-+  ¿Cuál es la probabilidad de que se acepte un lote?
-+  ¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?
-+  ¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?
+(a) ¿Cuál es la probabilidad de que se acepte un lote?
+
+(b) ¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?
+
+(c) ¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?
+
 ```{r}
 
 ```
 
----
+<br/><br/>
 
 11.  Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual  la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?   
+
 ```{r}
 
 ```
 
----
+<br/><br/>
 
 12.  El número de grietas en un pavimento se estima en guna rieta por cada 100m  en  promedio($\lambda=1$)   . Se desea estimar la probabilidad de:
 
-+  Halla exactamente 8 grietas en una longitud de 500 m
-+  No se presente ninguna grieta en 100 m
-+  Se presenten menos de 2 grietas en 500 m 
+(a) Halla exactamente 8 grietas en una longitud de 500 m
+
+(b) No se presente ninguna grieta en 100 m
+
+(c) Se presenten menos de 2 grietas en 500 m 
+
 ```{r}
 # P(X=8)
-dpois(8,1*5)
-dpois(0,1)
-ppois(1,1)
+# dpois(8,1*5)
+# dpois(0,1)
+# ppois(1,1)
 ```
 
----  
+<br/><br/>
 
 13. Un científico inocula a varios ratones, uno a la vez, el virus que produce una enfermedad, hasta que encuentra a 2 que contraen la enfermedad. Si la probabilidad de contraer la enfermedad es de 1/6, ¿cuál es la probabilidad de que tenga que inocular a 8 ratones?
+
 ```{r}
 
 ```
 
----
+<br/><br/>
 
+# **Resumen**
+<br/>
 
+### *binomial**
 
+$X \sim  binom$ cuando procede de un experimento binomial
 
++ El experimento consta de $n$ ensayos 
 
++ Cada ensayo tiene solo dos posible resultados: éxito (E) o fracaso (F) (experimento Bernoulli),
+
++ La probabilidad de éxito es igual a $p$ y se mantiene fija para todos los ensayos P(E). La probabilidad de fracaso es $(1-p)=q$,
+
++ Los ensayos son independientes,
+
++ La variable objeto de estudio $X$, corresponde al número de éxitos obtenidos en los $n$ ensayos.
+
++ Se puede decir que la suma de $n$ variables independientes con distribución Bernoulli($p$), se distribuye de manera Bionomial($n,p$)
+
+<br/><br/>
+
+### **Poisson**
+
+$X \sim  poiss$, cuando representa el **número de eventos que ocurren en un espacio de tiempo, distancia, area, volumen
+
+<br/><br/>
+
+### **geométrica**
+
+$X \sim  geom$, cuando representa el número del ensayo donde ocurre el primer exito (En R representa el número de fracasos)
+
+<br/><br/>
+
+### **hipergeométrica**
+
+$X \sim  hyper$, cuando representa el número de exitos que se pueden obtener al extraer una muestra de tamaño $n$, de una urna que contiene $N$ objetos de los cuales $K$ corresponden a exitos.
+
+<br/><br/>
+
+### **binomial negativa**
+
+$X \sim  nbinom$, cuando representa el número del ensayo donde ocurre el $r$-simo  ensayo
+
+<br/><br/><br/>
+
+# **Código R**
+
+<br/>
+
+*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
+--------------------|----------|----------|----------|-------------|
+binomial            | pbinom   | qbinom   | dbinom   | rbinom      |
+gometrico           | pgeom    | qgeom    | dgeom    | rgeom       |       
+hipergeometrico     | phyper   | qhyper   | dhyper   | rhyper      |
+Poisson             | ppois    | qpois    | dpois    | rpois       |
+binomial negativo   | pnbinom  | qnbinom  | dnbionom | rnbinom     |      
+beta                | pbeta    | qbeta    | dbeta    | rbeta       |
 
 
 

@@ -16,13 +16,23 @@ library(ggplot2)
 library(ggfortify)
 ```
 
-#### Distribucion uniforme
+# **Problemas**
+
+<br/><br/>
+
+## Distribucion uniforme
+
 1. Para una variable aleatoria $X\sim unif(x,a,b)$  con $a=10$ y $b=20$ determine:
-+ (a.) Construya un bosquejo de la gráfica de la función de densidad de probabilidad $f_{_{X}}(x)$.
-+ (b.) $P(X \leq 12)$. 
-+ (c.) $P(13\leq X <15)$. 
-+ (d.) $P(X\geq 18)$ . 
-+ (e.) $E[X] $ y $V[X]$.
+
+(a.) Construya un bosquejo de la gráfica de la función de densidad de probabilidad $f_{_{X}}(x)$.
+
+(b.) $P(X \leq 12)$. 
+
+(c.) $P(13\leq X <15)$. 
+
+(d.) $P(X\geq 18)$ . 
+
+(e.) $E[X] $ y $V[X]$.
 
 ```{r  eval=TRUE, echo=FALSE}
 p=ggdistribution(dunif, seq(10, 20, 0.1),min=10,max=20 ,colour = 'blue')
@@ -32,12 +42,20 @@ p
 
 cat("P(X<12)=",punif(12,10,20))
 ```
-#### Distribucion normal	
+
+<br/><br/>
+
+## Distribucion normal	
+
 2. Para una variable $Z\sim N(0,1)$, determine el área: 
-+ (a.)  A la derecha de $z = - 0.85$. 
-+ (b.)Entre $z = 0.40$ y $z = 1.30$.  
-+ (c.) Entre $z = -0.30$ y $z = 0.90$. 
-+ (d.)  Desde $z = -1.50$ hasta $z = -0.45$.\\
+
+(a.)  A la derecha de $z = - 0.85$. 
+
+(b.) Entre $z = 0.40$ y $z = 1.30$.  
+
+(c.) Entre $z = -0.30$ y $z = 0.90$. 
+
+(d.)  Desde $z = -1.50$ hasta $z = -0.45$.
 
 Nota: en cada caso realice un  bosquejo del área que representa la probabilidad
 
@@ -53,12 +71,17 @@ p
 pnorm(-0.85,0,1, lower.tail = FALSE)
 ```
 
+<br/><br/>
 
 3. Para una variable $Z\sim N(0,1)$, determine el área: 
-+ (a.)	A la izquierda de $z = 0.56$. 
-+ (b.) Entre $z = - 2.93$ y $z = -2.06$. 
-+ (c.) Entre $z = -1.08$ y $z = 0.70$. 
-+ (d.) Desde $z = 0.96$ hasta $z = 1.62$.\\
+
+(a.)	A la izquierda de $z = 0.56$. 
+
+(b.) Entre $z = - 2.93$ y $z = -2.06$. 
+
+(c.) Entre $z = -1.08$ y $z = 0.70$. 
+
+(d.) Desde $z = 0.96$ hasta $z = 1.62$.
 
 
 Nota: En cada caso represente gráficamente los valores solicitados
@@ -69,15 +92,21 @@ p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')+
 p
 ```
 
-	
+<br/><br/>
+
 4. Para una variable aleatoria continua $X\sim norm(\mu=150, \sigma^{2}=1000)$ determine:
 
-+ (a.) Realice la gráfica de la función de  densidad de probabilidad de $X$
-+ (b.) $P(X \leq 100)$. 
-+ (c.) $P(150 \leq X \leq 200)$.
-+ (d.) $P(X\geq 50)$.  
-+ (e.) Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.90$.
-+ (f.) Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.95$.
+(a.) Realice la gráfica de la función de  densidad de probabilidad de $X$
+
+(b.) $P(X \leq 100)$. 
+
+(c.) $P(150 \leq X \leq 200)$.
+
+(d.) $P(X\geq 50)$.  
+
+(e.) Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.90$.
+
+(f.) Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.95$.
 
 ```{r  eval=TRUE, echo=FALSE}
 p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = 31.62,colour = 'blue')
@@ -88,12 +117,19 @@ p
 cat("P(X<100)=", pnorm(100,150,sqrt(1000)))
 ```
 
-#### Distribucion exponencial 
+<br/><br/>
+
+## Distribucion exponencial 
+
 5. Sea $X$ una variable aleatoria con distribución exponencial . ($X\sim exp(\lambda=2)$). Determine:
-+ (a.) $P(X \leq 0)$.
-+ (b.) $P(X \geq 2)$.
-+ (c.) $P(1 < X < 2)$. 
-+ (d.) Realice la gráfica de $f_{_{X}}(x)$
+
+(a.) $P(X \leq 0)$.
+
+(b.) $P(X \geq 2)$.
+
+(c.) $P(1 < X < 2)$. 
+
+(d.) Realice la gráfica de $f_{_{X}}(x)$
 
 ```{r  eval=TRUE, echo=FALSE}
 p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = 'blue')
@@ -109,12 +145,21 @@ cat("P(1<X<2)=F(2)-F(1)=", pexp(2,2)-pexp(1,2))
 ```{r  eval=TRUE, echo=FALSE}
 ```
 
-#### Distribucion lognormal
-Sea $X$  una variable aleatoria continua con funcion de distribucion lognormal con parametros $\mu=10$ y $\sigma^2=16$. Determine.
-+ (a) $P(X<10000)$
-+ (b) $P(X>5000)$
-+ (c) $P_{75}$
-+ (d) Regalice una grafica de $f(x)$
+<br/><br/>
+
+
+## Distribucion lognormal
+
+
+Sea $X$  una variable aleatoria continua con función de distribución lognormal con parámetros $\mu=10$ y $\sigma^2=16$. Determine.
+
+(a) $P(X<10000)$
+
+(b) $P(X>5000)$
+
+(c) $P_{75}$
+
+(d) Realice una gráfica de $f(x)$
 
 
 
@@ -127,13 +172,19 @@ p
 cat("P((X<10000)= ",plnorm(10000, log(20000),1))
 ```
 
-#### Distribucion gamma
+<br/><br/>
 
-Sea $X$  una variable aleatoria continua con funcion de distribucion gamma parametros $a=3$ y $b=1$. Determine.
-+ (a) $P(X<5)$
-+ (b) $P(5<X>7.5)$
-+ (c) $P_{25}$
-+ (d) Regalice una grafica de $f(x)$
+## Distribucion gamma
+
+Sea $X$  una variable aleatoria continua con funcion de distribucion gamma parametros $a=3$ y $b=1$. Determine:
+
+(a) $P(X<5)$
+
+(b) $P(5<X>7.5)$
+
+(c) $P_{25}$
+
+(d) Regalice una grafica de $f(x)$
 
 
 
@@ -146,16 +197,22 @@ p
 cat("P(X<5)=", pgamma(5,3,1))
 ```
 
+<br/><br/>
 
-#### Distribucion Weibull
+## Distribucion Weibull
 
 Sea $X$ una variable con distribucion Weibul con \alpha=0.01 y \beta=2. determine:
 
-+ (a) $P(X<10)$
-+ (b) $P(>9)$
-+ (c) $P(8<X<11)$
-+ (d) Determine el valor de $x$ tal que $P(X>x)=0.9$
-+ (e) Realice la gráfica de la función de  densidad de probabilidad de $X$
+(a) $P(X<10)$
+
+(b) $P(>9)$
+
+(c) $P(8<X<11)$
+
+(d) Determine el valor de $x$ tal que $P(X>x)=0.9$
+
+(e) Realice la gráfica de la función de  densidad de probabilidad de $X$
+
 ```{r}
 a=0.01
 b=2
@@ -168,15 +225,21 @@ cat("P(X<10)=", pweibull(10,2,10))
 
 ```
 
+<br/><br/>
 
-#### Distribucion beta
-Suponga que X tiene una distribucion beta con con parametros a=4, b=2.
+## Distribucion beta
 
-+ (a) $P(X<0.40)$
-+ (b) $P(>0.90)$
-+ (c) $P(0.80<X<1)$
-+ (d) Determine el valor de $x$ tal que $P(X>x)=0.90$
-+ (e) Realice la gráfica de la función de  densidad de probabilidad de $X$
+Suponga que X tiene una distribución beta con con parámetros a=4, b=2.
+
+(a) $P(X<0.40)$
+
+(b) $P(>0.90)$
+
+(c) $P(0.80<X<1)$
+
+(d) Determine el valor de $x$ tal que $P(X>x)=0.90$
+
+(e) Realice la gráfica de la función de  densidad de probabilidad de $X$
 
 
 ```{r}
@@ -186,15 +249,21 @@ p=ggdistribution(dbeta, seq(0, .4, 0.01), shape1=4,shape2=2,colour = 'blue',fill
 p
 ```
 
-#### Distribucion Gumbel  
+<br/><br/>
+
+## Distribucion Gumbel  
 
 Suponga que X tiene una distribucion beta con con parametros a=3, b=4.
 
-+ (a) $P(X<10)$
-+ (b) $P(>9)$
-+ (c) $P(8<X<10)$
-+ (d) Determine el valor de $x$ tal que $P(X>x)=0.80$
-+ (e) Realice la gráfica de la función de  densidad de probabilidad de $X$
+(a) $P(X<10)$
+
+(b) $P(>9)$
+
+(c) $P(8<X<10)$
+
+(d) Determine el valor de $x$ tal que $P(X>x)=0.80$
+
+(e) Realice la gráfica de la función de  densidad de probabilidad de $X$
 
 
 ```{r}
@@ -206,14 +275,19 @@ p
 ```
 
 
+<br/><br/>
 
-#### Distribucion Cauchy
-Suponga que $X$ tiene una distribucion de Caucy con parametros $\mu=0.75$ y $\theta =5$, determine:
+## Distribucion Cauchy
+
+Suponga que $X$ tiene una distribución de Caucy con parámetros $\mu=0.75$ y $\theta =5$, determine:
 
 (a) $P(X > 7.2)$
+
 (b) $P( 5<X<10)$
+
 (c) $Me=Q_{2}$
-(d) Realice la grafica de $f(x)$
+
+(d) Realice la gráfica de $f(x)$
 
 ```{r}
 dcauchy(9.2,5,0.75)
@@ -226,66 +300,88 @@ p
 ```
 
 
+<br/><br/><br/>
 
-### Ejercicios propuestos
+## Ejercicios propuestos
 
+<br/>
 
 7. Para una variable aleatoria $Y$ que representa las puntuaciones obtenidas en una prueba y cuya distribución es aproximadamente normal con media de $480$ puntos y desviación estándar de $90$ puntos, determine: 
 
-+	(a.) ¿Cuál es la proporción de puntuaciones mayores a 700? 
-+	(b.) ¿Cuál es el 25o. percentil de las puntuaciones? 
-+	(c.) Si la puntuación de alguien es de 600, ¿en qué percentil se encuentra? 
-+	(d.) ¿Qué proporción de las puntuaciones se encuentra entre 420 y 520?
+(a.) ¿Cuál es la proporción de puntuaciones mayores a 700? 
+
+(b.) ¿Cuál es el 25o. percentil de las puntuaciones? 
+
+(c.) Si la puntuación de alguien es de 600, ¿en qué percentil se encuentra? 
+
+(d.) ¿Qué proporción de las puntuaciones se encuentra entre 420 y 520?
 
 ```{r  eval=TRUE, echo=FALSE}
 pnorm(700,480,90, lower.tail =F )
 qnorm(0.25,480,90)
 ```
 
+<br/><br/>
+
 8. Suponga que la estatura de las personas en una población sigue la curva normal con media de 64.3 pulgadas y desviación estándar de 2.6 pulgadas. 
 
-+	(a.) ¿Qué proporción de personas en esa región tiene estatura entre 60 y 66 pulgadas? 
-+	(b.) La estatura de Juan es 0.5 de desviación estándar mayor a la media. ¿Qué proporción de personas miden más que Juan? 
-+	(c.) ¿Cuánto mide una persona cuya estatura se encuentra en el 90o. percentil? 
-+	(d.) Se elige aleatoriamente una persona de esta población. ¿Cuál es la probabilidad de que ella mida más de 67 pulgadas? 
-+	(e.) Se elige aleatoriamente a cinco personas de esta población. ¿Cuál es la probabilidad de que sólo una de ellas mida más de 67 pulgadas?
+(a.) ¿Qué proporción de personas en esa región tiene estatura entre 60 y 66 pulgadas? 
+
+(b.) La estatura de Juan es 0.5 de desviación estándar mayor a la media. ¿Qué proporción de personas miden más que Juan? 
+
+(c.) ¿Cuánto mide una persona cuya estatura se encuentra en el 90o. percentil? 
+
+(d.) Se elige aleatoriamente una persona de esta población. ¿Cuál es la probabilidad de que ella mida más de 67 pulgadas? 
+
+(e.) Se elige aleatoriamente a cinco personas de esta población. ¿Cuál es la probabilidad de que sólo una de ellas mida más de 67 pulgadas?
 
 
 ```{r  eval=TRUE, echo=FALSE}
 
 ```
 
+<br/><br/>
+
 9. La resistencia de una aleación de aluminio se distribuye normalmente con media de 10 gigapascales (GPa) y desviación estándar de 1.4 GPa. 
 
-+	(a.) ¿Cuál es la probabilidad de que una muestra de esta aleación tenga resistencia mayor a 12 GPa? 
-+	(b.) Determine el primer cuartil de la resistencia de esta aleación. 
-+	(c.) Determine el 95o. percentil de la resistencia de esta aleación.
+(a.) ¿Cuál es la probabilidad de que una muestra de esta aleación tenga resistencia mayor a 12 GPa? 
+
+(b.) Determine el primer cuartil de la resistencia de esta aleación. 
+
+(c.) Determine el 95o. percentil de la resistencia de esta aleación.
 
 ```{r  eval=TRUE, echo=FALSE}
 
 ```		
 		
+<br/><br/>
 
 10. La vida útil de una bombilla de un vehículo opera en un ambiente a alta temperatura dada su cercania al motor del vehículo. Esta variable medida en años sigue aproximadamente una distribución lognormal con media $\mu=1.2  $ y varianza $\sigma^{2} =0.4$ .
 
-+	(a.) Determine el tiempo medio de vida de la bombilla
-+	(b.) Determine la probabilidad de que la bombilla dure entre 3 y 6 años
-+	(c.) Determine  el valor de la mediana
-+	(d.) Determine el percentil 95° de los tiempos de vida
+(a.) Determine el tiempo medio de vida de la bombilla
+
+(b.) Determine la probabilidad de que la bombilla dure entre 3 y 6 años
+
+(c.) Determine  el valor de la mediana
+
+(d.) Determine el percentil 95° de los tiempos de vida
+
 ```{r}
 
 ```
 		
-		
+<br/><br/>		
 
 11.	Un indicador importante para el control del estado físico de una persona es el Indice de Masa Corporal (IMC).  Este indice se obtiene al dividir el valor de la masa  corporal de  una persona ($kg$) entre el cuadrado de la talla de la persona ($m^{2}$). En su artículo W.Bolch y E Farfan establecen que este indice (en $kg/m^{2}$)se distribuye  aproximadamente lognormal con media $\mu=3.215$ y $\sigma = 0.157$ para hombre con edad entre 17 y 25 años. La organización mundial de la salud ha establecido rangos para este indice y los ha clasificado de acuerdo al riesgo así: De 25.0 a 29.9,  sobrepeso o no obeso ; Entre 30 a 34.9 : Obesidad clase 1 o de bajo riesgo. Más de 40: Obesidad clase 3 o de alto riesgo.  Con el fin de establecer una campaña sobre buenos hábitos en el deporte y la dieta el Centro de Bienestar Universitario desea conocer las proporciones de una población de jóvenes con estas edades, en cada uno de los rangos establecidos. 
 ```{r}
 
 ```
  
+<br/><br/>
 
 12.	Un fabricante manifiesta que su producto principal (un ventilador para el  hogar ) dura más de 9000 horas.de uso. Que si algún cliente presenta una avería en su producto antes de este tiempo,el garantiza la entrega de otro de similares condiciones como parte de su estrategia de venta. Uno de  sus asesores le indica que no es adecuado realizar esta promoción y que será muy costosa realizarla. Con  el fin de validad quien tiene la razón, le entregan a Usted la siguiente información:  La variable  tiempo de vida de un ventilador de similares condiciones se puede modelar mediante una distribución Weibull con parámetros : $\alpha=1.5$ y $\beta=0.0001$ . ¿quien tiene la razón?
 
+<br/><br/>
 
 13. Una de las dificultades que presentan las Empresas Municipales se relaciona con la reparación de rupturas de tubos de alcantarillados debido especialmente a la antigüedad de las tuberías y a las raíces de los árboles que los rompen y generan suspensiones en el servicio de agua. Para la reparación de estos daños la empresa contrata con terceros los arreglos. La empresa conoce que el tiempo de reparación (en horas) se puede modelar mediante una distribución gamma con parámetros $\alpha=2$ y $\beta=1/2$, pero además tienen como indicador de calidad que el tiempo máximo de reparación no debe exceder la hora. ¿que tan probable es que se cumpla esta política con las actuales condiciones? 
 
@@ -293,5 +389,23 @@ qnorm(0.25,480,90)
 ```{r}
 
 ```
+
+
+# **Resumen**
+
+
+*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
+--------------------|----------|----------|----------|-------------|
+beta                | pbeta    | qbeta    | dbeta    | rbeta       |
+Cauchy              | pcauchy  | qcauchy  | dcauchy  | rcauchy     |
+exponencial         | pexp     | qexp     | dexp     | rexp        |
+gamma               | pgamma   | qgamma   | dgamma   | rgamma      |
+lognormal           | plnorm   | qlnorm   | dlnorm   | rlnorm      |
+uniforme            | punif    | qunif    | dunif    | runif       |
+Weibull             | pweibull | qweibull | dweibull | rweibull    |
+t-Student           | pt       | qt       | dt       | rt          |
+Ji-cuadrado         | pchisq   | qchisq   | dchisq   | rchisq      |
+F                   | pf       | qf       | df       | rf          |
+
 
 

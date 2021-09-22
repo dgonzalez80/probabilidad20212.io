@@ -527,48 +527,30 @@ div.tocify {
 </div>
 
 
+<div id="problemas" class="section level1">
+<h1><strong>Problemas</strong></h1>
+<p><br/><br/></p>
 <ol style="list-style-type: decimal">
 <li>Para una variable aleatoria con distribución binomial <span class="math inline">\(X \sim binom(x, n=10, p=0.5)\)</span> . Determine: la función de distribución asociada a <span class="math inline">\(X\)</span>.</li>
 </ol>
-<ul>
-<li><span class="math inline">\(P(X = 5)\)</span></li>
-<li><span class="math inline">\(P(X \leq 2)\)</span></li>
-<li><span class="math inline">\(P(3\leq X &lt;5)\)</span></li>
-<li><span class="math inline">\(P(X\geq 8)\)</span></li>
-<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
-</ul>
-<pre class="r"><code># Distribución binomial
-# X : número de  éxitos en n ensayos
-# f(x)        dbinom(x, size, prob)
-# F(x)        pbinom(q, size, prob, lower.tail = TRUE)
-# Percentil   qbinom(p, size, prob, lower.tail = TRUE)
-# aleatorio   rbinom(n, size, prob)
-
-cat(&quot;P(X=5)=&quot;,dbinom(5,10,0.50), &quot;    &quot;)</code></pre>
-<pre><code>## P(X=5)= 0.2460938</code></pre>
-<pre class="r"><code>cat(&quot;P(X&lt;=2)=&quot;,pbinom(2,10,0.50), &quot;    &quot;)</code></pre>
-<pre><code>## P(X&lt;=2)= 0.0546875</code></pre>
-<pre class="r"><code>cat(&quot;P(3&lt;=X&lt;5)=&quot;,dbinom(3,10,0.50)+dbinom(4,10,0.5),&quot;  &quot;)</code></pre>
-<pre><code>## P(3&lt;=X&lt;5)= 0.3222656</code></pre>
-<pre class="r"><code>cat(&quot;P(X&gt;=8)=&quot;,pbinom(7,10,0.50, lower.tail = FALSE))</code></pre>
-<pre><code>## P(X&gt;=8)= 0.0546875</code></pre>
-<pre class="r"><code>x=0:10
-fx=dbinom(x,10,0.50)
-plot(x,fx, pch=19)
-grid()</code></pre>
-<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<hr />
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(X = 5)\)</span></p></li>
+<li><p><span class="math inline">\(P(X \leq 2)\)</span></p></li>
+<li><p><span class="math inline">\(P(3\leq X &lt;5)\)</span></p></li>
+<li><p><span class="math inline">\(P(X\geq 8)\)</span></p></li>
+<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+</ol>
+<p><br/><br/></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Suponga que X tiene una distribución Poisson con media <span class="math inline">\(\lambda=4\)</span> (<span class="math inline">\(X \sim pois(x,\lambda=4)\)</span>). Determine:</li>
 </ol>
-<ul>
-<li><span class="math inline">\(P(X = 0)\)</span></li>
-<li><span class="math inline">\(P(X = 4)\)</span></li>
-<li><span class="math inline">\(P(X \geq 2)\)</span></li>
-<li><span class="math inline">\(P(X \leq 2)\)</span><br />
-</li>
-<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(X = 0)\)</span></p></li>
+<li><p><span class="math inline">\(P(X = 4)\)</span></p></li>
+<li><p><span class="math inline">\(P(X \geq 2)\)</span></p></li>
+<li><p><span class="math inline">\(P(X \leq 2)\)</span></p></li>
+<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+</ol>
 <pre class="r"><code># Distribución Poisson
 # X :  número de  eventos que ocurren por unidad de tiempo, longitud, superficie o volumen
 # f(x)       dpois(x, lambda)
@@ -576,31 +558,26 @@ grid()</code></pre>
 # Percentil  qpois(p, lambda, lower.tail = TRUE)
 # aleatorio  rpois(n, lambda)
 
-cat(&quot;(a) P(X = 0)&quot;,dpois(0,4),&quot;  &quot;)</code></pre>
-<pre><code>## (a) P(X = 0) 0.01831564</code></pre>
-<pre class="r"><code>cat(&quot;(b) P(X = 4)&quot;,dpois(4,4),&quot;  &quot;)</code></pre>
-<pre><code>## (b) P(X = 4) 0.1953668</code></pre>
-<pre class="r"><code>cat(&quot;(c) P(X=&gt;2)=&quot;,ppois(1,4,lower.tail = FALSE),&quot;  &quot;)</code></pre>
-<pre><code>## (c) P(X=&gt;2)= 0.9084218</code></pre>
-<pre class="r"><code>cat(&quot;(d) P(X&lt;=2)=&quot;,ppois(2,4))</code></pre>
-<pre><code>## (d) P(X&lt;=2)= 0.2381033</code></pre>
-<pre class="r"><code>x=0:15
-fx=dpois(x,4)
-plot(x,fx, pch=19)
-grid()</code></pre>
-<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<hr />
+# cat(&quot;(a) P(X = 0)&quot;,dpois(0,4),&quot;  &quot;)
+# cat(&quot;(b) P(X = 4)&quot;,dpois(4,4),&quot;  &quot;)
+# cat(&quot;(c) P(X=&gt;2)=&quot;,ppois(1,4,lower.tail = FALSE),&quot;  &quot;)
+# cat(&quot;(d) P(X&lt;=2)=&quot;,ppois(2,4))
+
+# x=0:15
+# fx=dpois(x,4)
+# plot(x,fx, pch=19)
+# grid()</code></pre>
+<p><br/><br/></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Sea una variable geométrica <span class="math inline">\(X\sim geomn,(x,p=0.05)\)</span></li>
 </ol>
-<ul>
-<li><span class="math inline">\(P(X = 1)\)</span></li>
-<li><span class="math inline">\(P(X \leq 2)\)</span></li>
-<li><span class="math inline">\(P(X =8)\)</span></li>
-<li><span class="math inline">\(P(X\geq 2)\)</span><br />
-</li>
-<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(X = 1)\)</span></p></li>
+<li><p><span class="math inline">\(P(X \leq 2)\)</span></p></li>
+<li><p><span class="math inline">\(P(X =8)\)</span></p></li>
+<li><p><span class="math inline">\(P(X\geq 2)\)</span></p></li>
+<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+</ol>
 <pre class="r"><code># Distribución geometrica
 # X : numero del ensayo donde ocurre el primer exito
 # en R x representa el numero de fracasos antes de obtener el primer exito
@@ -611,18 +588,17 @@ grid()</code></pre>
 
 cat(&quot;(a) P(X=1)=&quot;,dgeom(0,0.05), &quot;   &quot;)</code></pre>
 <pre><code>## (a) P(X=1)= 0.05</code></pre>
-<hr />
+<p><br/><br/></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Suponga que X tiene una distribución hipergeometrica con <span class="math inline">\(N=100\)</span>, <span class="math inline">\(n=4\)</span> y <span class="math inline">\(K=20\)</span>. (<span class="math inline">\(X\sim hyper(x,N=100,n=4,k=20)\)</span>) Determine:</li>
 </ol>
-<ul>
-<li><span class="math inline">\(P(X = 1)\)</span></li>
-<li><span class="math inline">\(P(X = 6)\)</span></li>
-<li><span class="math inline">\(P(X \geq 1)\)</span></li>
-<li><span class="math inline">\(P(X = 4)\)</span><br />
-</li>
-<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(X = 1)\)</span></p></li>
+<li><p><span class="math inline">\(P(X = 6)\)</span></p></li>
+<li><p><span class="math inline">\(P(X \geq 1)\)</span></p></li>
+<li><p><span class="math inline">\(P(X = 4)\)</span></p></li>
+<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+</ol>
 <p>Nota: En este caso se debe realizar una conversion de los parametros para utiliar la funcion dhyper de R m = K N = m + n K = n Para este caso : m=20, n=80, k=4 —</p>
 <pre class="r"><code># Distribución hipergeometrica
 # X : número de éxitos encontrados en una muestra de tamaño n (sin orden, sin repetición), 
@@ -634,103 +610,188 @@ cat(&quot;(a) P(X=1)=&quot;,dgeom(0,0.05), &quot;   &quot;)</code></pre>
 
 dhyper(1,20,80,4)</code></pre>
 <pre><code>## [1] 0.4190527</code></pre>
-<hr />
+<p><br/><br/></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Sea la variable <span class="math inline">\(X\)</span> con distribución binomial negativa con N=100 , K=20, n=5 (<span class="math inline">\(X\sim nbinom(x,n,p,mu)\)</span> )</li>
 </ol>
-<ul>
-<li><span class="math inline">\(P(X = 0)\)</span></li>
-<li><span class="math inline">\(P(X = 6)\)</span></li>
-<li><span class="math inline">\(P(X \geq 10)\)</span></li>
-<li><span class="math inline">\(P(X \leq 12)\)</span></li>
-<li>E[X] y V[X]<br />
-</li>
-<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(X = 0)\)</span></p></li>
+<li><p><span class="math inline">\(P(X = 6)\)</span></p></li>
+<li><p><span class="math inline">\(P(X \geq 10)\)</span></p></li>
+<li><p><span class="math inline">\(P(X \leq 12)\)</span></p></li>
+<li><p>E[X] y V[X]</p></li>
+<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+</ol>
 <pre class="r"><code># Distribución binomial negativa
 # X : número del evento donde ocurre el r-esimo éxito
 # f(x)        dnbinom(x, size, prob)
 # F(x)        pnbinom(q, size, prob, lower.tail = TRUE)
 # Percentil   qnbinom(p, size, prob, lower.tail = TRUE)
 # aleatorio   rnbinom(n, size, prob)</code></pre>
-<hr />
+<p><br/><br/></p>
 <ol start="6" style="list-style-type: decimal">
 <li>En un cargamento grande de llantas para automóviles, el 5% tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil. (Sea X el número de llantas con imperfecciones. <span class="math inline">\(X \sim binom(n=4, p=0.05\)</span> )</li>
 </ol>
-<ul>
-<li>¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?</li>
-<li>¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?</li>
-<li>¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?</li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?</p></li>
+<li><p>¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?</p></li>
+<li><p>¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?</p></li>
+</ol>
 <pre class="r"><code># X: numero de llantas con imperfecciones
-cat(&quot;(a) P(X=0)=&quot;, dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
-<pre><code>## (a) P(X=0)= 0.8145062</code></pre>
-<pre class="r"><code>cat(&quot;(b) P(X=1)=&quot;, dbinom(1,4,0.05), &quot;   &quot;)</code></pre>
-<pre><code>## (b) P(X=1)= 0.171475</code></pre>
-<pre class="r"><code>cat(&quot;(c) P(X=&gt;1)=&quot;, 1-dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
-<pre><code>## (c) P(X=&gt;1)= 0.1854938</code></pre>
-<pre class="r"><code>cat(&quot;(d) P(X =&gt;1)=&quot;,pbinom(0,4,0.05, lower.tail = FALSE)) </code></pre>
-<pre><code>## (d) P(X =&gt;1)= 0.1854938</code></pre>
-<hr />
+# cat(&quot;(a) P(X=0)=&quot;, dbinom(0,4,0.05),&quot;  &quot;)
+# cat(&quot;(b) P(X=1)=&quot;, dbinom(1,4,0.05), &quot;   &quot;)
+# cat(&quot;(c) P(X=&gt;1)=&quot;, 1-dbinom(0,4,0.05),&quot;  &quot;)
+# cat(&quot;(d) P(X =&gt;1)=&quot;,pbinom(0,4,0.05, lower.tail = FALSE)) </code></pre>
+<p><br/><br/></p>
 <ol start="7" style="list-style-type: decimal">
 <li>Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.(<span class="math inline">\(\lambda=8\)</span>)</li>
 </ol>
-<ul>
-<li>Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.</li>
-<li>Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.</li>
-<li>Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.</li>
-<li>Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.</li>
-</ul>
-<pre class="r"><code>cat(&quot;P(X=5&quot;,dpois(5,8), &quot;  &quot;)</code></pre>
-<pre><code>## P(X=5 0.09160366</code></pre>
-<pre class="r"><code>cat(&quot;P(X&lt;=3)=&quot;,ppois(3,8), &quot;  &quot;)</code></pre>
-<pre><code>## P(X&lt;=3)= 0.04238011</code></pre>
-<pre class="r"><code>dpois(2,8*2)</code></pre>
-<pre><code>## [1] 1.44045e-05</code></pre>
-<hr />
+<ol style="list-style-type: lower-alpha">
+<li><p>Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.</p></li>
+<li><p>Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.</p></li>
+<li><p>Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.</p></li>
+<li><p>Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.</p></li>
+</ol>
+<pre class="r"><code># cat(&quot;P(X=5&quot;,dpois(5,8), &quot;  &quot;)
+# cat(&quot;P(X&lt;=3)=&quot;,ppois(3,8), &quot;  &quot;)
+# dpois(2,8*2)</code></pre>
+<p><br/><br/></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90%. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90% es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90%?</li>
 </ol>
-<hr />
+<p><br/><br/></p>
 <ol start="9" style="list-style-type: decimal">
 <li>Se sabe que 3% de las personas a las que se les revisa el equipaje en un aeropuerto lleva objetos cuestionables. ¿Cuál es la probabilidad de que una serie de 15 personas cruce sin problemas antes de que se atrape a una con un objeto cuestionable? ¿Cuál es el número esperado de personas que pasarán antes de que se detenga a una?</li>
 </ol>
-<pre class="r"><code>dgeom(15,0.03)</code></pre>
-<pre><code>## [1] 0.01899754</code></pre>
-<hr />
+<pre class="r"><code># dgeom(15,0.03)</code></pre>
+<p><br/><br/></p>
 <ol start="10" style="list-style-type: decimal">
 <li>El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.</li>
 </ol>
-<ul>
-<li>¿Cuál es la probabilidad de que se acepte un lote?</li>
-<li>¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?</li>
-<li>¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?</li>
-</ul>
-<hr />
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es la probabilidad de que se acepte un lote?</p></li>
+<li><p>¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?</p></li>
+<li><p>¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?</p></li>
+</ol>
+<p><br/><br/></p>
 <ol start="11" style="list-style-type: decimal">
 <li>Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?</li>
 </ol>
-<hr />
+<p><br/><br/></p>
 <ol start="12" style="list-style-type: decimal">
 <li>El número de grietas en un pavimento se estima en guna rieta por cada 100m en promedio(<span class="math inline">\(\lambda=1\)</span>) . Se desea estimar la probabilidad de:</li>
 </ol>
-<ul>
-<li>Halla exactamente 8 grietas en una longitud de 500 m</li>
-<li>No se presente ninguna grieta en 100 m</li>
-<li>Se presenten menos de 2 grietas en 500 m</li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p>Halla exactamente 8 grietas en una longitud de 500 m</p></li>
+<li><p>No se presente ninguna grieta en 100 m</p></li>
+<li><p>Se presenten menos de 2 grietas en 500 m</p></li>
+</ol>
 <pre class="r"><code># P(X=8)
-dpois(8,1*5)</code></pre>
-<pre><code>## [1] 0.06527804</code></pre>
-<pre class="r"><code>dpois(0,1)</code></pre>
-<pre><code>## [1] 0.3678794</code></pre>
-<pre class="r"><code>ppois(1,1)</code></pre>
-<pre><code>## [1] 0.7357589</code></pre>
-<hr />
+# dpois(8,1*5)
+# dpois(0,1)
+# ppois(1,1)</code></pre>
+<p><br/><br/></p>
 <ol start="13" style="list-style-type: decimal">
 <li>Un científico inocula a varios ratones, uno a la vez, el virus que produce una enfermedad, hasta que encuentra a 2 que contraen la enfermedad. Si la probabilidad de contraer la enfermedad es de 1/6, ¿cuál es la probabilidad de que tenga que inocular a 8 ratones?</li>
 </ol>
-<hr />
+<p><br/><br/></p>
+</div>
+<div id="resumen" class="section level1">
+<h1><strong>Resumen</strong></h1>
+<p><br/></p>
+<div id="binomial" class="section level3">
+<h3>*binomial**</h3>
+<p><span class="math inline">\(X \sim binom\)</span> cuando procede de un experimento binomial</p>
+<ul>
+<li><p>El experimento consta de <span class="math inline">\(n\)</span> ensayos</p></li>
+<li><p>Cada ensayo tiene solo dos posible resultados: éxito (E) o fracaso (F) (experimento Bernoulli),</p></li>
+<li><p>La probabilidad de éxito es igual a <span class="math inline">\(p\)</span> y se mantiene fija para todos los ensayos P(E). La probabilidad de fracaso es <span class="math inline">\((1-p)=q\)</span>,</p></li>
+<li><p>Los ensayos son independientes,</p></li>
+<li><p>La variable objeto de estudio <span class="math inline">\(X\)</span>, corresponde al número de éxitos obtenidos en los <span class="math inline">\(n\)</span> ensayos.</p></li>
+<li><p>Se puede decir que la suma de <span class="math inline">\(n\)</span> variables independientes con distribución Bernoulli(<span class="math inline">\(p\)</span>), se distribuye de manera Bionomial(<span class="math inline">\(n,p\)</span>)</p></li>
+</ul>
+<p><br/><br/></p>
+</div>
+<div id="poisson" class="section level3">
+<h3><strong>Poisson</strong></h3>
+<p><span class="math inline">\(X \sim poiss\)</span>, cuando representa el **número de eventos que ocurren en un espacio de tiempo, distancia, area, volumen</p>
+<p><br/><br/></p>
+</div>
+<div id="geométrica" class="section level3">
+<h3><strong>geométrica</strong></h3>
+<p><span class="math inline">\(X \sim geom\)</span>, cuando representa el número del ensayo donde ocurre el primer exito (En R representa el número de fracasos)</p>
+<p><br/><br/></p>
+</div>
+<div id="hipergeométrica" class="section level3">
+<h3><strong>hipergeométrica</strong></h3>
+<p><span class="math inline">\(X \sim hyper\)</span>, cuando representa el número de exitos que se pueden obtener al extraer una muestra de tamaño <span class="math inline">\(n\)</span>, de una urna que contiene <span class="math inline">\(N\)</span> objetos de los cuales <span class="math inline">\(K\)</span> corresponden a exitos.</p>
+<p><br/><br/></p>
+</div>
+<div id="binomial-negativa" class="section level3">
+<h3><strong>binomial negativa</strong></h3>
+<p><span class="math inline">\(X \sim nbinom\)</span>, cuando representa el número del ensayo donde ocurre el <span class="math inline">\(r\)</span>-simo ensayo</p>
+<p><br/><br/><br/></p>
+</div>
+</div>
+<div id="código-r" class="section level1">
+<h1><strong>Código R</strong></h1>
+<p><br/></p>
+<table>
+<thead>
+<tr class="header">
+<th><em>modelo</em></th>
+<th><span class="math inline">\(F(x)\)</span></th>
+<th><span class="math inline">\(X_{p}\)</span></th>
+<th><span class="math inline">\(f(x)\)</span></th>
+<th>aleatorio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>binomial</td>
+<td>pbinom</td>
+<td>qbinom</td>
+<td>dbinom</td>
+<td>rbinom</td>
+</tr>
+<tr class="even">
+<td>gometrico</td>
+<td>pgeom</td>
+<td>qgeom</td>
+<td>dgeom</td>
+<td>rgeom</td>
+</tr>
+<tr class="odd">
+<td>hipergeometrico</td>
+<td>phyper</td>
+<td>qhyper</td>
+<td>dhyper</td>
+<td>rhyper</td>
+</tr>
+<tr class="even">
+<td>Poisson</td>
+<td>ppois</td>
+<td>qpois</td>
+<td>dpois</td>
+<td>rpois</td>
+</tr>
+<tr class="odd">
+<td>binomial negativo</td>
+<td>pnbinom</td>
+<td>qnbinom</td>
+<td>dnbionom</td>
+<td>rnbinom</td>
+</tr>
+<tr class="even">
+<td>beta</td>
+<td>pbeta</td>
+<td>qbeta</td>
+<td>dbeta</td>
+<td>rbeta</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 
