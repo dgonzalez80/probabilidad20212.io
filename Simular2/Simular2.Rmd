@@ -1,0 +1,190 @@
+---
+title: "Tutorial Simulación y Distribución normal"
+author: "dgonzalez80"
+output: learnr::tutorial
+runtime: shiny_prerendered
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Punto 1
+
+Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen como $X \sim N(30.0; 0.25)$ y cuyos anchos se distribuyen $Y \sim N(5.0; 0.09)$. Suponga que las longitudes y los anchos son independientes. El área de una placa esta dada por $A=XY$.
+
+a.  Utilice una muestra simulada de tamaño $1000$ para estimar la media y la varianza de $A$.
+
+b.  Estime la probabilidad de que $P(145.0 <A<155.0)$.
+
+c.  Construya una gráfica de distribución normal $(qqplot)$ para el área. ¿El área de una placa sigue una distribución normal?
+
+Problema 3 capitulo 4 Navidi(2006)
+
+```{r punto1, exercise=TRUE}
+
+```
+
+## Punto 2
+
+Un comercializador de partes para motocicletas tiene dos proveedores a los cuales les compra el mismo repuesto. El proveedor1 le envía las partes para motocicletas solicitadas y se estima que cada una de ellas tiene una probabilidad de 0.03 de estar defectuosa. En el caso del proveedor 2 que también distribuye partes semejantes y su producto tiene una probabilidad de 0.05 de estar defectuosos. Usted recibe un envió de 100 partes de cada proveedor.
+
+a.  Sea $X$ el numero de partes defectuosas en el envió proveniente del proveedor1 y $Y$ el numero de partes defectuosas provenientes del proveedor2. Que modelo es apropiado para la representación de esta situación?
+
+b.]Genere una muesrta de tamaño 1000 a partir de las distribuciones determinadas para $X$ y $Y$. c. Utilice las muestra simuladas para estimar la probabilidad de que el numero total de partes defectuosas sea menor a 10
+
+d.  Utilice la muestra para estimar la probabilidad de que le proveedor1 tenga mas pares defectuosas que el proveedor2.
+
+e.  Construya un gráfico normal (QQ)para el numero total de partes defectuosas . Esta variable sigue una disgribucion normal?
+
+```{r punto2, exercise=TRUE}
+
+```
+
+## Punto 3
+
+Determine el área bajo la curva normal estandar
+
+a.  A la derecha de z = - 0.85.
+b.  Entre z = 0.40 y z = 1.30.
+c.  Entre z = -0.30 y z = 0.90.
+d.  Desde z = -1.50 hasta z = -0.45.
+
+```{r punto3, exercise=TRUE}
+
+```
+
+## Punto 4
+
+Determine el área bajo la curva normal estandar
+
+a.  A la izquierda de z = 0.56.
+b.  Entre z = - 2.93 y z = -2.06.
+c.  Entre z = -1.08 y z = 0.70.
+d.  Desde z = 0.96 hasta z = 1.62.
+
+```{r punto4, exercise=TRUE}
+
+```
+
+## Punto 5
+
+Las puntuaciones de una prueba estandarizada se distribuyen normalmente con media de 480 y desviación estándar de 90.
+
+a.  ¿Cuál es la proporción de puntuaciones mayores a 700?
+b.  ¿Cuál es el 25o. percentil de las puntuaciones?
+c.  Si la puntuación de alguien es de 600, ¿en qué percentil se encuentra?
+d.  ¿Qué proporción de las puntuaciones se encuentra entre 420 y 520?
+
+```{r punto5, exercise=TRUE}
+
+```
+
+## Punto 6
+
+Suponga que la estatura de mujeres en una población sigue la curva normal con media de 64.3 pulgadas y desviación estándar de 2.6 pulgadas.
+
+a.  ¿Qué proporción de mujeres tiene estatura entre 60 y 66 pulgadas?
+b.  La estatura de una mujer es 0.5 de desviación estándar mayor a la media. ¿Qué proporción de mujeres mide más que ella?
+c.  ¿Cuánto mide una mujer cuya estatura se encuentra en el 90o. percentil?
+d.  Se elige aleatoriamente una mujer de esta población. ¿Cuál es la probabilidad de que ella mida más de 67 pulgadas?
+e.  Se elige aleatoriamente a cinco mujeres de esta población. ¿Cuál es la probabilidad de que sólo una de ellas mida más de 67 pulgadas?
+
+```{r punto6, exercise=TRUE}
+
+```
+
+## Punto 7
+
+La resistencia de una aleación de aluminio se distribuye normalmente con media de 10 gigapascales (GPa) y desviación estándar de 1.4 GPa.
+
+a.  ¿Cuál es la probabilidad de que una muestra de esta aleación tenga resistencia mayor a 12 GPa?
+b.  Determine el primer cuartil de la resistencia de esta aleación.
+c.  Determine el 95o. percentil de la resistencia de esta aleación.
+
+```{r punto7, exercise=TRUE}
+
+```
+
+## Punto 8
+
+En una universidad, las puntuaciones del SAT en matemáticas de una clase de primer año fue de, en promedio, 650 y tuvo desviación estándar de 100. El máximo puntaje posible es de 800. ¿Es posible que el histograma de las puntuaciones de estos alumnos siga una curva normal? Explique.
+
+```{r punto8, exercise=TRUE}
+
+```
+
+## Punto 9
+
+La penicilina es producida por el hongo Penicillium, que crece en un caldo, cuyo contenido de azúcar debe controlarse con cuidado. La concentración óptima de azúcar es de 4.9 mg/mL. Si la concentración excede los 6 mg/mL, el hongo muere y el proceso debe suspenderse todo el día.
+
+a.  Si la concentración de azúcar en tandas de caldo se distribuye normalmente con media 4.9 mg/mL y desviación estándar 0.6 mg/mL, ¿en qué proporción de días se suspenderá el proceso?
+b.  El distribuidor ofrece vender caldo con una concentración de azúcar que se distribuye normalmente con media de 5.2 mg/mL y desviación estándar de 0.4 mg/mL. ¿Este caldo surtirá efectos con menos días de producción perdida? Explique.
+
+```{r punto9, exercise=TRUE}
+
+```
+
+## Punto 10
+
+Un método de cromatografía utilizado para purificar a una proteína también destruye parte de ésta, en un proceso de nominado desnaturación. Un método particular recupera una media de 55% (0.55) de la proteína y tiene desviación estándar de 0.15. La cantidad recuperada se distribuye normalmente.
+
+a.  En cierto proceso industrial, no es posible obtener una recuperación menor a 0.30 más de 5% de las veces. ¿Este proceso cumple con este requisito? Explique.
+b.  En otro proceso, la recuperación debe ser mayor a 0.50 al menos 95% de las veces. Si la media de la recuperación se distribuye normalmente con una media de 0.60,¿cuál es el valor más grande que puede tener la desviación estándar para cumplir con este requisito?
+
+```{r punto10, exercise=TRUE}
+
+```
+
+## Punto 11
+
+Se hace una perforación cilíndrica en un molde y se coloca un pistón cilíndrico en la perforación. La holgura es igual a la mitad de la diferencia entre los diámetros de la perforación y el pistón. El diámetro de la perforación se distribuye normalmente con media de 15 cm y desviación estándar de 0.025 cm, y el diámetro del pistón se distribuye con media 14.88 cm y desviación estándar 0.015 cm.
+
+a.  Determine la media de la holgura.
+b.  Determine la desviación estándar de la holgura.
+c.  ¿Cuál es la probabilidad de que la holgura mida menos de 0.05 cm?
+d.  Determine el 25o. percentil de la holgura. e.] Las especificaciones requieren que la holgura mida entre 0.05 y 0.09 cm. ¿Cuál es la probabilidad de que la holgura satisfaga la especificación?
+e.  Se puede ajustar la media del diámetro de la perforación. ¿A qué valor debe ajustarse para maximizar la probabilidad de que la holgura esté entre 0.05 y 0.09 cm?
+
+```{r punto11, exercise=TRUE}
+
+```
+
+## Punto 12
+
+Los ejes fabricados para el uso de dispositivos de almacenamiento óptico tienen diámetros que se distribuyen normalmente con media $\mu =0.652$ y desviación estándar $s =0.003$ cm. La especificación para el diámetro del eje mide entre $0.650 \pm 0.005$ cm.
+
+a.  ¿Qué proporción de los ejes fabricados por este proceso cumple con la especificación?
+b.  La media del proceso puede ajustarse utilizando calibración. Si se establece que la media mide 0.650 cm, ¿qué proporción de los ejes cumplirá con la especificación?
+c.  Si se establece que la media mide 0.650 cm, ¿cuál debe ser la desviación estándar para que 99% de los ejes cumpla con la especificación?
+
+```{r punto12, exercise=TRUE}
+
+```
+
+## Punto 13
+
+El volumen de latas llenadas por cierta máquina se distribuye normal con media de 12.05 onzas y desviación estándar de 0.03 onzas.
+
+a.  ¿Qué proporción de latas contiene menos de 12 onzas?
+b.  La media del proceso se puede ajustar utilizando calibración. ¿En qué valor debe fijarse la media para que 99% de las latas contenga 12 onzas o más?
+c.  Si la media del proceso sigue siendo de 12.05 onzas, ¿en qué valor debe fijarse la media para que 99% de las latas contenga 12 onzas o más?
+
+```{r punto13, exercise=TRUE}
+
+```
+
+## Punto 14
+
+Un proceso de recubrimiento de películas genera filmes cuyo espesor se distribuye con media de 110 micrones y desviación estándar de 10 micrones. En cierta aplicación, el espesor mínimo aceptable es de 90 micrones.
+
+a.  ¿Qué proporción de películas estarán demasiado delgadas?
+b.  ¿A qué valor debe establecerse la media para que sólo 1% de las películas esté muy delgado?
+c.  Si la media sigue siendo 110, ¿cuál debe ser la desviación estándar para que sólo 1% de las películas sea muy delgado?
+
+```{r punto14, exercise=TRUE}
+
+```

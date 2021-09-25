@@ -117,6 +117,8 @@ Construir un  **poster** para cada uno de los modelos asignados que contenga sus
 |Grupo 7 |  Juan Fernando Viteri , Juan José lerma |
 |Grupo 8 |  Luis Rosero , David Velandia |
 |Grupo 9 |  Daniela Espinosa , Gabriel Troncoso |
+|Grupo 10|   Julián Mafla                       |
+
 
 # **Videos PyE 2020-2**
 
@@ -240,4 +242,7 @@ Construir un  **poster** para cada uno de los modelos asignados que contenga sus
 
 
 <br/><br/><br/><br/>
+
+
+![Image Title]("/home/deg/Javeriana/Probabilidad/Web_curso/probabilidad20212.io/talleres/Guia301.pdf"){width=75%}.
 

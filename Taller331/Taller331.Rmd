@@ -17,6 +17,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 1.  Para una variable aleatoria con distribución binomial $X \sim binom(x, n=10, p=0.5)$ . Determine: la función de distribución asociada a $X$.
 
+```{=html}
+<!-- -->
+```
 a.  $P(X = 5)$
 
 ```{r 1a, exercise=TRUE}
@@ -85,9 +88,8 @@ e.  Construya la gráfica de $f_{_{X}}(x)$
 
 3.  Sea una variable geométrica $X\sim geomn,(x,p=0.05)$
 
-```{=html}
 <!-- -->
-```
+
 a.  $P(X = 1)$
 
 ```{r 3a, exercise=TRUE}
@@ -122,9 +124,8 @@ e.  Construya la gráfica de $f_{_{X}}(x)$
 
 4.  Suponga que X tiene una distribución hipergeometrica con $N=100$, $n=4$ y $K=20$. ($X\sim hyper(x,N=100,n=4,k=20)$) Determine:
 
-```{=html}
 <!-- -->
-```
+
 a.  $P(X = 1)$
 
 ```{r 4a, exercise=TRUE}
@@ -157,9 +158,8 @@ e.  Construya la gráfica de $f_{_{X}}(x)$
 
 5.  Sea la variable $X$ con distribución binomial negativa con N=100 , K=20, n=5 ($X\sim nbinom(x,n,p,mu)$ )
 
-```{=html}
 <!-- -->
-```
+
 a.  $P(X = 0)$
 
 ```{r 5a, exercise=TRUE}
@@ -214,9 +214,8 @@ c.  ¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?
 
 7.  Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.($\lambda=8$)
 
-```{=html}
 <!-- -->
-```
+
 a.  Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
 
 ```{r 7a, exercise=TRUE}
@@ -261,9 +260,8 @@ d.  Calcule el valor esperado del número de personas que llegan a la tienda ent
 
 10. El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.
 
-```{=html}
 <!-- -->
-```
+
 a.  ¿Cuál es la probabilidad de que se acepte un lote?
 
 ```{r 10a, exercise=TRUE}
@@ -294,9 +292,8 @@ c.  ¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?
 
 12. El número de grietas en un pavimento se estima en guna rieta por cada 100m en promedio($\lambda=1$) . Se desea estimar la probabilidad de:
 
-```{=html}
 <!-- -->
-```
+
 a.  Halla exactamente 8 grietas en una longitud de 500 m
 
 ```{r 12a, exercise=TRUE}

@@ -23,7 +23,7 @@ c5="#BC2B6A" # MORADO
 
 ```
 
-<span style="color:#E77C00">**En construcción**</span>
+
 
 ## **Guía de aprendizaje 4.1**
 
@@ -35,29 +35,63 @@ c5="#BC2B6A" # MORADO
 
 ## **1. Introducción**
 
+La inferencia estadística permite generalizar lo hallado en una muestra a toda la población. Para realizar este proceso contamos con dos opciones: Estimación y las Pruebas de hipótesis. El fundamento de estos procesos está relacionado con varios conceptos que se describen y se discuten en esta unidad. En algunos casos serán apoyados con procesos de simulación que permitirán la verificación de cada uno de ellos. \\
+ 
+Dentro de estos conceptos se destacan: población, muestra, censo, muestreo, parámetro, estimador, tamaño de muestra, tipo de muestreo, métodos de estimación de momentos, método de estimación de máxima verosimilitud, propiedades de estimadores como son insesgadez, eficiencia, consistencia, teorema central del limite, media muestral, proporción muestral, varianza muestral, modelos de probabilidad normal, t-Student, $\chi^{2}$ o ji-cuadrado y F.
+
 <br/><br/>
 
 ## **2. Objetivos de la unidad**
 
+Al finalizar esta unidad el estudiante estará en capacidad de RECONOCER los elementos, conceptos y propiedades que intervienen en la inferencia estadística, de tal manera que pueda INFERIR de manera adecuada los resultados obtenidos para la toma de decisiones informadas
+
 <br/><br/>
 
 ## **3. Duración**
+
+La presente  unidad será desarrollada durante la comprendida entre 21 y el 25 de Abril .    
+Ademas del material suministrado  contaran con el acompañamiento del profesor en dos sesiones (Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entegables para esta unidad podrán enviarse a través de la plataforma Blackboard hasta el  25 de Abril.
+
+Para alcanzar los objetivos planteados se propone realizar las siguientes actividades333333
 
 <br/><br/>
 
 ## **4. Cronograma de trabajo**
 
 
-|Actividad      | Descripción                    | 
-|:--------------|:-----------------------------  |
+|Actividad           | Descripción                    | 
+|:-------------------|:-----------------------------  |
+|**Actividad411**        | Construya un mapa mental con que contenga el siguiente grupo de palabras : **población, parámetro, censo, muestra, muestreo, muestreo probabilistico, muestreo no probabilistico, muestreo aleatorio simple, muestreo aleatorio estratificado, puestreo por conglomerados, puestreo por juicio, muestreo por conveniciencia, muestreo bola de nieve, estimador puntual, estimador insesgado, estimador consistente, estimador eficiente, estimación por intervalos de confianza, pruebas de hipotesis** |
+|Trabajo  pareja |    |
+|Recursos | [Tablero realizado por 300MAE005 A 2020-2](https://padlet.com/dgonzalez80/lijxz9p7nvz5mm2q)|
+|Fecha    | octubre 10  |
+|Hora     | 23:59     |
+|**Actividad412**   | Verifique el cumplimiento del **Teorema Central del Limite** para cada uno de los modelos asignados en la actividad 331 |
+|Trabajo individual|   |
+|Fecha    | octubre 10  |
+|Hora     | 23:59     |
 
 <br/><br/>
 
 ## **5. Criterios de evaluación**
 
+* Reconoce los modelos especiales asociados a contextos  y problemas reales
+
+* Utiliza las herramientas estadística apropiadas en el calculo de probabilidades en la solución de problemas en contexto
+
+* Utiliza herramientas computacionales que le permita  la solución de problemas en contexto a través de la simulación
+
+
 <br/><br/>
 
 ## **6. Entregables** 
+|              |                  |                                         |
+|:-------------|:-----------------|:----------------------------------------|
+|Entregable 1  | Actividad411.pdf |  mapa mental                            |
+|Entregable 2: | Actividad412.pdf | verificación teorema central del límite |
+
+
+Los entregables completos y enviados dentro de los tiempos establecidos  otorgarán 10 puntos en cada caso, para un  total de 20 puntos. 
 
 <br/><br/><br/><br/>
 
@@ -65,5 +99,12 @@ c5="#BC2B6A" # MORADO
 
 
 
+# **Recursos**
+
+
+
+## Video 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jbrnCa3jq0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
