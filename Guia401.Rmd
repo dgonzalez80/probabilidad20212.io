@@ -13,6 +13,9 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+
+library(ggplot2)
+library(ggfortify)
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -532,11 +535,17 @@ tiene una distribución chi-cuadrado con $v=n-1$ grados de libertad.
 
 Nota: Esta función fue creada por Karl Pearson cientifico inglés (1857-1936) y su función de distribución y su represntación gráfica estan dadas por:
 
-$$f(x)=\frac{1}{2^{k72}\Gamma(k/2)}x^{(k/2)-1}\exp\{-x/2\} ,\hspace{.3cm} x>0$$
+$$f(x)=\frac{1}{2^{(v/2)}\Gamma(v/2)}x^{(v/2)-1}\exp\{-x/2\} ,\hspace{.3cm} x>0$$
+<br/><br/>
 
-gchi.pdf
 
-Esta distribución es un caso especial de la distribución Gamma con parámetros $\alpha=v/2$ y $\beta=2$ 
+
+
+
+![](img/gchi.png){width=50%}
+
+
+Esta distribución es un caso especial de la distribución Gamma con parámetros $\alpha=\frac{v}{2}$ y $\beta=2$ 
 
 <br/><br/>
 
@@ -548,16 +557,15 @@ Sea Z una variable con distribución normal estandar y V una variable con distri
 $$T=\frac{Z}{\sqrt{V/v}} \sim t_{v}$$
 
 
-pearson_k.gif
-
-
 Nota: Esta función de distribución fue propuesta por William Sealy Gosset en 1908. Gosset trabajaba en una fábrica de cerveza de prppiedad de Guiness, quien prohibia a sus empleados la publicación de artículos cientificos debido a la difución previa de secretos industriales. Debido a esta prohibición Gosset publicaba sus artículos con el seudonimo de Student.(Wikipedia.org)
 
 La función de probabilidad de distribución t-student y su represntación gráfica están dadas por:
 
 $$f(x)=\frac{\Gamma[(v+1)/2]}{\Gamma[v/2]\sqrt{\pi v}}\Bigg(1+\frac{x^{2}}{v} \Bigg)^{-(v+1)/2}, \hspace{.3cm} -\infty< x<\infty $$
 
-gt.png
+![](img/gt.png){width=60%}
+
+
 
 La gráfica de la distribución t-student es similar a la de la distribución normal, salvo que sus colas son más pesadas.
 
@@ -589,8 +597,7 @@ Nota: Ronald Aylmer Fisher (1890-1962) cientifico, matemático, estadístico, bi
 $$f(x)=\displaystyle\frac{\Gamma \Bigg[\displaystyle\frac{v_{1}+v_{2}}{2}\Bigg]\Bigg(\displaystyle\frac{v_{1}}{v_{2}}\Bigg)^{v_{1}/2} x^{(v_{1}/2)-1}}{\Gamma \Bigg[\displaystyle\frac{v_{1}}{2}\Bigg] \Gamma \Bigg[\displaystyle\frac{v_{2}}{2}\Bigg]
 \Bigg[\Bigg(\displaystyle\frac{v_{1}}{v_{2}}\Bigg)x+1\Bigg]^{\big(v_{1}+v_{2}\big)/2}}, \hspace{.3cm} x>0 $$
 
-gf.pdf
-
+![](img/gf.png){width=50%}
 
 <br/><br/>
 
@@ -804,7 +811,7 @@ Si $\bar{X}$ es la media de una muestra de tamaño $n$ tomada una población con
 %%$$Z=\dfrac{\bar{X}-\mu}{\Big(\sigma/\sqrt{n}\Big)} \sim N(0,1) $$
 %% conforme $n\rightarrow \infty$, esta aproximación es cada vez más próxima a la normal. Este teorema es aplicable tambien a la variable total de sumatoria de los valores de la muestra $T_{n}=X_{1}+X_{2}+...+X_{n}$
 
-tlc.png}
+![](img/tlc.png){width=70%}
 
 
 El potencial de este teorema esta en que no importa la distribución de la variable X, la distribución de la media provemiente de la muestra tomada de esta población se distribuye aproximadamente normal. Al final de la guía se encuentra practica computacional que nos ayuda a comprender el alcance de este teorema.

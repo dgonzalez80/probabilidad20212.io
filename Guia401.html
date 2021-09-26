@@ -1088,20 +1088,19 @@ V[X]&amp;=&amp; \mu^{2}-(\mu^{1})^{2}\\
 <h3><strong>Distribución chi-cuadrado</strong></h3>
 <p>Si <span class="math inline">\(S^{2}\)</span> es la varianza de la muestra aleatoria de tamaño <span class="math inline">\(n\)</span> que se toma de una población normal que tiene varianza <span class="math inline">\(\sigma^{2}\)</span>, entonces el estadístico: <span class="math display">\[\chi^{2}=\frac{(n-1)S^{2}}{\sigma^{2}}=\sum_{i=1}^{n}\frac{\big(x_{i}-\bar{x}\big)^{2}}{\sigma^{2}}=\sum_{i=1}^{n} \Big(\frac{x_{i}-\bar{x}}{\sigma}\Big)^{2} \]</span> tiene una distribución chi-cuadrado con <span class="math inline">\(v=n-1\)</span> grados de libertad.</p>
 <p>Nota: Esta función fue creada por Karl Pearson cientifico inglés (1857-1936) y su función de distribución y su represntación gráfica estan dadas por:</p>
-<p><span class="math display">\[f(x)=\frac{1}{2^{k72}\Gamma(k/2)}x^{(k/2)-1}\exp\{-x/2\} ,\hspace{.3cm} x&gt;0\]</span></p>
-<p>gchi.pdf</p>
-<p>Esta distribución es un caso especial de la distribución Gamma con parámetros <span class="math inline">\(\alpha=v/2\)</span> y <span class="math inline">\(\beta=2\)</span></p>
+<p><span class="math display">\[f(x)=\frac{1}{2^{(v/2)}\Gamma(v/2)}x^{(v/2)-1}\exp\{-x/2\} ,\hspace{.3cm} x&gt;0\]</span> <br/><br/></p>
+<p><img src="img/gchi.png" style="width:50.0%" /></p>
+<p>Esta distribución es un caso especial de la distribución Gamma con parámetros <span class="math inline">\(\alpha=\frac{v}{2}\)</span> y <span class="math inline">\(\beta=2\)</span></p>
 <p><br/><br/></p>
 </div>
 <div id="distrución-t-student" class="section level3">
 <h3><strong>Distrución t-student</strong></h3>
 <p>Esta función nace de la relación entre una variable con distrución normal estandar y la raiz cuadrada de una variable con distribución chi-cuadrado Sea Z una variable con distribución normal estandar y V una variable con distribución chi-cudadrado con v grados de libertad, entonces la variable aleatoria T se distribuye t-student con v grados de libertad</p>
 <p><span class="math display">\[T=\frac{Z}{\sqrt{V/v}} \sim t_{v}\]</span></p>
-<p>pearson_k.gif</p>
 <p>Nota: Esta función de distribución fue propuesta por William Sealy Gosset en 1908. Gosset trabajaba en una fábrica de cerveza de prppiedad de Guiness, quien prohibia a sus empleados la publicación de artículos cientificos debido a la difución previa de secretos industriales. Debido a esta prohibición Gosset publicaba sus artículos con el seudonimo de Student.(Wikipedia.org)</p>
 <p>La función de probabilidad de distribución t-student y su represntación gráfica están dadas por:</p>
 <p><span class="math display">\[f(x)=\frac{\Gamma[(v+1)/2]}{\Gamma[v/2]\sqrt{\pi v}}\Bigg(1+\frac{x^{2}}{v} \Bigg)^{-(v+1)/2}, \hspace{.3cm} -\infty&lt; x&lt;\infty \]</span></p>
-<p>gt.png</p>
+<p><img src="img/gt.png" style="width:60.0%" /></p>
 <p>La gráfica de la distribución t-student es similar a la de la distribución normal, salvo que sus colas son más pesadas.</p>
 <p>Si <span class="math inline">\(X_{1},X_{2},...,X_{n}\)</span> es una muestra aleatoria de <span class="math inline">\(n\)</span> variables independientemente e idénticamente distribuidas <span class="math inline">\(N(\mu,\sigma^{2})\)</span> y</p>
 <p><span class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i} \]</span></p>
@@ -1119,7 +1118,7 @@ V[X]&amp;=&amp; \mu^{2}-(\mu^{1})^{2}\\
 <p>Nota: Ronald Aylmer Fisher (1890-1962) cientifico, matemático, estadístico, biólogo evolutivo y genet?sta inglés fue el creador de la distribución F. Su función de distribución y su representación gráfica estan dadas por:</p>
 <p><span class="math display">\[f(x)=\displaystyle\frac{\Gamma \Bigg[\displaystyle\frac{v_{1}+v_{2}}{2}\Bigg]\Bigg(\displaystyle\frac{v_{1}}{v_{2}}\Bigg)^{v_{1}/2} x^{(v_{1}/2)-1}}{\Gamma \Bigg[\displaystyle\frac{v_{1}}{2}\Bigg] \Gamma \Bigg[\displaystyle\frac{v_{2}}{2}\Bigg]
 \Bigg[\Bigg(\displaystyle\frac{v_{1}}{v_{2}}\Bigg)x+1\Bigg]^{\big(v_{1}+v_{2}\big)/2}}, \hspace{.3cm} x&gt;0 \]</span></p>
-<p>gf.pdf</p>
+<p><img src="img/gf.png" style="width:50.0%" /></p>
 <p><br/><br/></p>
 </div>
 </div>
@@ -1499,7 +1498,7 @@ P(p&gt;0.82) &amp;=&amp; P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} &gt; \df
 <div id="teorema-central-del-límite" class="section level2">
 <h2><strong>Teorema central del límite</strong>:</h2>
 <p>Si <span class="math inline">\(\bar{X}\)</span> es la media de una muestra de tamaño <span class="math inline">\(n\)</span> tomada una población con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^{2}\)</span>, entonces la forma límite de la distribución de : %%<span class="math display">\[Z=\dfrac{\bar{X}-\mu}{\Big(\sigma/\sqrt{n}\Big)} \sim N(0,1) \]</span> %% conforme <span class="math inline">\(n\rightarrow \infty\)</span>, esta aproximación es cada vez más próxima a la normal. Este teorema es aplicable tambien a la variable total de sumatoria de los valores de la muestra <span class="math inline">\(T_{n}=X_{1}+X_{2}+...+X_{n}\)</span></p>
-<p>tlc.png}</p>
+<p><img src="img/tlc.png" style="width:70.0%" /></p>
 <p>El potencial de este teorema esta en que no importa la distribución de la variable X, la distribución de la media provemiente de la muestra tomada de esta población se distribuye aproximadamente normal. Al final de la guía se encuentra practica computacional que nos ayuda a comprender el alcance de este teorema.</p>
 <div id="verificación-del-teorema-central-del-límite" class="section level3">
 <h3><strong>Verificación del Teorema central del límite </strong></h3>
