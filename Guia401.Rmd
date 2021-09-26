@@ -35,7 +35,7 @@ c5="#BC2B6A" # MORADO
 
 ## **1. Introducción**
 
-La inferencia estadística permite generalizar lo hallado en una muestra a toda la población. Para realizar este proceso contamos con dos opciones: Estimación y las Pruebas de hipótesis. El fundamento de estos procesos está relacionado con varios conceptos que se describen y se discuten en esta unidad. En algunos casos serán apoyados con procesos de simulación que permitirán la verificación de cada uno de ellos. \\
+La inferencia estadística permite generalizar lo hallado en una muestra a toda la población. Para realizar este proceso contamos con dos opciones: Estimación y las Pruebas de hipótesis. El fundamento de estos procesos está relacionado con varios conceptos que se describen y se discuten en esta unidad. En algunos casos serán apoyados con procesos de simulación que permitirán la verificación de cada uno de ellos. 
  
 Dentro de estos conceptos se destacan: población, muestra, censo, muestreo, parámetro, estimador, tamaño de muestra, tipo de muestreo, métodos de estimación de momentos, método de estimación de máxima verosimilitud, propiedades de estimadores como son insesgadez, eficiencia, consistencia, teorema central del limite, media muestral, proporción muestral, varianza muestral, modelos de probabilidad normal, t-Student, $\chi^{2}$ o ji-cuadrado y F.
 
@@ -98,8 +98,11 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 ## **7. Presentaciones**
 
 
+<br/><br/><br/><br/>
 
 # **Recursos**
+
+<br/><br/>
 
 ## **Introducción**
 
@@ -112,19 +115,26 @@ La inferencia estadística permite generalizar lo hallado en una muestra a toda 
 |muestreo por juicio    | muestreo por conveniciencia|muestreo bola de nieve    |estimador puntual               |estimador insesgado       | 
 |estimador consistente  | estimador eficiente        |estimación por intervalos de confianza|pruebas de hipótesis |  |
 
+<br/><br/>
 
 ### **Población** 
 
 En Estadística, se identifica el término población con el dominio de la variable aleatoria X, asociada a los objetos o individuos sobre los cuales se desarrolla un experimento y cuyo valor ocurre al azar. El estudio del conjunto de todas las mediciones de interés para un investigador se llama CENSO (Mendenhall (2008)). Como ejemplo podemos mencionar la población de habitantes de Colombia que se estudia a través del Censo de población que se debe realizar cada diez años. 
 
+<br/><br/>
+
 ### **Muestra** 
 
 Un subconjunto extraido de los elementos que conforman la población se denomina MUESTRA. Una definición técnica de muestra está dada por: repetición $n$ veces, en idénticas condiciones de la experiencia aleatoria, se puede obtener $n$ valores independientes de una variable aleatoria $X_{1}, X_{2},...,X_{n}$ a la que se le denomina muestra de la variable $X$.
+
+<br/><br/>
 
 ### **Parámetro** 
 
 Es una caracterización numérica de la distribución de probabilidad de una variable aleatoria. Como ejemplo de parámetros tenemos a $\mu$, $\sigma^{2}$ que determinan la función de probabilidad de una variable con distribución normal. Si suponemos que los valores correspondientes a estos parámetros son 100 y 25 respectivamente, entonces la función de distribución de probabilidad quedará determinada por :
 $$f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg)}$$
+
+<br/><br/>
 
 ### **Estimador** 
 
@@ -132,6 +142,7 @@ Es una función de los valores obtenidos en una muestra aleatoria que da como re
 $$\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n}x_{i}=\bar{x} $$
 $$\widehat{\sigma^{2}}=\frac{1}{n-1}\sum_{i=1}^{n}\big(x-\bar{x}\big)^{2} = s^{2}$$
 
+<br/><br/>
 
 ### **Estimación** 
 
@@ -143,12 +154,18 @@ $$ 630, 650, 710, 750, 790, 820, 860 \text{ y } 910$$
 $$\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n} x_{i} =\frac{1}{8}(630+650+...+910)=765$$
 El valor del estimador de $\mu$ para esta muestra es $$\widehat{\mu}=\bar{x}= 765$$.
 
-
+<br/><br/>
 ## **Muestreo**
+
+<br/>
 
 ### **Importancia del Muestreo**
 
+<br/>
+
 El papel principal de la estadística está relacionado con el análisis de información que permita tomar decisiones con respecto a una población. Es posible que se pueda estudiar la totalidad de elementos  que determinan la población, en este caso estaremos realizando un censo. Sin embargo no siempre podemos estudiar la totalidad de la población por lo cual debemos seleccionar una pequeña parte de ella. A este subconjunto lo podemos llamar muestra.
+
+<br/>
 
 |                                      | **Muestra**     | **Censo**          |
 |:-------------------------------------|:----------------|:-------------------|
@@ -162,8 +179,9 @@ El papel principal de la estadística está relacionado con el análisis de info
 |Atención a casos individuales         |                 |                    |
 Tomado de Malhotra(2004)
 
+<br/>
 
-Un diseño de muestreo es una estrategia para obtener una muestra, genera algunas preguntas asociadas al proceso de muestreo: ¿cómo seleccionar de una manera óptima la muestra?, ¿Qué característica medir en las unidades observadas? y ¿cómo estimar las características poblacionales a partir de la información muestral?. El proceso de obtención de las muestras por su parte, requiere la definición de algunos aspectos como, ¿cuál es el tamaño óptimo para el cumplimiento de los objetivos?, o  ¿mediante qué procedimiento de aleatorización realizar el proceso de selección?, ¿qué tipo de método observacional utilizar y qué medidas tomar?. En el muestreo, uno tiene la oportunidad de seleccionar deliberadamente la  muestra, para evitar  inducir por ejemplo, a seleccionar por conveniencia alg\'un individuo en particular, situación que pudiera conducir a sesgos en los resultados finales de la investigación.
+Un diseño de muestreo es una estrategia para obtener una muestra, genera algunas preguntas asociadas al proceso de muestreo: ¿cómo seleccionar de una manera óptima la muestra?, ¿Qué característica medir en las unidades observadas? y ¿cómo estimar las características poblacionales a partir de la información muestral?. El proceso de obtención de las muestras por su parte, requiere la definición de algunos aspectos como, ¿cuál es el tamaño óptimo para el cumplimiento de los objetivos?, o  ¿mediante qué procedimiento de aleatorización realizar el proceso de selección?, ¿qué tipo de método observacional utilizar y qué medidas tomar?. En el muestreo, uno tiene la oportunidad de seleccionar deliberadamente la  muestra, para evitar  inducir por ejemplo, a seleccionar por conveniencia algún individuo en particular, situación que pudiera conducir a sesgos en los resultados finales de la investigación.
 
 En resumen, podemos decir que el muestreo consiste en la selección, mediante procedimientos preestablecidos que nos aseguren aleatoriedad y representatividad,  de una parte de una colección finita de unidades, seguida de algunas conclusiones respecto de la población, basándonos en la parte de ella que hemos observado. Este proceso se basa en principios relacionados con la inferencia estadística, lo que implica fuentes de incertidumbre (producto de la aleatoriedad), como por ejemplo
 
@@ -172,21 +190,28 @@ a.El método de selección de las unidades.
 b.El método de medición de las unidades.
 c.El conocimiento de los procesos que generan los verdaderos valores de las unidades medidas.
 
+<br/><br/>
+
 ### **Diseños Muestrales**
+
 
 Un diseño muestral es una estrategia de selección de unidades muestrales, mediante un proceso de aleatorización definido previamente (plan de muestreo). De acuerdo con esta definición, son tres los elementos esenciales de un diseño muestral:
 
+<br/><br/>
 
 #### **Unidad muestral**
 
 Constituye la unidad básica a partir de la cual se obtiene la información, pudiendo por tanto, ser éstas personas,  o individuos de cualquier tipo si , por ejemplo nuestro interés es estimar la talla promedio; casas, número promedio de habitaciones, o el consumo de energía; comunidades, si los que nos interesa es el número promedio de especies por comunidad, áreas o cuadrículas si deseamos estimar densidades medias o biomasa total, etc.
 
+<br/><br/>
 
 #### **Proceso de aleatorización**
 
 Aun cuando la unidad muestral esté claramente definida, existen algunos elementos que pueden afectar el proceso de muestreo, alterando la calidad de la información. En este caso no es la definición, sino la selección de la unidad muestral, la que puede estar sesgada por la naturaleza de la medición, así por ejemplo, si deseamos encuestar a personas para averiguar su tendencia política o su nivel socio económico, pudiéramos sentirnos tentados a seleccionar sus nombres desde una guía telefónica, lo que dejaría fuera de la encuesta a todas aquellas personas  que no tienen teléfono, constituyéndose ello en una fuente de sesgo. En  otros casos, la naturaleza del muestreo tiene que ver con el entrenamiento de los muestreadores, es el caso, por ejemplo, de las muestras para identificar fallas en un equipo, en que la experiencia del muestreador juega un papel importante en la identificación de los mismos.
 
 Lo anterior significa que, en términos prácticos, la aleatoriedad debe garantizar que cada individuo de la población debe tener las misma posibilidad de ser seleccionado como representante de la población (aleatoriedad). Adicionalmente, exigimos que la elección de un individuo, no esté condicionada a la selección de otro (independencia). Estas dos condiciones, en apariencia sencillas, pueden provocar algunas  dificultades.
+
+<br/><br/>
 
 ###  **Tamaño muestral**
 
@@ -206,6 +231,7 @@ Donde:
 
 **Error de muestreo** : corresponde a la diferencia entre el valor de la característica en la población (parámetro) y el valor obtenido con la información de la muestra (estimador).Equivale al error que estamos en capacidad de tolerar en las unidades de la variable.
 
+<br/><br/>
 
 **Ejemplo de cálculo de tamaño de la muestra- Caso de una media** : Suponga que deseamos determinar el tamaño de la muestra para estimar la media de la nota del curso de estadística, con una confianza del 95\% y un error de muestreo de 0.2 puntos. Un estudio realizado el semestre pasado arrojó una varianza de 1.6.
 
@@ -227,6 +253,7 @@ Supongamos que N=200 estudiantes y por tanto $154/200 > 0.05$ El tamaño corregi
 
 $$n= \dfrac{154 \times 200}{154 + 200 -1} =87.2 \approxeq 88 $$
 
+<br/><br/>
 
 **Ejemplo de cálculo de tamaño de la muestra- Caso de una proporción**: Supongamos ahora que se desea calcular el tamaño de la muestra para realizar una estimación de la proporción de estudiantes que reprueban el curso de matemáticas fundamentales y que deseamos una confianza del 98\% y un error de muetreo de 0.1. En este caso la varianza corresponde a $pq$ donde $q=1-p$ y por tanto tendrá su valor máximo cuando $p=0.50$, es decir que si utilizamos como varianza $0.5 \times (1-0.5)=0.25$ obtendremos el valor más grande de tamaño de muestra posible.
 
@@ -234,6 +261,7 @@ $$ n=\dfrac{2.33^2 \times 0.25}{0.1^{2}}=135.7 \approxeq 136$$
 
 En caso de poder realizar una prueba piloto (observación de una muestra, digamos 30 unidades) y estimar en este caso su varianza, el resultado del tamaño de muestra será inferior al anteriormente calculado.
 
+<br/><br/><br/><br/>
 
 ## **Tipos de muestreo** 
 
@@ -251,9 +279,11 @@ De acuerdo con las consideraciones anteriores, algunas de las estrategias de mue
 + muestreo aleatorio estratificado 
 + muestreo aleatorio por conglomerados
 
+<br/><br/>
 
 ### **Muestreos probabilísticos**
 
+<br/><br/>
 
 **Muestreo Aleatorio simple (m.a.s)**
 Una muestra aleatoria simple tomada de una población finita, da a cada subconjunto de la población (muestra) de tamaño específico la misma probabilidad de ser seleccionada.\\
@@ -273,6 +303,8 @@ El muestreo puede realizarse sin reemplazo o con reemplazo, o dicho de otro modo
 # extre la muestra
 # muestra1=Base1[sample(1:nrow(Base1),50,replace=F),] 
 ```
+
+<br/><br/>
 
 **Muestreo Estratificado** 
 
@@ -296,6 +328,8 @@ Otros criterios de clasificación pueden obedecer también, por ejemplo, a posic
 
 Otro elemento interesante de considerar, en los estudios por muestreo estratificado, es que las conclusiones  pueden darse no sólo a nivel poblacional, sino que independientemente a nivel de cada estrato.\\
 
+<br/><br/>
+
 **Muestreo Sistemático** 
 
 Se forma una muestra sistemática seleccionando al azar una unidad y luego se seleccionan adicionalmente las unidades a intervalos igualmente espaciados (cada $k$ unidades de la población, $k>1$) hasta formar la muestra total.
@@ -308,38 +342,54 @@ Es más fácil de ejecutar este tipo de muestreo. Es también más preciso que e
 
 Este tipo de muestreo no es recomendable cuando el preceso generador de los datos tiene un comportamiento cíclico o estacional, el cuál puede hacer que las unidades seleccionadas coincidan con todos los máximos o todos los mínimos. 
 
+
+<br/><br/>
+
 **Muestreo por Conglomerados**
 
 Una muestra por conglomerados se obtiene identificando un conjunto de conglomerados que componen la población, aleatoriamente se selecciona un subconjunto de estos conglomerados y se hace un censo en cada uno de los seleccionados.
 
 A veces, para estudios exploratorios, el muestreo probabilístico resulta excesivamente costoso y se acude a métodos no probabilísticos, aún siendo conscientes de que no sirven para realizar generalizaciones, púes no se tiene certeza de que la muestra extraída sea representativa, ya que no todos los sujetos de la población tienen la misma probabilidad de se elegidos. En general se selecciona a los sujetos siguiendo determinados criterios procurando que la muestra sea representativa.
 
+<br/><br/><br/><br/>
+
 ### **Muestreos no probabilísticos**
 
 En el caso de no contar con los supuestos que puedan garantizar la selección de la muestra de una manera aleatoria (no contar con un listado de la población o el no poder identificar con anticipación los elementos que conforman la población) y requerir de información para realizar analisis exploratorios, podemos utilizar otro tipo de muestreos llamados no probabílisticos. A continuación se describen algunos de ellos:\\
+
+<br/><br/>
 
 **Muestreo por Cuotas** 
 
 También denominado en ocasiones **accidental**. Se asienta generalmente sobre la base de un buen conocimiento de los estratos de la población y/o de los individuos más **representativos** o **adecuados** para los fines de la investigación. Mantiene, por tanto, semejanzas con el muestreo aleatorio estratificado, pero no tiene el carácter de aleatoriedad de aquel. En este tipo de muestreo se fijan unas "cuotas" que consisten en un número de individuos que reúnen unas determinadas condiciones, por ejemplo: 20 individuos de 25 a 40 años, de sexo femenino y residentes en una determinada región. Una vez
 determinada la cuota se eligen los primeros que se encuentren que cumplan esas características. Este método se utiliza mucho en las encuestas de opinión.
 
+<br/><br/>
+
 **Muestreo Intencional** 
 
 Este tipo de muestreo se caracteriza por un esfuerzo deliberado de obtener muestras "representativas mediante la inclusión en la muestra de grupos
 supuestamente típicos. Es muy frecuente su utilización en sondeos preelectorales de zonas que en anteriores votaciones han marcado tendencias de voto.
+
+<br/><br/>
 
 **Muestreo Casual o Incidental**
 
 Se trata de un proceso en el que el investigador selecciona directa e intencionadamente los individuos de la población. El caso más frecuente de este procedimiento es utilizar como muestra los individuos a los que se tiene fácil acceso (los profesores de universidad emplean con mucha frecuencia a sus
 propios alumnos). Un caso particular es el de los voluntarios.
 
+<br/><br/>
+
 **Bola de Nieve** 
 
 Se localiza a algunos individuos, los cuales conducen a otros, y estos a otros, y así hasta conseguir una muestra suficiente. Este tipo se emplea muy frecuentemente cuando se hacen estudios con poblaciones "marginales", delincuentes, sectas, determinados tipos de enfermos, etc.
 
 
+<br/><br/><br/><br/>
 
 ## **Métodos de estimación**
+
+<br/><br/>
 
 ### **Método de momentos**
 
@@ -347,17 +397,21 @@ El método de momentos fue propuesto por Karl Pearson al rededor de 1895, pensad
 
 Para mostrar este método es necesario definir el concepto de momento.
 
+<br/>
+
 | **Momento Poblacional**                                                | **Momentos muestrales**                         |
 |:-----------------------------------------------------------------------|:------------------------------------------------|
 |  caso variable discreta                                                |                                                 |
 |$$\mu^{k}=E\big[X^{k}\big]=\sum_{Rx} x^{k}p(x)$$                        | $$m^{k}=\frac{1}{n}\sum_{i=1}^{n} x_{i}^{k} $$  |
 |  caso variable continua                                                |                                                 |
 |$$\mu^{k}=E\big[X^{k}\big]=\int_{-\infty}^{\infty}x^{k}f(x) dx $$       |                                                 |
+<br/>
 
 El método de momentos supone que los momentos tanto poblacionales como muestrales son conocidos, y por lo tanto tambien la función de probabilidad. 
 
 A continuación se relacionan algunos de estos momentos poblacionales:
 
+<br/>
 
 | Distribución | $E[X]$               | $V[X]=E[X^{2}]-E[X]^{2}$        |
 |:-------------|:---------------------|:--------------------------------|
@@ -372,6 +426,8 @@ A continuación se relacionan algunos de estos momentos poblacionales:
 
 Nota: Existe una relación entre las distribuciones Poisson y exponencia.Se podrían dar en función de $\lambda$, haciendo $\beta=\dfrac{1}{\lambda}$  
 
+<br/><br/>
+
 **Ejemplo**
 
 Encuentre los estimadores de los parámetros de la distribución normal a través del método de momentos.
@@ -383,6 +439,7 @@ $$\mu^{2}=m^{2} $$
 
 Aplicando el método:
 
+<br/>
 
 |          |                                                               |
 |:---------|:--------------------------------------------------------------|
@@ -390,6 +447,8 @@ Aplicando el método:
 |$\mu  =  $| $\displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}$                 |
 |$\widehat{\mu}  =$| $\displaystyle\frac{1}{n}\sum_{i=1}^{n} x_{i}=\bar{x}$|
 
+
+<br/>
 
 Para estimar $\sigma^{2}$, se realiza el siguiente procedimiento, usando $\mu^{1}=m^{1}$  y $\mu^{2}=m^{2}$.
 
@@ -409,6 +468,8 @@ $$\widehat{\sigma^{2}}=\displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\bar{x}^{
 
 y obtenemos el estimador de la varianza:
 
+<br/>
+
 |                       |                                                                                                   |
 |:----------------------|:--------------------------------------------------------------------------------------------------|
 |$\widehat{\sigma^{2}}$ | $= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\bar{x}^{2}$                                   |
@@ -417,6 +478,8 @@ y obtenemos el estimador de la varianza:
 |                       | $= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\displaystyle\frac{2\bar{x}\sum x_{i}}{n}+\displaystyle\frac{n \bar{x}^{2}}{n}$ |
 |                       | $= \displaystyle\frac{1}{n}\Big(\sum_{i=1}^{n} x_{i}^{2}-2\bar{x}\sum_{i=1}^{n} x_{i}+\bar{x}^{2}\Big)$ |
 |                       | $= \widehat{\sigma^{2}} = \displaystyle\frac{1}{n}\sum_{i=1}^{n}\Big(x_i-\bar{x}\Big)^{2}$        |
+
+<br/><br/>
 
 En resumen los estimadores de momentos para los parámetros de la distribución normal son:
 
@@ -432,6 +495,7 @@ $$\widehat{\mu}=765$$
 
 $$\widehat{\sigma^{2}}=8550$$
 
+<br/><br/><br/><br/>
 
 ## **Distribuciones muestrales**
 
@@ -447,13 +511,17 @@ Se denomina distribución muestral a la distribución que sigue los principales 
 
 $$\bar{X},\hspace{.2cm} \widehat{p}, \hspace{.2cm}\frac{(n-1)S^ {2}}{\sigma^{2}}, \hspace{.2cm} Z=\frac{\bar{X}-\mu}{S/\sqrt{n}}, \hspace{.2cm} F=\frac{\chi^ {2}_{1}/v_{1}}{\chi^{2}_{2}/v_{2}}$$
 
-Existe una relación importante entre ellas con la Distribución normal, las cuales se representan en el siguiente diagrama:\\
+Existe una relación importante entre ellas con la Distribución normal, las cuales se representan en el siguiente diagrama:
 
-![](img/distribucionesm.png)
+<br/>
+
+![](img/distribucionesm.png){width=50%}
 
 Si una variable **X** se distribuye **normal** con parámetros $\mu$ y $\sigma^{2}$, entonces a partir de su transformación se puede obtener una variable **Z** que tenga distribución **normal estándar** $N(0,1)$, que tiene media cero y varianza uno. Varias normales estándar al cuadrado conforman una variable con distribución **chi-cuadrado** y a su vez esta variable tiene la propiedad tal que la suma de $n$ variables aleatorias $\chi^{2}$ con $n-1$ grados de libertad. La razón de una variable con distribución normal estándar y la raiz cuadrada de una variable chi-cuadrado, dividida por sus grados de libertad originan una variable con distribución **t-student**. Por último la razón de dos variables con distribución chi-cuadrado, divididas cada una por sus respectivos grados de libertad, generan una variable con distribución  **F-Fisher**. 
 
 En sintesis, la distribuciones de muestreo básicas, tienen de base la distribución normal.
+
+<br/><br/>
 
 ### **Distribución chi-cuadrado** 
 
@@ -470,6 +538,7 @@ gchi.pdf
 
 Esta distribución es un caso especial de la distribución Gamma con parámetros $\alpha=v/2$ y $\beta=2$ 
 
+<br/><br/>
 
 ### **Distrución t-student**
 
@@ -504,6 +573,8 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}} $$
 
 tiene una distribución t-student con $v=n-1$ grados de libertad
 
+<br/><br/>
+
 ### **Distribución F-Fisher**
 
 Si $S_{1}^{2}$ y $S_{2}^{2}$ son las dos varianzas de muestras aleatorias independientes de tanaños $n_{1}$ y $n_{2}$ tomadas de poblaciones normales con varianzas $\sigma_{1}^{2}$ y $\sigma_{2}^{2}$ respectivamente, entonces:
@@ -521,6 +592,7 @@ $$f(x)=\displaystyle\frac{\Gamma \Bigg[\displaystyle\frac{v_{1}+v_{2}}{2}\Bigg]\
 gf.pdf
 
 
+<br/><br/>
 
 ## **La media muestral**
 
@@ -570,6 +642,7 @@ Ahora estudiaremos la población de muestras que se pueden obtener de esta pobla
 
 En la practica el muestreo se realiza sin remplazo y debido a que el tamaño de la población es grande o es considerado como infinito, hace que la probabilidad de seleccionar un objeto de la población se pueda considerar como constante .
 
+<br/><br/>
 
 |  muestra |  $\bar{x}$ |  muestra | $\bar{x}$ |  muestra |  $\bar{x}$ |  muestra | $\bar{x}$ | muestra  | $\bar{x}$ |
 |:--------:|:----------:|:--------:|:---------:|:--------:|:----------:|:--------:|:---------:|:--------:|:---------:|
@@ -579,6 +652,7 @@ En la practica el muestreo se realiza sin remplazo y debido a que el tamaño de 
 | (10,40)  |  25        | (20,40)  | 30        | (30,40)  |  35        | (40,40)  |  40       |  (50,40) |  45       |
 | (10,50)  |  30        | (20,50)  | 35        | (30,50)  |  40        | (40,50)  |  45       |  (50,50) |  50       |
 
+<br/><br/>
 
 Estos valores conforman la población de muestras de tamaño n=2 que se pueden obtener sin reemplazo de la población inicial, En este caso podemos calcular la media y la varianza poblacional de $\bar{X}$
 
@@ -600,12 +674,14 @@ $$\sigma^{2}_{_{\bar{X}}} = \dfrac{\sigma^{2}_{_{X}}}{n}$$
 
 Si el muestreo se realiza sin reemplazo la población de muestras de tamaño n=2, estaria conformado por:
 
+<br/><br/>
 
 |  muestra |  $\bar{x}$ |  muestra | $\bar{x}$ |  muestra |  $\bar{x}$ |  muestra | $\bar{x}$ | muestra  | $\bar{x}$ |
 |:--------:|:----------:|:--------:|:---------:|:--------:|:----------:|:--------:|:---------:|:--------:|:---------:|
 |(10,20)   | 15         | (10,40)  | 25        | (20,30)  |   25       | (20,50)  | 35        |  (30,50) | 40        |
 |(10,30)   | 20         | (10,50)  | 30        | (20,40)  |   30       | (30,40)  | 35        |  (40,50) | 45        |
 
+<br/><br/>
 
 En este caso la media y la varianza de esta población son:
 $$\begin{eqnarray*}
@@ -618,6 +694,8 @@ La diferencia presentada en la varianza, se debe a que se trata de una muestra g
 $$\sigma^{2}_{_{\bar{X}}} \times \dfrac{(N-n)}{(N-1)} =100 \times \dfrac{(5-2)}{(5-1)}=75$$
 
 $$\text{ {\bf fcpf} :} \dfrac{(N-n)}{(N-1)}$$
+
+<br/><br/>
 
 **Ejemplo**
 
@@ -632,6 +710,8 @@ P(X > 1120) &=& P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} > \dfrac{1120-1110}{80/\sq
 &=& 0.0068
 \end{eqnarray*}$$
 
+<br/><br/><br/><br/>
+
 ## **La proporción muestral**
 
 Al igual que en la media podemos realizar la verificacion con la proporción, mediante la utilización de la siguiente población. Supongamos que en una población compuesta por 5 personas (N=5) tres de ellas son profesonales y queremos estudiar $p$ la proporción de profesionales en la muestra. En términos de variable seria: $S_{1}, N_{2}, N_{3}, S_{4}, S_{5}$, con el fin de distinguir las personas colocaremos un subindice. Con esta información podemos calcular los valores poblacionales:
@@ -642,6 +722,7 @@ $$V[p]=\sigma_{p}=p(1-p)=0.6 \times 0.4 = 0.24$$
 
 Podemos obtener la población de proporciones muestrales ($\widehat{p}$) de tamaño $n=2$
 
+<br/><br/>
 
 |  muestra      | $\widehat{p}$ |  muestra    | $\widehat{p}$ |  muestra    |  $\widehat{p}$ |  muestra    | $\widehat{p}$ | muestra     |$\widehat{p}$ |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:--------------:|:-------------:|:-------------:|:-------------:|:------------:|
@@ -650,6 +731,8 @@ Podemos obtener la población de proporciones muestrales ($\widehat{p}$) de tama
 |$(N_{2},S_{1})$|$ 0.5 $        |$(S_{4},S_{4})$|$ 1.0$         |$(N_{2},N_{2})$|$ 0.0 $         |$(S_{4},S_{5})$|$ 1.0$         |$(N_{2},N_{3})$|$ 0.0 $       |
 |$(S_{5},S_{1})$|$ 1.0$         |$(N_{2},S_{4})$|$ 0.5 $        |$(S_{5},N_{2})$|$ 0.5$          |$(N_{2},S_{5})$|$ 0.5 $        |$(S_{5},N_{3})$|$ 0.5$        |
 |$(N_{3},S_{1})$|$ 0.5 $        |$(S_{5},S_{4})$|$ 1.0$         |$(N_{3},N_{2})$|$ 0.0 $         |$(S_{5},S_{5})$|$ 1.0$         |$(N_{3},N_{3})$|$ 0.0 $       |
+
+<br/><br/>
 
 De esta población tenemos que:
 
@@ -663,6 +746,7 @@ $$E[\hspace{.1cm}\widehat{p}\hspace{.1cm}]= p$$
 
 $$V[\hspace{.1cm}\widehat{p}\hspace{.1cm}] =\dfrac{p(1-p)}{n}$$
 
+<br/><br/>
 
 **Ejemplo**
 
@@ -676,9 +760,9 @@ P(p>0.82) &=& P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} > \dfrac{0.82 - 0.8
 &=& 1-0.0301
 \end{eqnarray*}$$
 
+<br/><br/>
 
 ## **La varianza muestral**.
-
 
 Ahora tenemos interes en estudiar el comportamiento de $S^{2}$ llamada cuasivarianza por algunos y definida por:
 $$\widehat{\sigma^{2}}=S^{2}=\dfrac{1}{(n-1)}\sum_{i=1}^{n}\big(x_{i}-\bar{x}\big)^{2}$$
@@ -698,6 +782,7 @@ $$\dfrac{(n-1) S^{2}}{\sigma^{2}} \sim \chi^{2}_{(v=n-1)} $$
 
 Revisar : Canavos(1988) pp.231
 
+<br/><br/>
 
 ## **Algunos estimadores**
 
@@ -711,6 +796,7 @@ Revisar : Canavos(1988) pp.231
 |$p_{1}-p_{2}$| $\widehat{p_{1}}-\widehat{p_{2}}$| $p_{1}-p_{2}$|$ \dfrac{p_{1}q_{1}}{n_{1}}+\dfrac{p_{2}q_{2}}{n_{2}}$ |
 
 
+<br/><br/>
 
 ## **Teorema central del límite**: 
 
@@ -723,8 +809,77 @@ tlc.png}
 
 El potencial de este teorema esta en que no importa la distribución de la variable X, la distribución de la media provemiente de la muestra tomada de esta población se distribuye aproximadamente normal. Al final de la guía se encuentra practica computacional que nos ayuda a comprender el alcance de este teorema.
 
+### **Verificación del Teorema central del límite **
 
-## Video 
+```{r}
+par(cex=0.5, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5,  mfrow=c(3,2), mai = c(.5, .5, .5, .5))
+# Teorema Central del Límite-----------------------------
+n=1000   #  numero de columnas (tamaño máximo de muestra)
+m=1000*n
+# Caso --------------------------------------------------
+# distribución exponencial-------------------------------
+X=matrix(rexp(m,1),ncol=n)
+
+# generación de muestras-------------
+X1=X[ ,1]            # n=1
+X2=X[ ,1:2]          # n=2
+X20=X[ ,1:20]        # n=20
+X30=X[ ,1:30]        # n=30
+X50=X[ ,1:50]        # n=50
+X100=X[ ,1:100]      # n=100
+X1000=X[ ,1:1000]    # n=1000
+
+# generacion de medias---------------
+Mx2=apply(X2,1,mean)        # medias de muestras de tamaño n=2
+Mx20=apply(X20,1,mean)      # medias de muestras de tamaño n=20
+Mx30=apply(X30,1,mean)      # medias de muestras de tamaño n=30
+Mx50=apply(X50,1,mean)      # medias de muestras de tamaño n=50
+Mx100=apply(X100,1,mean)    # medias de muestras de tamaño n=100
+Mx1000=apply(X1000,1,mean)  # medias de muestras de tamaño n=1000
+
+# generación de densidad empírica --
+d=density(X1)
+d2=density(Mx2)
+#d20=density(Mx20)
+d30=density(Mx30)
+d50=density(Mx50)
+d100=density(Mx100)
+d1000=density(Mx1000)
+
+# Gráficos de densidad -------------------------------
+# histogramas  de comparacion-------------------------
+plot(d, main=" ", xlab = "n=1")
+plot(d2,main=" ", xlab = "n=2")
+#plot(d20, main="", xlab = "n=20")
+plot(d30, main=" ", xlab = "n=30")
+plot(d50, main=" ", xlab = "n=50")
+plot(d100, main=" ", xlab = "n=100")
+plot(d1000,main=" ", xlab="n=1000")
+
+# histogramas  de comparacion--------------------------
+hist(X1,  main = "n=1", freq=FALSE)
+hist(Mx2, main ="n=2", freq=FALSE) 
+# hist(Mx20, main = "n=20",freq=FALSE)
+hist(Mx30, main = "n=30",freq=FALSE) 
+hist(Mx50, main = "n=50",freq=FALSE) 
+hist(Mx100, main = "n=100", freq=FALSE) 
+hist(Mx1000, main = "n=1000", freq = FALSE) 
+
+# histogramas  de comparacion--------------------------
+qqnorm(X1) ; qqline(X1, col="red")
+qqnorm(Mx2) ; qqline(Mx2, col="red")
+# qqnorm(Mx20) ; qqline(Mx20, col="red")
+qqnorm(Mx30) ; qqline(Mx30, col="red")
+qqnorm(Mx50) ; qqline(Mx50, col="red")
+qqnorm(Mx100) ; qqline(Mx100, col="red")
+qqnorm(Mx1000) ; qqline(Mx1000, col="red")
+```
+
+
+<br/><br/>
+
+
+## **Video** 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jbrnCa3jq0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
