@@ -109,7 +109,12 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 
 ## **Introducción**
 
+
+![](img/poblacion.png)
+
 La inferencia estadística permite generalizar lo hallado en una muestra a toda la población. Para realizar este proceso contamos con dos opciones: Estimación y las Pruebas de hipótesis. El fundamento de estos procesos está relacioando con varios conceptos como:
+
+<br/><br/>
 
 |               |                 |                    |                    |                      |
 |:--------------|:----------------|:-------------------|:-------------------|:---------------------| 
@@ -118,6 +123,11 @@ La inferencia estadística permite generalizar lo hallado en una muestra a toda 
 |muestreo por juicio    | muestreo por conveniciencia|muestreo bola de nieve    |estimador puntual               |estimador insesgado       | 
 |estimador consistente  | estimador eficiente        |estimación por intervalos de confianza|pruebas de hipótesis |  |
 
+[Tablero 300MAE005 A 2020-2](https://padlet.com/dgonzalez80/lijxz9p7nvz5mm2q) <br/>
+[Tablero 300MAE005 B 2020-2](https://padlet.com/dgonzalez80/ivy0h9vyhtiq9l1d) <br/>
+[Tablero 300MAE005 F 2020-2](https://padlet.com/dgonzalez80/ivy0h9vyhtiq9l1d) <br/>
+ 
+ 
 <br/><br/>
 
 ### **Población** 
@@ -158,6 +168,7 @@ $$\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n} x_{i} =\frac{1}{8}(630+650+...+910)=76
 El valor del estimador de $\mu$ para esta muestra es $$\widehat{\mu}=\bar{x}= 765$$.
 
 <br/><br/>
+
 ## **Muestreo**
 
 <br/>
@@ -179,8 +190,9 @@ El papel principal de la estadística está relacionado con el análisis de info
 |Costos de los errores de muestreo     |bajos            | altos              |
 |Costos de los errores que no son de muestreo            | alto   | bajo      |
 |Naturaleza de la prueba               |desctructiva     |no destructiva      |
-|Atención a casos individuales         |                 |                    |
-Tomado de Malhotra(2004)
+|Atención a casos individuales         |si               |no                  |
+||||
+<font size="-1">Tomado de Malhotra(2004)</font>
 
 <br/>
 
@@ -228,11 +240,11 @@ $$n=\dfrac{z^{2}_{_{\alpha/2}} \sigma^{2}}{e^{2}}$$
 
 Donde:
 
-**Varianza** : $\sigma^{2}$:  Caracteriza la variable a estimar. Entre mayor sea su valor, mayor deberá ser el tamaño de la muestra. En ocasiones es necesario realizar una prueba piloto que nos permita tener un valor para calcular $n$. Otra alternativa puede ser el conocimiento empírico de expertos sobre el rango de la variable. Con este valor podemos estimar una aproximación de la desviación estándar como: $\sigma =$ rango/4. 
+**Varianza** ($\sigma^{2}$):  Caracteriza la variable a estimar. Entre mayor sea su valor, mayor deberá ser el tamaño de la muestra. En ocasiones es necesario realizar una prueba piloto que nos permita tener un valor para calcular $n$. Otra alternativa puede ser el conocimiento empírico de expertos sobre el rango de la variable. Con este valor podemos estimar una aproximación de la desviación estándar como: $\sigma =$ rango/4. 
 
-**Confiabilidad** : Este concepto está relacionado con el grado de veracidad que tienen los resultados obtenidos. Si el estudio es repetido muchas veces, ¿ cuántas de estas coinciden con los resultados obtenidos?. Su valor está relacionado con el percentil de las distribución normal estándar, por ejemplo: una confiabilidad del 95\% está relacionada con un valor de $z=1.96$.
+**Confiabilidad** ($z_{\alpha/2}$ o percentil de la distribución normal estandar)b: Este concepto está relacionado con el grado de veracidad que tienen los resultados obtenidos. Si el estudio es repetido muchas veces, ¿ cuántas de estas coinciden con los resultados obtenidos?. Su valor está relacionado con el percentil de las distribución normal estándar, por ejemplo: una confiabilidad del 95% está relacionada con un valor de $z=1.96$.
 
-**Error de muestreo** : corresponde a la diferencia entre el valor de la característica en la población (parámetro) y el valor obtenido con la información de la muestra (estimador).Equivale al error que estamos en capacidad de tolerar en las unidades de la variable.
+**Error de muestreo** ($e$) : corresponde a la diferencia entre el valor de la característica en la población (parámetro) y el valor obtenido con la información de la muestra (estimador).Equivale al error que estamos en capacidad de tolerar en las unidades de la variable.
 
 <br/><br/>
 
@@ -808,7 +820,7 @@ Revisar : Canavos(1988) pp.231
 ## **Teorema central del límite**: 
 
 Si $\bar{X}$ es la media de una muestra de tamaño $n$ tomada una población con media $\mu$ y varianza $\sigma^{2}$, entonces la forma límite de la distribución de :
-%%$$Z=\dfrac{\bar{X}-\mu}{\Big(\sigma/\sqrt{n}\Big)} \sim N(0,1) $$
+$$Z=\dfrac{\bar{X}-\mu}{\Big(\sigma/\sqrt{n}\Big)} \sim N(0,1) $$
 %% conforme $n\rightarrow \infty$, esta aproximación es cada vez más próxima a la normal. Este teorema es aplicable tambien a la variable total de sumatoria de los valores de la muestra $T_{n}=X_{1}+X_{2}+...+X_{n}$
 
 ![](img/tlc.png){width=70%}
@@ -818,7 +830,7 @@ El potencial de este teorema esta en que no importa la distribución de la varia
 
 ### **Verificación del Teorema central del límite **
 
-```{r, echo=FALSE}
+```{r}
 par(cex=0.5, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5,  mfrow=c(3,2), mai = c(.5, .5, .5, .5))
 # Teorema Central del Límite-----------------------------
 n=1000   #  numero de columnas (tamaño máximo de muestra)
