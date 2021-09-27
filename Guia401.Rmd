@@ -818,7 +818,7 @@ El potencial de este teorema esta en que no importa la distribución de la varia
 
 ### **Verificación del Teorema central del límite **
 
-```{r}
+```{r, echo=FALSE}
 par(cex=0.5, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5,  mfrow=c(3,2), mai = c(.5, .5, .5, .5))
 # Teorema Central del Límite-----------------------------
 n=1000   #  numero de columnas (tamaño máximo de muestra)
@@ -882,6 +882,8 @@ qqnorm(Mx100) ; qqline(Mx100, col="red")
 qqnorm(Mx1000) ; qqline(Mx1000, col="red")
 ```
 
+
+Se puede notar la transformación de la distribución de la media a una distribución normal a medida que el tamaño de muestra aumenta
 
 <br/><br/>
 
