@@ -526,6 +526,9 @@ div.tocify {
     <li>
       <a href="simulacion.html">Simulación</a>
     </li>
+    <li>
+      <a href="codigo401.html">Código u1.4</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -1034,38 +1037,22 @@ plot(mapco)                      # gráfico de Colombia</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-37-1.png" width="672" /> <br/> Para representar información en el mapa seden ingresar una vector con 33 valores, igual numero de departamentos en el mismo orden en que se encuentran los nombre de los departamento en el archivo mapco</p>
 <p><br/></p>
 <pre class="r"><code>mapco$NOMBRE_DPT</code></pre>
-<pre><code>##  [1] &quot;ANTIOQUIA&quot;                                              
-##  [2] &quot;ATLANTICO&quot;                                              
-##  [3] &quot;SANTAFE DE BOGOTA D.C&quot;                                  
-##  [4] &quot;BOLIVAR&quot;                                                
-##  [5] &quot;BOYACA&quot;                                                 
-##  [6] &quot;CALDAS&quot;                                                 
-##  [7] &quot;CAQUETA&quot;                                                
-##  [8] &quot;CAUCA&quot;                                                  
-##  [9] &quot;CESAR&quot;                                                  
-## [10] &quot;CORDOBA&quot;                                                
-## [11] &quot;CUNDINAMARCA&quot;                                           
-## [12] &quot;CHOCO&quot;                                                  
-## [13] &quot;HUILA&quot;                                                  
-## [14] &quot;LA GUAJIRA&quot;                                             
-## [15] &quot;MAGDALENA&quot;                                              
-## [16] &quot;META&quot;                                                   
-## [17] &quot;NARIÑO&quot;                                                 
-## [18] &quot;NORTE DE SANTANDER&quot;                                     
-## [19] &quot;QUINDIO&quot;                                                
-## [20] &quot;RISARALDA&quot;                                              
-## [21] &quot;SANTANDER&quot;                                              
-## [22] &quot;SUCRE&quot;                                                  
-## [23] &quot;TOLIMA&quot;                                                 
-## [24] &quot;VALLE DEL CAUCA&quot;                                        
-## [25] &quot;ARAUCA&quot;                                                 
-## [26] &quot;CASANARE&quot;                                               
-## [27] &quot;PUTUMAYO&quot;                                               
-## [28] &quot;AMAZONAS&quot;                                               
-## [29] &quot;GUAINIA&quot;                                                
-## [30] &quot;GUAVIARE&quot;                                               
-## [31] &quot;VAUPES&quot;                                                 
-## [32] &quot;VICHADA&quot;                                                
+<pre><code>##  [1] &quot;ANTIOQUIA&quot;                                               &quot;ATLANTICO&quot;                                              
+##  [3] &quot;SANTAFE DE BOGOTA D.C&quot;                                   &quot;BOLIVAR&quot;                                                
+##  [5] &quot;BOYACA&quot;                                                  &quot;CALDAS&quot;                                                 
+##  [7] &quot;CAQUETA&quot;                                                 &quot;CAUCA&quot;                                                  
+##  [9] &quot;CESAR&quot;                                                   &quot;CORDOBA&quot;                                                
+## [11] &quot;CUNDINAMARCA&quot;                                            &quot;CHOCO&quot;                                                  
+## [13] &quot;HUILA&quot;                                                   &quot;LA GUAJIRA&quot;                                             
+## [15] &quot;MAGDALENA&quot;                                               &quot;META&quot;                                                   
+## [17] &quot;NARIÑO&quot;                                                  &quot;NORTE DE SANTANDER&quot;                                     
+## [19] &quot;QUINDIO&quot;                                                 &quot;RISARALDA&quot;                                              
+## [21] &quot;SANTANDER&quot;                                               &quot;SUCRE&quot;                                                  
+## [23] &quot;TOLIMA&quot;                                                  &quot;VALLE DEL CAUCA&quot;                                        
+## [25] &quot;ARAUCA&quot;                                                  &quot;CASANARE&quot;                                               
+## [27] &quot;PUTUMAYO&quot;                                                &quot;AMAZONAS&quot;                                               
+## [29] &quot;GUAINIA&quot;                                                 &quot;GUAVIARE&quot;                                               
+## [31] &quot;VAUPES&quot;                                                  &quot;VICHADA&quot;                                                
 ## [33] &quot;ARCHIPIELAGO DE SAN ANDRES PROVIDENCIA Y SANTA CATALINA&quot;</code></pre>
 <p><br/></p>
 <p>Si quiereramos representar un mapa con las muertes causadas por covid en Colombia por departamento debemos crear una tabla con la información relacionada con esta variable por departamento en el mismo orden contenida en el archivo <strong>depto.shp</strong> y adicionarla como variable : <a href="mailto:mapcol@data$muertes" class="email">mapcol@data$muertes</a></p>

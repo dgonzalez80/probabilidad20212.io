@@ -83,6 +83,8 @@ navbar:
           href: codigo302.html
         - text: "Simulación"
           href: simulacion.html
+        - text: "Código u1.4"
+          href: codigo401.html          
     - text: "Actividades"
       icon: fa-chess-pawn
       menu: 
