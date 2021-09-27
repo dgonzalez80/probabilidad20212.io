@@ -100,6 +100,10 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 
 ## **7. Presentaciones**
 
+[Presentación 1](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_A.pdf)<br/>
+[Presentación 2](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_B.pdf)<br/>
+[Presentación 3](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_C.pdf)<br/>
+[Presentación 4](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_D.pdf)
 
 <br/><br/><br/><br/>
 
@@ -144,7 +148,12 @@ Un subconjunto extraido de los elementos que conforman la población se denomina
 
 ### **Parámetro** 
 
-Es una caracterización numérica de la distribución de probabilidad de una variable aleatoria. Como ejemplo de parámetros tenemos a $\mu$, $\sigma^{2}$ que determinan la función de probabilidad de una variable con distribución normal. Si suponemos que los valores correspondientes a estos parámetros son 100 y 25 respectivamente, entonces la función de distribución de probabilidad quedará determinada por :
+Es una caracterización numérica de la distribución de probabilidad de una variable aleatoria. Como ejemplo de parámetros tenemos a $\mu$, $\sigma^{2}$ que determinan la función de probabilidad de una variable con distribución normal: 
+
+
+$$f(x)=\frac{1}{\sqrt{2 \sigma^{2} \pi}} \exp{\Bigg(- \frac{1}{2 \sigma^{2}}\big(x-\mu\big)^{2}\Bigg)}$$
+
+Y  suponemos que los valores correspondientes a estos parámetros son $\mu=100$ y $\sigma^{2}=25$   ($\sigma=5$) respectivamente, entonces la función de distribución de probabilidad quedará determinada por :
 $$f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg)}$$
 
 <br/><br/>
@@ -448,19 +457,19 @@ Nota: Existe una relación entre las distribuciones Poisson y exponencia.Se podr
 Encuentre los estimadores de los parámetros de la distribución normal a través del método de momentos.
 Previamente sabemos que los parámetros de una variable con distribución normal son $E[X]=\mu$ y $V[X]=\sigma^{2}$ y que $V[X]=E[X^{2}]-E[X]^{2}$. Dada esta información el estimador de momentos se construye de la siguiente manera: 
 
-$$\mu^{1}=m^{1} $$
+$$M^{1}=m^{1}$$
 
-$$\mu^{2}=m^{2} $$
+$$M^{2}=m^{2}$$
 
 Aplicando el método:
 
 <br/>
 
-|          |                                                               |
-|:---------|:--------------------------------------------------------------|
-|$\mu^{1}=$| $E[X] = m^{1}$                                                |
-|$\mu  =  $| $\displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}$                 |
-|$\widehat{\mu}  =$| $\displaystyle\frac{1}{n}\sum_{i=1}^{n} x_{i}=\bar{x}$|
+|                                                    |
+|:---------------------------------------------------|
+|$$M^{1}= m^{1}$$ |
+|$$\mu  =  \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}$$|
+|$$\widehat{\mu} = \displaystyle\frac{1}{n}\sum_{i=1}^{n} x_{i}=\bar{x}$$|
 
 
 <br/>
@@ -486,13 +495,13 @@ y obtenemos el estimador de la varianza:
 <br/>
 
 |                       |                                                                                                   |
-|:----------------------|:--------------------------------------------------------------------------------------------------|
+|---------------------:|:--------------------------------------------------------------------------------------------------|
 |$\widehat{\sigma^{2}}$ | $= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\bar{x}^{2}$                                   |
 |$\widehat{\sigma^{2}}$ | $= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\bar{x}^{2}-\bar{x}^{2}+\bar{x}^{2}$           |
 |                       | $= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-2\bar{x}^{2}+\bar{x}^{2}$                      |
 |                       | $= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\displaystyle\frac{2\bar{x}\sum x_{i}}{n}+\displaystyle\frac{n \bar{x}^{2}}{n}$ |
 |                       | $= \displaystyle\frac{1}{n}\Big(\sum_{i=1}^{n} x_{i}^{2}-2\bar{x}\sum_{i=1}^{n} x_{i}+\bar{x}^{2}\Big)$ |
-|                       | $= \widehat{\sigma^{2}} = \displaystyle\frac{1}{n}\sum_{i=1}^{n}\Big(x_i-\bar{x}\Big)^{2}$        |
+|                       | $= \displaystyle\frac{1}{n}\sum_{i=1}^{n}\Big(x_i-\bar{x}\Big)^{2}$        |
 
 <br/><br/>
 
@@ -530,7 +539,7 @@ Existe una relación importante entre ellas con la Distribución normal, las cua
 
 <br/>
 
-![](img/distribucionesm.png){width=50%}
+![](img/distribucionesm.png){width=70%}
 
 Si una variable **X** se distribuye **normal** con parámetros $\mu$ y $\sigma^{2}$, entonces a partir de su transformación se puede obtener una variable **Z** que tenga distribución **normal estándar** $N(0,1)$, que tiene media cero y varianza uno. Varias normales estándar al cuadrado conforman una variable con distribución **chi-cuadrado** y a su vez esta variable tiene la propiedad tal que la suma de $n$ variables aleatorias $\chi^{2}$ con $n-1$ grados de libertad. La razón de una variable con distribución normal estándar y la raiz cuadrada de una variable chi-cuadrado, dividida por sus grados de libertad originan una variable con distribución **t-student**. Por último la razón de dos variables con distribución chi-cuadrado, divididas cada una por sus respectivos grados de libertad, generan una variable con distribución  **F-Fisher**. 
 

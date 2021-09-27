@@ -1,61 +1,21 @@
 ---
 title: "Código 7"
-author: "dgonzalez "
-subtitle: "Módulo 4- Unidad 4.1" 
+author: 'dgonzalez '
+subtitle: Módulo 4- Unidad 4.1
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     toc: yes
     toc_depth: 2
     toc_float: yes
     theme: cosmo
 ---
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-
-library(psych)
-library(summarytools)
-
-# colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
-
+knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
-# **Propiedad de los estimadores**
-
-Para una variable con distribucion uniforme $unif(a=0, b=20)$ se desea determinar los siguientes 
-estimadores del parámetro $b$
-
-* $T1 = 2 \bar{x}$ 
-* $T2 = \max{x}$
-* $T3 = \dfrac{(n+1)}{n} \max$
-
-
-
-```{r}
-n=10
-m=1000*n
-Y=matrix(runif(m, min=0, max=20), ncol=n) # matriz de datos m x n
-Mx=apply(Y,1,mean)
-Max=apply(Y,1,max)
-
-T1=2*Mx
-T2=Max
-T3=((n+1)/n)*T2
-
-T123=data.frame(T1,T2,T3)
-boxplot(T123, main="propiedades de los estimadores")
-abline(h=20, col="red")
-summary(T123)
-```
-
-
-# **Teorema Central del Límite**
 
 
 ```{r}

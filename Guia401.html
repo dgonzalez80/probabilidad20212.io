@@ -485,7 +485,7 @@ div.tocify {
       <a href="simulacion.html">Simulación</a>
     </li>
     <li>
-      <a href="codigo401.html">Código u1.4</a>
+      <a href="codigo401.html">Código u4.1</a>
     </li>
   </ul>
 </li>
@@ -646,6 +646,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
+<p><a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_A.pdf">Presentación 1</a><br/> <a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_B.pdf">Presentación 2</a><br/> <a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_C.pdf">Presentación 3</a><br/> <a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_D.pdf">Presentación 4</a></p>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
@@ -710,7 +711,9 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="parámetro" class="section level3">
 <h3><strong>Parámetro</strong></h3>
-<p>Es una caracterización numérica de la distribución de probabilidad de una variable aleatoria. Como ejemplo de parámetros tenemos a <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^{2}\)</span> que determinan la función de probabilidad de una variable con distribución normal. Si suponemos que los valores correspondientes a estos parámetros son 100 y 25 respectivamente, entonces la función de distribución de probabilidad quedará determinada por : <span class="math display">\[f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg)}\]</span></p>
+<p>Es una caracterización numérica de la distribución de probabilidad de una variable aleatoria. Como ejemplo de parámetros tenemos a <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^{2}\)</span> que determinan la función de probabilidad de una variable con distribución normal:</p>
+<p><span class="math display">\[f(x)=\frac{1}{\sqrt{2 \sigma^{2} \pi}} \exp{\Bigg(- \frac{1}{2 \sigma^{2}}\big(x-\mu\big)^{2}\Bigg)}\]</span></p>
+<p>Y suponemos que los valores correspondientes a estos parámetros son <span class="math inline">\(\mu=100\)</span> y <span class="math inline">\(\sigma^{2}=25\)</span> (<span class="math inline">\(\sigma=5\)</span>) respectivamente, entonces la función de distribución de probabilidad quedará determinada por : <span class="math display">\[f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg)}\]</span></p>
 <p><br/><br/></p>
 </div>
 <div id="estimador" class="section level3">
@@ -1006,23 +1009,20 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <p><br/><br/></p>
 <p><strong>Ejemplo</strong></p>
 <p>Encuentre los estimadores de los parámetros de la distribución normal a través del método de momentos. Previamente sabemos que los parámetros de una variable con distribución normal son <span class="math inline">\(E[X]=\mu\)</span> y <span class="math inline">\(V[X]=\sigma^{2}\)</span> y que <span class="math inline">\(V[X]=E[X^{2}]-E[X]^{2}\)</span>. Dada esta información el estimador de momentos se construye de la siguiente manera:</p>
-<p><span class="math display">\[\mu^{1}=m^{1} \]</span></p>
-<p><span class="math display">\[\mu^{2}=m^{2} \]</span></p>
+<p><span class="math display">\[M^{1}=m^{1}\]</span></p>
+<p><span class="math display">\[M^{2}=m^{2}\]</span></p>
 <p>Aplicando el método:</p>
 <p><br/></p>
 <table>
 <tbody>
 <tr class="odd">
-<td align="left"><span class="math inline">\(\mu^{1}=\)</span></td>
-<td align="left"><span class="math inline">\(E[X] = m^{1}\)</span></td>
+<td align="left"><span class="math display">\[M^{1}= m^{1}\]</span></td>
 </tr>
 <tr class="even">
-<td align="left">$= $</td>
-<td align="left"><span class="math inline">\(\displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}\)</span></td>
+<td align="left"><span class="math display">\[\mu  =  \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}\]</span></td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(\widehat{\mu} =\)</span></td>
-<td align="left"><span class="math inline">\(\displaystyle\frac{1}{n}\sum_{i=1}^{n} x_{i}=\bar{x}\)</span></td>
+<td align="left"><span class="math display">\[\widehat{\mu} = \displaystyle\frac{1}{n}\sum_{i=1}^{n} x_{i}=\bar{x}\]</span></td>
 </tr>
 </tbody>
 </table>
@@ -1046,28 +1046,28 @@ V[X]&amp;=&amp; \mu^{2}-(\mu^{1})^{2}\\
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><span class="math inline">\(\widehat{\sigma^{2}}\)</span></td>
+<td align="right"><span class="math inline">\(\widehat{\sigma^{2}}\)</span></td>
 <td align="left"><span class="math inline">\(= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\bar{x}^{2}\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(\widehat{\sigma^{2}}\)</span></td>
+<td align="right"><span class="math inline">\(\widehat{\sigma^{2}}\)</span></td>
 <td align="left"><span class="math inline">\(= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\bar{x}^{2}-\bar{x}^{2}+\bar{x}^{2}\)</span></td>
 </tr>
 <tr class="odd">
-<td align="left"></td>
+<td align="right"></td>
 <td align="left"><span class="math inline">\(= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-2\bar{x}^{2}+\bar{x}^{2}\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"></td>
+<td align="right"></td>
 <td align="left"><span class="math inline">\(= \displaystyle\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-\displaystyle\frac{2\bar{x}\sum x_{i}}{n}+\displaystyle\frac{n \bar{x}^{2}}{n}\)</span></td>
 </tr>
 <tr class="odd">
-<td align="left"></td>
+<td align="right"></td>
 <td align="left"><span class="math inline">\(= \displaystyle\frac{1}{n}\Big(\sum_{i=1}^{n} x_{i}^{2}-2\bar{x}\sum_{i=1}^{n} x_{i}+\bar{x}^{2}\Big)\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"></td>
-<td align="left"><span class="math inline">\(= \widehat{\sigma^{2}} = \displaystyle\frac{1}{n}\sum_{i=1}^{n}\Big(x_i-\bar{x}\Big)^{2}\)</span></td>
+<td align="right"></td>
+<td align="left"><span class="math inline">\(= \displaystyle\frac{1}{n}\sum_{i=1}^{n}\Big(x_i-\bar{x}\Big)^{2}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1094,7 +1094,7 @@ V[X]&amp;=&amp; \mu^{2}-(\mu^{1})^{2}\\
 <p><span class="math display">\[\bar{X},\hspace{.2cm} \widehat{p}, \hspace{.2cm}\frac{(n-1)S^ {2}}{\sigma^{2}}, \hspace{.2cm} Z=\frac{\bar{X}-\mu}{S/\sqrt{n}}, \hspace{.2cm} F=\frac{\chi^ {2}_{1}/v_{1}}{\chi^{2}_{2}/v_{2}}\]</span></p>
 <p>Existe una relación importante entre ellas con la Distribución normal, las cuales se representan en el siguiente diagrama:</p>
 <p><br/></p>
-<p><img src="img/distribucionesm.png" style="width:50.0%" /></p>
+<p><img src="img/distribucionesm.png" style="width:70.0%" /></p>
 <p>Si una variable <strong>X</strong> se distribuye <strong>normal</strong> con parámetros <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^{2}\)</span>, entonces a partir de su transformación se puede obtener una variable <strong>Z</strong> que tenga distribución <strong>normal estándar</strong> <span class="math inline">\(N(0,1)\)</span>, que tiene media cero y varianza uno. Varias normales estándar al cuadrado conforman una variable con distribución <strong>chi-cuadrado</strong> y a su vez esta variable tiene la propiedad tal que la suma de <span class="math inline">\(n\)</span> variables aleatorias <span class="math inline">\(\chi^{2}\)</span> con <span class="math inline">\(n-1\)</span> grados de libertad. La razón de una variable con distribución normal estándar y la raiz cuadrada de una variable chi-cuadrado, dividida por sus grados de libertad originan una variable con distribución <strong>t-student</strong>. Por último la razón de dos variables con distribución chi-cuadrado, divididas cada una por sus respectivos grados de libertad, generan una variable con distribución <strong>F-Fisher</strong>.</p>
 <p>En sintesis, la distribuciones de muestreo básicas, tienen de base la distribución normal.</p>
 <p><br/><br/></p>
