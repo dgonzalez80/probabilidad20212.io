@@ -533,12 +533,22 @@ div.tocify {
 
 <div id="propiedad-de-los-estimadores" class="section level1">
 <h1><strong>Propiedad de los estimadores</strong></h1>
-<p>Para una variable con distribucion uniforme <span class="math inline">\(unif(a=0, b=20)\)</span> se desea determinar los siguientes estimadores del parámetro <span class="math inline">\(b\)</span></p>
+<p>Para una variable con distribución uniforme <span class="math inline">\(unif(a=0, b=20)\)</span> se desea determinar los siguientes estimadores del parámetro <span class="math inline">\(b\)</span></p>
+<pre class="r"><code># uniforme
+library(ggplot2)
+x= c(0,20) 
+fx=c(1/20, 1/20) 
+dat=data.frame(x,fx)
+ggplot(data=dat,aes(x=x, y=fx))+ 
+  scale_y_continuous(limits=c(0,.05))+
+  geom_line(size = 1,colour = &#39;red&#39;) </code></pre>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <ul>
-<li><span class="math inline">\(T1 = 2 \bar{x}\)</span></li>
-<li><span class="math inline">\(T2 = \max{x}\)</span></li>
-<li><span class="math inline">\(T3 = \dfrac{(n+1)}{n} \max\)</span></li>
+<li><p><span class="math inline">\(\widehat{\theta_{1}} = 2 \bar{x}\)</span></p></li>
+<li><p><span class="math inline">\(\widehat{\theta_{2}} = \max\{x\}\)</span></p></li>
+<li><p><span class="math inline">\(\widehat{\theta_{3}} = \dfrac{(n+1)}{n} \max\{x\}\)</span></p></li>
 </ul>
+<p><br/><br/></p>
 <pre class="r"><code>n=10
 m=1000*n
 Y=matrix(runif(m, min=0, max=20), ncol=n) # matriz de datos m x n
@@ -552,26 +562,34 @@ T3=((n+1)/n)*T2
 T123=data.frame(T1,T2,T3)
 boxplot(T123, main=&quot;propiedades de los estimadores&quot;)
 abline(h=20, col=&quot;red&quot;)</code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code>summary(T123)</code></pre>
-<pre><code>##        T1               T2               T3       
-##  Min.   : 7.162   Min.   : 9.133   Min.   :10.05  
-##  1st Qu.:17.327   1st Qu.:17.356   1st Qu.:19.09  
-##  Median :19.945   Median :18.686   Median :20.55  
-##  Mean   :19.841   Mean   :18.155   Mean   :19.97  
-##  3rd Qu.:22.269   3rd Qu.:19.402   3rd Qu.:21.34  
-##  Max.   :31.235   Max.   :20.000   Max.   :22.00</code></pre>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>apply(T123,2,mean)</code></pre>
+<pre><code>##       T1       T2       T3 
+## 19.78256 18.12517 19.93768</code></pre>
+<p><br/><br/><br/><br/></p>
 </div>
 <div id="teorema-central-del-límite" class="section level1">
 <h1><strong>Teorema Central del Límite</strong></h1>
+<p>Verificación del Teorema Central del Límite para una población exponencial con <span class="math inline">\(\lambda=1\)</span></p>
+<p>Con este fin se siguen los siguientes pasos:</p>
+<ol style="list-style-type: decimal">
+<li>Se construye una matriz de dimensión 1000 x 1000 con números procedentes del modelo determinado</li>
+<li>Se separan matrices de dimensión 1000 x n , para n=1,2,20,30,50, 100 y 1000 .</li>
+<li>A cada matriz construida en el paso anterior se le calcula la media por filas, como resultado se obtiene un vector de 1000 medias</li>
+<li>Cada uno de los vectores resultantes se visualiza a través de un histograma, gráfico de densidad y se construye también un gráfico de normalidad con el fin de validar el resultado</li>
+</ol>
+<p><br/><br/></p>
 <pre class="r"><code>par(cex=0.5, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5,  mfrow=c(3,2), mai = c(.5, .5, .5, .5))
 # Teorema Central del Límite-----------------------------
+
+# Paso 1
 n=1000   #  numero de columnas (tamaño máximo de muestra)
 m=1000*n
 # Caso --------------------------------------------------
 # distribución exponencial-------------------------------
 X=matrix(rexp(m,1),ncol=n)
 
+# Paso 2
 # generación de muestras-------------
 X1=X[ ,1]            # n=1
 X2=X[ ,1:2]          # n=2
@@ -581,6 +599,7 @@ X50=X[ ,1:50]        # n=50
 X100=X[ ,1:100]      # n=100
 X1000=X[ ,1:1000]    # n=1000
 
+# Paso 3
 # generacion de medias---------------
 Mx2=apply(X2,1,mean)        # medias de muestras de tamaño n=2
 Mx20=apply(X20,1,mean)      # medias de muestras de tamaño n=20
@@ -589,6 +608,8 @@ Mx50=apply(X50,1,mean)      # medias de muestras de tamaño n=50
 Mx100=apply(X100,1,mean)    # medias de muestras de tamaño n=100
 Mx1000=apply(X1000,1,mean)  # medias de muestras de tamaño n=1000
 
+
+# Paso 4 
 # generación de densidad empírica --
 d=density(X1)
 d2=density(Mx2)
@@ -599,6 +620,8 @@ d100=density(Mx100)
 d1000=density(Mx1000)
 
 # Gráficos de densidad -------------------------------
+# configuración de las gráficas
+par(cex=0.5, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5,  mfrow=c(3,2), mai = c(.5, .5, .5, .5))
 # histogramas  de comparacion-------------------------
 plot(d, main=&quot; &quot;, xlab = &quot;n=1&quot;)
 plot(d2,main=&quot; &quot;, xlab = &quot;n=2&quot;)
@@ -607,7 +630,7 @@ plot(d30, main=&quot; &quot;, xlab = &quot;n=30&quot;)
 plot(d50, main=&quot; &quot;, xlab = &quot;n=50&quot;)
 plot(d100, main=&quot; &quot;, xlab = &quot;n=100&quot;)
 plot(d1000,main=&quot; &quot;, xlab=&quot;n=1000&quot;)</code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre class="r"><code># histogramas  de comparacion--------------------------
 hist(X1,  main = &quot;n=1&quot;, freq=FALSE)
 hist(Mx2, main =&quot;n=2&quot;, freq=FALSE) 
@@ -616,7 +639,7 @@ hist(Mx30, main = &quot;n=30&quot;,freq=FALSE)
 hist(Mx50, main = &quot;n=50&quot;,freq=FALSE) 
 hist(Mx100, main = &quot;n=100&quot;, freq=FALSE) 
 hist(Mx1000, main = &quot;n=1000&quot;, freq = FALSE) </code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
 <pre class="r"><code># histogramas  de comparacion--------------------------
 qqnorm(X1) ; qqline(X1, col=&quot;red&quot;)
 qqnorm(Mx2) ; qqline(Mx2, col=&quot;red&quot;)
@@ -625,7 +648,205 @@ qqnorm(Mx30) ; qqline(Mx30, col=&quot;red&quot;)
 qqnorm(Mx50) ; qqline(Mx50, col=&quot;red&quot;)
 qqnorm(Mx100) ; qqline(Mx100, col=&quot;red&quot;)
 qqnorm(Mx1000) ; qqline(Mx1000, col=&quot;red&quot;)</code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
+<p>Se puede observar la convergencia de la distribución de la media muestral a una distribución normal al aumentarse el tamaño de la muestra</p>
+</div>
+<div id="distribución-de-la-media-muestral" class="section level1">
+<h1><strong>Distribución de la media muestral</strong></h1>
+<p>A continuación se presentan las principales características de la media muestral <span class="math inline">\(\bar{x}\)</span> y de la proporción muetral <span class="math inline">\(\widehat{p}\)</span>. En cada uno de los casos vamos a suponer el conocimiento de de una población pequeña.</p>
+</div>
+<div id="media-muestral" class="section level1">
+<h1><strong>Media muestral</strong></h1>
+<p><strong>Propiedades de la media muestral</strong></p>
+<div id="paso-1" class="section level3">
+<h3>Paso 1</h3>
+<p>Definir la población</p>
+<p>Supongamos que una población esta conformada por los valores : <span class="math inline">\(\{1,2,3,4,5 \}\)</span>, donde <span class="math inline">\(N=5\)</span></p>
+<p>Ahora que se desea calcular todas las medias que se puedan obtener de esta población para un tamaño de muestra <span class="math inline">\(n=2\)</span>. En otras palabras la población de medias para <span class="math inline">\(n=2\)</span>.</p>
+<p>Inicialmente definimos dos funciones para calcular los parámetros poblacionales media y varianza:</p>
+<p><span class="math display">\[\mu =\dfrac{1}{N} \sum_{i=1}^{N} x_{i}\]</span></p>
+<p><span class="math display">\[\sigma^{2}= \dfrac{1}{N} \sum_{i=1}^{N} (x_{i}-\mu)^{2}\]</span></p>
+<pre class="r"><code>media=function(x){sum(x)/length(x)}
+varianza=function(x){sum((x-media(x))^2)/(length(x))}</code></pre>
+</div>
+<div id="paso-2" class="section level3">
+<h3>Paso 2</h3>
+<p>Determinar la media y la varianza poblacional . La media y varianza poblacional de esta población estará dada por:</p>
+<pre class="r"><code>poblacion_x=c(1,2,3,4,5)
+cat(&quot;media poblacional    :&quot;,media(poblacion_x),&quot;\n&quot;)</code></pre>
+<pre><code>## media poblacional    : 3</code></pre>
+<pre class="r"><code>cat(&quot;varianza poblacional :&quot;,varianza(poblacion_x),&quot;\n&quot;)</code></pre>
+<pre><code>## varianza poblacional : 2</code></pre>
+<pre class="r"><code>cat(&quot;\n&quot;)</code></pre>
+</div>
+<div id="paso-3" class="section level3">
+<h3>Paso 3</h3>
+<p>Se determinan todas las muestras que se pueden construir de la poblacion</p>
+<p>Para determinar la media y la varianza de todas las medias muestrales para <span class="math inline">\(n=2\)</span> que se pueden obtener de la población, suponemos que las muestras se escogen con repetición:</p>
+<p><span class="math inline">\((1,1), (1,2),(1,3),(1,4),(1,5),(2,1),(2,2),(2,3),.....,(5,5)\)</span>.</p>
+<pre class="r"><code>poblacion_n2=permutations(5,2,1:5, repeats=TRUE)
+mx=apply(poblacion_n2, 1,mean)
+data.frame(poblacion_n2,mx)</code></pre>
+<pre><code>##    X1 X2  mx
+## 1   1  1 1.0
+## 2   1  2 1.5
+## 3   1  3 2.0
+## 4   1  4 2.5
+## 5   1  5 3.0
+## 6   2  1 1.5
+## 7   2  2 2.0
+## 8   2  3 2.5
+## 9   2  4 3.0
+## 10  2  5 3.5
+## 11  3  1 2.0
+## 12  3  2 2.5
+## 13  3  3 3.0
+## 14  3  4 3.5
+## 15  3  5 4.0
+## 16  4  1 2.5
+## 17  4  2 3.0
+## 18  4  3 3.5
+## 19  4  4 4.0
+## 20  4  5 4.5
+## 21  5  1 3.0
+## 22  5  2 3.5
+## 23  5  3 4.0
+## 24  5  4 4.5
+## 25  5  5 5.0</code></pre>
+<pre class="r"><code> cat(&quot;media poblacional de la media muestral     :&quot;, media(mx),&quot;\n&quot;)</code></pre>
+<pre><code>## media poblacional de la media muestral     : 3</code></pre>
+<pre class="r"><code> cat(&quot;varianza poblacional de la media muestral :&quot;,varianza(mx),&quot;\n&quot;)</code></pre>
+<pre><code>## varianza poblacional de la media muestral : 1</code></pre>
+<pre class="r"><code> cat(&quot;\n&quot;)</code></pre>
+<pre class="r"><code> cat(&quot;Compara los resultados obtenidos con los respectivos valores de la población &quot;)</code></pre>
+<pre><code>## Compara los resultados obtenidos con los respectivos valores de la población</code></pre>
+<pre class="r"><code> plot(poblacion_n2, pch=19)
+ grid()</code></pre>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="paso-4" class="section level3">
+<h3>Paso 4</h3>
+<p>Determinar la población de medias de tamaño <span class="math inline">\(n=2\)</span>, cuando el proceso se realiza sin repetición</p>
+<p>En este caso desaparen las muestras <span class="math inline">\((1,1),(2,2),(3,3),(4,4),(5,5)\)</span> ademas de <span class="math inline">\((2,1)\)</span>, pues ya esta contenida en la muestra <span class="math inline">\((1,2\)</span>. En total quedaran 10 posibles muestras</p>
+<pre><code>##    X1 X2  mx
+## 1   1  2 1.5
+## 2   1  3 2.0
+## 3   1  4 2.5
+## 4   1  5 3.0
+## 5   2  3 2.5
+## 6   2  4 3.0
+## 7   2  5 3.5
+## 8   3  4 3.5
+## 9   3  5 4.0
+## 10  4  5 4.5</code></pre>
+<pre><code>## media poblacionalde la media muestral     : 3</code></pre>
+<pre><code>## varianza poblacional de la media muestral : 0.75</code></pre>
+<pre><code>## Compara los resultados obtenidos con los respectivos valores de la población</code></pre>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="conclusiones" class="section level2">
+<h2><strong>Conclusiones</strong></h2>
+<ul>
+<li><p><span class="math inline">\(E[\bar{X}] = E[X] = \mu\)</span></p></li>
+<li><p><span class="math inline">\(V[\bar{X}] = \dfrac{V[X]}{n}\)</span></p></li>
+<li><p>Cuando <span class="math inline">\(\dfrac{n}{N}&gt;0.05\)</span>, como el muestreo se realiza sin repeticion ( un cliente solo parece una vez en la muestra) , la probabilidad de seleecion en cada momento cambia a medida que se elige la muestra. Estos cambios hacen necesario realizar un ajuste en la varianza:</p></li>
+</ul>
+<p><span class="math display">\[V[\bar{X}] = \dfrac{V[X]}{n} \dfrac{(N-n)}{(N-1)}\]</span></p>
+</div>
+</div>
+<div id="proporción-muestral" class="section level1">
+<h1><strong>Proporción muestral</strong></h1>
+<p>Otro parametro de intres es la proporcion muestral para lo cual tambien se define una población pequeña que facilite la compresión de sus propiedades.</p>
+<p><strong>Propiedades de la proporción muesrtal</strong></p>
+<div id="paso-1-1" class="section level3">
+<h3>Paso 1</h3>
+<p>Definir la población</p>
+<p>Supongamos que una población esta conformada por <span class="math inline">\(\{\)</span>si, no,si, no, no <span class="math inline">\(\}\)</span></p>
+<p>Ahora que se desea calcular todas las medias que se puedan obtener de esta población para un tamaño de muestra <span class="math inline">\(n=2\)</span>.</p>
+<p>En otras palabras la población de medias para <span class="math inline">\(n=2\)</span>.</p>
+<pre class="r"><code>library(gtools)
+media=function(x){sum(x)/length(x)}
+varianza=function(x){sum((x-media(x))^2)/(length(x))}</code></pre>
+</div>
+<div id="paso-2-1" class="section level3">
+<h3>Paso 2</h3>
+<p>Determinar la media y la varianza poblacioneales</p>
+<p>La media y varianza poblacional de esta población estará dada por:</p>
+<pre class="r"><code>poblacion_x=c(1,0,1,0,0)
+cat(&quot;media poblacional    :&quot;,media(poblacion_x),&quot;\n&quot;)</code></pre>
+<pre><code>## media poblacional    : 0.4</code></pre>
+<pre class="r"><code>cat(&quot;varianza poblacional :&quot;,varianza(poblacion_x),&quot;\n&quot;)</code></pre>
+<pre><code>## varianza poblacional : 0.24</code></pre>
+<pre class="r"><code>cat(&quot;\n&quot;)</code></pre>
+</div>
+<div id="paso-3-1" class="section level3">
+<h3>Paso 3</h3>
+<p>Se determinan todas las muestras que se pueden construir de la población</p>
+<p>Para determinar la media y la varianza de todas las medias muestral s para <span class="math inline">\(n=2\)</span> que se pueden obtener de la población, suponemos que las muestras se escogen con repetición:</p>
+<p><span class="math inline">\((si,si)\)</span>, <span class="math inline">\((si,no)\)</span>……<span class="math inline">\((no,no)\)</span></p>
+<pre class="r"><code>x &lt;- c(&quot;1-si&quot;, &quot;2-no&quot;, &quot;3-si&quot;,&quot;4-no&quot;,&quot;5-no&quot;)
+muestra=permutations(n=5,r=2,v=x,repeats.allowed=T)
+p=c(1,0.5,1,0.5,0.5,0.5,0,0.5,0,0,1,0.5,1,0.5,0.5,0.5,0,0.5,0,0,0.5,0,0.5,0,0)
+data.frame(muestra,p)</code></pre>
+<pre><code>##      X1   X2   p
+## 1  1-si 1-si 1.0
+## 2  1-si 2-no 0.5
+## 3  1-si 3-si 1.0
+## 4  1-si 4-no 0.5
+## 5  1-si 5-no 0.5
+## 6  2-no 1-si 0.5
+## 7  2-no 2-no 0.0
+## 8  2-no 3-si 0.5
+## 9  2-no 4-no 0.0
+## 10 2-no 5-no 0.0
+## 11 3-si 1-si 1.0
+## 12 3-si 2-no 0.5
+## 13 3-si 3-si 1.0
+## 14 3-si 4-no 0.5
+## 15 3-si 5-no 0.5
+## 16 4-no 1-si 0.5
+## 17 4-no 2-no 0.0
+## 18 4-no 3-si 0.5
+## 19 4-no 4-no 0.0
+## 20 4-no 5-no 0.0
+## 21 5-no 1-si 0.5
+## 22 5-no 2-no 0.0
+## 23 5-no 3-si 0.5
+## 24 5-no 4-no 0.0
+## 25 5-no 5-no 0.0</code></pre>
+<pre class="r"><code>cat(&quot;media de la proporcion muestral    : &quot;,media(p), &quot;\n&quot;)</code></pre>
+<pre><code>## media de la proporcion muestral    :  0.4</code></pre>
+<pre class="r"><code>cat(&quot;varianza de la proporcion muestral : &quot;, varianza(p))</code></pre>
+<pre><code>## varianza de la proporcion muestral :  0.12</code></pre>
+</div>
+<div id="paso-4-1" class="section level3">
+<h3>Paso 4</h3>
+<p>Determinar la población de medias de tamaño <span class="math inline">\(n=2\)</span>, cuando el proceso se realiza sin repetición</p>
+<p>En este caso desaparen las muestras <span class="math inline">\((1,1),(2,2),(3,3),(4,4),(5,5)\)</span> ademas de <span class="math inline">\((2,1)\)</span>, pues ya esta contenida en la muestra <span class="math inline">\((1,2\)</span>. En total quedaran 10 posibles muestras</p>
+<pre><code>##      X1   X2  mp
+## 1  1-si 2-no 0.5
+## 2  1-si 3-si 1.0
+## 3  1-si 4-no 0.5
+## 4  1-si 5-no 0.5
+## 5  2-no 3-si 0.5
+## 6  2-no 4-no 0.0
+## 7  2-no 5-no 0.0
+## 8  3-si 4-no 0.5
+## 9  3-si 5-no 0.5
+## 10 4-no 5-no 0.0</code></pre>
+<pre><code>## media poblacional de la media muestral     : 0.4</code></pre>
+<pre><code>## varianza poblacional de la media muestral : 0.09</code></pre>
+<pre><code>## Compara los resultados obtenidos con los respectivos valores de la poblacion</code></pre>
+</div>
+<div id="conclusiones-1" class="section level3">
+<h3><strong>Conclusiones</strong></h3>
+<ul>
+<li><p><span class="math inline">\(E[\widehat{p}] = p\)</span></p></li>
+<li><p><span class="math inline">\(V[\widehat{p}] = \dfrac{pq}{n}\)</span></p></li>
+<li><p>Si <span class="math inline">\(\dfrac{n}{N}&gt;0.05\)</span>, se hacen necesario realizar un ajuste en la varianza:</p></li>
+</ul>
+<p><span class="math display">\[V[\widehat{p}] = \dfrac{pq}{n} \dfrac{(N-n)}{(N-1)}\]</span></p>
+</div>
 </div>
 
 

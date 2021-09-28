@@ -9,12 +9,14 @@ output:
     toc_float: yes
     theme: cosmo
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 library(psych)
 library(summarytools)
-
+library(gtools)
+library(ggplot2)
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -28,14 +30,28 @@ c5="#BC2B6A" # MORADO
 
 # **Propiedad de los estimadores**
 
-Para una variable con distribucion uniforme $unif(a=0, b=20)$ se desea determinar los siguientes 
+Para una variable con distribución uniforme $unif(a=0, b=20)$ se desea determinar los siguientes 
 estimadores del parámetro $b$
 
-* $T1 = 2 \bar{x}$ 
-* $T2 = \max{x}$
-* $T3 = \dfrac{(n+1)}{n} \max$
 
+```{r}
+# uniforme
+library(ggplot2)
+x= c(0,20) 
+fx=c(1/20, 1/20) 
+dat=data.frame(x,fx)
+ggplot(data=dat,aes(x=x, y=fx))+ 
+  scale_y_continuous(limits=c(0,.05))+
+  geom_line(size = 1,colour = 'red') 
+```
 
+* $\widehat{\theta_{1}} = 2 \bar{x}$ 
+
+* $\widehat{\theta_{2}} = \max\{x\}$
+
+* $\widehat{\theta_{3}} = \dfrac{(n+1)}{n} \max\{x\}$
+
+<br/><br/>
 
 ```{r}
 n=10
@@ -51,22 +67,38 @@ T3=((n+1)/n)*T2
 T123=data.frame(T1,T2,T3)
 boxplot(T123, main="propiedades de los estimadores")
 abline(h=20, col="red")
-summary(T123)
+
+
+apply(T123,2,mean)
 ```
 
+<br/><br/><br/><br/>
 
 # **Teorema Central del Límite**
 
+Verificación del Teorema Central del Límite para una población exponencial con $\lambda=1$
+
+Con este fin se siguen los siguientes pasos:
+
+1. Se construye una matriz de dimensión 1000 x 1000 con números procedentes del modelo determinado
+2. Se separan matrices de dimensión 1000 x n , para n=1,2,20,30,50, 100 y 1000 . 
+3. A cada matriz construida en el paso anterior se le calcula la media por filas, como resultado se obtiene un vector de 1000 medias 
+4. Cada uno de los vectores resultantes se visualiza a través de un histograma, gráfico de densidad y se construye también un gráfico de normalidad con el fin de validar el resultado 
+
+<br/><br/>
 
 ```{r}
 par(cex=0.5, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5,  mfrow=c(3,2), mai = c(.5, .5, .5, .5))
 # Teorema Central del Límite-----------------------------
+
+# Paso 1
 n=1000   #  numero de columnas (tamaño máximo de muestra)
 m=1000*n
 # Caso --------------------------------------------------
 # distribución exponencial-------------------------------
 X=matrix(rexp(m,1),ncol=n)
 
+# Paso 2
 # generación de muestras-------------
 X1=X[ ,1]            # n=1
 X2=X[ ,1:2]          # n=2
@@ -76,6 +108,7 @@ X50=X[ ,1:50]        # n=50
 X100=X[ ,1:100]      # n=100
 X1000=X[ ,1:1000]    # n=1000
 
+# Paso 3
 # generacion de medias---------------
 Mx2=apply(X2,1,mean)        # medias de muestras de tamaño n=2
 Mx20=apply(X20,1,mean)      # medias de muestras de tamaño n=20
@@ -84,6 +117,8 @@ Mx50=apply(X50,1,mean)      # medias de muestras de tamaño n=50
 Mx100=apply(X100,1,mean)    # medias de muestras de tamaño n=100
 Mx1000=apply(X1000,1,mean)  # medias de muestras de tamaño n=1000
 
+
+# Paso 4 
 # generación de densidad empírica --
 d=density(X1)
 d2=density(Mx2)
@@ -94,6 +129,8 @@ d100=density(Mx100)
 d1000=density(Mx1000)
 
 # Gráficos de densidad -------------------------------
+# configuración de las gráficas
+par(cex=0.5, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5,  mfrow=c(3,2), mai = c(.5, .5, .5, .5))
 # histogramas  de comparacion-------------------------
 plot(d, main=" ", xlab = "n=1")
 plot(d2,main=" ", xlab = "n=2")
@@ -121,3 +158,195 @@ qqnorm(Mx50) ; qqline(Mx50, col="red")
 qqnorm(Mx100) ; qqline(Mx100, col="red")
 qqnorm(Mx1000) ; qqline(Mx1000, col="red")
 ```
+
+
+
+Se puede observar la convergencia de la distribución de la media muestral a una distribución normal al aumentarse el tamaño de la muestra
+
+
+
+# **Distribución de la media muestral**
+
+A continuación se presentan las principales características de la media muestral $\bar{x}$ y de la proporción muetral $\widehat{p}$.  En cada uno de los casos vamos a suponer el conocimiento de de una población pequeña.
+
+# **Media muestral**
+
+**Propiedades de la media muestral**
+
+### Paso 1
+
+Definir la  población
+
+Supongamos que una población esta conformada por los valores : $\{1,2,3,4,5 \}$, donde $N=5$
+
+Ahora que se desea calcular todas las medias que se puedan obtener de esta población para un tamaño de muestra $n=2$. En otras palabras la población de medias para $n=2$.
+
+
+Inicialmente definimos dos funciones para calcular los parámetros poblacionales media y varianza: 
+
+$$\mu =\dfrac{1}{N} \sum_{i=1}^{N} x_{i}$$
+
+$$\sigma^{2}= \dfrac{1}{N} \sum_{i=1}^{N} (x_{i}-\mu)^{2}$$
+
+```{r }
+
+media=function(x){sum(x)/length(x)}
+varianza=function(x){sum((x-media(x))^2)/(length(x))}
+
+```
+
+### Paso 2
+
+Determinar la media y la varianza poblacional . La media y varianza poblacional de esta población estará dada por:
+
+```{r }
+poblacion_x=c(1,2,3,4,5)
+cat("media poblacional    :",media(poblacion_x),"\n")
+cat("varianza poblacional :",varianza(poblacion_x),"\n")
+cat("\n")
+
+```
+
+### Paso 3
+
+Se determinan todas las muestras que se pueden construir de la poblacion 
+
+Para determinar la media y la varianza de todas las medias muestrales para $n=2$ que se pueden obtener de la población, suponemos que las  muestras se escogen con repetición:
+
+$(1,1), (1,2),(1,3),(1,4),(1,5),(2,1),(2,2),(2,3),.....,(5,5)$.
+
+```{r }
+
+poblacion_n2=permutations(5,2,1:5, repeats=TRUE)
+mx=apply(poblacion_n2, 1,mean)
+data.frame(poblacion_n2,mx)
+ cat("media poblacional de la media muestral     :", media(mx),"\n")
+ cat("varianza poblacional de la media muestral :",varianza(mx),"\n")
+ cat("\n")
+ cat("Compara los resultados obtenidos con los respectivos valores de la población ")
+ plot(poblacion_n2, pch=19)
+ grid()
+```
+
+### Paso 4
+
+Determinar la  población de medias de tamaño $n=2$, cuando el proceso se realiza sin repetición
+
+En este caso desaparen las muestras $(1,1),(2,2),(3,3),(4,4),(5,5)$ ademas de $(2,1)$, pues ya esta contenida en la muestra $(1,2$. En total quedaran 10 posibles muestras
+
+```{r, echo=FALSE}
+poblacion_n2s=combinations(5,2,1:5, repeats=FALSE)
+mx=apply(poblacion_n2s, 1,mean)
+data.frame(poblacion_n2s,mx)
+cat("media poblacionalde la media muestral     :", media(mx),"\n")
+cat("varianza poblacional de la media muestral :",varianza(mx))
+cat("\n")
+cat("Compara los resultados obtenidos con los respectivos valores de la población ")
+
+plot(poblacion_n2s, pch=19)
+grid()
+```
+
+## **Conclusiones**
+
++  $E[\bar{X}] = E[X] = \mu$
+
++ $V[\bar{X}] = \dfrac{V[X]}{n}$
+
++ Cuando $\dfrac{n}{N}>0.05$, como el muestreo se realiza sin repeticion ( un cliente solo parece una vez en la muestra) , la probabilidad de seleecion en cada momento cambia a medida que se elige la muestra. Estos cambios hacen necesario realizar un ajuste en la varianza:
+
+$$V[\bar{X}] = \dfrac{V[X]}{n} \dfrac{(N-n)}{(N-1)}$$
+
+
+# **Proporción muestral**
+
+Otro parametro de intres es la proporcion muestral para lo cual tambien se define una población pequeña que facilite la compresión de sus propiedades. 
+
+
+**Propiedades de la proporción muesrtal**
+
+### Paso 1
+
+Definir la  población
+
+Supongamos que una población esta conformada por $\{$si, no,si, no, no $\}$
+
+Ahora que se desea calcular todas las medias que se puedan obtener de esta población para un tamaño de muestra $n=2$. 
+
+En otras palabras la población de medias para $n=2$.
+
+
+
+```{r }
+library(gtools)
+media=function(x){sum(x)/length(x)}
+varianza=function(x){sum((x-media(x))^2)/(length(x))}
+
+```
+
+### Paso 2
+
+Determinar la media y la varianza poblacioneales 
+
+La media y varianza poblacional de esta población estará dada por:
+
+```{r }
+poblacion_x=c(1,0,1,0,0)
+cat("media poblacional    :",media(poblacion_x),"\n")
+cat("varianza poblacional :",varianza(poblacion_x),"\n")
+cat("\n")
+
+```
+### Paso 3
+
+Se determinan todas las muestras que se pueden construir de la población 
+
+Para determinar la media y la varianza de todas las medias muestral s para $n=2$ que se pueden obtener de la población, suponemos que las  muestras se escogen con repetición:
+
+$(si,si)$, $(si,no)$......$(no,no)$
+
+```{r}
+x <- c("1-si", "2-no", "3-si","4-no","5-no")
+muestra=permutations(n=5,r=2,v=x,repeats.allowed=T)
+p=c(1,0.5,1,0.5,0.5,0.5,0,0.5,0,0,1,0.5,1,0.5,0.5,0.5,0,0.5,0,0,0.5,0,0.5,0,0)
+data.frame(muestra,p)
+cat("media de la proporcion muestral    : ",media(p), "\n")
+cat("varianza de la proporcion muestral : ", varianza(p))
+```
+
+### Paso 4
+
+Determinar la  población de medias de tamaño $n=2$, cuando el proceso se realiza sin repetición
+
+En este caso desaparen las muestras $(1,1),(2,2),(3,3),(4,4),(5,5)$ ademas de $(2,1)$, pues ya esta contenida en la muestra $(1,2$. En total quedaran 10 posibles muestras
+
+```{r, echo=FALSE}
+
+x <- c("1-si", "2-no", "3-si","4-no","5-no")
+
+poblacionp2=combinations(5,2,x, repeats=FALSE)
+mp=c(0.5,1,0.5,0.5,0.5,0,0,0.5,0.5,0)
+data.frame(poblacionp2,mp)
+cat("media poblacional de la media muestral     :", media(mp),"\n")
+cat("varianza poblacional de la media muestral :",varianza(mp),"\n")
+cat("\n")
+cat("Compara los resultados obtenidos con los respectivos valores de la poblacion ")
+
+```
+
+### **Conclusiones**
+
++  $E[\widehat{p}] = p$
+
++ $V[\widehat{p}] = \dfrac{pq}{n}$
+
++ Si $\dfrac{n}{N}>0.05$, se hacen necesario realizar un ajuste en la varianza:
+
+$$V[\widehat{p}] = \dfrac{pq}{n} \dfrac{(N-n)}{(N-1)}$$
+
+
+
+
+
+
+

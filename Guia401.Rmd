@@ -561,9 +561,15 @@ $$f(x)=\frac{1}{2^{(v/2)}\Gamma(v/2)}x^{(v/2)-1}\exp\{-x/2\} ,\hspace{.3cm} x>0$
 
 
 
+```{r}
+# distribución chicuadrado
+p <- ggdistribution(dchisq, seq(0, 30, 0.1), df = 7, colour = 'blue')
+p <- ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = 'green', p = p)
+     ggdistribution(dchisq, seq(0, 30, 0.1), df = 11, colour = 'red', p = p)
+```
 
 
-![](img/gchi.png){width=50%}
+
 
 
 Esta distribución es un caso especial de la distribución Gamma con parámetros $\alpha=\frac{v}{2}$ y $\beta=2$ 

@@ -1103,7 +1103,11 @@ V[X]&amp;=&amp; \mu^{2}-(\mu^{1})^{2}\\
 <p>Si <span class="math inline">\(S^{2}\)</span> es la varianza de la muestra aleatoria de tamaño <span class="math inline">\(n\)</span> que se toma de una población normal que tiene varianza <span class="math inline">\(\sigma^{2}\)</span>, entonces el estadístico: <span class="math display">\[\chi^{2}=\frac{(n-1)S^{2}}{\sigma^{2}}=\sum_{i=1}^{n}\frac{\big(x_{i}-\bar{x}\big)^{2}}{\sigma^{2}}=\sum_{i=1}^{n} \Big(\frac{x_{i}-\bar{x}}{\sigma}\Big)^{2} \]</span> tiene una distribución chi-cuadrado con <span class="math inline">\(v=n-1\)</span> grados de libertad.</p>
 <p>Nota: Esta función fue creada por Karl Pearson cientifico inglés (1857-1936) y su función de distribución y su represntación gráfica estan dadas por:</p>
 <p><span class="math display">\[f(x)=\frac{1}{2^{(v/2)}\Gamma(v/2)}x^{(v/2)-1}\exp\{-x/2\} ,\hspace{.3cm} x&gt;0\]</span> <br/><br/></p>
-<p><img src="img/gchi.png" style="width:50.0%" /></p>
+<pre class="r"><code># distribución chicuadrado
+p &lt;- ggdistribution(dchisq, seq(0, 30, 0.1), df = 7, colour = &#39;blue&#39;)
+p &lt;- ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = &#39;green&#39;, p = p)
+     ggdistribution(dchisq, seq(0, 30, 0.1), df = 11, colour = &#39;red&#39;, p = p)</code></pre>
+<p><img src="Guia401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Esta distribución es un caso especial de la distribución Gamma con parámetros <span class="math inline">\(\alpha=\frac{v}{2}\)</span> y <span class="math inline">\(\beta=2\)</span></p>
 <p><br/><br/></p>
 </div>
@@ -1516,7 +1520,7 @@ P(p&gt;0.82) &amp;=&amp; P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} &gt; \df
 <p>El potencial de este teorema esta en que no importa la distribución de la variable X, la distribución de la media provemiente de la muestra tomada de esta población se distribuye aproximadamente normal. Al final de la guía se encuentra practica computacional que nos ayuda a comprender el alcance de este teorema.</p>
 <div id="verificación-del-teorema-central-del-límite" class="section level3">
 <h3><strong>Verificación del Teorema central del límite </strong></h3>
-<p><img src="Guia401_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="Guia401_files/figure-html/unnamed-chunk-2-2.png" width="672" /><img src="Guia401_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<p><img src="Guia401_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="Guia401_files/figure-html/unnamed-chunk-3-2.png" width="672" /><img src="Guia401_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
 <p>Se puede notar la transformación de la distribución de la media a una distribución normal a medida que el tamaño de muestra aumenta</p>
 <p><br/><br/></p>
 </div>
