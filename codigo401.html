@@ -565,7 +565,7 @@ abline(h=20, col=&quot;red&quot;)</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>apply(T123,2,mean)</code></pre>
 <pre><code>##       T1       T2       T3 
-## 19.83834 18.20419 20.02461</code></pre>
+## 19.84147 18.15541 19.97095</code></pre>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="teorema-central-del-límite" class="section level1">
@@ -869,13 +869,12 @@ data.frame(muestra,p)</code></pre>
 <p>Para seleccionar una muestra de una variables, supongamos que se distinguen por un Id del 1 al 1000, utilizamos la funcion <strong>sample</strong> para seleccionar la muestra:</p>
 <pre class="r"><code>x&lt;-seq(1,1000,1)
 sample(x, 20)</code></pre>
-<pre><code>##  [1] 415 125 758 975 567 325 147 915 428 224 762 743 622  38  23  61 350 454 812
-## [20] 416</code></pre>
+<pre><code>##  [1] 246 796 672 179 535 127 346 999 628 514 423  89 291 419 285 165   3 633 376   5</code></pre>
 <p>En este caso se ha seleccionado una muestra de tamaño <span class="math inline">\(n=10\)</span> de una población de <span class="math inline">\(N=1000\)</span> unidades. Dato que la población es muy grande es poco probable que un valor salga repetido, por lo que se conoce como muestreo sin repetición.</p>
 <p>Es posible realizar un muestreo con repetición en el caso de que la población sea demasiado pequeña (este tipo de muestreos se llaman bootstrap o remuestreo) :</p>
 <pre class="r"><code>x&lt;-1:10
 sample(x, 20, replace = TRUE)</code></pre>
-<pre><code>##  [1]  5  1  1  4  3  2  6 10  4  8 10  1  3  2  8  3  1  9  9  6</code></pre>
+<pre><code>##  [1] 9 6 5 8 8 1 5 9 8 6 6 5 4 8 6 6 1 8 5 7</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="muestreo-sistemático" class="section level3">
@@ -885,26 +884,26 @@ a=100
 ids=S.SY(N, a)
 ids</code></pre>
 <pre><code>##       [,1]
-##  [1,]   64
-##  [2,]  164
-##  [3,]  264
-##  [4,]  364
-##  [5,]  464
-##  [6,]  564
-##  [7,]  664
-##  [8,]  764
-##  [9,]  864
-## [10,]  964
-## [11,] 1064
-## [12,] 1164
-## [13,] 1264
-## [14,] 1364
-## [15,] 1464
-## [16,] 1564
-## [17,] 1664
-## [18,] 1764
-## [19,] 1864
-## [20,] 1964</code></pre>
+##  [1,]   50
+##  [2,]  150
+##  [3,]  250
+##  [4,]  350
+##  [5,]  450
+##  [6,]  550
+##  [7,]  650
+##  [8,]  750
+##  [9,]  850
+## [10,]  950
+## [11,] 1050
+## [12,] 1150
+## [13,] 1250
+## [14,] 1350
+## [15,] 1450
+## [16,] 1550
+## [17,] 1650
+## [18,] 1750
+## [19,] 1850
+## [20,] 1950</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="ejemplo-muestreo-aleatorio-simple" class="section level3">
@@ -942,32 +941,32 @@ a=N/n
 ids=S.SY(N, a)
 ids</code></pre>
 <pre><code>##       [,1]
-##  [1,]   13
-##  [2,]   31
-##  [3,]   49
-##  [4,]   67
-##  [5,]   85
-##  [6,]  103
-##  [7,]  121
-##  [8,]  139
-##  [9,]  157
-## [10,]  175</code></pre>
+##  [1,]   15
+##  [2,]   33
+##  [3,]   51
+##  [4,]   69
+##  [5,]   87
+##  [6,]  105
+##  [7,]  123
+##  [8,]  141
+##  [9,]  159
+## [10,]  177</code></pre>
 <pre class="r"><code>base2=base_muestreo[ids,]
 
 base2</code></pre>
 <pre><code>## # A tibble: 10 × 3
 ##       ID CAR      NF
 ##    &lt;int&gt; &lt;chr&gt; &lt;dbl&gt;
-##  1    13 SIS     2.3
-##  2    31 SIS     2.5
-##  3    49 MAT     3.9
-##  4    67 CIV     3.1
-##  5    85 IND     4.7
-##  6   103 IND     3.1
-##  7   121 ELE     4.6
-##  8   139 CIV     2.2
-##  9   157 CIV     3.8
-## 10   175 CIV     4.5</code></pre>
+##  1    15 IND     3.5
+##  2    33 SIS     3  
+##  3    51 SIS     3.6
+##  4    69 SIS     4.3
+##  5    87 IND     4.6
+##  6   105 IND     3.1
+##  7   123 IND     2.2
+##  8   141 CIV     3.6
+##  9   159 CIV     3  
+## 10   177 CIV     3.6</code></pre>
 <p><br/><br/></p>
 <p>Para los casos de los muestreos estratificado y muestreo por conglomerados se utiliza el muestreo aleatorio simple como base.</p>
 </div>
