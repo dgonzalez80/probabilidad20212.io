@@ -565,7 +565,7 @@ abline(h=20, col=&quot;red&quot;)</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>apply(T123,2,mean)</code></pre>
 <pre><code>##       T1       T2       T3 
-## 19.78256 18.12517 19.93768</code></pre>
+## 19.79452 18.11104 19.92214</code></pre>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="teorema-central-del-límite" class="section level1">
@@ -650,13 +650,16 @@ qqnorm(Mx100) ; qqline(Mx100, col=&quot;red&quot;)
 qqnorm(Mx1000) ; qqline(Mx1000, col=&quot;red&quot;)</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
 <p>Se puede observar la convergencia de la distribución de la media muestral a una distribución normal al aumentarse el tamaño de la muestra</p>
+<p><br/><br/><br/></p>
 </div>
 <div id="distribución-de-la-media-muestral" class="section level1">
 <h1><strong>Distribución de la media muestral</strong></h1>
 <p>A continuación se presentan las principales características de la media muestral <span class="math inline">\(\bar{x}\)</span> y de la proporción muetral <span class="math inline">\(\widehat{p}\)</span>. En cada uno de los casos vamos a suponer el conocimiento de de una población pequeña.</p>
+<p><br/><br/><br/></p>
 </div>
 <div id="media-muestral" class="section level1">
 <h1><strong>Media muestral</strong></h1>
+<p><br/><br/></p>
 <p><strong>Propiedades de la media muestral</strong></p>
 <div id="paso-1" class="section level3">
 <h3>Paso 1</h3>
@@ -668,6 +671,7 @@ qqnorm(Mx1000) ; qqline(Mx1000, col=&quot;red&quot;)</code></pre>
 <p><span class="math display">\[\sigma^{2}= \dfrac{1}{N} \sum_{i=1}^{N} (x_{i}-\mu)^{2}\]</span></p>
 <pre class="r"><code>media=function(x){sum(x)/length(x)}
 varianza=function(x){sum((x-media(x))^2)/(length(x))}</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="paso-2" class="section level3">
 <h3>Paso 2</h3>
@@ -678,6 +682,7 @@ cat(&quot;media poblacional    :&quot;,media(poblacion_x),&quot;\n&quot;)</code>
 <pre class="r"><code>cat(&quot;varianza poblacional :&quot;,varianza(poblacion_x),&quot;\n&quot;)</code></pre>
 <pre><code>## varianza poblacional : 2</code></pre>
 <pre class="r"><code>cat(&quot;\n&quot;)</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="paso-3" class="section level3">
 <h3>Paso 3</h3>
@@ -723,6 +728,7 @@ data.frame(poblacion_n2,mx)</code></pre>
 <pre class="r"><code> plot(poblacion_n2, pch=19)
  grid()</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><br/><br/></p>
 </div>
 <div id="paso-4" class="section level3">
 <h3>Paso 4</h3>
@@ -743,6 +749,7 @@ data.frame(poblacion_n2,mx)</code></pre>
 <pre><code>## varianza poblacional de la media muestral : 0.75</code></pre>
 <pre><code>## Compara los resultados obtenidos con los respectivos valores de la población</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><br/><br/></p>
 </div>
 <div id="conclusiones" class="section level2">
 <h2><strong>Conclusiones</strong></h2>
@@ -752,11 +759,13 @@ data.frame(poblacion_n2,mx)</code></pre>
 <li><p>Cuando <span class="math inline">\(\dfrac{n}{N}&gt;0.05\)</span>, como el muestreo se realiza sin repeticion ( un cliente solo parece una vez en la muestra) , la probabilidad de seleecion en cada momento cambia a medida que se elige la muestra. Estos cambios hacen necesario realizar un ajuste en la varianza:</p></li>
 </ul>
 <p><span class="math display">\[V[\bar{X}] = \dfrac{V[X]}{n} \dfrac{(N-n)}{(N-1)}\]</span></p>
+<p><br/><br/><br/></p>
 </div>
 </div>
 <div id="proporción-muestral" class="section level1">
 <h1><strong>Proporción muestral</strong></h1>
 <p>Otro parametro de intres es la proporcion muestral para lo cual tambien se define una población pequeña que facilite la compresión de sus propiedades.</p>
+<p><br/><br/><br/></p>
 <p><strong>Propiedades de la proporción muesrtal</strong></p>
 <div id="paso-1-1" class="section level3">
 <h3>Paso 1</h3>
@@ -767,6 +776,7 @@ data.frame(poblacion_n2,mx)</code></pre>
 <pre class="r"><code>library(gtools)
 media=function(x){sum(x)/length(x)}
 varianza=function(x){sum((x-media(x))^2)/(length(x))}</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="paso-2-1" class="section level3">
 <h3>Paso 2</h3>
@@ -818,6 +828,7 @@ data.frame(muestra,p)</code></pre>
 <pre><code>## media de la proporcion muestral    :  0.4</code></pre>
 <pre class="r"><code>cat(&quot;varianza de la proporcion muestral : &quot;, varianza(p))</code></pre>
 <pre><code>## varianza de la proporcion muestral :  0.12</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="paso-4-1" class="section level3">
 <h3>Paso 4</h3>
@@ -837,6 +848,7 @@ data.frame(muestra,p)</code></pre>
 <pre><code>## media poblacional de la media muestral     : 0.4</code></pre>
 <pre><code>## varianza poblacional de la media muestral : 0.09</code></pre>
 <pre><code>## Compara los resultados obtenidos con los respectivos valores de la poblacion</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="conclusiones-1" class="section level3">
 <h3><strong>Conclusiones</strong></h3>

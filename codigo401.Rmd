@@ -163,13 +163,17 @@ qqnorm(Mx1000) ; qqline(Mx1000, col="red")
 
 Se puede observar la convergencia de la distribución de la media muestral a una distribución normal al aumentarse el tamaño de la muestra
 
-
+<br/><br/><br/>
 
 # **Distribución de la media muestral**
 
 A continuación se presentan las principales características de la media muestral $\bar{x}$ y de la proporción muetral $\widehat{p}$.  En cada uno de los casos vamos a suponer el conocimiento de de una población pequeña.
 
+<br/><br/><br/>
+
 # **Media muestral**
+
+<br/><br/>
 
 **Propiedades de la media muestral**
 
@@ -195,6 +199,8 @@ varianza=function(x){sum((x-media(x))^2)/(length(x))}
 
 ```
 
+<br/><br/>
+
 ### Paso 2
 
 Determinar la media y la varianza poblacional . La media y varianza poblacional de esta población estará dada por:
@@ -206,6 +212,8 @@ cat("varianza poblacional :",varianza(poblacion_x),"\n")
 cat("\n")
 
 ```
+
+<br/><br/>
 
 ### Paso 3
 
@@ -228,6 +236,8 @@ data.frame(poblacion_n2,mx)
  grid()
 ```
 
+<br/><br/>
+
 ### Paso 4
 
 Determinar la  población de medias de tamaño $n=2$, cuando el proceso se realiza sin repetición
@@ -247,6 +257,8 @@ plot(poblacion_n2s, pch=19)
 grid()
 ```
 
+<br/><br/>
+
 ## **Conclusiones**
 
 +  $E[\bar{X}] = E[X] = \mu$
@@ -257,11 +269,13 @@ grid()
 
 $$V[\bar{X}] = \dfrac{V[X]}{n} \dfrac{(N-n)}{(N-1)}$$
 
+<br/><br/><br/>
 
 # **Proporción muestral**
 
 Otro parametro de intres es la proporcion muestral para lo cual tambien se define una población pequeña que facilite la compresión de sus propiedades. 
 
+<br/><br/><br/>
 
 **Propiedades de la proporción muesrtal**
 
@@ -283,6 +297,8 @@ media=function(x){sum(x)/length(x)}
 varianza=function(x){sum((x-media(x))^2)/(length(x))}
 
 ```
+
+<br/><br/>
 
 ### Paso 2
 
@@ -314,6 +330,8 @@ cat("media de la proporcion muestral    : ",media(p), "\n")
 cat("varianza de la proporcion muestral : ", varianza(p))
 ```
 
+<br/><br/>
+
 ### Paso 4
 
 Determinar la  población de medias de tamaño $n=2$, cuando el proceso se realiza sin repetición
@@ -333,6 +351,8 @@ cat("\n")
 cat("Compara los resultados obtenidos con los respectivos valores de la poblacion ")
 
 ```
+
+<br/><br/>
 
 ### **Conclusiones**
 
