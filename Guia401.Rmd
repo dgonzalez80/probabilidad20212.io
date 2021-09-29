@@ -289,6 +289,10 @@ En caso de poder realizar una prueba piloto (observación de una muestra, digamo
 
 ## **Tipos de muestreo** 
 
+![](img/muestreo.png)
+
+
+
 En general pueden dividirse en dos grandes grupos: métodos de muestreo probabilísticos y métodos de muestreo no probabilísticos.
 
 Los **métodos de muestreo probabilísticos** son aquellos que se basan en el principio de equiprobabilidad. Es decir, aquellos en los que todos los individuos tienen la misma
