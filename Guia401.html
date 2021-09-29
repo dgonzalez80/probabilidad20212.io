@@ -1081,6 +1081,46 @@ V[X]&amp;=&amp; \mu^{2}-(\mu^{1})^{2}\\
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
+<div id="propiedades-de-los-estimadores" class="section level2">
+<h2><strong>Propiedades de los estimadores</strong></h2>
+<p>Dentro de las principales propiedeades de los estimadores están:</p>
+<p><br/><br/></p>
+<div id="insesgadez" class="section level3">
+<h3><strong>Insesgadez</strong></h3>
+<p>Un estimador <span class="math inline">\(\widehat{\theta}\)</span> se considera insesgado si <span class="math inline">\(E[\widehat{\theta}] = \theta\)</span></p>
+<p><br/><br/></p>
+</div>
+<div id="eficiente" class="section level3">
+<h3><strong>Eficiente</strong></h3>
+<p>Un estimador <span class="math inline">\(\widehat{\theta_{1}}\)</span> se considera más eficiente que <span class="math inline">\(\widehat{\theta_{2}}\)</span> cuando:</p>
+<p><span class="math display">\[\widehat{\theta_{1}} &lt;\widehat{\theta_{2}}\]</span></p>
+<p><br/><br/></p>
+</div>
+<div id="consistente" class="section level3">
+<h3><strong>Consistente</strong></h3>
+<p>Cuando un estimador siendo sesgado, se convierte en un estimador sesgado cuando se aumenta el tamaño de la muestra se dice que este estimador es consistente</p>
+<p><br/><br/></p>
+<p>Con la siguiente figura se representa de manera figurativa lo que pueden ser las diferentes propiedades de los estimadores. En ella las figuras 3 y 4 representan estimadores insesgados , mientras que los gráficos 1 y 2 representan estimadores sesgados, pues se encuentran lejos del verdadero objetivo que es pegarle al centro de la diana, en este caso que representa al valor del parámetro.</p>
+<p>Por otro lado la gráfica 3 representa el estimador con las mejores condiciones, sesgado y de menor varianza, lo cual representa un estimador insesgado y eficiente.</p>
+<p><img src="img/estimador.png" style="width:50.0%" /></p>
+<p><br/><br/></p>
+<p><strong>Ejemplo</strong></p>
+<p>Para una muestra obtenida de una población exponencial con parámetro <span class="math inline">\(\beta\)</span> ( <span class="math inline">\(E[X]=\beta\)</span>, <span class="math inline">\(V[X]=\beta^{2}\)</span>). Examinar los siguientes estimadores para una muestra de <span class="math inline">\(n=4\)</span> (<span class="math inline">\(X_{1}\)</span>, <span class="math inline">\(X_{2}\)</span>, <span class="math inline">\(X_{3}\)</span>, <span class="math inline">\(X_{4}\)</span>)</p>
+<ul>
+<li><span class="math inline">\(\widehat{\theta}_{1} = \dfrac{1}{6}(X_{1}+X_{2}) \dfrac{1}{3}(X_{3}+X_{4})\)</span></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(\widehat{\theta}_{2} = \dfrac{1}{10}(X_{1}+2X_{2} + 3X_{3} + 4X_{4})\)</span></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(\widehat{\theta}_{3} = \dfrac{1}{4}(X_{1} + X_{2} + X_{3} + X_{4})\)</span></li>
+</ul>
+<p>Como se puede verificar <span class="math inline">\(\widehat{\theta}_{3}\)</span> es el mejor estimador de los tres, siendo insesgado y eficiente</p>
+<p><br/><br/><br/><br/></p>
+</div>
+</div>
 <div id="distribuciones-muestrales" class="section level2">
 <h2><strong>Distribuciones muestrales</strong></h2>
 <p>**Principales distribuciones muestrales:</p>
@@ -1459,10 +1499,10 @@ P(p&gt;0.82) &amp;=&amp; P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} &gt; \df
 <h2><strong>Algunos estimadores</strong></h2>
 <table>
 <colgroup>
-<col width="14%" />
+<col width="13%" />
 <col width="25%" />
-<col width="31%" />
-<col width="28%" />
+<col width="21%" />
+<col width="39%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1500,14 +1540,14 @@ P(p&gt;0.82) &amp;=&amp; P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} &gt; \df
 <tr class="odd">
 <td align="center"><span class="math inline">\(\mu_{1}-\mu_{2}\)</span></td>
 <td align="center"><span class="math inline">\(\bar{x}_{1}-\bar{x}_{2}\)</span></td>
-<td align="center">$ <em>{1}-</em>{2} $</td>
-<td align="center">$ +$</td>
+<td align="center"><span class="math inline">\(\mu_{1}-\mu_{2}\)</span></td>
+<td align="center"><span class="math inline">\(\dfrac{\sigma^{2}_{1}}{n_{1}}+\dfrac{\sigma^{2}_{2}}{n_{2}}\)</span></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(p_{1}-p_{2}\)</span></td>
 <td align="center"><span class="math inline">\(\widehat{p_{1}}-\widehat{p_{2}}\)</span></td>
 <td align="center"><span class="math inline">\(p_{1}-p_{2}\)</span></td>
-<td align="center">$ +$</td>
+<td align="center"><span class="math inline">\(\dfrac{p_{1}q_{1}}{n_{1}}+\dfrac{p_{2}q_{2}}{n_{2}}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1522,7 +1562,80 @@ P(p&gt;0.82) &amp;=&amp; P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} &gt; \df
 <h3><strong>Verificación del Teorema central del límite </strong></h3>
 <p><img src="Guia401_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="Guia401_files/figure-html/unnamed-chunk-3-2.png" width="672" /><img src="Guia401_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
 <p>Se puede notar la transformación de la distribución de la media a una distribución normal a medida que el tamaño de muestra aumenta</p>
-<p><br/><br/></p>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="relación-de-las-distribiciones-muestrales-con-los-principales-estimadores-muestrales" class="section level3">
+<h3><strong>Relación de las distribiciones muestrales con los principales estimadores muestrales</strong></h3>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="14%" />
+<col width="13%" />
+<col width="36%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Parámetro</th>
+<th align="center">Estimador</th>
+<th align="center">distribución</th>
+<th align="center">supuesto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1.</td>
+<td align="center"><span class="math inline">\(\mu\)</span></td>
+<td align="center"><span class="math inline">\(\bar{x}\)</span></td>
+<td align="center"><span class="math inline">\(norm\big(\mu, \dfrac{\sigma^{2}}{n}\big)\)</span></td>
+<td align="center"><span class="math inline">\(X \sim norm(\mu, \sigma^{2})\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\sigma^{2}\)</span> conocida</td>
+</tr>
+<tr class="odd">
+<td align="center">2.</td>
+<td align="center"><span class="math inline">\(\mu\)</span></td>
+<td align="center"><span class="math inline">\(\bar{x}\)</span></td>
+<td align="center"><span class="math inline">\(norm\big(\mu, \dfrac{\sigma^{2}}{n}\big)\)</span></td>
+<td align="center"><span class="math inline">\(X \sim norm(\mu, \sigma^{2})\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\sigma^{2}\)</span> desconocida</td>
+</tr>
+<tr class="odd">
+<td align="center">3.</td>
+<td align="center"><span class="math inline">\(\mu\)</span></td>
+<td align="center"><span class="math inline">\(\bar{x}\)</span></td>
+<td align="center"><span class="math inline">\(norm \big(\mu, \dfrac{\sigma^{2}}{n}\big)\)</span></td>
+<td align="center"><span class="math inline">\(X \sim\)</span> ? y <span class="math inline">\(n &gt;&gt;\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">4.</td>
+<td align="center"><span class="math inline">\(p\)</span></td>
+<td align="center"><span class="math inline">\(\widehat{p}\)</span></td>
+<td align="center"><span class="math inline">\(norm \big(p, \dfrac{pq}{n}\big)\)</span></td>
+<td align="center"><span class="math inline">\(n &gt;&gt;\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">5.</td>
+<td align="center"><span class="math inline">\(\sigma^{2}\)</span></td>
+<td align="center"><span class="math inline">\(S^{2}\)</span></td>
+<td align="center"><span class="math inline">\(\dfrac{(n-1)S^{2}}{\sigma^{2}} \sim \chi^{2}_{v:n-1}\)</span></td>
+<td align="center"><span class="math inline">\(X \sim norm(\mu, \sigma^{2})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/><br/><br/></p>
 </div>
 </div>
 <div id="video" class="section level2">

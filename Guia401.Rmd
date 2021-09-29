@@ -521,6 +521,59 @@ $$\widehat{\sigma^{2}}=8550$$
 
 <br/><br/><br/><br/>
 
+## **Propiedades de los estimadores**
+
+Dentro de las principales propiedeades de los estimadores están:
+
+<br/><br/>
+
+### **Insesgadez**
+
+Un estimador $\widehat{\theta}$ se considera insesgado si $E[\widehat{\theta}] = \theta$
+
+<br/><br/>
+
+### **Eficiente**
+
+Un estimador  $\widehat{\theta_{1}}$ se considera más eficiente que  $\widehat{\theta_{2}}$ cuando:
+
+$$\widehat{\theta_{1}} <\widehat{\theta_{2}}$$
+
+<br/><br/>
+
+### **Consistente**
+
+Cuando un estimador siendo sesgado, se convierte en un estimador sesgado cuando se aumenta el tamaño de la muestra se dice que este estimador es consistente
+
+<br/><br/>
+
+Con la siguiente figura se representa de manera figurativa lo que pueden ser las diferentes propiedades de los estimadores. En ella las figuras 3 y 4 representan estimadores insesgados , mientras que los gráficos 1 y 2 representan estimadores sesgados, pues se encuentran lejos del verdadero objetivo que es pegarle al centro de la diana, en este caso que representa al valor del parámetro. 
+
+Por otro lado la gráfica 3 representa el estimador con las mejores condiciones, sesgado y de menor varianza, lo cual representa un estimador insesgado y eficiente.
+
+![](img/estimador.png){width=50%}
+
+<br/><br/>
+
+**Ejemplo**
+
+Para una muestra obtenida de una población exponencial con parámetro $\beta$ ( $E[X]=\beta$, $V[X]=\beta^{2}$). Examinar los siguientes estimadores para una muestra de $n=4$ ($X_{1}$, $X_{2}$, $X_{3}$, $X_{4}$)
+
++ $\widehat{\theta}_{1} = \dfrac{1}{6}(X_{1}+X_{2}) \dfrac{1}{3}(X_{3}+X_{4})$
+
+<br/>
+
++ $\widehat{\theta}_{2} = \dfrac{1}{10}(X_{1}+2X_{2} + 3X_{3} + 4X_{4})$
+
+<br/>
+
++ $\widehat{\theta}_{3} = \dfrac{1}{4}(X_{1} + X_{2} + X_{3} + X_{4})$
+
+
+Como se puede verificar  $\widehat{\theta}_{3}$ es el mejor estimador de los tres, siendo insesgado y eficiente
+
+<br/><br/><br/><br/>
+
 ## **Distribuciones muestrales**
 
 **Principales distribuciones muestrales: 
@@ -820,14 +873,14 @@ Revisar : Canavos(1988) pp.231
 
 ## **Algunos estimadores**
 
-| Parámetro |  Estimador        | Valor esperado        | Varianza            |
-|:---------:|:-----------------:|:---------------------:|:-------------------:|
-| $\theta$  | $\widehat{\theta}$| $E[\widehat{\theta}]$ |$V[\widehat{\theta}]$|
-| $\mu$     | $\bar{x}$         |  $\mu$                | $\displaystyle\frac{\sigma^{2}}{n}$ |
-| $p$       |  $\widehat{p}=\frac{X}{n}$ | $p$ | $\displaystyle\frac{pq}{n}$ |
-|$\sigma^{2}$|$S^{2}=\displaystyle\frac{\displaystyle\sum_{i=1}^{n}(x-\bar{x})^{2}}{n-1}$|$\sigma^{2}$|$\dfrac{2\sigma^{4}}{(n-1)}$ |
-|$\mu_{1}-\mu_{2}$ | $\bar{x}_{1}-\bar{x}_{2}$ | $ \mu_{1}-\mu_{2} $ |$ \dfrac{\sigma^{2}_{1}}{n_{1}}+\dfrac{\sigma^{2}_{2}}{n_{2}}$ |
-|$p_{1}-p_{2}$| $\widehat{p_{1}}-\widehat{p_{2}}$| $p_{1}-p_{2}$|$ \dfrac{p_{1}q_{1}}{n_{1}}+\dfrac{p_{2}q_{2}}{n_{2}}$ |
+| Parámetro         |  Estimador                        | Valor esperado              | Varianza                                             |
+|:-----------------:|:---------------------------------:|:---------------------------:|:-----------------------------------------------------:|
+| $\theta$          | $\widehat{\theta}$                | $E[\widehat{\theta}]$       | $V[\widehat{\theta}]$                                 |
+| $\mu$             | $\bar{x}$                         |  $\mu$                      | $\displaystyle\frac{\sigma^{2}}{n}$                   |
+| $p$               | $\widehat{p}=\frac{X}{n}$         | $p$                         | $\displaystyle\frac{pq}{n}$                           |
+|$\sigma^{2}$       | $S^{2}=\displaystyle\frac{\displaystyle\sum_{i=1}^{n}(x-\bar{x})^{2}}{n-1}$ | $\sigma^{2}$|$\dfrac{2\sigma^{4}}{(n-1)}$ |
+|$\mu_{1}-\mu_{2}$  | $\bar{x}_{1}-\bar{x}_{2}$         | $\mu_{1}-\mu_{2}$         |$\dfrac{\sigma^{2}_{1}}{n_{1}}+\dfrac{\sigma^{2}_{2}}{n_{2}}$ |
+|$p_{1}-p_{2}$      | $\widehat{p_{1}}-\widehat{p_{2}}$ | $p_{1}-p_{2}$               |$\dfrac{p_{1}q_{1}}{n_{1}}+\dfrac{p_{2}q_{2}}{n_{2}}$ |
 
 
 <br/><br/>
@@ -912,8 +965,22 @@ qqnorm(Mx1000) ; qqline(Mx1000, col="red")
 
 Se puede notar la transformación de la distribución de la media a una distribución normal a medida que el tamaño de muestra aumenta
 
-<br/><br/>
+<br/><br/><br/><br/>
 
+### **Relación de las distribiciones muestrales con los principales estimadores muestrales**
+
+| | Parámetro        |  Estimador      |   distribución                               | supuesto                                 |
+|:--:|:----------------:|:---------------:|:--------------------------------------------:|:----------------------------------------:|
+| 1.| $\mu$         |  $\bar{x}$      |  $norm\big(\mu, \dfrac{\sigma^{2}}{n}\big)$  | $X \sim norm(\mu, \sigma^{2})$           |
+|   |               |                 |                                              | $\sigma^{2}$ conocida                    |
+| 2.| $\mu$         |  $\bar{x}$      |  $norm\big(\mu, \dfrac{\sigma^{2}}{n}\big)$  | $X \sim norm(\mu, \sigma^{2})$           |
+|   |               |                 |                         | $\sigma^{2}$ desconocida                                      |
+| 3.| $\mu$         |  $\bar{x}$      |  $norm \big(\mu, \dfrac{\sigma^{2}}{n}\big)$ |  $X \sim$ ? y $n >>$                     |
+| 4.| $p$           |  $\widehat{p}$  |  $norm \big(p, \dfrac{pq}{n}\big)$           |  $n >>$                                  |              
+| 5.| $\sigma^{2}$  |    $S^{2}$      | $\dfrac{(n-1)S^{2}}{\sigma^{2}} \sim \chi^{2}_{v:n-1}$ | $X \sim norm(\mu, \sigma^{2})$ |
+
+
+<br/><br/><br/><br/>
 
 ## **Video** 
 
