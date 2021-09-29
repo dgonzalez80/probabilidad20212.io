@@ -103,7 +103,9 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 [Presentación 1](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_A.pdf)<br/>
 [Presentación 2](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_B.pdf)<br/>
 [Presentación 3](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_C.pdf)<br/>
-[Presentación 4](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_D.pdf)
+[Presentación 4](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_D.pdf)<br/><br/>
+
+[Presentación 5](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_D.pdf)
 
 <br/><br/><br/><br/>
 
