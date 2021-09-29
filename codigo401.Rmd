@@ -12,7 +12,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-
+#install.packages("TeachingSampling")
+library(TeachingSampling)
 library(psych)
 library(summarytools)
 library(gtools)
@@ -363,6 +364,74 @@ cat("Compara los resultados obtenidos con los respectivos valores de la poblacio
 + Si $\dfrac{n}{N}>0.05$, se hacen necesario realizar un ajuste en la varianza:
 
 $$V[\widehat{p}] = \dfrac{pq}{n} \dfrac{(N-n)}{(N-1)}$$
+
+
+
+# **Muestreo**
+
+
+### **Muestreo aleatorio simple**
+
+Para seleccionar una muestra de una variables, supongamos que se distinguen por un Id del 1 al 1000, utilizamos la funcion **sample** para seleccionar la muestra:
+
+```{r}
+x<-seq(1,1000,1)
+sample(x, 20)
+```
+En este caso se ha seleccionado una muestra de tamaño $n=10$ de una población de $N=1000$ unidades. Dato que la población es muy grande es poco probable que un valor salga repetido, por lo que se conoce como muestreo sin repetición.
+
+Es posible realizar un muestreo con repetición en el caso de que la población sea demasiado pequeña (este tipo de muestreos se llaman bootstrap o remuestreo) :
+
+```{r}
+x<-1:10
+sample(x, 20, replace = TRUE)
+```
+
+### **Muestreo sistematico**
+
+```{r}
+N=2000
+a=100
+ids=S.SY(N, a)
+ids
+```
+
+### **Ejemplo**
+
+```{r}
+# se importa base de datos
+library(readr)
+base_muestreo <- read_delim("data/base_muestreo.csv", 
+    delim = ";", escape_double = FALSE, col_types = cols(ID = col_integer()), 
+    trim_ws = TRUE)
+
+head(base_muestreo) # primeras 6 filas de la base
+dim(base_muestreo) # dimension de la base
+```
+
+Para seleccionar una muestra aleatoria  mediante el **muestreo aleatorio simple** de la base utilizamos la función **sample**
+
+```{r}
+# se extre la muestra
+ muestra1=base_muestreo[sample(1:nrow(base_muestreo),50,replace=F),] 
+```
+
+
+
+Ahora si se requiere un muestreo sistemático 
+
+```{r}
+N=180
+n=10
+a=N/n
+ids=S.SY(N, a)
+ids
+base2=base_muestreo[ids,]
+
+base2
+```
+
+Para los casos de los muestreos estratificado y muestreo por conglomerados se utiliza el muestreo aleatorio simple como base. 
 
 
 
