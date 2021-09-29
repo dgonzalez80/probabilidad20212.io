@@ -366,9 +366,11 @@ cat("Compara los resultados obtenidos con los respectivos valores de la poblacio
 $$V[\widehat{p}] = \dfrac{pq}{n} \dfrac{(N-n)}{(N-1)}$$
 
 
+<br/><br/><br/><br/>
 
 # **Muestreo**
 
+<br/><br/>
 
 ### **Muestreo aleatorio simple**
 
@@ -387,7 +389,9 @@ x<-1:10
 sample(x, 20, replace = TRUE)
 ```
 
-### **Muestreo sistematico**
+<br/><br/>
+
+### **Muestreo sistemático**
 
 ```{r}
 N=2000
@@ -395,8 +399,9 @@ a=100
 ids=S.SY(N, a)
 ids
 ```
+<br/><br/>
 
-### **Ejemplo**
+### **Ejemplo muestreo aleatorio simple**
 
 ```{r}
 # se importa base de datos
@@ -416,7 +421,9 @@ Para seleccionar una muestra aleatoria  mediante el **muestreo aleatorio simple*
  muestra1=base_muestreo[sample(1:nrow(base_muestreo),50,replace=F),] 
 ```
 
+<br/><br/>
 
+### **Ejemplo muestreo aleatorio sistemático**
 
 Ahora si se requiere un muestreo sistemático 
 
@@ -430,6 +437,8 @@ base2=base_muestreo[ids,]
 
 base2
 ```
+
+<br/><br/>
 
 Para los casos de los muestreos estratificado y muestreo por conglomerados se utiliza el muestreo aleatorio simple como base. 
 

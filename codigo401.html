@@ -565,7 +565,7 @@ abline(h=20, col=&quot;red&quot;)</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>apply(T123,2,mean)</code></pre>
 <pre><code>##       T1       T2       T3 
-## 19.89787 18.12689 19.93958</code></pre>
+## 20.01685 18.18133 19.99947</code></pre>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="teorema-central-del-límite" class="section level1">
@@ -858,53 +858,57 @@ data.frame(muestra,p)</code></pre>
 <li><p>Si <span class="math inline">\(\dfrac{n}{N}&gt;0.05\)</span>, se hacen necesario realizar un ajuste en la varianza:</p></li>
 </ul>
 <p><span class="math display">\[V[\widehat{p}] = \dfrac{pq}{n} \dfrac{(N-n)}{(N-1)}\]</span></p>
+<p><br/><br/><br/><br/></p>
 </div>
 </div>
 <div id="muestreo" class="section level1">
 <h1><strong>Muestreo</strong></h1>
+<p><br/><br/></p>
 <div id="muestreo-aleatorio-simple" class="section level3">
 <h3><strong>Muestreo aleatorio simple</strong></h3>
 <p>Para seleccionar una muestra de una variables, supongamos que se distinguen por un Id del 1 al 1000, utilizamos la funcion <strong>sample</strong> para seleccionar la muestra:</p>
 <pre class="r"><code>x&lt;-seq(1,1000,1)
 sample(x, 20)</code></pre>
-<pre><code>##  [1] 216 417 993 455  24 388  90 548 116 757 766 951 921 137 252 471 175  79 572
-## [20] 424</code></pre>
+<pre><code>##  [1] 616 618  87 541  35 118 607 843 847 579 867 213 905 677  51 416 675 363 151
+## [20] 557</code></pre>
 <p>En este caso se ha seleccionado una muestra de tamaño <span class="math inline">\(n=10\)</span> de una población de <span class="math inline">\(N=1000\)</span> unidades. Dato que la población es muy grande es poco probable que un valor salga repetido, por lo que se conoce como muestreo sin repetición.</p>
 <p>Es posible realizar un muestreo con repetición en el caso de que la población sea demasiado pequeña (este tipo de muestreos se llaman bootstrap o remuestreo) :</p>
 <pre class="r"><code>x&lt;-1:10
 sample(x, 20, replace = TRUE)</code></pre>
-<pre><code>##  [1]  3  6  7  6  4  9  8  9  8  9  6  2  9  7  6  6 10  1 10  1</code></pre>
+<pre><code>##  [1]  8  9  2 10  2  7  9  6  3  1 10  1 10  3  5  5  8  9  7  9</code></pre>
+<p><br/><br/></p>
 </div>
-<div id="muestreo-sistematico" class="section level3">
-<h3><strong>Muestreo sistematico</strong></h3>
+<div id="muestreo-sistemático" class="section level3">
+<h3><strong>Muestreo sistemático</strong></h3>
 <pre class="r"><code>N=2000
 a=100
 ids=S.SY(N, a)
 ids</code></pre>
 <pre><code>##       [,1]
-##  [1,]   70
-##  [2,]  170
-##  [3,]  270
-##  [4,]  370
-##  [5,]  470
-##  [6,]  570
-##  [7,]  670
-##  [8,]  770
-##  [9,]  870
-## [10,]  970
-## [11,] 1070
-## [12,] 1170
-## [13,] 1270
-## [14,] 1370
-## [15,] 1470
-## [16,] 1570
-## [17,] 1670
-## [18,] 1770
-## [19,] 1870
-## [20,] 1970</code></pre>
+##  [1,]   10
+##  [2,]  110
+##  [3,]  210
+##  [4,]  310
+##  [5,]  410
+##  [6,]  510
+##  [7,]  610
+##  [8,]  710
+##  [9,]  810
+## [10,]  910
+## [11,] 1010
+## [12,] 1110
+## [13,] 1210
+## [14,] 1310
+## [15,] 1410
+## [16,] 1510
+## [17,] 1610
+## [18,] 1710
+## [19,] 1810
+## [20,] 1910</code></pre>
+<p><br/><br/></p>
 </div>
-<div id="ejemplo" class="section level3">
-<h3><strong>Ejemplo</strong></h3>
+<div id="ejemplo-muestreo-aleatorio-simple" class="section level3">
+<h3><strong>Ejemplo muestreo aleatorio simple</strong></h3>
 <pre class="r"><code># se importa base de datos
 library(readr)
 base_muestreo &lt;- read_delim(&quot;data/base_muestreo.csv&quot;, 
@@ -926,6 +930,10 @@ head(base_muestreo) # primeras 6 filas de la base</code></pre>
 <p>Para seleccionar una muestra aleatoria mediante el <strong>muestreo aleatorio simple</strong> de la base utilizamos la función <strong>sample</strong></p>
 <pre class="r"><code># se extre la muestra
  muestra1=base_muestreo[sample(1:nrow(base_muestreo),50,replace=F),] </code></pre>
+<p><br/><br/></p>
+</div>
+<div id="ejemplo-muestreo-aleatorio-sistemático" class="section level3">
+<h3><strong>Ejemplo muestreo aleatorio sistemático</strong></h3>
 <p>Ahora si se requiere un muestreo sistemático</p>
 <pre class="r"><code>N=180
 n=10
@@ -933,32 +941,33 @@ a=N/n
 ids=S.SY(N, a)
 ids</code></pre>
 <pre><code>##       [,1]
-##  [1,]   18
-##  [2,]   36
-##  [3,]   54
-##  [4,]   72
-##  [5,]   90
-##  [6,]  108
-##  [7,]  126
-##  [8,]  144
-##  [9,]  162
-## [10,]  180</code></pre>
+##  [1,]    4
+##  [2,]   22
+##  [3,]   40
+##  [4,]   58
+##  [5,]   76
+##  [6,]   94
+##  [7,]  112
+##  [8,]  130
+##  [9,]  148
+## [10,]  166</code></pre>
 <pre class="r"><code>base2=base_muestreo[ids,]
 
 base2</code></pre>
 <pre><code>## # A tibble: 10 × 3
 ##       ID CAR      NF
 ##    &lt;int&gt; &lt;chr&gt; &lt;dbl&gt;
-##  1    18 MAT     4  
-##  2    36 SIS     3.7
-##  3    54 CIV     2.3
-##  4    72 IND     4.2
-##  5    90 MAT     4  
-##  6   108 BIO     4  
-##  7   126 BIO     1.2
-##  8   144 CIV     2  
-##  9   162 CIV     4.1
-## 10   180 CIV     1.7</code></pre>
+##  1     4 ELE     4.3
+##  2    22 SIS     4.5
+##  3    40 CIV     1.7
+##  4    58 IND     0.7
+##  5    76 BIO     3.4
+##  6    94 MAT     4.2
+##  7   112 IND     3.5
+##  8   130 IND     0.9
+##  9   148 CIV     3  
+## 10   166 CIV     4.1</code></pre>
+<p><br/><br/></p>
 <p>Para los casos de los muestreos estratificado y muestreo por conglomerados se utiliza el muestreo aleatorio simple como base.</p>
 </div>
 </div>
