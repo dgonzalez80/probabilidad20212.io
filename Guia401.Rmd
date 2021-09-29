@@ -616,18 +616,13 @@ Nota: Esta función fue creada por Karl Pearson cientifico inglés (1857-1936) y
 $$f(x)=\frac{1}{2^{(v/2)}\Gamma(v/2)}x^{(v/2)-1}\exp\{-x/2\} ,\hspace{.3cm} x>0$$
 <br/><br/>
 
-
-
-```{r}
-# distribución chicuadrado
-p <- ggdistribution(dchisq, seq(0, 30, 0.1), df = 7, colour = 'blue')
-p <- ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = 'green', p = p)
-     ggdistribution(dchisq, seq(0, 30, 0.1), df = 11, colour = 'red', p = p)
+```{r, echo=FALSE}
+ curve(dchisq(x, df=7), lwd=3, las=1,xlim = c(0,30), ylim=c(0,.13), ylab='Densidad', col="red",axes = FALSE)
+curve(dchisq(x, df=9), lwd=3, las=1,xlim = c(0,30), ylab='Densidad',add = TRUE, col="blue")
+curve(dchisq(x, df=11), lwd=3, las=1,xlim = c(0,30), ylab='Densidad',add = TRUE, col="green")
+abline(h=0)
+grid()
 ```
-
-
-
-
 
 Esta distribución es un caso especial de la distribución Gamma con parámetros $\alpha=\frac{v}{2}$ y $\beta=2$ 
 
@@ -647,9 +642,13 @@ La función de probabilidad de distribución t-student y su represntación gráf
 
 $$f(x)=\frac{\Gamma[(v+1)/2]}{\Gamma[v/2]\sqrt{\pi v}}\Bigg(1+\frac{x^{2}}{v} \Bigg)^{-(v+1)/2}, \hspace{.3cm} -\infty< x<\infty $$
 
-![](img/gt.png){width=60%}
-
-
+```{r, echo=FALSE}
+ curve(dt(x, df=1), lwd=3, las=1,xlim = c(-4,4), ylim=c(0,0.4), ylab='Densidad', col="red",axes = FALSE)
+curve(dt(x, df=5), lwd=3, las=1,xlim = c(-4,4), ylab='Densidad',add = TRUE, col="blue")
+curve(dt(x, df=20), lwd=3, las=1,xlim = c(-4,4), ylab='Densidad',add = TRUE, col="green")
+abline(h=0)
+grid()
+```
 
 La gráfica de la distribución t-student es similar a la de la distribución normal, salvo que sus colas son más pesadas.
 
@@ -681,7 +680,15 @@ Nota: Ronald Aylmer Fisher (1890-1962) cientifico, matemático, estadístico, bi
 $$f(x)=\displaystyle\frac{\Gamma \Bigg[\displaystyle\frac{v_{1}+v_{2}}{2}\Bigg]\Bigg(\displaystyle\frac{v_{1}}{v_{2}}\Bigg)^{v_{1}/2} x^{(v_{1}/2)-1}}{\Gamma \Bigg[\displaystyle\frac{v_{1}}{2}\Bigg] \Gamma \Bigg[\displaystyle\frac{v_{2}}{2}\Bigg]
 \Bigg[\Bigg(\displaystyle\frac{v_{1}}{v_{2}}\Bigg)x+1\Bigg]^{\big(v_{1}+v_{2}\big)/2}}, \hspace{.3cm} x>0 $$
 
-![](img/gf.png){width=50%}
+
+```{r, echo=FALSE}
+ curve(df(x, df1=5, df2=10), lwd=3, las=1,xlim = c(0,5), ylim=c(0,1), ylab='Densidad', col="red",axes = FALSE)
+curve(df(x, df1=10, df2=25), lwd=3, las=1,xlim = c(0,5), ylab='Densidad',add = TRUE, col="blue")
+curve(df(x, df=20, df2=20), lwd=3, las=1,xlim = c(0,5), ylab='Densidad',add = TRUE, col="green")
+abline(h=0)
+grid()
+```
+
 
 <br/><br/>
 
