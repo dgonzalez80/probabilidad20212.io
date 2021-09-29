@@ -413,6 +413,7 @@ base_muestreo <- read_delim("data/base_muestreo.csv",
 head(base_muestreo) # primeras 6 filas de la base
 dim(base_muestreo) # dimension de la base
 ```
+<br/><br/>
 
 Para seleccionar una muestra aleatoria  mediante el **muestreo aleatorio simple** de la base utilizamos la función **sample**
 
