@@ -465,7 +465,7 @@ hchart(casas, "scatter", hcaes(x = precio, y = areaconst, group = mes)) %>%
  ![](img/plotly.png)
 
 
-## **fmsb** 
+## **fmsb - gráficos de radar** 
 
 Paquete para el trabajo en Estadística Medica que se utiliza para la construcción de un diagrama de radar
 
@@ -486,6 +486,39 @@ radarchart(df,
 
 ```
 <br/>
+
+```{r}
+# install.packages("fmsb")
+library(fmsb)
+# matriz de datos
+df2 <- data.frame(rbind(rep(10, 8), rep(0, 8),
+                       matrix(sample(0:10, 24,
+                                     replace = TRUE),
+                              nrow = 3)))
+colnames(df2) <- paste("Var", 1:8)
+# colores de areas
+areas <- c(rgb(1, 0, 0, 0.25),
+           rgb(0, 1, 0, 0.25),
+           rgb(0, 0, 1, 0.25))
+
+radarchart(df2,
+           cglty = 1,       # Tipo de línea del grid
+           cglcol = "gray", # Color líneas grid
+           pcol = 2:4,      # Color para cada línea
+           plwd = 2,        # Ancho para cada línea
+           plty = 1,        # Tipos de línea
+           pfcol = areas)   # Color de las áreas 
+
+legend("topright",
+       legend = paste("Grupo", 1:3),
+       bty = "n", pch = 20, col = areas,
+       text.col = "grey25", pt.cex = 2)
+
+```
+
+
+
+
 Tomado de : https://r-charts.com/es/ranking/radar-chart/
  
  <br/><br/><br/>
