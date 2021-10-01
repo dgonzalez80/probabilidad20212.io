@@ -887,6 +887,12 @@ Revisar : Canavos(1988) pp.231
 
 <br/><br/>
 
+[Practica 005-B](https://javerianacaliedu-my.sharepoint.com/:x:/g/personal/dgonzalez_javerianacali_edu_co/EewQn5ZPZqJFnJCWxmq5E9QBArU4ZmjWndyVYJE-wh9rHQ?e=cxK9c5)
+
+[Practica 005-E](https://javerianacaliedu-my.sharepoint.com/:x:/g/personal/dgonzalez_javerianacali_edu_co/EeC4j33wrR9LsMF3CDlgsVwBqFaMB2mJJHKNpyW3JcNowQ?e=lAfCEI)
+
+<br/><br/><br/><br/>
+
 ## **Algunos estimadores**
 
 | Parámetro         |  Estimador                        | Valor esperado              | Varianza                                             |
