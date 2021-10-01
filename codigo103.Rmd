@@ -465,7 +465,9 @@ hchart(casas, "scatter", hcaes(x = precio, y = areaconst, group = mes)) %>%
  ![](img/plotly.png)
 
 
-## **fmsb - gráficos de radar** 
+## **fmsb** 
+
+### **gráficos de radar** 
 
 Paquete para el trabajo en Estadística Medica que se utiliza para la construcción de un diagrama de radar
 
@@ -515,7 +517,43 @@ legend("topright",
        text.col = "grey25", pt.cex = 2)
 
 ```
+### **gráfico de barras polar**
 
+```{r}
+
+# Import tidyverse to have access to dplyr and ggplot2
+library(tidyverse)
+
+# Create a simple dummy data frame with columns "variable" and "value"
+data <- data.frame(variable = paste("Var", 1:10), 
+                   value = sample(10, replace = TRUE))
+
+
+# Create grafico en coordenadas 
+plot <- ggplot(data,aes(x = variable,y = value,
+                 fill = factor(variable))) +
+          geom_col(width = 1, color = "white") +
+          coord_polar() +                         # vonvierte en grafico circular
+          labs(x = "", y = "",title = "Titulo",   # add titulo, subtitulo, nota
+                             subtitle = "Subtitulo", 
+                             caption = "Nota" ) +
+         theme_minimal() +                     # borra caracteristicas del grafico
+         theme(                                # asigna caracteristicas
+            legend.position = "none",
+            axis.title.x = element_blank(),
+            axis.title.y = element_blank(),
+            axis.ticks = element_blank(),
+            axis.text.y = element_blank(),
+            axis.text.x = element_text(face = "bold"),
+           plot.title = element_text(size = 24, face = "bold"),
+          plot.subtitle = element_text(size = 12))
+
+plot # imprime grafico
+
+
+
+
+```
 
 
 
