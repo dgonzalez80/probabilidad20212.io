@@ -796,17 +796,17 @@ La diferencia presentada en la varianza, se debe a que se trata de una muestra g
 
 $$\sigma^{2}_{_{\bar{X}}} \times \dfrac{(N-n)}{(N-1)} =100 \times \dfrac{(5-2)}{(5-1)}=75$$
 
-$$\text{ {\bf fcpf} :} \dfrac{(N-n)}{(N-1)}$$
+$$\text{fcpf:} \dfrac{(N-n)}{(N-1)}$$
 
 <br/><br/>
 
 **Ejemplo**
 
-Cierto tipo de batería para automóviles dura un promedio de 1110 días con una desviación estandar de 80 días. Si se elegen n=400 de estas baterías de manera aleatoria, encuentre la probabilidad de que el promedio sea mayor a 1120 días y halle el percentil 80 para esta distribución.
-Como $X \sim N(\mu=1110, \sigma^{2}=80^{2})$, utilizando las propiedas verificadas anteriomente podemo afirmar que: $\bar{X} \sim N(\mu=1110, \sigma_{\bar{X}}=80/\sqrt{400})$
+Cierto tipo de batería para automóviles dura un promedio de 1110 días con una desviación estandar de 80 días. Si se eligen n=400 de estas baterías de manera aleatoria, encuentre la probabilidad de que el promedio sea mayor a 1120 días y halle el percentil 80 para esta distribución.
+Como $X \sim N(\mu=1110, \sigma^{2}=80^{2})$, utilizando las propiedades verificadas anteriormente podemos afirmar que: $\bar{X} \sim N(\mu=1110, \sigma_{\bar{X}}=80/\sqrt{400})$
 
 $$\begin{eqnarray*}
-P(X > 1120) &=& P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} > \dfrac{1120-1110}{80/\sqrt{400}}\Bigg)\\
+P(\bar{x} > 1120) &=& P\Bigg(\dfrac{\bar{x}-\mu}{\sigma/\sqrt{n}} > \dfrac{1120-1110}{80/\sqrt{400}}\Bigg)\\
 &=& P(Z > 2.5)\\
 &=& 1-P(Z < 2.5)\\
 &=& 1-0.9938 \\
@@ -817,23 +817,23 @@ P(X > 1120) &=& P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} > \dfrac{1120-1110}{80/\sq
 
 ## **La proporción muestral**
 
-Al igual que en la media podemos realizar la verificacion con la proporción, mediante la utilización de la siguiente población. Supongamos que en una población compuesta por 5 personas (N=5) tres de ellas son profesonales y queremos estudiar $p$ la proporción de profesionales en la muestra. En términos de variable seria: $S_{1}, N_{2}, N_{3}, S_{4}, S_{5}$, con el fin de distinguir las personas colocaremos un subindice. Con esta información podemos calcular los valores poblacionales:
+Al igual que en la media podemos realizar la verificación con la proporción, mediante la utilización de la siguiente población. Supongamos que en una población compuesta por 5 personas ($N=5$) tres de ellas son profesonales y queremos estudiar $p$ la proporción de profesionales en la muestra. En términos de variable seria: $S_{1}, N_{2}, N_{3}, S_{4}, S_{5}$, con el fin de distinguir las personas colocaremos un subindice. Con esta información podemos calcular los valores poblacionales:
 
-$$\mu_{p}=\dfrac{3}{5}=0.6$$
+$$p=\dfrac{3}{5}=0.6$$
 
-$$V[p]=\sigma_{p}=p(1-p)=0.6 \times 0.4 = 0.24$$
+$$pq=p(1-p)=0.6 \times 0.4 = 0.24$$
 
 Podemos obtener la población de proporciones muestrales ($\widehat{p}$) de tamaño $n=2$
 
 <br/><br/>
 
-|  muestra      | $\widehat{p}$ |  muestra    | $\widehat{p}$ |  muestra    |  $\widehat{p}$ |  muestra    | $\widehat{p}$ | muestra     |$\widehat{p}$ |
-|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:--------------:|:-------------:|:-------------:|:-------------:|:------------:|
-|$(S_{1},S_{1})$|$1.0$        |$(N_{3},S_{4})$|$0.5$         |$(S_{1},N_{2})$|$0.5$         |$(N_{3},S_{5})$|$0.5$         |$(S_{1},N_{3})$|$0.5$        |
-|$(S_{4},S_{1})$|$1.0$        |$(S_{1},S_{4})$|$1.0$        |$(S_{4},N_{2})$|$0.5$          |$(S_{1},S_{5})$|$1.0$        |$(S_{4},N_{3})$|$0.5$        | 
-|$(N_{2},S_{1})$|$0.5$        |$(S_{4},S_{4})$|$1.0$         |$(N_{2},N_{2})$|$0.0$         |$(S_{4},S_{5})$|$1.0$         |$(N_{2},N_{3})$|$0.0$        |
-|$(S_{5},S_{1})$|$1.0$        |$(N_{2},S_{4})$|$0.5$        |$(S_{5},N_{2})$|$0.5$          |$(N_{2},S_{5})$|$0.5$        |$(S_{5},N_{3})$|$0.5$        |
-|$(N_{3},S_{1})$|$0.5$        |$(S_{5},S_{4})$|$1.0$         |$(N_{3},N_{2})$|$0.0$         |$(S_{5},S_{5})$|$1.0$         |$(N_{3},N_{3})$|$0.0$        |
+|muestra |$\widehat{p}$ |  muestra|$\widehat{p}$|muestra|$\widehat{p}$|muestra|$\widehat{p}$ | muestra|$\widehat{p}$ |
+|:-------------:|:-----:|:-------------:|:----:|:-------------:|:----:|:-------------:|:----:|:-------------:|------:|
+|$(S_{1},S_{1})$|$1.0$  |$(N_{3},S_{4})$|$0.5$ |$(S_{1},N_{2})$|$0.5$ |$(N_{3},S_{5})$|$0.5$ |$(S_{1},N_{3})$|$0.5$  |
+|$(S_{4},S_{1})$|$1.0$  |$(S_{1},S_{4})$|$1.0$ |$(S_{4},N_{2})$|$0.5$ |$(S_{1},S_{5})$|$1.0$ |$(S_{4},N_{3})$|$0.5$  | 
+|$(N_{2},S_{1})$|$0.5$  |$(S_{4},S_{4})$|$1.0$ |$(N_{2},N_{2})$|$0.0$ |$(S_{4},S_{5})$|$1.0$ |$(N_{2},N_{3})$|$0.0$  |
+|$(S_{5},S_{1})$|$1.0$  |$(N_{2},S_{4})$|$0.5$ |$(S_{5},N_{2})$|$0.5$ |$(N_{2},S_{5})$|$0.5$ |$(S_{5},N_{3})$|$0.5$  | 
+|$(N_{3},S_{1})$|$0.5$  |$(S_{5},S_{4})$|$1.0$ |$(N_{3},N_{2})$|$0.0$ |$(S_{5},S_{5})$|$1.0$ |$(N_{3},N_{3})$|$0.0$  |
 
 <br/><br/>
 
@@ -857,7 +857,7 @@ La proporción de individuos con tipo de sangre Rh positivo es de 85%. Si se tie
 Cuando el tamaño de muestra es grande, la distribución de la proporción se aproxima a una distribución normal con media $p$ y varianza $p(1-p)/n$. De esta manera podemos hallar la probabilidad solicitada:
 
 $$\begin{eqnarray*}
-P(p>0.82) &=& P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} > \dfrac{0.82 - 0.84}{\sqrt{(0.85 \times 0.15)/500}}\Bigg) \\
+P(\widehat{p}>0.82) &=& P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} > \dfrac{0.82 - 0.84}{\sqrt{(0.85 \times 0.15)/500}}\Bigg) \\
 &=& P\big(Z > -1.878 \big) \\
 &=& 1 - P(Z < -1.88)\\
 &=& 1-0.0301
@@ -895,7 +895,7 @@ Revisar : Canavos(1988) pp.231
 
 ## **Algunos estimadores**
 
-| Parámetro         |  Estimador                        | Valor esperado              | Varianza                                             |
+| Parámetro         |  Estimador                        | Valor esperado              | Varianza                                              |
 |:-----------------:|:---------------------------------:|:---------------------------:|:-----------------------------------------------------:|
 | $\theta$          | $\widehat{\theta}$                | $E[\widehat{\theta}]$       | $V[\widehat{\theta}]$                                 |
 | $\mu$             | $\bar{x}$                         |  $\mu$                      | $\displaystyle\frac{\sigma^{2}}{n}$                   |

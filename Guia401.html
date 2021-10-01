@@ -1354,12 +1354,12 @@ V[\bar{X}]&amp;=&amp;V\Bigg[\frac{1}{n} \sum_{i=1}^{n} x_{i}\Bigg] \\
 \end{eqnarray*}\]</span></p>
 <p>La diferencia presentada en la varianza, se debe a que se trata de una muestra grande en relaciona a la población (<span class="math inline">\(\frac{n}{N}=\frac{2}{5}=0.20\)</span>). El haber realizado el muestreo sin repetición cambia la probabilidad del segundo elemento y generando un cambio en la varianza. En este caso se debe corregir el valor obtenido para obtener el valor correcto de la varianza multiplicando la varianza por <strong>fcpf</strong> factor de corrección por población finita</p>
 <p><span class="math display">\[\sigma^{2}_{_{\bar{X}}} \times \dfrac{(N-n)}{(N-1)} =100 \times \dfrac{(5-2)}{(5-1)}=75\]</span></p>
-<p><span class="math display">\[\text{ {\bf fcpf} :} \dfrac{(N-n)}{(N-1)}\]</span></p>
+<p><span class="math display">\[\text{fcpf:} \dfrac{(N-n)}{(N-1)}\]</span></p>
 <p><br/><br/></p>
 <p><strong>Ejemplo</strong></p>
-<p>Cierto tipo de batería para automóviles dura un promedio de 1110 días con una desviación estandar de 80 días. Si se elegen n=400 de estas baterías de manera aleatoria, encuentre la probabilidad de que el promedio sea mayor a 1120 días y halle el percentil 80 para esta distribución. Como <span class="math inline">\(X \sim N(\mu=1110, \sigma^{2}=80^{2})\)</span>, utilizando las propiedas verificadas anteriomente podemo afirmar que: <span class="math inline">\(\bar{X} \sim N(\mu=1110, \sigma_{\bar{X}}=80/\sqrt{400})\)</span></p>
+<p>Cierto tipo de batería para automóviles dura un promedio de 1110 días con una desviación estandar de 80 días. Si se eligen n=400 de estas baterías de manera aleatoria, encuentre la probabilidad de que el promedio sea mayor a 1120 días y halle el percentil 80 para esta distribución. Como <span class="math inline">\(X \sim N(\mu=1110, \sigma^{2}=80^{2})\)</span>, utilizando las propiedades verificadas anteriormente podemos afirmar que: <span class="math inline">\(\bar{X} \sim N(\mu=1110, \sigma_{\bar{X}}=80/\sqrt{400})\)</span></p>
 <p><span class="math display">\[\begin{eqnarray*}
-P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{1120-1110}{80/\sqrt{400}}\Bigg)\\
+P(\bar{x} &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{\bar{x}-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{1120-1110}{80/\sqrt{400}}\Bigg)\\
 &amp;=&amp; P(Z &gt; 2.5)\\
 &amp;=&amp; 1-P(Z &lt; 2.5)\\
 &amp;=&amp; 1-0.9938 \\
@@ -1369,23 +1369,23 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 </div>
 <div id="la-proporción-muestral" class="section level2">
 <h2><strong>La proporción muestral</strong></h2>
-<p>Al igual que en la media podemos realizar la verificacion con la proporción, mediante la utilización de la siguiente población. Supongamos que en una población compuesta por 5 personas (N=5) tres de ellas son profesonales y queremos estudiar <span class="math inline">\(p\)</span> la proporción de profesionales en la muestra. En términos de variable seria: <span class="math inline">\(S_{1}, N_{2}, N_{3}, S_{4}, S_{5}\)</span>, con el fin de distinguir las personas colocaremos un subindice. Con esta información podemos calcular los valores poblacionales:</p>
-<p><span class="math display">\[\mu_{p}=\dfrac{3}{5}=0.6\]</span></p>
-<p><span class="math display">\[V[p]=\sigma_{p}=p(1-p)=0.6 \times 0.4 = 0.24\]</span></p>
+<p>Al igual que en la media podemos realizar la verificación con la proporción, mediante la utilización de la siguiente población. Supongamos que en una población compuesta por 5 personas (<span class="math inline">\(N=5\)</span>) tres de ellas son profesonales y queremos estudiar <span class="math inline">\(p\)</span> la proporción de profesionales en la muestra. En términos de variable seria: <span class="math inline">\(S_{1}, N_{2}, N_{3}, S_{4}, S_{5}\)</span>, con el fin de distinguir las personas colocaremos un subindice. Con esta información podemos calcular los valores poblacionales:</p>
+<p><span class="math display">\[p=\dfrac{3}{5}=0.6\]</span></p>
+<p><span class="math display">\[pq=p(1-p)=0.6 \times 0.4 = 0.24\]</span></p>
 <p>Podemos obtener la población de proporciones muestrales (<span class="math inline">\(\widehat{p}\)</span>) de tamaño <span class="math inline">\(n=2\)</span></p>
 <p><br/><br/></p>
 <table>
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="9%" />
+<col width="14%" />
+<col width="6%" />
+<col width="14%" />
+<col width="5%" />
+<col width="14%" />
+<col width="5%" />
+<col width="14%" />
+<col width="5%" />
+<col width="14%" />
+<col width="6%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1398,7 +1398,7 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 <th align="center">muestra</th>
 <th align="center"><span class="math inline">\(\widehat{p}\)</span></th>
 <th align="center">muestra</th>
-<th align="center"><span class="math inline">\(\widehat{p}\)</span></th>
+<th align="right"><span class="math inline">\(\widehat{p}\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -1412,7 +1412,7 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 <td align="center"><span class="math inline">\((N_{3},S_{5})\)</span></td>
 <td align="center"><span class="math inline">\(0.5\)</span></td>
 <td align="center"><span class="math inline">\((S_{1},N_{3})\)</span></td>
-<td align="center"><span class="math inline">\(0.5\)</span></td>
+<td align="right"><span class="math inline">\(0.5\)</span></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\((S_{4},S_{1})\)</span></td>
@@ -1424,7 +1424,7 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 <td align="center"><span class="math inline">\((S_{1},S_{5})\)</span></td>
 <td align="center"><span class="math inline">\(1.0\)</span></td>
 <td align="center"><span class="math inline">\((S_{4},N_{3})\)</span></td>
-<td align="center"><span class="math inline">\(0.5\)</span></td>
+<td align="right"><span class="math inline">\(0.5\)</span></td>
 </tr>
 <tr class="odd">
 <td align="center"><span class="math inline">\((N_{2},S_{1})\)</span></td>
@@ -1436,7 +1436,7 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 <td align="center"><span class="math inline">\((S_{4},S_{5})\)</span></td>
 <td align="center"><span class="math inline">\(1.0\)</span></td>
 <td align="center"><span class="math inline">\((N_{2},N_{3})\)</span></td>
-<td align="center"><span class="math inline">\(0.0\)</span></td>
+<td align="right"><span class="math inline">\(0.0\)</span></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\((S_{5},S_{1})\)</span></td>
@@ -1448,7 +1448,7 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 <td align="center"><span class="math inline">\((N_{2},S_{5})\)</span></td>
 <td align="center"><span class="math inline">\(0.5\)</span></td>
 <td align="center"><span class="math inline">\((S_{5},N_{3})\)</span></td>
-<td align="center"><span class="math inline">\(0.5\)</span></td>
+<td align="right"><span class="math inline">\(0.5\)</span></td>
 </tr>
 <tr class="odd">
 <td align="center"><span class="math inline">\((N_{3},S_{1})\)</span></td>
@@ -1460,7 +1460,7 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 <td align="center"><span class="math inline">\((S_{5},S_{5})\)</span></td>
 <td align="center"><span class="math inline">\(1.0\)</span></td>
 <td align="center"><span class="math inline">\((N_{3},N_{3})\)</span></td>
-<td align="center"><span class="math inline">\(0.0\)</span></td>
+<td align="right"><span class="math inline">\(0.0\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1475,7 +1475,7 @@ P(X &gt; 1120) &amp;=&amp; P\Bigg(\dfrac{X-\mu}{\sigma/\sqrt{n}} &gt; \dfrac{112
 <p><strong>Ejemplo</strong></p>
 <p>La proporción de individuos con tipo de sangre Rh positivo es de 85%. Si se tiene una muestra de <span class="math inline">\(n=500\)</span> individuos, Encuentre la probabilidad de que la proporción muestral <span class="math inline">\(\widehat{p}\)</span> pase de 82%. Cuando el tamaño de muestra es grande, la distribución de la proporción se aproxima a una distribución normal con media <span class="math inline">\(p\)</span> y varianza <span class="math inline">\(p(1-p)/n\)</span>. De esta manera podemos hallar la probabilidad solicitada:</p>
 <p><span class="math display">\[\begin{eqnarray*}
-P(p&gt;0.82) &amp;=&amp; P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} &gt; \dfrac{0.82 - 0.84}{\sqrt{(0.85 \times 0.15)/500}}\Bigg) \\
+P(\widehat{p}&gt;0.82) &amp;=&amp; P\Bigg(\dfrac{\widehat{p}-p}{(p(1-p)/\sqrt{n}} &gt; \dfrac{0.82 - 0.84}{\sqrt{(0.85 \times 0.15)/500}}\Bigg) \\
 &amp;=&amp; P\big(Z &gt; -1.878 \big) \\
 &amp;=&amp; 1 - P(Z &lt; -1.88)\\
 &amp;=&amp; 1-0.0301
