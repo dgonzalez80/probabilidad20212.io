@@ -428,6 +428,31 @@ fig=ggplot(data = diamonds, aes(x = cut, fill = color)) +
   coord_polar()
 fig
 ```
+```{r}
+# Libraries
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+
+# se crea la base
+data <- data.frame(
+  factor=c( rep("A",50), rep("B",55), rep("B",30), rep("C",20), rep('D',10)),
+  valor=c(rnorm(50,10,18),rnorm(55,13,26),rnorm(30,18,15),rnorm(20, 25,34),rnorm(10,12,10)))
+
+# Plot
+data %>%
+  ggplot( aes(x=factor, y=valor, fill=factor)) +
+    geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6) +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+    ggtitle("Gráfico de cajas con puntos- geom_jitter") +
+    xlab("")
+```
 
 
 
@@ -458,14 +483,77 @@ library(highcharter)
 hchart(casas, "scatter", hcaes(x = precio, y = areaconst, group = mes)) %>%
   hc_title(text = "Precio por área construida") 
 ```
+```{r}
+# paquetes requeridos
+# install.packages("ggplot2")
+library(ggplot2)
+# install.packages("ggbeeswarm")
+library(ggbeeswarm)
 
+# construcción de la data
+y <- round(rnorm(200), 1)
+df <- data.frame(y = y,
+                grupo = sample(c("G1", "G2", "G3"),
+                               size = 200,
+                               replace = TRUE))
+# gráfico 
+ggplot(df, aes(x = grupo, y = y, color = grupo)) +
+  geom_beeswarm(cex = 3)
+```
+
+
+```{r}
+# construccion de la data
+# Datos de muestra
+df <- diamonds[1:100, c("color", "depth")]
+
+# instalacion de paquetes
+# install.packages("ggridges")
+library(ggridges)
+# install.packages("ggplot2")
+library(ggplot2)
+
+# construcción de gráfico
+ggplot(df, aes(x = depth, y = color, fill = color, color = color)) +
+  geom_density_ridges() 
+```
+
+```{r}
+# Datos
+set.seed(3)
+x <- rnorm(100)
+y <- rnorm(150, 1)
+
+# Estimaciones de densidad
+denx <- density(x)
+deny <- density(y)
+
+# Gráfico
+plot(denx,
+     ylim = c(0, max(c(denx$y, deny$y))),
+     xlim = c(min(c(denx$x, deny$x)),
+              max(c(denx$x, deny$x))),
+     las=1, main=" ", xlab=" ")
+lines(deny)
+
+# Colorear las áreas
+polygon(denx, col = rgb(0.78, 0.89, 1, alpha = 0.6))
+polygon(deny, col = rgb(0.41, 0.44, 1, alpha = 0.6))
+```
+
+
+
+Tomado de  : https://r-charts.com/es/distribucion/ggbeeswarm/
 
 ## **plotly**
  
  ![](img/plotly.png)
 
+<br/><br/><br/><br/>
 
 ## **fmsb** 
+
+<br/><br/>
 
 ### **gráficos de radar** 
 
@@ -487,7 +575,7 @@ radarchart(df,
            pfcol = rgb(0, 0.4, 1, 0.25)) 
 
 ```
-<br/>
+<br/><br/>
 
 ```{r}
 # install.packages("fmsb")
@@ -517,7 +605,11 @@ legend("topright",
        text.col = "grey25", pt.cex = 2)
 
 ```
+
+<br/><br/>
+
 ### **gráfico de barras polar**
+
 
 ```{r}
 
@@ -554,6 +646,37 @@ plot # imprime grafico
 
 
 ```
+<br/><br/>
+
+## **calendR**
+
+```{r}
+par(cex=0.3, cex.axis=.5, cex.lab=.5, cex.main=.5, cex.sub=.5)
+# install.packages(calendR)
+library(calendR)
+
+# Datos
+set.seed(2)
+datos <- rnorm(365)
+
+# Vertical calendar
+calendR(year = 2021,
+        special.days = datos,
+        low.col = "#FCFFDD",
+        special.col = "#00AAAE",
+        gradient = TRUE,
+        legend.pos = "none",
+        orientation = "portrait",
+        title.size = 7,  
+        subtitle.size = 5,
+        text.size = 2,
+        weeknames.size = 3,
+        day.size = 2,  # tamaño numero del dia
+        months.size = 6,
+        papersize="A3") # tamaño nombre del mes
+
+```
+
 
 
 
