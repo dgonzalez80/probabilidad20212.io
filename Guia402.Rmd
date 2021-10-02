@@ -424,7 +424,7 @@ Una definicion de grados de libertad encontrada: [¿Qué son los llamados “gra
 
 En el caso de una muestra de tamaño $n$ que se puede representar como ($X_{1}$,$X_{2}$,$X_{3}$,$X_{4}$,$X_{5}$ \docs, $X_{n}$), lo cual está asociado con un espacio de $n$ dimensiones. En el caso de conocer el valor de $\bar{X}$, los grados de libertad se reducen a $n-1$
 
-Como ejemplo supongamos que tenemos una muestras de datos formado por : x_{1},x_{2},x_{3},x_{4},x_{5}. Con media $\mu$. En este caso tendremos $n-1$ grados de libertad dado que conocemos el valor de la media en este caso. Es decir que tendríamos libertad de asignar 4 de los valores de la muestra, dado que el último estaría determinado por el valor de la media.
+Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,$X_{2}$,$X_{3}$,$X_{4}$,$X_{5}$. Con media $\mu$. En este caso tendremos $n-1$ grados de libertad dado que conocemos el valor de la media en este caso. Es decir que tendríamos libertad de asignar 4 de los valores de la muestra, dado que el último estaría determinado por el valor de la media.
 
 <br/><br/><br/><br/>
 
