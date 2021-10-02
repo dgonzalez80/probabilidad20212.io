@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(readr)
-Colombia <- read_csv("data/Colombia.csv")
+Valle <- read_csv("data/VALLE.csv")
 
 ```
 
@@ -56,19 +56,19 @@ for(i in 1:100) {
 
 Intervalo de confianza para una media 
 
-Como ejemplo se estima un IC para la edad de las personas contagiadas de covid en Colombia, para una muestra de n=1000
+Como ejemplo se estima un IC para la edad de las personas contagiadas de covid en Valle, para una muestra de n=1000
 
 ```{r}
-Muestra= Colombia[sample(1:nrow(Colombia),1000,replace=F),]
+Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t.test(Muestra$edad,conf.level = 0.95)$conf.int
 ```
 
 Intervalo de confianza para una proporción 
 
-Como ejemplo se estima un intervalo de confianza para una muestra de tamaño 1000 para la proporción de fallecidos por covid en Colombia
+Como ejemplo se estima un intervalo de confianza para una muestra de tamaño 1000 para la proporción de fallecidos por covid en el Valle
 
 ```{r}
-Muestra= Colombia[sample(1:nrow(Colombia),1000,replace=F),]
+Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(t1[1],1000, conf.level = 0.95)$conf.int
 
@@ -76,13 +76,13 @@ prop.test(t1[1],1000, conf.level = 0.95)$conf.int
 
 Intervalo de confianza para la comparación de varianzas
 
-Como ejemplo se toman dos muestras de las edades para las personas contagiadas por covid 
+Como ejemplo se toman dos muestras de las edades para las personas contagiadas por covid en el Valle
 
 ```{r}
-Colombia1= Colombia[Colombia$sexo=="f",]
-Colombia2= Colombia[Colombia$sexo=="m",]
-datax=Colombia1[sample(1:nrow(Colombia1),100,replace=F),]
-datay=Colombia2[sample(1:nrow(Colombia2),100,replace=F),]
+Valle1= Valle[Valle$sexo=="f",]
+Valle2= Valle[Valle$sexo=="m",]
+datax=Valle1[sample(1:nrow(Valle1),100,replace=F),]
+datay=Valle2[sample(1:nrow(Valle2),100,replace=F),]
 
 var.test(datax$edad, datay$edad)$conf.int 
 ```
@@ -116,7 +116,7 @@ Comparación de proporciones
 Para el ejemplo se toma una muestra de tamaño 1000 y se compara las proporciones de personas contagiadas y con estado grave y con estado moderado
 
 ```{r}
-Muestra= Colombia[sample(1:nrow(Colombia),1000,replace=F),]
+Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(c(t1[2],t1[3]),c(1000,1000), conf.level = 0.95)$conf.int
 ```

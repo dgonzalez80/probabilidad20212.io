@@ -487,6 +487,9 @@ div.tocify {
     <li>
       <a href="codigo401.html">Código u4.1</a>
     </li>
+    <li>
+      <a href="codigo402.html">Código u4.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -595,38 +598,46 @@ data(cars)  # data set cars</code></pre>
 ##  Mean   :15.4   Mean   : 42.98  
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
-<pre><code>##  fecha_reporte_web  id_de_caso        fecha_de_notificaci_n departamento       departamento_nom   ciudad_municipio  
-##  Min.   :NA        Length:4901163     Min.   :NA            Length:4901163     Length:4901163     Length:4901163    
-##  1st Qu.:NA        Class :character   1st Qu.:NA            Class :character   Class :character   Class :character  
-##  Median :NA        Mode  :character   Median :NA            Mode  :character   Mode  :character   Mode  :character  
-##  Mean   :NA                           Mean   :NA                                                                    
-##  3rd Qu.:NA                           3rd Qu.:NA                                                                    
-##  Max.   :NA                           Max.   :NA                                                                    
-##  NA&#39;s   :4901163                      NA&#39;s   :4901163                                                               
-##  ciudad_municipio_nom      edad        unidad_medida          sexo           fuente_tipo_contagio  ubicacion        
-##  Length:4901163       Min.   :  1.00   Length:4901163     Length:4901163     Length:4901163       Length:4901163    
-##  Class :character     1st Qu.: 27.00   Class :character   Class :character   Class :character     Class :character  
-##  Mode  :character     Median : 37.00   Mode  :character   Mode  :character   Mode  :character     Mode  :character  
-##                       Mean   : 39.53                                                                                
-##                       3rd Qu.: 52.00                                                                                
-##                       Max.   :114.00                                                                                
-##                                                                                                                     
-##     estado          pais_viajo_1_cod   pais_viajo_1_nom    recuperado        fecha_inicio_sintomas fecha_diagnostico
-##  Length:4901163     Length:4901163     Length:4901163     Length:4901163     Min.   :NA            Min.   :NA       
-##  Class :character   Class :character   Class :character   Class :character   1st Qu.:NA            1st Qu.:NA       
-##  Mode  :character   Mode  :character   Mode  :character   Mode  :character   Median :NA            Median :NA       
-##                                                                              Mean   :NA            Mean   :NA       
-##                                                                              3rd Qu.:NA            3rd Qu.:NA       
-##                                                                              Max.   :NA            Max.   :NA       
-##                                                                              NA&#39;s   :4901163       NA&#39;s   :4901163  
-##  fecha_recuperado  tipo_recuperacion    per_etn_          nom_grupo_         fecha_muerte     confirmados          fallecidos   
-##  Min.   :NA        Length:4901163     Length:4901163     Length:4901163     Min.   :NA        Length:4901163     Min.   :0.000  
-##  1st Qu.:NA        Class :character   Class :character   Class :character   1st Qu.:NA        Class :character   1st Qu.:0.000  
-##  Median :NA        Mode  :character   Mode  :character   Mode  :character   Median :NA        Mode  :character   Median :0.000  
-##  Mean   :NA                                                                 Mean   :NA                           Mean   :0.026  
-##  3rd Qu.:NA                                                                 3rd Qu.:NA                           3rd Qu.:0.000  
-##  Max.   :NA                                                                 Max.   :NA                           Max.   :1.000  
-##  NA&#39;s   :4901163                                                            NA&#39;s   :4901163                      NA&#39;s   :17338</code></pre>
+<pre><code>##   id_de_caso        ciudad_municipio_nom fecha_inicio_sintomas confirmados        fecha_de_notificaci_n
+##  Length:4957277     Length:4957277       Min.   :2020-02-27    Length:4957277     Min.   :2020-03-02   
+##  Class :character   Class :character     1st Qu.:2020-11-04    Class :character   1st Qu.:2020-11-12   
+##  Mode  :character   Mode  :character     Median :2021-03-20    Mode  :character   Median :2021-03-30   
+##                                          Mean   :2021-02-10                       Mean   :2021-02-17   
+##                                          3rd Qu.:2021-05-29                       3rd Qu.:2021-06-04   
+##                                          Max.   :2021-09-29                       Max.   :2021-09-29   
+##                                          NA&#39;s   :483805                                                
+##  fecha_diagnostico     fecha_muerte        fecha_reporte_web    departamento       departamento_nom  
+##  Min.   :2020-03-06   Min.   :2020-03-07   Min.   :2020-03-06   Length:4957277     Length:4957277    
+##  1st Qu.:2020-11-18   1st Qu.:2020-11-04   1st Qu.:2020-11-21   Class :character   Class :character  
+##  Median :2021-04-04   Median :2021-03-23   Median :2021-04-07   Mode  :character   Mode  :character  
+##  Mean   :2021-02-21   Mean   :2021-02-17   Mean   :2021-02-25                                        
+##  3rd Qu.:2021-06-09   3rd Qu.:2021-06-08   3rd Qu.:2021-06-12                                        
+##  Max.   :2021-09-30   Max.   :2021-09-30   Max.   :2021-09-30                                        
+##  NA&#39;s   :4106         NA&#39;s   :4812297                                                                
+##  ciudad_municipio       edad           unidad_medida          sexo           fuente_tipo_contagio
+##  Length:4957277     Length:4957277     Length:4957277     Length:4957277     Length:4957277      
+##  Class :character   Class :character   Class :character   Class :character   Class :character    
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character   Mode  :character    
+##                                                                                                  
+##                                                                                                  
+##                                                                                                  
+##                                                                                                  
+##   ubicacion            estado          pais_viajo_1_cod   pais_viajo_1_nom    recuperado       
+##  Length:4957277     Length:4957277     Length:4957277     Length:4957277     Length:4957277    
+##  Class :character   Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##                                                                                                
+##                                                                                                
+##                                                                                                
+##                                                                                                
+##  fecha_recuperado     tipo_recuperacion    per_etn_          nom_grupo_       
+##  Min.   :2020-03-13   Length:4957277     Length:4957277     Length:4957277    
+##  1st Qu.:2020-12-07   Class :character   Class :character   Class :character  
+##  Median :2021-04-18   Mode  :character   Mode  :character   Mode  :character  
+##  Mean   :2021-03-09                                                           
+##  3rd Qu.:2021-06-19                                                           
+##  Max.   :2021-09-30                                                           
+##  NA&#39;s   :157700</code></pre>
 <p>Por otro lado la función <em>View()</em> permite visualizar la base en una ventana de manera separada</p>
 <pre class="r"><code>View(Colombia)  </code></pre>
 <pre class="r"><code>View(iris</code></pre>
@@ -651,8 +662,8 @@ data(cars)  # data set cars</code></pre>
 <p>Para realizar una revisión de una variable cualitativa utilizamos la función <em>table()</em>, la cual construye una tabla de frecuencias</p>
 <pre class="r"><code>table(Colombia$ubicacion)</code></pre>
 <pre><code>## 
-##         casa    fallecido     hospital hospital uci 
-##      4740572       124648        16317         2288</code></pre>
+##         casa         Casa         CASA    Fallecido     Hospital Hospital UCI          N/A 
+##        15742      4787609            7       126299         7950          993        18677</code></pre>
 <p>Observemos aparecen valores diferentes para una sola categoría de la variable:</p>
 <ul>
 <li>casa<br />
@@ -685,17 +696,17 @@ library(tidyverse)</code></pre>
 <p>Para verificar los arreglo volvemos a construir la tabla</p>
 <pre class="r"><code>table(Colombia$ubicacion)</code></pre>
 <pre><code>## 
-##         casa    fallecido     hospital hospital uci 
-##      4740572       124648        16317         2288</code></pre>
+##         casa    fallecido     hospital hospital uci          n/a 
+##      4803358       126299         7950          993        18677</code></pre>
 <p>Después de esto realizamos en cambio de <em>n/a</em> por <em>NA</em></p>
 <pre class="r"><code>Colombia$ubicacion[Colombia$ubicacion==&quot;n/a&quot;]=NA
 table(Colombia$ubicacion)</code></pre>
 <pre><code>## 
 ##         casa    fallecido     hospital hospital uci 
-##      4740572       124648        16317         2288</code></pre>
+##      4803358       126299         7950          993</code></pre>
 <p>Otro problema que presenta la base de datos es que la variable edad es en formato <em>chr</em> y debería ser numérica. Para cambiar el formato utilizamos la función <em>as.numeric()</em> y la guardamos en la misma variable</p>
 <pre class="r"><code>class(Colombia$edad)</code></pre>
-<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
 <pre class="r"><code>Colombia$edad=as.integer(Colombia$edad)
 class(Colombia$edad)</code></pre>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
@@ -709,15 +720,15 @@ Colombia$recuperado[Colombia$recuperado==&quot;n/a&quot;]=NA</code></pre>
 <pre class="r"><code>table(Colombia$sexo)</code></pre>
 <pre><code>## 
 ##       f       m 
-## 2572481 2328682</code></pre>
+## 2602214 2355063</code></pre>
 <pre class="r"><code>table(Colombia$estado)</code></pre>
 <pre><code>## 
 ## fallecido     grave      leve  moderado 
-##    124648      2288   4740572     16317</code></pre>
+##    126299       993   4803358      7950</code></pre>
 <pre class="r"><code>table(Colombia$recuperado)</code></pre>
 <pre><code>## 
 ##     activo  fallecido recuperado 
-##      29902     124648    4731933</code></pre>
+##      15647     126299    4799576</code></pre>
 <p>Finalmente convertimos todas las variables fecha en formado date</p>
 <pre class="r"><code>Colombia$fecha_reporte_web=lubridate::dmy(Colombia$fecha_reporte_web)
 Colombia$fecha_de_notificaci_n=lubridate::dmy(Colombia$fecha_de_notificaci_n)

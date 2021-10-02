@@ -487,6 +487,9 @@ div.tocify {
     <li>
       <a href="codigo401.html">Código u4.1</a>
     </li>
+    <li>
+      <a href="codigo402.html">Código u4.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -559,17 +562,17 @@ barplot(table(suma), las=1,cex.axis=0.7)</code></pre>
 <p><img src="codigo201_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>data.frame(prop.table(table(suma)))</code></pre>
 <pre><code>##    suma       Freq
-## 1     2 0.02777330
-## 2     3 0.05559795
-## 3     4 0.08338310
-## 4     5 0.11113305
-## 5     6 0.13882550
-## 6     7 0.16661890
-## 7     8 0.13905100
-## 8     9 0.11108150
-## 9    10 0.08325140
-## 10   11 0.05547065
-## 11   12 0.02781365</code></pre>
+## 1     2 0.02780310
+## 2     3 0.05550165
+## 3     4 0.08334300
+## 4     5 0.11110030
+## 5     6 0.13892055
+## 6     7 0.16658150
+## 7     8 0.13894795
+## 8     9 0.11108045
+## 9    10 0.08344885
+## 10   11 0.05550840
+## 11   12 0.02776425</code></pre>
 <p>Procedimiento alternativo</p>
 <pre class="r"><code>t=sapply(1:200000, function(x){sum(sample(1:6,2,rep=T))})
 barplot(table(t), las=1, cex.axis=0.7)</code></pre>
@@ -580,10 +583,10 @@ barplot(table(t), las=1, cex.axis=0.7)</code></pre>
 <p>Simulación de urna con: 3 bolas Blancas, 5 Rojas y 4 Azules</p>
 <p>1 representa las bolas blancas 2 representa las bolas rojas 3 representa las bolas azules</p>
 <pre class="r"><code>sample(c(1,2,3),2,rep=T,prob=c(3,5,4))</code></pre>
-<pre><code>## [1] 2 3</code></pre>
+<pre><code>## [1] 2 2</code></pre>
 <p>La misma simulación con palabras</p>
 <pre class="r"><code>sample(c(&quot;Blanca&quot;,&quot;Roja&quot;,&quot;Azul&quot;),2,rep=T,prob=c(3,5,4))</code></pre>
-<pre><code>## [1] &quot;Roja&quot; &quot;Azul&quot;</code></pre>
+<pre><code>## [1] &quot;Roja&quot; &quot;Roja&quot;</code></pre>
 </div>
 </div>
 <div id="tablas-de-contingencia" class="section level1">
@@ -633,20 +636,20 @@ t21=table(Colombia$ubicacion, Colombia$estado)
 (t22=addmargins(t21))</code></pre>
 <pre><code>##               
 ##                fallecido   grave    leve moderado     Sum
-##   casa                 0       0 4740572        0 4740572
-##   fallecido       124648       0       0        0  124648
-##   hospital             0       0       0    16317   16317
-##   hospital uci         0    2288       0        0    2288
-##   Sum             124648    2288 4740572    16317 4883825</code></pre>
+##   casa                 0       0 4803358        0 4803358
+##   fallecido       126299       0       0        0  126299
+##   hospital             0       0       0     7950    7950
+##   hospital uci         0     993       0        0     993
+##   Sum             126299     993 4803358     7950 4938600</code></pre>
 <p>La tabla de frecuencias la convertimos en tabla de probabilidades</p>
 <pre class="r"><code>t23=prop.table(t21)
 round(t23, 4)</code></pre>
 <pre><code>##               
 ##                fallecido  grave   leve moderado
-##   casa            0.0000 0.0000 0.9707   0.0000
-##   fallecido       0.0255 0.0000 0.0000   0.0000
-##   hospital        0.0000 0.0000 0.0000   0.0033
-##   hospital uci    0.0000 0.0005 0.0000   0.0000</code></pre>
+##   casa            0.0000 0.0000 0.9726   0.0000
+##   fallecido       0.0256 0.0000 0.0000   0.0000
+##   hospital        0.0000 0.0000 0.0000   0.0016
+##   hospital uci    0.0000 0.0002 0.0000   0.0000</code></pre>
 </div>
 </div>
 </div>
