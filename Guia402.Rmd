@@ -430,7 +430,7 @@ Este valor se integra al concepto de intervalo de confianza mediante el término
 | 7 |              | $(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2} \hspace{.2cm}s_{p} \sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}$ | Grupos independientes,$X_{1}\sim norm(\mu_{1}, \sigma^{2}_{1})$,$X_{2}\sim norm(\mu_{2}, \sigma^{2}_{2})$, varianzas iguales|
 | |                 | donde $s_{p}^{2}=\dfrac{(n_{1}-1)s_{1}^{2}+(n_{2}-1)s_{2}^{2}}{n_{1}+n_{2}-2}$ y $v=n_{1}+n_{2}-2$ | |
 | 8 |              |$(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2, v^{*}} \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}$ |Grupos independientes,$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}$, varianzas diferentes |
-| ||$v^{*}=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}$||
+| ||donde $v^{*}=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}$||
 | 9 | $p_{1}-p_{2}$|$(\widehat{p_{1}}-\widehat{p_{2}})\pm z_{\alpha/2} \sqrt{\dfrac{\widehat{p_{1}}(1-\widehat{p_{1}})}{n_{1}}+\dfrac{\widehat{p_{2}}(1-\widehat{p_{2}})}{n_{2}}}$|$n_{1}>>$, $n_{2}>>$|
 |10 | $\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}$ |$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}; s^{2}_{1}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{2}v_{1})}\Bigg)$|$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}$| 
 
@@ -453,5 +453,5 @@ Este valor se integra al concepto de intervalo de confianza mediante el término
 |                  | `t.test(datos1 datos2, var.equal=T)`           |
 |                  | `t.test(datos1 datos2, var.equal=F)`           |
 |$p_{1} − p_{2}$   | `prop.text(c(x1,x2), c(n1,n2))`                |
-|$\frac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)`  |
+|$\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)`  |
 
