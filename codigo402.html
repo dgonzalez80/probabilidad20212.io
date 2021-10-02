@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="dgonzalez80" />
+<meta name="author" content="dgonzalez" />
 
 
-<title>Actividad 332</title>
+<title>Código 8</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -487,9 +487,6 @@ div.tocify {
     <li>
       <a href="codigo401.html">Código u4.1</a>
     </li>
-    <li>
-      <a href="codigo402.html">Código u4.2</a>
-    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -527,69 +524,44 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Actividad 332</strong></h1>
-<h4 class="author">dgonzalez80</h4>
+<h1 class="title toc-ignore">Código 8</h1>
+<h3 class="subtitle">Módulo 4- Unidad 4.2</h3>
+<h4 class="author">dgonzalez</h4>
 
 </div>
 
 
-<div id="simulación" class="section level1">
-<h1><strong>Simulación</strong></h1>
-<p>De manera individual deberá seleccionar uno de los siguientes problemas para ser resuelto con ayuda computacional. En un archivo pdf se deberán responder los interrogantes solicitados, adjuntado el código empleado.</p>
-<p><br/><br/></p>
-<div id="ejercicio-1" class="section level2">
-<h2><strong>Ejercicio 1</strong></h2>
-<p>Un cable está compuesto por seis alambres. La fuerza de ruptura de cada alambre es una variable aleatoria distribuida normalmente con media de <span class="math inline">\(10 kN\)</span> y desviación estándar de <span class="math inline">\(1 kN\)</span> (<span class="math inline">\(kN\)</span>=kiloNewton=<span class="math inline">\(10^{3}N\)</span>). Utilizando el método de cable quebradizo, se estima que la fuerza del cable es igual a la fuerza de alambre más frágil multiplicada por el número de alambres.</p>
-<p><img src="img/cable.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Utilice una muestra simulada de tamaño 1000 para estimar la fuerza media de este tipo de cable.</p></li>
-<li><p>Estime la mediana de la fuerza del cable.</p></li>
-<li><p>Estime la desviación estándar de la fuerza del cable.</p></li>
-<li><p>Para que sea aceptable en cierta obra, la probabilidad de que el cable se rompa con una carga de <span class="math inline">\(70 kN\)</span> debe ser menor a <span class="math inline">\(0.01\)</span>. ¿Parece ser que el cable es aceptable? Explique.</p></li>
-</ol>
-<p><br/><br/><br/><br/></p>
-</div>
-<div id="ejercicio-2" class="section level2">
-<h2><strong>Ejercicio 2</strong></h2>
-<p>Estimación del valor de <span class="math inline">\(\pi\)</span> . LA siguiente figura sugiere como estimar el valor de <span class="math inline">\(\pi\)</span> con una simulación. En la figura, un circuíto con un áreaigual a <span class="math inline">\(\pi/4\)</span>, está inscrito en un cuadrado cuya área es igual a 1. Se elige de forma aleatoria 100 puntos dentro del cuadrado . La probabilidad de que un punto esté dentro del círculo es igual a la pracción del área del cuadrado que abarca a este, la cual es <span class="math inline">\(\pi/4\)</span>. Por tanto, se puede estimar el valor de <span class="math inline">\(\pi/4\)</span> al contar el número de puntos dentro del círculo, que es 79 para obtener la estimación de <span class="math inline">\(\pi/4 \approx 0.76\)</span> . De este último resultado se concluye que <span class="math inline">\(\pi \approx 4(0.79) =3.14\)</span> . Este ejercicio presenta un experimento de simulación que fue diseñado para estimar el valor de <span class="math inline">\(\pi\)</span> al generar 1000 puntos en el cuadrado.</p>
-<p><img src="img/fig_pi.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Genere 1000 coordenadas <span class="math inline">\(x\)</span>: <span class="math inline">\(X_{1}\)</span>, . . . , <span class="math inline">\(X_{1000}\)</span>. Utilice la distribución uniforme con valor mínimo de <span class="math inline">\(0\)</span> y valor máximo de <span class="math inline">\(1\)</span>. La distribución uniforme genera variables aleatorias que tienen la misma probabilidad de venir de cualquier parte del intervalo <span class="math inline">\((0, 1)\)</span>.</p></li>
-<li><p>Genere <span class="math inline">\(1000\)</span> coordenadas <span class="math inline">\(y\)</span> : <span class="math inline">\(Y_{1}, . . . , Y_{1000}\)</span>, utilizando nuevamente la distribución uniforme con valor mínimo de <span class="math inline">\(0\)</span> y valor máximo de <span class="math inline">\(1\)</span>.</p></li>
-<li><p>Cada punto <span class="math inline">\((X_{i},Y_{i})\)</span> se encuentra dentro del círculo si su distancia desde el centro <span class="math inline">\((0.5, 0.5)\)</span> es menor a <span class="math inline">\(0.5\)</span>. Para cada par <span class="math inline">\((X_{i},Y_{i})\)</span> determine si la distancia desde el centro es menor a <span class="math inline">\(0.5\)</span>. Esto último se puede realizar al calcular el valor <span class="math inline">\((X_{i}-0.5)^{2}+(Y_{i}-0.5)^{2}\)</span>, que es el cuadrado de la distancia, y al determinar si es menor que <span class="math inline">\(0.25\)</span>.</p></li>
-<li><p>¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su estimación de <span class="math inline">\(\pi\)</span>? (Nota: Con sólo 1000 puntos, es probable que su estimación sea inferior por 0.05 o más. Una simulación con 10000 y 100000 puntos tiene mayores probabilidades de dar como resultado una estimación muy cercana al valor verdadero</p></li>
-</ol>
-<p><br/><br/><br/><br/></p>
-</div>
-<div id="ejercicio-3" class="section level2">
-<h2><strong>Ejercicio 3</strong></h2>
-<p>Tres sistemas están compuestos por los componentes <span class="math inline">\(R1\)</span>,<span class="math inline">\(R2\)</span>,<span class="math inline">\(R3\)</span> y <span class="math inline">\(R4\)</span> conectados, como lo muestra las siguientes figuras. El tiempo de vida en meses de los componentes <span class="math inline">\(R1\)</span> y <span class="math inline">\(R3\)</span> sigue una distribución lognormal con <span class="math inline">\(\mu=1\)</span> y <span class="math inline">\(\sigma=0.5\)</span> y la distribución en meses de los componentes <span class="math inline">\(R2\)</span> y <span class="math inline">\(R4\)</span> una distribución lognormal con <span class="math inline">\(\mu=2\)</span> y <span class="math inline">\(\sigma=1\)</span>. El sistema solo funciona si A y B lo hacen.</p>
-<p><img src="img/circuitos.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Genere por simulación un gran número (al menos <span class="math inline">\(1000\)</span>) de los tiempos de vida de los sistemas</p></li>
-<li><p>Estime la media del tiempo de vida para cada sistema.</p></li>
-<li><p>Estime la probabilidad de que los sistemas fallen en un tiempo inferior a dos meses.</p></li>
-<li><p>Estime el <span class="math inline">\(20^{o}\)</span> percentil (<span class="math inline">\(P_{20}\)</span>) de los tiempos de vida del primer sistema .</p></li>
-<li><p>Construya una gráfica de probabilidad normal de los tiempo de vida para cada sistema. ¿Los tiempos de vida de los sistemas tienen una distribución aproximadamente normal?</p></li>
-<li><p>Construya un histograma de los tiempos de vida de los sistemas. ¿Están sesgados a la izquierda, sesgados a la derecha, o son aproximadamente simétricos?</p></li>
-</ol>
-<p><br/><br/><br/><br/></p>
-</div>
-<div id="ejercicio-4" class="section level2">
-<h2><strong>Ejercicio 4</strong></h2>
-<p>La edad de una antigua pieza de materia orgánica se puede estimar a partir de la tasa a la que emite partículas beta como resultado del decaimiento del carbono-14. Por ejemplo , si X es el número de partículas emitidas durante diez minutos por un fragmento óseo con 10000 años de antigüedad que contiene 1 g de carbono, entonces X tiene una distribución de Poisson con media <span class="math inline">\(\lambda=45.62\)</span> . Un arqueólogo descubrió un pequeño fragmento óseo que contiene 1 g de carbono. Si t es la edad desconocida del hueso, en años, el arqueólogo contar{a el número X de partículas emitidas en diez minutos y calculará una edad estimada <span class="math inline">\(\widehat{t}\)</span> con la fórmula:</p>
-<p><span class="math display">\[\widehat{t}=\dfrac{\ln 15.3 - \ln (X/10)}{0.0001210} \]</span></p>
-<p>El arqueólogo no lo sabe, pero el hueso tiene exactamente <span class="math inline">\(100000\)</span> años de antiguedad, por lo que <span class="math inline">\(X\)</span> tiene una distribución de Poisson con <span class="math inline">\(\lambda=45.62\)</span>.</p>
-<p><img src="img/piezas.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Genere una muestra simulada de 10000 valores de <span class="math inline">\(X\)</span> y sus correspondientes valores de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
-<li><p>Estime la media de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
-<li><p>Estime la desviación estándar de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
-<li><p>Estime la probabilidad de que <span class="math inline">\(\widehat{t}\)</span> esté a 1000 años con una edad real de 10000 años.</p></li>
-</ol>
-<p><br/><br/></p>
-<p>Ejercicios tomados de Navidi(2006)</p>
-</div>
+<div id="simulación-confianza" class="section level2">
+<h2><strong>Simulación confianza</strong></h2>
+<pre class="r"><code>m= 100 ## número de experimentos
+n=100 ## tamaño de muestra
+mux=100 # media poblacion 
+sdx=20  # desviacion poblacion
+a=0.05
+x=rnorm(n*m, mux, sdx)
+muestras=matrix(x, nrow = m)
+
+icm=function(xx){
+  mxx=mean(xx)
+  sdxx=sd(xx)
+  p=1-a/2
+  lsxx=mxx+pnorm(p)*sdxx/sqrt(n)
+  lixx=mxx-pnorm(p)*sdxx/sqrt(n)
+  return(c(lixx,lsxx))
+}
+
+ICa=apply(muestras, 1,icm)
+
+plot(1:100, type = &quot;n&quot;,
+     xlim = range(ICa),
+     ylab = &quot;Muestreos&quot;, 
+     las=1, 
+     xlab=&quot; &quot;)
+abline(v = mux, lty = 2) ## la media poblacional.
+for(i in 1:100) {
+  segments(ICa[1,i], i, ICa[2,i], i)
+}</code></pre>
+<p><img src="codigo402_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 
 

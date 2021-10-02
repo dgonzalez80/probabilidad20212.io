@@ -84,7 +84,9 @@ navbar:
         - text: "Simulación"
           href: simulacion.html
         - text: "Código u4.1"
-          href: codigo401.html          
+          href: codigo401.html   
+        - text: "Código u4.2"
+          href: codigo402.html 
     - text: "Actividades"
       icon: fa-chess-pawn
       menu: 

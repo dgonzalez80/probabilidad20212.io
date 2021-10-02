@@ -1,0 +1,128 @@
+---
+title: "Código 8"
+author: "dgonzalez "
+subtitle: "Módulo 4- Unidad 4.2" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+Colombia <- read_csv("data/Colombia.csv")
+
+```
+
+## **Simulación confianza**
+
+```{r}
+m= 100 ## número de experimentos
+n=100 ## tamaño de muestra
+mux=100 # media poblacion 
+sdx=20  # desviacion poblacion
+a=0.05
+x=rnorm(n*m, mux, sdx)
+muestras=matrix(x, nrow = m)
+
+icm=function(xx){
+  mxx=mean(xx)
+  sdxx=sd(xx)
+  p=1-a/2
+  lsxx=mxx+pnorm(p)*sdxx/sqrt(n)
+  lixx=mxx-pnorm(p)*sdxx/sqrt(n)
+  return(c(lixx,lsxx))
+}
+
+ICa=apply(muestras, 1,icm)
+
+plot(1:100, type = "n",
+     xlim = range(ICa),
+     ylab = "Muestreos", 
+     las=1, 
+     xlab=" ")
+abline(v = mux, lty = 2) ## la media poblacional.
+for(i in 1:100) {
+  segments(ICa[1,i], i, ICa[2,i], i)
+}
+
+```
+
+
+## **Estimaciones**
+
+Intervalo de confianza para una media 
+
+Como ejemplo se estima un IC para la edad de las personas contagiadas de covid en Colombia, para una muestra de n=1000
+
+```{r}
+Muestra= Colombia[sample(1:nrow(Colombia),1000,replace=F),]
+t.test(Muestra$edad,conf.level = 0.95)$conf.int
+```
+
+Intervalo de confianza para una proporción 
+
+Como ejemplo se estima un intervalo de confianza para una muestra de tamaño 1000 para la proporción de fallecidos por covid en Colombia
+
+```{r}
+Muestra= Colombia[sample(1:nrow(Colombia),1000,replace=F),]
+t1=table(Muestra$estado)
+prop.test(t1[1],1000, conf.level = 0.95)$conf.int
+
+```
+
+Intervalo de confianza para la comparación de varianzas
+
+Como ejemplo se toman dos muestras de las edades para las personas contagiadas por covid 
+
+```{r}
+Colombia1= Colombia[Colombia$sexo=="f",]
+Colombia2= Colombia[Colombia$sexo=="m",]
+datax=Colombia1[sample(1:nrow(Colombia1),100,replace=F),]
+datay=Colombia2[sample(1:nrow(Colombia2),100,replace=F),]
+
+var.test(datax$edad, datay$edad)$conf.int 
+```
+
+Intervalo de confianza para la comparación de medias grupos independientes, varianzas iguales
+
+Como ejemplo se toman dos muestras para comparar la edad de las personas contagiadas por covid en dos grupos independientes
+
+
+```{r}
+t.test(datax$edad, datay$edad,
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = TRUE,
+       conf.level = 0.95 )$conf.int 
+```
+
+Intervalo de confianza para la comparación de medias grupos independientes, varianza diferentes
+
+En este caso se toman dos muestras de grupos independientes, solo se realiza el procedimiento para mostrar la sintaxis en el caso de que las varianza sean diferentes 
+
+```{r}
+ t.test(datax$edad, datay$edad,
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = FALSE,
+       conf.level = 0.95 )$conf.int
+```
+Comparación de proporciones
+
+Para el ejemplo se toma una muestra de tamaño 1000 y se compara las proporciones de personas contagiadas y con estado grave y con estado moderado
+
+```{r}
+Muestra= Colombia[sample(1:nrow(Colombia),1000,replace=F),]
+t1=table(Muestra$estado)
+prop.test(c(t1[2],t1[3]),c(1000,1000), conf.level = 0.95)$conf.int
+```
+
+
+
+
+
+

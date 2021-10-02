@@ -25,7 +25,7 @@ c5="#BC2B6A" # MORADO
 
 <span style="color:#E77C00">**En construcción**</span>
 
-## **Guía de aprendizaje 4.2**
+# **Guía de aprendizaje 4.2**
 
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f1f835fc43a880d757f9161" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
 
@@ -35,13 +35,27 @@ c5="#BC2B6A" # MORADO
 
 ## **1. Introducción**
 
+La inferencia estadística constituye una de las principales componentes de la metodologia estadistica, encaminados a generar procedimiento para el avance de la ciencia. Con ella se pueden generalizar los
+resultados obtenidos en una muestra a toda la población, previo cumplimiento de supuestos establecidos por la estadística (llamada paramétrica) .
+
+Antes de empezar es necesario entender los conceptos básicos como: población, censo, parámetro, muestra, muestreo, estimador, estimación, métodos de estimación, propiedades de los estimadores como la insesgadez, la eficiencia, la consistencia .Las distribuciones muestrales : normal, t-student, chi-cuadrado y f de Fisher. Todos trabajados y tratados en la unidad 4.1.
+
+El siguiente documento te  oriente sobre los pasos a seguir para alcanzar el objetivo planteado
+
 <br/><br/>
 
 ## **2. Objetivos de la unidad**
 
+Al finalizar la unidad el estudiante estará en capacidad de IDENTIFICAR, CALCULAR, INTERPRETAR e INFERIR sobre un intervalo de confianza para estimadores de una y dos poblaciones,
+que le permita seleccionar la mejor alternativa para la estimación de un parámetro poblacional, orientados a la toma de decisiones  informadas.
+
 <br/><br/>
 
 ## **3. Duración**
+
+La presente  unidad será desarrollada del 6 al 24 de octubre de 2021 . Ademas del material suministrado  contaran con el acompañamiento del profesor durante las sesiones de clase  y de manera asincrónica con  foro de actividades académicas. Los entegables para esta unidad podrán enviarse a través de la plataforma Blackboard hasta el  24 de octubre de 2021 
+
+Para alcanzar los objetivos planteados se propone realizar las siguientes actividades
 
 <br/><br/>
 
@@ -50,8 +64,17 @@ c5="#BC2B6A" # MORADO
 
 |Actividad      | Descripción                    | 
 |:--------------|:-----------------------------  |
+|**Actividad 1**    |Construir un mapa mental sobre intervalos de confianza elaborado **a mano**, el cual deberá ser entregado en formato pdf|
+|Trabajo individual |  |
+|Fecha          | 24 de octubre  de 2021 |
+|Hora           | 23:59 hora local       |
+|**Actividad 2**    |Resuelva las preguntas y problemas planteadas en  el  Taller421 y entregue su solución  en formato  pdf en el enlace correspondiente de  Brightspace|
+|Trabajo individual |  |
+|Fecha          | 24 de octubre  de 2021 |
+|Hora           | 23:59 hora local       |
 
-<br/><br/>
+
+
 
 ## **5. Criterios de evaluación**
 
@@ -59,8 +82,376 @@ c5="#BC2B6A" # MORADO
 
 ## **6. Entregables** 
 
+|               |                              | 
+|:--------------|:-----------------------------|
+|Entregable 1   | Mapa mental sobre intervalos de confianza|
+|Entregable 2   | Solucionario taller 421 de problemas sobre intervalos de confianza| 
+|Fecha          | 24 de octubre  de 2021 |
+|Hora           | 23:59 hora local       |
+
 <br/><br/><br/><br/>
 
 ## **7. Presentaciones**
 
+<br/><br/><br/><br/>
+
+# **Recursos**
+
+<br/><br/>
+
+## **Estimación por IC**
+
+![](img/gic.png)
+
+
+Un estimador por intervalo de confianza (IC) es una regla que especifica como usar las mediciones obtenidas en una muestra para calcular dos números que forman los extremos del intervalo que confiamos contenga al parámetro de interés $\theta$. Dependiendo del parámetro se utiliza en la construcción del IC las distribuciones muestrales:  $normal$ $estándar$ ($Z$), $t-Student$, $\chi^{2}$ o $F-Fisher$
+
+
+<br/><br/><br/><br/>
+
+## **Una población**
+
+<br/><br/>
+
+### **Intervalos de confianza para la media, con varianza conocida** 
+
+Partimos de dos valores que contiene el parámetro $\theta$
+
+$$L_{I} \leq \theta \leq L_{S} $$
+
+bajo el supuesto de que
+
+$$Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \sim N(0,1)$$
+
+podemos construir el siguiente intervalo
+
+$$P(L_{IC} \leq Z \leq L_{SC})=1-\alpha $$
+
+donde $(1-\alpha)$ conforma el concepto de confianza, el cual difiere del concepto de probabilidad, en cuanto la confianza representa la proporción de intervalos que contienen el parámetro. 
+
+confianza.png
+
+De 100 intervalos construidos a partir muestras aleatorias, $(1-\alpha)\%$ o más contendrán el parámetro.1 
+
+$$\begin{eqnarray*}
+		P(-z_{\alpha/2} \leq Z \leq z_{\alpha/2})&=&1-\alpha \\
+		P\Bigg(-z_{\alpha/2} \leq \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \leq z_{\alpha/2}\Bigg)&=&1-\alpha\\
+		P\Bigg(\bar{X}-z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X}+z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\Bigg)&=&1-\alpha \\
+	\end{eqnarray*}$$
+	
+el intervalo de confianza para la media poblacional queda determinado por:
+
+$$IC_{\mu}: \bar{x} \pm z_{\alpha/2} \hspace{.1cm}\dfrac{\sigma}{\sqrt{n}} $$
+
+Supuestos:
++ $X\sim N(\mu,\sigma^{2})$
++	varianza conocida
+			
+<br/><br/>
+
+### **Intervalo de confianza para la media, con varianza desconocida**
+	
+$$T=\dfrac{\bar{X}-\mu}{s/ \sqrt{n}}$$
+
+se distribuye t student con $n-1$ grados de libertad y el intervalo se construye \\
+
+$$\begin{eqnarray*}
+		P\Big(-t_{\alpha/2} \leq T \leq t_{\alpha/2} \Big)&=&1-\alpha \\
+		P\Big(-t_{\alpha/2} \leq \frac{\bar{X}-\mu}{s/\sqrt{n}} \leq t_{\alpha/2} \Big)&=&1-\alpha \\
+		P\Bigg(\bar{X}-t_{\alpha/2} \dfrac{s}{\sqrt{n}} \leq \mu \leq \bar{X}+t_{\alpha/2}\dfrac{s}{\sqrt{n}}\Bigg)&=&1-\alpha \\
+	\end{eqnarray*}$$
+
+$$IC_{\mu}: \bar{x} \pm t_{\alpha/2} \hspace{.1cm}\frac{s}{\sqrt{n}} $$
+			
+Supuestos:
++	$X\sim N(\mu,\sigma^{2})$
++ varianza desconocida
+
+<br/><br/>
+
+**Ejemplo**
+
+Cuando el tamaño de la muestra se considera grande (usualmente $n>30$) el estadístico T se aproxima a la distribución normal estandar, en este caso el intervalo de confianza se puede construir a a partir de:
+	
+$$IC_{\mu}: \bar{x} \pm z_{\alpha/2} \hspace{.1cm}\dfrac{s}{\sqrt{n}} $$
+
+Supuestos:
++ $X\sim N(\mu,\sigma^{2})$
++ varianza desconocida
+
+<br/><br/>
+
+**Ejemplo** 
+
+Se registró el tiempo transcurrido entre la facturación y la recepción del pago, para una muestra de 100 clientes en una empresa. La media y la desviación estándar son respectivamente: 39.1 días y 17.3 días. Con el fin de establecer una medición de la calidad en el servicio, se requiere determinar una estimación del 95% para la media.
+
+<br/><br/>
+
+**Solución** 
+
+La estimación del tiempo que demora el pago de una factura es un valor de importancia tanto para empresarios como para proveedores, pues esta información se utiliza para la programación de gastos e ingresos. El problema nos suministra la siguiente información:
+
++ $\bar{x}=39.1$ días
++ $s=17.3$ días, lo que significa que se desconoce la varianza
++ $n=100$ que se considera grande
++ se requiere construir un IC del 95\% para $\mu$, que implica un valor del percentil $z=\pm 1.96$
+
+$$\bar{x} \pm z_{\alpha/2} \frac{s}{\sqrt{n}} $$
+
+$$39.1 \pm 1.96 \frac{17.3}{\sqrt{100}} $$
+
+$$\Bigg(39.1 -1.96 \frac{17.3}{\sqrt{100}};39.1 + 1.96 \frac{17.3}{\sqrt{100}}\Bigg)$$
+
+$$(35.71; 42.49 )$$
+
+El tiempo promedio transcurrido entre la facturación y el pago en la empresa está entre 35.7 dias y 42.5 dias con una confianza del 95% 
+
+<br/><br/>
+
+### **Tamaño de la muestra para estimar una media**
+
+Uno de los problemas más frecuentes a los que nos enfrentamos es la determinación del tamaño de la muestra para realizar una estimación de la media que garantice una confianza del $(1-\alpha)\%$
+
+$$P\Bigg(-z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \leq \bar{X}-\mu \leq z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\Bigg)=1-\alpha$$
+
+Para construirlo partimos del supuesto que podemos tolerar un error de muestreo
+$$e = \vert\bar{X}-\mu\vert \leq z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$$
+
+y que deseamos una con fiabilidad del $(1-\alpha)\%$.
+
+Entonce podemos tener la confianza del $(1-\alpha)\%$ de que el error no exceda $z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$ 	de la siguiente igualdad despejamos $n$
+
+$$e= z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$
+
+$$e^{2}= z_{\alpha/2}^{2} \frac{\sigma^{2}}{n}$$
+
+$$n = \displaystyle\frac{z_{\alpha/2}^{2}\sigma^{2}}{e^{2}}$$
+			
+<br/><br/>
+
+**Ejemplo**
+
+<br/><br/>
+
+### **Intervalos de confianza para la proporción** 
+
+La construcción del intervalo de confianza para una proporción es similar al proceso realizado en la construcción de la media, bajo el supuesto de $np>10$ que permite la aproximación a una distribución normal
+
+$$\widehat{p} \sim N\Big(p, \frac{p(1-p)}{n}\Big)$$
+
+por tanto
+
+$$\Bigg[\widehat{p}-z_{\alpha/2}\sqrt{\frac{\widehat{p}\hspace{.1cm}(1-\widehat{p}}{n}} \hspace{.2cm};\hspace{.2cm} \widehat{p}+z_{\alpha/2}\sqrt{\frac{\widehat{p}\hspace{.1cm}(1-\widehat{p}}{n}} \Bigg]$$
+
+$$IC_{p}: \widehat{p} \pm z_{\alpha/2} \hspace{.1cm}\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n}}$$
+
+Supuesto:
++ $np>5$ o $n(1-p)>5$
+			
+<br/><br/>
+
+**Ejemplo** 
+
+<br/><br/>
+
+### **Intervalos de confianza para la variaza** 
+
+En el caso del intervalo de confianza para la varianza se parte de la premisa de que la variable
+
+$$\frac{(n-1)S^{2}}{\sigma^{2}} \sim \chi^{2}_{v=n-1}$$
+
+a partir de ella se puede construir
+
+$$P\Bigg(\chi^{2}_{1-\alpha/2} \leq \frac{(n-1)S^{2}}{\sigma^{2}} \leq \chi^{2}_{\alpha/2} \Bigg)=1-\alpha$$
+
+al invertir esta ecuaciones tenemos
+$$P\Bigg(\frac{1}{\chi^{2}_{1-\alpha/2}} \geq \frac{\sigma^{2}}{(n-1)S^{2}} \geq \frac{1}{\chi^{2}_{\alpha/2}} \Bigg)=1-\alpha$$
+
+finalmente tenemos
+
+$$P\Bigg( \frac{(n-1)S^{2}}{\chi^{2}_{\alpha/2}} \leq \sigma^{2} \leq \frac{(n-1)S^{2}}{\chi^{2}_{1-\alpha/2}} \Bigg)=1-\alpha$$
+	
+
+$$IC_{\sigma^{2}}: \Bigg( \displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{\alpha/2}} ;\displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{1-\alpha/2}} \Bigg)$$
+
+Supuestos:
+$X\sim N(\mu,\sigma^{2})$
+
+<br/><br/>
+
+**Ejemplo**
+
+<br/><br/><br/><br/>
+
+## **Dos poblaciones**
+
+<br/><br/>
+
+### **Estimación de intervalos de confianza para comparación de dos poblaciones**
+
+Cuando se compraran dos poblaciones se puede estar interesado en la diferencia de medias, diferencia de proporciones o la razón de varianzas. Es necesario distinguir cuando se trata de diferencia de medias pareadas o diferencia para poblaciones independientes.\\
+
+<br/><br/>
+
+### **Diferencia de medias - pareadas**
+
+Se consideran muestras pareadas cuando existen una fuerte dependencia entre pares de observaciones de dos poblaciones. Es el caso de experimentos donde se observan individuos en dos momentos diferentes de tiempo, por ejemplo estudiantes a los que se les realiza un examen de entrada y un examen de salida. En este caso se compara la evolución de cada individuo consigo mismo conformando parejas de mediciones.
+
+$$IC_{d=\bar{x}_{1}-\bar{x}_{2}}: \bar{d} \pm t_{\alpha/2} \frac{s_{d}}{\sqrt{n}}$$
+
+donde $d_{i}=x_{1i}-x_{2i}$ y $s_{d}$ es la desviación estandar de las diferencias 
+$d_{i}=x_{1i}-x_{2i}$ \\ \\
+
+<br/><br/>
+
+**Ejemplo** 
+
+<br/><br/>
+
+### **Diferencia de medias poblaciones independientes** 
+
+<br/><br/>
+
+**Caso1** :Supone varianzas iguales y desconocidas
+
+$$(\bar{x}_{1}-\bar{x}_{2})\pm t_{\alpha/2} \hspace{.2cm}s_{p} \sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}$$
+
+donde $s_{p}^{2}$ es la varianza común
+
+$$s_{p}^{2}=\frac{(n_{1}-1)s_{1}^{2}+(n_{2}-1)s_{2}^{2}}{n_{1}+n_{2}-2}$$
+
+y $t_{\alpha/2}$ se distribuye t-student con $v=n_{1}+n_{2}-2$ grados de libertad
+
+Supuestos: 
++	$X_{1}$ y $X_{2}$ son variables aleatorias independientes con distribución normal
++ $X_{1}$ y $X_{2}$ tienen varianzas iguales pero desconocidas
+
+<br/><br/>
+
+**Ejemplo**  
+
+<br/><br/>
+
+**Caso2** : Supone varianzas diferentes, pero desconocidas 
+
+En el caso tenemos
+			
+$$(\bar{x}_{1}-\bar{x}_{2})\pm t_{\alpha/2} \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}$$
+
+donde los grados de libertad de t se aproximan a
+
+$$v=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}$$
+
+<br/><br/>
+
+**Ejemplo**	
+
+<br/><br/>
+
+En cualquiera de los casos los resultados pueden generar que intervalo sea de la forma:
+
++ $(-,-)$, los dos limites que conforman el IC son negativos. De este resultado se puede concluir que $\mu_{1}<\mu_{2}$
++ $(-,+)$, el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de $\mu_{1}=\mu_{2}$
++ $(+,+)$, los dos limites son positivos, De este resultado podriamos concluir que $\mu_{1}>\mu_{2}$ \\ \\
+	
+<br/><br/>
+
+### **Diferencia de proporciones**
+
+<br/><br/>
+
+$$(\widehat{p_{1}}-\widehat{p_{2}}) \pm z_{\alpha/2} \sqrt{\frac{\widehat{p_{1}}(1-\widehat{p_{1}})}{n_{1}}+\frac{\widehat{p_{2}}(1-\widehat{p_{2}})}{n_{2}}}$$
+
+<br/><br/>
+
+**Ejemplo**
+
+<br/><br/>
+
+En una muestra de 200 clientes, el 20% indica preferencia por tamaño especial de pizza. Con posterioridad a una campaña publicitaria realizada en radio y televisión promoviendo dicho producto, se selecciono una muestra de igual tamaño. En esta ultima muestra el 22% de los clientes indico preferencia por el producto. De acuerdo con estos resultados calcule un intervalo de confianza del 95% para la diferencia de proporciones. De acuerdo a los resultados obtenidos, podría afirmarse que la campaña publicitaria fue efectiva? 
+
+<br/><br/>
+
+**Solución***
+
+En este caso se trata de la comparación de dos proporciones (proporción de clientes que prefieren el tamaño especial dentro de los clientes de la pizzería - $p_{2}$ comparada con la proporción de los clientes de la misma pizzería pero después de realizada la campaña publicitaria - $p_{2}$)
+	
+Información suministrada:
+ 	
++ $n_{1}=200$(numero de clientes encuestados sobre sus preferencias antes de realizar la campaña publicitaria
++ $\widehat{p}_{1}=0.20$ proporción muestral de clientes que prefieren el tamaño especial de pizza antes de la campaña publicitaria
++ $n_{2}=200$(numero de clientes encuestados sobre sus preferencias después de realizada la campaña publicitaria
++ $\widehat{p}_{2}=0.22$ proporción muestral de clientes que prefieren el tamaño especial de pizza después de realizadala campaña publicitaria
+
+En ambos casos los tamaños de muestra se consideran grandes, permitiendo transformar la diferencia de proporciones en una variable z con distribución normal estándar
+
+$$(0.20-0.22) \pm \sqrt{\frac{0.20*(1-0.20)}{200}+\frac{0.22*(1-0.22)}{200}}$$
+
+$$(-0.0998 ; -0.0598)$$
+
+El intervalo estimado se lee: La diferencia entre la proporción de clientes que prefieren el tamaño especial de pizza antes de la realizar la campaña publicitaria y la proporción de clientes que prefieren este mismo tamaño, después de realizada la campaña publicitaria esta entre -0.0998 y -0.059, con una confianza del 95%. Estos resultados indican que $p_{1}-p_{2}<0$ o también que $p_{1}<p_{2}$, lo cual quiere decir que la proporción de clientes con esta preferencia aumento después de haber realizado la campaña publicitaria.
+
+
+<br/><br/>
+
+### **Comparación de varianzas** 
+
+La comparación de varianzas se realiza con relación al valor que tome la razón de sus valores $\sigma^{2}_{1}/\sigma^{2}_{2}$. Observe que si esta relación es uno, indicaría que las varianzas son iguales. Por el contrario si esta razón es muy grande indicaría que $\sigma^{2}_{1}>\sigma^{2}_{2}$ y si su valor es muy cercano a cero indicaría lo contrario.
+
+El uso de esta comparación esta relacionado con supuestos necesarios para la comparación de medias independientes, análisis de varianza y diseños experimentales.
+En este caso se emplea en su construcción la distribución F de Fischer
+
+$$\Bigg(\frac{s_{1}^{2}}{s_{2}^{2}} F_{1-\alpha/2; v_{1},v_{2}} ; \frac{s_{1}^{2}}{s_{2}^{2}} F_{\alpha/2; v_{1},v_{2}} \Bigg)$$
+
+<br/><br/><br/><br/>
+
+# **Conceptos**
+
+## **Confianza**
+
+Para explicar el concepto de confianza se simula 100 intervalos para la estimación de una media con valor de $\mu=100$, como se ve en la gráfica no todos los intervalos (representados por una línea) contienen el valor del parámetro, solo de color negro lo contiene.
+
+Al contarlos se encuentra que 35 no lo contienen (de color rojo), mientras que  65 lo contiene, por tanto este procedimiento tiene una confianza del 65% de contener el valor de $\mu=100$
+
+![](img/confianza.png)
+Este valor se integra al concepto de intervalo de confianza mediante el término $1-\alpha$, por defecto los programas utilizan un nivel de confianza del 95% ( $1-\alpha =0.95$) y se de nota por : $IC_{\mu; 1-\alpha=0.95}$ 
+
+
+# **Formulario**
+
+|   |**parámetro** |**Estimador por IC **                                                            | **Supuestos** |
+|:-:|:------------:|:-------------------------------------------------------------------------------:|:---------------------:|
+| 1 | $\mu$         |$\bar{x} \pm z_{\alpha/2} \hspace{.1cm}\dfrac{\sigma}{\sqrt{n}}$                 |$X\sim norm(\mu, \sigma^{2})$,$\sigma^{2}$ conocida           |
+| 2 |               |$\bar{x} \pm z_{\alpha/2} \hspace{.1cm}\dfrac{s}{\sqrt{n}}$                      |$n>>$, TCL|
+| 3 |              |$\bar{x} \pm t_{\frac{\alpha}{2};v=n-1} \hspace{.1cm}\dfrac{s}{\sqrt{n}}$        |$X\sim norm(\mu, \sigma^{2})$, $\sigma^{2}$ desconocida|
+| 4 |$p$           |$\widehat{p}\pm z_{\frac{\alpha}{2}} \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n}}$| $n>>$|
+| 5 |$\sigma^{2}$  |$\Bigg( \dfrac{(n-1)s^{2}}{\chi^{2}_{1-\alpha/2}} ;\dfrac{(n-1)s^{2}}{\chi^{2}_{\alpha/2}} \Bigg)$ | $X\sim norm(\mu, \sigma^{2})$|
+| 6 |$\mu_{1}-\mu_{2}$|$\bar{d} \pm t_{\alpha/2}\dfrac{s_{d}}{\sqrt{n}}$    |Grupos pareados $d={x}_{1}-x_{2}$,$X_{1}\sim norm(\mu_{1}, \sigma^{2}_{1})$,$X_{2}\sim norm(\mu_{2}, \sigma^{2}_{2})$| |              
+| 7 |              | $(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2} \hspace{.2cm}s_{p} \sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}$ | Grupos independientes,$X_{1}\sim norm(\mu_{1}, \sigma^{2}_{1})$,$X_{2}\sim norm(\mu_{2}, \sigma^{2}_{2})$, varianzas iguales|
+| |                 | donde $s_{p}^{2}=\dfrac{(n_{1}-1)s_{1}^{2}+(n_{2}-1)s_{2}^{2}}{n_{1}+n_{2}-2}$ y $v=n_{1}+n_{2}-2$ | |
+| 8 |              |$(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2, v^{*}} \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}$ |Grupos independientes,$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}$, varianzas diferentes |
+| ||$v^{*}=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}$||
+| 9 | $p_{1}-p_{2}$|$(\widehat{p_{1}}-\widehat{p_{2}})\pm z_{\alpha/2} \sqrt{\dfrac{\widehat{p_{1}}(1-\widehat{p_{1}})}{n_{1}}+\dfrac{\widehat{p_{2}}(1-\widehat{p_{2}})}{n_{2}}}$|$n_{1}>>$, $n_{2}>>$|
+|10 | $\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}$ |$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}; s^{2}_{1}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{2}v_{1})}\Bigg)$|$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}$| 
+
+```{r}
+
+```
+
+
+<br/><br/><br/><br/>
+
+## **Código R**
+
+<br/><br/>
+
+| parámetro        | código R                                       |
+|:----------------:|:----------------------------------------------:|
+|$\mu$             | `t.test(x, coef.level= 1−a)$conf.int`          |
+|$p$               | `prop.test(x,n,p=po, coef.level=1−a)`          |
+|$\mu_{1}-\mu_{2}$ | `t.test(datos1,datos2, paired=T)`              |
+|                  | `t.test(datos1 datos2, var.equal=T)`           |
+|                  | `t.test(datos1 datos2, var.equal=F)`           |
+|$p_{1} − p_{2}$   | `prop.text(c(x1,x2), c(n1,n2))`                |
+|$\frac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)`  |
 
