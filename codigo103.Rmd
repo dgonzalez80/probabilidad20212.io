@@ -695,6 +695,7 @@ A continuación el código para el mapa de Cali sin información
 <br/>
 
 ### **Mapa de Cali** 
+
 ```{r, warning=FALSE, message=FALSE}
 require(sp)
 require(rgdal)
@@ -706,7 +707,7 @@ plot(cali)                      # gráfico de Cali
 ```
  <br/>
  
- ### **Mapa de Cali con indice**
+### **Mapa de Cali con indice**
  
 Para mostrar la información se debe incorporar un vector al objeto **cali** que contiene la información para el mapa. este objeto en formato lista tiene incorporada una data que contiene varias columnas al cual se le adiciona la información a publicar.  
 
@@ -780,6 +781,16 @@ fallecidos=c(15174,3876,26516,807,2417,2151,880,1333,2388,3487,6495,382,2880,
 mapco@data$fallecidos=fallecidos # se adiciona variable con 33 valores = 33 dptos, en mismo orden
 spplot(mapco[,6], col.regions = mi.palette, cuts = 6)  # mapa
 ```
+
+
+<br/><br/>
+
+## **tmap**
+
+https://www.jstatsoft.org/article/view/v084i06
+
+
+
 
 <br/><br/><br/> 
 

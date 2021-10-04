@@ -101,6 +101,8 @@ Hora  :  23:59 hora local <br/>
 
 ## **1.7. Presentaciones**
 
+[**Taller 309**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller_%20309.%20pdf.pdf)
+
 <br/><br/><br/><br/>
 
 # **2. Recursos **

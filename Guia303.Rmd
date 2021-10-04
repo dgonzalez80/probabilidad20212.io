@@ -109,7 +109,9 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 ## **1.7 Presentaciones**
 
-[**Presentación 331**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Presentacion331.pdf)
+[**Presentación 331**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Presentacion331.pdf)<br/>
+[**Taller 307**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller_%20307.pdf)<br/>
+[**Taller 308**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller_308%20Solucion.pdf)<br/>
 
 <br/><br/><br/><br/>
 
