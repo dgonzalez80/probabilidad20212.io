@@ -40,7 +40,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # **Calendario 2021-2**
 
+```{r, fig}
+
+```
+
 <img src="img/calendario.png" width="900">
+
+
 
 
 # [**Semana diagonal**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Semana%20Diagonal%202021.pdf)
