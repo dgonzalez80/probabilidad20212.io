@@ -487,6 +487,9 @@ div.tocify {
     <li>
       <a href="codigo401.html">Código u4.1</a>
     </li>
+    <li>
+      <a href="codigo402.html">Código u4.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -596,6 +599,7 @@ fx=dpois(x,4)
 <pre class="r"><code># Distribución geometrica
 # X : numero del ensayo donde ocurre el primer exito
 # en R x representa el numero de fracasos antes de obtener el primer exito
+# Rx = 0,1,2,3,4,5,6........
 # f(x)       dgeom(x, prob)
 # F(x)       pgeom(q, prob, lower.tail = TRUE)
 # Percentil  qgeom(p, prob, lower.tail = TRUE)
@@ -614,10 +618,13 @@ cat(&quot;(a) P(X=1)=&quot;,dgeom(0,0.05), &quot;   &quot;)</code></pre>
 <li><p><span class="math inline">\(P(X = 4)\)</span></p></li>
 <li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
 </ol>
-<p>Nota: En este caso se debe realizar una conversion de los parametros para utiliar la funcion dhyper de R m = K N = m + n K = n Para este caso : m=20, n=80, k=4 —</p>
+<p>Nota: En este caso se debe realizar una conversión de los parámetros para utiliar la función dhyper de R m = K, número de éxitos en la urna N = m + n , total de elementos en la urna K = n, tamaño de la muestra a extraer de la urna</p>
+<p>Para este caso : m=20, n=80, k=4</p>
+<hr />
 <pre class="r"><code># Distribución hipergeometrica
 # X : número de éxitos encontrados en una muestra de tamaño n (sin orden, sin repetición), 
-#     extraída de una urna que contiene N elementos de los cuales K son éxitos
+#     extraída de una urna que contiene K exitos y N-K fracasos
+# 
 # f(x)       dhyper(x, m, n, k)
 # F(x)       phyper(q, m, n, k, lower.tail = TRUE)
 # Percentil  qhyper(p, m, n, k, lower.tail = TRUE)
@@ -639,6 +646,7 @@ dhyper(1,20,80,4)</code></pre>
 </ol>
 <pre class="r"><code># Distribución binomial negativa
 # X : número del evento donde ocurre el r-esimo éxito
+# para el caso de R siza corresponde al número de éxitos, prob la probabilidad de éxito,  
 # f(x)        dnbinom(x, size, prob)
 # F(x)        pnbinom(q, size, prob, lower.tail = TRUE)
 # Percentil   qnbinom(p, size, prob, lower.tail = TRUE)
@@ -768,7 +776,7 @@ dhyper(1,20,80,4)</code></pre>
 </div>
 <div id="binomial-negativa" class="section level3">
 <h3><strong>binomial negativa</strong></h3>
-<p><span class="math inline">\(X \sim nbinom\)</span>, cuando representa el número del ensayo donde ocurre el <span class="math inline">\(r\)</span>-simo ensayo</p>
+<p><span class="math inline">\(X \sim nbinom\)</span>, cuando representa el número del ensayo donde ocurre el <span class="math inline">\(r\)</span>-simo ensayo (En R representa el número de fracasos para encontrar r éxitos)</p>
 <p><br/><br/><br/></p>
 </div>
 </div>

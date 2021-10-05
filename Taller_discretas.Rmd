@@ -99,6 +99,7 @@ fx=dpois(x,4)
 # Distribución geometrica
 # X : numero del ensayo donde ocurre el primer exito
 # en R x representa el numero de fracasos antes de obtener el primer exito
+# Rx = 0,1,2,3,4,5,6........
 # f(x)       dgeom(x, prob)
 # F(x)       pgeom(q, prob, lower.tail = TRUE)
 # Percentil  qgeom(p, prob, lower.tail = TRUE)
@@ -123,16 +124,19 @@ cat("(a) P(X=1)=",dgeom(0,0.05), "   ")
 
 (e) Construya la gráfica de $f_{_{X}}(x)$
 
-Nota: En este caso se debe realizar una conversion de los parametros para utiliar la funcion dhyper de R
-m = K
-N = m + n
-K = n
+Nota: En este caso se debe realizar una conversión de los parámetros para utiliar la función dhyper de R
+m = K, número de éxitos en la urna
+N = m + n , total de elementos en la urna
+K = n, tamaño de la muestra a extraer de la urna
+
 Para este caso : m=20, n=80, k=4
+
 ---
 ```{r}
 # Distribución hipergeometrica
 # X : número de éxitos encontrados en una muestra de tamaño n (sin orden, sin repetición), 
-#     extraída de una urna que contiene N elementos de los cuales K son éxitos
+#     extraída de una urna que contiene K exitos y N-K fracasos
+# 
 # f(x)       dhyper(x, m, n, k)
 # F(x)       phyper(q, m, n, k, lower.tail = TRUE)
 # Percentil  qhyper(p, m, n, k, lower.tail = TRUE)
@@ -161,6 +165,7 @@ dhyper(1,20,80,4)
 ```{r}
 # Distribución binomial negativa
 # X : número del evento donde ocurre el r-esimo éxito
+# para el caso de R siza corresponde al número de éxitos, prob la probabilidad de éxito,  
 # f(x)        dnbinom(x, size, prob)
 # F(x)        pnbinom(q, size, prob, lower.tail = TRUE)
 # Percentil   qnbinom(p, size, prob, lower.tail = TRUE)
@@ -346,7 +351,7 @@ $X \sim  hyper$, cuando representa el número de exitos que se pueden obtener al
 
 ### **binomial negativa**
 
-$X \sim  nbinom$, cuando representa el número del ensayo donde ocurre el $r$-simo  ensayo
+$X \sim  nbinom$, cuando representa el número del ensayo donde ocurre el $r$-simo  ensayo (En R representa el número de fracasos para encontrar r éxitos)
 
 <br/><br/><br/>
 
