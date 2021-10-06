@@ -158,7 +158,7 @@ B=c(60970, 62409, 60546, 58508, 58974, 56682, 59483, 58048, 73107, 61977, 55974,
 ```
 
 
-¿Que marca de neumáticos escogeria entre las dos opciones de acuerdo a la anterior informacion? Suponga que las poblaciones se distribuyen de forma aproximadamente normal .
+¿Que marca de neumáticos escogería entre las dos opciones de acuerdo a la anterior informacion? Suponga que las poblaciones se distribuyen de forma aproximadamente normal .
 
 <br/><br/>
 
