@@ -143,7 +143,9 @@ Para el ejemplo se toma una muestra de tamaño 1000 y se compara las proporcione
 Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(c(t1[2],t1[3]),c(1000,1000), conf.level = 0.95)$conf.int
-```## [1] 0.95
+```
+
+
 
 
 
