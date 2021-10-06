@@ -17,7 +17,11 @@ Valle <- read_csv("data/VALLE.csv")
 
 ```
 
-## **Simulación confianza**
+# **Simulación**
+
+<br/><br/>
+
+## **Confianza**
 
 ```{r}
 m= 100 ## número de experimentos
@@ -51,8 +55,13 @@ for(i in 1:100) {
 
 ```
 
+<br/><br/><br/>
 
-## **Estimaciones**
+# **Estimaciones**
+
+<br/><br/>
+
+## **IC para una media**
 
 Intervalo de confianza para una media 
 
@@ -62,6 +71,9 @@ Como ejemplo se estima un IC para la edad de las personas contagiadas de covid e
 Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t.test(Muestra$edad,conf.level = 0.95)$conf.int
 ```
+<br/><br/>
+
+## **IC para una proporción**
 
 Intervalo de confianza para una proporción 
 
@@ -73,6 +85,9 @@ t1=table(Muestra$estado)
 prop.test(t1[1],1000, conf.level = 0.95)$conf.int
 
 ```
+<br/><br/>
+
+## **IC comparación varianzas**
 
 Intervalo de confianza para la comparación de varianzas
 
@@ -86,8 +101,11 @@ datay=Valle2[sample(1:nrow(Valle2),100,replace=F),]
 
 var.test(datax$edad, datay$edad)$conf.int 
 ```
+<br/><br/>
 
-Intervalo de confianza para la comparación de medias grupos independientes, varianzas iguales
+## **IC medias grupos independientes**
+
+Intervalo de confianza para la comparación de medias grupos independientes, suponiendo **varianzas iguales**
 
 Como ejemplo se toman dos muestras para comparar la edad de las personas contagiadas por covid en dos grupos independientes
 
@@ -99,8 +117,9 @@ t.test(datax$edad, datay$edad,
        var.equal = TRUE,
        conf.level = 0.95 )$conf.int 
 ```
+<br/><br/>
 
-Intervalo de confianza para la comparación de medias grupos independientes, varianza diferentes
+Intervalo de confianza para la comparación de medias grupos independientes, con **varianza diferentes**
 
 En este caso se toman dos muestras de grupos independientes, solo se realiza el procedimiento para mostrar la sintaxis en el caso de que las varianza sean diferentes 
 
@@ -111,6 +130,11 @@ En este caso se toman dos muestras de grupos independientes, solo se realiza el 
        var.equal = FALSE,
        conf.level = 0.95 )$conf.int
 ```
+
+<br/><br/><br/>
+
+## **IC comparación proporciones**
+
 Comparación de proporciones
 
 Para el ejemplo se toma una muestra de tamaño 1000 y se compara las proporciones de personas contagiadas y con estado grave y con estado moderado
@@ -119,7 +143,8 @@ Para el ejemplo se toma una muestra de tamaño 1000 y se compara las proporcione
 Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(c(t1[2],t1[3]),c(1000,1000), conf.level = 0.95)$conf.int
-```
+```## [1] 0.95
+
 
 
 

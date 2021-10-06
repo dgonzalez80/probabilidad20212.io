@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="dgonzalez80" />
+<meta name="author" content="dgonzalez" />
 
 
-<title>Actividad 332</title>
+<title>Taller Intervalo de confianza</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -533,69 +533,127 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Actividad 332</strong></h1>
-<h4 class="author">dgonzalez80</h4>
+<h1 class="title toc-ignore">Taller Intervalo de confianza</h1>
+<h3 class="subtitle">Modulo 4- Unidad 4.2</h3>
+<h4 class="author">dgonzalez</h4>
 
 </div>
 
 
-<div id="simulación" class="section level1">
-<h1><strong>Simulación</strong></h1>
-<p>De manera individual deberá seleccionar uno de los siguientes problemas para ser resuelto con ayuda computacional. En un archivo pdf se deberán responder los interrogantes solicitados, adjuntado el código empleado.</p>
+<div id="problema-1" class="section level1">
+<h1><strong>Problema 1</strong></h1>
+<p>Encuentre e interprete un intervalo de confianza del 95% para una media poblacional <span class="math inline">\(\mu\)</span> para los valores:</p>
+<ul>
+<li><p><span class="math inline">\(n=36\)</span>, <span class="math inline">\(\bar{x}= 13.1\)</span>, <span class="math inline">\(s^{2}=3.42\)</span> , suponga que <span class="math inline">\(X\sim\)</span> normal</p></li>
+<li><p><span class="math inline">\(n=64\)</span>, <span class="math inline">\(\bar{x}= 2.73\)</span>, <span class="math inline">\(s^{2}=0.1047\)</span>, suponga que <span class="math inline">\(X \sim\)</span> normal</p></li>
+<li><p><span class="math inline">\(n=125\)</span>, <span class="math inline">\(\bar{x}=0.84\)</span>, <span class="math inline">\(s^{2}=0.086\)</span>, suponga que se desconoce la distribución de <span class="math inline">\(X\)</span></p></li>
+</ul>
 <p><br/><br/></p>
-<div id="ejercicio-1" class="section level2">
-<h2><strong>Ejercicio 1</strong></h2>
-<p>Un cable está compuesto por seis alambres. La fuerza de ruptura de cada alambre es una variable aleatoria distribuida normalmente con media de <span class="math inline">\(10 kN\)</span> y desviación estándar de <span class="math inline">\(1 kN\)</span> (<span class="math inline">\(kN\)</span>=kiloNewton=<span class="math inline">\(10^{3}N\)</span>). Utilizando el método de cable quebradizo, se estima que la fuerza del cable es igual a la fuerza de alambre más frágil multiplicada por el número de alambres.</p>
-<p><img src="img/cable.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Utilice una muestra simulada de tamaño 1000 para estimar la fuerza media de este tipo de cable.</p></li>
-<li><p>Estime la mediana de la fuerza del cable.</p></li>
-<li><p>Estime la desviación estándar de la fuerza del cable.</p></li>
-<li><p>Para que sea aceptable en cierta obra, la probabilidad de que el cable se rompa con una carga de <span class="math inline">\(70 kN\)</span> debe ser menor a <span class="math inline">\(0.01\)</span>. ¿Parece ser que el cable es aceptable? Explique.</p></li>
-</ol>
-<p><br/><br/><br/><br/></p>
 </div>
-<div id="ejercicio-2" class="section level2">
-<h2><strong>Ejercicio 2</strong></h2>
-<p>Estimación del valor de <span class="math inline">\(\pi\)</span> . LA siguiente figura sugiere como estimar el valor de <span class="math inline">\(\pi\)</span> con una simulación. En la figura, un circuíto con un áreaigual a <span class="math inline">\(\pi/4\)</span>, está inscrito en un cuadrado cuya área es igual a 1. Se elige de forma aleatoria 100 puntos dentro del cuadrado . La probabilidad de que un punto esté dentro del círculo es igual a la pracción del área del cuadrado que abarca a este, la cual es <span class="math inline">\(\pi/4\)</span>. Por tanto, se puede estimar el valor de <span class="math inline">\(\pi/4\)</span> al contar el número de puntos dentro del círculo, que es 79 para obtener la estimación de <span class="math inline">\(\pi/4 \approx 0.76\)</span> . De este último resultado se concluye que <span class="math inline">\(\pi \approx 4(0.79) =3.14\)</span> . Este ejercicio presenta un experimento de simulación que fue diseñado para estimar el valor de <span class="math inline">\(\pi\)</span> al generar 1000 puntos en el cuadrado.</p>
-<p><img src="img/fig_pi.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Genere 1000 coordenadas <span class="math inline">\(x\)</span>: <span class="math inline">\(X_{1}\)</span>, . . . , <span class="math inline">\(X_{1000}\)</span>. Utilice la distribución uniforme con valor mínimo de <span class="math inline">\(0\)</span> y valor máximo de <span class="math inline">\(1\)</span>. La distribución uniforme genera variables aleatorias que tienen la misma probabilidad de venir de cualquier parte del intervalo <span class="math inline">\((0, 1)\)</span>.</p></li>
-<li><p>Genere <span class="math inline">\(1000\)</span> coordenadas <span class="math inline">\(y\)</span> : <span class="math inline">\(Y_{1}, . . . , Y_{1000}\)</span>, utilizando nuevamente la distribución uniforme con valor mínimo de <span class="math inline">\(0\)</span> y valor máximo de <span class="math inline">\(1\)</span>.</p></li>
-<li><p>Cada punto <span class="math inline">\((X_{i},Y_{i})\)</span> se encuentra dentro del círculo si su distancia desde el centro <span class="math inline">\((0.5, 0.5)\)</span> es menor a <span class="math inline">\(0.5\)</span>. Para cada par <span class="math inline">\((X_{i},Y_{i})\)</span> determine si la distancia desde el centro es menor a <span class="math inline">\(0.5\)</span>. Esto último se puede realizar al calcular el valor <span class="math inline">\((X_{i}-0.5)^{2}+(Y_{i}-0.5)^{2}\)</span>, que es el cuadrado de la distancia, y al determinar si es menor que <span class="math inline">\(0.25\)</span>.</p></li>
-<li><p>¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su estimación de <span class="math inline">\(\pi\)</span>? (Nota: Con sólo 1000 puntos, es probable que su estimación sea inferior por 0.05 o más. Una simulación con 10000 y 100000 puntos tiene mayores probabilidades de dar como resultado una estimación muy cercana al valor verdadero</p></li>
-</ol>
-<p><br/><br/><br/><br/></p>
-</div>
-<div id="ejercicio-3" class="section level2">
-<h2><strong>Ejercicio 3</strong></h2>
-<p>Tres sistemas están compuestos por los componentes <span class="math inline">\(R1\)</span>,<span class="math inline">\(R2\)</span>,<span class="math inline">\(R3\)</span> y <span class="math inline">\(R4\)</span> conectados, como lo muestra las siguientes figuras. El tiempo de vida en meses de los componentes <span class="math inline">\(R1\)</span> y <span class="math inline">\(R3\)</span> sigue una distribución lognormal con <span class="math inline">\(\mu=1\)</span> y <span class="math inline">\(\sigma=0.5\)</span> y la distribución en meses de los componentes <span class="math inline">\(R2\)</span> y <span class="math inline">\(R4\)</span> una distribución lognormal con <span class="math inline">\(\mu=2\)</span> y <span class="math inline">\(\sigma=1\)</span>. El sistema solo funciona si A y B lo hacen.</p>
-<p><img src="img/circuitos.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Genere por simulación un gran número (al menos <span class="math inline">\(1000\)</span>) de los tiempos de vida de los sistemas</p></li>
-<li><p>Estime la media del tiempo de vida para cada sistema.</p></li>
-<li><p>Estime la probabilidad de que los sistemas fallen en un tiempo inferior a dos meses.</p></li>
-<li><p>Estime el <span class="math inline">\(20^{o}\)</span> percentil (<span class="math inline">\(P_{20}\)</span>) de los tiempos de vida del primer sistema .</p></li>
-<li><p>Construya una gráfica de probabilidad normal de los tiempo de vida para cada sistema. ¿Los tiempos de vida de los sistemas tienen una distribución aproximadamente normal?</p></li>
-<li><p>Construya un histograma de los tiempos de vida de los sistemas. ¿Están sesgados a la izquierda, sesgados a la derecha, o son aproximadamente simétricos?</p></li>
-</ol>
-<p><br/><br/><br/><br/></p>
-</div>
-<div id="ejercicio-4" class="section level2">
-<h2><strong>Ejercicio 4</strong></h2>
-<p>La edad de una antigua pieza de materia orgánica se puede estimar a partir de la tasa a la que emite partículas beta como resultado del decaimiento del carbono-14. Por ejemplo , si X es el número de partículas emitidas durante diez minutos por un fragmento óseo con 10000 años de antigüedad que contiene 1 g de carbono, entonces X tiene una distribución de Poisson con media <span class="math inline">\(\lambda=45.62\)</span> . Un arqueólogo descubrió un pequeño fragmento óseo que contiene 1 g de carbono. Si t es la edad desconocida del hueso, en años, el arqueólogo contar{a el número X de partículas emitidas en diez minutos y calculará una edad estimada <span class="math inline">\(\widehat{t}\)</span> con la fórmula:</p>
-<p><span class="math display">\[\widehat{t}=\dfrac{\ln 15.3 - \ln (X/10)}{0.0001210} \]</span></p>
-<p>El arqueólogo no lo sabe, pero el hueso tiene exactamente <span class="math inline">\(100000\)</span> años de antiguedad, por lo que <span class="math inline">\(X\)</span> tiene una distribución de Poisson con <span class="math inline">\(\lambda=45.62\)</span>.</p>
-<p><img src="img/piezas.png" /></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Genere una muestra simulada de 10000 valores de <span class="math inline">\(X\)</span> y sus correspondientes valores de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
-<li><p>Estime la media de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
-<li><p>Estime la desviación estándar de <span class="math inline">\(\widehat{t}\)</span>.</p></li>
-<li><p>Estime la probabilidad de que <span class="math inline">\(\widehat{t}\)</span> esté a 1000 años con una edad real de 10000 años.</p></li>
-</ol>
+<div id="problema-2" class="section level1">
+<h1><strong>Problema 2</strong></h1>
+<p>El departamento de carnes de una cadena de supermercados empaca la carne molida en vendejas de dos tamaños: una esta diseñada para contener mas o menos 1 libra de carne y la otra para casi 3 libras. Una muestra aleatoria de 35 paquetes de la bandeja mas pequeña produjo mediciones de peso con un promedio de <span class="math inline">\(1.01\)</span> libras y una desviación estándar de <span class="math inline">\(0.18\)</span> libras.</p>
+<ul>
+<li><p>Encuentre una intervalo de confianza del 99% para el promedio de los paquetes mas pequeños.</p></li>
+<li><p>El departamento de control de calidad de esta cadena de supermercados piensa que la cantidad de carne molidas debe ser en promedio de 1 libra. ¿Debe preocupar al departamento de control de la calidad el resultado obtenido para el IC(99%)</p></li>
+</ul>
 <p><br/><br/></p>
-<p>Ejercicios tomados de Navidi(2006)</p>
 </div>
+<div id="problema-3" class="section level1">
+<h1><strong>Problema 3</strong></h1>
+<p>Se considera usar dos marcas diferentes de pinturas. Se seleccionaron 15 tipos de pinturas de cada marca para los cuales se midió el tiempo de secado en horas, obteniendo los siguientes resultados</p>
+<pre class="r"><code>A=c(3.5,2.7, 3.9, 4.2, 3.6, 2.7, 3.3, 5.2, 4.2, 2.9, 4.4, 5.2, 4.0, 4.1, 3.4)
+B=c(4.7, 3.9, 4.5, 5.5, 4.0, 5.3, 4.3, 6.0, 5.2, 3.7, 5.5, 6.2, 5.1, 5.4, 4.8)</code></pre>
+<p>Suponga que el tiempo de secado se distribuye normal . Calcule un intervalo de confianza para la diferencia de medias e interprete su resultado</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-4" class="section level1">
+<h1><strong>Problema 4</strong></h1>
+<p>En una encuesta aleatoria realizada a 500 familias de la ciudad que poseen televisión por cable, se encuentra que 340 tienen suscripción a HBO. Calcule un intervalo de confianza para la proporcion de familias que tienen suscripción a HBO en la ciudad. Interprete el resultado obtenido.</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-5" class="section level1">
+<h1><strong>Problema 5</strong></h1>
+<p>Suponga que se desea realizar un estudio en la ciudad para estimar la proporción de familias que tienen suscripción a HBO, con el fin de repetir el estudio después de dos meses, de tal forma que permita validar el efecto de publicidad de estos canales de televisión. Si se requiere estimar una intervalo de confianza para la proporción con un 95% de confianza y que la estimación de <span class="math inline">\(p\)</span> este dentro de 0.02 del valor verdadero, ¿Que tan grande debe ser la muestra?</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-6" class="section level1">
+<h1><strong>Problema 6</strong></h1>
+<p>Se afirma que una persona podrá reducir su peso en un periodo de dos semanas un promedio de 4.5 kilogramos con una nueva dieta. Los pesos de 7 mujeres de siguieron esta dieta se registraron antes y después de un periodo de dos semanas.</p>
+<pre class="r"><code>pesant=c(58.2, 60.3, 61.3, 69.0, 64.0, 62.6, 56.7)
+pesdes=c(60.0, 54.9, 58.1, 62.1, 58.5, 59.9, 54.4)</code></pre>
+<p>Pruebe la afirmacion sobrela dieta calculando un intervalo de confianza del 95% para la diferencia de medias . Suponga que las diferencias de los pesos se distribuyen aproximadamente normal.</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-7" class="section level1">
+<h1><strong>Problema 7</strong></h1>
+<p>El conjunto de datos de iris (de Fisher o Anderson) contiene las medidas en centímetros de las variables longitud y ancho del sépalo y largo y ancho del pétalo, respectivamente, para 50 flores de cada una de las 3 especies de iris : setosa, versicolor y virginica.</p>
+<pre class="r"><code>data(iris)
+head(iris)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<p>Determine intervalos de confianza para cada una de las caracteristicas por espacies. Existen diferencias entre los promedio del largo de los sepalos de las especies setosa y virginica?</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-8" class="section level1">
+<h1><strong>Problema 8</strong></h1>
+<p>Cuántos artículos deben incluirse en una muestra para estimar la proporción de defectuosos con un error no mayor del 2% y confiabilidad del 95%</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-9" class="section level1">
+<h1><strong>Problema 9</strong></h1>
+<p>De 1000 casos seleccionados al azar de cáncer de pulmón, 823 resultaron en la muerte dentro de los 10 años después de su detección. Construya un intervalo de confianza para la tasa de mortalidad por cáncer de pulmón del 95%, de acuerdo con los datos suministrados. Interprete los resultados obtenidos.</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-10" class="section level1">
+<h1><strong>Problema 10</strong></h1>
+<p>A seis ingenieros que trabajan para el estado se les solicito realizar un pronostico la tasa de inflación para el año entrante. La misma petición se le realizo a ocho especialistas en finanzas que trabajan para el sector privado. Los pronósticos entregado por los ingenieros son los siguientes: 4.2 %, 5.1 %, 3.9 %, 4.7 %, 4.8 %, 5.8 %. Por su parte los especialistas en finanzas pronosticaron: 5.7 %, 6.1 %, 5.2 %, 4.9 %, 4.6 %, 4.5 %, 5.2 %, 5.5 %. ¿Estan los especialistas (ingenieros y financieros) realizando pronósticos similares? . Suponga que los pronósticos realizados tienen distribucion normal. Construye un intervalo de confianza para la diferencia de los promedios realizados por los ingenieros y los especializadas en finanzas del 95%. Concluya a partir de los resultados.</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-11" class="section level1">
+<h1><strong>Problema 11</strong></h1>
+<p>Los siguientes datos corresponden a las notas finales del curso de matematicas fundamentales.</p>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
+     3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
+     3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
+     3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 
+     3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
+     3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)</code></pre>
+<p>Construya un intervalo del 95% confianza para el promedio de la nota final del curso de matematicas fundamentales. Interprete su resultado</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-12" class="section level1">
+<h1><strong>Problema 12</strong></h1>
+<p>Una muestra de siete bloques de concreto tienen la siguiente fuerza de compresión medida en MPa . Los resultados obtenidos son:</p>
+<pre class="r"><code>x=c(1367.6, 1411.5, 1318.7, 1193.6, 1406.2, 1425.7, 1572.4)</code></pre>
+<p>Estime un intervalo de confianza del 95% para la media de la fuerza de compresion de los bloques de concreto</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-13" class="section level1">
+<h1><strong>Problema 13</strong></h1>
+<p>Los directivos de una ensambladora de automóviles de gran tamaño están tratando de decidir si compraran neumáticos de la marca A o de la marca B para sus modelos nuevos. Con el fin de ayudarlos a tomar una decisión se realiza un experimento en el que se usan 12 neumáticos de cada marca. Los neumáticos se utilizan hasta que se desgastan completamente. Los resultados son los siguientes:</p>
+<pre class="r"><code>#-----------------------------------------------------
+
+
+A=c(  55145, 58026, 58795, 54660, 61153, 56969, 61764, 59094, 60456, 54557, 52484, 59600, 65328, 55317, 59132, 61879, 56978, 63847, 59054, 62958, 63625,  54882, 60977, 52956, 55874, 62035, 59729, 59276, 54498, 44541, 62515, 58680, 48413, 55278, 62382, 58458, 60689, 52735, 65378, 63553, 51734, 48638, 58945, 65618, 51017, 57320, 56205, 55164, 59566, 55459, 55944, 58553, 54123, 53997, 55400, 52959, 64212, 64364, 50704, 56016, 63079, 58443, 57731, 55009, 55040, 64706, 54833, 70519, 55874, 54464, 63194, 60578, 49799, 59446, 48464, 53718, 49209, 56571, 55349, 51468, 50086, 54430, 52669, 63818,  48477, 61231, 55310, 64944, 63267, 63753, 47386, 56677, 54458, 46094, 61715, 75513, 62476, 63214, 62127, 51285, 46653, 51599, 64927, 60860, 60712, 61237, 68460, 51770, 58827, 50638, 53963, 66139, 62998, 66897, 61745, 54100, 55902, 53372, 58597, 58287, 48172, 59902, 58084, 50986, 50958, 61611, 47682, 54107, 54065, 52178, 47878, 68258, 63429, 53436, 58485, 62726, 56854, 67293, 66522, 54483, 55345, 61032, 56404, 60082, 63652, 59270, 64899, 53591, 49319, 56158, 57763, 67967, 53519, 51795, 57936, 60034, 58262, 57925, 53085, 59093, 57550, 55385, 54914, 58514, 54447, 62260, 48733, 66677, 57977, 58299, 50211, 53479, 61244, 71311, 62398, 55685, 58236, 56846, 57032, 55161, 57037, 59103, 57574, 51568, 60970, 60623, 58770, 60432, 49727, 51234, 60849, 66895, 56137, 63133, 55200, 51999, 57924, 49944, 69043, 57362)
+# ----------------------------------------------------
+B=c(60970, 62409, 60546, 58508, 58974, 56682, 59483, 58048, 73107, 61977, 55974, 58522, 56650, 70118, 48307, 43589, 60972, 55117, 59073, 51849, 57432, 60040, 52646, 55260, 65484, 54130, 49460, 63123, 55019, 52860, 52371, 56559, 54470, 53761, 49789, 51794, 67162, 62151, 59419, 53530, 60282, 49281, 51988, 66773, 54680, 59851, 63318, 62390, 60868, 50775, 61432, 59240, 62158, 59505, 56764, 58610, 54403, 41256, 51839, 50015, 60640, 59592, 67239, 63151, 71271, 67475, 50661, 54248, 52843, 62211, 60228, 61028, 59141, 68663, 46742, 62955, 58379, 58536, 68192, 59237, 66816, 66133, 56561, 59737, 60844, 56732, 66091, 58064, 59967, 55692, 59892, 59344, 57747, 59144, 68256, 60708, 58412, 61619, 65965, 61758, 57421, 47994, 66435, 64331, 55178, 54500, 50148, 57984, 80090, 71121, 69179, 65242, 63310, 70453, 55732, 53568, 56707, 61417, 61650, 60417, 54468, 66846, 61566, 68068, 65289, 48776, 56604, 57284, 58633, 69215, 56645, 51395, 65065, 66168, 55952, 53590, 62492, 52170, 57820, 61187, 62834, 57332, 53411, 52159, 54241, 64803, 53728, 50837, 55228, 57432, 62616, 61347, 58771, 62598, 67617, 63428, 55349, 64973, 59940, 64304, 65039, 51581, 58681, 68861, 57316, 61088, 55170, 62741, 52045, 65029, 52823, 65256, 64420, 69404, 57772, 64778, 66935, 58165, 40556, 59225, 56853, 50115, 61679, 70560, 54832, 54124, 58179, 63385, 57324, 64535, 59550, 53822, 61049, 60865, 66225, 59545, 62325, 54903, 68101, 65169)</code></pre>
+<p>¿Que marca de neumáticos escogeria entre las dos opciones de acuerdo a la anterior informacion? Suponga que las poblaciones se distribuyen de forma aproximadamente normal .</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-14" class="section level1">
+<h1><strong>Problema 14</strong></h1>
+<p>El Director de una fabrica de muebles desea estimar el tiempo promedio que toma perforar tres agujeros en una placa metálica que se utiliza en la construcción de bases para mesas metálicas. El desea tener una confianza del 95 % para que la media muestral este dentro de 5 segundos de la media real, suponiendo que <span class="math inline">\(\sigma=40\)</span>, obtenida en estudios anteriores. Una de las firmas contactadas para la realización del estudio indica que para esas condiciones, deberá realizar 175 mediciones. El Director le pide que revise la información suministrada y le de su concepto.</p>
+<p><br/><br/></p>
+</div>
+<div id="problema-15" class="section level1">
+<h1><strong>Problema 15</strong></h1>
+<p>Un estudio realizado por MasterCard revelo que 131 de las 468 mujeres que efectuaron compras en almacén lo hicieron utilizando la tarjeta de crédito propia del almacén, mientras que 57 de 237 hombres utilizaron la misma tarjeta para sus compras en el almacén. ¿ Existe evidencia suficiente en los datos que permita concluir que la proporción de mujeres es mayor que la proporción de hombres que utilizan la tarjeta de crédito propia del almacén para realizar sus compras?</p>
 </div>
 
 

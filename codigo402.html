@@ -537,8 +537,11 @@ div.tocify {
 </div>
 
 
-<div id="simulación-confianza" class="section level2">
-<h2><strong>Simulación confianza</strong></h2>
+<div id="simulación" class="section level1">
+<h1><strong>Simulación</strong></h1>
+<p><br/><br/></p>
+<div id="confianza" class="section level2">
+<h2><strong>Confianza</strong></h2>
 <pre class="r"><code>m= 100 ## número de experimentos
 n=100 ## tamaño de muestra
 mux=100 # media poblacion 
@@ -568,24 +571,37 @@ for(i in 1:100) {
   segments(ICa[1,i], i, ICa[2,i], i)
 }</code></pre>
 <p><img src="codigo402_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
 </div>
-<div id="estimaciones" class="section level2">
-<h2><strong>Estimaciones</strong></h2>
+</div>
+<div id="estimaciones" class="section level1">
+<h1><strong>Estimaciones</strong></h1>
+<p><br/><br/></p>
+<div id="ic-para-una-media" class="section level2">
+<h2><strong>IC para una media</strong></h2>
 <p>Intervalo de confianza para una media</p>
 <p>Como ejemplo se estima un IC para la edad de las personas contagiadas de covid en Valle, para una muestra de n=1000</p>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t.test(Muestra$edad,conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] 40.64325 42.88475
+<pre><code>## [1] 40.15215 42.45385
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
+<p><br/><br/></p>
+</div>
+<div id="ic-para-una-proporción" class="section level2">
+<h2><strong>IC para una proporción</strong></h2>
 <p>Intervalo de confianza para una proporción</p>
 <p>Como ejemplo se estima un intervalo de confianza para una muestra de tamaño 1000 para la proporción de fallecidos por covid en el Valle</p>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(t1[1],1000, conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] 0.01985396 0.04192127
+<pre><code>## [1] 0.02738482 0.05229838
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
+<p><br/><br/></p>
+</div>
+<div id="ic-comparación-varianzas" class="section level2">
+<h2><strong>IC comparación varianzas</strong></h2>
 <p>Intervalo de confianza para la comparación de varianzas</p>
 <p>Como ejemplo se toman dos muestras de las edades para las personas contagiadas por covid en el Valle</p>
 <pre class="r"><code>Valle1= Valle[Valle$sexo==&quot;f&quot;,]
@@ -594,37 +610,47 @@ datax=Valle1[sample(1:nrow(Valle1),100,replace=F),]
 datay=Valle2[sample(1:nrow(Valle2),100,replace=F),]
 
 var.test(datax$edad, datay$edad)$conf.int </code></pre>
-<pre><code>## [1] 0.7041925 1.5554844
+<pre><code>## [1] 0.9229305 2.0386527
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
-<p>Intervalo de confianza para la comparación de medias grupos independientes, varianzas iguales</p>
+<p><br/><br/></p>
+</div>
+<div id="ic-medias-grupos-independientes" class="section level2">
+<h2><strong>IC medias grupos independientes</strong></h2>
+<p>Intervalo de confianza para la comparación de medias grupos independientes, suponiendo <strong>varianzas iguales</strong></p>
 <p>Como ejemplo se toman dos muestras para comparar la edad de las personas contagiadas por covid en dos grupos independientes</p>
 <pre class="r"><code>t.test(datax$edad, datay$edad,
        mu = 0, 
        paired = FALSE, 
        var.equal = TRUE,
        conf.level = 0.95 )$conf.int </code></pre>
-<pre><code>## [1] -8.92942  1.18942
+<pre><code>## [1] -1.625582  9.145582
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
-<p>Intervalo de confianza para la comparación de medias grupos independientes, varianza diferentes</p>
+<p><br/><br/></p>
+<p>Intervalo de confianza para la comparación de medias grupos independientes, con <strong>varianza diferentes</strong></p>
 <p>En este caso se toman dos muestras de grupos independientes, solo se realiza el procedimiento para mostrar la sintaxis en el caso de que las varianza sean diferentes</p>
 <pre class="r"><code> t.test(datax$edad, datay$edad,
        mu = 0, 
        paired = FALSE, 
        var.equal = FALSE,
        conf.level = 0.95 )$conf.int</code></pre>
-<pre><code>## [1] -8.929436  1.189436
+<pre><code>## [1] -1.626396  9.146396
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
+<p><br/><br/><br/></p>
+</div>
+<div id="ic-comparación-proporciones" class="section level2">
+<h2><strong>IC comparación proporciones</strong></h2>
 <p>Comparación de proporciones</p>
 <p>Para el ejemplo se toma una muestra de tamaño 1000 y se compara las proporciones de personas contagiadas y con estado grave y con estado moderado</p>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(c(t1[2],t1[3]),c(1000,1000), conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] 0.9388325 0.9671675
+<pre><code>## [1] 0.9514209 0.9765791
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
+</div>
 </div>
 
 

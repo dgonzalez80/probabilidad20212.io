@@ -64,11 +64,11 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 |Actividad      | Descripción                    | 
 |:--------------|:-----------------------------  |
-|**Actividad 1**    |Construir un mapa mental sobre intervalos de confianza elaborado **a mano**, el cual deberá ser entregado en formato pdf|
+|**Actividad 1**    |Construir un **mapa mental** sobre intervalos de confianza elaborado **a mano**, el cual deberá ser entregado en formato pdf|
 |Trabajo individual |  |
 |Fecha          | 24 de octubre  de 2021 |
 |Hora           | 23:59 hora local       |
-|**Actividad 2**    |Resuelva las preguntas y problemas planteadas en  el  Taller421 y entregue su solución  en formato  pdf en el enlace correspondiente de  Brightspace|
+|**Actividad 2**    |Resuelva las preguntas y problemas planteadas en  el  [**Taller 421**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Taller412.pdf) y entregue su solución  en formato  pdf en el enlace correspondiente de  Brightspace|
 |Trabajo individual |  |
 |Fecha          | 24 de octubre  de 2021 |
 |Hora           | 23:59 hora local       |
@@ -473,14 +473,15 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 
 
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; 
-                     color: #000000; 
-                     background-color: #FFFFFF ; 
-                     border-color: #000000;">
+
+![](img/resumenIC.png)
+
+<br/><br/><br/><br/>
 
 
+# **Video**
 
-</div>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5y7MJiPXIjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 

@@ -25,6 +25,8 @@ c5="#BC2B6A" # MORADO
 
 Los estudiantes deberán realizar un proyecto que les permita poner en práctica los conocimientos adquiridos en el curso de  Probabilidad y Estadística.
 
+<br/><br/><br/>
+
 ## **Objetivos** 
 
 + Contribuir a la formación integral, al trabajo en equipo y la interrelación de conocimientos de Estadística alrededor de un problema específico.
@@ -33,11 +35,15 @@ Los estudiantes deberán realizar un proyecto que les permita poner en práctica
 
 + Desarrollar destrezas en el análisis estadístico y la presentación de informes estadísticos. 
 
+<br/><br/><br/>
+
 ## **Temática** 
 
 En grupos de hasta de tres estudiantes deberán desarrollar un trabajo que corresponda a un problema de  interés para el  grupo, que permita la aplicación de la Estadística en un tema específico. 
 
 El producto de este trabajo deberá ser entregado en una infografía junto a un resumen  
+
+<br/><br/><br/>
 
 ## **Requisitos** 
 
@@ -49,6 +55,7 @@ El producto de este trabajo deberá ser entregado en una infografía junto a un 
 
 + Al final los estudiantes deberán realizar una presentación del trabajo y de los principales hallazgos. Cada grupo contará con un tiempo de 5 minutos para la presentación de los resultados.
 
+<br/><br/><br/>
 
 ## **Fechas** 
 
@@ -64,6 +71,8 @@ Entrega de informes:
   + Fecha: noviembre 24 de 2021
   + El trabajo será socializado en un blog del curso
   
+<br/><br/><br/>
+
 ## **Referencias** 
 
 + Metodología de la investigación . Hernandez Sampieri Roberto. Segunda edición. Mc Graw-Hill

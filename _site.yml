@@ -98,6 +98,8 @@ navbar:
           href: Taller_discretas.html
         - text: "Taller Continuas"
           href: Taller_continuas.html
+        - text: "Taller IC"
+          href: TallerIC.html
         - text: "Trabajo final"
           href: Guia_trabajo.html
 output:
