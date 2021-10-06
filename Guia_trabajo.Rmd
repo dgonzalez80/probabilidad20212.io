@@ -39,7 +39,7 @@ En grupos de hasta de tres estudiantes deberán desarrollar un trabajo que corre
 
 El producto de este trabajo deberá ser entregado en una infografía junto a un resumen  
 
-## **Requisitos**: 
+## **Requisitos** 
 
 + Máximo tres, mínimo de dos integrantes. No se permiten trabajos individuales.
 
@@ -50,7 +50,7 @@ El producto de este trabajo deberá ser entregado en una infografía junto a un 
 + Al final los estudiantes deberán realizar una presentación del trabajo y de los principales hallazgos. Cada grupo contará con un tiempo de 5 minutos para la presentación de los resultados.
 
 
-## **Fechas**: 
+## **Fechas** 
 
 Entrega de informes: 
 
@@ -60,12 +60,13 @@ Entrega de informes:
   + La primera  entrega comprende los puntos del 1 al 5 
 	
 + Entrega del informe final y presentación:
-  + **Infografía.pdf** y **resumen.pdf** tipo artículo
+  + **Infografía** en formato pdf o png y **resumen.pdf** tipo artículo
   + Fecha: noviembre 24 de 2021
   + El trabajo será socializado en un blog del curso
   
-## **Referencias bilbiográficas** 
+## **Referencias** 
 
 + Metodología de la investigación . Hernandez Sampieri Roberto. Segunda edición. Mc Graw-Hill
 + Investigación de Mercados. Naresh K. Malhotra. Quinta Edición. Pearson.
 
+Herramientas sugeridas :  [Canva](https://www.canva.com/es_co/herramientas/infographic-maker-v1/?utm_source=google_sem&utm_medium=cpc&utm_campaign=co_es_all_pro_rev_conversion_infographic_em_exp&utm_term=co_es_all_pro_rev_conversion_Infographic-Maker_em_exp&gclid=CjwKCAjwkvWKBhB4EiwA-GHjFtDDvq5SNOCudFscSvOINGSVSe0cBj2ZRKr-j3DL_nulbF4UsQvIyxoCFukQAvD_BwE&gclsrc=aw.ds),  [Geneally](https://genial.ly/), [Mural](https://www.mural.co/), [Piktochart](https://piktochart.com/), [Visual](https://visual.ly/)

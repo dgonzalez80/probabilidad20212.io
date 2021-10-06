@@ -100,7 +100,6 @@ navbar:
           href: Taller_continuas.html
         - text: "Trabajo final"
           href: Guia_trabajo.html
-          
 output:
   html_document:
     theme: cosmos
