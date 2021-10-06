@@ -370,7 +370,7 @@ En una muestra de 200 clientes, el 20% indica preferencia por tamaño especial d
 
 <br/><br/>
 
-**Solución***
+**Solución**
 
 En este caso se trata de la comparación de dos proporciones (proporción de clientes que prefieren el tamaño especial dentro de los clientes de la pizzería - $p_{2}$ comparada con la proporción de los clientes de la misma pizzería pero después de realizada la campaña publicitaria - $p_{2}$)
 	

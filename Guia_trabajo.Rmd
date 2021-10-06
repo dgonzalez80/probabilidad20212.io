@@ -1,0 +1,71 @@
+---
+title: "**Guía Trabajo final**"
+author: "dgonzalez"
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
+```
+
+
+Los estudiantes deberán realizar un proyecto que les permita poner en práctica los conocimientos adquiridos en el curso de  Probabilidad y Estadística.
+
+## **Objetivos** 
+
++ Contribuir a la formación integral, al trabajo en equipo y la interrelación de conocimientos de Estadística alrededor de un problema específico.
+
++ Permitir los estudiantes detectar situaciones en las cuales pueda aplicar las técnicas Estadísticas estudiadas.
+
++ Desarrollar destrezas en el análisis estadístico y la presentación de informes estadísticos. 
+
+## **Temática** 
+
+En grupos de hasta de tres estudiantes deberán desarrollar un trabajo que corresponda a un problema de  interés para el  grupo, que permita la aplicación de la Estadística en un tema específico. 
+
+El producto de este trabajo deberá ser entregado en una infografía junto a un resumen  
+
+## **Requisitos**: 
+
++ Máximo tres, mínimo de dos integrantes. No se permiten trabajos individuales.
+
++ Seleccionar un problema de interés propio para el grupo que  permita la aplicación de los conocimientos de estadística vistos en el curso. El tema propuesto deberá contar con el visto bueno del profesor.
+
++  El contenido de la infografía deberá utilizar por lo menos 6 resultados producto de la inferencia estadística (intervalos de confianza o pruebas de hipótesis) que respalden los resultados presentados
+
++ Al final los estudiantes deberán realizar una presentación del trabajo y de los principales hallazgos. Cada grupo contará con un tiempo de 5 minutos para la presentación de los resultados.
+
+
+## **Fechas**: 
+
+Entrega de informes: 
+
++ Primera entrega:
+  + **Documento pdf** :Tema, objetivos, información y planteamiento de las inferencias a realizar
+  + Fecha: octubre 25 de 2021 
+  + La primera  entrega comprende los puntos del 1 al 5 
+	
++ Entrega del informe final y presentación:
+  + **Infografía.pdf** y **resumen.pdf** tipo artículo
+  + Fecha: noviembre 24 de 2021
+  + El trabajo será socializado en un blog del curso
+  
+## **Referencias bilbiográficas** 
+
++ Metodología de la investigación . Hernandez Sampieri Roberto. Segunda edición. Mc Graw-Hill
++ Investigación de Mercados. Naresh K. Malhotra. Quinta Edición. Pearson.
+
