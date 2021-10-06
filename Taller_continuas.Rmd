@@ -201,7 +201,7 @@ cat("P(X<5)=", pgamma(5,3,1))
 
 ## Distribucion Weibull
 
-Sea $X$ una variable con distribucion Weibul con \alpha=0.01 y \beta=2. determine:
+Sea $X$ una variable con distribución Weibul con $\alpha=0.01$ y $\beta=2$. determine:
 
 (a) $P(X<10)$
 
@@ -212,6 +212,22 @@ Sea $X$ una variable con distribucion Weibul con \alpha=0.01 y \beta=2. determin
 (d) Determine el valor de $x$ tal que $P(X>x)=0.9$
 
 (e) Realice la gráfica de la función de  densidad de probabilidad de $X$
+
+
+**Nota**: Se requiere realizar una transformación de  los parámetros $\alpha$ y $\beta$ a los parámetros $a$ y $b$ para utilizar la función de la distribución Weibull en R así:
+
++ $a = \beta$
++ $b= (\defrac{1}{\alpha})^{1/\beta}$
+
+En ese caso 
+```{r}
+a=2
+b=(1/0.01)^(1/2)
+a
+b
+pweibull(10,a,b)
+```
+
 
 ```{r}
 a=0.01

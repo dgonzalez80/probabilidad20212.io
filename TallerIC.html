@@ -565,6 +565,16 @@ div.tocify {
 <pre class="r"><code>A=c(3.5,2.7, 3.9, 4.2, 3.6, 2.7, 3.3, 5.2, 4.2, 2.9, 4.4, 5.2, 4.0, 4.1, 3.4)
 B=c(4.7, 3.9, 4.5, 5.5, 4.0, 5.3, 4.3, 6.0, 5.2, 3.7, 5.5, 6.2, 5.1, 5.4, 4.8)</code></pre>
 <p>Suponga que el tiempo de secado se distribuye normal . Calcule un intervalo de confianza para la diferencia de medias e interprete su resultado</p>
+<pre class="r"><code>var.test(A,B)$conf.int</code></pre>
+<pre><code>## [1] 0.3588543 3.1837492
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<pre class="r"><code># como el IC contiene a 1, asuminos que las varianzas son iguales</code></pre>
+<pre class="r"><code>t.test(A,B,var.equal=T)$conf.int</code></pre>
+<pre><code>## [1] -1.6934843 -0.5465157
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p>Como el intervalo da negativo, negativo indica que <span class="math inline">\(\mu_{1} &lt; \mu_{2}\)</span> , por tanto la marca A ofrece un menor tiempo promedio de secado</p>
 <p><br/><br/></p>
 </div>
 <div id="problema-4" class="section level1">

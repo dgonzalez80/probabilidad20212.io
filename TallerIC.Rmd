@@ -50,6 +50,16 @@ B=c(4.7, 3.9, 4.5, 5.5, 4.0, 5.3, 4.3, 6.0, 5.2, 3.7, 5.5, 6.2, 5.1, 5.4, 4.8)
 
 Suponga que el tiempo de secado se distribuye normal . Calcule un intervalo de confianza para la diferencia de medias e interprete su resultado
 
+```{r}
+var.test(A,B)$conf.int
+# como el IC contiene a 1, asuminos que las varianzas son iguales
+```
+
+```{r}
+t.test(A,B,var.equal=T)$conf.int
+```
+Como el intervalo da negativo, negativo indica que $\mu_{1} < \mu_{2}$ , por tanto la marca A ofrece un menor tiempo promedio de secado
+
 <br/><br/>
 
 # **Problema 4**
