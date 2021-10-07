@@ -489,23 +489,28 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 
 
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; 
+                     color: #000000; 
+                     background-color: #FFFFFF ; 
+                     border-color: #000000;">
 
-|                  |          |                                     |
-|:----------------:|:-------:|:-------------------------------------|
-|![](img/Nota_R.png){width=30%}|  |                                 |
-| |$\mu$             | `t.test(x, coef.level= 1−a)$conf.int`          |
-| |$p$               | `prop.test(x,n,p=po, coef.level=1−a)`          |
-| |$\mu_{1}-\mu_{2}$ | `t.test(datos1,datos2, paired=T)`              |
-| |                  | `t.test(datos1 datos2, var.equal=T)`           |
-| |                  | `t.test(datos1 datos2, var.equal=F)`           |
-| |$p_{1} − p_{2}$   | `prop.text(c(x1,x2), c(n1,n2))`                |
-| |$\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)` |
+![](img/Nota_R.png){width=10%}
+
+| parámetro        | código R                                       |
+|:----------------:|:----------------------------------------------:|
+|$\mu$             | `t.test(x, coef.level= 1−a)$conf.int`          |
+|$p$               | `prop.test(x,n,p=po, coef.level=1−a)`          |
+|$\mu_{1}-\mu_{2}$ | `t.test(datos1,datos2, paired=T)`              |
+|                  | `t.test(datos1 datos2, var.equal=T)`           |
+|                  | `t.test(datos1 datos2, var.equal=F)`           |
+|$p_{1} − p_{2}$   | `prop.text(c(x1,x2), c(n1,n2))`                |
+|$\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)` |
+
+
+</div>
 
 
 
-
-
-<br/><br/><br/><br/>
 
 
 ![](img/resumenIC.png)
