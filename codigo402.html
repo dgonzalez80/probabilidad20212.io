@@ -586,7 +586,7 @@ for(i in 1:100) {
 <p>Como ejemplo se estima un IC para la edad de las personas contagiadas de covid en Valle, para una muestra de n=1000</p>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t.test(Muestra$edad,conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] 40.57697 42.87503
+<pre><code>## [1] 40.64325 42.88475
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/></p>
@@ -613,7 +613,7 @@ datax=Valle1[sample(1:nrow(Valle1),100,replace=F),]
 datay=Valle2[sample(1:nrow(Valle2),100,replace=F),]
 
 var.test(datax$edad, datay$edad)$conf.int </code></pre>
-<pre><code>## [1] 0.674532 1.489967
+<pre><code>## [1] 0.7041925 1.5554844
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/></p>
@@ -627,7 +627,7 @@ var.test(datax$edad, datay$edad)$conf.int </code></pre>
        paired = FALSE, 
        var.equal = TRUE,
        conf.level = 0.95 )$conf.int </code></pre>
-<pre><code>## [1] -3.281465  6.701465
+<pre><code>## [1] -8.92942  1.18942
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/></p>
@@ -638,7 +638,7 @@ var.test(datax$edad, datay$edad)$conf.int </code></pre>
        paired = FALSE, 
        var.equal = FALSE,
        conf.level = 0.95 )$conf.int</code></pre>
-<pre><code>## [1] -3.281465  6.701465
+<pre><code>## [1] -8.929436  1.189436
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/><br/></p>
@@ -650,7 +650,7 @@ var.test(datax$edad, datay$edad)$conf.int </code></pre>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(c(t1[2],t1[3]),c(1000,1000), conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] -0.964522 -0.935478
+<pre><code>## [1] 0.9388325 0.9671675
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 </div>

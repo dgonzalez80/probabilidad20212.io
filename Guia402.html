@@ -723,7 +723,7 @@ Your browser does not support the video tag.</video>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="center"><img src="img/ej1.png" style="width:100.0%" /></td>
+<td align="center"><img src="img/ej1.png" style="width:120.0%" /></td>
 <td align="left">Se registró el tiempo transcurrido entre la facturación y la recepción del pago, para una muestra de 100 clientes en una empresa. La media y la desviación estándar son respectivamente: 39.1 días y 17.3 días. Con el fin de establecer una medición de la calidad en el servicio, se requiere determinar una estimación del 95% para la media.</td>
 </tr>
 </tbody>
@@ -754,7 +754,34 @@ Your browser does not support the video tag.</video>
 <p><span class="math display">\[e= z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p><span class="math display">\[e^{2}= z_{\alpha/2}^{2} \frac{\sigma^{2}}{n}\]</span></p>
 <p><span class="math display">\[n = \displaystyle\frac{z_{\alpha/2}^{2}\sigma^{2}}{e^{2}}\]</span></p>
-<p><img src="img/Nota_ej.png" style="width:10.0%" /></p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej2.png" style="width:120.0%" /></td>
+<td align="left">Se desea estimar la media de las personas que han fallecido por Covid en Colombia, con una confianza del 98% y un error de muestro de 1 año. ¿Qué tamaño deberá tener la muestra para cumplir con estas condiciones?</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<p><strong>Solución</strong></p>
+<p>Información: Confianza : 98% (<span class="math inline">\(z_{\alpha/2}\)</span>) error de muestro : 1 año (<span class="math inline">\(|\bar{x}-\mu| &lt; e\)</span>) varianza : no tenemos la varianza y por tanto tenemos 3 alternativas :(1) mediante un estudio previo similar obtener el valor de la varianza, (2) realizar una muestra piloto que puede ser de n=40 y con ella estimar la varianza <span class="math inline">\(s^{2}\)</span>, (3) preguntando a un experto sobre el valor del mínimo y el máximo de la variable se puede estimar la desviación estándar (<span class="math inline">\(s=\frac{\max\{x\}+\min\{x\}}{2}\)</span>)</p>
+<pre class="r"><code># varianza
+s2.edad=var(Muestra$edad)
+# confianza
+alpha=1-.98
+za1.2=qnorm(1-alpha/2)
+# error de nuestre
+e=1 # año
+
+# tamaño de muestra
+n=(za1.2)^2*(s2.edad)/(e^2)
+
+round(n,0)  # redondeo a entero</code></pre>
+<pre><code>## [1] 1935</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción" class="section level3">
@@ -768,11 +795,29 @@ Your browser does not support the video tag.</video>
 <p>Supuesto: + <span class="math inline">\(np&gt;5\)</span> o <span class="math inline">\(n(1-p)&gt;5\)</span></p>
 </div>
 <p><br/><br/></p>
-<p><img src="img/Nota_ej.png" style="width:10.0%" /></p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej3.png" style="width:120.0%" /></td>
+<td align="left">En una encuesta aleatoria realizada a 500 familias de la ciudad que poseen televisión por cable, se encuentra que 340 tienen suscripción a HBO. Calcule un intervalo de confianza para la proporción de familias que tienen suscripción a HBO en la ciudad. Interprete el resultado obtenido.</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<p><strong>Solución</strong></p>
+<pre class="r"><code>prop.test(340,500)$conf.int</code></pre>
+<pre><code>## [1] 0.6368473 0.7203411
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p>De acuerdo con el resultado anterior, se puede afirmar con una confianza del 95% que entre el 63.7% y el 72.0% de las familias tienen una suscripción a HBO</p>
 <p><br/><br/></p>
 </div>
-<div id="intervalos-de-confianza-para-la-variaza" class="section level3">
-<h3><strong>Intervalos de confianza para la variaza</strong></h3>
+<div id="intervalos-de-confianza-para-la-varianza" class="section level3">
+<h3><strong>Intervalos de confianza para la varianza</strong></h3>
 <p>En el caso del intervalo de confianza para la varianza se parte de la premisa de que la variable</p>
 <p><span class="math display">\[\frac{(n-1)S^{2}}{\sigma^{2}} \sim \chi^{2}_{v=n-1}\]</span></p>
 <p>a partir de ella se puede construir</p>
@@ -784,7 +829,33 @@ Your browser does not support the video tag.</video>
 <p><span class="math display">\[IC_{\sigma^{2}}: \Bigg( \displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{\alpha/2}} ;\displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{1-\alpha/2}} \Bigg)\]</span></p>
 <p>Supuestos: <span class="math inline">\(X\sim N(\mu,\sigma^{2})\)</span></p>
 </div>
-<p><img src="img/Nota_ej.png" style="width:10.0%" /></p>
+<p><br/><br/></p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej4.png" style="width:120.0%" /></td>
+<td align="left">Se quiere estimar un intervalo de confianza del 95% para la desviación estandar de los precios de los últimos 22 dias (sep.10.2021 a oct.7.2021, tomados de :Investing.com)</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>ecopetrol=c(2810, 2810, 2825, 2769, 2734, 2706, 2699, 2671, 2550, 2590, 2570, 2529, 2520, 2566, 2615, 2620, 2550, 2572, 2553, 2570, 2593, 2606) 
+
+ic.var=function(x){
+  n=length(x)
+  per.chi2=qchisq(c(0.975, 0.025), n-1)   # percentiles chi-cuadrado para 95% de confianza
+  icvar=(n-1)*var(x)/per.chi2
+  return(icvar)
+}
+ic.var(ecopetrol)        # intervalo de confianza para la varianza</code></pre>
+<pre><code>## [1]  5734.598 19785.968</code></pre>
+<pre class="r"><code>sqrt(ic.var(ecopetrol))  # intervalo de confianza para la desviación estandar</code></pre>
+<pre><code>## [1]  75.72713 140.66260</code></pre>
+<p><br/><br/></p>
+<p>Se estima con una confianza del 95% que la desviación estándar del precio de las acciones de Ecopetrol está entre $ 75.7 y $ 140.0</p>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
@@ -804,7 +875,42 @@ Your browser does not support the video tag.</video>
 <p>donde <span class="math inline">\(d_{i}=x_{1i}-x_{2i}\)</span> y <span class="math inline">\(s_{d}\)</span> es la desviación estándar de las diferencias <span class="math inline">\(d_{i}=x_{1i}-x_{2i}\)</span></p>
 </div>
 <p><br/><br/></p>
-<p><img src="img/Nota_ej.png" style="width:10.0%" /></p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej5.png" style="width:120.0%" /></td>
+<td align="left">Se afirma que una persona podrá reducir su peso en un periodo de dos semanas un promedio de 4.5 kilogramos con una nueva dieta. Los pesos de 7 mujeres de siguieron esta dieta se registraron antes y después de un periodo de dos semanas.</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="left">peso.ant=c(58.2, 60.3, 61.3, 69.0, 64.0, 62.6, 56.7)</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="left">pes.des=c(60.0, 54.9, 58.1, 62.1, 58.5, 59.9, 54.4)</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="left">Pruebe la afirmación sobre la dieta calculando un intervalo de confianza del 95% para la diferencia de medias . Suponga que las diferencias de los pesos se distribuyen aproximadamente normal.</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>peso.ant=c(58.2, 60.3, 61.3, 69.0, 64.0, 62.6, 56.7)
+peso.des=c(60.0, 54.9, 58.1, 62.1, 58.5, 59.9, 54.4)
+
+t.test(peso.ant,peso.des,  
+       paired = TRUE,        # pareadas  
+       conf.level = 0.95)$conf.int    # </code></pre>
+<pre><code>## [1] 0.8029499 6.1113358
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p><br/><br/></p>
+<p>Se puede afirmar que la diferencia entre los promedios de los peso antes y después, está entre <span class="math inline">\((0.80 6.11)\)</span> kilogramos con una confianza del 95%. Por el momento diremos que la dieta generó una reducción en el peso dado que los dos valores del intervalo son positivos. La veracidad de la afirmación, la retomaremos en la unidad 4.3 donde se realiza una prueba de hipótesis.</p>
+<p><br/><br/><br/></p>
 </div>
 <div id="diferencia-de-medias-poblaciones-independientes" class="section level3">
 <h3><strong>Diferencia de medias poblaciones independientes</strong></h3>
@@ -818,7 +924,51 @@ Your browser does not support the video tag.</video>
 <p>Supuestos: + <span class="math inline">\(X_{1}\)</span> y <span class="math inline">\(X_{2}\)</span> son variables aleatorias independientes con distribución normal + <span class="math inline">\(X_{1}\)</span> y <span class="math inline">\(X_{2}\)</span> tienen varianzas iguales pero desconocidas</p>
 </div>
 <p><br/><br/></p>
-<p><img src="img/Nota_ej.png" style="width:10.0%" /></p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej6.png" style="width:120.0%" /></td>
+<td align="left">A seis ingenieros que trabajan para el estado se les solicito realizar un pronostico la tasa de inflación para el año entrante. La misma petición se le realizo a ocho especialistas en finanzas que trabajan para el sector privado. Los pronósticos entregado fueron:</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="left">ingenieros : 4.2%, 5.1%, 3.9%, 4.7%, 4.8%, 5.8%</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="left">especialistas en finanzas: 5.7%, 6.1%, 5.2%, 4.9%, 4.6%, 4.5%, 5.2%, 5.5%</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="left">¿Están los especialistas (ingenieros y financieros) realizando pronósticos similares? . Suponga que los pronósticos realizados tienen distribución normal. Construye un intervalo de confianza para la diferencia de los promedios realizados por los ingenieros y los especializadas en finanzas del 95%. Concluya a partir de los resultados.</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<p><strong>Solución</strong>:</p>
+<p>En este caso se trata de una diferencia de medias para grupos independientes, por lo cual es necesario conocer como es la relación entre sus varianzas (iguales o diferentes) y de este modo ajustar el procedimiento.</p>
+<pre class="r"><code>inf.ing=c(4.2, 5.1, 3.9, 4.7, 4.8, 5.8)
+inf.fin=c(5.7, 6.1, 5.2, 4.9, 4.6, 4.5, 5.2, 5.5)
+par(mfrow = c(1, 2))
+boxplot(inf.ing, las=1, col=c2, ylim=c(3,6)); grid()
+boxplot(inf.fin, las=1, col=c3, ylim=c(3,6)); grid()</code></pre>
+<p><img src="Guia402_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>var.test(inf.ing, inf.fin)$conf.int</code></pre>
+<pre><code>## [1]  0.2859721 10.3579460
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<pre class="r"><code>t.test(inf.ing, inf.fin,  paired = FALSE,   # grupos independientes 
+       var.equal = TRUE,                    # varianzas iguales
+       conf.level = 0.95)$conf.int </code></pre>
+<pre><code>## [1] -1.1704541  0.2454541
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p>Al realizar la comparación de las varianzas se puede observar que el intervalo contiene a 1, por lo cual asumiremos que las varianza son iguales (este procedimiento se debe hacer mediante pruebas de hipótesis que ser verán en la Unidad 4.3). Utilizaremos la función de R <code>var.test(x, ...)</code> para establecer si las varianzas son iguales o diferentes y luego la función <code>t.test(x,y, ...)$conf.int</code> para calcular el intervalo.</p>
+<p>La diferencia entre la estimación promedio de la inflación pronosticada por lo ingenieros y la realizada por los especialistas en finanzas, con una confianza del 95%, está entre <span class="math inline">\((-1.1704541; 0.2454541 )\)</span>, lo cual nos indica que sus estimaciones promedio son similares</p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 <p><strong>Caso2</strong> : Supone varianzas diferentes, pero desconocidas</p>
 <p>En el caso tenemos</p>
@@ -827,7 +977,52 @@ Your browser does not support the video tag.</video>
 <p><span class="math display">\[v=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}\]</span></p>
 </div>
 <p><br/><br/></p>
-<p><img src="img/Nota_ej.png" style="width:10.0%" /></p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej7.png" style="width:120.0%" /></td>
+<td align="left">Supongamos el mismo caso del ejemplo anterior, pero con los siguientes datos :</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="left">ingenieros : 2.2%, 1.1%, 3.9%, 5.9%, 4.5%, 5.1%</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="left">especialistas en finanzas: 3.7%, 2.1%, 2.2%, 3.9%, 3.6%, 3.5%, 3.2%, 3.5%</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>inf.ing=c(2.2, 1.1, 3.9, 5.9, 4.5, 5.1)
+inf.fin=c(3.7, 2.1, 2.2, 3.9, 3.6, 3.5, 3.2, 3.5)
+par(mfrow = c(1, 2))
+boxplot(inf.ing, las=1, col=c2, ylim=c(1,6)); grid()
+boxplot(inf.fin, las=1, col=c3, ylim=c(1,6)); grid()</code></pre>
+<p><img src="Guia402_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>var.test(inf.ing, inf.fin)$conf.int</code></pre>
+<pre><code>## [1]  1.324813 47.984900
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<pre class="r"><code>t.test(inf.ing, inf.fin,  paired = FALSE,   # grupos independientes 
+       var.equal = FALSE,                    # varianzas diferentes
+       conf.level = 0.95)$conf.int </code></pre>
+<pre><code>## [1] -1.329604  2.471270
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<pre class="r"><code># resumen pronóstico ingenieros
+summary(inf.ing)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   1.100   2.625   4.200   3.783   4.950   5.900</code></pre>
+<pre class="r"><code># resumen pronóstico especialistas en finanzas
+summary(inf.fin)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   2.100   2.950   3.500   3.212   3.625   3.900</code></pre>
+<p>En este caso las varianzas son diferentes, por lo que se debe ajustar la función a : <code>var.equal = FALSE,</code>. Los resultados indican que existen diferencias entre los promedios estimados por los ingenieros y los especialistas en finanzas. Siendo <span class="math inline">\(\mu_{ing} &lt; \mu_{fin}\)</span></p>
+<p><br/><br/><br/></p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; 
                      color: #000000; 
                      background-color: #FFFFFF ; 
@@ -839,7 +1034,6 @@ Your browser does not support the video tag.</video>
 <li><span class="math inline">\((+,+)\)</span>, los dos limites son positivos</li>
 </ul>
 </div>
-<p>De este resultado se puede concluir que <span class="math inline">\(\mu_{1}&gt;\mu_{2}\)</span></p>
 <p><br/><br/></p>
 </div>
 <div id="diferencia-de-proporciones" class="section level3">
@@ -856,7 +1050,7 @@ Your browser does not support the video tag.</video>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="center"><img src="img/Nota_ej.png" style="width:100.0%" /></td>
+<td align="center"><img src="img/ej8.png" style="width:100.0%" /></td>
 <td align="left">En una muestra de 200 clientes, el 20% indica preferencia por tamaño especial de pizza. Con posterioridad a una campaña publicitaria realizada en radio y televisión promoviendo dicho producto, se selecciono una muestra de igual tamaño. En esta ultima muestra el 22% de los clientes indico preferencia por el producto. De acuerdo con estos resultados calcule un intervalo de confianza del 95% para la diferencia de proporciones. De acuerdo a los resultados obtenidos, podría afirmarse que la campaña publicitaria fue efectiva?</td>
 </tr>
 </tbody>
@@ -872,9 +1066,15 @@ Your browser does not support the video tag.</video>
 <li><span class="math inline">\(\widehat{p}_{2}=0.22\)</span> proporción muestral de clientes que prefieren el tamaño especial de pizza después de realizadala campaña publicitaria</li>
 </ul>
 <p>En ambos casos los tamaños de muestra se consideran grandes, permitiendo transformar la diferencia de proporciones en una variable z con distribución normal estándar</p>
-<p><span class="math display">\[(0.20-0.22) \pm \sqrt{\frac{0.20*(1-0.20)}{200}+\frac{0.22*(1-0.22)}{200}}\]</span></p>
+<p><span class="math display">\[(0.20-0.22) \pm 1.96 \sqrt{\frac{0.20*(1-0.20)}{200}+\frac{0.22*(1-0.22)}{200}}\]</span></p>
 <p><span class="math display">\[(-0.0998 ; -0.0598)\]</span></p>
 <p>El intervalo estimado se lee: La diferencia entre la proporción de clientes que prefieren el tamaño especial de pizza antes de la realizar la campaña publicitaria y la proporción de clientes que prefieren este mismo tamaño, después de realizada la campaña publicitaria esta entre -0.0998 y -0.059, con una confianza del 95%. Estos resultados indican que <span class="math inline">\(p_{1}-p_{2}&lt;0\)</span> o también que <span class="math inline">\(p_{1}&lt;p_{2}\)</span>, lo cual quiere decir que la proporción de clientes con esta preferencia aumento después de haber realizado la campaña publicitaria.</p>
+<p><br/><br/></p>
+<pre class="r"><code>prop.test(c(40,44),c(200,200))$conf.int</code></pre>
+<pre><code>## [1] -0.10480688  0.06480688
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p>El resultado obtenido por R es levemente diferente, debido a ajuste en la formula propuesto por R.G. Newcpmbe (1998), e incorporado en la función de R</p>
 <p><br/><br/></p>
 </div>
 <div id="comparación-de-varianzas" class="section level3">

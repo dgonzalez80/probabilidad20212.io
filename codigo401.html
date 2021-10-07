@@ -878,7 +878,8 @@ data.frame(muestra,p)</code></pre>
 <p>Para seleccionar una muestra de una variables, supongamos que se distinguen por un Id del 1 al 1000, utilizamos la funcion <strong>sample</strong> para seleccionar la muestra:</p>
 <pre class="r"><code>x&lt;-seq(1,1000,1)
 sample(x, 20)</code></pre>
-<pre><code>##  [1] 205 171  16 422 613 835 768 596 809 627  37 666 905 256 604 610  83 969 420 224</code></pre>
+<pre><code>##  [1] 205 171  16 422 613 835 768 596 809 627  37 666 905 256 604 610  83 969 420
+## [20] 224</code></pre>
 <p>En este caso se ha seleccionado una muestra de tamaño <span class="math inline">\(n=10\)</span> de una población de <span class="math inline">\(N=1000\)</span> unidades. Dato que la población es muy grande es poco probable que un valor salga repetido, por lo que se conoce como muestreo sin repetición.</p>
 <p>Es posible realizar un muestreo con repetición en el caso de que la población sea demasiado pequeña (este tipo de muestreos se llaman bootstrap o remuestreo) :</p>
 <pre class="r"><code>x&lt;-1:10

@@ -68,7 +68,7 @@ Como el intervalo resultante es (-,-), indica que $\mu_{A} < \mu_{B}$. Por tal m
 
 # **Problema 4**
 
-En una encuesta aleatoria realizada a 500 familias de la ciudad que poseen televisión por cable,  se encuentra que 340 tienen suscripción a HBO.  Calcule un intervalo de confianza para la proporcion de familias que tienen suscripción a HBO en la ciudad. Interprete el resultado obtenido.
+En una encuesta aleatoria realizada a 500 familias de la ciudad que poseen televisión por cable,  se encuentra que 340 tienen suscripción a HBO.  Calcule un intervalo de confianza para la proporción de familias que tienen suscripción a HBO en la ciudad. Interprete el resultado obtenido.
 
 <br/><br/>
 
