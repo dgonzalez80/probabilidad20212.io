@@ -526,7 +526,7 @@ Ha : Las poblaciones no son idénticas
 ### **Correlación de Rangos de Spearman**
 
 ejemplo 
-Se requiere establecer si existe relación entre el tiempo de estudio dedicado a la preparación de una evaluación y la nota obtenida. Como la nota obtenida representa una variable cualitativa, se debe utilziar una prueba no paramétrica (coeficiente de correlación de Spearman). Los datos obtenidos son los siguientes:
+Se requiere establecer si existe relación entre el tiempo de estudio dedicado a la preparación de una evaluación y la nota obtenida. Como la nota obtenida representa una variable cualitativa, se debe utilizar una prueba no paramétrica (coeficiente de correlación de Spearman). Los datos obtenidos son los siguientes:
 
 |       |      |      |      |       |      |      |      |      |      |      |
 |:------|-----:|-----:|-----:|------:|-----:|-----:|-----:|-----:|-----:|-----:|
