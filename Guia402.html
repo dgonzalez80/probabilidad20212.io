@@ -780,7 +780,7 @@ e=1 # año
 n=(za1.2)^2*(s2.edad)/(e^2)
 
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>## [1] 1829</code></pre>
+<pre><code>## [1] 1754</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción" class="section level3">
@@ -1085,6 +1085,38 @@ summary(inf.fin)</code></pre>
 </div>
 <p><br/><br/><br/><br/></p>
 </div>
+</div>
+<div id="intervalos-no-paraétricos" class="section level2">
+<h2><strong>Intervalos no paraétricos</strong></h2>
+<p>Cuando se extrae una muestra de una población que no es normal y se requiere estimar un intervalo de confianza se pueden utilizar los métodos de estimación <strong>bootstrap</strong>. Existen varias versiones del método. Una presentación básica del método se describe a continuación:</p>
+<p>El artículo de In-use Emissions from Heavy Duty Dissel Vehicles (J.Yanowitz, 2001) presenta las mediciones de eficiencia de combustible en millas/galón de una muestra de siete camiones. Los datos obtenidos son los siguientes: 7.69, 4.97, 4.56, 6.49, 4.34, 6.24 y 4.45. Se supone que es una muestra aleatoria de camiones y que se desea construir un intervalo de confianza del 95 % para la media de la eficiencia de combustible de esta población. No se tiene información de la distribución de los datos. El método bootstrap permite construir intervalos de confianza del 95 % - Para ilustrar el método suponga que coloca los valores de la muestra en una caja y extrae uno al azar. Este correspondería al primer valor de la muestra bootstrap <span class="math inline">\(X^{∗}_{1}\)</span>. Después de anotado el valor se regresa <span class="math inline">\(X^{∗}_{1}\)</span> a la caja y se extrae el valor <span class="math inline">\(X^{∗}_{2}\)</span> , regresandolo nuevamente. Este procedimiento se repite hasta completar una muestra de tamaño <span class="math inline">\(n\)</span>, <span class="math inline">\(X^{∗}_{1}\)</span>,<span class="math inline">\(X^{∗}_{2}\)</span>,<span class="math inline">\(X^{∗}_{2}\)</span>,<span class="math inline">\(X^{∗}_{n}\)</span>, conformando la muestra bootstrap.</p>
+<p>Es necesario extraer un gran número de muestras (suponga k = 1000). Para cada una de las muestra bootstrap obtenidas se calcula la media <span class="math inline">\(\bar{X^{∗}_{i}}\)</span>, obteniéndose un valor para cada muestra. El intervalo de confianza queda conformado por los percentiles <span class="math inline">\(P_{2.5}\)</span> y <span class="math inline">\(P_{97.5}\)</span>. Existen dos métodos para estimarlo:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">Método 1</td>
+<td align="center"><span class="math inline">\((P_{2.5}; P_{97.5})\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Método 2</td>
+<td align="center"><span class="math inline">\((2\bar{X} − P_{97.5}; 2\bar{X} − P_{2.5})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Construya el intervalo de confianza por los dos métodos y compare los resultados obtenidos. Tomado de Navidi(2006)</p>
+<pre class="r"><code>x=c( 7.69, 4.97, 4.56, 6.49, 4.34, 6.24, 4.45) # datos muestra
+boot=sample(x,7000,replace=TRUE)   # se extraen n x m muestras
+b=matrix(boot,nrow=1000,ncol=7)    # se construye matriz de n x m 
+mx=apply(b,1,mean)                 # se calculan m medias por fila
+ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC metodo 1
+ic1</code></pre>
+<pre><code>##    2.5%   97.5% 
+## 4.71000 6.45025</code></pre>
+<pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC metodo 2
+ic2</code></pre>
+<pre><code>##    97.5%     2.5% 
+## 4.664281 6.404531</code></pre>
+<p><br/><br/><br/><br/></p>
 </div>
 </div>
 <div id="conceptos" class="section level1">

@@ -586,7 +586,7 @@ for(i in 1:100) {
 <p>Como ejemplo se estima un IC para la edad de las personas contagiadas de covid en Valle, para una muestra de n=1000</p>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t.test(Muestra$edad,conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] 39.41719 41.65481
+<pre><code>## [1] 40.64325 42.88475
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/></p>
@@ -598,7 +598,7 @@ t.test(Muestra$edad,conf.level = 0.95)$conf.int</code></pre>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(t1[1],1000, conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] 0.01658466 0.03723503
+<pre><code>## [1] 0.01985396 0.04192127
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/></p>
@@ -617,7 +617,7 @@ ic.var=function(x,a){
 }
 x1=rnorm(100)
 ic.var(x1, 0.05)</code></pre>
-<pre><code>## [1] 0.7871388 1.3779231</code></pre>
+<pre><code>## [1] 0.725112 1.269342</code></pre>
 </div>
 <div id="ic-comparación-varianzas" class="section level2">
 <h2><strong>IC comparación varianzas</strong></h2>
@@ -629,7 +629,7 @@ datax=Valle1[sample(1:nrow(Valle1),100,replace=F),]
 datay=Valle2[sample(1:nrow(Valle2),100,replace=F),]
 
 var.test(datax$edad, datay$edad)$conf.int </code></pre>
-<pre><code>## [1] 0.606727 1.340194
+<pre><code>## [1] 0.7146846 1.5786602
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/></p>
@@ -643,7 +643,7 @@ var.test(datax$edad, datay$edad)$conf.int </code></pre>
        paired = FALSE, 
        var.equal = TRUE,
        conf.level = 0.95 )$conf.int </code></pre>
-<pre><code>## [1] -5.102591  5.922591
+<pre><code>## [1] -4.606634  5.606634
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/></p>
@@ -654,7 +654,7 @@ var.test(datax$edad, datay$edad)$conf.int </code></pre>
        paired = FALSE, 
        var.equal = FALSE,
        conf.level = 0.95 )$conf.int</code></pre>
-<pre><code>## [1] -5.102681  5.922681
+<pre><code>## [1] -4.606663  5.606663
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><br/><br/><br/></p>
@@ -666,7 +666,7 @@ var.test(datax$edad, datay$edad)$conf.int </code></pre>
 <pre class="r"><code>Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 t1=table(Muestra$estado)
 prop.test(c(t1[2],t1[3]),c(1000,1000), conf.level = 0.95)$conf.int</code></pre>
-<pre><code>## [1] 0.9468195 0.9731805
+<pre><code>## [1] 0.9399666 0.9680334
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 </div>
