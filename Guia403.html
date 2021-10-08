@@ -726,7 +726,86 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <p><br/><br/></p>
 <div id="prueba-de-hipótesis-sobre-una-media-poblacional" class="section level3">
 <h3><strong>Prueba de hipótesis sobre una media poblacional </strong></h3>
-<p>ejemplo Se está calibrando una balanza mediante el pesaje de una pesa de prueba de 1000 g, 60 veces. Las 60 lecturas de la balanza presentan a continuación: | | | | | | | | | | | | | | |—-:|—-:|—–:|—–:|—–:|—–:|—–:|—–:|—–:|—–:|—–:|—–:|——:| |999, | 998,| 1001,| 1000,| 1002,| 1000,| 998,| 1002,| 1003,| 1000,| 1004,| 1000,| 998, | |998, |1002,| 1002,| 1002,| 1001,| 1001,| 1001,| 998,| 999,| 1000,| 1002,| 1002,| 1004, | |1001,| 999,| 999,| 1001,| 1002,| 1000,| 999,| 1004,| 1000,| 1001,| 1001,| 1002,| 997, | |998, |1001,| 1000,| 1003,| 997,| 999,| 1002,| 1000,| 1001,| 1005,| 1002,| 1003,| 1002, | |999, | 998,| 1000,| 999,| 1002,| 999,| 1000,| 1003 | | | | | |</p>
+<p>ejemplo Se está calibrando una balanza mediante el pesaje de una pesa de prueba de 1000 g, 60 veces. Las 60 lecturas de la balanza presentan a continuación:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="right">999,</td>
+<td align="right">998,</td>
+<td align="right">1001,</td>
+<td align="right">1000,</td>
+<td align="right">1002,</td>
+<td align="right">1000,</td>
+<td align="right">998,</td>
+<td align="right">1002,</td>
+<td align="right">1003,</td>
+<td align="right">1000,</td>
+<td align="right">1004,</td>
+<td align="right">1000,</td>
+<td align="right">998,</td>
+</tr>
+<tr class="even">
+<td align="right">998,</td>
+<td align="right">1002,</td>
+<td align="right">1002,</td>
+<td align="right">1002,</td>
+<td align="right">1001,</td>
+<td align="right">1001,</td>
+<td align="right">1001,</td>
+<td align="right">998,</td>
+<td align="right">999,</td>
+<td align="right">1000,</td>
+<td align="right">1002,</td>
+<td align="right">1002,</td>
+<td align="right">1004,</td>
+</tr>
+<tr class="odd">
+<td align="right">1001,</td>
+<td align="right">999,</td>
+<td align="right">999,</td>
+<td align="right">1001,</td>
+<td align="right">1002,</td>
+<td align="right">1000,</td>
+<td align="right">999,</td>
+<td align="right">1004,</td>
+<td align="right">1000,</td>
+<td align="right">1001,</td>
+<td align="right">1001,</td>
+<td align="right">1002,</td>
+<td align="right">997,</td>
+</tr>
+<tr class="even">
+<td align="right">998,</td>
+<td align="right">1001,</td>
+<td align="right">1000,</td>
+<td align="right">1003,</td>
+<td align="right">997,</td>
+<td align="right">999,</td>
+<td align="right">1002,</td>
+<td align="right">1000,</td>
+<td align="right">1001,</td>
+<td align="right">1005,</td>
+<td align="right">1002,</td>
+<td align="right">1003,</td>
+<td align="right">1002,</td>
+</tr>
+<tr class="odd">
+<td align="right">999,</td>
+<td align="right">998,</td>
+<td align="right">1000,</td>
+<td align="right">999,</td>
+<td align="right">1002,</td>
+<td align="right">999,</td>
+<td align="right">1000,</td>
+<td align="right">1003</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
 <p>Realice en contraste de hipótesis para determinar si la balanza se encuentra bien calibrada o no. Utilice un <span class="math inline">\(\alpha\)</span>=0.05</p>
 <p>Entendemos por bien calibrada el hecho que <span class="math inline">\(\mu=1000\)</span> g. , por tal motivo las pruebas a contrastar son:</p>
 <p><span class="math inline">\(H_{o}: \mu = \mu_{o}\)</span> <span class="math inline">\(H_{a}: \mu \neq \mu_{o}\)</span></p>
@@ -1223,7 +1302,7 @@ runs.test(y)</code></pre>
 ##  Runs Test
 ## 
 ## data:  y
-## statistic = 0.40204, runs = 53, n1 = 50, n2 = 50, n = 100, p-value =
+## statistic = -0.40204, runs = 49, n1 = 50, n2 = 50, n = 100, p-value =
 ## 0.6877
 ## alternative hypothesis: nonrandomness</code></pre>
 <p><br/><br/></p>
@@ -1242,7 +1321,7 @@ plot(density(x), main=&quot; &quot;, las=1)</code></pre>
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  x
-## W = 0.99507, p-value = 0.7608</code></pre>
+## W = 0.97418, p-value = 0.0009584</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1254,19 +1333,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
 ##  Jarque-Bera test for normality
 ## 
 ## data:  x
-## JB = 0.37151, p-value = 0.8185</code></pre>
+## JB = 7.6409, p-value = 0.0305</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>## 
 ##  Kurtosis test for normality
 ## 
 ## data:  x
-## T = 2.9177, p-value = 0.8035</code></pre>
+## T = 2.4471, p-value = 0.077</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>## 
 ##  Skewness test for normality
 ## 
 ## data:  x
-## T = -0.097227, p-value = 0.558</code></pre>
+## T = -0.39089, p-value = 0.02</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1275,13 +1354,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
 ##  Lilliefors (Kolmogorov-Smirnov) normality test
 ## 
 ## data:  x
-## D = 0.031239, p-value = 0.905</code></pre>
+## D = 0.095495, p-value = 0.0001365</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>## 
 ##  Pearson chi-square normality test
 ## 
 ## data:  x
-## P = 11.82, p-value = 0.6208</code></pre>
+## P = 22.87, p-value = 0.06242</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

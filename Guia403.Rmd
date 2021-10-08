@@ -200,6 +200,7 @@ Los parámetros más importante a los que se les realizan pruebas de hipótesis 
 
 ejemplo 
 Se está calibrando una balanza mediante el pesaje de una pesa de prueba de 1000 g, 60 veces. Las 60 lecturas de la balanza presentan a continuación:
+
 |     |     |      |      |      |      |      |      |      |      |      |      |       |
 |----:|----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|------:|
 |999, | 998,| 1001,| 1000,| 1002,| 1000,|  998,| 1002,| 1003,| 1000,| 1004,| 1000,|  998, | 
@@ -207,6 +208,7 @@ Se está calibrando una balanza mediante el pesaje de una pesa de prueba de 1000
 |1001,| 999,|  999,| 1001,| 1002,| 1000,|  999,| 1004,| 1000,| 1001,| 1001,| 1002,|  997, | 
 |998, |1001,| 1000,| 1003,|  997,|  999,| 1002,| 1000,| 1001,| 1005,| 1002,| 1003,| 1002, | 
 |999, | 998,| 1000,|  999,| 1002,|  999,| 1000,| 1003 |      |      |      |      |       |
+
 
 Realice en contraste de hipótesis para determinar si la balanza se encuentra bien calibrada o no. Utilice un $\alpha$=0.05
 
