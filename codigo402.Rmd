@@ -87,6 +87,27 @@ prop.test(t1[1],1000, conf.level = 0.95)$conf.int
 ```
 <br/><br/>
 
+## **IC para una varianza**
+
+Para calcular el intervalo de confianza para una varianza, he creado la siguiente función, dado que no está disponible en R
+
+```{r}
+# parametros de entrada : x variable 
+#                         a alpha (confianza del 95% : a=0.05) 
+
+ic.var=function(x,a){
+  n=length(x)
+    per.chi2=qchisq(c(1-a/2, a/2), n-1)   # percentiles chi-cuadrado para 95% de confianza
+  icvar=(n-1)*var(x)/per.chi2
+  return(icvar)
+}
+x1=rnorm(100)
+ic.var(x1, 0.05)
+```
+
+
+
+
 ## **IC comparación varianzas**
 
 Intervalo de confianza para la comparación de varianzas

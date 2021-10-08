@@ -27,7 +27,7 @@ Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
 
 ```
 
-<span style="color:#E77C00">**En construcción**</span>
+
 
 # **Guía de aprendizaje 4.2**
 
