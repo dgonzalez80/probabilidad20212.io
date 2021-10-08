@@ -589,110 +589,110 @@ data(cars)  # data set cars</code></pre>
 <li>variables con cadenas escritas de diferente forma, p.ej.: casa, CASA, Casa. esta revisión la podemos hacer rápidamente con la función <em>summary()</em></li>
 </ul>
 <pre class="r"><code>summary(iris)</code></pre>
-<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
-##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
-##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
-##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
-##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
-##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
-##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
-##        Species  
-##  setosa    :50  
-##  versicolor:50  
-##  virginica :50  
-##                 
-##                 
-## </code></pre>
+<pre><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+       Species  
+ setosa    :50  
+ versicolor:50  
+ virginica :50  
+                
+                
+                </code></pre>
 <pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<pre><code>##   id_de_caso        ciudad_municipio_nom fecha_inicio_sintomas
-##  Length:4957277     Length:4957277       Min.   :NA           
-##  Class :character   Class :character     1st Qu.:NA           
-##  Mode  :character   Mode  :character     Median :NA           
-##                                          Mean   :NA           
-##                                          3rd Qu.:NA           
-##                                          Max.   :NA           
-##                                          NA&#39;s   :4957277      
-##  confirmados        fecha_de_notificaci_n fecha_diagnostico  fecha_muerte    
-##  Length:4957277     Min.   :NA            Min.   :NA        Min.   :NA       
-##  Class :character   1st Qu.:NA            1st Qu.:NA        1st Qu.:NA       
-##  Mode  :character   Median :NA            Median :NA        Median :NA       
-##                     Mean   :NA            Mean   :NA        Mean   :NA       
-##                     3rd Qu.:NA            3rd Qu.:NA        3rd Qu.:NA       
-##                     Max.   :NA            Max.   :NA        Max.   :NA       
-##                     NA&#39;s   :4957277       NA&#39;s   :4957277   NA&#39;s   :4957277  
-##  fecha_reporte_web departamento       departamento_nom   ciudad_municipio  
-##  Min.   :NA        Length:4957277     Length:4957277     Length:4957277    
-##  1st Qu.:NA        Class :character   Class :character   Class :character  
-##  Median :NA        Mode  :character   Mode  :character   Mode  :character  
-##  Mean   :NA                                                                
-##  3rd Qu.:NA                                                                
-##  Max.   :NA                                                                
-##  NA&#39;s   :4957277                                                           
-##       edad       unidad_medida          sexo           fuente_tipo_contagio
-##  Min.   :  1.0   Length:4957277     Length:4957277     Length:4957277      
-##  1st Qu.: 26.0   Class :character   Class :character   Class :character    
-##  Median : 37.0   Mode  :character   Mode  :character   Mode  :character    
-##  Mean   : 39.5                                                             
-##  3rd Qu.: 52.0                                                             
-##  Max.   :114.0                                                             
-##                                                                            
-##   ubicacion            estado          pais_viajo_1_cod   pais_viajo_1_nom  
-##  Length:4957277     Length:4957277     Length:4957277     Length:4957277    
-##  Class :character   Class :character   Class :character   Class :character  
-##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-##                                                                             
-##                                                                             
-##                                                                             
-##                                                                             
-##   recuperado        fecha_recuperado  tipo_recuperacion    per_etn_        
-##  Length:4957277     Min.   :NA        Length:4957277     Length:4957277    
-##  Class :character   1st Qu.:NA        Class :character   Class :character  
-##  Mode  :character   Median :NA        Mode  :character   Mode  :character  
-##                     Mean   :NA                                             
-##                     3rd Qu.:NA                                             
-##                     Max.   :NA                                             
-##                     NA&#39;s   :4957277                                        
-##   nom_grupo_       
-##  Length:4957277    
-##  Class :character  
-##  Mode  :character  
-##                    
-##                    
-##                    
-## </code></pre>
+<pre><code>     speed           dist       
+ Min.   : 4.0   Min.   :  2.00  
+ 1st Qu.:12.0   1st Qu.: 26.00  
+ Median :15.0   Median : 36.00  
+ Mean   :15.4   Mean   : 42.98  
+ 3rd Qu.:19.0   3rd Qu.: 56.00  
+ Max.   :25.0   Max.   :120.00  </code></pre>
+<pre><code>  id_de_caso        ciudad_municipio_nom fecha_inicio_sintomas
+ Length:4957277     Length:4957277       Min.   :NA           
+ Class :character   Class :character     1st Qu.:NA           
+ Mode  :character   Mode  :character     Median :NA           
+                                         Mean   :NA           
+                                         3rd Qu.:NA           
+                                         Max.   :NA           
+                                         NA&#39;s   :4957277      
+ confirmados        fecha_de_notificaci_n fecha_diagnostico  fecha_muerte    
+ Length:4957277     Min.   :NA            Min.   :NA        Min.   :NA       
+ Class :character   1st Qu.:NA            1st Qu.:NA        1st Qu.:NA       
+ Mode  :character   Median :NA            Median :NA        Median :NA       
+                    Mean   :NA            Mean   :NA        Mean   :NA       
+                    3rd Qu.:NA            3rd Qu.:NA        3rd Qu.:NA       
+                    Max.   :NA            Max.   :NA        Max.   :NA       
+                    NA&#39;s   :4957277       NA&#39;s   :4957277   NA&#39;s   :4957277  
+ fecha_reporte_web departamento       departamento_nom   ciudad_municipio  
+ Min.   :NA        Length:4957277     Length:4957277     Length:4957277    
+ 1st Qu.:NA        Class :character   Class :character   Class :character  
+ Median :NA        Mode  :character   Mode  :character   Mode  :character  
+ Mean   :NA                                                                
+ 3rd Qu.:NA                                                                
+ Max.   :NA                                                                
+ NA&#39;s   :4957277                                                           
+      edad       unidad_medida          sexo           fuente_tipo_contagio
+ Min.   :  1.0   Length:4957277     Length:4957277     Length:4957277      
+ 1st Qu.: 26.0   Class :character   Class :character   Class :character    
+ Median : 37.0   Mode  :character   Mode  :character   Mode  :character    
+ Mean   : 39.5                                                             
+ 3rd Qu.: 52.0                                                             
+ Max.   :114.0                                                             
+                                                                           
+  ubicacion            estado          pais_viajo_1_cod   pais_viajo_1_nom  
+ Length:4957277     Length:4957277     Length:4957277     Length:4957277    
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+  recuperado        fecha_recuperado  tipo_recuperacion    per_etn_        
+ Length:4957277     Min.   :NA        Length:4957277     Length:4957277    
+ Class :character   1st Qu.:NA        Class :character   Class :character  
+ Mode  :character   Median :NA        Mode  :character   Mode  :character  
+                    Mean   :NA                                             
+                    3rd Qu.:NA                                             
+                    Max.   :NA                                             
+                    NA&#39;s   :4957277                                        
+  nom_grupo_       
+ Length:4957277    
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   </code></pre>
 <p>Por otro lado la función <em>View()</em> permite visualizar la base en una ventana de manera separada</p>
 <pre class="r"><code>View(Colombia)  </code></pre>
 <pre class="r"><code>View(iris</code></pre>
 <p>Podemos visualizar los primeros 6 registros con el nombre de las variables</p>
 <pre class="r"><code>head(iris) </code></pre>
-<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
 <p>y los últimos seis registros</p>
 <pre class="r"><code>tail(iris)</code></pre>
-<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
-## 145          6.7         3.3          5.7         2.5 virginica
-## 146          6.7         3.0          5.2         2.3 virginica
-## 147          6.3         2.5          5.0         1.9 virginica
-## 148          6.5         3.0          5.2         2.0 virginica
-## 149          6.2         3.4          5.4         2.3 virginica
-## 150          5.9         3.0          5.1         1.8 virginica</code></pre>
+<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+145          6.7         3.3          5.7         2.5 virginica
+146          6.7         3.0          5.2         2.3 virginica
+147          6.3         2.5          5.0         1.9 virginica
+148          6.5         3.0          5.2         2.0 virginica
+149          6.2         3.4          5.4         2.3 virginica
+150          5.9         3.0          5.1         1.8 virginica</code></pre>
 <p>Para realizar una revisión de una variable cualitativa utilizamos la función <em>table()</em>, la cual construye una tabla de frecuencias</p>
 <pre class="r"><code>table(Colombia$ubicacion)</code></pre>
-<pre><code>## 
-##         casa    fallecido     hospital hospital uci 
-##      4803358       126299         7950          993</code></pre>
+<pre><code>
+        casa    fallecido     hospital hospital uci 
+     4803358       126299         7950          993 </code></pre>
 <p>Observemos aparecen valores diferentes para una sola categoría de la variable:</p>
 <ul>
 <li>casa<br />
@@ -724,21 +724,21 @@ library(tidyverse)</code></pre>
 <pre class="r"><code>Colombia$ubicacion=str_to_lower(Colombia$ubicacion)</code></pre>
 <p>Para verificar los arreglo volvemos a construir la tabla</p>
 <pre class="r"><code>table(Colombia$ubicacion)</code></pre>
-<pre><code>## 
-##         casa    fallecido     hospital hospital uci 
-##      4803358       126299         7950          993</code></pre>
+<pre><code>
+        casa    fallecido     hospital hospital uci 
+     4803358       126299         7950          993 </code></pre>
 <p>Después de esto realizamos en cambio de <em>n/a</em> por <em>NA</em></p>
 <pre class="r"><code>Colombia$ubicacion[Colombia$ubicacion==&quot;n/a&quot;]=NA
 table(Colombia$ubicacion)</code></pre>
-<pre><code>## 
-##         casa    fallecido     hospital hospital uci 
-##      4803358       126299         7950          993</code></pre>
+<pre><code>
+        casa    fallecido     hospital hospital uci 
+     4803358       126299         7950          993 </code></pre>
 <p>Otro problema que presenta la base de datos es que la variable edad es en formato <em>chr</em> y debería ser numérica. Para cambiar el formato utilizamos la función <em>as.numeric()</em> y la guardamos en la misma variable</p>
 <pre class="r"><code>class(Colombia$edad)</code></pre>
-<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre><code>[1] &quot;integer&quot;</code></pre>
 <pre class="r"><code>Colombia$edad=as.integer(Colombia$edad)
 class(Colombia$edad)</code></pre>
-<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre><code>[1] &quot;integer&quot;</code></pre>
 <p>De igual manera procedemos con las demás variables</p>
 <pre class="r"><code>Colombia$sexo=str_to_lower(Colombia$sexo)
 Colombia$estado=str_to_lower(Colombia$estado)
@@ -747,17 +747,17 @@ Colombia$recuperado=str_to_lower(Colombia$recuperado)
 Colombia$recuperado[Colombia$recuperado==&quot;n/a&quot;]=NA</code></pre>
 <p>Verificamos los cambios</p>
 <pre class="r"><code>table(Colombia$sexo)</code></pre>
-<pre><code>## 
-##       f       m 
-## 2602214 2355063</code></pre>
+<pre><code>
+      f       m 
+2602214 2355063 </code></pre>
 <pre class="r"><code>table(Colombia$estado)</code></pre>
-<pre><code>## 
-## fallecido     grave      leve  moderado 
-##    126299       993   4803358      7950</code></pre>
+<pre><code>
+fallecido     grave      leve  moderado 
+   126299       993   4803358      7950 </code></pre>
 <pre class="r"><code>table(Colombia$recuperado)</code></pre>
-<pre><code>## 
-##     activo  fallecido recuperado 
-##      15647     126299    4799576</code></pre>
+<pre><code>
+    activo  fallecido recuperado 
+     15647     126299    4799576 </code></pre>
 <p>Finalmente convertimos todas las variables fecha en formado date</p>
 <pre class="r"><code>Colombia$fecha_reporte_web=lubridate::dmy(Colombia$fecha_reporte_web)
 Colombia$fecha_de_notificaci_n=lubridate::dmy(Colombia$fecha_de_notificaci_n)
@@ -785,11 +785,17 @@ Colombia$fecha_muerte=lubridate::dmy(Colombia$fecha_muerte)</code></pre>
 </div>
 <div id="manejo-de-mayusculas-y-minusculas" class="section level2">
 <h2><strong>Manejo de MAYUSCULAS y minusculas</strong></h2>
-<pre><code>## [1] &quot;PROBABILIDAD Y ESTADÍSTICA ES UNA ASIGNATURA IMPORTANTE EN LA FORMACIÓN DE TODO PROFESIONAL&quot;</code></pre>
-<pre><code>## [1] &quot;probabilidad y estadística es una asignatura importante en la formación de todo profesional&quot;</code></pre>
-<pre><code>## [1] &quot;Probabilidad Y Estadística Es Una Asignatura Importante En La Formación De Todo Profesional&quot;</code></pre>
-<pre><code>## [1] &quot;Probabilidad y estadística es una asignatura importante en la formación de todo profesional&quot;</code></pre>
+<pre><code>[1] &quot;PROBABILIDAD Y ESTADÍSTICA ES UNA ASIGNATURA IMPORTANTE EN LA FORMACIÓN DE TODO PROFESIONAL&quot;</code></pre>
+<pre><code>[1] &quot;probabilidad y estadística es una asignatura importante en la formación de todo profesional&quot;</code></pre>
+<pre><code>[1] &quot;Probabilidad Y Estadística Es Una Asignatura Importante En La Formación De Todo Profesional&quot;</code></pre>
+<pre><code>[1] &quot;Probabilidad y estadística es una asignatura importante en la formación de todo profesional&quot;</code></pre>
 </div>
+</div>
+<div id="algunos-sitios-de-interés" class="section level1">
+<h1><strong>Algunos sitios de interés</strong></h1>
+<p><a href="https://estadistica-dma.ulpgc.es/cursoR4ULPGC/5-librerias.html">Librerías en R</a></p>
+<p><a href="https://estadistica-dma.ulpgc.es/cursoR4ULPGC/16-crearPaquetes.html">Creación de paquetes R con Rstudio</a></p>
+<p><a href="https://rstudio.github.io/learnr/">Tutoriales interactivos con R</a></p>
 </div>
 
 

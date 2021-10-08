@@ -10,6 +10,8 @@ output:
     theme: cosmo
 ---
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+
 library(RColorBrewer)
 library(summarytools)
 library(knitr)
@@ -272,4 +274,12 @@ str_to_sentence(texto)
 #[1] "Probabilidad y estadística es una asignatura importante en la formación de todo profesional"
 ```
 
+
+# **Algunos sitios de interés**
+
+[Librerías en R](https://estadistica-dma.ulpgc.es/cursoR4ULPGC/5-librerias.html)
+
+[Creación de paquetes R con Rstudio](https://estadistica-dma.ulpgc.es/cursoR4ULPGC/16-crearPaquetes.html)
+
+[Tutoriales interactivos con R](https://rstudio.github.io/learnr/)
 
