@@ -513,6 +513,12 @@ div.tocify {
     <li>
       <a href="Taller_continuas.html">Taller Continuas</a>
     </li>
+    <li>
+      <a href="TallerIC.html">Taller IC</a>
+    </li>
+    <li>
+      <a href="Guia_trabajo.html">Trabajo final</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -670,7 +676,7 @@ p</code></pre>
 </div>
 <div id="distribucion-weibull" class="section level2">
 <h2>Distribucion Weibull</h2>
-<p>Sea <span class="math inline">\(X\)</span> una variable con distribucion Weibul con  y . determine:</p>
+<p>Sea <span class="math inline">\(X\)</span> una variable con distribución Weibul con <span class="math inline">\(\alpha=0.01\)</span> y <span class="math inline">\(\beta=2\)</span>. determine:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(P(X&lt;10)\)</span></p></li>
 <li><p><span class="math inline">\(P(&gt;9)\)</span></p></li>
@@ -678,13 +684,27 @@ p</code></pre>
 <li><p>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.9\)</span></p></li>
 <li><p>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></p></li>
 </ol>
+<p><strong>Nota</strong>: Se requiere realizar una transformación de los parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> a los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para utilizar la función de la distribución Weibull en R así:</p>
+<ul>
+<li><span class="math inline">\(a = \beta\)</span></li>
+<li><span class="math inline">\(b= (\defrac{1}{\alpha})^{1/\beta}\)</span></li>
+</ul>
+<p>En ese caso</p>
+<pre class="r"><code>a=2
+b=(1/0.01)^(1/2)
+a</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>b</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>pweibull(10,a,b)</code></pre>
+<pre><code>## [1] 0.6321206</code></pre>
 <pre class="r"><code>a=0.01
 b=2
 p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;)
 p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+  
    ggtitle(&quot;Distribucion Weibull [a=0.01 b=2]&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <pre class="r"><code>cat(&quot;P(X&lt;10)=&quot;, pweibull(10,2,10))</code></pre>
 <pre><code>## P(X&lt;10)= 0.6321206</code></pre>
 <p><br/><br/></p>
@@ -703,7 +723,7 @@ p</code></pre>
 p=ggdistribution(dbeta, seq(0, .4, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;,fill =&quot;blue&quot;, p=p)+  
    ggtitle(&quot;Distribucion beta (4,2)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-gumbel" class="section level2">
@@ -721,7 +741,7 @@ p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = &#39
   p=ggdistribution(dgumbel, seq(-5, 10, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;, fill = &quot;blue&quot;,p=p)+
    ggtitle(&quot;Distribucion Gumbel(3,4)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-cauchy" class="section level2">
@@ -739,7 +759,7 @@ p</code></pre>
   p=ggdistribution(dcauchy, seq(7.2, 15, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+
    ggtitle(&quot;Distribucion Cauchy [l=5 s=0.75]&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p><br/><br/><br/></p>
 </div>
 <div id="ejercicios-propuestos" class="section level2">

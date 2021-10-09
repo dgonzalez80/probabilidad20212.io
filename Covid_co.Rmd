@@ -21,12 +21,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 
 
-plot1_time <- dygraph(serie.colombia) %>% 
-  dyRangeSelector(dateWindow = c("2020-03-03", "2020-08-08")) #Gráfica la serie de tiempo.
-plot1_time
-ts_colombia<- ts(serie.colombia) #Convierte en una serie de tiempo tipo ts la serie anterior.
+# plot1_time <- dygraph(serie.colombia) %>% 
+#   dyRangeSelector(dateWindow = c("2020-03-03", "2020-08-08")) #Gráfica la serie de tiempo.
+# plot1_time
+# ts_colombia<- ts(serie.colombia) #Convierte en una serie de tiempo tipo ts la serie anterior.
 
-plot(ts_colombia)
+# plot(ts_colombia)
 
 
 ```

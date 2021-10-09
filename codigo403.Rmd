@@ -16,3 +16,148 @@ library(readr)
 Valle <- read_csv("data/VALLE.csv")
 
 ```
+
+# **Pruebas paramétricas**
+
+
+
+<br/><br/><br/><br/>
+
+# **Pruebas no paramétricas**
+
+
+
+<br/><br/><br/><br/>
+
+# **Pruebas de normalidad**
+
+Existen varias pruebas de hipotesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hip?teisis planteadas son:
+
+$Ho$: $X$ tiene distribución Normal
+$Ha$: $X$ no tiene distribución Normal
+
+```{r}
+# se genera una variable aleatoria normal
+x=rnorm(200,1000,50)
+plot(density(x), las=1)
+```
+
+## **Shapiro Wilk**
+
+```{r}
+shapiro.test(x)
+```
+Esta prueba no requiere la instalación de paquetes adicionales, está disponible en la configuración básica de R
+
+
+
+## **Paquete normtest**
+
+Las siguientes pruebas requieren instalar y cargar el paquete: `normtest`
+
+```{r}
+# install.packages("normtets")
+ library(normtest)
+```
+
+## **Jarque-Bera ajustado**
+
+```{r}
+ajb.norm.test(x)	
+```
+
+## **Frosini**
+
+```{r}
+frosini.norm.test(x)	
+```
+
+## **Geary**
+
+```{r}
+geary.norm.test(x)	
+```
+
+## **Hagazy-Green 1**
+
+```{r}
+hegazy1.norm.test(x)	
+```
+
+## **Hagazy-Green 2**
+
+```{r}
+hegazy2.norm.test(x)
+```
+
+## **Jarque-Bera**
+
+```{r}
+jb.norm.test(x)	
+```
+
+## **de kurtosis**
+
+```{r}
+kurtosis.norm.test(x)
+```
+
+## **de sesgo**
+
+```{r}
+skewness.norm.test(x)	
+```
+
+## **Spiegelhalter**
+
+```{r}
+spiegelhalter.norm.test(x)	
+```
+
+## **Weisberg-Bingham**
+
+```{r}
+wb.norm.test(x)	
+```
+
+## **Paquete nortest**
+
+Las siguientes pruebas requieren instalar y cargar el paquete: `nortest`
+
+```{r}
+# install.packages("nortets")
+ library(nortest)
+```
+
+## **Anderson-Darling**
+
+```{r}
+ad.test(x)
+```
+
+## **Cramer-von Mises**
+
+```{r}
+cvm.test(x)
+```
+
+## **Lilliefors (Kolmogorov-Smirnov)**
+
+```{r}
+lillie.test(x)
+```
+
+## **chi-cuadrado de Pearson**
+
+```{r}
+pearson.test(x)
+```
+
+## **Shapiro-Francia**
+
+```{r}
+sf.test(x)
+```
+
+En todos los casos se presenta un valor-p grande por lo cual no se rechaza $Ho$, asumimos que $Ho$ es verdad. Asumimos que la distribución de la variable $X$ es normal
+

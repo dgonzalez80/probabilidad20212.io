@@ -540,7 +540,181 @@ div.tocify {
 </div>
 
 
-
+<div id="pruebas-paramétricas" class="section level1">
+<h1><strong>Pruebas paramétricas</strong></h1>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="pruebas-no-paramétricas" class="section level1">
+<h1><strong>Pruebas no paramétricas</strong></h1>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="pruebas-de-normalidad" class="section level1">
+<h1><strong>Pruebas de normalidad</strong></h1>
+<p>Existen varias pruebas de hipotesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hip?teisis planteadas son:</p>
+<p><span class="math inline">\(Ho\)</span>: <span class="math inline">\(X\)</span> tiene distribución Normal <span class="math inline">\(Ha\)</span>: <span class="math inline">\(X\)</span> no tiene distribución Normal</p>
+<pre class="r"><code># se genera una variable aleatoria normal
+x=rnorm(200,1000,50)
+plot(density(x), las=1)</code></pre>
+<p><img src="codigo403_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div id="shapiro-wilk" class="section level2">
+<h2><strong>Shapiro Wilk</strong></h2>
+<pre class="r"><code>shapiro.test(x)</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  x
+## W = 0.99722, p-value = 0.9786</code></pre>
+<p>Esta prueba no requiere la instalación de paquetes adicionales, está disponible en la configuración básica de R</p>
+</div>
+<div id="paquete-normtest" class="section level2">
+<h2><strong>Paquete normtest</strong></h2>
+<p>Las siguientes pruebas requieren instalar y cargar el paquete: <code>normtest</code></p>
+<pre class="r"><code># install.packages(&quot;normtets&quot;)
+ library(normtest)</code></pre>
+</div>
+<div id="jarque-bera-ajustado" class="section level2">
+<h2><strong>Jarque-Bera ajustado</strong></h2>
+<pre class="r"><code>ajb.norm.test(x)    </code></pre>
+<pre><code>## 
+##  Adjusted Jarque-Bera test for normality
+## 
+## data:  x
+## AJB = 0.37948, p-value = 0.8125</code></pre>
+</div>
+<div id="frosini" class="section level2">
+<h2><strong>Frosini</strong></h2>
+<pre class="r"><code>frosini.norm.test(x)    </code></pre>
+<pre><code>## 
+##  Frosini test for normality
+## 
+## data:  x
+## B = 0.089545, p-value = 0.9975</code></pre>
+</div>
+<div id="geary" class="section level2">
+<h2><strong>Geary</strong></h2>
+<pre class="r"><code>geary.norm.test(x)  </code></pre>
+<pre><code>## 
+##  Geary test for normality
+## 
+## data:  x
+## d = 0.80398, p-value = 0.383</code></pre>
+</div>
+<div id="hagazy-green-1" class="section level2">
+<h2><strong>Hagazy-Green 1</strong></h2>
+<pre class="r"><code>hegazy1.norm.test(x)    </code></pre>
+<pre><code>## 
+##  Hegazy-Green test for normality
+## 
+## data:  x
+## T = 0.034145, p-value = 0.995</code></pre>
+</div>
+<div id="hagazy-green-2" class="section level2">
+<h2><strong>Hagazy-Green 2</strong></h2>
+<pre class="r"><code>hegazy2.norm.test(x)</code></pre>
+<pre><code>## 
+##  Hegazy-Green test for normality
+## 
+## data:  x
+## T = 0.0031201, p-value = 0.9575</code></pre>
+</div>
+<div id="jarque-bera" class="section level2">
+<h2><strong>Jarque-Bera</strong></h2>
+<pre class="r"><code>jb.norm.test(x) </code></pre>
+<pre><code>## 
+##  Jarque-Bera test for normality
+## 
+## data:  x
+## JB = 0.43316, p-value = 0.7955</code></pre>
+</div>
+<div id="de-kurtosis" class="section level2">
+<h2><strong>de kurtosis</strong></h2>
+<pre class="r"><code>kurtosis.norm.test(x)</code></pre>
+<pre><code>## 
+##  Kurtosis test for normality
+## 
+## data:  x
+## T = 2.8421, p-value = 0.6325</code></pre>
+</div>
+<div id="de-sesgo" class="section level2">
+<h2><strong>de sesgo</strong></h2>
+<pre class="r"><code>skewness.norm.test(x)   </code></pre>
+<pre><code>## 
+##  Skewness test for normality
+## 
+## data:  x
+## T = 0.082231, p-value = 0.6285</code></pre>
+</div>
+<div id="spiegelhalter" class="section level2">
+<h2><strong>Spiegelhalter</strong></h2>
+<pre class="r"><code>spiegelhalter.norm.test(x)  </code></pre>
+<pre><code>## 
+##  Spiegelhalter test for normality
+## 
+## data:  x
+## T = 1.2438, p-value = 0.6215</code></pre>
+</div>
+<div id="weisberg-bingham" class="section level2">
+<h2><strong>Weisberg-Bingham</strong></h2>
+<pre class="r"><code>wb.norm.test(x) </code></pre>
+<pre><code>## 
+##  Weisberg-Bingham test for normality
+## 
+## data:  x
+## WB = 0.99752, p-value = 0.9795</code></pre>
+</div>
+<div id="paquete-nortest" class="section level2">
+<h2><strong>Paquete nortest</strong></h2>
+<p>Las siguientes pruebas requieren instalar y cargar el paquete: <code>nortest</code></p>
+<pre class="r"><code># install.packages(&quot;nortets&quot;)
+ library(nortest)</code></pre>
+</div>
+<div id="anderson-darling" class="section level2">
+<h2><strong>Anderson-Darling</strong></h2>
+<pre class="r"><code>ad.test(x)</code></pre>
+<pre><code>## 
+##  Anderson-Darling normality test
+## 
+## data:  x
+## A = 0.12233, p-value = 0.9876</code></pre>
+</div>
+<div id="cramer-von-mises" class="section level2">
+<h2><strong>Cramer-von Mises</strong></h2>
+<pre class="r"><code>cvm.test(x)</code></pre>
+<pre><code>## 
+##  Cramer-von Mises normality test
+## 
+## data:  x
+## W = 0.013637, p-value = 0.9966</code></pre>
+</div>
+<div id="lilliefors-kolmogorov-smirnov" class="section level2">
+<h2><strong>Lilliefors (Kolmogorov-Smirnov)</strong></h2>
+<pre class="r"><code>lillie.test(x)</code></pre>
+<pre><code>## 
+##  Lilliefors (Kolmogorov-Smirnov) normality test
+## 
+## data:  x
+## D = 0.032744, p-value = 0.8662</code></pre>
+</div>
+<div id="chi-cuadrado-de-pearson" class="section level2">
+<h2><strong>chi-cuadrado de Pearson</strong></h2>
+<pre class="r"><code>pearson.test(x)</code></pre>
+<pre><code>## 
+##  Pearson chi-square normality test
+## 
+## data:  x
+## P = 8.59, p-value = 0.8564</code></pre>
+</div>
+<div id="shapiro-francia" class="section level2">
+<h2><strong>Shapiro-Francia</strong></h2>
+<pre class="r"><code>sf.test(x)</code></pre>
+<pre><code>## 
+##  Shapiro-Francia normality test
+## 
+## data:  x
+## W = 0.99752, p-value = 0.9696</code></pre>
+<p>En todos los casos se presenta un valor-p grande por lo cual no se rechaza <span class="math inline">\(Ho\)</span>, asumimos que <span class="math inline">\(Ho\)</span> es verdad. Asumimos que la distribución de la variable <span class="math inline">\(X\)</span> es normal</p>
+</div>
+</div>
 
 
 
