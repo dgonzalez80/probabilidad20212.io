@@ -490,6 +490,9 @@ div.tocify {
     <li>
       <a href="codigo402.html">Código u4.2</a>
     </li>
+    <li>
+      <a href="codigo403.html">Código u4.3</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -780,7 +783,7 @@ e=1 # año
 n=(za1.2)^2*(s2.edad)/(e^2)
 
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>## [1] 1808</code></pre>
+<pre><code>## [1] 1760</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción" class="section level3">
@@ -1111,11 +1114,11 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila
 ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC metodo 1
 ic1</code></pre>
 <pre><code>##     2.5%    97.5% 
-## 4.748393 6.505786</code></pre>
+## 4.732179 6.434286</code></pre>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC metodo 2
 ic2</code></pre>
 <pre><code>##    97.5%     2.5% 
-## 4.601697 6.359090</code></pre>
+## 4.606991 6.309099</code></pre>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>

@@ -490,6 +490,9 @@ div.tocify {
     <li>
       <a href="codigo402.html">Código u4.2</a>
     </li>
+    <li>
+      <a href="codigo403.html">Código u4.3</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -786,7 +789,7 @@ data.frame(x,fx,Fx)        # construye tabla</code></pre>
 <li>Generar 15 números aleatorios a partir de esta distribución</li>
 </ol>
 <pre class="r"><code>rbinom(15,20,0.30)</code></pre>
-<pre><code>##  [1]  7  6  5  8  7  3  5  6  7  9  7 10  8  3  7</code></pre>
+<pre><code>##  [1]  2  5  7  4  6  7  5  9 10  6  2  5  4  6  8</code></pre>
 <p><br/></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Construir la gráfica de la función de distribución de probabilidad <span class="math inline">\(f(x)\)</span> para <span class="math inline">\(X\)</span></li>
@@ -840,8 +843,8 @@ ggplot(dat) + geom_point(aes(x, fx),colour = &quot;orange&quot;, size = 4) +
 <li>Genere 10 números aleatorios de la variables <span class="math inline">\(X\)</span></li>
 </ol>
 <pre class="r"><code>rnorm(10,70,sqrt(100))</code></pre>
-<pre><code>##  [1] 57.40003 57.74073 67.26841 61.31795 57.77344 55.31401 62.44078 73.53848
-##  [9] 67.56834 66.18076</code></pre>
+<pre><code>##  [1] 67.66279 88.03707 72.42931 71.57060 89.53474 66.20718 76.68577 56.33613
+##  [9] 60.01132 67.81008</code></pre>
 <p><br/></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Generar la gráfica de la función de densidad de la variable <span class="math inline">\(X\)</span>, <span class="math inline">\(f(x)\)</span></li>
@@ -911,17 +914,17 @@ ggdistribution(pnorm, seq(-4, 4, 0.1), mean = 0, sd = 1)</code></pre>
 ## ----------------- ---------
 ##              Mean      5.98
 ##           Std.Dev      0.51
-##               Min      4.44
+##               Min      4.40
 ##                Q1      5.63
-##            Median      5.95
-##                Q3      6.32
-##               Max      7.59
-##               MAD      0.51
-##               IQR      0.68
-##                CV      0.08
-##          Skewness      0.11
+##            Median      5.97
+##                Q3      6.30
+##               Max      7.80
+##               MAD      0.50
+##               IQR      0.67
+##                CV      0.09
+##          Skewness      0.13
 ##       SE.Skewness      0.08
-##          Kurtosis      0.11
+##          Kurtosis      0.08
 ##           N.Valid   1000.00
 ##         Pct.Valid    100.00</code></pre>
 </div>
