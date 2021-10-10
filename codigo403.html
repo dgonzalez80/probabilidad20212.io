@@ -545,7 +545,221 @@ div.tocify {
 
 <div id="pruebas-paramétricas" class="section level1">
 <h1><strong>Pruebas paramétricas</strong></h1>
+<p>Supongamos la hipótesis:</p>
+<p><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_{W} = 1000\)</span> </br> <span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_{W} \neq 1000\)</span></p>
+<pre class="r"><code># Problema 1
+w=rnorm(100,1000,2) # simulación de los datos
+shapiro.test(w)  # verificación de normalidad</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  w
+W = 0.99296, p-value = 0.8858</code></pre>
+<div id="prueba-de-hipótesis-para-una-media" class="section level3">
+<h3><strong>Prueba de hipótesis para una media</strong></h3>
+<p>Supuestos: + X normal + Varianza conocida (<span class="math inline">\(\sigma^{2}=4\)</span>)</p>
+<pre class="r"><code>BSDA::z.test(w, mu=1000, sigma.x = 2)</code></pre>
+<pre><code>
+    One-sample z-Test
+
+data:  w
+z = -0.07685, p-value = 0.9387
+alternative hypothesis: true mean is not equal to 1000
+95 percent confidence interval:
+  999.5926 1000.3766
+sample estimates:
+mean of x 
+ 999.9846 </code></pre>
+</div>
+<div id="prueba-de-hipótesis-para-una-media-1" class="section level3">
+<h3><strong>Prueba de hipótesis para una media</strong></h3>
+<p>Supuestos: + X normal + Varianza desconocida</p>
+<pre class="r"><code>#-------------------------------------------------------------------------------
+# Problema 2
+t=c(4.21,5.55,3.02,5.13,4.77,2.34,5.42,4.50,6.10,3.80,5.12,6.46,6.19,3.79,3.54)
+mean(t)</code></pre>
+<pre><code>[1] 4.662667</code></pre>
+<pre class="r"><code>sd(t)</code></pre>
+<pre><code>[1] 1.210658</code></pre>
+<pre class="r"><code>t.test(t,mu=5, alternative=&quot;less&quot;)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  t
+t = -1.0792, df = 14, p-value = 0.1494
+alternative hypothesis: true mean is less than 5
+95 percent confidence interval:
+     -Inf 5.213235
+sample estimates:
+mean of x 
+ 4.662667 </code></pre>
+<pre class="r"><code>#-------------------------------------------------------------------------------
+#Problema 3
+z=(24/40-.76)/(sqrt(.76*(1-.76)/40))
+
+prop.test(24,40,0.76,alternative=&quot;less&quot;)</code></pre>
+<pre><code>
+    1-sample proportions test with continuity correction
+
+data:  24 out of 40, null probability 0.76
+X-squared = 4.7711, df = 1, p-value = 0.01447
+alternative hypothesis: true p is less than 0.76
+95 percent confidence interval:
+ 0.0000000 0.7282033
+sample estimates:
+  p 
+0.6 </code></pre>
+<pre class="r"><code>#---------------------------------------------------------------------------------
+# Problema 4
+n1=36 ; mx1=6 ; sx1=4
+n2=40 ; mx2=8.2; sx2=4.3
+
+F=sx1^2/sx2^2
+RdeRF=qf(c(0.025,0.975),35,39)
+
+#t.test(x1,x2,mu=0, alternative = &quot;less&quot;)
+s2p=((n1-1)*sx1^2+(n2-1)*sx2^2)/(n1+n2-2)
+sp=sqrt(s2p)
+T4=(mx1-mx2)/(sp*sqrt(1/n1+1/n2))
+RdeRT4=qt(0.05,(n1+n2-2))</code></pre>
+<pre class="r"><code>#-----------------------------------------------------------------------------------
+# Problema 5
+p5=3/40
+z5=(p5-0.05)/sqrt(0.05*0.95/40)
+#----------------------------------------------------------------------------------
+# Problema 6
+g1=c(75,76,74,80,72,798,76,73,72,75)
+g2=c(86,78,86,84,81,79,78,84,88,80)
+
+mean(g1);sd(g1)</code></pre>
+<pre><code>[1] 147.1</code></pre>
+<pre><code>[1] 228.715</code></pre>
+<pre class="r"><code>mean(g2);sd(g2)</code></pre>
+<pre><code>[1] 82.4</code></pre>
+<pre><code>[1] 3.657564</code></pre>
+<pre class="r"><code>var.test(g1,g2)</code></pre>
+<pre><code>
+    F test to compare two variances
+
+data:  g1 and g2
+F = 3910.3, num df = 9, denom df = 9, p-value = 8.882e-15
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+   971.2524 15742.6704
+sample estimates:
+ratio of variances 
+          3910.257 </code></pre>
+<pre class="r"><code>t.test(g1,g2)</code></pre>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  g1 and g2
+t = 0.89445, df = 9.0046, p-value = 0.3944
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -98.92101 228.32101
+sample estimates:
+mean of x mean of y 
+    147.1      82.4 </code></pre>
+<pre class="r"><code>#---------------------------------------------------------------------------------
+# Problema 7
+
+n1=400 ;x1=80
+n2=400 ; x2=88
+
+prop.test(c(80,88),c(400,400))</code></pre>
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  c(80, 88) out of c(400, 400)
+X-squared = 0.3692, df = 1, p-value = 0.5434
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.07893199  0.03893199
+sample estimates:
+prop 1 prop 2 
+  0.20   0.22 </code></pre>
+<pre class="r"><code>#-----------------------------------------------------------------------------------
+# Problema 8
+x1=c(45,73,46,124,30,57,83,34,26,17)
+x2=c(36,60,44,119,35,51,77,29,24,11)
+d=x1-x2
+
+mean(d)</code></pre>
+<pre><code>[1] 4.9</code></pre>
+<pre class="r"><code>sd(d)</code></pre>
+<pre><code>[1] 4.72464</code></pre>
+<pre class="r"><code>t.test(x1,x2,paired = TRUE)</code></pre>
+<pre><code>
+    Paired t-test
+
+data:  x1 and x2
+t = 3.2796, df = 9, p-value = 0.009535
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 1.520196 8.279804
+sample estimates:
+mean of the differences 
+                    4.9 </code></pre>
+<pre class="r"><code>#------------------------------------------------------------------------------------
+#Problema 9
+
+pa=c(104.5,89,84.5,106,90,96,79,90,85,76.5,91.5,82.5,100.5,89.5,121.5,72)
+pd=c(98,85.5,85,103.5,88.5,95,79.5,90,82,76,89.5,81,99.5,86.5,115.5,70)
+d=pa-pd
+mean(d)</code></pre>
+<pre><code>[1] 2.0625</code></pre>
+<pre class="r"><code>sd(d)</code></pre>
+<pre><code>[1] 2.032035</code></pre>
+<pre class="r"><code>t.test(pa,pd,paired = TRUE)</code></pre>
+<pre><code>
+    Paired t-test
+
+data:  pa and pd
+t = 4.06, df = 15, p-value = 0.001026
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.9797049 3.1452951
+sample estimates:
+mean of the differences 
+                 2.0625 </code></pre>
+<pre class="r"><code>#-----------------------------------------------------------------------
+# Problema 10
+g1=c(37,19,21,35,16,4,0,12,63,25,12,15)
+g2=c(24,42,18,15,0,9,10,20,22,13)
+
+mean(g1);sd(g1)</code></pre>
+<pre><code>[1] 21.58333</code></pre>
+<pre><code>[1] 17.01581</code></pre>
+<pre class="r"><code>mean(g2);sd(g2)</code></pre>
+<pre><code>[1] 17.3</code></pre>
+<pre><code>[1] 11.20565</code></pre>
+<pre class="r"><code>var.test(g1,g2)</code></pre>
+<pre><code>
+    F test to compare two variances
+
+data:  g1 and g2
+F = 2.3058, num df = 11, denom df = 9, p-value = 0.22
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.5894187 8.2731556
+sample estimates:
+ratio of variances 
+           2.30585 </code></pre>
+<pre class="r"><code>t.test(g1,g2)</code></pre>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  g1 and g2
+t = 0.70719, df = 19.104, p-value = 0.488
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -8.389007 16.955673
+sample estimates:
+mean of x mean of y 
+ 21.58333  17.30000 </code></pre>
 <p><br/><br/><br/><br/></p>
+</div>
 </div>
 <div id="pruebas-no-paramétricas" class="section level1">
 <h1><strong>Pruebas no paramétricas</strong></h1>
@@ -553,20 +767,20 @@ div.tocify {
 </div>
 <div id="pruebas-de-normalidad" class="section level1">
 <h1><strong>Pruebas de normalidad</strong></h1>
-<p>Existen varias pruebas de hipotesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hip?teisis planteadas son:</p>
-<p><span class="math inline">\(Ho\)</span>: <span class="math inline">\(X\)</span> tiene distribución Normal <span class="math inline">\(Ha\)</span>: <span class="math inline">\(X\)</span> no tiene distribución Normal</p>
+<p>Existen varias pruebas de hipótesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hipóteisis planteadas son:</p>
+<p><span class="math inline">\(Ho\)</span>: <span class="math inline">\(X\)</span> tiene distribución Normal <br/> <span class="math inline">\(Ha\)</span>: <span class="math inline">\(X\)</span> no tiene distribución Normal</p>
 <pre class="r"><code># se genera una variable aleatoria normal
 x=rnorm(200,1000,50)
 plot(density(x), las=1)</code></pre>
-<p><img src="codigo403_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="codigo403_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <div id="shapiro-wilk" class="section level2">
 <h2><strong>Shapiro Wilk</strong></h2>
 <pre class="r"><code>shapiro.test(x)</code></pre>
-<pre><code>## 
-##  Shapiro-Wilk normality test
-## 
-## data:  x
-## W = 0.99431, p-value = 0.6477</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  x
+W = 0.98901, p-value = 0.1278</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, está disponible en la configuración básica de R</p>
 </div>
 <div id="paquete-normtest" class="section level2">
@@ -578,92 +792,92 @@ plot(density(x), las=1)</code></pre>
 <div id="jarque-bera-ajustado" class="section level2">
 <h2><strong>Jarque-Bera ajustado</strong></h2>
 <pre class="r"><code>ajb.norm.test(x)    </code></pre>
-<pre><code>## 
-##  Adjusted Jarque-Bera test for normality
-## 
-## data:  x
-## AJB = 0.31439, p-value = 0.865</code></pre>
+<pre><code>
+    Adjusted Jarque-Bera test for normality
+
+data:  x
+AJB = 1.8444, p-value = 0.358</code></pre>
 </div>
 <div id="frosini" class="section level2">
 <h2><strong>Frosini</strong></h2>
 <pre class="r"><code>frosini.norm.test(x)    </code></pre>
-<pre><code>## 
-##  Frosini test for normality
-## 
-## data:  x
-## B = 0.14305, p-value = 0.799</code></pre>
+<pre><code>
+    Frosini test for normality
+
+data:  x
+B = 0.22347, p-value = 0.2095</code></pre>
 </div>
 <div id="geary" class="section level2">
 <h2><strong>Geary</strong></h2>
 <pre class="r"><code>geary.norm.test(x)  </code></pre>
-<pre><code>## 
-##  Geary test for normality
-## 
-## data:  x
-## d = 0.78869, p-value = 0.7555</code></pre>
+<pre><code>
+    Geary test for normality
+
+data:  x
+d = 0.80749, p-value = 0.271</code></pre>
 </div>
 <div id="hagazy-green-1" class="section level2">
 <h2><strong>Hagazy-Green 1</strong></h2>
 <pre class="r"><code>hegazy1.norm.test(x)    </code></pre>
-<pre><code>## 
-##  Hegazy-Green test for normality
-## 
-## data:  x
-## T = 0.046393, p-value = 0.785</code></pre>
+<pre><code>
+    Hegazy-Green test for normality
+
+data:  x
+T = 0.065076, p-value = 0.246</code></pre>
 </div>
 <div id="hagazy-green-2" class="section level2">
 <h2><strong>Hagazy-Green 2</strong></h2>
 <pre class="r"><code>hegazy2.norm.test(x)</code></pre>
-<pre><code>## 
-##  Hegazy-Green test for normality
-## 
-## data:  x
-## T = 0.0047441, p-value = 0.773</code></pre>
+<pre><code>
+    Hegazy-Green test for normality
+
+data:  x
+T = 0.0075964, p-value = 0.3755</code></pre>
 </div>
 <div id="jarque-bera" class="section level2">
 <h2><strong>Jarque-Bera</strong></h2>
 <pre class="r"><code>jb.norm.test(x) </code></pre>
-<pre><code>## 
-##  Jarque-Bera test for normality
-## 
-## data:  x
-## JB = 0.36724, p-value = 0.8315</code></pre>
+<pre><code>
+    Jarque-Bera test for normality
+
+data:  x
+JB = 1.9348, p-value = 0.3145</code></pre>
 </div>
 <div id="de-kurtosis" class="section level2">
 <h2><strong>de kurtosis</strong></h2>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
-<pre><code>## 
-##  Kurtosis test for normality
-## 
-## data:  x
-## T = 2.8489, p-value = 0.664</code></pre>
+<pre><code>
+    Kurtosis test for normality
+
+data:  x
+T = 2.5732, p-value = 0.1905</code></pre>
 </div>
 <div id="de-sesgo" class="section level2">
 <h2><strong>de sesgo</strong></h2>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
-<pre><code>## 
-##  Skewness test for normality
-## 
-## data:  x
-## T = -0.072885, p-value = 0.6485</code></pre>
+<pre><code>
+    Skewness test for normality
+
+data:  x
+T = 0.11179, p-value = 0.514</code></pre>
 </div>
 <div id="spiegelhalter" class="section level2">
 <h2><strong>Spiegelhalter</strong></h2>
 <pre class="r"><code>spiegelhalter.norm.test(x)  </code></pre>
-<pre><code>## 
-##  Spiegelhalter test for normality
-## 
-## data:  x
-## T = 1.2679, p-value = 0.252</code></pre>
+<pre><code>
+    Spiegelhalter test for normality
+
+data:  x
+T = 1.2384, p-value = 0.7295</code></pre>
 </div>
 <div id="weisberg-bingham" class="section level2">
 <h2><strong>Weisberg-Bingham</strong></h2>
 <pre class="r"><code>wb.norm.test(x) </code></pre>
-<pre><code>## 
-##  Weisberg-Bingham test for normality
-## 
-## data:  x
-## WB = 0.99544, p-value = 0.7455</code></pre>
+<pre><code>
+    Weisberg-Bingham test for normality
+
+data:  x
+WB = 0.99144, p-value = 0.2405</code></pre>
 </div>
 <div id="paquete-nortest" class="section level2">
 <h2><strong>Paquete nortest</strong></h2>
@@ -674,47 +888,47 @@ plot(density(x), las=1)</code></pre>
 <div id="anderson-darling" class="section level2">
 <h2><strong>Anderson-Darling</strong></h2>
 <pre class="r"><code>ad.test(x)</code></pre>
-<pre><code>## 
-##  Anderson-Darling normality test
-## 
-## data:  x
-## A = 0.23914, p-value = 0.7766</code></pre>
+<pre><code>
+    Anderson-Darling normality test
+
+data:  x
+A = 0.48382, p-value = 0.2263</code></pre>
 </div>
 <div id="cramer-von-mises" class="section level2">
 <h2><strong>Cramer-von Mises</strong></h2>
 <pre class="r"><code>cvm.test(x)</code></pre>
-<pre><code>## 
-##  Cramer-von Mises normality test
-## 
-## data:  x
-## W = 0.034393, p-value = 0.7799</code></pre>
+<pre><code>
+    Cramer-von Mises normality test
+
+data:  x
+W = 0.076988, p-value = 0.2255</code></pre>
 </div>
 <div id="lilliefors-kolmogorov-smirnov" class="section level2">
 <h2><strong>Lilliefors (Kolmogorov-Smirnov)</strong></h2>
 <pre class="r"><code>lillie.test(x)</code></pre>
-<pre><code>## 
-##  Lilliefors (Kolmogorov-Smirnov) normality test
-## 
-## data:  x
-## D = 0.038274, p-value = 0.6748</code></pre>
+<pre><code>
+    Lilliefors (Kolmogorov-Smirnov) normality test
+
+data:  x
+D = 0.051521, p-value = 0.2188</code></pre>
 </div>
 <div id="chi-cuadrado-de-pearson" class="section level2">
 <h2><strong>chi-cuadrado de Pearson</strong></h2>
 <pre class="r"><code>pearson.test(x)</code></pre>
-<pre><code>## 
-##  Pearson chi-square normality test
-## 
-## data:  x
-## P = 7.57, p-value = 0.9105</code></pre>
+<pre><code>
+    Pearson chi-square normality test
+
+data:  x
+P = 19.81, p-value = 0.1362</code></pre>
 </div>
 <div id="shapiro-francia" class="section level2">
 <h2><strong>Shapiro-Francia</strong></h2>
 <pre class="r"><code>sf.test(x)</code></pre>
-<pre><code>## 
-##  Shapiro-Francia normality test
-## 
-## data:  x
-## W = 0.99544, p-value = 0.7314</code></pre>
+<pre><code>
+    Shapiro-Francia normality test
+
+data:  x
+W = 0.99144, p-value = 0.246</code></pre>
 <p>En todos los casos se presenta un valor-p grande por lo cual no se rechaza <span class="math inline">\(Ho\)</span>, asumimos que <span class="math inline">\(Ho\)</span> es verdad. Asumimos que la distribución de la variable <span class="math inline">\(X\)</span> es normal</p>
 </div>
 </div>

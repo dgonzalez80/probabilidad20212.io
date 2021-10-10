@@ -109,7 +109,15 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 
 ## **Introducción**
 
-El origen de los estudios, relacionados con las pruebas de hipótesis estadísticas, se sitúa alrededor de 1738, cuando en un ensayo escrito por Daniel Bernoulli aparece el cálculo una estadística de prueba para ensayar su hipótesis en el campo de la astronomía. Entre 1915 y 1933 se desarrolla esta formulación gracias a los estudios realizados por tres grandes autores: Ronald Fisher, Jerzy Neyman y Egon Pearson. Hoy en día predomina la teoría de Neyman-Pearson (lema de Neyman-Pearson).
+![](img/pruebas1.png)
+
+
+El origen de los estudios, relacionados con las pruebas de hipótesis estadísticas, se sitúa alrededor de 1738, cuando en un ensayo escrito por Daniel Bernoulli(1) aparece el cálculo una estadística de prueba para ensayar su hipótesis en el campo de la astronomía. Entre 1915 y 1933 se desarrolla esta formulación gracias a los estudios realizados por tres grandes autores: Ronald Fisher(2), Jerzy Neyman(3) y Egon Pearson(4). Hoy en día predomina la teoría de Neyman-Pearson (lema de Neyman-Pearson).
+
+
+
+![](img/prueba.jpg)
+
 
 Una hipótesis estadística es una afirmación o conjetura acerca de los parámetros de la distribución de probabilidades de una población. Si la hipótesis estadística especifica completamente la distribución, entonces ella se llama **Hipótesis Simple**, de otra manera se llama Hipótesis Compuesta. 
 
@@ -171,6 +179,7 @@ Existen dos situaciones en las que se comenten errores después de tomar una dec
 
 **Error tipo I**: Cuando se rechazamos una hipótesis nula que en realidad es verdadera. Tomando como simil la situación donde un médico desea determinar si un paciente está sano o enfermo ($Ho$: SANO vs $Ha$: ENFERMO), es posible que concluya que el paciente está enfermo (rechace $Ho$) cuando en verdad esta persona esta sana. En términos de probabilidad este error se debe de representar como:
 $$P(\text{Rechazar } Ho | Ho \text{ es verdadera})= \alpha$$
+
 
 <br/><br/>
 

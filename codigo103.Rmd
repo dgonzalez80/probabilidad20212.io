@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(ggplot2)
 casas=read.csv("data/casas.csv", header = TRUE, sep=",")
 beer=read.csv("data/beer.csv",header=TRUE, sep = ";")

@@ -10,8 +10,7 @@ output:
     theme: cosmo
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, comment = NA)
 library(psych)
 library(summarytools)
 
