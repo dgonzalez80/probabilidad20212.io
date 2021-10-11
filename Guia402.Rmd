@@ -329,7 +329,7 @@ $$P\Bigg( \frac{(n-1)S^{2}}{\chi^{2}_{\alpha/2}} \leq \sigma^{2} \leq \frac{(n-1
 	<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 	
 
-$$IC_{\sigma^{2}}: \Bigg( \displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{\alpha/2}} ;\displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{1-\alpha/2}} \Bigg)$$
+$$IC_{\sigma^{2}}: \Bigg( \displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{1-\alpha/2 ; v=n-1}} ;\displaystyle\frac{(n-1)S^{2}}{\chi^{2}_{\alpha/2; v=n-1}} \Bigg)$$
 
 Supuestos:
 $X\sim N(\mu,\sigma^{2})$
@@ -600,7 +600,7 @@ En este caso se emplea en su construcción la distribución F de Fischer
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 
-$$\Bigg(\frac{s_{1}^{2}}{s_{2}^{2}} F_{1-\alpha/2; v_{1},v_{2}} ; \frac{s_{1}^{2}}{s_{2}^{2}} F_{\alpha/2; v_{1},v_{2}} \Bigg)$$
+$$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{1-\alpha/2}(v_{1}v_{2})}; \dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}\Bigg)$$
 
 </div>
 
@@ -627,14 +627,28 @@ x=c( 7.69, 4.97, 4.56, 6.49, 4.34, 6.24, 4.45) # datos muestra
 boot=sample(x,7000,replace=TRUE)   # se extraen n x m muestras
 b=matrix(boot,nrow=1000,ncol=7)    # se construye matriz de n x m 
 mx=apply(b,1,mean)                 # se calculan m medias por fila
+```
+
+
+
+
+```{r}
 ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC metodo 1
 ic1
+```
 
+```{r}
 ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC metodo 2
 ic2
 ```
 
+```{r}
+hist(mx, las=1, main=" ", ylab = " ", xlab = " ")
+abline(v=ic1, col="red")
+abline(v=ic2, col="blue")
+```
 
+Como se puede observar, el segundo estimador corrige el intervalo
 <br/><br/><br/><br/>
 
 # **Conceptos**
@@ -675,7 +689,7 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 |(8) |              |$(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2, v^{*}} \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}$ |Grupos independientes,$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}, \sigma_{2}^{2})$, varianzas diferentes |
 | ||donde $v^{*}=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}$||
 |(9)| $p_{1}-p_{2}$|$(\widehat{p_{1}}-\widehat{p_{2}})\pm z_{\alpha/2} \sqrt{\dfrac{\widehat{p_{1}}(1-\widehat{p_{1}})}{n_{1}}+\dfrac{\widehat{p_{2}}(1-\widehat{p_{2}})}{n_{2}}}$|$n_{1}>>$, $n_{2}>>$|
-|(10)| $\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}$ |$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}; s^{2}_{1}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{2}v_{1})}\Bigg)$|$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}, \sigma_{2}^{2})$| 
+|(10)| $\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}$ |$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{1-\alpha/2}(v_{1}v_{2})}; \dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}\Bigg)$|$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}, \sigma_{2}^{2})$| 
 
 <br/><br/><br/>
 
