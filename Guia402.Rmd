@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(readr)
 
 # colores
@@ -268,6 +268,10 @@ n=(za1.2)^2*(s2.edad)/(e^2)
 
 round(n,0)  # redondeo a entero
 ```
+```{r}
+library(paquetepye)
+nmu(qnorm(0.99),s2.edad,1)
+```
 
 
 <br/><br/>
@@ -310,6 +314,35 @@ De acuerdo con el resultado anterior, se puede afirmar con una confianza del 95%
 <br/><br/>
 
 
+### **Tamaño de muestra para la estimación de una proporción**
+
+$$n=\dfrac{z_{\alpha/2}^{2}\hspace{.3cm} p(1-p)}{e^{2}}$$
+Donde :
+
++ $z_{\alpha/2}$ : representa el percentil de la distribución normal relacionado con la confianza
++ $p$ : la proporción y p(1-p) la varianza.  Para conocerla se puede hacer uso de una estimación a traves de una prueba piloto, la varianza máxima que ocurre cuando $p=0.5$  ($pq=0.25$)
++ $e$ : el error de muestreo que representa la tolerancia al erro que tiene el investigador ($|\widehat{p}-p|<e$).
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej4.png){width=120%} | Una empresa requiere realizar un estudio para establecer las proporción de fallas diarias que presta la empresa al presentar un servicio . El gerente encargado del estudio decide que la tasa de error máximo tolerable debe ser del 5% y el nivel de confianza del 99% . Con esta información una firma de consultora presenta una propuesta a la empresa por valor de \$110.2 millones para realizar el estudio y justifica su costo así: Por costos administrativos y de logística corresponde un valor de \$55.4 millones y cada encuesta realizada tiene un valor de $50 mil pesos. El Director de la empresa le encarga a usted revisar la información darle un concepto sobre la propuesta realizada por la firma de auditores a la mayor brevedad
+
+**Solución**
+
+Información de la solicitud: 
++ Objetivo : Analizar la propuesta realizada por la firma externa
+  + Valor total : 110.2 millones
+  + Valor costos administrativos y logísticos : 25.4 millones
+  + Valor encuestas : 110.2-55.4 = 54.8 millones
+  + Número de encuestas propuestas a realizar : 1096
+  
+```{r}
+library(paquetepye)
+np(qnorm(0.995),0.5,0.05)
+```
+De acuerdo con la información sumunistrada por la empresa, el tamaño de muestra apropiado para la estimación de la proporción, suponiendo varianza máxima es de $n=664$, por tal razón la propuesta realiza por la empresa consultora excede en   432 encuesta que presentan un sobre costo de \$21.6 millones
+  
+
 ### **Intervalos de confianza para la varianza** 
 
 En el caso del intervalo de confianza para la varianza se parte de la premisa de que la variable
@@ -340,7 +373,7 @@ $X\sim N(\mu,\sigma^{2})$
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej4.png){width=120%} | Se quiere estimar un intervalo de confianza del 95% para la desviación estandar de los precios de los últimos 22 dias (sep.10.2021 a oct.7.2021, tomados de :Investing.com)
+| ![](img/ej5.png){width=120%} | Se quiere estimar un intervalo de confianza del 95% para la desviación estandar de los precios de los últimos 22 dias (sep.10.2021 a oct.7.2021, tomados de :Investing.com)
 
 ```{r}
 ecopetrol=c(2810, 2810,	2825, 2769, 2734, 2706,	2699, 2671, 2550, 2590,	2570, 2529,	2520, 2566,	2615, 2620, 2550, 2572,	2553, 2570,	2593, 2606)	
@@ -387,7 +420,7 @@ $d_{i}=x_{1i}-x_{2i}$
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej5.png){width=120%} | Se afirma que una persona podrá reducir su peso en un periodo de dos semanas un promedio de 4.5 kilogramos con una nueva dieta. Los pesos de 7 mujeres de siguieron  esta dieta se registraron antes y después de un periodo de dos semanas.  |
+| ![](img/ej6.png){width=120%} | Se afirma que una persona podrá reducir su peso en un periodo de dos semanas un promedio de 4.5 kilogramos con una nueva dieta. Los pesos de 7 mujeres de siguieron  esta dieta se registraron antes y después de un periodo de dos semanas.  |
 || peso.ant=c(58.2, 60.3, 61.3, 69.0, 64.0, 62.6, 56.7)|
 ||pes.des=c(60.0, 54.9, 58.1, 62.1, 58.5, 59.9, 54.4)|
 || Pruebe la afirmación sobre la dieta calculando un intervalo de confianza del 95% para la diferencia de medias . Suponga que las diferencias de los pesos se distribuyen aproximadamente normal. |
@@ -434,7 +467,7 @@ Supuestos:
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej6.png){width=120%} | A seis ingenieros que trabajan para el estado se les solicito realizar un pronostico la tasa de inflación para el año entrante. La misma petición se le realizo a ocho especialistas en finanzas que trabajan para el sector privado. Los pronósticos entregado fueron: |
+| ![](img/ej7.png){width=120%} | A seis ingenieros que trabajan para el estado se les solicito realizar un pronostico la tasa de inflación para el año entrante. La misma petición se le realizo a ocho especialistas en finanzas que trabajan para el sector privado. Los pronósticos entregado fueron: |
 |    |ingenieros :  4.2%, 5.1%, 3.9%, 4.7%, 4.8%, 5.8% |  
 |    |especialistas en finanzas:  5.7%, 6.1%, 5.2%, 4.9%, 4.6%, 4.5%, 5.2%, 5.5% | 
 |    |¿Están los especialistas (ingenieros y financieros) realizando pronósticos similares? . Suponga que los pronósticos realizados tienen distribución normal. Construye un intervalo de confianza para la diferencia de los promedios realizados por los ingenieros y los especializadas en finanzas del 95%. Concluya a partir de los resultados. |
@@ -481,7 +514,7 @@ $$v=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej7.png){width=120%} | Supongamos el mismo caso del ejemplo anterior, pero con los siguientes datos :   
+| ![](img/ej8.png){width=120%} | Supongamos el mismo caso del ejemplo anterior, pero con los siguientes datos :   
 |    | ingenieros :  2.2%, 1.1%, 3.9%, 5.9%, 4.5%, 5.1%    |
 |    | especialistas en finanzas:  3.7%, 2.1%, 2.2%, 3.9%, 3.6%, 3.5%, 3.2%, 3.5% |
 
@@ -540,7 +573,7 @@ $$(\widehat{p_{1}}-\widehat{p_{2}}) \pm z_{\alpha/2} \sqrt{\frac{\widehat{p_{1}}
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej8.png){width=100%} |En una muestra de 200 clientes, el 20% indica preferencia por tamaño especial de pizza. Con posterioridad a una campaña publicitaria realizada en radio y televisión promoviendo dicho producto, se selecciono una muestra de igual tamaño. En esta ultima muestra el 22% de los clientes indico preferencia por el producto. De acuerdo con estos resultados calcule un intervalo de confianza del 95% para la diferencia de proporciones. De acuerdo a los resultados obtenidos, podría afirmarse que la campaña publicitaria fue efectiva? |
+| ![](img/ej9.png){width=100%} |En una muestra de 200 clientes, el 20% indica preferencia por tamaño especial de pizza. Con posterioridad a una campaña publicitaria realizada en radio y televisión promoviendo dicho producto, se selecciono una muestra de igual tamaño. En esta ultima muestra el 22% de los clientes indico preferencia por el producto. De acuerdo con estos resultados calcule un intervalo de confianza del 95% para la diferencia de proporciones. De acuerdo a los resultados obtenidos, podría afirmarse que la campaña publicitaria fue efectiva? |
 
 <br/><br/>
 

@@ -821,17 +821,17 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
     999,  998, 1000,  999, 1002,  999, 1000, 1003)
 
 t.test(w, mu=1000)</code></pre>
-<pre><code>## 
-##  One Sample t-test
-## 
-## data:  w
-## t = 2.497, df = 59, p-value = 0.01534
-## alternative hypothesis: true mean is not equal to 1000
-## 95 percent confidence interval:
-##  1000.119 1001.081
-## sample estimates:
-## mean of x 
-##    1000.6</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  w
+t = 2.497, df = 59, p-value = 0.01534
+alternative hypothesis: true mean is not equal to 1000
+95 percent confidence interval:
+ 1000.119 1001.081
+sample estimates:
+mean of x 
+   1000.6 </code></pre>
 <p>Región de Rechazo:</p>
 <p>Para determinar la <span class="math inline">\(RdeR\)</span>, a a prtir del nivel de significancia asumido, se buscan los percentiles <span class="math inline">\(t_{0.025; v=59}\)</span> y <span class="math inline">\(t_{0.975;v=59}\)</span> para la distribución t-Student.</p>
 <p>RdeR.png</p>
@@ -1049,11 +1049,11 @@ t.test(w, mu=1000)</code></pre>
 <pre class="r"><code>obs=c(33,22,21,24)
 esp=c(0.25,0.25,0.25,0.25)
 chisq.test(x=obs,p=esp)</code></pre>
-<pre><code>## 
-##  Chi-squared test for given probabilities
-## 
-## data:  obs
-## X-squared = 3.6, df = 3, p-value = 0.308</code></pre>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  obs
+X-squared = 3.6, df = 3, p-value = 0.308</code></pre>
 <p><br/><br/></p>
 <p>ejemplo Un profesor desea establecer si los resultados obtenidos por sus estudiantes tienen una distribución normal con media 3.5 y desviación estándar 0.7 puntos. Los datos se resumen en la siguiente tabla:</p>
 <p><br/><br/></p>
@@ -1108,11 +1108,11 @@ chisq.test(x=obs,p=esp)</code></pre>
 <pre class="r"><code>m=c(20,40,15,11,8,6)
 M=as.table(matrix(m,nrow=3))
 chisq.test(M)</code></pre>
-<pre><code>## 
-##  Pearson&#39;s Chi-squared test
-## 
-## data:  M
-## X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
+<pre><code>
+    Pearson&#39;s Chi-squared test
+
+data:  M
+X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </div>
 <div id="prueba-de-wilcoxon" class="section level3">
 <h3><strong>Prueba de Wilcoxon</strong></h3>
@@ -1313,15 +1313,15 @@ chisq.test(M)</code></pre>
 <pre class="r"><code>x=c(21,18,15,17,18,25,18,4,6,5)
 y=c(4,4,4,3,3,5,3,1,1,2)
 cor.test(x,y, method = &quot;spearman&quot;,continuity = FALSE,conf.level = 0.95)</code></pre>
-<pre><code>## 
-##  Spearman&#39;s rank correlation rho
-## 
-## data:  x and y
-## S = 30.693, p-value = 0.004157
-## alternative hypothesis: true rho is not equal to 0
-## sample estimates:
-##       rho 
-## 0.8139814</code></pre>
+<pre><code>
+    Spearman&#39;s rank correlation rho
+
+data:  x and y
+S = 30.693, p-value = 0.004157
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.8139814 </code></pre>
 <p><br/><br/></p>
 </div>
 <div id="prueba-de-rachas" class="section level3">
@@ -1332,13 +1332,12 @@ cor.test(x,y, method = &quot;spearman&quot;,continuity = FALSE,conf.level = 0.95
 <pre class="r"><code>library(&quot;randtests&quot;)
 y=rnorm(100,120,20)
 runs.test(y)</code></pre>
-<pre><code>## 
-##  Runs Test
-## 
-## data:  y
-## statistic = -1.0051, runs = 46, n1 = 50, n2 = 50, n = 100, p-value =
-## 0.3149
-## alternative hypothesis: nonrandomness</code></pre>
+<pre><code>
+    Runs Test
+
+data:  y
+statistic = 0, runs = 51, n1 = 50, n2 = 50, n = 100, p-value = 1
+alternative hypothesis: nonrandomness</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="pruebas-de-normalidad" class="section level3">
@@ -1351,11 +1350,11 @@ x=rnorm(200,1000,50)
 plot(density(x), main=&quot; &quot;, las=1)</code></pre>
 <p><img src="Guia403_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>shapiro.test(x)</code></pre>
-<pre><code>## 
-##  Shapiro-Wilk normality test
-## 
-## data:  x
-## W = 0.99604, p-value = 0.8869</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  x
+W = 0.99213, p-value = 0.3556</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1363,38 +1362,38 @@ plot(density(x), main=&quot; &quot;, las=1)</code></pre>
  library(normtest)
 
 jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
-<pre><code>## 
-##  Jarque-Bera test for normality
-## 
-## data:  x
-## JB = 0.13487, p-value = 0.9325</code></pre>
+<pre><code>
+    Jarque-Bera test for normality
+
+data:  x
+JB = 1.6543, p-value = 0.382</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
-<pre><code>## 
-##  Kurtosis test for normality
-## 
-## data:  x
-## T = 2.8796, p-value = 0.714</code></pre>
+<pre><code>
+    Kurtosis test for normality
+
+data:  x
+T = 3.2924, p-value = 0.361</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
-<pre><code>## 
-##  Skewness test for normality
-## 
-## data:  x
-## T = -0.020499, p-value = 0.9055</code></pre>
+<pre><code>
+    Skewness test for normality
+
+data:  x
+T = -0.16809, p-value = 0.3165</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
 lillie.test(x) # Kolmogorov-Smirnov</code></pre>
-<pre><code>## 
-##  Lilliefors (Kolmogorov-Smirnov) normality test
-## 
-## data:  x
-## D = 0.032045, p-value = 0.8851</code></pre>
+<pre><code>
+    Lilliefors (Kolmogorov-Smirnov) normality test
+
+data:  x
+D = 0.038355, p-value = 0.6716</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
-<pre><code>## 
-##  Pearson chi-square normality test
-## 
-## data:  x
-## P = 21.51, p-value = 0.08926</code></pre>
+<pre><code>
+    Pearson chi-square normality test
+
+data:  x
+P = 8.08, p-value = 0.8851</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
