@@ -721,7 +721,7 @@ $$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 ![](img/Nota_R.png){width=10%}
 
 | parámetro        | código R                                       |
-|:----------------:|:----------------------------------------------:|
+|:----------------:|:-----------------------------------------------|
 |$\mu$             | `t.test(x, coef.level= 1−a)$conf.int`          |
 |$p$               | `prop.test(x,n, conf.level=0.95)$conf.int`          |
 |$\mu_{1}-\mu_{2}$ | `t.test(datos1,datos2, paired=T)$conf.int`              |
