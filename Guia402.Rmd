@@ -518,7 +518,7 @@ En cualquiera de los casos los resultados pueden generar que intervalo sea de la
 
 + $(-,-)$, los dos limites que conforman el IC son negativos. De este resultado se puede concluir que $\mu_{1}<\mu_{2}$
 + $(-,+)$, el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de $\mu_{1}=\mu_{2}$
-+ $(+,+)$, los dos limites son positivos 
++ $(+,+)$, los dos limites son positivos , entonces podemos decir que $\mu_{1}>\mu_{2}$
 
 </div>
 	
@@ -572,6 +572,23 @@ El resultado obtenido por R es levemente diferente, debido a ajuste en la formul
 
 
 <br/><br/>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; 
+                     color: #000000; 
+                     background-color: #FFFFFF ; 
+                     border-color: #000000;">
+
+![](img/Nota_nota.png){width=10%}
+En cualquiera de los casos los resultados pueden generar que intervalo sea de la forma:
+
++ $(-,-)$, los dos limites que conforman el IC son negativos. De este resultado se puede concluir que $p_{1}<p_{2}$
++ $(-,+)$, el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de $p_{1}=p_{2}$
++ $(+,+)$, los dos limites son positivos , entonces podemos decir que $p_{1}>p_{2}$
+
+</div>
+
+
+
 
 ### **Comparación de varianzas** 
 
@@ -655,10 +672,12 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 |(6) |$\mu_{1}-\mu_{2}$|$\bar{d} \pm t_{\alpha/2}\dfrac{s_{d}}{\sqrt{n}}$    |Grupos pareados $d={x}_{1}-x_{2}$,$X_{1}\sim norm(\mu_{1}, \sigma^{2}_{1})$,$X_{2}\sim norm(\mu_{2}, \sigma^{2}_{2})$| |              
 |(7) |              | $(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2} \hspace{.2cm}s_{p} \sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}$ | Grupos independientes,$X_{1}\sim norm(\mu_{1}, \sigma^{2}_{1})$,$X_{2}\sim norm(\mu_{2}, \sigma^{2}_{2})$, varianzas iguales|
 | |                 | donde $s_{p}^{2}=\dfrac{(n_{1}-1)s_{1}^{2}+(n_{2}-1)s_{2}^{2}}{n_{1}+n_{2}-2}$ y $v=n_{1}+n_{2}-2$ | |
-|(8) |              |$(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2, v^{*}} \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}$ |Grupos independientes,$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}$, varianzas diferentes |
+|(8) |              |$(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2, v^{*}} \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}$ |Grupos independientes,$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}, \sigma_{2}^{2})$, varianzas diferentes |
 | ||donde $v^{*}=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}$||
 |(9)| $p_{1}-p_{2}$|$(\widehat{p_{1}}-\widehat{p_{2}})\pm z_{\alpha/2} \sqrt{\dfrac{\widehat{p_{1}}(1-\widehat{p_{1}})}{n_{1}}+\dfrac{\widehat{p_{2}}(1-\widehat{p_{2}})}{n_{2}}}$|$n_{1}>>$, $n_{2}>>$|
 |(10)| $\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}$ |$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}; s^{2}_{1}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{2}v_{1})}\Bigg)$|$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}, \sigma_{2}^{2})$| 
+
+<br/><br/><br/>
 
 ## **Tamaño de muestra**                                                            
 
@@ -684,6 +703,7 @@ Donde:
 
 + $e$ : error de muestreo $(|\widehat{p}-p|< e)$.     
 
+<br/><br/><br/>
 
 En todos los casos si n/N>0.05, debes de corregir por un factor de población finita
 
