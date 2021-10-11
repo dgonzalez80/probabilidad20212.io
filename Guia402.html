@@ -783,7 +783,7 @@ e=1 # año
 n=(za1.2)^2*(s2.edad)/(e^2)
 
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>## [1] 1760</code></pre>
+<pre><code>## [1] 1758</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción" class="section level3">
@@ -1114,11 +1114,11 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila
 ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC metodo 1
 ic1</code></pre>
 <pre><code>##     2.5%    97.5% 
-## 4.732179 6.434286</code></pre>
+## 4.719250 6.480143</code></pre>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC metodo 2
 ic2</code></pre>
 <pre><code>##    97.5%     2.5% 
-## 4.606991 6.309099</code></pre>
+## 4.588703 6.349596</code></pre>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
@@ -1227,10 +1227,33 @@ ic2</code></pre>
 <td align="center">(10)</td>
 <td align="center"><span class="math inline">\(\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}\)</span></td>
 <td align="center"><span class="math inline">\(\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}; s^{2}_{1}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{2}v_{1})}\Bigg)\)</span></td>
-<td align="center"><span class="math inline">\(X_{1}\sim norm(\mu_{1}\)</span>, <span class="math inline">\(\sigma^{2}_{1})\)</span>, <span class="math inline">\(X_{2}\sim norm(\mu_{2}\)</span></td>
+<td align="center"><span class="math inline">\(X_{1}\sim norm(\mu_{1}\)</span>, <span class="math inline">\(\sigma^{2}_{1})\)</span>, <span class="math inline">\(X_{2}\sim norm(\mu_{2}, \sigma_{2}^{2})\)</span></td>
 </tr>
 </tbody>
 </table>
+<div id="tamaño-de-muestra" class="section level2">
+<h2><strong>Tamaño de muestra</strong></h2>
+<div id="mu" class="section level3">
+<h3><span class="math inline">\(\mu\)</span></h3>
+<p><span class="math display">\[n=\dfrac{z_{\alpha/2}^{2}\hspace{.3cm} \sigma^{2}}{e^{2}}\]</span><br />
+Donde:</p>
+<ul>
+<li><p><span class="math inline">\(z_{\alpha/2}\)</span> : Percentil(<span class="math inline">\(1-\alpha/2\)</span>) normal;</p></li>
+<li><p><span class="math inline">\(\sigma^{2}\)</span>: varianza, que se puede obtener mediante prueba piloto, conocer de un estudio anterior, o estimar mediante consulta a un experto : <span class="math inline">\(\widehat{\sigma} \cong (\max\{x\}-\min\{x\})/4\)</span> y</p></li>
+<li><p><span class="math inline">\(e\)</span> : error de muestreo <span class="math inline">\((|\bar{x}-\mu|&lt; e)\)</span>.</p></li>
+</ul>
+</div>
+<div id="p" class="section level3">
+<h3><span class="math inline">\(p\)</span></h3>
+<p><span class="math display">\[n=\dfrac{z_{\alpha/2}^{2}\hspace{.3cm} pq }{e^{2}}\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><p><span class="math inline">\(z_{\alpha/2}\)</span> : Percentil(<span class="math inline">\(1-\alpha/2\)</span>) normal;</p></li>
+<li><p><span class="math inline">\(pq\)</span>: varianza, que se puede obtener mediante prueba piloto, conocer de un estudio anterior, o se puede asumir como varianza máxima <span class="math inline">\(pq=0.5(1-0.5)=0.25\)</span></p></li>
+<li><p><span class="math inline">\(e\)</span> : error de muestreo <span class="math inline">\((|\widehat{p}-p|&lt; e)\)</span>.</p></li>
+</ul>
+<p>En todos los casos si n/N&gt;0.05, debes de corregir por un factor de población finita</p>
+<p><span class="math display">\[n = \dfrac{N n_{0}}{N+n_{0}-1}\]</span></p>
 <p><br/><br/><br/><br/></p>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; 
                      color: #000000; 
@@ -1251,33 +1274,59 @@ ic2</code></pre>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(p\)</span></td>
-<td align="center"><code>prop.test(x,n,p=po, coef.level=1−a)</code></td>
+<td align="center"><code>prop.test(x,n, conf.level=0.95)$conf.int</code></td>
 </tr>
 <tr class="odd">
 <td align="center"><span class="math inline">\(\mu_{1}-\mu_{2}\)</span></td>
-<td align="center"><code>t.test(datos1,datos2, paired=T)</code></td>
+<td align="center"><code>t.test(datos1,datos2, paired=T)$conf.int</code></td>
 </tr>
 <tr class="even">
 <td align="center"></td>
-<td align="center"><code>t.test(datos1 datos2, var.equal=T)</code></td>
+<td align="center"><code>t.test(datos1 datos2, var.equal=T)$conf.int</code></td>
 </tr>
 <tr class="odd">
 <td align="center"></td>
-<td align="center"><code>t.test(datos1 datos2, var.equal=F)</code></td>
+<td align="center"><code>t.test(datos1 datos2, var.equal=F)$conf.int</code></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(p_{1} − p_{2}\)</span></td>
-<td align="center"><code>prop.text(c(x1,x2), c(n1,n2))</code></td>
+<td align="center"><code>prop.test(c(x1,x2), c(n1,n2))$conf.int</code></td>
 </tr>
 <tr class="odd">
 <td align="center"><span class="math inline">\(\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}\)</span></td>
-<td align="center"><code>var.test(datos1 datos2)</code></td>
+<td align="center"><code>var.test(datos1 datos2)$conf.int</code></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>install.packages("devtools")</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>devtools::install_github("dgonzalez80/paquetepye")</code></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>library(paquetepye)</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>nmu(1.96,345,2)     # nmu(z,sigma2,error)</code></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><code>np(1.96,0.5,0.05) # np(z,prob,error)</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>no(385,2000)   #  n0(n,N)</code></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p><img src="img/resumenIC.png" /></p>
 <p><br/><br/><br/><br/></p>
+</div>
+</div>
 </div>
 <div id="video" class="section level1">
 <h1><strong>Video</strong></h1>

@@ -658,10 +658,36 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 |(8) |              |$(\bar{x_{1}}-\bar{x_{2}})\pm t_{\alpha/2, v^{*}} \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}$ |Grupos independientes,$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}$, varianzas diferentes |
 | ||donde $v^{*}=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{1}-1)\Big]+\Big[(s_{2}^{2}/n_{2})^{2}/(n_{2}-1)\Big]}$||
 |(9)| $p_{1}-p_{2}$|$(\widehat{p_{1}}-\widehat{p_{2}})\pm z_{\alpha/2} \sqrt{\dfrac{\widehat{p_{1}}(1-\widehat{p_{1}})}{n_{1}}+\dfrac{\widehat{p_{2}}(1-\widehat{p_{2}})}{n_{2}}}$|$n_{1}>>$, $n_{2}>>$|
-|(10)| $\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}$ |$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}; s^{2}_{1}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{2}v_{1})}\Bigg)$|$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}$| 
+|(10)| $\dfrac{\sigma^{2}_{1}}{\sigma^{2}_{2}}$ |$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{1}v_{2})}; s^{2}_{1}{s^{2}_{2}} \dfrac{1}{f_{\alpha/2}(v_{2}v_{1})}\Bigg)$|$X_{1}\sim norm(\mu_{1}$, $\sigma^{2}_{1})$, $X_{2}\sim norm(\mu_{2}, \sigma_{2}^{2})$| 
+
+## **Tamaño de muestra**                                                            
+
+### $\mu$   
+$$n=\dfrac{z_{\alpha/2}^{2}\hspace{.3cm} \sigma^{2}}{e^{2}}$$                   
+Donde: 
+
++ $z_{\alpha/2}$ : Percentil($1-\alpha/2$) normal;
+
++ $\sigma^{2}$: varianza, que se puede obtener mediante prueba piloto, conocer de un estudio anterior, o estimar mediante consulta a un experto : $\widehat{\sigma}  \cong  (\max\{x\}-\min\{x\})/4$ y 
+
++ $e$ : error de muestreo $(|\bar{x}-\mu|< e)$.    
+
+### $p$
+
+$$n=\dfrac{z_{\alpha/2}^{2}\hspace{.3cm} pq }{e^{2}}$$
+
+Donde: 
+
++ $z_{\alpha/2}$ : Percentil($1-\alpha/2$) normal; 
+
++ $pq$: varianza, que se puede obtener mediante prueba piloto, conocer de un estudio anterior, o se puede asumir como varianza máxima $pq=0.5(1-0.5)=0.25$ 
+
++ $e$ : error de muestreo $(|\widehat{p}-p|< e)$.     
 
 
+En todos los casos si n/N>0.05, debes de corregir por un factor de población finita
 
+$$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 
 <br/><br/><br/><br/>
 
@@ -677,12 +703,18 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 | parámetro        | código R                                       |
 |:----------------:|:----------------------------------------------:|
 |$\mu$             | `t.test(x, coef.level= 1−a)$conf.int`          |
-|$p$               | `prop.test(x,n,p=po, coef.level=1−a)`          |
-|$\mu_{1}-\mu_{2}$ | `t.test(datos1,datos2, paired=T)`              |
-|                  | `t.test(datos1 datos2, var.equal=T)`           |
-|                  | `t.test(datos1 datos2, var.equal=F)`           |
-|$p_{1} − p_{2}$   | `prop.text(c(x1,x2), c(n1,n2))`                |
-|$\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)` |
+|$p$               | `prop.test(x,n, conf.level=0.95)$conf.int`          |
+|$\mu_{1}-\mu_{2}$ | `t.test(datos1,datos2, paired=T)$conf.int`              |
+|                  | `t.test(datos1 datos2, var.equal=T)$conf.int`           |
+|                  | `t.test(datos1 datos2, var.equal=F)$conf.int`           |
+|$p_{1} − p_{2}$   | `prop.test(c(x1,x2), c(n1,n2))$conf.int`                |
+|$\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)$conf.int` |
+|                  | `install.packages("devtools")`                          |
+|                  | `devtools::install_github("dgonzalez80/paquetepye")`    |
+|                  |  `library(paquetepye)`                                   |
+|                  | `nmu(1.96,345,2)     # nmu(z,sigma2,error)`               |
+|                  | `np(1.96,0.5,0.05) # np(z,prob,error)`                  |
+|                  | `no(385,2000)   #  n0(n,N)`                          |
 
 
 </div>

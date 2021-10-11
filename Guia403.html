@@ -647,7 +647,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <h2><strong>Introducción</strong></h2>
 <p><img src="img/pruebas1.png" /></p>
 <p>El origen de los estudios, relacionados con las pruebas de hipótesis estadísticas, se sitúa alrededor de 1738, cuando en un ensayo escrito por Daniel Bernoulli(1) aparece el cálculo una estadística de prueba para ensayar su hipótesis en el campo de la astronomía. Entre 1915 y 1933 se desarrolla esta formulación gracias a los estudios realizados por tres grandes autores: Ronald Fisher(2), Jerzy Neyman(3) y Egon Pearson(4). Hoy en día predomina la teoría de Neyman-Pearson (lema de Neyman-Pearson).</p>
-<p><img src="img/prueba.jpg" /></p>
+<p><img src="img/prueba.jpg" /> Tomada de : <a href="https://pixabay.com/es/" class="uri">https://pixabay.com/es/</a></p>
 <p>Una hipótesis estadística es una afirmación o conjetura acerca de los parámetros de la distribución de probabilidades de una población. Si la hipótesis estadística especifica completamente la distribución, entonces ella se llama <strong>Hipótesis Simple</strong>, de otra manera se llama Hipótesis Compuesta.</p>
 <p>Desde el punto de vista clásico, todas las pruebas de hipótesis trabajan en base a ciertos principios que consideran:</p>
 <ul>
@@ -1336,8 +1336,8 @@ runs.test(y)</code></pre>
 ##  Runs Test
 ## 
 ## data:  y
-## statistic = 0.20102, runs = 52, n1 = 50, n2 = 50, n = 100, p-value =
-## 0.8407
+## statistic = -1.0051, runs = 46, n1 = 50, n2 = 50, n = 100, p-value =
+## 0.3149
 ## alternative hypothesis: nonrandomness</code></pre>
 <p><br/><br/></p>
 </div>
@@ -1355,7 +1355,7 @@ plot(density(x), main=&quot; &quot;, las=1)</code></pre>
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  x
-## W = 0.99489, p-value = 0.7332</code></pre>
+## W = 0.99604, p-value = 0.8869</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1367,19 +1367,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
 ##  Jarque-Bera test for normality
 ## 
 ## data:  x
-## JB = 0.010509, p-value = 0.9925</code></pre>
+## JB = 0.13487, p-value = 0.9325</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>## 
 ##  Kurtosis test for normality
 ## 
 ## data:  x
-## T = 3.0093, p-value = 0.976</code></pre>
+## T = 2.8796, p-value = 0.714</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>## 
 ##  Skewness test for normality
 ## 
 ## data:  x
-## T = 0.017133, p-value = 0.918</code></pre>
+## T = -0.020499, p-value = 0.9055</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1388,13 +1388,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
 ##  Lilliefors (Kolmogorov-Smirnov) normality test
 ## 
 ## data:  x
-## D = 0.041957, p-value = 0.5295</code></pre>
+## D = 0.032045, p-value = 0.8851</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>## 
 ##  Pearson chi-square normality test
 ## 
 ## data:  x
-## P = 19.13, p-value = 0.16</code></pre>
+## P = 21.51, p-value = 0.08926</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

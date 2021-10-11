@@ -117,6 +117,8 @@ El origen de los estudios, relacionados con las pruebas de hipótesis estadísti
 
 
 ![](img/prueba.jpg)
+Tomada de : https://pixabay.com/es/
+
 
 
 Una hipótesis estadística es una afirmación o conjetura acerca de los parámetros de la distribución de probabilidades de una población. Si la hipótesis estadística especifica completamente la distribución, entonces ella se llama **Hipótesis Simple**, de otra manera se llama Hipótesis Compuesta. 
