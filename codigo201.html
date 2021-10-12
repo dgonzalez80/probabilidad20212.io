@@ -570,18 +570,18 @@ suma=apply(dados, 1, sum)
 barplot(table(suma), las=1,cex.axis=0.7)</code></pre>
 <p><img src="codigo201_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>data.frame(prop.table(table(suma)))</code></pre>
-<pre><code>##    suma       Freq
-## 1     2 0.02780310
-## 2     3 0.05550165
-## 3     4 0.08334300
-## 4     5 0.11110030
-## 5     6 0.13892055
-## 6     7 0.16658150
-## 7     8 0.13894795
-## 8     9 0.11108045
-## 9    10 0.08344885
-## 10   11 0.05550840
-## 11   12 0.02776425</code></pre>
+<pre><code>   suma       Freq
+1     2 0.02780310
+2     3 0.05550165
+3     4 0.08334300
+4     5 0.11110030
+5     6 0.13892055
+6     7 0.16658150
+7     8 0.13894795
+8     9 0.11108045
+9    10 0.08344885
+10   11 0.05550840
+11   12 0.02776425</code></pre>
 <p>Procedimiento alternativo</p>
 <pre class="r"><code>t=sapply(1:200000, function(x){sum(sample(1:6,2,rep=T))})
 barplot(table(t), las=1, cex.axis=0.7)</code></pre>
@@ -592,10 +592,10 @@ barplot(table(t), las=1, cex.axis=0.7)</code></pre>
 <p>Simulación de urna con: 3 bolas Blancas, 5 Rojas y 4 Azules</p>
 <p>1 representa las bolas blancas 2 representa las bolas rojas 3 representa las bolas azules</p>
 <pre class="r"><code>sample(c(1,2,3),2,rep=T,prob=c(3,5,4))</code></pre>
-<pre><code>## [1] 2 2</code></pre>
+<pre><code>[1] 2 2</code></pre>
 <p>La misma simulación con palabras</p>
 <pre class="r"><code>sample(c(&quot;Blanca&quot;,&quot;Roja&quot;,&quot;Azul&quot;),2,rep=T,prob=c(3,5,4))</code></pre>
-<pre><code>## [1] &quot;Roja&quot; &quot;Roja&quot;</code></pre>
+<pre><code>[1] &quot;Roja&quot; &quot;Roja&quot;</code></pre>
 </div>
 </div>
 <div id="tablas-de-contingencia" class="section level1">
@@ -607,35 +607,35 @@ barplot(table(t), las=1, cex.axis=0.7)</code></pre>
     rownames(m)=c(&quot;Adminitrativo&quot;,&quot;Operativo&quot;,&quot;Vendedor&quot;)
     colnames(m)=c(&quot;Mujer&quot;,&quot;Hombre&quot;)
     m</code></pre>
-<pre><code>##               Mujer Hombre
-## Adminitrativo    20     30
-## Operativo        60    140
-## Vendedor        100     50</code></pre>
+<pre><code>              Mujer Hombre
+Adminitrativo    20     30
+Operativo        60    140
+Vendedor        100     50</code></pre>
 <p>En este caso se adicionan las frecuencias relativas marginales</p>
 <pre class="r"><code>addmargins(m)</code></pre>
-<pre><code>##               Mujer Hombre Sum
-## Adminitrativo    20     30  50
-## Operativo        60    140 200
-## Vendedor        100     50 150
-## Sum             180    220 400</code></pre>
+<pre><code>              Mujer Hombre Sum
+Adminitrativo    20     30  50
+Operativo        60    140 200
+Vendedor        100     50 150
+Sum             180    220 400</code></pre>
 <p>Para convertirlas en probabilidades utilizamos la función <strong>prop.table()</strong></p>
 <pre class="r"><code>prop.table(m)</code></pre>
-<pre><code>##               Mujer Hombre
-## Adminitrativo  0.05  0.075
-## Operativo      0.15  0.350
-## Vendedor       0.25  0.125</code></pre>
+<pre><code>              Mujer Hombre
+Adminitrativo  0.05  0.075
+Operativo      0.15  0.350
+Vendedor       0.25  0.125</code></pre>
 <p>Esta funcion tambien se utiliza para calcular las probabilidades condicionales por filas</p>
 <pre class="r"><code>prop.table(m,1)</code></pre>
-<pre><code>##                   Mujer    Hombre
-## Adminitrativo 0.4000000 0.6000000
-## Operativo     0.3000000 0.7000000
-## Vendedor      0.6666667 0.3333333</code></pre>
+<pre><code>                  Mujer    Hombre
+Adminitrativo 0.4000000 0.6000000
+Operativo     0.3000000 0.7000000
+Vendedor      0.6666667 0.3333333</code></pre>
 <p>o las probabilidades condicionales por columnas</p>
 <pre class="r"><code>prop.table(m,2)</code></pre>
-<pre><code>##                   Mujer    Hombre
-## Adminitrativo 0.1111111 0.1363636
-## Operativo     0.3333333 0.6363636
-## Vendedor      0.5555556 0.2272727</code></pre>
+<pre><code>                  Mujer    Hombre
+Adminitrativo 0.1111111 0.1363636
+Operativo     0.3333333 0.6363636
+Vendedor      0.5555556 0.2272727</code></pre>
 <div id="ejemplo" class="section level2">
 <h2><strong>Ejemplo</strong></h2>
 <div id="ubicación-por-estado-contagiados-de-covid-en-colombia" class="section level3">
@@ -643,22 +643,22 @@ barplot(table(t), las=1, cex.axis=0.7)</code></pre>
 <pre class="r"><code># Colombia= read.csv(&quot;data/Colombia.csv&quot;)
 t21=table(Colombia$ubicacion, Colombia$estado)
 (t22=addmargins(t21))</code></pre>
-<pre><code>##               
-##                fallecido   grave    leve moderado     Sum
-##   casa                 0       0 4803358        0 4803358
-##   fallecido       126299       0       0        0  126299
-##   hospital             0       0       0     7950    7950
-##   hospital uci         0     993       0        0     993
-##   Sum             126299     993 4803358     7950 4938600</code></pre>
+<pre><code>              
+               fallecido   grave    leve moderado     Sum
+  casa                 0       0 4803358        0 4803358
+  fallecido       126299       0       0        0  126299
+  hospital             0       0       0     7950    7950
+  hospital uci         0     993       0        0     993
+  Sum             126299     993 4803358     7950 4938600</code></pre>
 <p>La tabla de frecuencias la convertimos en tabla de probabilidades</p>
 <pre class="r"><code>t23=prop.table(t21)
 round(t23, 4)</code></pre>
-<pre><code>##               
-##                fallecido  grave   leve moderado
-##   casa            0.0000 0.0000 0.9726   0.0000
-##   fallecido       0.0256 0.0000 0.0000   0.0000
-##   hospital        0.0000 0.0000 0.0000   0.0016
-##   hospital uci    0.0000 0.0002 0.0000   0.0000</code></pre>
+<pre><code>              
+               fallecido  grave   leve moderado
+  casa            0.0000 0.0000 0.9726   0.0000
+  fallecido       0.0256 0.0000 0.0000   0.0000
+  hospital        0.0000 0.0000 0.0000   0.0016
+  hospital uci    0.0000 0.0002 0.0000   0.0000</code></pre>
 </div>
 </div>
 </div>

@@ -554,7 +554,7 @@ div.tocify {
 fx=choose(10,x)*0.60^x*0.40^(10-x)  </code></pre>
 <p>Para verificar que es una función de distribucion de probabilidad sumamos todos sus valores</p>
 <pre class="r"><code>sum(fx)</code></pre>
-<pre><code>## [1] 1</code></pre>
+<pre><code>[1] 1</code></pre>
 <p>Para representar gráficamente la función utilizamos la función <strong>plot</strong></p>
 <pre class="r"><code>x=0:10
 fx=choose(10,x)*0.60^x*0.40^(10-x)  
@@ -579,18 +579,18 @@ fx=choose(10,x)*0.60^x*0.40^(10-x)
 Fx=cumsum(fx)
 dt=data.frame(x,fx,Fx)
 dt</code></pre>
-<pre><code>##     x           fx           Fx
-## 1   0 0.0001048576 0.0001048576
-## 2   1 0.0015728640 0.0016777216
-## 3   2 0.0106168320 0.0122945536
-## 4   3 0.0424673280 0.0547618816
-## 5   4 0.1114767360 0.1662386176
-## 6   5 0.2006581248 0.3668967424
-## 7   6 0.2508226560 0.6177193984
-## 8   7 0.2149908480 0.8327102464
-## 9   8 0.1209323520 0.9536425984
-## 10  9 0.0403107840 0.9939533824
-## 11 10 0.0060466176 1.0000000000</code></pre>
+<pre><code>    x           fx           Fx
+1   0 0.0001048576 0.0001048576
+2   1 0.0015728640 0.0016777216
+3   2 0.0106168320 0.0122945536
+4   3 0.0424673280 0.0547618816
+5   4 0.1114767360 0.1662386176
+6   5 0.2006581248 0.3668967424
+7   6 0.2508226560 0.6177193984
+8   7 0.2149908480 0.8327102464
+9   8 0.1209323520 0.9536425984
+10  9 0.0403107840 0.9939533824
+11 10 0.0060466176 1.0000000000</code></pre>
 <p><br/><br/></p>
 <p>Nota: En este caso <span class="math inline">\(\binom{n}{k}\)</span>, corresponde a la combinatoria de <span class="math inline">\(n\)</span> con <span class="math inline">\(k\)</span>, que representa el número de maneras diferentes como se puede seleccionar una muestra de tamaño <span class="math inline">\(k\)</span> de una urna que contiene <span class="math inline">\(n\)</span> elementos son importar el orden y sin repetición.</p>
 </div>
@@ -642,7 +642,7 @@ ggplot(data.frame(x=c(0, 20)), aes(x)) +
 <p><span class="math inline">\(\displaystyle\int\limits_{0}^{+\infty} \dfrac{1}{4} e^{-y/4} \:dx\)</span></p>
 <pre class="r"><code>fy=function(y){1/4*exp(-y/4)}
 integrate(fy, lower=0,upper=Inf)</code></pre>
-<pre><code>## 1 with absolute error &lt; 2.7e-05</code></pre>
+<pre><code>1 with absolute error &lt; 2.7e-05</code></pre>
 <p><br/><br/> <a href="https://ggplot2tutor.com/tutorials/sampling_distributions" class="uri">https://ggplot2tutor.com/tutorials/sampling_distributions</a></p>
 </div>
 </div>

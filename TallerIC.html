@@ -576,7 +576,7 @@ boxplot(data.frame(A,B))</code></pre>
 ## [1] 0.95</code></pre>
 <p>Como el IC para la razón de varianzas (0.3588543; 3.1837492) contienen a 1, asumimos que las varianzas son iguales</p>
 <pre class="r"><code>t.test(A,B, var.equal=T,paired=F)$conf.int</code></pre>
-<pre><code>## [1] -1.6934843 -0.5465157
+<pre><code>## [1] -1.3922636 -0.8477364
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>Como el intervalo resultante es (-,-), indica que <span class="math inline">\(\mu_{A} &lt; \mu_{B}\)</span>. Por tal motivo se recomienda la compra de la marca A</p>
