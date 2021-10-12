@@ -697,17 +697,15 @@ p
 
 13. Una de las dificultades que presentan las Empresas Municipales se relaciona con la reparación de rupturas de tubos de alcantarillados debido especialmente a la antigüedad de las tuberías y a las raíces de los árboles que los rompen y generan suspensiones en el servicio de agua. Para la reparación de estos daños la empresa contrata con terceros los arreglos. La empresa conoce que el tiempo de reparación (en horas) se puede modelar mediante una distribución gamma con parámetros $\alpha=2$ y $\beta=1/2$, pero además tienen como indicador de calidad que el tiempo máximo de reparación no debe exceder la hora. ¿que tan probable es que se cumpla esta política con las actuales condiciones? 
 
+`
 
-```{r}
-
-```
-
+<br/><br/><br/>
 
 # **Resumen**
 
 
-|*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
-|--------------------|----------|----------|----------|-------------|
+|modelo              |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
+|:-------------------|:---------|:---------|:---------|:------------|
 |beta                | pbeta    | qbeta    | dbeta    | rbeta       |
 |Cauchy              | pcauchy  | qcauchy  | dcauchy  | rcauchy     |
 |exponencial         | pexp     | qexp     | dexp     | rexp        |

@@ -451,7 +451,7 @@ $X \sim  poiss$, cuando representa el número de eventos que ocurren en un espac
 
 ### **geométrica**
 
-$X \sim  geom$, cuando representa el número del ensayo donde ocurre el primer exito (En R representa el número de fracasos)
+$X \sim  geom$, cuando representa el número del ensayo donde ocurre el primer éxito (En R representa el número de fracasos)
 
 <br/><br/>
 

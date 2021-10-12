@@ -174,7 +174,7 @@ Empezaremos  enunciando el modelo Bernoulli, aunque algunos autores no lo recono
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución Bernoulli**
 		
@@ -254,7 +254,7 @@ El segundo modelo que abordaremos corresponde al modelo binomial, que puede vers
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución binomial**
 	
@@ -301,7 +301,7 @@ fx=dbinom(x,9,0.90)
 dat=data.frame(x,fx)
 
 
-ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
+ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 3) +
   scale_x_continuous(limits = c(0, 10),
                      breaks = c(0,1,2,3,4,5,6,7,8,9), 
                      labels = c('0','1','2','3','4','5','6','7','8','9'))
@@ -369,7 +369,7 @@ El siguiente modelo fue plantea por el físico y matemático francés Siméon-De
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución Pisson**
 	
@@ -404,7 +404,7 @@ fx=dpois(x,2)
 dat=data.frame(x,fx)
 
 
-ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
+ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 3) +
   scale_x_continuous(limits = c(0, 10),
                      breaks = c(0,1,2,3,4,5,6,7,8,9,10), 
                      labels = c('0','1','2','3','4','5','6','7','8','9','10'))
@@ -445,7 +445,7 @@ Este modelo nace de la necesidad de modelar eventos Bernoulli con probabilidad n
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución hipergeometrica** 
 	
@@ -479,7 +479,7 @@ fx=dhyper(x,95,5,10)
 dat=data.frame(x,fx)
 
 
-ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
+ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 3) +
   scale_x_continuous(limits = c(5, 10),
                      breaks = c(5,6,7,8,9,10), 
                      labels = c('5','6','7','8','9','10'))
@@ -526,7 +526,7 @@ La variable $X$ toma el valor de $1$ cuando el éxito ocurre en el primer intent
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución geométrica**
 
@@ -561,7 +561,7 @@ fx=dgeom(x,0.5)
 dat=data.frame(x,fx)
 
 
-ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
+ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 3) +
   scale_x_continuous(limits = c(1, 10),
                      breaks = c(1,2,3,4,5,6,7,8,9,10), 
                      labels = c('1','2','3','4','5','6','7','8','9','10'))
@@ -594,8 +594,7 @@ La distribución binomial negativa esta relacionada con la distribución geomét
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
-
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 **Distribución binomial negativa**
 	
 Se considera una generalización de la distribución Geométrica. En este caso la variable objeto de estudio corresponde a $X$: número de ensayos requeridos para obtener $r$ éxitos. Esta variable se obtiene al sumar $r$ variables con distribución Geométrica con igual parámetro $p$.
@@ -633,7 +632,7 @@ fx=dnbinom(x,2,0.50)
 dat=data.frame(x,fx)
 
 
-ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 4) +
+ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 3) +
   scale_x_continuous(limits = c(2, 10),
                      breaks = c(2,3,4,5,6,7,8,9,10), 
                      labels = c('2','3','4','5','6','7','8','9','10'))
@@ -674,7 +673,7 @@ Las variables continuas proceden en su mayoría de la medición y se clasifican 
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución uniforme**
 	
@@ -747,7 +746,7 @@ Su función de densidad esta dada por:
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución normal**
 	
@@ -763,7 +762,7 @@ $$V[X]=\sigma^{2}$$
 
 En la siguente gráfica se muestra el efecto en la curva normal, producto de cambios en la media o en la varianza. A mayor valor de la media la curva se desplaza a la derecha, mientras que a menor varianza la curva se vuelve mas angosta o puntiaguda 
 
-**Distribuciones normales N(0,1), N(0,1.5) y N(2,1.5)**
+Distribuciones normales : <span style="color:blue">$N(0,1)$</span>, <span style="color:red"> $N(0,1.5)$</span> y <span style="color:orange"> $N(2,1.5)$</span>
 
 ```{r, echo=FALSE, fig.height=3.5}
 # Distribucion normal
@@ -780,7 +779,7 @@ ggdistribution(dnorm, seq(-4, 8, 0.1),   mean = 2, sd = 1.5,colour = 'orange', p
 Dentro del sin número de posibles curvas que se pueden obtener con los parámetros $\mu$ y $\sigma^{2}$, existe una muy especial. Normal estándar ($N(0,1)$) con $\mu=0$ y $\sigma^{2}=1$.  La gran mayoría de libros de Estadística poseen tablas de la función de distribución acumulada de la normal estándar.\\
 
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución normal estandar N(0,1)**
 
@@ -835,8 +834,8 @@ $$\begin{eqnarray*}
 
 En R se utiliza el siguiente código: 
 
-```{r, echo=FALSE, fig.height=3.5}
-pnorm(c(35), mean=30, sd=5, lower.tail=TRUE)
+```{r }
+pnorm(70, mean=60, sd=4, lower.tail=FALSE)
 ```
 
 <br/><br/>
@@ -850,7 +849,7 @@ Distribución utilizada para modelar el tiempo entre dos eventos consecutivos.
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000;background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución exponencial**
 	
@@ -878,8 +877,7 @@ $$F(x)=P(X \leq x)=1-e^{-\lambda x} \hspace{1cm} x > 0$$
 <br/><br/>
 
 
-**Distribuciones exponenciales $exp(1)$,$exp(2)$ y $exp(5)$**
-
+Distribuciones exponenciales : <span style="color:blue"> $exp(1)$</span>, <span style="color:red"> $exp(2)$</span> y <span style="color:orange"> $exp(5)$</span>
 
 ```{r, echo=FALSE, fig.height=3.5}
 #exponencial
@@ -950,7 +948,7 @@ Esta distribución tiene su origen en la familia de curvas sesgadas propuestas p
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000;background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución gamma**
 
@@ -984,7 +982,7 @@ $$V[X]= \dfrac{r}{\lambda^{2}}$$
 
 <br/><br/>
 
-**Distribuciones gamma(3,1) gamma(2,1) y gamma(5,1)**
+Distribuciones : <span style="color:blue"> $gamma(3,1)$</span>, <span style="color:red">$gamma(2,1)$</span> y <span style="color:orange"> $gamma(5,1)$</span>
 
 ```{r, echo=FALSE, fig.height=3.5}
 # gamma
@@ -1022,7 +1020,7 @@ $$\begin{eqnarray*}
 Esta distribución fue descubierta Maurice Frechet matemático francés y luego trabajada por  Rosin y Rammler quienes en 1933 estudiaron el tamaño de una partícula y posteriormente recibe su nombre del  ingeniero y matemático Waloddi Weibull . Esta distribución se utiliza para modelar el tiempo de vida de algunos componentes. La Weibull tiene dos parámetros $\alpha$ y $\beta$. Su función de distribución y sus principales características son:
 
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000;background-color: #FFFFFF ; border-color: #000000;">
 
 **Distribución Weibull** 
 
@@ -1044,7 +1042,7 @@ $$F(x)=1-\exp{\Big\{-\Big(\dfrac{x}{\beta}\Big)^{\alpha}\Big\}} $$
 	
 </div> 
 
-**Distribuciones Weibull(0.8, 1), Weibul(2,1) y Weibull(2,2)**
+Distribuciones : <span style="color:blue"> $Weibull(0.8, 1)$</span>, <span style="color:red"> $ Weibul(2,1)$</span> y <span style="color:orange"> $Weibull(2,2)$</span>
 
 ```{r, echo=FALSE, fig.height=3.5}
 # weibull
