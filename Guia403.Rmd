@@ -714,6 +714,27 @@ chisq.test(x=obs,p=esp)
 |:--:|:------------------------------------|
 | ![](img/ej10.png) | Un profesor desea establecer si los resultados obtenidos por sus estudiantes tienen una distribución normal con media 3.5 y desviación estándar 0.7 puntos. Los datos se resumen en la siguiente tabla:  |
 
+```{r}
+nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
+     3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
+     3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
+     3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4,
+     3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
+     3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+
+h=hist(nf)
+lim.nf=h$breaks # cortes de los intervalos
+obs.nf=h$counts   # frecuencia en intervalos
+mx=mean(nf)     # media
+sdx=sd(nf)          # desviacion estandar
+Fx.nf=pnorm(lim.nf, mx,sdx)
+prob.nf=Fx.nf[2:7]-Fx.nf[1:6]
+esp.nf=prob.nf+0.002300453     # ajuste para que el sum(esp.nf)=1
+ chisq.test(x=obs.nf,p=esp.nf)
+
+```
+
+
 <br/><br/>
 
 ## **$\chi^{2}$ de independencia**
@@ -742,6 +763,8 @@ m=c(20,40,15,11,8,6)
 M=as.table(matrix(m,nrow=3))
 chisq.test(M)
 ```
+
+<br/><br/><br/>
 
 ### **de Wilcoxon**
 
