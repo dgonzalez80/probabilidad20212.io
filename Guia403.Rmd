@@ -689,6 +689,7 @@ Se rechaza la hipótesis nula, se acepta la hipótesis alterna. Se puede   afirm
 |    |                                     |
 |:--:|:------------------------------------|
 | ![](img/ej9.png) | El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un dia: |
+
 |Producto | Parmalat | Uno A   | Colanta   | Purace | 
 |:--------|:--------:|:-------:|:---------:|:------:|
 |ventas   |33        |22       |21         |24      |  
