@@ -30,6 +30,8 @@ c5="#BC2B6A" # MORADO
 
 <br/><br/>
 
+## Distribución binomial 
+
 1.  Para una variable aleatoria con distribución binomial $X \sim binom(x, n=10, p=0.5)$  . Determine:  la función de distribución asociada a $X$.
 
 (a) $P(X = 5)$
@@ -76,6 +78,8 @@ ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
 
 
 <br/><br/>
+
+## Distribución Poisson
 
 2.  Suponga que X tiene una distribución Poisson con media $\lambda=4$ ($X \sim pois(x,\lambda=4)$). Determine:	
  
@@ -134,6 +138,8 @@ ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
 
 <br/><br/>
 
+## Distribución geométrica
+
 3.  Sea una variable geométrica $X\sim geomn,(x,p=0.05)$
 
 (a) $P(X = 1)$
@@ -178,6 +184,8 @@ ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
 ```
 
 <br/><br/>
+
+## Distribución hipergeométrica
 
 4.  Suponga que X tiene una distribución hipergeometrica con $N=100$, $n=4$ y $K=20$. ($X\sim hyper(x,N=100,n=4,k=20)$) Determine:
  
@@ -237,6 +245,8 @@ Para este caso : m=20, n=80, k=4
 
 
 <br/><br/>
+
+## Distribución binomial negativa
 		
 5.  Sea la variable $X$ con distribución binomial negativa con N=100 , K=20, n=5 ($X\sim nbinom(x,n,p,mu)$ )	
 	
@@ -298,6 +308,8 @@ pbinom(0,4,0.05, lower.tail = FALSE)
 ```
 
 <br/><br/>
+
+## Problemas propuestos
 
 7.  Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.($\lambda=8$) 
  

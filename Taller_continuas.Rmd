@@ -396,7 +396,7 @@ Sea $X$ una variable con distribución Weibull con $\alpha=0.01$ y $\beta=2$. de
 
 + $a = \beta$
 
-+ $b= (\defrac{1}{\alpha})^{1/\beta}$
++ $b= \bigg(\dfrac{1}{\alpha}\bigg)^{1/\beta}$
 
 En ese caso 
 ```{r}
