@@ -12,7 +12,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
-
+library(ggplot2)
+library(ggfortify)
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -20,6 +21,7 @@ c2="#6666FF" # AZUL
 c3="#4CBFBA" # VERDE CLARO  
 c4="#E09600" # AMARILLO  
 c5="#BC2B6A" # MORADO  
+  
 
 ```
 
@@ -137,21 +139,29 @@ Desde el punto de vista clásico, todas las pruebas de hipótesis trabajan en ba
 
 <br/><br/>
 
-**Hipótesis Nula (Ho)**: Es la hipótesis a probar, ésta NO se rechaza si de la muestra no se obtiene suficiente evidencia para rechazarla.
+## **Hipótesis Nula (Ho)** 
+
+Es la hipótesis a probar, ésta NO se rechaza si de la muestra no se obtiene suficiente evidencia para rechazarla.
 
 <br/><br/>
 
-**Hipótesis Alterna (Ha)**: La hipótesis $Ho$ se contrasta con la hipótesis Ha, y ésta última corresponde a valores alternativos del parámetro planteados en la hipótesis nula. La hipótesis $Ha$ se considera cierta si existe suficiente evidencia para rechazar la hipótesis nula.
+## **Hipótesis Alterna (Ha)** 
+
+La hipótesis $Ho$ se contrasta con la hipótesis Ha, y ésta última corresponde a valores alternativos del parámetro planteados en la hipótesis nula. La hipótesis $Ha$ se considera cierta si existe suficiente evidencia para rechazar la hipótesis nula.
 
 <br/><br/>
 
-**Estadístico de Prueba**  : (Al igual que un estimador) es una función de la muestra que contiene información sobre el parámetro de interés, la que nos permite decidir sobre el rechazo de la hipótesis nula, $Ho$ . $T(X)$ es una variable aleatoria que sigue una función de distribución conocida como por ejemplo:
+## **Estadístico de Prueba**  
+
+Es una función de la muestra que contiene información sobre el parámetro de interés, la que nos permite decidir sobre el rechazo de la hipótesis nula, $Ho$ . Es tambien una variable aleatoria que sigue una función de distribución conocida como por ejemplo:
 
 Para una muestra determinada se obtiene un valor del estadístico de prueba, a partir del cálculo y se determina el rechazo o no, de la hipótesis nula.
 
 <br/><br/>
 
-**Región de Rechazo** (**RdeR**) : También llamada región crítica (RC), define los valores del estadístico de prueba para los cuales la información muestral contradice la hipótesis nula. Estos valores nos permitirán adoptar una regla de decisión consistente. Una prueba de una hipótesis estadística es un procedimiento que permite, mediante el contraste entre la información muestral y lo propuesto en una hipótesis, decidir sobre
+## **Región de Rechazo (RdeR)**  
+
+También llamada región crítica (RC), define los valores del estadístico de prueba para los cuales la información muestral contradice la hipótesis nula. Estos valores nos permitirán adoptar una regla de decisión consistente. Una prueba de una hipótesis estadística es un procedimiento que permite, mediante el contraste entre la información muestral y lo propuesto en una hipótesis, decidir sobre
 su rechazo. 
 
 Una prueba de una hipótesis estadística es un procedimiento que permite, mediante el contraste entre la información muestral y lo propuesto en una hipótesis, decidir sobre
@@ -159,21 +169,26 @@ su rechazo.
 
 <br/><br/>
 
-**Regla de Decisión** (**RD**) : De esta manera, como una regla de decisión, si para una muestra particular el estadístico de prueba (valor calculado) cae dentro de la región crítica, rechazaremos la hipótesis nula $H_{o}$ en favor de la hipótesis alternativa $H_{a}$. En cambio, si el valor calculado no cae dentro de la RC, no podremos rechazar la hipótesis nula y por tanto decimos que la información contenida en la muestra no ofrece suficiente evidencia estadística que nos permita rechazar $Ho$, ASUMIMOS que la hipótesis nula es cierta. 
+## **Regla de Decisión (RD)**  
+
+De esta manera, como una regla de decisión, si para una muestra particular el estadístico de prueba (valor calculado) cae dentro de la región crítica, rechazaremos la hipótesis nula $H_{o}$ en favor de la hipótesis alternativa $H_{a}$. En cambio, si el valor calculado no cae dentro de la RC, no podremos rechazar la hipótesis nula y por tanto decimos que la información contenida en la muestra no ofrece suficiente evidencia estadística que nos permita rechazar $Ho$, ASUMIMOS que la hipótesis nula es cierta. 
 
 <br/><br/>
 
-**Errores asociados a pruebas de hipótesis**: Cuando se decide ya sea en favor o en contra de una determinada prueba de hipótesis, es posible estar en una de las cuatro situaciones descritas en la siguiente tabla:
+## **Errores asociados**
+
+Cuando se decide ya sea en favor o en contra de una determinada prueba de hipótesis, es posible estar en una de las cuatro situaciones descritas en la siguiente tabla:
 
 
 |                   |  **Estado de la naturaleza**    |                                 |
 |:------------------|:--------------------------------|:--------------------------------|
 | **Decisión sobre la hipótesis**|                    |                                 |
 |Rechazar $Ho$      | **Error tipo I**                | **Decisión correcta**           |
+|                   |   ![](img/donar.jpg)            |                                 |
 |                   | P(Error tipo I) = $\alpha$      | $1-\beta$ : Potencia            |
 |No rechazar $Ho$   | **Decisión correcta**           | **Error tipo II**               |
 |                   |                                 | P(Eror tipo II) =$\beta$        |
-
+|                   |                                 |  ![](img/dopin.jpg)             |
 
 Existen dos situaciones en las que se comenten errores después de tomar una decisión:
 
@@ -181,6 +196,7 @@ Existen dos situaciones en las que se comenten errores después de tomar una dec
 
 **Error tipo I**: Cuando se rechazamos una hipótesis nula que en realidad es verdadera. Tomando como simil la situación donde un médico desea determinar si un paciente está sano o enfermo ($Ho$: SANO vs $Ha$: ENFERMO), es posible que concluya que el paciente está enfermo (rechace $Ho$) cuando en verdad esta persona esta sana. En términos de probabilidad este error se debe de representar como:
 $$P(\text{Rechazar } Ho | Ho \text{ es verdadera})= \alpha$$
+Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiante que despues de realizar una donación de sangre fue requerida por la clinica benefactora, pues el examen que le habian practicado a la sangre donada, presentaba signos de estar infectada por epatitis c. Esto prendió las alarmas en la casa y fue llevada por la familia a que se le realizaran otros examenes para confirmar el diagnostico inicial. Las segundas pruebas evidenciaron que se trataba de un error. Este caso constituye un caso de falso positivo (Se diagnostica como enferan, cuando en verdad esta sana) 
 
 
 <br/><br/>
@@ -188,9 +204,13 @@ $$P(\text{Rechazar } Ho | Ho \text{ es verdadera})= \alpha$$
 **Error Tipo II**: Cuando no se rechaza una hipótesis nula que en realidad es falsa. Utilizando el ejemplo del médico, diríamos que cuando el medico indica que el paciente esta sano, cuando esta realmente enfermo, incurre en un error frecuente cuando algunos pacientes son asintomáticos y aunque tienen la enfermedad, sus exámenes médicos salen negativos. En este caso la probabilidad se representa como:
 
 $$P(\text{No rechazar} Ho | Ho \text{ es falsa}) $$
+Para ilustrar el caso del error tipo II, recurrimos a lo acontecido en el Tour de Francia, donde el ciclista estadunidence Lance Armstrong gano esta competencia seis veces de manera consecutiva y aunque fue acusado de dopin, no se le pudo comprobar. Fue solo en el 2012 cuando el mismo admitió haber usado EPO. Podemos decir que durante su vida deportiva los examenes practivados dieron negativos, estando el dopado. Este caso se cataloga como falso negativo. 
+
 <br/><br/>
 
-**Nivel de significancia** ($\alpha$) : No es posible minimizar simultáneamente, las probabilidades de los errores tipo I y II, ya que en la medida que uno disminuye el otro aumenta, como se muestra en la figura siguiente, en la que claramente se ve que la reducción del área $\alpha$ (probabilidad de error tipo I), implica el aumento del área $\beta$ (probabilidad de error tipo II).
+## **Nivel de significancia ($\alpha$)**  
+
+No es posible minimizar simultáneamente, las probabilidades de los errores tipo I y II, ya que en la medida que uno disminuye el otro aumenta, como se muestra en la figura siguiente, en la que claramente se ve que la reducción del área $\alpha$ (probabilidad de error tipo I), implica el aumento del área $\beta$ (probabilidad de error tipo II).
 
 
 <br/><br/><br/><br/>
@@ -203,103 +223,369 @@ Se llaman pruebas de hipótesis metrificaras debido a que para su realización s
 
 ## **Una población**
 
-Los parámetros más importante a los que se les realizan pruebas de hipótesis son : $\mu$, $p$ y $\sigma^{2}$, en el caso de una población.  Para el caso de dos poblaciones analizaremos los parámetros : $\mu_{1}-\mu_{2}$, $p_{1}-p_{2}$ y $\sigma^{2}_{1} / \sigma^{2}_{2}$
+Los parámetros más importante a los que se les realizan pruebas de hipótesis son : $\mu$, $p$ y $\sigma^{2}$, en el caso de una población :  
 
 <br/><br/>
 
-### **Prueba de hipótesis sobre una media poblacional **
+| parámetro    |  prueba de dos colas    | prueba de cola inferior| prueba de cola superior|
+|:-------------|:------------------------|:-----------------------|:-----------------------|
+|$\mu$         |$Ho: \mu = \mu_{o}$      |$Ho: \mu \geq \mu_{o}$  |$Ho: \mu \leq \mu_{o}$  |
+|              |$Ha: \mu \neq \mu_{o}$   |$Ha: \mu < \mu_{o}$     |$Ha: \mu > \mu_{o}$     |
+|$p$           |$Ho: p = p_{o}$          |$Ho: p \geq p_{o}$      |$Ho: p \leq p_{o}$      |
+|              |$Ha: p \neq p_{o}$       |$Ha: p < p_{o}$         |$Ha: p > p_{o}$         |
+|$\sigma^{2}$  |$Ho: \sigma^{2} = \sigma^{2}_{o}$   |$Ho: \sigma^{2} \geq \sigma^{2}_{o}$ |$Ho: \sigma^{2} \leq \sigma^{2}_{o}$|
+|              |$Ha: \sigma^{2} \neq \sigma^{2}_{o}$|$Ha: \sigma^{2} < \sigma^{2}_{o}$   |$Ha: \sigma^{2} > \sigma^{2}u_{o}$  |
 
-ejemplo 
-Se está calibrando una balanza mediante el pesaje de una pesa de prueba de 1000 g, 60 veces. Las 60 lecturas de la balanza presentan a continuación:
+<br/><br/>
 
-|     |     |      |      |      |      |      |      |      |      |      |      |       |
-|----:|----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|------:|
-|999, | 998,| 1001,| 1000,| 1002,| 1000,|  998,| 1002,| 1003,| 1000,| 1004,| 1000,|  998, | 
-|998, |1002,| 1002,| 1002,| 1001,| 1001,| 1001,|  998,|  999,| 1000,| 1002,| 1002,| 1004, | 
-|1001,| 999,|  999,| 1001,| 1002,| 1000,|  999,| 1004,| 1000,| 1001,| 1001,| 1002,|  997, | 
-|998, |1001,| 1000,| 1003,|  997,|  999,| 1002,| 1000,| 1001,| 1005,| 1002,| 1003,| 1002, | 
-|999, | 998,| 1000,|  999,| 1002,|  999,| 1000,| 1003 |      |      |      |      |       |
+## **Sobre una media**
+
+Dependiendo de las condiciones podemos optar por tres diferentes EdeP para la realización de la prueba para una media, aunque tenemos una cuarta posibilidad en el caso de realizarla mediante un método no paramétrico:
 
 
-Realice en contraste de hipótesis para determinar si la balanza se encuentra bien calibrada o no. Utilice un $\alpha$=0.05
+![](img/pdehmu.png)
 
 
-Entendemos por bien calibrada el hecho que $\mu=1000$ g. , por tal motivo las pruebas a contrastar son:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej1.png) | Un informe indica que el precio medio del pasaje de avión entre Cali  y San Andrés  es de \$120 mil pesos  y su desviación estándar de \$40 mil pesos. Se toma una muestra que se registra a continuación. ¿Se puede aceptar, con un nivel de significación igual a $\alpha=0.1$, las afirmaciones acerca de la media? |
+  
+165.1, 91.8, 128.3, 160.3, 103.6, 153.2, 50.7, 150.3, 160.8, 38.1, 98.8, 88.7, 123.1, 106.5, 79.5, 84.1, 216.1, 139.8, 98.4, 127.1, 103.0, 83.7, 158.8, 126.1, 113.4, 61.3, 79.8, 121.8, 89.9, 97.4, 134.0, 141.2, 154.3, 122.4, 107.6, 137.7, 121.0, 187.7, 56.8, 79.5, 183.8, 114.7, 80.2, 97.3, 113.8, 92.4, 123.5, 138.4, 114.7, 48.8, 178.1, 106.0, 103.1, 100.8, 180.7, 113.1, 121.4, 163.0, 51.4, 135.5,104.5, 202.1, 171.0, 100.7, 56.4, 99.7, 93.0, 118.3, 110.4, 136.9, 112.3, 69.8, 138.3, 87.2, 121.8, 118.6, 174.5, 77.7, 158.5, 85.3, 71.4, 63.0, 140.9, 126.9, 194.2, 136.7, 98.8, 222.5, 131.3, 175.0, 127.7, 88.5, 104.5, 144.7, 73.0, 97.2, 131.0, 120.5, 166.6, 96.0 . 
 
-$H_{o}: \mu = \mu_{o}$ 
-$H_{a}: \mu \neq \mu_{o}$ 
+<br/>
+
+**Solución**
+
+Las pruebas a contrastar son:
+
+$Ho: \mu= 120$ <br/>
+$Ha: \mu \neq 120$ 
+
+<br/><br/>
+
+Antes de realizar la prueba debemos de determinar si la distribución de la población de precios es normal, para lo cual realizaremos la prueba de normalidad de Shapiro Wilk
+
+$Ho: X \hspace{0.3cm}\sim norm$ <br/>
+$Ha: X \hspace{.3cm} no \sim norm$ <br/>
+
 
 ```{r}
-w=c(999,  998, 1001, 1000, 1002, 1000,  998, 1002, 1003, 1000, 1004, 1000,  998, 
-    998, 1002, 1002, 1002, 1001, 1001, 1001,  998,  999, 1000, 1002, 1002, 1004, 
-    1001, 999,  999, 1001, 1002, 1000,  999, 1004, 1000, 1001, 1001, 1002,  997,  
-    998, 1001, 1000, 1003,  997,  999, 1002, 1000, 1001, 1005, 1002, 1003, 1002,  
-    999,  998, 1000,  999, 1002,  999, 1000, 1003)
-
-t.test(w, mu=1000)
+precio=c(165.1, 91.8, 128.3, 160.3, 103.6, 153.2, 50.7, 150.3, 160.8, 38.1, 98.8, 88.7, 123.1, 106.5, 79.5, 84.1, 216.1, 139.8, 98.4, 127.1, 103.0, 83.7, 158.8, 126.1, 113.4, 61.3, 79.8, 121.8, 89.9, 97.4, 134.0, 141.2, 154.3, 122.4, 107.6, 137.7, 121.0, 187.7, 56.8, 79.5, 183.8, 114.7, 80.2, 97.3, 113.8, 92.4, 123.5, 138.4, 114.7, 48.8, 178.1, 106.0, 103.1, 100.8,180.7,113.1,121.4,163.0,51.4,135.5,104.5,202.1,171.0,100.7, 56.4, 99.7, 93.0, 118.3, 110.4, 136.9, 112.3, 69.8, 138.3, 87.2, 121.8, 118.6, 174.5, 77.7, 158.5, 85.3, 71.4, 63.0, 140.9, 126.9, 194.2, 136.7, 98.8, 222.5, 131.3, 175.0, 127.7, 88.5, 104.5, 144.7, 73.0, 97.2, 131.0, 120.5, 166.6, 96.0)
 ```
 
+```{r}
+boxplot(precio, horizontal = TRUE, col = c2, xlab="precio ($000)")
+```
 
-Región de Rechazo: 
+<br/>
+
+```{r}
+shapiro.test(precio)
+```
+
+<br/>
+
+De acuerdo con los resultados obtenidos en la prueba de Shapiro podemos suponer y aplicando la regla 3 (que se trata más adelante) podemos suponer que los datos siguen una distribucion aproximadamente normal. Cumplido este supuesto y al no tener conocimiento del valor de la varianza utilizaremos una prueba t para una media
+
+
+```{r}
+t.test(precio,
+       alternative = "two.sided", # tipo de prueba
+       mu = 120,                  # valor a contrastar
+       conf.level = 0.90)         # nivel de confianza
+```
+<br/>
+
+Para tomar una decisión sobre las hipótesis de acuerdo con los resultados podemos utilizar tres reglas:
+
+<br/><br/>
+
+**Regla 1** : Si el **EdeP** cae en la **RdeR**, entonce se rechaza la $H_{0}$ y se **acepta** $H_{a}$ como verdadera. Si por el contrario el **EdeP** NO cae en la **RdeR**, entonces NO se rechaza $H_{0}$, no existe suficiente evidencia para rechazarla, **asumimos** que $H_{0}$ es verdad.
+
+
+En este caso es necesario determinar la región de rechazo ($RdeR$) de acuerdo al tipo de hipótesis y a la distribución del estadistico de prueba. En esta caso estamos realizando una prueba de dos colas, para un estadistico de prueba con distribución t-Student con 99 grados de libertad.
+
+<br/><br/>
+
+**Región de Rechazo** 
 
 Para determinar la $RdeR$, a a prtir del nivel de significancia asumido, se buscan los percentiles $t_{0.025; v=59}$ y $t_{0.975;v=59}$ para la distribución t-Student.
 
-RdeR.png
+```{r}
+qt(c(0.025,0.975),99)
+```
 
+<br/>
 
-Regla de Decisión 1: Si el estadístico de prueba cae en la región de rechazo, entonces rechazamos la hipótesis nula y aceptamos la hipótesis alterna como verdadera. En caso contrario (EdeP, cae en la RdeNOR) no rechazamos la hipótesis nula, no existe suficiente evidencia en la muestra que permita afirmar que $Ho$ es falsa. Asumimos que $Ho$ es verdadera.
+```{r}
+p=ggdistribution(dt, seq(-3, +3, 0.1), df = 99, colour = "blue")
+p=ggdistribution(dt, seq(-3, qt(0.025,99), 0.1), df = 99, colour = 'blue', fill="red", p=p)   
+p=ggdistribution(dt, seq(qt(0.975,99),+3, 0.1), df = 99, colour = 'blue', fill="red", p=p)+ 
+      ggtitle("Región de rechazo : (-Inf, -1.984217)  (1.984217, +Inf)")
+p
+```
 
-Conclusión1: Como el EdeP cae en la RdeR, entonces rechazamos $Ho$, aceptamos $Ha$, es decir $\mu \neq 1000$. 
+<br/>
 
-**Valor-p** :
-
-
-Regla de decisión 2: Como el valor de $\alpha >$ valor-p  (0.05 > 0.01534) entonces rechazamos $Ho$, **aceptamos** 	$Ha$ como verdad.  
-
-
-Regla de decisión 3: El valor-p se interpreta como el error que puedo cometer al rechazar $Ho$, siendo esta verdadera (cometer error tipo I). Si este valor es considerado como pequeño, rechazo $Ho$, se **acepta** $Ha$. Si por el contrario se considera este valor grande, entonce no rechazo $Ho$, asumo que $Ho$ es verdad.
-
+**Conclusión**: Como el **EdeP** (`t = -0.39343`) NO cae en la **RdeR**, entonces NO rechazamos $Ho$, asuminos $Ho$ es verdadera, es decir $\mu$ de los precios es igual a \120. 
 
 
 <br/><br/>
 
-ejemplo: 
-Una operación en una línea de producción debe llenar cajas con detergente hasta un peso promedio de 32 onzas. Periódicamente se selecciona una muestra de cajas llenas, que se pesan para determinar a partir del promedio, si están faltas o sobradas de detergente. Si los datos de la muestra llevan a la conclusión de que les falta o sobra detergente, se debe parar la línea de producción y hacer los ajustes necesarios para que el llenado sea correcto.
-
-a. Formule la hipótesis nula y alternativa que lleven a decidir si es conveniente parar y ajustar la línea de producción o no.
-b. Comente la conclusión a que se llegaría en caso de que no se rechazase  $H_{0}$ y cuando si ocurriese.
-c. Cuándo se comete error tipo I y cuando el tipo II.
-d. Bajo condiciones de distribución normal, determine la región de rechazo para una $\alpha= 0.05$ y para $\alpha= 0.08$
-
-
-### **Prueba de hipótesis sobre una proporción poblacional**
-
-<br/><br/>
-
-ejemplo 
-
-<br/><br/>
-
-### **Prueba de hipótesis sobre una varianza poblacional**
-
-<br/><br/>
-
-ejemplo
+**Regla 2**: Si $\alpha <$ **valor-p** entonces rechazamos $H_{0}$, se **acepta** $H_{a}$. Si por el contrario $\alpha >$ valor-p, no rechazamos $H_{0}$, **asumimos** 	que $H_{0}$ es verdad. 
 
 <br/><br/><br/>
 
-## **Dos poblaciones**
+## **Valor-p** 
+
+El valor-p corresponde al área delimitada por el $EdeP$ en el sentido que indica la $RdeR$ de la prueba a contrastar. Es decir que corresponde a la probilidad  máxima de cometer error tipo I.
+
+[Gil, Jacky F.; Castañeda, Javier A (2005)](https://www.redalyc.org/pdf/806/80634308.pdf) lo definen como :
+
+*El resultado de la prueba de hipótesis se basa principalmente en el cálculo, en términos de probabilidad, de la fuerza de los hallazgos a favor de la hipótesis nula. Esta probabilidad recibe el nombre de valor-p, y se define como la probabilidad de cometer un falso positivo por efecto del azar, cuando la hipótesis nula es verdadera.*
+
+<br/>
+
+**Conclusión** : Como el valor de $\alpha >$ valor-p  (0.05 > p-value = 0.6949) entonces No se rechaza $Ho$, se **asume** que 	$Ho$ es verdad. El promedio de los precios es igual a \$ 120.  
 
 <br/><br/>
 
-### **Prueba de hipótesis para comparar dos medias - gupos independientes, variables normales, varianzas iguales **
-ejemplo
+**Regla 3** : El valor-p se interpreta como el error que puedo cometer al rechazar $Ho$, siendo esta verdadera (cometer error tipo I). Si este valor es considerado como pequeño, rechazo $Ho$, se **acepta** $Ha$. Si por el contrario se considera este valor grande, entonce no rechazo $Ho$, asumo que $Ho$ es verdad.
+
+<br/>
+
+**Conclusión** : En este caso valoramos si el valor-p (p-value = 0.6949) es grande o pequeño. En esta caso se puede considerar que su valor es muy grande y por lo tanto no nos atrevemos a rechazar $Ho$, asumimos que $Ho$ es verdadera, es decir que la media de los precios es igual a \$ 120. 
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/Nota_nota.png) | Al aplicar las últimas dos reglas (2 y 3) no se requiere la construcción de una $RdeR$ para tomar la decisión. Solo con revisar el valor-p entregado por la prueba y aplicar la regla se toma la decisión. En adelante utilizaremos las reglas 2 y 3 dado que al ejecutar las funciones  en R nos sumunistran información sobre valor-p.|
 
 <br/><br/>
 
-### **Prueba de hipótesis para comparación de medias - grupos independientes, variables normales, varianzas diferentes**
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/reto.png) | Una operación en una línea de producción debe llenar cajas con detergente hasta un peso promedio de 32 onzas. Periódicamente se selecciona una muestra de cajas llenas, que se pesan para determinar a partir del promedio, si están faltas o sobradas de detergente. Si los datos de la muestra llevan a la conclusión de que les falta o sobra detergente, se debe parar la línea de producción y hacer los ajustes necesarios para que el llenado sea correcto. Con el fin de afianzar los conceptos expuestos, te invito a responder los siguientes interrogantes :|
 
-ejemplo
+(a.) Formule la hipótesis nula y alternativa que lleven a decidir si es conveniente parar y ajustar la línea de producción o no. 
+
+(b.) Comente la conclusión a que se llegaría en caso de que no se rechazase  $Ho$ y cuando si ocurriese. 
+
+(c.) Cuándo se comete error tipo I y cuando el tipo II. 
+
+(d.) Bajo condiciones de distribución normal, determine la región de rechazo para una $\alpha= 0.05$ y para $\alpha= 0.08$  
+
+<br/><br/>
+
+## **Sobre una proporción**
+
+En este caso debemos tener en cuenta que la muestra sea mayor a 30 con el fin de tener estimaciones mas robustas para estimar la proporción poblacional.
+
+
+<br/><br/>
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej2.png) | Una empresa al seleccionar su personal, lo somete a un curso de entrenamiento. Por su experiencia se conoce que el 76% de los aspirantes aprueban el curso. Durante el último proceso, los encargados efectúan cambios al programa de entrenamiento, con el fin de realizar una selección más exigente. Para esta versión se inscriben 40 aspirantes de los cuales lo aprueban el proceso 24. ¿Podría afirmarse que los cambios realizados en el programa de entrenamiento reducen la selección? |
+
+Debemos realizar una prueba de cola inferior debido al sentido que tienen la afirmación que queremos verificar *los cambios realizados en el programa de entrenamiento reducen la selección*. 
+
+Ho: $p \geq 0.76$ <br/>   
+Ha :$p < 0.76$   <br/>
+<br/><br/>
+
+```{r}
+prop.test(24, 40, p = 0.76,
+          alternative = "less",
+          conf.level = 0.95)
+```
+<br/><br/>
+
+**Conclusión**
+
+Como el valor-p (p-value = 0.01447) es menor que el nivel de significancia ($\alpha=0.05$), rechazamos la hipótesis nula, aceptamos la hipótesis alterna. Podemos afirmar que $p<0.76$ . Tienen razón al afirmar que los cambios realizados en el proceso de selección provocaron una disminución significativa en la proporción de aprobación.
+
+<br/><br/>
+
+
+## **Sobre una varianza**
+
+<br/><br/>
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej3.png) | Un fabricante de baterías para celulares afirma que el tiempo de duración de sus baterías se distribuyen aproximadamente normal con una desviación estándar de 9 horas. Un comprador antes de realizar un pedido de este producto solicita al fabricante una muestra de 10 baterías para verificar la información que le esta dando. Con este propósito son enviadas al laboratorio y se obtienen los siguientes datos Es cierta la información suministrada por el fabricante?  | 
+|    | 11.1, 15.6, 11.1, 7.5, 7.9, 14.7, 6.3, 8.5, 8.0 , 7.6 |  
+
+<br/>
+
+```{r}
+pRdeR=qchisq(c(0.025,0.975),9)
+p=ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = 'blue')
+p=ggdistribution(dchisq, seq(0, pRdeR[1], 0.1), df = 9, colour = 'blue', fill="blue", p=p)
+p=ggdistribution(dchisq, seq(pRdeR[2], 30, 0.1), df = 9, colour = 'blue', fill="blue", p=p)+
+       ggtitle("Región de rechazo")
+p
+pRdeR
+```
+
+```{r}
+t=c(11.1, 15.6, 11.1, 7.5, 7.9, 14.7, 6.3, 8.5, 8.0 , 7.6)
+varx=var(t)
+EdeP=(length(t)-1)*varx/81
+EdeP
+```
+<br/><br/>
+
+**Conclusión**
+
+Como el $EdeP$ (1.135074) caen en la $RdeR$, entonces rechazamos la hipótesis nula, aceptamos la hipótesis alterna como verdadera.
+
+Podemos entonce concluir que $\sigma^{2} \neq 81$
+
+
+<br/><br/><br/>
+
+
+## **Comparación de dos medias** 
+
+<br/><br/>
+
+### **grupos pareados**
+
+<br/>
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej4.png)| El director de un gimnasio requiere determinar si contrata o no a un instructor para su campaña de reducción de peso. Para tomar la decisión decide tomar un grupo de 16 personas que acuden normalmente para darle una oportunidad a un aspirante al cargo. Los siguientes datos corresponden a los resultados obtenidos antes y después de un mes de estar en el programa. Utilice un nivel de significancia $\alpha= 0.10$, para determinar si contrata o no al aspirante.|
+
+|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|:----|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|     
+|pant |104.5|89   |84.5 |106  |90   |96   |79   |90   |85   |76.5 |91.5 |82.5 |100.5| 89.5|121.5| 72  |
+|pdes | 98  |85.5 |85   |103.5|88.5 |95   |79.5 |90   |82   |76   |89.5 |81   | 99.5| 86.5|115.5| 70  |
+
+
+Ho: $\mu_{ant} \geq \mu_{des}$ <br/>
+Ha: $\mu_{ant} < \mu_{des}$ <br/>
+
+
+```{r}
+pant=c(104.5,89,84.5,106,90,96,79,90,85,76.5,91.5,82.5,100.5,89.5,121.5,72)
+pdes=c(98,85.5,85,103.5,88.5,95,79.5,90,82,76,89.5,81,99.5,86.5,15.5,70)
+
+t.test(pant, pdes,
+       alternative = "less",
+       mu = 0, 
+       paired = TRUE, 
+       conf.level = 0.95)
+
+```
+
+
+<br/>
+
+**Conclusión**
+
+Como el valor-p ( 0.8889) es mayor que nuestro nivel de significancia ($\alpha= 0.10$), no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla. Se asume que Ho es verdad. Es decir que no hay evidencia que el programa reduzca el peso.
+
+
+<br/><br/>
+
+
+<br/><br/><br/>
+
+### **grupos independientes, variables normales, varianzas iguales **
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej5.png)| Una empresa desarrolla un curso de entrenamiento para sus empleados, formando dos grupos y aplicando dos metodologías diferentes de entrenamiento con el fin de poder evaluar que método produce los mejores resultados. El primer grupo (g1) esta conformado por 36 empleados y el segundo grupo (g2) por 40 empleados . Se puede afirmar que el método aplicado al segundo grupo produce mejores resultados que el aplicado al primer grupo ? ¿Que supuestos debe tener en cuenta? |
+|Grupo 1 | 6.8, 6.1, 5.8, 5.9, 5.8, 6.4, 5.7, 6.0, 5.9, 6.4, 6.0, 5.7, 6.5, 6.5, 6.0, 5.9, 5.7, 5.8, 5.9, 5.8, 6.0, 6.0, 5.8, 5.7, 6.1, 5.9, 5.2, 6.3, 5.4, 6.5, 5.5, 5.9, 7.0, 6.4, 5.1, 6.3 |
+|Grupo 2 | 8.8, 8.5, 8.4, 8.5, 7.6, 8.7, 8.0, 7.9, 8.2, 8.0, 7.8, 8.6, 8.5, 7.9, 8.5, 8.3, 8.4, 8.2, 8.3, 7.9, 8.2, 7.7, 7.8, 7.7, 8.1, 8.0, 8.3, 8.2, 8.1, 8.3, 8.1, 8.8, 7.7, 9.1, 7.6, 8.4, 8.2, 8.3, 8.1, 8.7  | 
+
+
+```{r}
+grupo1=c(6.8, 6.1, 5.8, 5.9, 5.8, 6.4, 5.7, 6.0, 5.9, 6.4, 6.0, 5.7, 6.5, 6.5, 6.0, 5.9, 5.7, 5.8, 5.9, 5.8, 6.0, 6.0, 5.8, 5.7, 6.1, 5.9, 5.2, 6.3, 5.4, 6.5, 5.5, 5.9, 7.0, 6.4, 5.1, 6.3)
+grupo2=c(8.8, 8.5, 8.4, 8.5, 7.6, 8.7, 8.0, 7.9, 8.2, 8.0, 7.8, 8.6, 8.5, 7.9, 8.5, 8.3, 8.4, 8.2, 8.3, 7.9, 8.2, 7.7, 7.8, 7.7, 8.1, 8.0, 8.3, 8.2, 8.1, 8.3, 8.1, 8.8, 7.7, 9.1, 7.6, 8.4, 8.2, 8.3, 8.1, 8.7)
+
+par(mfrow = c(1, 2))
+boxplot(grupo1, las=1, col=c2, ylim=c(5,10)); grid()
+boxplot(grupo2, las=1, col=c3, ylim=c(5,10)); grid()
+```
+
+Iniciaremos con una prueba de hipótesis para la comparación de varianzas:
+
+Ho:$\sigma^{2}_{1} = \sigma^{2}_{2}$<br/>
+Ho:$\sigma^{2}_{1} \neq \sigma^{2}_{2}$<br/>
+
+
+
+```{r}
+var.test(grupo1,grupo2)
+```
+<br/><br/>
+
+**Conclusión**
+
+Como el valor-p (0.4282) es mayor al nivel de significancia ($\alpha=0.05$), no rechazamos la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que las varianza son iguales.
+
+<br/><br/>
+
+Ho: $\mu_{1} \geq \mu_{2}$ <br/>
+Ha: $\mu_{1} < \mu_{2}$ <br/>
+
+<br/>
+
+```{r}
+t.test(grupo1, grupo2,
+       alternative ="less",
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = TRUE,
+       conf.level = 0.95)
+```
+<br/><br/>
+
+**Conclusión**
+
+Como el valor-p (2.2e-16) es menor que el nivel de significancia, rechazamos la hipótesis nula, aceptamos como verdadera la hipótesis alterna. La media el primer grupo es significativamente menor que la media obtenida por el segundo grupo. Esto indica que el método aplicado al segundo grupo produce mejores resultados. 
+
+<br/><br/><br/>
+
+### **grupos independientes, variables normales, varianzas diferentes**
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej6.png) |
+
+```{r}
+
+```
+
+<br/><br/><br/><br/>
+
+### **diferencia de proporciones**
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej7.png) |Una encuesta realizada a 100 usuarios de una tarjeta de crédito seleccionados aleatoriamente, 57 dijeron que sabían que empleando su tarjeta podían ganar millas de viajero. Después de una campaña publicitaria para difundir este beneficio, se realizo una encuesta independiente entre 150 usuarios de la tarjeta de crédito y 87 informaron que conocían el beneficio. ¿Se puede concluir que el conocimiento de este beneficio aumento después de la campaña publicitaria? |
+
+<br/><br/>
+
+Ho: $p_{1} \geq p_{2}$ <br/>
+Ha: $p_{1} < p_{2}$ <br/>
+
+<br/>
+
+```{r}
+prop.test(c(57,87),c(100,150),
+          p = NULL,
+          alternative = "less",
+          conf.level = 0.95)
+```
+<br/><br/>
+
+**Conclusión**
+
+Como el valor-p ( 0.4896) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que Ho es verdad. Por tal motivo no se perciben mejoras el conocimiento de los beneficios que trae el uso de la tarjeta de crédito.  Se recomienda revisar la forma en que se realiza la campaña publicitaria.
 
 <br/><br/><br/><br/>
 
@@ -309,7 +595,7 @@ Hasta el momento nos hemos dedicado a la estadística parametrica, que exige la 
 
 Note que la distribución normal esta relacionada con las distribuciones t-student, chi-cuadrado y F entre otras.
 
-#### **Cuando utilizar pruebas no parametricas**:
+### **Cuando utilizar pruebas no parametricas**:
 
 + Cuando no se cumplen los supuestos como Normalidad
   + Tamaños mínimos de muestra
@@ -321,14 +607,14 @@ Note que la distribución normal esta relacionada con las distribuciones t-stude
 
 + Cuando se convierten datos cualitativas (escalas nominales u ordinales ) a información útil para la toma de decisiones (escala de intervalo). Utilizado en estudios mercadeo para medir variables como gustos, satisfacción, nivel de necesidad etc.
 
-#### **Ventajas de utilizar pruebas no paramétricas**
+### **Ventajas de utilizar pruebas no paramétricas**
 
 + Son fáciles de usar
 + No se requieren comprobar supuestos
 + Se pueden usar con muestras  pequeñas
 + Se pueden usar con variables  cualitativas
 
-#### **Desventajas** 
+### **Desventajas** 
 
 + Ignoran información
 + No son tan eficientes como las pruebas parametricas, tienen menor potencia.
@@ -348,7 +634,7 @@ Entre las principales pruebas no paramétricas estan :
 
 <br/><br/>
 
-### **Prueba de signos**  
+## **Prueba de signos**  
 
 |            |                                           |
 |:---------- |:----------------------------------------------------------------|
@@ -356,15 +642,16 @@ Entre las principales pruebas no paramétricas estan :
 | Variable dependiente	 | En escala al menos ordinal                          |	
 | Objetivo               | Esta prueba puede ser utilizada para determinar si la diferencia entre el numero de veces que los datos caen a un lado de la media verdadera es significativamente diferente al número de veces que cae en el otro lado . Determinar si la diferencia entre el numero de veces en que el valor de una variable es mayor que el de la otra y el numero de veces que es menor es estadísticamente significativa. Versión no paramétrica de la prueba t para una muestra o de la prueba  t para muestras pareadas. Esta prueba se realiza sobre la mediana de los datos $Me$. |
 
-Ej
-Calos y Ángela, Administradoras investigadores de una firma de artículos deportivos tienen la creencia que el deporte afecta la imagen que cada persona tiene de si misma. Para investigar esta posibilidad eligieron a 18 personas de manera aleatoria, para participar en un programa de ejercicios. Antes de empezar el programa las personas respondieron un cuestionario para medir su propia imagen.  Un nivel de 15 puntos en la prueba establece que la persona tiene un concepto indiferente frente a la afirmación, valores menores de 15 que la afecta en forma negativa y valores por encima de 15 que afectan su imagen en forma positiva. Los siguientes son resultados obtenidos : 16, 15, 12, 17, 18, 14, 16, 14, 16,  17, 19, 16,  14, 21, 20, 16, 16, 16 
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej8.png) | Carlos y Ángela, Administradoras investigadores de una firma de artículos deportivos tienen la creencia que el deporte afecta la imagen que cada persona tiene de si misma. Para investigar esta posibilidad eligieron a 18 personas de manera aleatoria, para participar en un programa de ejercicios. Antes de empezar el programa las personas respondieron un cuestionario para medir su propia imagen.  Un nivel de 15 puntos en la prueba establece que la persona tiene un concepto indiferente frente a la afirmación, valores menores de 15 que la afecta en forma negativa y valores por encima de 15 que afectan su imagen en forma positiva. Los siguientes son resultados obtenidos : 16, 15, 12, 17, 18, 14, 16, 14, 16,  17, 19, 16,  14, 21, 20, 16, 16, 16  |
 
 
 ```{r}
 x=c(16, 15, 12, 17, 18, 14, 16, 14, 16,  17, 19, 16,  14, 21, 20, 16, 16, 16 )
 ```
 
-Solución:
+**Solución**:
 
 Hipótesis Nula	Ho: Me = 15 
 Hipótesis Alterna  Ha: Me 15   ó    Ha : Me > 15 
@@ -379,7 +666,7 @@ M+ = 13
 Regla de Decisión  (Distribución Binomial  p=0.5 n= 17)
 $P(X\leq 13) =  1-0.9755 =  0.0245$  ( valor-p)
 
-Conclusión :
+**Conclusión**:
 
 Se rechaza la hipótesis nula, se acepta la hipótesis alterna. Se puede   afirmar que las personas tienen la creencia que el deporte afecta positivamente su imagen.
 
@@ -389,7 +676,7 @@ Se rechaza la hipótesis nula, se acepta la hipótesis alterna. Se puede   afirm
 
 <br/><br/>
 
-### **Prueba Chi-cuadrado de bondad de ajuste **
+## **Prueba $\chi^{2}$ de bondad de ajuste **
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -399,12 +686,15 @@ Se rechaza la hipótesis nula, se acepta la hipótesis alterna. Se puede   afirm
      
 <br/><br/>
 
-Ejemplo
-El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un dia: 
-
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej9.png) | El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un dia: |
 |Producto | Parmalat | Uno A   | Colanta   | Purace | 
 |:--------|:--------:|:-------:|:---------:|:------:|
-|ventas   |33        |22       |21         |24      |
+|ventas   |33        |22       |21         |24      |  
+
+
+**Solución**:
 
 Ho: Las ventas se distribuyen de manera uniforme (cantidad demandada es igual para todas las marcas)
 Ha: Las ventas no tienen una distribución uniforme
@@ -419,8 +709,9 @@ chisq.test(x=obs,p=esp)
 
 <br/><br/>
 
-ejemplo 
-Un profesor desea establecer si los resultados obtenidos por sus estudiantes tienen una distribución normal con media 3.5 y desviación estándar 0.7 puntos. Los datos se resumen en la siguiente tabla:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej10.png) | Un profesor desea establecer si los resultados obtenidos por sus estudiantes tienen una distribución normal con media 3.5 y desviación estándar 0.7 puntos. Los datos se resumen en la siguiente tabla:  |
 
 <br/><br/>
 
@@ -428,8 +719,9 @@ Un profesor desea establecer si los resultados obtenidos por sus estudiantes tie
 
 <br/><br/>
 
-ejemplo 
-Un investigador desea establecer la relación que puede existir entre la calificación obtenida por un producto por parte de sus consumidores y su ubicación de residencia. Con este fin recoge información de 200 de sus clientes:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej11.png) |Un investigador desea establecer la relación que puede existir entre la calificación obtenida por un producto por parte de sus consumidores y su ubicación de residencia. Con este fin recoge información de 200 de sus clientes: |
 
 |                |Urbano    |Rural   | Total |
 |:--------------|----------:|-------:|------:|
@@ -437,7 +729,7 @@ Un investigador desea establecer la relación que puede existir entre la calific
 |Bueno          |20         |11      |31     |
 |Regular        |40         | 8      |18     |
 |Malo           |15         | 6      |21     |
-|Total          |75         |25      |100    |
+|Total          |75         |25      |100    |   |
 
 <br/><br/>
 
@@ -460,8 +752,9 @@ Objetivo	          | Determinar su la diferencia entre la magnitud de las difere
 
 <br/><br/>
 
-ejemplo
-Los siguiente datos se tomaron de un estudio de comparación de adolescentes sanos (G1) y de adolescentes con bulimia (G2). El primer grupo está conformado por 15 estudiantes y el segundo grupo por 14 estudiantes y corresponden al consumo diario en calorías. Los datos obtenidos son los siguientes:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej12.png) | Los siguiente datos se tomaron de un estudio de comparación de adolescentes sanos (G1) y de adolescentes con bulimia (G2). El primer grupo está conformado por 15 estudiantes y el segundo grupo por 14 estudiantes y corresponden al consumo diario en calorías. Los datos obtenidos son los siguientes:  |
 
 Nota: antes de realizar la comparación de medias, se debe realizar una prueba de bondad de ajuste para establecer si los datos siguen una distribución normal o no. En caso de que los datos no tengan distribución normal, entonces se debe realizar una prueba no paramétrica.
 
@@ -486,14 +779,16 @@ Conclusión :  Como T obtenido > T critico  ( 35 > 13) no se rechaza Ho, no exis
 
 <br/><br/>
 
-ejemplo
-Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1)  y adolescentes con bulimia (G2).  El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías.
-     Los datos obtenidos son los siguientes :
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej13.png) | Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1)  y adolescentes con bulimia (G2).  El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías.
+     Los datos obtenidos son los siguientes : |
      
 |         |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 |:-------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|     
 |Grupo 1: |39  |10  |21  |29  |11  |26  |7   |12  |28  |82  |30  |27  |50  |19  |24  | 
 |Grupo 2: |68  |32  |58  |16  |23  |53  |55  |32  |61  |29  |50  |64  |67  |37  |    |
+
 
 Nota: Antes de realizar la comparación de medias se debe realizar una prueba chi-cuadrado de bondad de ajuste para determinar si los datos siguen una distribución normal o no. En caso de que los datos no tengan una distribución aproximadamente normal entonces se debe realizar la prueba de signos.
 
@@ -520,14 +815,15 @@ Objetivo	            |Determinar si las diferencias entre las medias de los rang
 
 <br/><br/>
 
-ejemplo 
-Para verificar si la memoria cambia con la edad, una investigadora realiza un estudio en el cual hay tres grupos de personas: G1- 60 años de edad, G2: con 50 años de edad, G3: con 40 años de edad. A cada persona se le presenta una serie de palabras. La serie es presentada dos veces y se cuenta el número de palabras que pueden recordar.
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej14.png)| Para verificar si la memoria cambia con la edad, una investigadora realiza un estudio en el cual hay tres grupos de personas: G1- 60 años de edad, G2: con 50 años de edad, G3: con 40 años de edad. A cada persona se le presenta una serie de palabras. La serie es presentada dos veces y se cuenta el número de palabras que pueden recordar. |
 
 |         |    |    |    |    |    |    |    |
 |:-------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |Grupo 1  |28  |19  |13  |28  |29  |22  |21  | 
 |Grupo 2  |26  |20  |11  |14  |22  |21  |    |
-|Grupo 3  |37  |28  |26  |35  |31  |    |    |
+|Grupo 3  |37  |28  |26  |35  |31  |    |    |  
 
 Ho : Las poblaciones son idénticas
 Ha : Las poblaciones no son idénticas
@@ -536,13 +832,14 @@ Ha : Las poblaciones no son idénticas
 
 ### **Correlación de Rangos de Spearman**
 
-ejemplo 
-Se requiere establecer si existe relación entre el tiempo de estudio dedicado a la preparación de una evaluación y la nota obtenida. Como la nota obtenida representa una variable cualitativa, se debe utilizar una prueba no paramétrica (coeficiente de correlación de Spearman). Los datos obtenidos son los siguientes:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej15.png) |Se requiere establecer si existe relación entre el tiempo de estudio dedicado a la preparación de una evaluación y la nota obtenida. Como la nota obtenida representa una variable cualitativa, se debe utilizar una prueba no paramétrica (coeficiente de correlación de Spearman). Los datos obtenidos son los siguientes: |
 
 |       |      |      |      |       |      |      |      |      |      |      |
 |:------|-----:|-----:|-----:|------:|-----:|-----:|-----:|-----:|-----:|-----:|
 |Tiempo | 21   |18    |15    |17     |18    |25    |18    |4     |6     | 5    |
-|Nota   | 4    |4     |4     |3      |3     |5     |3     |1     | 1    | 2    |
+|Nota   | 4    |4     |4     |3      |3     |5     |3     |1     | 1    | 2    |  |
 
 
 ```{r, message=FALSE, warning=FALSE}
@@ -556,11 +853,9 @@ cor.test(x,y, method = "spearman",continuity = FALSE,conf.level = 0.95)
 
 ### **Prueba de rachas**
 
-<br/><br/>
-
-ejemplo 
-Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.
-732, 0.355, 0.189, 0.478, 0.162 .
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej16.png) |Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .|
 
 Ho : La muestra es aleatoria
 Ha: La muestra no es aleatoria
