@@ -549,12 +549,40 @@ div.tocify {
 <li>Para una variable aleatoria con distribución binomial <span class="math inline">\(X \sim binom(x, n=10, p=0.5)\)</span> . Determine: la función de distribución asociada a <span class="math inline">\(X\)</span>.</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X = 5)\)</span></p></li>
-<li><p><span class="math inline">\(P(X \leq 2)\)</span></p></li>
-<li><p><span class="math inline">\(P(3\leq X &lt;5)\)</span></p></li>
-<li><p><span class="math inline">\(P(X\geq 8)\)</span></p></li>
-<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+<li><span class="math inline">\(P(X = 5)\)</span></li>
 </ol>
+<pre class="r"><code>dbinom(5,10,0.5)</code></pre>
+<pre><code>[1] 0.2460938</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \leq 2)\)</span></li>
+</ol>
+<pre class="r"><code>pbinom(2,10,0.05)</code></pre>
+<pre><code>[1] 0.9884964</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(3\leq X &lt;5)\)</span></li>
+</ol>
+<pre class="r"><code>dbinom(3,10,0.05)+dbinom(4,10,0.05)</code></pre>
+<pre><code>[1] 0.01143987</code></pre>
+<pre class="r"><code>pbinom(4,10,0.05)-pbinom(2,10,0.05)</code></pre>
+<pre><code>[1] 0.01143987</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X\geq 8)\)</span></li>
+</ol>
+<pre class="r"><code>pbinom(7,10,0.05, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 1.605078e-09</code></pre>
+<pre class="r"><code>1-pbinom(7,10,0.05)</code></pre>
+<pre><code>[1] 1.605078e-09</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ol>
+<pre class="r"><code>library(ggplot2)
+x=0:10
+fx=dbinom(x,10,0.05)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 10),
+                     breaks = 0:10)</code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><br/><br/></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Suponga que X tiene una distribución Poisson con media <span class="math inline">\(\lambda=4\)</span> (<span class="math inline">\(X \sim pois(x,\lambda=4)\)</span>). Determine:</li>
@@ -569,78 +597,113 @@ div.tocify {
 # Percentil  qpois(p, lambda, lower.tail = TRUE)
 # aleatorio  rpois(n, lambda)
 
-cat(&quot;P(X = 0)&quot;,dpois(0,4),&quot;  &quot;)</code></pre>
-<pre><code>## P(X = 0) 0.01831564</code></pre>
+dpois(0,4)</code></pre>
+<pre><code>[1] 0.01831564</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li><span class="math inline">\(P(X = 4)\)</span></li>
 </ol>
-<pre class="r"><code>cat(&quot;P(X = 4)&quot;,dpois(4,4),&quot;  &quot;)</code></pre>
-<pre><code>## P(X = 4) 0.1953668</code></pre>
+<pre class="r"><code>dpois(4,4)</code></pre>
+<pre><code>[1] 0.1953668</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li><span class="math inline">\(P(X \geq 2)\)</span></li>
 </ol>
-<pre class="r"><code>cat(&quot;P(X=&gt;2)=&quot;,ppois(1,4,lower.tail = FALSE),&quot;  &quot;)</code></pre>
-<pre><code>## P(X=&gt;2)= 0.9084218</code></pre>
+<pre class="r"><code>ppois(1,4,lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.9084218</code></pre>
 <ol start="4" style="list-style-type: lower-alpha">
 <li><span class="math inline">\(P(X \leq 2)\)</span></li>
 </ol>
-<pre class="r"><code>cat(&quot;P(X&lt;=2)=&quot;,ppois(2,4))</code></pre>
-<pre><code>## P(X&lt;=2)= 0.2381033</code></pre>
+<pre class="r"><code>ppois(2,4)</code></pre>
+<pre><code>[1] 0.2381033</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
 </ol>
-<pre class="r"><code>x=0:15
+<pre class="r"><code>library(ggplot2)
+x=0:15
 fx=dpois(x,4)
- plot(x,fx, pch=19)
- grid()</code></pre>
-<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 15),
+                     breaks = 0:15)</code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p><br/><br/></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Sea una variable geométrica <span class="math inline">\(X\sim geomn,(x,p=0.05)\)</span></li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X = 1)\)</span></p></li>
-<li><p><span class="math inline">\(P(X \leq 2)\)</span></p></li>
-<li><p><span class="math inline">\(P(X =8)\)</span></p></li>
-<li><p><span class="math inline">\(P(X\geq 2)\)</span></p></li>
-<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+<li><span class="math inline">\(P(X = 1)\)</span></li>
 </ol>
-<pre class="r"><code># Distribución geometrica
-# X : numero del ensayo donde ocurre el primer exito
-# en R x representa el numero de fracasos antes de obtener el primer exito
-# Rx = 0,1,2,3,4,5,6........
-# f(x)       dgeom(x, prob)
-# F(x)       pgeom(q, prob, lower.tail = TRUE)
-# Percentil  qgeom(p, prob, lower.tail = TRUE)
-# aleatorio  rgeom(n, prob)
-
-cat(&quot;(a) P(X=1)=&quot;,dgeom(0,0.05), &quot;   &quot;)</code></pre>
-<pre><code>## (a) P(X=1)= 0.05</code></pre>
+<pre class="r"><code>dgeom(1,0.05)</code></pre>
+<pre><code>[1] 0.0475</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \leq 2)\)</span></li>
+</ol>
+<pre class="r"><code>pgeom(2,0.05)</code></pre>
+<pre><code>[1] 0.142625</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X =8)\)</span></li>
+</ol>
+<pre class="r"><code>dgeom(8,0.05)</code></pre>
+<pre><code>[1] 0.03317102</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X\geq 2)\)</span></li>
+</ol>
+<pre class="r"><code>1-pgeom(1,0.05)</code></pre>
+<pre><code>[1] 0.9025</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ol>
+<pre class="r"><code>library(ggplot2)
+x=0:20
+fx=dgeom(x,0.05)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 20),
+                     breaks = 0:20) </code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p><br/><br/></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Suponga que X tiene una distribución hipergeometrica con <span class="math inline">\(N=100\)</span>, <span class="math inline">\(n=4\)</span> y <span class="math inline">\(K=20\)</span>. (<span class="math inline">\(X\sim hyper(x,N=100,n=4,k=20)\)</span>) Determine:</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X = 1)\)</span></p></li>
-<li><p><span class="math inline">\(P(X = 6)\)</span></p></li>
-<li><p><span class="math inline">\(P(X \geq 1)\)</span></p></li>
-<li><p><span class="math inline">\(P(X = 4)\)</span></p></li>
-<li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
+<li><span class="math inline">\(P(X = 1)\)</span></li>
 </ol>
-<p>Nota: En este caso se debe realizar una conversión de los parámetros para utiliar la función dhyper de R m = K, número de éxitos en la urna N = m + n , total de elementos en la urna K = n, tamaño de la muestra a extraer de la urna</p>
+<pre class="r"><code># dhyper(x, m, n, k, log = FALSE)
+# dhyper(x, N-K, K, (n), log = FALSE)
+  
+dhyper(1,80,20,4)</code></pre>
+<pre><code>[1] 0.02325804</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X = 3)\)</span></li>
+</ol>
+<pre class="r"><code>dhyper(3,80,20,4)</code></pre>
+<pre><code>[1] 0.4190527</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \geq 1)\)</span></li>
+</ol>
+<pre class="r"><code>1-phyper(0,80,20,4)</code></pre>
+<pre><code>[1] 0.9987644</code></pre>
+<pre class="r"><code>1-dhyper(0,80,20,4)</code></pre>
+<pre><code>[1] 0.9987644</code></pre>
+<pre class="r"><code>phyper(0,80,20,4, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.9987644</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X = 4)\)</span></li>
+</ol>
+<pre class="r"><code>dhyper(4,80,20,4)</code></pre>
+<pre><code>[1] 0.4033382</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></li>
+</ol>
+<pre class="r"><code>library(ggplot2)
+x=0:4
+fx=dhyper(x,80,20,4)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 4),
+                     breaks = 0:4) </code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><strong>Nota</strong>: En este caso se debe realizar una conversión de los parámetros para utiliar la función dhyper de R m = K, número de éxitos en la urna N = m + n , total de elementos en la urna K = n, tamaño de la muestra a extraer de la urna</p>
 <p>Para este caso : m=20, n=80, k=4</p>
-<hr />
-<pre class="r"><code># Distribución hipergeometrica
-# X : número de éxitos encontrados en una muestra de tamaño n (sin orden, sin repetición), 
-#     extraída de una urna que contiene K exitos y N-K fracasos
-# 
-# f(x)       dhyper(x, m, n, k)
-# F(x)       phyper(q, m, n, k, lower.tail = TRUE)
-# Percentil  qhyper(p, m, n, k, lower.tail = TRUE)
-# aleatorio  rhyper(nn, m, n, k)
-
-dhyper(1,20,80,4)</code></pre>
-<pre><code>## [1] 0.4190527</code></pre>
 <p><br/><br/></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Sea la variable <span class="math inline">\(X\)</span> con distribución binomial negativa con N=100 , K=20, n=5 (<span class="math inline">\(X\sim nbinom(x,n,p,mu)\)</span> )</li>
@@ -653,13 +716,14 @@ dhyper(1,20,80,4)</code></pre>
 <li><p>E[X] y V[X]</p></li>
 <li><p>Construya la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p></li>
 </ol>
-<pre class="r"><code># Distribución binomial negativa
-# X : número del evento donde ocurre el r-esimo éxito
-# para el caso de R siza corresponde al número de éxitos, prob la probabilidad de éxito,  
-# f(x)        dnbinom(x, size, prob)
-# F(x)        pnbinom(q, size, prob, lower.tail = TRUE)
-# Percentil   qnbinom(p, size, prob, lower.tail = TRUE)
-# aleatorio   rnbinom(n, size, prob)</code></pre>
+<pre class="r"><code>library(ggplot2)
+x=0:40
+fx=dnbinom(x,5,20/100)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 40),
+                     breaks = 0:40) </code></pre>
+<p><img src="Taller_discretas_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p><br/><br/></p>
 <ol start="6" style="list-style-type: decimal">
 <li>En un cargamento grande de llantas para automóviles, el 5% tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil. (Sea X el número de llantas con imperfecciones. <span class="math inline">\(X \sim binom(n=4, p=0.05\)</span> )</li>
@@ -668,20 +732,20 @@ dhyper(1,20,80,4)</code></pre>
 <li>¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?</li>
 </ol>
 <pre class="r"><code># X: numero de llantas con imperfecciones
- cat(&quot;(a) P(X=0)=&quot;, dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
-<pre><code>## (a) P(X=0)= 0.8145062</code></pre>
+dbinom(0,4,0.05)</code></pre>
+<pre><code>[1] 0.8145062</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?</li>
 </ol>
-<pre class="r"><code>cat(&quot;(b) P(X=1)=&quot;, dbinom(1,4,0.05), &quot;   &quot;)</code></pre>
-<pre><code>## (b) P(X=1)= 0.171475</code></pre>
+<pre class="r"><code>dbinom(1,4,0.05)</code></pre>
+<pre><code>[1] 0.171475</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?</li>
 </ol>
-<pre class="r"><code>cat(&quot;(c) P(X=&gt;1)=&quot;, 1-dbinom(0,4,0.05),&quot;  &quot;)</code></pre>
-<pre><code>## (c) P(X=&gt;1)= 0.1854938</code></pre>
-<pre class="r"><code>cat(&quot;(d) P(X =&gt;1)=&quot;,pbinom(0,4,0.05, lower.tail = FALSE)) </code></pre>
-<pre><code>## (d) P(X =&gt;1)= 0.1854938</code></pre>
+<pre class="r"><code>1-dbinom(0,4,0.05)</code></pre>
+<pre><code>[1] 0.1854938</code></pre>
+<pre class="r"><code>pbinom(0,4,0.05, lower.tail = FALSE) </code></pre>
+<pre><code>[1] 0.1854938</code></pre>
 <p><br/><br/></p>
 <ol start="7" style="list-style-type: decimal">
 <li>Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora.(<span class="math inline">\(\lambda=8\)</span>)</li>
@@ -689,44 +753,62 @@ dhyper(1,20,80,4)</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.</li>
 </ol>
-<pre class="r"><code>cat(&quot;P(X=5&quot;,dpois(5,8), &quot;  &quot;)</code></pre>
-<pre><code>## P(X=5 0.09160366</code></pre>
+<pre class="r"><code>dpois(5,8)</code></pre>
+<pre><code>[1] 0.09160366</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.</li>
 </ol>
-<pre class="r"><code>cat(&quot;P(X&lt;=3)=&quot;,ppois(3,8), &quot;  &quot;)</code></pre>
-<pre><code>## P(X&lt;=3)= 0.04238011</code></pre>
+<pre class="r"><code>ppois(3,8)</code></pre>
+<pre><code>[1] 0.04238011</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.</li>
 </ol>
 <pre class="r"><code>dpois(2,8*2)</code></pre>
-<pre><code>## [1] 1.44045e-05</code></pre>
+<pre><code>[1] 1.44045e-05</code></pre>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.</li>
 </ol>
+<pre class="r"><code>8*2.5</code></pre>
+<pre><code>[1] 20</code></pre>
 <p><br/><br/></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90%. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90% es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90%?</li>
 </ol>
+<pre class="r"><code>pbinom(15,20,0.90)</code></pre>
+<pre><code>[1] 0.0431745</code></pre>
 <p><br/><br/></p>
 <ol start="9" style="list-style-type: decimal">
 <li>Se sabe que 3% de las personas a las que se les revisa el equipaje en un aeropuerto lleva objetos cuestionables. ¿Cuál es la probabilidad de que una serie de 15 personas cruce sin problemas antes de que se atrape a una con un objeto cuestionable? ¿Cuál es el número esperado de personas que pasarán antes de que se detenga a una?</li>
 </ol>
 <pre class="r"><code> dgeom(15,0.03)</code></pre>
-<pre><code>## [1] 0.01899754</code></pre>
+<pre><code>[1] 0.01899754</code></pre>
 <p><br/><br/></p>
 <ol start="10" style="list-style-type: decimal">
-<li>El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.</li>
+<li>El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola o más baterias. Suponga que la probabilidad de encontrar una que falle es de 0.01.</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p>¿Cuál es la probabilidad de que se acepte un lote?</p></li>
-<li><p>¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?</p></li>
-<li><p>¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?</p></li>
+<li>¿Cuál es la probabilidad de que se acepte un lote?</li>
 </ol>
+<pre class="r"><code>1-dbinom(0,75,0.01)</code></pre>
+<pre><code>[1] 0.5294134</code></pre>
+<pre class="r"><code>pbinom(0,75,0.01,lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.5294134</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?</li>
+</ol>
+<pre class="r"><code>pgeom(9,0.01, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.9043821</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?</li>
+</ol>
+<pre class="r"><code>pgeom(10,0.01)</code></pre>
+<pre><code>[1] 0.1046617</code></pre>
 <p><br/><br/></p>
 <ol start="11" style="list-style-type: decimal">
-<li>Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?</li>
+<li>Una aereolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacías. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?</li>
 </ol>
+<pre class="r"><code>pbinom(100,105,0.90, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.01671632</code></pre>
 <p><br/><br/></p>
 <ol start="12" style="list-style-type: decimal">
 <li>El número de grietas en un pavimento se estima en guna rieta por cada 100m en promedio(<span class="math inline">\(\lambda=1\)</span>) . Se desea estimar la probabilidad de:</li>
@@ -735,17 +817,17 @@ dhyper(1,20,80,4)</code></pre>
 <li>Halla exactamente 8 grietas en una longitud de 500 m</li>
 </ol>
 <pre class="r"><code>dpois(8,1*5)</code></pre>
-<pre><code>## [1] 0.06527804</code></pre>
+<pre><code>[1] 0.06527804</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>No se presente ninguna grieta en 100 m</li>
 </ol>
 <pre class="r"><code>dpois(0,1)</code></pre>
-<pre><code>## [1] 0.3678794</code></pre>
+<pre><code>[1] 0.3678794</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Se presenten menos de 2 grietas en 500 m</li>
 </ol>
 <pre class="r"><code>ppois(1,1)</code></pre>
-<pre><code>## [1] 0.7357589</code></pre>
+<pre><code>[1] 0.7357589</code></pre>
 <p><br/><br/></p>
 <ol start="13" style="list-style-type: decimal">
 <li>Un científico inocula a varios ratones, uno a la vez, el virus que produce una enfermedad, hasta que encuentra a 2 que contraen la enfermedad. Si la probabilidad de contraer la enfermedad es de 1/6, ¿cuál es la probabilidad de que tenga que inocular a 8 ratones?</li>

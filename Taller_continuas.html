@@ -542,8 +542,6 @@ div.tocify {
 </div>
 
 
-<pre class="r"><code>library(ggplot2)
-library(ggfortify)</code></pre>
 <div id="problemas" class="section level1">
 <h1><strong>Problemas</strong></h1>
 <p><br/><br/></p>
@@ -553,17 +551,24 @@ library(ggfortify)</code></pre>
 <li>Para una variable aleatoria <span class="math inline">\(X\sim unif(x,a,b)\)</span> con <span class="math inline">\(a=10\)</span> y <span class="math inline">\(b=20\)</span> determine:</li>
 </ol>
 <p>(a.) Construya un bosquejo de la gráfica de la función de densidad de probabilidad <span class="math inline">\(f_{_{X}}(x)\)</span>.</p>
-<p>(b.) <span class="math inline">\(P(X \leq 12)\)</span>.</p>
-<p>(c.) <span class="math inline">\(P(13\leq X &lt;15)\)</span>.</p>
-<p>(d.) <span class="math inline">\(P(X\geq 18)\)</span> .</p>
-<p>(e.) $E[X] $ y <span class="math inline">\(V[X]\)</span>.</p>
-<pre class="r"><code>p=ggdistribution(dunif, seq(10, 20, 0.1),min=10,max=20 ,colour = &#39;blue&#39;)
-p=ggdistribution(dunif, seq(10, 12, 0.1),min=10,max=20 ,colour = &#39;blue&#39;,  fill = &quot;blue&quot;,p=p)+  
-   ggtitle(&quot;Distribucion uniforme [10,20]   P(X&lt;12)&quot;)
+<pre class="r"><code>p=ggdistribution(dunif, seq(10, 20, 0.1),min=10,max=20 ,colour = &#39;blue&#39;)+
+ggtitle(&quot;Distribucion uniforme [10,20]&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<pre class="r"><code>cat(&quot;P(X&lt;12)=&quot;,punif(12,10,20))</code></pre>
-<pre><code>## P(X&lt;12)= 0.2</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>(b.) <span class="math inline">\(P(X \leq 12)\)</span>.</p>
+<pre class="r"><code>punif(12,10,20)</code></pre>
+<pre><code>[1] 0.2</code></pre>
+<p>(c.) <span class="math inline">\(P(13\leq X &lt;15)\)</span>.</p>
+<pre class="r"><code>punif(15,10,20)-punif(13,10,20)</code></pre>
+<pre><code>[1] 0.2</code></pre>
+<p>(d.) <span class="math inline">\(P(X\geq 18)\)</span> .</p>
+<pre class="r"><code>punif(18,10,20, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.2</code></pre>
+<p>(e.) $E[X] $ y <span class="math inline">\(V[X]\)</span>.</p>
+<pre class="r"><code>Ex=(10+20)/2; Ex</code></pre>
+<pre><code>[1] 15</code></pre>
+<pre class="r"><code>Vx=(20-10)^2/12; Vx</code></pre>
+<pre><code>[1] 8.333333</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-normal" class="section level2">
@@ -572,50 +577,114 @@ p</code></pre>
 <li>Para una variable <span class="math inline">\(Z\sim N(0,1)\)</span>, determine el área:</li>
 </ol>
 <p>(a.) A la derecha de <span class="math inline">\(z = - 0.85\)</span>.</p>
-<p>(b.) Entre <span class="math inline">\(z = 0.40\)</span> y <span class="math inline">\(z = 1.30\)</span>.</p>
-<p>(c.) Entre <span class="math inline">\(z = -0.30\)</span> y <span class="math inline">\(z = 0.90\)</span>.</p>
-<p>(d.) Desde <span class="math inline">\(z = -1.50\)</span> hasta <span class="math inline">\(z = -0.45\)</span>.</p>
-<p>Nota: en cada caso realice un bosquejo del área que representa la probabilidad</p>
-<pre class="r"><code>#(a)
-
-p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+<pre class="r"><code>pnorm(-0.85, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.8023375</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
 p=ggdistribution(dnorm, seq(-0.85, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
      ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(Z&gt;-0.85)&quot;)
-
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<pre class="r"><code>pnorm(-0.85,0,1, lower.tail = FALSE)</code></pre>
-<pre><code>## [1] 0.8023375</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>(b.) Entre <span class="math inline">\(z = 0.40\)</span> y <span class="math inline">\(z = 1.30\)</span>.</p>
+<pre class="r"><code>pnorm(1.30)-pnorm(0.40)</code></pre>
+<pre><code>[1] 0.2477778</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(-1.30, 0.40, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(0.40&lt;Z&lt;1.30)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>(c.) Entre <span class="math inline">\(z = -0.30\)</span> y <span class="math inline">\(z = 0.90\)</span>.</p>
+<pre class="r"><code>pnorm(0.90)-pnorm(-0.30)</code></pre>
+<pre><code>[1] 0.4338513</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(-0.30, 0.90, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(-0.30&lt;Z&lt;0.90)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>(d.) Desde <span class="math inline">\(z = -1.50\)</span> hasta <span class="math inline">\(z = -0.45\)</span>.</p>
+<pre class="r"><code>pnorm(-0.45)-pnorm(-1.50)</code></pre>
+<pre><code>[1] 0.259548</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(-1.50,-0.45 , 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(-1.50 &lt;Z&lt;-0.45)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Nota: en cada caso realice un bosquejo del área que representa la probabilidad</p>
 <p><br/><br/></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Para una variable <span class="math inline">\(Z\sim N(0,1)\)</span>, determine el área:</li>
 </ol>
 <p>(a.) A la izquierda de <span class="math inline">\(z = 0.56\)</span>.</p>
-<p>(b.) Entre <span class="math inline">\(z = - 2.93\)</span> y <span class="math inline">\(z = -2.06\)</span>.</p>
-<p>(c.) Entre <span class="math inline">\(z = -1.08\)</span> y <span class="math inline">\(z = 0.70\)</span>.</p>
-<p>(d.) Desde <span class="math inline">\(z = 0.96\)</span> hasta <span class="math inline">\(z = 1.62\)</span>.</p>
-<p>Nota: En cada caso represente gráficamente los valores solicitados</p>
-<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)+
-   ggtitle(&quot;Distribucion Nornal estandar N(0,1)&quot;)
+<pre class="r"><code>pnorm(0.56)</code></pre>
+<pre><code>[1] 0.7122603</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(-4, 0.56, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(Z&lt;-0.56)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>(b.) Entre <span class="math inline">\(z = -2.93\)</span> y <span class="math inline">\(z = -2.06\)</span>.</p>
+<pre class="r"><code>pnorm(-2.06)-pnorm(-2.93)</code></pre>
+<pre><code>[1] 0.01800446</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(-2.93, -2.06, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(-2.93&lt;Z&lt;-2.06)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>(c.) Entre <span class="math inline">\(z = -1.08\)</span> y <span class="math inline">\(z = 0.70\)</span>.</p>
+<pre class="r"><code>pnorm(0.70)-pnorm(-1.08)</code></pre>
+<pre><code>[1] 0.6179653</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(-2.93, -2.06, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(-1.08&lt;Z&lt;0.70)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>(d.) Desde <span class="math inline">\(z = 0.96\)</span> hasta <span class="math inline">\(z = 1.62\)</span>.</p>
+<pre class="r"><code>pnorm(1.62)-pnorm(0.96)</code></pre>
+<pre><code>[1] 0.1159115</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(0.96, 1.62, 0.1), mean = 0, sd = 1,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
+     ggtitle(&quot;Distribucion Nornal estandar N(0,1)    P(0.96&lt;Z&lt;1.62)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Nota: En cada caso represente gráficamente los valores solicitados</p>
 <p><br/><br/></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Para una variable aleatoria continua <span class="math inline">\(X\sim norm(\mu=150, \sigma^{2}=1000)\)</span> determine:</li>
 </ol>
 <p>(a.) Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></p>
-<p>(b.) <span class="math inline">\(P(X \leq 100)\)</span>.</p>
-<p>(c.) <span class="math inline">\(P(150 \leq X \leq 200)\)</span>.</p>
-<p>(d.) <span class="math inline">\(P(X\geq 50)\)</span>.</p>
-<p>(e.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.90\)</span>.</p>
-<p>(f.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.95\)</span>.</p>
-<pre class="r"><code>p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = 31.62,colour = &#39;blue&#39;)
-p=ggdistribution(dnorm, seq(50, 100, 0.1), mean = 150, sd = 31.62,colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
-   ggtitle(&quot;Distribucion Nornal estandar N(150,1000)  P(X&lt;100) &quot;)
+<pre class="r"><code>p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = &#39;blue&#39;)+
+    ggtitle(&quot;Distribucion Nornal estandar N(150,1000)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<pre class="r"><code>cat(&quot;P(X&lt;100)=&quot;, pnorm(100,150,sqrt(1000)))</code></pre>
-<pre><code>## P(X&lt;100)= 0.05692315</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>(b.) <span class="math inline">\(P(X \leq 100)\)</span>.</p>
+<pre class="r"><code>pnorm(100,150, sqrt(1000))</code></pre>
+<pre><code>[1] 0.05692315</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(50, 100, 0.1), mean = 150, sd = sqrt(1000),colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+   
+    ggtitle(&quot;Distribucion Nornal estandar N(150,1000)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>(c.) <span class="math inline">\(P(150 \leq X \leq 200)\)</span>.</p>
+<pre class="r"><code>pnorm(200,150, sqrt(1000))-0.50</code></pre>
+<pre><code>[1] 0.4430769</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(150, 200, 0.1), mean = 150, sd = sqrt(1000),colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+   
+    ggtitle(&quot;Distribucion Nornal estandar N(150,1000)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>(d.) <span class="math inline">\(P(X\geq 50)\)</span>.</p>
+<pre class="r"><code>pnorm(50,150, sqrt(1000), lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.9992173</code></pre>
+<pre class="r"><code>p=ggdistribution(dnorm, seq(40, 260, 0.1), mean = 150, sd = sqrt(1000),colour = &#39;blue&#39;)
+p=ggdistribution(dnorm, seq(50, 260, 0.1), mean = 150, sd = sqrt(1000),colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+   
+    ggtitle(&quot;Distribucion Nornal estandar N(150,1000)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>(e.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.90\)</span>.</p>
+<pre class="r"><code>qnorm(0.95,150,sqrt(1000))</code></pre>
+<pre><code>[1] 202.0148</code></pre>
+<p>(f.) Determine el valor de <span class="math inline">\(k\)</span> que cumpla : <span class="math inline">\(P(-k &lt; X &lt; k)= 0.95\)</span>.</p>
+<pre class="r"><code>qnorm(0.975,150,sqrt(1000))</code></pre>
+<pre><code>[1] 211.9795</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-exponencial" class="section level2">
@@ -624,145 +693,298 @@ p</code></pre>
 <li>Sea <span class="math inline">\(X\)</span> una variable aleatoria con distribución exponencial . (<span class="math inline">\(X\sim exp(\lambda=2)\)</span>). Determine:</li>
 </ol>
 <p>(a.) <span class="math inline">\(P(X \leq 0)\)</span>.</p>
+<pre class="r"><code>pexp(0,2)</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = &#39;blue&#39;)
+p=ggdistribution(dexp, seq(0, 0, 0.1),rate=2 ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion exponencial E[X]=2    P(X&lt;=0)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>(b.) <span class="math inline">\(P(X \geq 2)\)</span>.</p>
+<pre class="r"><code>pexp(2,2, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.01831564</code></pre>
+<pre class="r"><code>p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = &#39;blue&#39;)
+p=ggdistribution(dexp, seq(2, 3, 0.1),rate=2 ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion exponencial E[X]=2    P(1&lt;X&lt;2)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>(c.) <span class="math inline">\(P(1 &lt; X &lt; 2)\)</span>.</p>
-<p>(d.) Realice la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p>
+<pre class="r"><code>pexp(2,2)-pexp(1,2)</code></pre>
+<pre><code>[1] 0.1170196</code></pre>
 <pre class="r"><code>p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = &#39;blue&#39;)
 p=ggdistribution(dexp, seq(1, 2, 0.1),rate=2 ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+
    ggtitle(&quot;Distribucion exponencial E[X]=2    P(1&lt;X&lt;2)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<pre class="r"><code>cat(&quot;P(1&lt;X&lt;2)=F(2)-F(1)=&quot;, pexp(2,2)-pexp(1,2))</code></pre>
-<pre><code>## P(1&lt;X&lt;2)=F(2)-F(1)= 0.1170196</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>(d.) Realice la gráfica de <span class="math inline">\(f_{_{X}}(x)\)</span></p>
+<pre class="r"><code>p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = &#39;blue&#39;)+
+   ggtitle(&quot;Distribucion exponencial E[X]=2  &quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-lognormal" class="section level2">
 <h2>Distribucion lognormal</h2>
-<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con función de distribución lognormal con parámetros <span class="math inline">\(\mu=10\)</span> y <span class="math inline">\(\sigma^2=16\)</span>. Determine.</p>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con función de distribución lognormal con parámetros <span class="math inline">\(\mu=0.8\)</span> y <span class="math inline">\(\sigma=1.2\)</span>. Determine.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X&lt;10000)\)</span></p></li>
-<li><p><span class="math inline">\(P(X&gt;5000)\)</span></p></li>
+<li><span class="math inline">\(P(X&lt;10)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= &#39;blue&#39;)
+p=ggdistribution(dlnorm, seq(0, 10, 0.1),meanlog=0.8,sdlog=1.2 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion Lognormal (0.8,1.2)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<pre class="r"><code>plnorm(10, 0.8,1.2)</code></pre>
+<pre><code>[1] 0.8947432</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X&gt;5)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= &#39;blue&#39;)
+p=ggdistribution(dlnorm, seq(5, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion Lognormal (10,16)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<pre class="r"><code>plnorm(5, 0.80,1.2, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.2499867</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(P_{75}\)</span></p></li>
 <li><p>Realice una gráfica de <span class="math inline">\(f(x)\)</span></p></li>
 </ol>
-<pre class="r"><code>p=ggdistribution(dlnorm, seq(0, 100000, 0.1),meanlog=log(20000),sdlog=1 ,colour= &#39;blue&#39;)
-p=ggdistribution(dlnorm, seq(0, 10000, 0.1),meanlog=log(20000),sdlog=1 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p)
-   ggtitle(&quot;Distribucion Lognormal (log(20000),1)&quot;)</code></pre>
-<pre><code>## $title
-## [1] &quot;Distribucion Lognormal (log(20000),1)&quot;
-## 
-## attr(,&quot;class&quot;)
-## [1] &quot;labels&quot;</code></pre>
-<pre class="r"><code>p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<pre class="r"><code>cat(&quot;P((X&lt;10000)= &quot;,plnorm(10000, log(20000),1))</code></pre>
-<pre><code>## P((X&lt;10000)=  0.2441086</code></pre>
+<pre class="r"><code>p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= &#39;blue&#39;)+
+   ggtitle(&quot;Distribucion Lognormal (log(20000),1)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-gamma" class="section level2">
 <h2>Distribucion gamma</h2>
 <p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con funcion de distribucion gamma parametros <span class="math inline">\(a=3\)</span> y <span class="math inline">\(b=1\)</span>. Determine:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X&lt;5)\)</span></p></li>
-<li><p><span class="math inline">\(P(5&lt;X&gt;7.5)\)</span></p></li>
-<li><p><span class="math inline">\(P_{25}\)</span></p></li>
-<li><p>Regalice una grafica de <span class="math inline">\(f(x)\)</span></p></li>
+<li><span class="math inline">\(P(X&lt;5)\)</span></li>
 </ol>
 <pre class="r"><code>p=ggdistribution(dgamma, seq(0, 10, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;)
 p=ggdistribution(dgamma, seq(0, 5, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+  
    ggtitle(&quot;Distribucion gamma a=3 b=1     P(X&lt;5)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<pre class="r"><code>cat(&quot;P(X&lt;5)=&quot;, pgamma(5,3,1))</code></pre>
-<pre><code>## P(X&lt;5)= 0.875348</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<pre class="r"><code>pgamma(5,3,1)</code></pre>
+<pre><code>[1] 0.875348</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(5&lt;X&gt;7.5)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dgamma, seq(0, 10, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;)
+p=ggdistribution(dgamma, seq(0, 5, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p) 
+p=ggdistribution(dgamma, seq(7.5, 10, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+  
+      ggtitle(&quot;Distribucion gamma a=3 b=1     P(5&lt; X &gt;7.5)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<pre class="r"><code>pgamma(5,3,1)+pgamma(7.5,3,1, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.8956047</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P_{25}\)</span></li>
+</ol>
+<pre class="r"><code>qgamma(0.25,3,1)</code></pre>
+<pre><code>[1] 1.727299</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Realice una gráfica de <span class="math inline">\(f(x)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dgamma, seq(0, 10, 0.1),shape=3,rate=1 ,colour= &#39;blue&#39;)+
+    ggtitle(&quot;Distribucion gamma a=3 b=1&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-weibull" class="section level2">
 <h2>Distribucion Weibull</h2>
 <p>Sea <span class="math inline">\(X\)</span> una variable con distribución Weibul con <span class="math inline">\(\alpha=0.01\)</span> y <span class="math inline">\(\beta=2\)</span>. determine:</p>
-<ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X&lt;10)\)</span></p></li>
-<li><p><span class="math inline">\(P(&gt;9)\)</span></p></li>
-<li><p><span class="math inline">\(P(8&lt;X&lt;11)\)</span></p></li>
-<li><p>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.9\)</span></p></li>
-<li><p>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></p></li>
-</ol>
-<p><strong>Nota</strong>: Se requiere realizar una transformación de los parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> a los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para utilizar la función de la distribución Weibull en R así:</p>
-<ul>
-<li><span class="math inline">\(a = \beta\)</span></li>
-<li><span class="math inline">\(b= (\defrac{1}{\alpha})^{1/\beta}\)</span></li>
-</ul>
+<p><strong>Nota</strong>: Se requiere realizar una transformación de los parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> a los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para utilizar la función de la distribución Weibull en R así: + <span class="math inline">\(a = \beta\)</span> + <span class="math inline">\(b= (\defrac{1}{\alpha})^{1/\beta}\)</span></p>
 <p>En ese caso</p>
 <pre class="r"><code>a=2
 b=(1/0.01)^(1/2)
 a</code></pre>
-<pre><code>## [1] 2</code></pre>
+<pre><code>[1] 2</code></pre>
 <pre class="r"><code>b</code></pre>
-<pre><code>## [1] 10</code></pre>
-<pre class="r"><code>pweibull(10,a,b)</code></pre>
-<pre><code>## [1] 0.6321206</code></pre>
+<pre><code>[1] 10</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X&lt;10)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;)
+p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion Weibull [a=0.01 b=2]    P(X&lt;10)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<pre class="r"><code>pweibull(10,b,(1/a)^(1/b))</code></pre>
+<pre><code>[1] 1</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(&gt;9)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;)
+p=ggdistribution(dweibull, seq(9, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion Weibull [a=0.01 b=2]    P(X&gt;9)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<pre class="r"><code>pweibull(9,b,(1/a)^(1/b), lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(8&lt;X&lt;11)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;)
+p=ggdistribution(dweibull, seq(8, 11, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion Weibull [a=0.01 b=2]    P(8&lt;X&lt;11)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<pre class="r"><code>pweibull(11,shape=b,scale=(1/a)^(1/b))-pweibull(8,shape=b,scale=(1/a)^(1/b))</code></pre>
+<pre><code>[1] 0</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.9\)</span></li>
+</ol>
+<pre class="r"><code>qweibull(0.1,shape=b,scale=(1/a)^(1/b))</code></pre>
+<pre><code>[1] 0.7450146</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></li>
+</ol>
 <pre class="r"><code>a=0.01
 b=2
-p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;)
-p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;,fill = &quot;blue&quot;, p=p)+  
-   ggtitle(&quot;Distribucion Weibull [a=0.01 b=2]&quot;)
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = &#39;blue&#39;)+
+       ggtitle(&quot;Distribucion Weibull [a=0.01 b=2]&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<pre class="r"><code>cat(&quot;P(X&lt;10)=&quot;, pweibull(10,2,10))</code></pre>
-<pre><code>## P(X&lt;10)= 0.6321206</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-beta" class="section level2">
 <h2>Distribucion beta</h2>
 <p>Suponga que X tiene una distribución beta con con parámetros a=4, b=2.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X&lt;0.40)\)</span></p></li>
-<li><p><span class="math inline">\(P(&gt;0.90)\)</span></p></li>
-<li><p><span class="math inline">\(P(0.80&lt;X&lt;1)\)</span></p></li>
-<li><p>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.90\)</span></p></li>
-<li><p>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></p></li>
+<li><span class="math inline">\(P(X&lt;0.40)\)</span></li>
 </ol>
 <pre class="r"><code>p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;)
 p=ggdistribution(dbeta, seq(0, .4, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;,fill =&quot;blue&quot;, p=p)+  
    ggtitle(&quot;Distribucion beta (4,2)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<pre class="r"><code>pbeta(0.40,shape1=4,shape2=2 )</code></pre>
+<pre><code>[1] 0.08704</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(&gt;0.90)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;)
+p=ggdistribution(dbeta, seq(0.9, 1, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;,fill =&quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion beta (4,2)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<pre class="r"><code>pbeta(0.90,shape1=4,shape2=2, lower.tail = FALSE )</code></pre>
+<pre><code>[1] 0.08146</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(0.80&lt;X&lt;1)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;)
+p=ggdistribution(dbeta, seq(0.80,1, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;,fill =&quot;blue&quot;, p=p)+  
+   ggtitle(&quot;Distribucion beta (4,2)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<pre class="r"><code>pbeta(0.80,shape1=4,shape2=2, lower.tail = FALSE )</code></pre>
+<pre><code>[1] 0.26272</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.90\)</span></li>
+</ol>
+<pre class="r"><code>qbeta(0.10,shape1=4,shape2=2)</code></pre>
+<pre><code>[1] 0.4161096</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = &#39;blue&#39;)+  
+   ggtitle(&quot;Distribucion beta (4,2)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-gumbel" class="section level2">
 <h2>Distribucion Gumbel</h2>
-<p>Suponga que X tiene una distribucion beta con con parametros a=3, b=4.</p>
+<p>Suponga que X tiene una distribución beta con con parámetros a=3, b=4.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X&lt;10)\)</span></p></li>
-<li><p><span class="math inline">\(P(&gt;9)\)</span></p></li>
-<li><p><span class="math inline">\(P(8&lt;X&lt;10)\)</span></p></li>
-<li><p>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.80\)</span></p></li>
-<li><p>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></p></li>
+<li><span class="math inline">\(P(X&lt;10)\)</span></li>
 </ol>
 <pre class="r"><code>library(dgumbel)
 p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;)
   p=ggdistribution(dgumbel, seq(-5, 10, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;, fill = &quot;blue&quot;,p=p)+
    ggtitle(&quot;Distribucion Gumbel(3,4)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<pre class="r"><code>pgumbel(10,location=3, scale=4)</code></pre>
+<pre><code>[1] 0.8404869</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(&gt;9)\)</span></li>
+</ol>
+<pre class="r"><code>library(dgumbel)
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;)
+  p=ggdistribution(dgumbel, seq(9, 25, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;, fill = &quot;blue&quot;,p=p)+
+   ggtitle(&quot;Distribucion Gumbel(3,4)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<pre class="r"><code>pgumbel(9,location=3, scale=4, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.1999893</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(8&lt;X&lt;10)\)</span></li>
+</ol>
+<pre class="r"><code>library(dgumbel)
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;)
+  p=ggdistribution(dgumbel, seq(8, 10, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;, fill = &quot;blue&quot;,p=p)+
+   ggtitle(&quot;Distribucion Gumbel(3,4)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<pre class="r"><code>pgumbel(10,location=3, scale=4)-pgumbel(8,location=3, scale=4)</code></pre>
+<pre><code>[1] 0.0896034</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Determine el valor de <span class="math inline">\(x\)</span> tal que <span class="math inline">\(P(X&gt;x)=0.80\)</span></li>
+</ol>
+<pre class="r"><code>library(dgumbel)
+qgumbel(0.20,location=3, scale=4)</code></pre>
+<pre><code>[1] 1.09646</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Realice la gráfica de la función de densidad de probabilidad de <span class="math inline">\(X\)</span></li>
+</ol>
+<pre class="r"><code>library(dgumbel)
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = &#39;blue&#39;)+
+   ggtitle(&quot;Distribucion Gumbel(3,4)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="distribucion-cauchy" class="section level2">
 <h2>Distribucion Cauchy</h2>
-<p>Suponga que <span class="math inline">\(X\)</span> tiene una distribución de Caucy con parámetros <span class="math inline">\(\mu=0.75\)</span> y <span class="math inline">\(\theta =5\)</span>, determine:</p>
+<p>Suponga que <span class="math inline">\(X\)</span> tiene una distribución de Cauchy con parámetros <span class="math inline">\(\mu=0.75\)</span> y <span class="math inline">\(\theta =5\)</span>, determine:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X &gt; 7.2)\)</span></p></li>
-<li><p><span class="math inline">\(P( 5&lt;X&lt;10)\)</span></p></li>
-<li><p><span class="math inline">\(Me=Q_{2}\)</span></p></li>
-<li><p>Realice la gráfica de <span class="math inline">\(f(x)\)</span></p></li>
+<li><span class="math inline">\(P(X &gt; 7.2)\)</span></li>
 </ol>
-<pre class="r"><code>dcauchy(9.2,5,0.75)</code></pre>
-<pre><code>## [1] 0.01311536</code></pre>
+<pre class="r"><code>pcauchy(7.2,location = 5, scale =0.75, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 0.1045817</code></pre>
 <pre class="r"><code>p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;)
   p=ggdistribution(dcauchy, seq(7.2, 15, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+
-   ggtitle(&quot;Distribucion Cauchy [l=5 s=0.75]&quot;)
+   ggtitle(&quot;Distribucion Cauchy [l=5 s=0.75]   P(X&gt;7.2)&quot;)
 p</code></pre>
-<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P( 5&lt;X&lt;10)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;)
+  p=ggdistribution(dcauchy, seq(5, 10, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;, fill = &quot;blue&quot;, p=p)+
+   ggtitle(&quot;Distribucion Cauchy [l=5 s=0.75]   P(5&lt;X&lt;10)&quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<pre class="r"><code>pcauchy(10,location = 5, scale =0.75)-pcauchy(5,location = 5, scale =0.75)</code></pre>
+<pre><code>[1] 0.4526069</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(Me=Q_{2}\)</span></li>
+</ol>
+<pre class="r"><code>qcauchy(0.5,location = 5, scale =0.75)</code></pre>
+<pre><code>[1] 5</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Realice la gráfica de <span class="math inline">\(f(x)\)</span></li>
+</ol>
+<pre class="r"><code>p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = &#39;blue&#39;)+
+    ggtitle(&quot;Distribucion Cauchy [l=5 s=0.75]   &quot;)
+p</code></pre>
+<p><img src="Taller_continuas_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p><br/><br/><br/></p>
 </div>
 <div id="ejercicios-propuestos" class="section level2">
@@ -775,8 +997,6 @@ p</code></pre>
 <p>(b.) ¿Cuál es el 25o. percentil de las puntuaciones?</p>
 <p>(c.) Si la puntuación de alguien es de 600, ¿en qué percentil se encuentra?</p>
 <p>(d.) ¿Qué proporción de las puntuaciones se encuentra entre 420 y 520?</p>
-<pre><code>## [1] 0.007253771</code></pre>
-<pre><code>## [1] 419.2959</code></pre>
 <p><br/><br/></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Suponga que la estatura de las personas en una población sigue la curva normal con media de 64.3 pulgadas y desviación estándar de 2.6 pulgadas.</li>

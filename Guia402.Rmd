@@ -118,7 +118,7 @@ Un estimador por intervalo de confianza (IC) es una regla que especifica como us
 
 ## **Una población**
 
-<br/><br/>
+<br/><br/><br/>
 
 ### **Intervalos de confianza para la media, con varianza conocida** 
 
@@ -154,7 +154,7 @@ Supuestos:
 
 </div>
 			
-<br/><br/>
+<br/><br/><br/>
 
 ### **Intervalo de confianza para la media, con varianza desconocida**
 	
@@ -220,7 +220,7 @@ $$(35.71; 42.49 )$$
 
 El tiempo promedio transcurrido entre la facturación y el pago en la empresa está entre 35.7 dias y 42.5 dias con una confianza del 95% 
 
-<br/><br/>
+<br/><br/><br/>
 
 ### **Tamaño de la muestra para estimar una media**
 
@@ -274,7 +274,7 @@ nmu(qnorm(0.99),s2.edad,1)
 ```
 
 
-<br/><br/>
+<br/><br/><br/>
 
 ### **Intervalos de confianza para la proporción** 
 
@@ -311,7 +311,7 @@ prop.test(340,500)$conf.int
 De acuerdo con el resultado anterior, se puede afirmar con una confianza del 95% que entre el 63.7% y el 72.0% de las familias tienen una suscripción a HBO
 
 
-<br/><br/>
+<br/><br/><br/>
 
 
 ### **Tamaño de muestra para la estimación de una proporción**
@@ -320,12 +320,16 @@ $$n=\dfrac{z_{\alpha/2}^{2}\hspace{.3cm} p(1-p)}{e^{2}}$$
 Donde :
 
 + $z_{\alpha/2}$ : representa el percentil de la distribución normal relacionado con la confianza
-+ $p$ : la proporción y p(1-p) la varianza.  Para conocerla se puede hacer uso de una estimación a traves de una prueba piloto, la varianza máxima que ocurre cuando $p=0.5$  ($pq=0.25$)
+
++ $p$ : la proporción y p(1-p) la varianza.  Para conocerla se puede hacer uso de una estimación a través de una prueba piloto, la varianza máxima que ocurre cuando $p=0.5$  ($pq=0.25$)
+
 + $e$ : el error de muestreo que representa la tolerancia al erro que tiene el investigador ($|\widehat{p}-p|<e$).
 
 |    |                                     |
 |:--:|:------------------------------------|
 | ![](img/ej4.png){width=120%} | Una empresa requiere realizar un estudio para establecer las proporción de fallas diarias que presta la empresa al presentar un servicio . El gerente encargado del estudio decide que la tasa de error máximo tolerable debe ser del 5% y el nivel de confianza del 99% . Con esta información una firma de consultora presenta una propuesta a la empresa por valor de \$110.2 millones para realizar el estudio y justifica su costo así: Por costos administrativos y de logística corresponde un valor de \$55.4 millones y cada encuesta realizada tiene un valor de $50 mil pesos. El Director de la empresa le encarga a usted revisar la información darle un concepto sobre la propuesta realizada por la firma de auditores a la mayor brevedad
+
+<br/><br/>
 
 **Solución**
 
@@ -342,6 +346,7 @@ np(qnorm(0.995),0.5,0.05)
 ```
 De acuerdo con la información sumunistrada por la empresa, el tamaño de muestra apropiado para la estimación de la proporción, suponiendo varianza máxima es de $n=664$, por tal razón la propuesta realiza por la empresa consultora excede en   432 encuesta que presentan un sobre costo de \$21.6 millones
   
+<br/><br/><br/>
 
 ### **Intervalos de confianza para la varianza** 
 
@@ -375,6 +380,8 @@ $X\sim N(\mu,\sigma^{2})$
 |:--:|:------------------------------------|
 | ![](img/ej5.png){width=120%} | Se quiere estimar un intervalo de confianza del 95% para la desviación estandar de los precios de los últimos 22 dias (sep.10.2021 a oct.7.2021, tomados de :Investing.com)
 
+<br/><br/>
+
 ```{r}
 ecopetrol=c(2810, 2810,	2825, 2769, 2734, 2706,	2699, 2671, 2550, 2590,	2570, 2529,	2520, 2566,	2615, 2620, 2550, 2572,	2553, 2570,	2593, 2606)	
 
@@ -401,7 +408,7 @@ Se estima con una confianza del 95% que la desviación estándar del precio de l
 
 Cuando se compraran dos poblaciones se puede estar interesado en la diferencia de medias, diferencia de proporciones o la razón de varianzas. Es necesario distinguir cuando se trata de diferencia de medias pareadas o diferencia para poblaciones independientes.\\
 
-<br/><br/>
+<br/><br/><br/>
 
 ### **Diferencia de medias - pareadas**
 
@@ -496,6 +503,8 @@ Al realizar la comparación de las varianzas se puede observar que el intervalo 
 La diferencia entre la estimación promedio de la inflación pronosticada por lo ingenieros y la realizada por los especialistas en finanzas, con una confianza del 95%, está entre $(-1.1704541;  0.2454541 )$, lo cual nos indica que sus estimaciones promedio son similares
 
 
+<br/><br/>
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 
@@ -518,6 +527,7 @@ $$v=\frac{(s_{1}^{2}/n_{1}+s_{2}^{2}/n_{2})^{2}}{\Big[(s_{1}^{2}/n_{1})^{2}/(n_{
 |    | ingenieros :  2.2%, 1.1%, 3.9%, 5.9%, 4.5%, 5.1%    |
 |    | especialistas en finanzas:  3.7%, 2.1%, 2.2%, 3.9%, 3.6%, 3.5%, 3.2%, 3.5% |
 
+<br/><br/>
 
 ```{r}
 inf.ing=c(2.2, 1.1, 3.9, 5.9, 4.5, 5.1)
@@ -557,7 +567,7 @@ En cualquiera de los casos los resultados pueden generar que intervalo sea de la
 	
 
 	
-<br/><br/>
+<br/><br/><br/>
 
 ### **Diferencia de proporciones**
 
@@ -621,9 +631,11 @@ En cualquiera de los casos los resultados pueden generar que intervalo sea de la
 </div>
 
 
-
+<br/><br/><br/>
 
 ### **Comparación de varianzas** 
+
+<br/><br/>
 
 La comparación de varianzas se realiza con relación al valor que tome la razón de sus valores $\sigma^{2}_{1}/\sigma^{2}_{2}$. Observe que si esta relación es uno, indicaría que las varianzas son iguales. Por el contrario si esta razón es muy grande indicaría que $\sigma^{2}_{1}>\sigma^{2}_{2}$ y si su valor es muy cercano a cero indicaría lo contrario.
 
@@ -637,9 +649,9 @@ $$\Bigg(\dfrac{s^{2}_{1}}{s^{2}_{2}} \dfrac{1}{f_{1-\alpha/2}(v_{1}v_{2})}; \dfr
 
 </div>
 
-<br/><br/><br/><br/>
+<br/><br/><br/>
 
-## **Intervalos no paraétricos**
+## **Intervalos no paramétricos**
 
 Cuando se extrae una muestra de una población que no es normal y se requiere estimar un intervalo de confianza se pueden utilizar los métodos de estimación **bootstrap**. Existen varias versiones del método. Una presentación básica del método se describe a continuación:
 
@@ -655,6 +667,8 @@ Es necesario extraer un gran número de muestras (suponga k = 1000). Para cada u
 Construya el intervalo de confianza por los dos métodos y compare los resultados obtenidos.
 Tomado de Navidi(2006)
 
+<br/><br/>
+
 ```{r}
 x=c( 7.69, 4.97, 4.56, 6.49, 4.34, 6.24, 4.45) # datos muestra
 boot=sample(x,7000,replace=TRUE)   # se extraen n x m muestras
@@ -662,29 +676,36 @@ b=matrix(boot,nrow=1000,ncol=7)    # se construye matriz de n x m
 mx=apply(b,1,mean)                 # se calculan m medias por fila
 ```
 
-
-
+<br/><br/>
 
 ```{r}
 ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC metodo 1
 ic1
 ```
 
+<br/><br/>
+
 ```{r}
 ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC metodo 2
 ic2
 ```
 
+
+<br/><br/>
+
 ```{r}
-hist(mx, las=1, main=" ", ylab = " ", xlab = " ")
+hist(mx, las=1, main=" ", ylab = " ", xlab = " ", col=c3)
 abline(v=ic1, col="red")
 abline(v=ic2, col="blue")
 ```
 
 Como se puede observar, el segundo estimador corrige el intervalo
+
 <br/><br/><br/><br/>
 
 # **Conceptos**
+
+<br/><br/>
 
 ## **Confianza**
 
@@ -695,7 +716,7 @@ Al contarlos se encuentra que 35 no lo contienen (de color rojo), mientras que  
 ![](img/confianza.png)
 Este valor se integra al concepto de intervalo de confianza mediante el término $1-\alpha$, por defecto los programas utilizan un nivel de confianza del 95% ( $1-\alpha =0.95$) y se de nota por : $IC_{\mu; 1-\alpha=0.95}$ 
 
-<br/><br/>
+<br/><br/><br/>
 
 ## **Grados de libertad**
 
@@ -728,7 +749,10 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 
 ## **Tamaño de muestra**                                                            
 
-### $\mu$   
+<br/><br/>
+
+### $\mu$  
+
 $$n=\dfrac{z_{\alpha/2}^{2}\hspace{.3cm} \sigma^{2}}{e^{2}}$$                   
 Donde: 
 
@@ -737,6 +761,8 @@ Donde:
 + $\sigma^{2}$: varianza, que se puede obtener mediante prueba piloto, conocer de un estudio anterior, o estimar mediante consulta a un experto : $\widehat{\sigma}  \cong  (\max\{x\}-\min\{x\})/4$ y 
 
 + $e$ : error de muestreo $(|\bar{x}-\mu|< e)$.    
+
+<br/><br/>
 
 ### $p$
 

@@ -9,12 +9,21 @@ output:
     toc_float: yes
     theme: cosmo
 ---
-
-
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(ggplot2)
 library(ggfortify)
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
 ```
+
+
 
 # **Problemas**
 
@@ -26,21 +35,36 @@ library(ggfortify)
 
 (a.) Construya un bosquejo de la gráfica de la función de densidad de probabilidad $f_{_{X}}(x)$.
 
+```{r}
+p=ggdistribution(dunif, seq(10, 20, 0.1),min=10,max=20 ,colour = 'blue')+
+ggtitle("Distribucion uniforme [10,20]")
+p
+```
+
 (b.) $P(X \leq 12)$. 
+
+```{r}
+punif(12,10,20)
+```
 
 (c.) $P(13\leq X <15)$. 
 
-(d.) $P(X\geq 18)$ . 
+```{r}
+punif(15,10,20)-punif(13,10,20)
+```
+
+(d.) $P(X\geq 18)$ .
+
+```{r}
+punif(18,10,20, lower.tail = FALSE)
+```
+
 
 (e.) $E[X] $ y $V[X]$.
 
 ```{r }
-p=ggdistribution(dunif, seq(10, 20, 0.1),min=10,max=20 ,colour = 'blue')
-p=ggdistribution(dunif, seq(10, 12, 0.1),min=10,max=20 ,colour = 'blue',  fill = "blue",p=p)+  
-   ggtitle("Distribucion uniforme [10,20]   P(X<12)")
-p
-
-cat("P(X<12)=",punif(12,10,20))
+Ex=(10+20)/2; Ex
+Vx=(20-10)^2/12; Vx
 ```
 
 <br/><br/>
@@ -49,27 +73,56 @@ cat("P(X<12)=",punif(12,10,20))
 
 2. Para una variable $Z\sim N(0,1)$, determine el área: 
 
-(a.)  A la derecha de $z = - 0.85$. 
+(a.)  A la derecha de $z = - 0.85$.
 
-(b.) Entre $z = 0.40$ y $z = 1.30$.  
-
-(c.) Entre $z = -0.30$ y $z = 0.90$. 
-
-(d.)  Desde $z = -1.50$ hasta $z = -0.45$.
-
-Nota: en cada caso realice un  bosquejo del área que representa la probabilidad
-
-```{r }
-#(a)
+```{r}
+pnorm(-0.85, lower.tail = FALSE)
 
 p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
 p=ggdistribution(dnorm, seq(-0.85, 4, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
      ggtitle("Distribucion Nornal estandar N(0,1)    P(Z>-0.85)")
-
 p
 
-pnorm(-0.85,0,1, lower.tail = FALSE)
 ```
+
+
+(b.) Entre $z = 0.40$ y $z = 1.30$. 
+
+```{r}
+pnorm(1.30)-pnorm(0.40)
+
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(-1.30, 0.40, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+     ggtitle("Distribucion Nornal estandar N(0,1)    P(0.40<Z<1.30)")
+p
+
+```
+
+
+(c.) Entre $z = -0.30$ y $z = 0.90$. 
+
+```{r}
+pnorm(0.90)-pnorm(-0.30)
+
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(-0.30, 0.90, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+     ggtitle("Distribucion Nornal estandar N(0,1)    P(-0.30<Z<0.90)")
+p
+```
+
+(d.)  Desde $z = -1.50$ hasta $z = -0.45$.
+
+```{r}
+pnorm(-0.45)-pnorm(-1.50)
+
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(-1.50,-0.45 , 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+     ggtitle("Distribucion Nornal estandar N(0,1)    P(-1.50 <Z<-0.45)")
+p
+```
+
+Nota: en cada caso realice un  bosquejo del área que representa la probabilidad
+
 
 <br/><br/>
 
@@ -77,20 +130,53 @@ pnorm(-0.85,0,1, lower.tail = FALSE)
 
 (a.)	A la izquierda de $z = 0.56$. 
 
-(b.) Entre $z = - 2.93$ y $z = -2.06$. 
+```{r}
 
-(c.) Entre $z = -1.08$ y $z = 0.70$. 
+pnorm(0.56)
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(-4, 0.56, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+     ggtitle("Distribucion Nornal estandar N(0,1)    P(Z<-0.56)")
+p
+```
+
+
+
+(b.) Entre $z = -2.93$ y $z = -2.06$. 
+
+```{r}
+pnorm(-2.06)-pnorm(-2.93)
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(-2.93, -2.06, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+     ggtitle("Distribucion Nornal estandar N(0,1)    P(-2.93<Z<-2.06)")
+p
+```
+
+
+(c.) Entre $z = -1.08$ y $z = 0.70$.
+
+```{r}
+pnorm(0.70)-pnorm(-1.08)
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(-2.93, -2.06, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+     ggtitle("Distribucion Nornal estandar N(0,1)    P(-1.08<Z<0.70)")
+p
+```
+
 
 (d.) Desde $z = 0.96$ hasta $z = 1.62$.
 
 
-Nota: En cada caso represente gráficamente los valores solicitados
-
-```{r }
-p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')+
-   ggtitle("Distribucion Nornal estandar N(0,1)")
+```{r}
+pnorm(1.62)-pnorm(0.96)
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(0.96, 1.62, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+     ggtitle("Distribucion Nornal estandar N(0,1)    P(0.96<Z<1.62)")
 p
 ```
+
+
+
+Nota: En cada caso represente gráficamente los valores solicitados
 
 <br/><br/>
 
@@ -98,23 +184,59 @@ p
 
 (a.) Realice la gráfica de la función de  densidad de probabilidad de $X$
 
+
+```{r}
+p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue')+
+    ggtitle("Distribucion Nornal estandar N(150,1000)")
+p
+```
+
+
+
 (b.) $P(X \leq 100)$. 
+
+```{r}
+pnorm(100,150, sqrt(1000))
+p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue')
+p=ggdistribution(dnorm, seq(50, 100, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue', fill="blue", p=p)+   
+    ggtitle("Distribucion Nornal estandar N(150,1000)")
+p
+```
+
+
+
 
 (c.) $P(150 \leq X \leq 200)$.
 
-(d.) $P(X\geq 50)$.  
+```{r}
+pnorm(200,150, sqrt(1000))-0.50
+p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue')
+p=ggdistribution(dnorm, seq(150, 200, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue', fill="blue", p=p)+   
+    ggtitle("Distribucion Nornal estandar N(150,1000)")
+p
+```
+
+(d.) $P(X\geq 50)$. 
+
+```{r}
+pnorm(50,150, sqrt(1000), lower.tail = FALSE)
+p=ggdistribution(dnorm, seq(40, 260, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue')
+p=ggdistribution(dnorm, seq(50, 260, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue', fill="blue", p=p)+   
+    ggtitle("Distribucion Nornal estandar N(150,1000)")
+p
+```
 
 (e.) Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.90$.
+
+```{r}
+qnorm(0.95,150,sqrt(1000))
+```
+
 
 (f.) Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.95$.
 
 ```{r  }
-p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = 31.62,colour = 'blue')
-p=ggdistribution(dnorm, seq(50, 100, 0.1), mean = 150, sd = 31.62,colour = 'blue', fill="blue", p=p)+
-   ggtitle("Distribucion Nornal estandar N(150,1000)  P(X<100) ")
-p
-
-cat("P(X<100)=", pnorm(100,150,sqrt(1000)))
+qnorm(0.975,150,sqrt(1000))
 ```
 
 <br/><br/>
@@ -125,19 +247,47 @@ cat("P(X<100)=", pnorm(100,150,sqrt(1000)))
 
 (a.) $P(X \leq 0)$.
 
+```{r}
+pexp(0,2)
+p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = 'blue')
+p=ggdistribution(dexp, seq(0, 0, 0.1),rate=2 ,colour = 'blue',fill = "blue", p=p)+
+   ggtitle("Distribucion exponencial E[X]=2    P(X<=0)")
+p
+```
+
+
+
 (b.) $P(X \geq 2)$.
 
-(c.) $P(1 < X < 2)$. 
+```{r}
+pexp(2,2, lower.tail = FALSE)
+p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = 'blue')
+p=ggdistribution(dexp, seq(2, 3, 0.1),rate=2 ,colour = 'blue',fill = "blue", p=p)+
+   ggtitle("Distribucion exponencial E[X]=2    P(1<X<2)")
+p
+```
 
-(d.) Realice la gráfica de $f_{_{X}}(x)$
 
-```{r  }
+(c.) $P(1 < X < 2)$.
+
+```{r}
+pexp(2,2)-pexp(1,2)
 p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = 'blue')
 p=ggdistribution(dexp, seq(1, 2, 0.1),rate=2 ,colour = 'blue',fill = "blue", p=p)+
    ggtitle("Distribucion exponencial E[X]=2    P(1<X<2)")
 p
+```
 
-cat("P(1<X<2)=F(2)-F(1)=", pexp(2,2)-pexp(1,2))
+
+
+
+(d.) Realice la gráfica de $f_{_{X}}(x)$
+
+```{r  }
+p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = 'blue')+
+   ggtitle("Distribucion exponencial E[X]=2  ")
+p
+
 
 ```
 
@@ -151,25 +301,41 @@ cat("P(1<X<2)=F(2)-F(1)=", pexp(2,2)-pexp(1,2))
 ## Distribucion lognormal
 
 
-Sea $X$  una variable aleatoria continua con función de distribución lognormal con parámetros $\mu=10$ y $\sigma^2=16$. Determine.
+Sea $X$  una variable aleatoria continua con función de distribución lognormal con parámetros $\mu=0.8$ y $\sigma=1.2$. Determine.
 
-(a) $P(X<10000)$
+(a) $P(X<10)$
 
-(b) $P(X>5000)$
+```{r, message=FALSE, warning=FALSE }
+p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue')
+p=ggdistribution(dlnorm, seq(0, 10, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue', fill = "blue", p=p)+
+   ggtitle("Distribucion Lognormal (0.8,1.2)")
+p
+
+plnorm(10, 0.8,1.2)
+```
+
+(b) $P(X>5)$
+
+```{r, message=FALSE, warning=FALSE }
+p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue')
+p=ggdistribution(dlnorm, seq(5, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue', fill = "blue", p=p)+
+   ggtitle("Distribucion Lognormal (10,16)")
+p
+
+plnorm(5, 0.80,1.2, lower.tail = FALSE)
+```
+
 
 (c) $P_{75}$
 
 (d) Realice una gráfica de $f(x)$
 
 
-
 ```{r }
-p=ggdistribution(dlnorm, seq(0, 100000, 0.1),meanlog=log(20000),sdlog=1 ,colour= 'blue')
-p=ggdistribution(dlnorm, seq(0, 10000, 0.1),meanlog=log(20000),sdlog=1 ,colour= 'blue', fill = "blue", p=p)
+p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue')+
    ggtitle("Distribucion Lognormal (log(20000),1)")
 p
 
-cat("P((X<10000)= ",plnorm(10000, log(20000),1))
 ```
 
 <br/><br/>
@@ -180,21 +346,44 @@ Sea $X$  una variable aleatoria continua con funcion de distribucion gamma param
 
 (a) $P(X<5)$
 
-(b) $P(5<X>7.5)$
-
-(c) $P_{25}$
-
-(d) Regalice una grafica de $f(x)$
-
-
-
 ```{r}
 p=ggdistribution(dgamma, seq(0, 10, 0.1),shape=3,rate=1 ,colour= 'blue')
 p=ggdistribution(dgamma, seq(0, 5, 0.1),shape=3,rate=1 ,colour= 'blue', fill = "blue", p=p)+  
    ggtitle("Distribucion gamma a=3 b=1     P(X<5)")
 p
 
-cat("P(X<5)=", pgamma(5,3,1))
+pgamma(5,3,1)
+```
+
+(b) $P(5<X>7.5)$
+
+
+```{r}
+p=ggdistribution(dgamma, seq(0, 10, 0.1),shape=3,rate=1 ,colour= 'blue')
+p=ggdistribution(dgamma, seq(0, 5, 0.1),shape=3,rate=1 ,colour= 'blue', fill = "blue", p=p) 
+p=ggdistribution(dgamma, seq(7.5, 10, 0.1),shape=3,rate=1 ,colour= 'blue', fill = "blue", p=p)+  
+      ggtitle("Distribucion gamma a=3 b=1     P(5< X >7.5)")
+p
+
+pgamma(5,3,1)+pgamma(7.5,3,1, lower.tail = FALSE)
+```
+
+(c) $P_{25}$
+
+
+```{r}
+qgamma(0.25,3,1)
+```
+
+
+(d) Realice una gráfica de $f(x)$
+
+
+```{r}
+p=ggdistribution(dgamma, seq(0, 10, 0.1),shape=3,rate=1 ,colour= 'blue')+
+    ggtitle("Distribucion gamma a=3 b=1")
+p
+
 ```
 
 <br/><br/>
@@ -203,19 +392,7 @@ cat("P(X<5)=", pgamma(5,3,1))
 
 Sea $X$ una variable con distribución Weibul con $\alpha=0.01$ y $\beta=2$. determine:
 
-(a) $P(X<10)$
-
-(b) $P(>9)$
-
-(c) $P(8<X<11)$
-
-(d) Determine el valor de $x$ tal que $P(X>x)=0.9$
-
-(e) Realice la gráfica de la función de  densidad de probabilidad de $X$
-
-
 **Nota**: Se requiere realizar una transformación de  los parámetros $\alpha$ y $\beta$ a los parámetros $a$ y $b$ para utilizar la función de la distribución Weibull en R así:
-
 + $a = \beta$
 + $b= (\defrac{1}{\alpha})^{1/\beta}$
 
@@ -225,20 +402,56 @@ a=2
 b=(1/0.01)^(1/2)
 a
 b
-pweibull(10,a,b)
+```
+(a) $P(X<10)$
+
+```{r}
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')
+p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue',fill = "blue", p=p)+  
+   ggtitle("Distribucion Weibull [a=0.01 b=2]    P(X<10)")
+p
+pweibull(10,b,(1/a)^(1/b))
 ```
 
+
+
+(b) $P(>9)$
+
+```{r}
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')
+p=ggdistribution(dweibull, seq(9, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue',fill = "blue", p=p)+  
+   ggtitle("Distribucion Weibull [a=0.01 b=2]    P(X>9)")
+p
+pweibull(9,b,(1/a)^(1/b), lower.tail = FALSE)
+```
+
+
+(c) $P(8<X<11)$
+
+```{r}
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')
+p=ggdistribution(dweibull, seq(8, 11, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue',fill = "blue", p=p)+  
+   ggtitle("Distribucion Weibull [a=0.01 b=2]    P(8<X<11)")
+p
+pweibull(11,shape=b,scale=(1/a)^(1/b))-pweibull(8,shape=b,scale=(1/a)^(1/b))
+```
+
+
+(d) Determine el valor de $x$ tal que $P(X>x)=0.9$
+
+```{r}
+qweibull(0.1,shape=b,scale=(1/a)^(1/b))
+```
+
+
+(e) Realice la gráfica de la función de  densidad de probabilidad de $X$
 
 ```{r}
 a=0.01
 b=2
-p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')
-p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue',fill = "blue", p=p)+  
-   ggtitle("Distribucion Weibull [a=0.01 b=2]")
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')+
+       ggtitle("Distribucion Weibull [a=0.01 b=2]")
 p
-
-cat("P(X<10)=", pweibull(10,2,10))
-
 ```
 
 <br/><br/>
@@ -249,18 +462,48 @@ Suponga que X tiene una distribución beta con con parámetros a=4, b=2.
 
 (a) $P(X<0.40)$
 
-(b) $P(>0.90)$
-
-(c) $P(0.80<X<1)$
-
-(d) Determine el valor de $x$ tal que $P(X>x)=0.90$
-
-(e) Realice la gráfica de la función de  densidad de probabilidad de $X$
-
-
 ```{r}
 p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = 'blue')
 p=ggdistribution(dbeta, seq(0, .4, 0.01), shape1=4,shape2=2,colour = 'blue',fill ="blue", p=p)+  
+   ggtitle("Distribucion beta (4,2)")
+p
+pbeta(0.40,shape1=4,shape2=2 )
+```
+
+(b) $P(>0.90)$
+
+```{r}
+p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = 'blue')
+p=ggdistribution(dbeta, seq(0.9, 1, 0.01), shape1=4,shape2=2,colour = 'blue',fill ="blue", p=p)+  
+   ggtitle("Distribucion beta (4,2)")
+p
+pbeta(0.90,shape1=4,shape2=2, lower.tail = FALSE )
+```
+
+
+
+(c) $P(0.80<X<1)$
+
+```{r}
+p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = 'blue')
+p=ggdistribution(dbeta, seq(0.80,1, 0.01), shape1=4,shape2=2,colour = 'blue',fill ="blue", p=p)+  
+   ggtitle("Distribucion beta (4,2)")
+p
+pbeta(0.80,shape1=4,shape2=2, lower.tail = FALSE )
+```
+
+
+(d) Determine el valor de $x$ tal que $P(X>x)=0.90$
+
+```{r}
+qbeta(0.10,shape1=4,shape2=2)
+```
+
+
+(e) Realice la gráfica de la función de  densidad de probabilidad de $X$
+
+```{r}
+p=ggdistribution(dbeta, seq(0, 1, 0.01), shape1=4,shape2=2,colour = 'blue')+  
    ggtitle("Distribucion beta (4,2)")
 p
 ```
@@ -269,23 +512,59 @@ p
 
 ## Distribucion Gumbel  
 
-Suponga que X tiene una distribucion beta con con parametros a=3, b=4.
+Suponga que X tiene una distribución beta con con parámetros a=3, b=4.
 
 (a) $P(X<10)$
 
+```{r}
+library(dgumbel)
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = 'blue')
+  p=ggdistribution(dgumbel, seq(-5, 10, 0.01), location=3, scale=4, ,colour = 'blue', fill = "blue",p=p)+
+   ggtitle("Distribucion Gumbel(3,4)")
+p
+pgumbel(10,location=3, scale=4)
+```
+
+
 (b) $P(>9)$
+
+```{r}
+library(dgumbel)
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = 'blue')
+  p=ggdistribution(dgumbel, seq(9, 25, 0.01), location=3, scale=4, ,colour = 'blue', fill = "blue",p=p)+
+   ggtitle("Distribucion Gumbel(3,4)")
+p
+pgumbel(9,location=3, scale=4, lower.tail = FALSE)
+```
+
 
 (c) $P(8<X<10)$
 
+
+```{r}
+library(dgumbel)
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = 'blue')
+  p=ggdistribution(dgumbel, seq(8, 10, 0.01), location=3, scale=4, ,colour = 'blue', fill = "blue",p=p)+
+   ggtitle("Distribucion Gumbel(3,4)")
+p
+pgumbel(10,location=3, scale=4)-pgumbel(8,location=3, scale=4)
+```
+
+
 (d) Determine el valor de $x$ tal que $P(X>x)=0.80$
+
+```{r}
+library(dgumbel)
+qgumbel(0.20,location=3, scale=4)
+```
+
 
 (e) Realice la gráfica de la función de  densidad de probabilidad de $X$
 
 
 ```{r}
 library(dgumbel)
-p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = 'blue')
-  p=ggdistribution(dgumbel, seq(-5, 10, 0.01), location=3, scale=4, ,colour = 'blue', fill = "blue",p=p)+
+p=ggdistribution(dgumbel, seq(-5, 25, 0.01), location=3, scale=4, ,colour = 'blue')+
    ggtitle("Distribucion Gumbel(3,4)")
 p
 ```
@@ -295,25 +574,49 @@ p
 
 ## Distribucion Cauchy
 
-Suponga que $X$ tiene una distribución de Caucy con parámetros $\mu=0.75$ y $\theta =5$, determine:
+Suponga que $X$ tiene una distribución de Cauchy con parámetros $\mu=0.75$ y $\theta =5$, determine:
 
 (a) $P(X > 7.2)$
 
+```{r}
+pcauchy(7.2,location = 5, scale =0.75, lower.tail = FALSE)
+
+p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = 'blue')
+  p=ggdistribution(dcauchy, seq(7.2, 15, 0.01),location = 5, scale =0.75 ,colour = 'blue', fill = "blue", p=p)+
+   ggtitle("Distribucion Cauchy [l=5 s=0.75]   P(X>7.2)")
+p
+
+```
+
+
 (b) $P( 5<X<10)$
 
+```{r}
+p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = 'blue')
+  p=ggdistribution(dcauchy, seq(5, 10, 0.01),location = 5, scale =0.75 ,colour = 'blue', fill = "blue", p=p)+
+   ggtitle("Distribucion Cauchy [l=5 s=0.75]   P(5<X<10)")
+p
+
+pcauchy(10,location = 5, scale =0.75)-pcauchy(5,location = 5, scale =0.75)
+```
+
+
+
 (c) $Me=Q_{2}$
+
+```{r}
+qcauchy(0.5,location = 5, scale =0.75)
+```
+
 
 (d) Realice la gráfica de $f(x)$
 
 ```{r}
-dcauchy(9.2,5,0.75)
-
-p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = 'blue')
-  p=ggdistribution(dcauchy, seq(7.2, 15, 0.01),location = 5, scale =0.75 ,colour = 'blue', fill = "blue", p=p)+
-   ggtitle("Distribucion Cauchy [l=5 s=0.75]")
+p=ggdistribution(dcauchy, seq(0, 15, 0.01),location = 5, scale =0.75 ,colour = 'blue')+
+    ggtitle("Distribucion Cauchy [l=5 s=0.75]   ")
 p
-
 ```
+
 
 
 <br/><br/><br/>
@@ -332,10 +635,6 @@ p
 
 (d.) ¿Qué proporción de las puntuaciones se encuentra entre 420 y 520?
 
-```{r  eval=TRUE, echo=FALSE}
-pnorm(700,480,90, lower.tail =F )
-qnorm(0.25,480,90)
-```
 
 <br/><br/>
 
@@ -352,9 +651,6 @@ qnorm(0.25,480,90)
 (e.) Se elige aleatoriamente a cinco personas de esta población. ¿Cuál es la probabilidad de que sólo una de ellas mida más de 67 pulgadas?
 
 
-```{r  eval=TRUE, echo=FALSE}
-
-```
 
 <br/><br/>
 

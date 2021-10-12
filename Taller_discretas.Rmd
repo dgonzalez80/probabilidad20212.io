@@ -10,6 +10,22 @@ output:
     theme: cosmo
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
+
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
+```
+
+
+
+
 #  **Problemas**
 
 <br/><br/>
@@ -17,14 +33,46 @@ output:
 1.  Para una variable aleatoria con distribución binomial $X \sim binom(x, n=10, p=0.5)$  . Determine:  la función de distribución asociada a $X$.
 
 (a) $P(X = 5)$
+
+```{r}
+dbinom(5,10,0.5)
+```
+
    
 (b) $P(X \leq 2)$
 
+```{r}
+pbinom(2,10,0.05)
+```
+
+
 (c) $P(3\leq X <5)$
 
+```{r}
+dbinom(3,10,0.05)+dbinom(4,10,0.05)
+pbinom(4,10,0.05)-pbinom(2,10,0.05)
+
+
+```
+
 (d) $P(X\geq 8)$ 
+```{r}
+pbinom(7,10,0.05, lower.tail = FALSE)
+1-pbinom(7,10,0.05)
+```
 
 (e) Construya la gráfica de $f_{_{X}}(x)$
+
+```{r}
+library(ggplot2)
+x=0:10
+fx=dbinom(x,10,0.05)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 10),
+                     breaks = 0:10)
+
+```
 
 
 <br/><br/>
@@ -41,7 +89,8 @@ output:
 # Percentil  qpois(p, lambda, lower.tail = TRUE)
 # aleatorio  rpois(n, lambda)
 
-cat("P(X = 0)",dpois(0,4),"  ")
+dpois(0,4)
+
 ```
 
 
@@ -49,7 +98,7 @@ cat("P(X = 0)",dpois(0,4),"  ")
 
 
 ```{r}
-cat("P(X = 4)",dpois(4,4),"  ")
+dpois(4,4)
 ```
 
 
@@ -57,7 +106,7 @@ cat("P(X = 4)",dpois(4,4),"  ")
 
 
 ```{r}
-cat("P(X=>2)=",ppois(1,4,lower.tail = FALSE),"  ")
+ppois(1,4,lower.tail = FALSE)
 ```
 
 
@@ -65,20 +114,22 @@ cat("P(X=>2)=",ppois(1,4,lower.tail = FALSE),"  ")
 (d) $P(X \leq 2)$  
 
 
-
 ```{r}
-cat("P(X<=2)=",ppois(2,4))
+ppois(2,4)
 ```
-
 
 (e) Construya la gráfica de $f_{_{X}}(x)$
 
 
 ```{r}
+library(ggplot2)
 x=0:15
 fx=dpois(x,4)
- plot(x,fx, pch=19)
- grid()
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 15),
+                     breaks = 0:15)
+
 ```
 
 <br/><br/>
@@ -87,26 +138,42 @@ fx=dpois(x,4)
 
 (a) $P(X = 1)$
 
+```{r}
+dgeom(1,0.05)
+```
+
+
 (b) $P(X \leq 2)$
+
+```{r}
+pgeom(2,0.05)
+```
+
 
 (c) $P(X =8)$
 
+```{r}
+dgeom(8,0.05)
+```
+
+
 (d) $P(X\geq 2)$  
+
+```{r}
+1-pgeom(1,0.05)
+```
+
 
 (e) Construya la gráfica de $f_{_{X}}(x)$
 
 ```{r}
-# Distribución geometrica
-# X : numero del ensayo donde ocurre el primer exito
-# en R x representa el numero de fracasos antes de obtener el primer exito
-# Rx = 0,1,2,3,4,5,6........
-# f(x)       dgeom(x, prob)
-# F(x)       pgeom(q, prob, lower.tail = TRUE)
-# Percentil  qgeom(p, prob, lower.tail = TRUE)
-# aleatorio  rgeom(n, prob)
-
-cat("(a) P(X=1)=",dgeom(0,0.05), "   ")
-
+library(ggplot2)
+x=0:20
+fx=dgeom(x,0.05)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 20),
+                     breaks = 0:20) 
 
 ```
 
@@ -114,37 +181,60 @@ cat("(a) P(X=1)=",dgeom(0,0.05), "   ")
 
 4.  Suponga que X tiene una distribución hipergeometrica con $N=100$, $n=4$ y $K=20$. ($X\sim hyper(x,N=100,n=4,k=20)$) Determine:
  
+
 (a) $P(X = 1)$
 
-(b) $P(X = 6)$
+```{r}
+# dhyper(x, m, n, k, log = FALSE)
+# dhyper(x, N-K, K, (n), log = FALSE)
+  
+dhyper(1,80,20,4)
+```
+
+
+(b) $P(X = 3)$
+
+```{r}
+dhyper(3,80,20,4)
+```
+
 
 (c) $P(X \geq 1)$
 
+```{r}
+1-phyper(0,80,20,4)
+1-dhyper(0,80,20,4)
+phyper(0,80,20,4, lower.tail = FALSE)
+```
+
 (d) $P(X = 4)$  
+
+```{r}
+dhyper(4,80,20,4)
+```
+
 
 (e) Construya la gráfica de $f_{_{X}}(x)$
 
-Nota: En este caso se debe realizar una conversión de los parámetros para utiliar la función dhyper de R
+```{r}
+library(ggplot2)
+x=0:4
+fx=dhyper(x,80,20,4)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 4),
+                     breaks = 0:4) 
+```
+
+
+**Nota**: En este caso se debe realizar una conversión de los parámetros para utiliar la función dhyper de R
 m = K, número de éxitos en la urna
 N = m + n , total de elementos en la urna
 K = n, tamaño de la muestra a extraer de la urna
 
 Para este caso : m=20, n=80, k=4
 
----
-```{r}
-# Distribución hipergeometrica
-# X : número de éxitos encontrados en una muestra de tamaño n (sin orden, sin repetición), 
-#     extraída de una urna que contiene K exitos y N-K fracasos
-# 
-# f(x)       dhyper(x, m, n, k)
-# F(x)       phyper(q, m, n, k, lower.tail = TRUE)
-# Percentil  qhyper(p, m, n, k, lower.tail = TRUE)
-# aleatorio  rhyper(nn, m, n, k)
 
-dhyper(1,20,80,4)
-
-```
 
 <br/><br/>
 		
@@ -162,17 +252,18 @@ dhyper(1,20,80,4)
 
 (f) Construya la gráfica de $f_{_{X}}(x)$
  	
+
 ```{r}
-# Distribución binomial negativa
-# X : número del evento donde ocurre el r-esimo éxito
-# para el caso de R siza corresponde al número de éxitos, prob la probabilidad de éxito,  
-# f(x)        dnbinom(x, size, prob)
-# F(x)        pnbinom(q, size, prob, lower.tail = TRUE)
-# Percentil   qnbinom(p, size, prob, lower.tail = TRUE)
-# aleatorio   rnbinom(n, size, prob)
-
-
+library(ggplot2)
+x=0:40
+fx=dnbinom(x,5,20/100)
+dat=data.frame(x,fx)
+ggplot(dat) + geom_point(aes(x, fx),colour = c2, size = 3) +
+  scale_x_continuous(limits = c(0, 40),
+                     breaks = 0:40) 
 ```
+
+
 
 <br/><br/>
 
@@ -182,7 +273,7 @@ dhyper(1,20,80,4)
 
 ```{r}
 # X: numero de llantas con imperfecciones
- cat("(a) P(X=0)=", dbinom(0,4,0.05),"  ")
+dbinom(0,4,0.05)
 ```
 
 
@@ -190,7 +281,7 @@ dhyper(1,20,80,4)
 
 
 ```{r}
-cat("(b) P(X=1)=", dbinom(1,4,0.05), "   ")
+dbinom(1,4,0.05)
 ```
 
 
@@ -198,12 +289,12 @@ cat("(b) P(X=1)=", dbinom(1,4,0.05), "   ")
  
 
 ```{r}
-cat("(c) P(X=>1)=", 1-dbinom(0,4,0.05),"  ")
+1-dbinom(0,4,0.05)
 ```
 
 
 ```{r}
-cat("(d) P(X =>1)=",pbinom(0,4,0.05, lower.tail = FALSE)) 
+pbinom(0,4,0.05, lower.tail = FALSE) 
 ```
 
 <br/><br/>
@@ -213,13 +304,13 @@ cat("(d) P(X =>1)=",pbinom(0,4,0.05, lower.tail = FALSE))
 (a) Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
 
 ```{r}
-cat("P(X=5",dpois(5,8), "  ")
+dpois(5,8)
 ```
 
 (b) Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.
 
 ```{r}
-cat("P(X<=3)=",ppois(3,8), "  ")
+ppois(3,8)
 ```
 
 
@@ -232,17 +323,16 @@ dpois(2,8*2)
 
 (d) Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.
  		
-
-
-
-
-
+```{r}
+8*2.5
+```
 
 <br/><br/>			
 
 8.  Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90\%. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90\% es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90\%?
-```{r}
 
+```{r}
+pbinom(15,20,0.90)
 ```
 
 <br/><br/>
@@ -255,24 +345,34 @@ dpois(2,8*2)
 
 <br/><br/>
 
-10. El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar no más de 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola batería. Suponga que la probabilidad de encontrar una que falle es de 0.001.
+10. El esquema de aceptación para comprar lotes que contienen un número grande de baterías consiste en probar 75 baterías seleccionadas al azar y rechazar el lote completo si falla una sola o más baterias. Suponga que la probabilidad de encontrar una que falle es de 0.01.
  
 (a) ¿Cuál es la probabilidad de que se acepte un lote?
 
+```{r}
+1-dbinom(0,75,0.01)
+pbinom(0,75,0.01,lower.tail = FALSE)
+```
+
 (b) ¿Cuál es la probabilidad de que se rechace un lote en la vigésima prueba?
+
+```{r}
+pgeom(9,0.01, lower.tail = FALSE)
+```
+
 
 (c) ¿Cuál es la probabilidad de que se rechace en 10 o menos pruebas?
 
 ```{r}
-
+pgeom(10,0.01)
 ```
 
 <br/><br/>
 
-11.  Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual  la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?   
+11.  Una aereolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual  la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacías. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?   
 
 ```{r}
-
+pbinom(100,105,0.90, lower.tail = FALSE)
 ```
 
 <br/><br/>
