@@ -634,7 +634,7 @@ Entre las principales pruebas no paramétricas estan :
 
 <br/><br/>
 
-## **Prueba de signos**  
+## **de signos**  
 
 |            |                                           |
 |:---------- |:----------------------------------------------------------------|
@@ -676,7 +676,7 @@ Se rechaza la hipótesis nula, se acepta la hipótesis alterna. Se puede   afirm
 
 <br/><br/>
 
-## **Prueba $\chi^{2}$ de bondad de ajuste **
+## **$\chi^{2}$ de bondad de ajuste **
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -716,7 +716,7 @@ chisq.test(x=obs,p=esp)
 
 <br/><br/>
 
-### **Prueba Chi-cuadrado de independencia**
+## **$\chi^{2}$ de independencia**
 
 <br/><br/>
 
@@ -743,7 +743,7 @@ M=as.table(matrix(m,nrow=3))
 chisq.test(M)
 ```
 
-### **Prueba de Wilcoxon**
+### **de Wilcoxon**
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -769,7 +769,7 @@ Conclusión :  Como T obtenido > T critico  ( 35 > 13) no se rechaza Ho, no exis
 
 <br/><br/>
 
-### **Prueba U de Mann-Whitney**
+## **U de Mann-Whitney**
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -806,7 +806,7 @@ Por lo tanto los estudiantes sanos presentan consumo de calorías menores que lo
 	
 <br/><br/>
 
-### **Prueba de Kruskal-Wallis**
+## **Kruskal-Wallis**
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -831,7 +831,7 @@ Ha : Las poblaciones no son idénticas
 
 <br/><br/>
 
-### **Correlación de Rangos de Spearman**
+## **Correlación de Spearman**
 
 |    |                                     |
 |:--:|:------------------------------------|
@@ -852,7 +852,7 @@ cor.test(x,y, method = "spearman",continuity = FALSE,conf.level = 0.95)
 
 <br/><br/>
 
-### **Prueba de rachas**
+## **de rachas**
 
 |    |                                     |
 |:--:|:------------------------------------|
@@ -874,7 +874,7 @@ runs.test(y)
 
 <br/><br/>
 
-### **Pruebas de normalidad**
+## **de normalidad**
 
 Uno de los procedimientos mas utilizados en estadística es la relacionada con la verificación de normalidad de una variable. 
 
