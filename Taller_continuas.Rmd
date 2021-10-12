@@ -134,7 +134,7 @@ Nota: en cada caso realice un  bosquejo del área que representa la probabilidad
 
 pnorm(0.56)
 p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
-p=ggdistribution(dnorm, seq(-4, 0.56, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+p=ggdistribution(dnorm, seq(-4, -0.56, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
      ggtitle("Distribucion Nornal estandar N(0,1)    P(Z<-0.56)")
 p
 ```
@@ -157,7 +157,7 @@ p
 ```{r}
 pnorm(0.70)-pnorm(-1.08)
 p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = 'blue')
-p=ggdistribution(dnorm, seq(-2.93, -2.06, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
+p=ggdistribution(dnorm, seq(-1.08, 0.70, 0.1), mean = 0, sd = 1,colour = 'blue', fill="blue", p=p)+
      ggtitle("Distribucion Nornal estandar N(0,1)    P(-1.08<Z<0.70)")
 p
 ```
@@ -199,7 +199,7 @@ p
 pnorm(100,150, sqrt(1000))
 p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue')
 p=ggdistribution(dnorm, seq(50, 100, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue', fill="blue", p=p)+   
-    ggtitle("Distribucion Nornal estandar N(150,1000)")
+    ggtitle("Distribucion Nornal estandar N(150,1000)    P(X<100)")
 p
 ```
 
@@ -212,7 +212,7 @@ p
 pnorm(200,150, sqrt(1000))-0.50
 p=ggdistribution(dnorm, seq(50, 250, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue')
 p=ggdistribution(dnorm, seq(150, 200, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue', fill="blue", p=p)+   
-    ggtitle("Distribucion Nornal estandar N(150,1000)")
+    ggtitle("Distribucion Nornal estandar N(150,1000)    P(150<X<200)")
 p
 ```
 
@@ -222,7 +222,7 @@ p
 pnorm(50,150, sqrt(1000), lower.tail = FALSE)
 p=ggdistribution(dnorm, seq(40, 260, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue')
 p=ggdistribution(dnorm, seq(50, 260, 0.1), mean = 150, sd = sqrt(1000),colour = 'blue', fill="blue", p=p)+   
-    ggtitle("Distribucion Nornal estandar N(150,1000)")
+    ggtitle("Distribucion Nornal estandar N(150,1000)   P(X>50)")
 p
 ```
 
@@ -263,7 +263,7 @@ p
 pexp(2,2, lower.tail = FALSE)
 p=ggdistribution(dexp, seq(0, 3, 0.1),rate=2 ,colour = 'blue')
 p=ggdistribution(dexp, seq(2, 3, 0.1),rate=2 ,colour = 'blue',fill = "blue", p=p)+
-   ggtitle("Distribucion exponencial E[X]=2    P(1<X<2)")
+   ggtitle("Distribucion exponencial E[X]=2    P(X>2)")
 p
 ```
 
@@ -308,7 +308,7 @@ Sea $X$  una variable aleatoria continua con función de distribución lognormal
 ```{r, message=FALSE, warning=FALSE }
 p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue')
 p=ggdistribution(dlnorm, seq(0, 10, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue', fill = "blue", p=p)+
-   ggtitle("Distribucion Lognormal (0.8,1.2)")
+   ggtitle("Distribucion Lognormal (0.8,1.2)   P(X<10)")
 p
 
 plnorm(10, 0.8,1.2)
@@ -319,7 +319,7 @@ plnorm(10, 0.8,1.2)
 ```{r, message=FALSE, warning=FALSE }
 p=ggdistribution(dlnorm, seq(0, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue')
 p=ggdistribution(dlnorm, seq(5, 20, 0.1),meanlog=0.8,sdlog=1.2 ,colour= 'blue', fill = "blue", p=p)+
-   ggtitle("Distribucion Lognormal (10,16)")
+   ggtitle("Distribucion Lognormal (10,16)   P(X>5) ")
 p
 
 plnorm(5, 0.80,1.2, lower.tail = FALSE)
@@ -390,10 +390,12 @@ p
 
 ## Distribucion Weibull
 
-Sea $X$ una variable con distribución Weibul con $\alpha=0.01$ y $\beta=2$. determine:
+Sea $X$ una variable con distribución Weibull con $\alpha=0.01$ y $\beta=2$. determine:
 
 **Nota**: Se requiere realizar una transformación de  los parámetros $\alpha$ y $\beta$ a los parámetros $a$ y $b$ para utilizar la función de la distribución Weibull en R así:
+
 + $a = \beta$
+
 + $b= (\defrac{1}{\alpha})^{1/\beta}$
 
 En ese caso 
@@ -406,11 +408,11 @@ b
 (a) $P(X<10)$
 
 ```{r}
-p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')
-p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue',fill = "blue", p=p)+  
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=a,scale=b ,colour = 'blue')
+p=ggdistribution(dweibull, seq(0, 10, 0.01),shape=a,scale=b ,colour = 'blue',fill = "blue", p=p)+  
    ggtitle("Distribucion Weibull [a=0.01 b=2]    P(X<10)")
 p
-pweibull(10,b,(1/a)^(1/b))
+pweibull(10,a,b)
 ```
 
 
@@ -418,38 +420,36 @@ pweibull(10,b,(1/a)^(1/b))
 (b) $P(>9)$
 
 ```{r}
-p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')
-p=ggdistribution(dweibull, seq(9, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue',fill = "blue", p=p)+  
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=a,scale=b ,colour = 'blue')
+p=ggdistribution(dweibull, seq(9, 30, 0.01),shape=a,scale=b ,colour = 'blue',fill = "blue", p=p)+  
    ggtitle("Distribucion Weibull [a=0.01 b=2]    P(X>9)")
 p
-pweibull(9,b,(1/a)^(1/b), lower.tail = FALSE)
+pweibull(9,a,b,lower.tail = FALSE)
 ```
 
 
 (c) $P(8<X<11)$
 
 ```{r}
-p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')
-p=ggdistribution(dweibull, seq(8, 11, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue',fill = "blue", p=p)+  
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=a,scale=b ,colour = 'blue')
+p=ggdistribution(dweibull, seq(8, 11, 0.01),shape=a,scale=b ,colour = 'blue',fill = "blue", p=p)+  
    ggtitle("Distribucion Weibull [a=0.01 b=2]    P(8<X<11)")
 p
-pweibull(11,shape=b,scale=(1/a)^(1/b))-pweibull(8,shape=b,scale=(1/a)^(1/b))
+pweibull(11,shape=a,b)-pweibull(8,shape=a,scale=b)
 ```
 
 
 (d) Determine el valor de $x$ tal que $P(X>x)=0.9$
 
 ```{r}
-qweibull(0.1,shape=b,scale=(1/a)^(1/b))
+qweibull(0.1,shape=a,scale=b)
 ```
 
 
 (e) Realice la gráfica de la función de  densidad de probabilidad de $X$
 
 ```{r}
-a=0.01
-b=2
-p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=b,scale=(1/a)^(1/b) ,colour = 'blue')+
+p=ggdistribution(dweibull, seq(0, 30, 0.01),shape=a,scale=b ,colour = 'blue')+
        ggtitle("Distribucion Weibull [a=0.01 b=2]")
 p
 ```
