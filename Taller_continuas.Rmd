@@ -706,18 +706,22 @@ p
 # **Resumen**
 
 
-*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
---------------------|----------|----------|----------|-------------|
-beta                | pbeta    | qbeta    | dbeta    | rbeta       |
-Cauchy              | pcauchy  | qcauchy  | dcauchy  | rcauchy     |
-exponencial         | pexp     | qexp     | dexp     | rexp        |
-gamma               | pgamma   | qgamma   | dgamma   | rgamma      |
-lognormal           | plnorm   | qlnorm   | dlnorm   | rlnorm      |
-uniforme            | punif    | qunif    | dunif    | runif       |
-Weibull             | pweibull | qweibull | dweibull | rweibull    |
-t-Student           | pt       | qt       | dt       | rt          |
-Ji-cuadrado         | pchisq   | qchisq   | dchisq   | rchisq      |
-F                   | pf       | qf       | df       | rf          |
+|*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
+|--------------------|----------|----------|----------|-------------|
+|beta                | pbeta    | qbeta    | dbeta    | rbeta       |
+|Cauchy              | pcauchy  | qcauchy  | dcauchy  | rcauchy     |
+|exponencial         | pexp     | qexp     | dexp     | rexp        |
+|gamma               | pgamma   | qgamma   | dgamma   | rgamma      |
+|Gumbel              | pgumbel || qgumbel  | dgumbel  | rgumbel     | 
+|lognormal           | plnorm   | qlnorm   | dlnorm   | rlnorm      |
+|normal              | pnorm    | qnorm    | dnorm    | rnorm       |
+|uniforme            | punif    | qunif    | dunif    | runif       |
+|Weibull             | pweibull | qweibull | dweibull | rweibull    |
+|t-Student           | pt       | qt       | dt       | rt          |
+|Ji-cuadrado         | pchisq   | qchisq   | dchisq   | rchisq      |
+|F                   | pf       | qf       | df       | rf          |
+
+
 
 
 
