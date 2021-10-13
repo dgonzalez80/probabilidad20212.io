@@ -1432,23 +1432,19 @@ X-squared = 3.6, df = 3, p-value = 0.308</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
-     3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 
-     3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 
-     3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4,
-     3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 
-     3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 
-h=hist(nf)</code></pre>
+h=hist(nf, las=1, col=c2, main=&quot; &quot;, xlab=&quot; &quot;, ylab=&quot; &quot;)</code></pre>
 <p><img src="Guia403_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <pre class="r"><code>lim.nf=h$breaks # cortes de los intervalos
 obs.nf=h$counts   # valores observados 
 mx=mean(nf)     # media
-sdx=sd(nf)          # desviacion estandar
+sdx=sd(nf)          # desviación estandar
 Fx.nf=pnorm(lim.nf, mx,sdx)   # probabilidades en caso de que Ho sea verdadera
 prob.nf=Fx.nf[2:7]-Fx.nf[1:6]
 esp.nf=prob.nf+0.002300453     # ajuste para que el sum(esp.nf)=1
- chisq.test(x=obs.nf,p=esp.nf)</code></pre>
+
+chisq.test(x=obs.nf,p=esp.nf)</code></pre>
 <pre><code>Warning in chisq.test(x = obs.nf, p = esp.nf): Chi-squared approximation may be
 incorrect</code></pre>
 <pre><code>
@@ -1806,8 +1802,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 1.8092, runs = 60, n1 = 50, n2 = 50, n = 100, p-value =
-0.07043
+statistic = -0.20102, runs = 50, n1 = 50, n2 = 50, n = 100, p-value =
+0.8407
 alternative hypothesis: nonrandomness</code></pre>
 <p><br/><br/></p>
 </div>
@@ -1825,7 +1821,7 @@ plot(density(x), main=&quot; &quot;, las=1)</code></pre>
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99259, p-value = 0.4087</code></pre>
+W = 0.99503, p-value = 0.7547</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1837,19 +1833,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.93265, p-value = 0.607</code></pre>
+JB = 0.22938, p-value = 0.8935</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.9054, p-value = 0.775</code></pre>
+T = 3.0154, p-value = 0.959</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.16044, p-value = 0.3375</code></pre>
+T = 0.082598, p-value = 0.626</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1858,13 +1854,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.045988, p-value = 0.3807</code></pre>
+D = 0.041913, p-value = 0.5312</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 18.79, p-value = 0.1731</code></pre>
+P = 21.68, p-value = 0.08543</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
