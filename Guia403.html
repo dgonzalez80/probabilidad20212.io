@@ -1928,8 +1928,7 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = -1.0051, runs = 46, n1 = 50, n2 = 50, n = 100, p-value =
-0.3149
+statistic = 0, runs = 51, n1 = 50, n2 = 50, n = 100, p-value = 1
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1949,7 +1948,7 @@ plot(density(x), main=&quot; &quot;, las=1)</code></pre>
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99281, p-value = 0.4365</code></pre>
+W = 0.9869, p-value = 0.06168</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1961,19 +1960,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 1.5545, p-value = 0.4055</code></pre>
+JB = 4.0378, p-value = 0.0855</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 3.2558, p-value = 0.435</code></pre>
+T = 2.3699, p-value = 0.052</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = -0.17399, p-value = 0.2895</code></pre>
+T = 0.1479, p-value = 0.3815</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1982,13 +1981,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.041778, p-value = 0.5365</code></pre>
+D = 0.065462, p-value = 0.0366</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 8.42, p-value = 0.8663</code></pre>
+P = 24.06, p-value = 0.04506</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
