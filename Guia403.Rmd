@@ -103,6 +103,13 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 
 ## **6. Entregables** 
 
+|               |                              | 
+|:--------------|:-----------------------------|
+|Entregable 1   | Mapa mental sobre pruebas de hipótesis|
+|Entregable 2   | Solucionario taller 431 de problemas sobre pruebas de hipótesis| 
+|Fecha          | 31 de octubre  de 2021 |
+|Hora           | 23:59 hora local       |
+
 <br/><br/>
 
 ## **7. Presentaciones**
