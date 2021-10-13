@@ -1038,6 +1038,9 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 <br/><br/>
 
+![](img/pruebas.png)
+<br/><br/>
+
 # **Código R**
 
 |                   |                                                          |
