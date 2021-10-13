@@ -1392,7 +1392,7 @@ prop 1 prop 2
 <table>
 <thead>
 <tr class="header">
-<th align="left">Producto</th>
+<th align="right">Producto</th>
 <th align="center">Parmalat</th>
 <th align="center">Uno A</th>
 <th align="center">Colanta</th>
@@ -1401,11 +1401,25 @@ prop 1 prop 2
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">ventas</td>
+<td align="right">ventas (obs)</td>
 <td align="center">33</td>
 <td align="center">22</td>
 <td align="center">21</td>
 <td align="center">24</td>
+</tr>
+<tr class="even">
+<td align="right">prob.esperada (esp)</td>
+<td align="center">0.25</td>
+<td align="center">0.25</td>
+<td align="center">0.25</td>
+<td align="center">0.25</td>
+</tr>
+<tr class="odd">
+<td align="right">de acuerdo a Ho</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -1465,7 +1479,7 @@ X-squared = 2.8988, df = 5, p-value = 0.7156</code></pre>
 <tbody>
 <tr class="odd">
 <td align="center"><img src="img/ej11.png" /></td>
-<td align="left">Un investigador desea establecer la relación que puede existir entre la calificación obtenida por un producto por parte de sus consumidores y su ubicación de residencia. Con este fin recoge información de 200 de sus clientes:</td>
+<td align="left">Un investigador desea establecer la relación que puede existir entre la calificación obtenida por un producto por parte de sus consumidores y su ubicación de residencia. Con este fin recoge información de 100 de sus clientes:</td>
 </tr>
 </tbody>
 </table>
@@ -1557,7 +1571,8 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </tbody>
 </table>
 <p>Nota: antes de realizar la comparación de medias, se debe realizar una prueba de bondad de ajuste para establecer si los datos siguen una distribución normal o no. En caso de que los datos no tengan distribución normal, entonces se debe realizar una prueba no paramétrica.</p>
-<p>Conclusión : Como T obtenido &gt; T critico ( 35 &gt; 13) no se rechaza Ho, no existe suficiente evidencia para concluir que existen diferencias entre los ritmos respiratorios de los niños</p>
+<p><strong>Conclusión</strong> :</p>
+<p>Como T obtenido &gt; T critico ( 35 &gt; 13) no se rechaza Ho, no existe suficiente evidencia para concluir que existen diferencias entre los ritmos respiratorios de los niños</p>
 <p><br/><br/></p>
 </div>
 </div>
@@ -1583,7 +1598,7 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left">Versión no parametrica de la prueba t para muestras independientes</td>
+<td align="left">Versión no paramétrica de la prueba t para muestras independientes</td>
 </tr>
 </tbody>
 </table>
@@ -1596,11 +1611,7 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 <tbody>
 <tr class="odd">
 <td align="center"><img src="img/ej13.png" /></td>
-<td align="left">Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1) y adolescentes con bulimia (G2). El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías.</td>
-</tr>
-<tr class="even">
-<td align="center">Los datos obtenidos son los siguientes :</td>
-<td align="left"></td>
+<td align="left">Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1) y adolescentes con bulimia (G2). El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías. Los datos obtenidos son los siguientes :</td>
 </tr>
 </tbody>
 </table>
@@ -1794,7 +1805,7 @@ sample estimates:
 </tr>
 </tbody>
 </table>
-<p>Ho : La muestra es aleatoria Ha: La muestra no es aleatoria</p>
+<p>Ho : La muestra es aleatoria <br/> Ha: La muestra no es aleatoria <br/></p>
 <pre class="r"><code>library(&quot;randtests&quot;)
 y=rnorm(100,120,20)
 runs.test(y)</code></pre>
@@ -1802,9 +1813,11 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = -0.20102, runs = 50, n1 = 50, n2 = 50, n = 100, p-value =
-0.8407
+statistic = 1.0051, runs = 56, n1 = 50, n2 = 50, n = 100, p-value =
+0.3149
 alternative hypothesis: nonrandomness</code></pre>
+<p><strong>Conclusión</strong></p>
+<p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
 <p><br/><br/></p>
 </div>
 <div id="de-normalidad" class="section level2">
@@ -1821,7 +1834,7 @@ plot(density(x), main=&quot; &quot;, las=1)</code></pre>
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99503, p-value = 0.7547</code></pre>
+W = 0.99367, p-value = 0.5523</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1833,19 +1846,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.22938, p-value = 0.8935</code></pre>
+JB = 1.9319, p-value = 0.323</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 3.0154, p-value = 0.959</code></pre>
+T = 2.8096, p-value = 0.5795</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.082598, p-value = 0.626</code></pre>
+T = -0.22111, p-value = 0.186</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1854,13 +1867,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.041913, p-value = 0.5312</code></pre>
+D = 0.045883, p-value = 0.3843</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 21.68, p-value = 0.08543</code></pre>
+P = 5.02, p-value = 0.9855</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

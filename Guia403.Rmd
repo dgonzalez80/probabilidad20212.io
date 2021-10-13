@@ -690,10 +690,11 @@ Se rechaza la hipótesis nula, se acepta la hipótesis alterna. Se puede   afirm
 |:--:|:------------------------------------|
 | ![](img/ej9.png) | El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un dia: |
 
-|Producto | Parmalat | Uno A   | Colanta   | Purace | 
-|:--------|:--------:|:-------:|:---------:|:------:|
-|ventas   |33        |22       |21         |24      |  
-
+|Producto            | Parmalat | Uno A   | Colanta   | Purace | 
+|-------------------:|:--------:|:-------:|:---------:|:------:|
+|ventas (obs)        |33        |22       |21         |24      |
+|prob.esperada (esp) | 0.25     |0.25     | 0.25      | 0.25   |
+|de acuerdo a Ho     |          |         |           |        |
 
 **Solución**:
 
@@ -739,7 +740,7 @@ chisq.test(x=obs.nf,p=esp.nf)
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej11.png) |Un investigador desea establecer la relación que puede existir entre la calificación obtenida por un producto por parte de sus consumidores y su ubicación de residencia. Con este fin recoge información de 200 de sus clientes: |
+| ![](img/ej11.png) |Un investigador desea establecer la relación que puede existir entre la calificación obtenida por un producto por parte de sus consumidores y su ubicación de residencia. Con este fin recoge información de 100 de sus clientes: |
 
 |                |Urbano    |Rural   | Total |
 |:--------------|----------:|-------:|------:|
@@ -747,7 +748,7 @@ chisq.test(x=obs.nf,p=esp.nf)
 |Bueno          |20         |11      |31     |
 |Regular        |40         | 8      |18     |
 |Malo           |15         | 6      |21     |
-|Total          |75         |25      |100    |   |
+|Total          |75         |25      |100    |   
 
 <br/><br/>
 
@@ -783,7 +784,9 @@ Nota: antes de realizar la comparación de medias, se debe realizar una prueba d
 
 ```
 
-Conclusión :  Como T obtenido > T critico  ( 35 > 13) no se rechaza Ho, no existe suficiente evidencia  para concluir que existen diferencias entre los ritmos respiratorios de los niños
+**Conclusión** :  
+
+Como T obtenido > T critico  ( 35 > 13) no se rechaza Ho, no existe suficiente evidencia  para concluir que existen diferencias entre los ritmos respiratorios de los niños
 
 
 <br/><br/>
@@ -795,14 +798,13 @@ Conclusión :  Como T obtenido > T critico  ( 35 > 13) no se rechaza Ho, no exis
 |Numero de grupos| 	2                                                          |
 |Variable dependiente  |	En escala al menos ordinal	                         |
 |Objetivo	 | Determinar si la diferencia entre el numero de veces en que el valor de la variable en un grupo es mayor que el otro y el numero de veces en que es menor es estadísticamente significativa |
-|          |Versión no parametrica de la prueba t para muestras independientes |
+|          |Versión no paramétrica de la prueba t para muestras independientes |
 
 <br/><br/>
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej13.png) | Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1)  y adolescentes con bulimia (G2).  El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías.
-     Los datos obtenidos son los siguientes : |
+| ![](img/ej13.png) | Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1)  y adolescentes con bulimia (G2).  El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías. Los datos obtenidos son los siguientes : |
      
 |         |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 |:-------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|     
@@ -877,8 +879,8 @@ cor.test(x,y, method = "spearman",continuity = FALSE,conf.level = 0.95)
 |:--:|:------------------------------------|
 | ![](img/ej16.png) |Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .|
 
-Ho : La muestra es aleatoria
-Ha: La muestra no es aleatoria
+Ho : La muestra es aleatoria <br/>
+Ha: La muestra no es aleatoria <br/>
 
 
 ```{r}
@@ -887,7 +889,9 @@ y=rnorm(100,120,20)
 runs.test(y)
 ```
 
+**Conclusión**
 
+Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.
 
 
 
