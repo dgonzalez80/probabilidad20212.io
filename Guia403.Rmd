@@ -259,7 +259,7 @@ Los parámetros más importante a los que se les realizan pruebas de hipótesis 
 Dependiendo de las condiciones podemos optar por tres diferentes EdeP para la realización de la prueba para una media, aunque tenemos una cuarta posibilidad en el caso de realizarla mediante un método no paramétrico:
 
 
-![](img/pdehmu.png)
+![](img/pdehmu.png) 
 
 
 |    |                                     |
