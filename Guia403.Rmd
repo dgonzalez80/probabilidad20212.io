@@ -107,6 +107,8 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 
 ## **7. Presentaciones**
 
+[Presentación PdeH](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P-PdeH1.pdf)
+
 <br/><br/><br/><br/>
 
 # **Recursos**

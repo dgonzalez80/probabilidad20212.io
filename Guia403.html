@@ -652,6 +652,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
+<p><a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P-PdeH1.pdf">Presentación PdeH</a></p>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
@@ -1922,7 +1923,7 @@ plot(density(x), main=&quot; &quot;, las=1)</code></pre>
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.9912, p-value = 0.2652</code></pre>
+W = 0.99475, p-value = 0.7128</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1934,19 +1935,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 2.5039, p-value = 0.23</code></pre>
+JB = 1.6908, p-value = 0.3915</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 3.4281, p-value = 0.1685</code></pre>
+T = 2.5579, p-value = 0.144</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = -0.17116, p-value = 0.2985</code></pre>
+T = -0.043041, p-value = 0.796</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1955,13 +1956,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.037194, p-value = 0.7167</code></pre>
+D = 0.030402, p-value = 0.9235</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 17.26, p-value = 0.2426</code></pre>
+P = 6.21, p-value = 0.9609</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
