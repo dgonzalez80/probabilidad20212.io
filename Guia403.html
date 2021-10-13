@@ -1170,13 +1170,58 @@ mean of x mean of y
 <div id="grupos-independientes-variables-normales-varianzas-diferentes" class="section level3">
 <h3><strong>grupos independientes, variables normales, varianzas diferentes</strong></h3>
 <table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
 <tbody>
 <tr class="odd">
 <td align="center"><img src="img/ej6.png" /></td>
-<td align="left"></td>
+<td align="left">Supongamos que la empresa del ejemplo 5, desea comparar los resultados obtenidos por el grupo 2 con un tercer grupo externo con el fin de realizar una valoración adicional que le permita una visión más general de los métodos empleados</td>
 </tr>
 </tbody>
 </table>
+<p><br/></p>
+<pre class="r"><code>grupo3=c(8.4, 7.5, 6.9, 6.6, 7.0, 5.5, 5.5, 7.9, 6.9, 7.3, 4.7, 5.5, 6.7, 8.3, 6.0, 6.3, 5.5, 8.4, 7.1, 5.3, 6.9, 5.5, 7.2, 6.5, 6.1, 7.8, 7.4, 6.6, 6.8, 6.0, 6.9, 7.4, 4.9, 6.2, 7.3, 6.2)
+grupo2=c(8.8, 8.5, 8.4, 8.5, 7.6, 8.7, 8.0, 7.9, 8.2, 8.0, 7.8, 8.6, 8.5, 7.9, 8.5, 8.3, 8.4, 8.2, 8.3, 7.9, 8.2, 7.7, 7.8, 7.7, 8.1, 8.0, 8.3, 8.2, 8.1, 8.3, 8.1, 8.8, 7.7, 9.1, 7.6, 8.4, 8.2, 8.3, 8.1, 8.7)
+par(mfrow = c(1, 2))
+boxplot(grupo3, las=1, col=c2, ylim=c(5,10)); grid()
+boxplot(grupo2, las=1, col=c3, ylim=c(5,10)); grid()</code></pre>
+<p><img src="Guia403_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>var.test(grupo3,grupo2)</code></pre>
+<pre><code>
+    F test to compare two variances
+
+data:  grupo3 and grupo2
+F = 7.2974, num df = 35, denom df = 39, p-value = 1.334e-08
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+  3.811031 14.137763
+sample estimates:
+ratio of variances 
+          7.297388 </code></pre>
+<pre class="r"><code>t.test(grupo3, grupo2,
+       alternative =&quot;less&quot;,
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = FALSE,
+       conf.level = 0.95)</code></pre>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  grupo3 and grupo2
+t = -9.2548, df = 43.571, p-value = 3.781e-12
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+      -Inf -1.285811
+sample estimates:
+mean of x mean of y 
+ 6.638889  8.210000 </code></pre>
+<p><br/></p>
+<p>En este caso tenemos una comparación de medias para grupos independientes con varianzas diferentes (como se muestra en el resultado de var.test) .</p>
+<p><br/></p>
+<p><strong>Conclusión</strong></p>
+<p>Analizando el resultado de la prueba t-Student, el valor-p resultante (3.781e-12) indica que se rechaza la hipótesis nula, se acepta la hipótesis alterna como verdadera. Podemos afirmar que existen diferencias significativas entre las dos medias.</p>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="diferencia-de-proporciones" class="section level3">
@@ -1448,7 +1493,7 @@ X-squared = 3.6, df = 3, p-value = 0.308</code></pre>
 <pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 
 h=hist(nf, las=1, col=c2, main=&quot; &quot;, xlab=&quot; &quot;, ylab=&quot; &quot;)</code></pre>
-<p><img src="Guia403_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Guia403_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <pre class="r"><code>lim.nf=h$breaks # cortes de los intervalos
 obs.nf=h$counts   # valores observados 
 mx=mean(nf)     # media
@@ -1812,7 +1857,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 0, runs = 51, n1 = 50, n2 = 50, n = 100, p-value = 1
+statistic = -0.40204, runs = 49, n1 = 50, n2 = 50, n = 100, p-value =
+0.6877
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1826,13 +1872,13 @@ alternative hypothesis: nonrandomness</code></pre>
 <pre class="r"><code># se genera una variable aleatoria normal
 x=rnorm(200,1000,50)
 plot(density(x), main=&quot; &quot;, las=1)</code></pre>
-<p><img src="Guia403_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="Guia403_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <pre class="r"><code>shapiro.test(x)</code></pre>
 <pre><code>
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99726, p-value = 0.9804</code></pre>
+W = 0.99516, p-value = 0.7725</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1844,19 +1890,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.035918, p-value = 0.984</code></pre>
+JB = 1.1848, p-value = 0.512</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.9436, p-value = 0.862</code></pre>
+T = 2.6232, p-value = 0.2555</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = -0.016834, p-value = 0.921</code></pre>
+T = 0.0070795, p-value = 0.9645</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1865,13 +1911,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.027367, p-value = 0.9721</code></pre>
+D = 0.030974, p-value = 0.9111</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 10.29, p-value = 0.7407</code></pre>
+P = 12.84, p-value = 0.5392</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
