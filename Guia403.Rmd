@@ -25,7 +25,7 @@ c5="#BC2B6A" # MORADO
 
 ```
 
-<span style="color:#E77C00">**En construcción**</span>
+
 
 # **Guía de aprendizaje 4.3**
 
@@ -989,10 +989,11 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 <br/><br/>
 
-# **Código R**
+#**Código R**
+
 |                   |                                                          |
 |:------------------|:---------------------------------------------------------|
-![](img/Nota_R.png) |                                                          |
+![](img/Nota_R.png){width=60%} |                                                          |
 |                   |**Pruebas paramétricas**                                  |
 |Entrada de datos   |                                                          |
 |                   |`x1=c(7, 13, 6, 5, 5, 10, 8, 6, 7)`                       |
@@ -1047,6 +1048,8 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 
 
+# <span style="color:#E77C00">**Video**</span>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/phUkdjdj95c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
