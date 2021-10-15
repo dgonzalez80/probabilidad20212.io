@@ -1068,7 +1068,7 @@ sample estimates:
 p=ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = &#39;blue&#39;)
 p=ggdistribution(dchisq, seq(0, pRdeR[1], 0.1), df = 9, colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)
 p=ggdistribution(dchisq, seq(pRdeR[2], 30, 0.1), df = 9, colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
-       ggtitle(&quot;Región de rechazo&quot;)
+       ggtitle(&quot;Región de rechazo:  (0; 2.70) (19.0, Inf) &quot;)
 p</code></pre>
 <p><img src="Guia403_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre class="r"><code>pRdeR</code></pre>
@@ -1959,8 +1959,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 0.60305, runs = 54, n1 = 50, n2 = 50, n = 100, p-value =
-0.5465
+statistic = 0.40204, runs = 53, n1 = 50, n2 = 50, n = 100, p-value =
+0.6877
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1980,7 +1980,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.98634, p-value = 0.05074</code></pre>
+W = 0.98966, p-value = 0.1594</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1992,19 +1992,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 3.2118, p-value = 0.1575</code></pre>
+JB = 0.042836, p-value = 0.9725</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 3.1853, p-value = 0.583</code></pre>
+T = 3.0417, p-value = 0.902</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.29626, p-value = 0.0935</code></pre>
+T = -0.029168, p-value = 0.8625</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -2013,13 +2013,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.060021, p-value = 0.0766</code></pre>
+D = 0.036653, p-value = 0.7372</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 18.28, p-value = 0.1943</code></pre>
+P = 9.95, p-value = 0.7658</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

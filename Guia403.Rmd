@@ -447,7 +447,7 @@ pRdeR=qchisq(c(0.025,0.975),9)
 p=ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = 'blue')
 p=ggdistribution(dchisq, seq(0, pRdeR[1], 0.1), df = 9, colour = 'blue', fill="blue", p=p)
 p=ggdistribution(dchisq, seq(pRdeR[2], 30, 0.1), df = 9, colour = 'blue', fill="blue", p=p)+
-       ggtitle("Región de rechazo")
+       ggtitle("Región de rechazo:  (0; 2.70) (19.0, Inf) ")
 p
 pRdeR
 ```
