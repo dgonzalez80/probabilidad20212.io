@@ -123,6 +123,11 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 
 # **Recursos**
 
+![](img/decision.png)
+
+
+
+
 <br/><br/>
 
 ## **Introducción**
@@ -200,11 +205,10 @@ Cuando se decide ya sea en favor o en contra de una determinada prueba de hipót
 |:------------------|:--------------------------------|:--------------------------------|
 | **Decisión sobre la hipótesis**|                    |                                 |
 |Rechazar $Ho$      | **Error tipo I**                | **Decisión correcta**           |
-|                   |   ![](img/donar.jpg)            |                                 |
 |                   | P(Error tipo I) = $\alpha$      | $1-\beta$ : Potencia            |
 |No rechazar $Ho$   | **Decisión correcta**           | **Error tipo II**               |
 |                   |                                 | P(Eror tipo II) =$\beta$        |
-|                   |                                 |  ![](img/dopin.jpg)             |
+|                   |                                 |                                 |
 
 Existen dos situaciones en las que se comenten errores después de tomar una decisión:
 
@@ -212,7 +216,11 @@ Existen dos situaciones en las que se comenten errores después de tomar una dec
 
 **Error tipo I**: Cuando se rechazamos una hipótesis nula que en realidad es verdadera. Tomando como simil la situación donde un médico desea determinar si un paciente está sano o enfermo ($Ho$: SANO vs $Ha$: ENFERMO), es posible que concluya que el paciente está enfermo (rechace $Ho$) cuando en verdad esta persona esta sana. En términos de probabilidad este error se debe de representar como:
 $$P(\text{Rechazar } Ho | Ho \text{ es verdadera})= \alpha$$
-Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiante que despues de realizar una donación de sangre fue requerida por la clinica benefactora, pues el examen que le habian practicado a la sangre donada, presentaba signos de estar infectada por epatitis c. Esto prendió las alarmas en la casa y fue llevada por la familia a que se le realizaran otros examenes para confirmar el diagnostico inicial. Las segundas pruebas evidenciaron que se trataba de un error. Este caso constituye un caso de falso positivo (Se diagnostica como enferan, cuando en verdad esta sana) 
+
+
+|                   |  **Error tipo I**    | 
+|:------------------|:--------------------------------|
+|![](img/donar.jpg) |Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiante que después de realizar una donación de sangre fue requerida por la clinica benefactora, pues el examen que le habían practicado a la sangre donada, presentaba signos de estar infectada por epatitis c. Esto prendió las alarmas en la casa y fue llevada por la familia a que se le realizaran otros exámenes para confirmar el diagnostico inicial. Las segundas pruebas evidenciaron que se trataba de un error. Este caso constituye un caso de falso positivo (Se diagnostica como enferan, cuando en verdad esta sana) |
 
 
 <br/><br/>
@@ -220,7 +228,11 @@ Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiant
 **Error Tipo II**: Cuando no se rechaza una hipótesis nula que en realidad es falsa. Utilizando el ejemplo del médico, diríamos que cuando el medico indica que el paciente esta sano, cuando esta realmente enfermo, incurre en un error frecuente cuando algunos pacientes son asintomáticos y aunque tienen la enfermedad, sus exámenes médicos salen negativos. En este caso la probabilidad se representa como:
 
 $$P(\text{No rechazar} Ho | Ho \text{ es falsa}) $$
-Para ilustrar el caso del error tipo II, recurrimos a lo acontecido en el Tour de Francia, donde el ciclista estadunidence Lance Armstrong gano esta competencia seis veces de manera consecutiva y aunque fue acusado de dopin, no se le pudo comprobar. Fue solo en el 2012 cuando el mismo admitió haber usado EPO. Podemos decir que durante su vida deportiva los examenes practivados dieron negativos, estando el dopado. Este caso se cataloga como falso negativo. 
+
+
+|                   |  **Error tipo II**              | 
+|:------------------|:--------------------------------|
+|![](img/dopin.jpg) |Para ilustrar el caso del error tipo II, recurrimos a lo acontecido en el Tour de Francia, donde el ciclista estadunidence Lance Armstrong gano esta competencia seis veces de manera consecutiva y aunque fue acusado de dopin, no se le pudo comprobar. Fue solo en el 2012 cuando el mismo admitió haber usado EPO. Podemos decir que durante su vida deportiva los exámenes practivados dieron negativos, estando el dopado. Este caso se cataloga como falso negativo. |
 
 <br/><br/>
 
@@ -333,7 +345,7 @@ qt(c(0.025,0.975),99)
 
 <br/>
 
-```{r}
+```{r, fig.width=7, fig.height=3}
 p=ggdistribution(dt, seq(-3, +3, 0.1), df = 99, colour = "blue")
 p=ggdistribution(dt, seq(-3, qt(0.025,99), 0.1), df = 99, colour = 'blue', fill="red", p=p)   
 p=ggdistribution(dt, seq(qt(0.975,99),+3, 0.1), df = 99, colour = 'blue', fill="red", p=p)+ 
@@ -434,7 +446,7 @@ Como el valor-p (p-value = 0.01447) es menor que el nivel de significancia ($\al
 
 <br/>
 
-```{r}
+```{r, fig.width=7, fig.height=3}
 pRdeR=qchisq(c(0.025,0.975),9)
 p=ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = 'blue')
 p=ggdistribution(dchisq, seq(0, pRdeR[1], 0.1), df = 9, colour = 'blue', fill="blue", p=p)
@@ -957,7 +969,7 @@ Existen muchas pruebas que nos ayudan en este propósito, a continuación relaci
 ```{r}
 # se genera una variable aleatoria normal
 x=rnorm(200,1000,50)
-plot(density(x), main=" ", las=1)
+plot(density(x), main=" ", las=1, xlab = " ", ylab=" ", col=c3, lwd=4)
 ```
 
 ```{r}
@@ -1045,7 +1057,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 |                   |                                                          |
 |:------------------|:---------------------------------------------------------|
-![](img/Nota_R.png){width=60%} |                                                          |
+![](img/Nota_R.png){width=50%} |                                                          |
 |                   |**Pruebas paramétricas**                                  |
 |Entrada de datos   |                                                          |
 |                   |`x1=c(7, 13, 6, 5, 5, 10, 8, 6, 7)`                       |
