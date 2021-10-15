@@ -684,8 +684,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="recursos-1" class="section level1">
 <h1><strong>Recursos</strong></h1>
-<p><img src="img/decision.png" /></p>
-<p><br/><br/></p>
+<p><img src="img/decision.png" /> <br/><br/></p>
 <div id="introducción-1" class="section level2">
 <h2><strong>Introducción</strong></h2>
 <p><img src="img/pruebas1.png" /></p>
@@ -794,7 +793,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <tbody>
 <tr class="odd">
 <td align="left"><img src="img/donar.jpg" /></td>
-<td align="left">Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiante que después de realizar una donación de sangre fue requerida por la clinica benefactora, pues el examen que le habían practicado a la sangre donada, presentaba signos de estar infectada por epatitis c. Esto prendió las alarmas en la casa y fue llevada por la familia a que se le realizaran otros exámenes para confirmar el diagnostico inicial. Las segundas pruebas evidenciaron que se trataba de un error. Este caso constituye un caso de falso positivo (Se diagnostica como enferan, cuando en verdad esta sana)</td>
+<td align="left">Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiante que después de realizar una donación de sangre fue requerida por la clinica benefactora, pues el examen que le habían practicado a la sangre donada, presentaba signos de estar infectada por hepatitis c. Esto prendió las alarmas en la casa y fue llevada por la familia a que se le realizaran otros exámenes para confirmar el diagnostico inicial. Las segundas pruebas evidenciaron que se trataba de un error. Este caso constituye un caso de falso positivo (Se diagnostica como enferan, cuando en verdad esta sana)</td>
 </tr>
 </tbody>
 </table>
@@ -1960,8 +1959,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = -1.4071, runs = 44, n1 = 50, n2 = 50, n = 100, p-value =
-0.1594
+statistic = 0.60305, runs = 54, n1 = 50, n2 = 50, n = 100, p-value =
+0.5465
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1981,7 +1980,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99706, p-value = 0.9712</code></pre>
+W = 0.98634, p-value = 0.05074</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1993,19 +1992,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.091806, p-value = 0.9515</code></pre>
+JB = 3.2118, p-value = 0.1575</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 3.0787, p-value = 0.821</code></pre>
+T = 3.1853, p-value = 0.583</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.034718, p-value = 0.8315</code></pre>
+T = 0.29626, p-value = 0.0935</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -2014,13 +2013,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.026084, p-value = 0.9844</code></pre>
+D = 0.060021, p-value = 0.0766</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 5.87, p-value = 0.9697</code></pre>
+P = 18.28, p-value = 0.1943</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

@@ -124,10 +124,6 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 # **Recursos**
 
 ![](img/decision.png)
-
-
-
-
 <br/><br/>
 
 ## **Introducción**
@@ -220,7 +216,7 @@ $$P(\text{Rechazar } Ho | Ho \text{ es verdadera})= \alpha$$
 
 |                   |  **Error tipo I**    | 
 |:------------------|:--------------------------------|
-|![](img/donar.jpg) |Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiante que después de realizar una donación de sangre fue requerida por la clinica benefactora, pues el examen que le habían practicado a la sangre donada, presentaba signos de estar infectada por epatitis c. Esto prendió las alarmas en la casa y fue llevada por la familia a que se le realizaran otros exámenes para confirmar el diagnostico inicial. Las segundas pruebas evidenciaron que se trataba de un error. Este caso constituye un caso de falso positivo (Se diagnostica como enferan, cuando en verdad esta sana) |
+|![](img/donar.jpg) |Para ilustrar el error tipo I, podeos acudir aun evento ocurrido a una estudiante que después de realizar una donación de sangre fue requerida por la clinica benefactora, pues el examen que le habían practicado a la sangre donada, presentaba signos de estar infectada por hepatitis c. Esto prendió las alarmas en la casa y fue llevada por la familia a que se le realizaran otros exámenes para confirmar el diagnostico inicial. Las segundas pruebas evidenciaron que se trataba de un error. Este caso constituye un caso de falso positivo (Se diagnostica como enferan, cuando en verdad esta sana) |
 
 
 <br/><br/>
