@@ -560,19 +560,29 @@ Your browser does not support the video tag.</video>
 </div>
 <div id="introducción" class="section level2">
 <h2><strong>1. Introducción</strong></h2>
+<p>Una de las aplicaciones mas importantes de la estadística corresponde a al modelo de regresión lineal. Esta técnica permite medir la relación que pueda existir entre una variable llamada variable respuesta y un conjunto de variables independientes. Casos como la estimación de las ventas a partir de los gastos en publicidad, el consumo de un producto a partir de su precio, el precio de una casa a partir de sus características, la relación entre la resistencia a la compresión de un determinado concreto y la cantidad de uno de sus componentes, entre otros</p>
+<p>El siguiente documento contiene los pasos que deberá realizar para alcanzar el objetivo planteado</p>
 <p><br/><br/></p>
 </div>
 <div id="objetivos-de-la-unidad" class="section level2">
 <h2><strong>2. Objetivos de la unidad</strong></h2>
+<p>Al finalizar la unidad el estudiante estará en capacidad de PROPONER soluciones mediante la CONSTRUCCIÓN, VALIDACIÓN DE SUPUESTOS e INTERPRETACIÓN de resultados obtenidos de modelos de regresión en situaciones reales que permitan la toma de decisiones informadas y la generación de políticas o conclusiones.</p>
 <p><br/><br/></p>
 </div>
 <div id="duración" class="section level2">
 <h2><strong>3. Duración</strong></h2>
+<p>La presente unidad será desarrollada durante la comprendida entre 5 y el 11 de noviembre.<br />
+Ademas del material suministrado contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con foro de actividades académicas. Los entegables para esta unidad podrán enviarse a través de la plataforma Blackboard hasta el 11 de noviembre.</p>
+<p>Para alcanzar los objetivos planteados se propone realizar las siguientes actividades</p>
 <p><br/><br/></p>
 </div>
 <div id="cronograma-de-trabajo" class="section level2">
 <h2><strong>4. Cronograma de trabajo</strong></h2>
 <table>
+<colgroup>
+<col width="33%" />
+<col width="66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Actividad</th>
@@ -580,20 +590,456 @@ Your browser does not support the video tag.</video>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td align="left">Actividad 511</td>
+<td align="left">Resuelva los problemas presentados en el siguiente taller . La solución deberá ser entregada mediante formato pdf en link abierto para tal fin en Brightspace</td>
+</tr>
+<tr class="even">
+<td align="left">Trabajo individual</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Fecha</td>
+<td align="left">11 de Noviembre de 2020</td>
+</tr>
+<tr class="even">
+<td align="left">Hora</td>
+<td align="left">23:59 hora local</td>
+</tr>
 </tbody>
 </table>
 <p><br/><br/></p>
 </div>
 <div id="criterios-de-evaluación" class="section level2">
 <h2><strong>5. Criterios de evaluación</strong></h2>
+<ul>
+<li>Plantea el modelo correcto para dar solución a la situación planteada + Realiza los procesos de estimación y validación de los supuestos correspondiente al modelo de regresión</li>
+<li>Realiza de manera correcta la interpretación de los resultados obtenidos y plantea recomendaciones</li>
+</ul>
 <p><br/><br/></p>
 </div>
 <div id="entregables" class="section level2">
 <h2><strong>6. Entregables</strong></h2>
+<p>Actividad511.pdf Solución problemas planteados en el taller 511 en formato pdf</p>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
+</div>
+<div id="recursos" class="section level1">
+<h1><strong>Recursos</strong></h1>
+<div id="modelo-de-regresión-lineal" class="section level2">
+<h2><strong>Modelo de Regresión lineal</strong></h2>
+<p>En esta unidad estudiaremos la relación que puede existir entre dos variables o una variable y un conjunto de variables, mediante la construcción de un modelo lineal que represente dicha relación. Se partirá de un modelo general (modelo de Regresión Lineal Múltiple) y se tratará como caso particular el modelo de dos variables también llamado Modelo de Regresión Lineal Simple MRLS.</p>
+<p>En unidades anteriores se estudiaron relaciones entre dos variables aleatorias, las cuales se puede medir a través del coeficiente de correlación (<span class="math inline">\(\rho\)</span>), el cual puede presentar valores desde -1 hasta 1 como se representa en las siguientes gráficas :</p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-2.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-3.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-4.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+<p>La primera gráfica y la última gráfica representan relaciones perfectas entre dos variables, que tan solo se presentan cuando la relación es constante <span class="math inline">\(Y = a + bX\)</span> (ej. en una igualdad matemática como distancia = velocidad x tiempo). No es el caso que se presenta al relacionar variables estadisticas. En este segundo caso a medida que el coeficiente de correlación aumenta la nube de puntos cambia, permitiendo ver una gama de posibilidades que pueden ser interpretadas dependiendo el signo como relaciones negativas o positivas (que se evidencian en la pendiente <span class="math inline">\(\beta_{0}\)</span>) del modelo y por la magnitud desde relaciones muy fuertes a relaciones muy débiles (cerca de cero)</p>
+<p>El modelo de regresión poblacional está determinado por:</p>
+<p><span class="math display">\[\begin{equation*}
+    Y=\beta_{0}+\beta_{1}X_{1}+\beta_{2}X_{2}+ \dots + \beta_{k}X_{k} +u
+    \end{equation*}\]</span></p>
+<p>Donde: + <span class="math inline">\(Y\)</span>,representa una la variable dependiente, también llamada variable respuesta o variable predicha. + <span class="math inline">\(X_{1},X_{2},\dots, X_{k}\)</span>, corresponden a un conjunto de variables independientes o predictoras. + <span class="math inline">\(\beta_{0},\beta_{1},\beta_{2},\dots, \beta{k}\)</span> son un conjunto de constantes o parámetros del modelo (constantes) que deben ser estimadas a partir del conjunto de valores obtenidos en una muestra. + <span class="math inline">\(u\)</span> corresponde a una variable aleatoria no observable que representa todas las variables que no se incluyen en el modelo y corresponde a un componente aleatorio producto del azar de la naturaleza. Sin la presencia de esta variable en la estructura de la relación, el modelo formulado corresponderá a una relación matemática.</p>
+<p>Un caso particular del modelo, ocurre cuando solo tiene una variable independiente, en este caso el modelo toma el nombre de Modelo de Regresión Lineal Simple con la siguiente estructura:</p>
+<p><span class="math display">\[Y=\beta_{0} + \beta_{1} X + u\]</span> En este caso es posible realzar una representación gráfica del modelo mediante una linea recta donde <span class="math inline">\(\beta_{0}\)</span> corresponde al intercepto y <span class="math inline">\(\beta_{1}\)</span> a la pendiente.</p>
+<p>A partir de la obtención de una muestra de tamaño <span class="math inline">\(n\)</span> se puede obtener el modelo estimado, cuya ecuación esta dada por: <span class="math display">\[\begin{equation*}
+    \widehat{E[y|X]}=b_{0}+b_{1}x_{1}+b_{2}x_{2}+\dots+b_{k}x_{k}
+    \end{equation*}\]</span></p>
+<p>Donde : <span class="math inline">\([b_{0}, b_{1}, \dots, b_{k}]\)</span> representa el vector de estimadores de los coeficientes del modelo.</p>
+<p>Como cada vez que se toma una muestra, por razones del azar los objetos medidos son diferentes, es claro que al realizar un procedimiento de estimación los valores de estos son diferentes, ratificando esto que <span class="math inline">\(\widehat{\beta}_{0},\widehat{\beta}_{1},\widehat{\beta}_{2},\dots, \widehat{\beta}_{k}\)</span> son variables aleatorias</p>
+</div>
+<div id="mrl-enfoque-matricial" class="section level2">
+<h2><strong>MRL-enfoque matricial</strong></h2>
+<p>Para representar el modelo de manera matricial, se puede partir de la siguiente ecuación: <span class="math display">\[\begin{equation*}
+    Y_{i}=\beta_{0}+\beta_{1}X_{1i}+\beta_{2}X_{2i}+ \dots + \beta_{k}X_{ki} +u_{i} \hspace{.3cm} i=1,2,\dots,n
+    \end{equation*}\]</span></p>
+<p>Los valores <span class="math inline">\(\beta_{0},\beta_{1},\dots,\beta_{k}\)</span> deben cumplir las siguientes igualdades:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+        y_{1}&amp;=&amp;\beta_{0}+\beta_{1}x_{11}+\beta_{2}x_{21}+\dots+\beta_{k}x_{k1}+u_{1} \\
+        y_{2}&amp;=&amp;\beta_{0}+\beta_{1}x_{12}+\beta_{2}x_{22}+\dots+\beta_{k}x_{k2}+u_{2} \\
+        y_{3}&amp;=&amp;\beta_{0}+\beta_{1}x_{13}+\beta_{2}x_{23}+\dots+\beta_{k}x_{k3}+u_{3} \\
+        \vdots &amp;&amp; \vdots \hspace{1cm} \vdots \hspace{1cm} \vdots \\
+        y_{n}&amp;=&amp;\beta_{0}+\beta_{1}x_{1n}+\beta_{2}x_{2n}+\dots+\beta_{k}x_{kn}+u_{n} \\
+    \end{eqnarray*}\]</span></p>
+<p>En forma matricial las podemos escribir</p>
+<p><span class="math display">\[y = X \beta + u\]</span> Donde:</p>
+<p><span class="math display">\[y = [y_{1},y_{2}, \dots, y_{n}]^{T}\]</span> <span class="math display">\[\beta =[\beta_{0},\beta_{1},\dots, \beta_{k}]^{T}\]</span></p>
+<p><span class="math display">\[X= \begin{bmatrix}
+    {1}   &amp;{x_{11}}&amp;{x_{21}}&amp; \dots &amp; x_{k1}  \\
+    {1}   &amp;{x_{12}}&amp;{x_{22}}&amp; \dots &amp; x_{k2}  \\
+    {1}   &amp;{x_{13}}&amp;{x_{23}}&amp; \dots &amp; x_{k3}  \\
+    \dots &amp; \dots  &amp;\dots   &amp; \dots &amp; \dots \\
+    {1}   &amp;{x_{1n}}&amp;{x_{2n}}&amp; \dots &amp; x_{kn} \\
+    \end{bmatrix}\]</span></p>
+<p><span class="math display">\[u =[u_{1},u_{2},\dots,u_{n}]^{T}\]</span></p>
+</div>
+<div id="estimación-de-los-coeficientes-del-modelo" class="section level2">
+<h2><strong>Estimación de los coeficientes del modelo</strong></h2>
+<p>El método Mínimos Cuadrados Ordinarios (<strong>MCO</strong>) se basa en la minimizar la suma de cuadrados de los errores (<span class="math inline">\(u\)</span>), a través de la información contenida en una muestra</p>
+<p>De la ecuación del modelo estimado <span class="math inline">\(\widehat{y} = X \widehat{\beta} + \widehat{u}\)</span> se pueden despejar los residuales . Como los errores son variables no observables, el método hace uso de sus respectivos estimadores llamados residuales:</p>
+<p><span class="math display">\[\begin{equation*}
+    \widehat{u} = \widehat{y} - X\widehat{\beta}
+    \end{equation*}\]</span></p>
+<p>Ahora, la suma de cuadrado de los residuales se puede obtener al multiplicar el vector <span class="math inline">\(\widehat{u}^{T} \widehat{u}\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+    SCRes=\sum_{i=1}^{n} \widehat{u}^{2}_{i} = \widehat{u}^{T} \widehat{u}=
+    \begin{bmatrix}{\widehat{u}_{1}}\\
+    {\widehat{u}_{2}}\\
+    {\vdots}\\
+    {\widehat{u}_{n}}\\
+    \end{bmatrix}[\widehat{u}_{1},\widehat{u}_{2},\dots,\widehat{u}_{n}] 
+    \end{equation*}\]</span></p>
+<pre><code>$$\begin{eqnarray*}
+    SCRes&amp;=&amp;[\widehat{y}-Xb]^{T}[\widehat{y}-Xb]\\
+    &amp;=&amp; y^{T}y -y^{T}Xb-b^{T}X^{T}y+b^{T}X^{T}Xb \\
+    &amp;=&amp; y^{T}y -2bX^{T}y+b^{T}X^{T}Xb \\ 
+\end{eqnarray*}$$
+
+Para encontrar los valores óptimos de los coeficientes, se debe derivar parcialmente con respecto al vector $\beta$ e igualarlo a cero
+
+$$\begin{equation*}
+\dfrac{\partial{SCRes}}{\partial{\beta}}= -2X^{T}+ 2X^{T}Xb=0
+\end{equation*}$$
+
+De la ecuación anterior se despeja $b$ ($\widehat{\beta}$)
+
+$$\begin{eqnarray*}
+    2X^{T} &amp;=&amp; 2X^{T}Xb\\
+    (X^{T}X)^{-1}X^{T}y &amp;=&amp;(X^{T}X)^{-1}X^{T}X b\\
+    (X^{T}X)^{-1}X^{T}y&amp;=&amp; b
+\end{eqnarray*}$$
+
+El estimador MCO de los coeficientes $b$ es:</code></pre>
+<p><span class="math display">\[\widehat{\beta}_{_{MCO}}= b = (X^{T}X)^{-1}X^{T}y\]</span></p>
+<p>Es claro que para poder realizar este proceso es condición necesaria que la matriz <span class="math inline">\((X^{T}X)\)</span> sea invertible. En caso contrario los estimadores MCO no se pueden hallar. La versión del método MCO a partir de sumatorias se encuentra desarrollada en el texto guía (Walpole-2012 pp.395)</p>
+<p>Para que la estimación por MCO sea valida y utilizada, se deben verificar que se cumplan los supuestos sobre los errores <span class="math inline">\(u\)</span> y las pruebas de significancia global y unitarias</p>
+<ul>
+<li><span class="math inline">\(S_1\)</span>: El valor esperado de <span class="math inline">\(u\)</span> es cero.<span class="math inline">\(E[u]=0\)</span> <span class="math inline">\(E[u]=0\)</span></li>
+<li><span class="math inline">\(S_2\)</span>: Los errores tienen varianza constante. <span class="math inline">\(V[u_{i}]=\sigma^{2}\)</span></li>
+<li><span class="math inline">\(S_3\)</span>: <span class="math inline">\(u\)</span> es una variable con distribución normal. <span class="math inline">\(u \sim\)</span> <span class="math inline">\(Normal\)</span></li>
+<li><span class="math inline">\(S_4\)</span>: Los errores son independientes unos de otros <span class="math inline">\(E[u_i,u_j]\)</span> que se entiende como la no autocorrelacion de los errores</li>
+<li><span class="math inline">\(S_5\)</span>: Para el caso de regresión lineal múltiple se incluye el supuesto de no multicolinealidad. En caso de que se presenta multicolinealidad entre dos variables independientes da como resultado la imposibilidad de poder realizar la estimaciones mediante MCO</li>
+</ul>
+<p>Ejemplo 1: Se quiere determinar si existe relación entre los ingresos que recibe una familia y el valor de su consumo. Con en este propósito se toma información de 12 hogares</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center">x</td>
+<td align="right">24.3</td>
+<td align="right">12.5</td>
+<td align="right">31.2</td>
+<td align="right">28.0</td>
+<td align="right">35.1</td>
+<td align="right">10.5</td>
+<td align="right">23.2</td>
+<td align="right">10.0</td>
+<td align="right">8.5</td>
+<td align="right">15.9</td>
+<td align="right">14.7</td>
+<td align="right">15.0</td>
+</tr>
+<tr class="even">
+<td align="center">y</td>
+<td align="right">16.2</td>
+<td align="right">8.5</td>
+<td align="right">15.0</td>
+<td align="right">17.0</td>
+<td align="right">24.2</td>
+<td align="right">11.2</td>
+<td align="right">15.0</td>
+<td align="right">7.1</td>
+<td align="right">3.5</td>
+<td align="right">11.5</td>
+<td align="right">10.7</td>
+<td align="right">9.2</td>
+</tr>
+</tbody>
+</table>
+<p>El primer paso corresponde a construir una gráfica de dispersión, con el fin de poder visualizar el tipo de relación que se puede percibir entre las dos variables</p>
+<pre class="r"><code>x=c(24.3,12.5,31.2,28,35.1,10.5,23.2,10,8.5,15.9,14.7,15)
+y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
+
+plot(x,y, xlab = &quot;Ingresos&quot;, ylab = &quot;Consumo&quot;,
+pch=21, bg=&quot;blue&quot;, xlim=c(0,35), ylim=c(0,25), las=1)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>En la gráfica se puede observar una nube de puntos que sugieren una relación positiva entre las dos variables. El objetivo entonces es determinar una ecuación que permita estimar esta relación que en este caso se representa por una linea recta (<span class="math inline">\(y=a+bx\)</span>).</p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Esta recta representa la relación lineal entre las dos variables, en este caso tiene una pendiente positiva que mide la magnitud del cambio en la variable dependiente ante un cambio unitario en la variable independiente.</p>
+<p>Para encontrar la los valores estimados del intercepto y de la pendiente, utilizaremos el método de mínimos cuadrados ordinario (MCO)</p>
+<p>De acuerdo con estos resultados obtenidos en R, muestra que la ecuación estimada es :</p>
+<p><span class="math display">\[\widehat{y} = 1.77788 + 0.55817\]</span></p>
+Para validar estos resultados, para poder ser utilizados se debe:
+<p>\</p>
+<p>Los supuestos a validar se deben verificar sobre los residuales <span class="math inline">\(\widehat{u_{i}}\)</span> que corresponde a la diferencia entre <span class="math inline">\(\widehat{y_{i}}\)</span> y <span class="math inline">\(y\)</span> y que son las realizaciones de los errores.</p>
+<p>\</p>
+<p>\</p>
+\
+\
+<p>\ Después de verificar el cumplimiento de los supuestos sobre los errores se pasa a analizar los resultados de la estimación.</p>
+<p>Las pruebas a realizar corresponden a la validación si los resultados obtenidos sobre el intercepto y la pendiente son significativamente diferentes de cero:\</p>
+&amp;
+<p>\ \end{tabular}</p>
+<p>\</p>
+<p>ANOVA corresponde a una prueba de hipotesis conjunta sobre todos las pendienes del modelo de manera conjunta:</p>
+<p><span class="math inline">\(Ho: \beta_{1} = \beta_{2} = ....= \beta_{k} = 0\)</span>\ <span class="math inline">\(Ha: \beta_{j}\)</span> es diferente de cero\</p>
+<p>Esta prueba se fundamenta en la comparacion de dos varianza : La varianza relacionada con el modelo (<span class="math inline">\(\sigma^{2}\)</span>) y la varianza relacionada con los errores (<span class="math inline">\(\sigma^{2}_{u}\)</span>).</p>
+<p>Ahora podemos realizar la interpretación de los resultados</p>
+<p><span class="math display">\[\widehat{y} = 1.77788 + 0.55817 x\]</span></p>
+<p><span class="math inline">\(\widehat{\beta_{0}} = 1.7788\)</span>, se interpreta como la parte del consumo que no depende de los ingresos al cual se le llama consumo autónomo.\</p>
+<p><span class="math inline">\(\widehat{\beta_{1}} = 0.55817\)</span> . Correspondiente a la estimación de la pendiente, indica que por cada aumento unitario de los ingresos, el consumo se aumenta en 0.55817 unidades.</p>
+<p>Otro indicador importante en el análisis corresponde al coeficiente de determinación (<span class="math inline">\(R^{2}\)</span>), que en este caso tiene un valor de <span class="math inline">\(0.8447\)</span> e indica que el modelo explica un <span class="math inline">\(84.47\)</span>% de la variacion o del comportamiento de la variable <span class="math inline">\(Y\)</span></p>
+<div style="page-break-after: always;"></div>
+<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%<br />
+ Un fabricante de equipos de aire acondicionado tiene problemas en la etapa de montaje, debido principalmente a la falta de una biela, pues debido a su peso no satisface las especificaciones establecidas para el producto por sobrepeso. Para reducir este costo, el fabricante estima que estudiando la relación entre el peso de la barra en bruto y su peso final, es probable encontrar una relación entre ellas y de esta manera reducir el problema mediante la detección de elementos que probablemente no cumplan con las condiciones exigidas para el producto. \</p>
+<p>En el estudio se midieron un total de 25 (x, y) pares de barras, siendo <span class="math inline">\(X\)</span> el peso de la pieza colada en espera de ser procesada (materia prima) y <span class="math inline">\(Y\)</span> el peso de una biela terminada que forma parte del producto final. Se requiere estimar un modelo que permita predecir el valores del peso futuro de la biela terminada como función del peso bruto del bloque de metal. \</p>
+<p>Los datos recogidos se muestran a continuación: \</p>
+<pre><code>Antes de realizar la estimación debemos visualizar mediante un diagrama de dispersión la relación lineal entre las variables. \\
+
+\begin{center}
+    \begin{tabular}{ccc|ccc}
+        \hline
+        barra  &amp; peso   &amp; peso &amp; barra  &amp; peso   &amp; peso \\
+        Numero &amp; bruto  &amp; final&amp; Numero &amp; bruto  &amp; final \\ 
+        \hline
+        1      &amp; 2.745  &amp; 2.080 &amp; 14     &amp; 2.635  &amp; 1.990 \\
+        2      &amp; 2.700  &amp; 2.045 &amp; 15     &amp; 2.630  &amp; 1.990 \\
+        3      &amp; 2.690  &amp; 2.050 &amp; 16     &amp; 2.625  &amp;1.995 \\
+        4      &amp; 2.680  &amp; 2.005 &amp; 17     &amp; 2.625  &amp;1.985 \\ 
+        5      &amp; 2.675  &amp; 2.035 &amp; 18     &amp; 2.620  &amp;1.970 \\
+        6      &amp; 2.670  &amp; 2.035 &amp; 19     &amp; 2.615  &amp;1.985 \\
+        7      &amp; 2.665  &amp; 2.020 &amp; 20     &amp; 2.615  &amp;1.990 \\
+        8      &amp; 2.660  &amp; 2.005 &amp; 21     &amp; 2.615  &amp;1.995 \\
+        9      &amp; 2.655  &amp; 2.010 &amp; 22     &amp; 2.615  &amp; 1.990 \\
+        10     &amp; 2.655  &amp; 2.000 &amp; 23     &amp; 2.590  &amp;1.975 \\
+        11     &amp; 2.650  &amp; 2.000 &amp; 24     &amp; 2.590  &amp;1.995 \\
+        12     &amp; 2.650  &amp; 2.005 &amp; 25     &amp; 2.565  &amp;1.955 \\
+        13     &amp; 2.645  &amp; 2.015 &amp; &amp;&amp;\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \includegraphics[scale=.7]{grafica_ej1}
+\end{center}</code></pre>
+<p>En la grafica se puede observar que existe una posible relación positiva entre las variables, la cual se puede representar a través de una linea recta con pendiente positiva.</p>
+<p>Inicialmente se plantea el modelo formado por una variable respuesta (<span class="math inline">\(y\)</span>) y una variable independiente (<span class="math inline">\(x\)</span>), una variable aleatoria no observable o error (<span class="math inline">\(u\)</span>) y dos coeficientes <span class="math inline">\(\beta_{0}\)</span> y <span class="math inline">\(\beta_{1}\)</span> y un conjunto de 25 observaciones.</p>
+<pre><code>$$y_{i}=\beta_{0}+\beta_{1}x_{i}+u_{i} \hspace{.7cm}\text{ con }\hspace{.2cm} i=1,2,3,\dots 25$$</code></pre>
+<p>Este modelo representa 25 igualdades que originan un sistema matricial <span class="math inline">\(y= X \beta + u\)</span>, el cual se resuelve mendiante MCO con el siguiente resultado:</p>
+<pre><code>\begin{eqnarray*}
+    b&amp;=&amp;(X^{T}X)^{-1}X^{T}y \\
+    &amp;=&amp;\begin{bmatrix}
+        {n}     &amp;{\displaystyle\sum_{i=1}^{n} x_{i}}\\
+        {\displaystyle\sum_{i=1}^{n} x_{i}}&amp;{\displaystyle\sum_{i=1}^{n} x^{2}_{i}}\\
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        {\displaystyle\sum_{i=1}^{n} y_{i}}\\
+        {\displaystyle\sum_{i=1}^{n} y_{i}x_{i}}
+    \end{bmatrix}      \\
+    &amp;=&amp; 
+    \begin{bmatrix}
+        {25.00}  &amp;{50.1200}\\
+        {50.12}  &amp;{100.4986}\\
+    \end{bmatrix} ^{-1}
+    \begin{bmatrix}
+        {66.0800}\\
+        {132.5007}\\
+    \end{bmatrix}\\
+    &amp;=&amp;
+    \begin{bmatrix}
+        {222.4160} &amp;  {-110.9218}\\
+        {-110.9218}&amp;  { 55.3281}\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        {66.0800}\\
+        {132.5007}\\
+    \end{bmatrix}\\
+    \begin{bmatrix}
+        {b_{0}}\\
+        {b_{1}}\\
+    \end{bmatrix}&amp;=&amp;
+    \begin{bmatrix}
+        {0.03753679}\\
+        {1.29971229}\\
+    \end{bmatrix}
+\end{eqnarray*}</code></pre>
+<p>Mediante operaciones matriciales podemos obtener los estimadores de los coeficientes así:</p>
+<pre><code>\begin{Box3}{} 
+\begin{verbatim} 
+y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 
+    2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 
+    2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 
+    2.565)
+
+x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 
+    2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995,  
+    1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995,  
+    1.955)
+
+unos=rep(1,25)
+X=matrix(c(unos,x),nrow=25)
+
+# Estimador MCO - Enfoque matricial
+b=solve(t(X)%*%X)%*%(t(X)%*%y)
+
+&gt; b
+[,1]
+[1,] 0.03753679
+[2,] 1.29971229
+\end{verbatim}
+\end{Box3}</code></pre>
+<p>Finalmente el modelo estimado por MCO corresponde a la ecuación:</p>
+<pre><code>$$ \widehat{y}= 0.03753679 + 1.29971229 \hspace{.2cm}x$$
+
+
+El signo esperado para el coeficiente $b_{1}$, está de acuerdo con los resultados encontrados. Como se ha mencionado anteriormente $b_{1}$ corresponde a la estimación de la pendiente de la recta de regresión muestral y su signo positivo indica que para un mayor peso de la barra antes de iniciar el proceso, el producto final tendrá un mayor peso. 
+
+Para realizar la estimacion de los coeficientes en R se debe correr el siguiente codigo:
+
+\begin{Box3}{}
+\begin{verbatim}
+regresion=lm(y~x)
+\end{verbatim}
+\end{Box3}
+Esta instrucción produce el siguiente resultado \\</code></pre>
+<p>En el listado para cada estimacion se presenta una prueba-t individual sobre la significancia de cada coeficiente asi:</p>
+<pre><code>$Ho: \beta_{0} =0$ \\
+$Ha: \beta_{0} \neq 0$\\
+$EdeP : T = 0.158$\\
+valor-p:$  0.876$\\
+
+Indicando que no se rechaza la hipótesis nula y por tanto se asume que Ho es verdad , $\beta_{0}=0$. En este caso se recomienda que aunque la prueba de hipotesis indique que el intersecto es no significativo, se debe dejar en el modelo, pues el no incluirlo puede generar que la o las pendientes estimadas presenten un sesgo.
+\\
+
+Para el caso de la pendiente los resultados son los siguientes.
+
+$Ho: \beta_{1} =0$ \\
+$Ha: \beta_{1} \neq 0$\\
+$EdeP : T = 10.945$\\
+valor-p:$  0.0000$\\
+
+Lo cual ratifica que el modelo es valido y existe una relación lineal entre la variable de la barra inicial y el peso del producto terminado\\
+
+Además de los coeficientes estimados y de la validación de sus respectivas pruebas de hipótesis individuales, existe una medida para determinar el grado de explicación de la variable dependiente que es estimada por el modelo ($R^{2}=83.9\%$). En este caso el modelo explica el 83.9\% del comportamiento de $y$ o de su variación.\\
+
+
+Finalmente la salida reporta el valor del estadístico  F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para $\beta_{1}$\\
+
+
+\textcolor{col4}{\Large Validación de supuestos}\\
+
+El método de MCO, no requiere ningún supuesto de tipo estadístico, pues es un método que se basa en la optimización matemática. Sin embargo cuando se requiere realizar inferencia - construcción de intervalos de confianza o la realización de pruebas de hipótesis asociadas con los resultados obtenidos -  es necesario plantear y verificar el cumplimiento de supuestos estadístico sobre las variables que intervienen en el modelo. Algunos de ellos se realizan sobre las variables independientes y otros sobre la variable no observable error ($u$). Haremos énfasis sobre el cumplimiento de los siguientes supuestos, pues su violación genera estimaciones ineficientes y sesgados.
+
+\begin{itemize}
+    \item[S1.] $E[u]=0$ . El modelo esta completo. Este supuesto garantiza que al hacer estimaciones el componente aleatorio desaparezca. Se valida mediante el calculo de la media de los residuales.
+    \item[S2.] $V[u]=\sigma^{2}$. La varianza de los errores es constante. El supuesto de HOMOSCEDASTICIDAD o varianza constante hace que los estimadores MCO sean eficientes. Este supuesto se pude validar mediante la realización de otra regresión donde se toma como regresora una proxis de la varianza ($u^{2}$) y como variables independientes las mismas del modelo. Esta prueba se conoce como Test de White. En caso de que los coeficientes asociados con las variables independientes sean no significativos, este resultado será indicio de que la varianza es constante.
+    
+        $$\widehat{u}^{2} = \alpha_{0} + \alpha_{1} x + \epsilon $$
+    
+    \item[S3.] $Cor[u_{i},u_{i-1}]=0$. Los errores no están auto-correlacionados. El supuesto de no autocorrelación de errores se puede verificar mediante el estadístico Durbin-Watson. Para determinar si se rechaza o no el cumplimiento de este supuesto se debe construir una región de rechaz a partir de los datos obtenidos en la table de D-W
+    \item[S4.] $u \sim N(0, \sigma^{2})$ . Para verificar este supuesto se puede construir una grafica de los residuales $qqnorm$ y una prueba de hipotesis de normalidad
+\end{itemize}
+
+
+Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anteriores supuestos.\\</code></pre>
+<div style="page-break-after: always;"></div>
+<p></p>
+<pre><code>    Listado 1. Supuesto de modelo completo\\
+    \begin{Box3}{}  
+    \begin{verbatim}
+    &gt; summary(residuos)
+    Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+    -2.593880 -0.734629  0.131571 -0.002484  0.487185  2.335921 
+    
+    &gt; t.test(residuos)
+    One Sample t-test
+    data:  residuos
+    t = -0.012286, df = 24, p-value = 0.9903
+    alternative hypothesis: true mean is not equal to 0
+    95 percent confidence interval:
+    -0istado\\.4196776  0.4147105
+    sample estimates:
+    mean of x 
+    -0.00248355  
+    \end{verbatim}
+\end{Box3}
+    
+    Por un lado el  promedio de los residuales es cercano a cero y por otro lado la prueba de hipótesis Ho: $\mu_{u}=0$ vs Ha: $\mu_{u} \neq 0$, no se rechaza, asumimos que el valor esperado de los errores es cero.
+    
+    
+    Listado 2   Supuesto de no autocorrelación de errores \\    
+    \begin{Box3}{}ç
+    \begin{verbatim}
+    # Es necesario cargar el paquete 
+    library(lmtest)
+    dwtest(y~x)
+    &gt; Durbin-Watson test
+    &gt; data:  y ~ x 
+    &gt; DW = 1.518, p-value = 0.07668
+    &gt; alternative hypothesis: true autocorrelation is greater than 0
+    \end{verbatim} 
+   \end{Box3}
+
+    Los resultados indican que no se cumple el supuesto de no autocorrelacion, los errores estan correlacionados
+    
+    
+    Listado 3 Supuesto de normalidad de los errores\\
+    \begin{Box3}{}
+    \begin{verbatim}
+    shapiro.test(residuos)
+    &gt; Shapiro-Wilk normality test
+    &gt; data:  residuos 
+    &gt; W = 0.9658, p-value = 0.5415
+    \end{verbatim}
+    \end{Box3}  
+    
+    El valor-p correspondiente a la prueba de Shapiro-Wilk indica que los errores se pueden asumir como normales
+    
+    Listado 4\\ 
+    \begin{Box3}{}
+    \begin{verbatim}
+    # Supuesto de varianza constante de errores o homoscedasticidad
+    summary(lm(residuos^2 ~ x))
+    
+    Residuals:
+    Min      1Q  Median      3Q     Max 
+    -1.1515 -0.8039 -0.4418 -0.0125  5.6504 
+    
+    Coefficients:
+    Estimate Std. Error t value Pr(&gt;|t|)
+    (Intercept)   20.855     24.420   0.854    0.402
+    x             -9.913     12.180  -0.814    0.424
+    
+    Residual standard error: 1.637 on 23 degrees of freedom
+    Multiple R-squared:  0.028, Adjusted R-squared:  -0.01426 
+    F-statistic: 0.6625 on 1 and 23 DF,  p-value: 0.424
+    \end{verbatim}
+  \end{Box3}
+    
+    Para la verificación del supuesto de homoscedasticidad indica que la variable independiente no esta relacionada con la varianza. Se puede suponer la varianza de los errores es constante.</code></pre>
+%<br />
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %<br />
+ % <br />
+
+<p>  \ </p>
+<p>Hasta ahora se ha presentado el modelo de regresión lineal mediante una función de linea recta <span class="math inline">\(y= \beta_{0} + \beta_{1} x + u\)</span>, asumiendo que <span class="math inline">\(y\)</span> y <span class="math inline">\(x\)</span> son variables que se ajustan a este modelo.</p>
+<p>A continuación se presentan situaciones donde la relación no es lineal, teniendo que realizarse transformaciones en <span class="math inline">\(x\)</span>, en <span class="math inline">\(y\)</span> o en ambas con el fin de lograr que el modelo resultante se lineal en los parámetros:</p>
+<p>Es necesario realizar un grafico de puntos que nos perita tener una primera impresión de la relación que puede existir entre las variables. A continuación se presentan algunas relaciones que pueden ser linealizadas, permitiendo realizar una estimación por MCO. \</p>
+A continuación se presentan algunas formas de linealización que permiten la estimación de relaciones no lineales:
+<p>El realizar el diagrama de dispersión y visualizar la relación entre <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span>, se puede intuir si existe una relación lineal o no entre las variables o si por el contrario se deben realizar transformaciones para mejorar la estimación por MCO.</p>
+<p> \</p>
+<p>La buena previsión y el control de las actividades de preconstrucción conducen al uso más eficiente del tiempo y recursos en proyectos de construcción de autopistas. Los datos acerca de los costos de construcción (en miles de dólares) y las horas-persona de trabajo requeridas para varios proyectos se presentan en la tabla siguiente y fueron tomados del artículo “Forecasting Engineering Manpower Requirements for Highway Preconstruction Activities” (K. Persad, J. O’Connor, y K. Varghese, Journal of Management Engineering, 1995:41-47). Cada valor representa un promedio de algunos proyectos, y se han eliminado dos datos atípicos.(Problema 5. pp 545 Navidi(2006))\</p>
+<p><span class="math inline">\(y\)</span>: costos de construccion ( miles de dolares)\ <span class="math inline">\(x\)</span>: horas-persona trabajo \</p>
+<p>En la grafica se visualiza una relación con una leve curvatura que puede hacer pensar que la relación entre las variables no es del todo lineal. \</p>
+<p>Inicialmente se realiza la estimación lineal con el fin de poder comparar los otros modelos estimados.</p>
+<p> \</p>
+<p>En ocasiones es necesario realizar predicciones de los valores de <span class="math inline">\(y\)</span> para un determinado valor de <span class="math inline">\(x\)</span>.</p>
+<p>La ecuación de predicción esta data por <span class="math inline">\(\widehat{y}= b_{0}+ b_{1} x\)</span>. Esta ecuación permite estimar tanto <span class="math inline">\(\widehat{E[y|x_{o}]}\)</span>, como <span class="math inline">\(\widehat{y_{x_{o}}}\)</span> . La primera corresponde al valor promedio para <span class="math inline">\(y\)</span> dado un valor promedio de <span class="math inline">\(x_{o}\)</span>. La segunda a a un valor al valor de <span class="math inline">\(y\)</span> para un valor de <span class="math inline">\(x_{o}\)</span>.</p>
+ \
+<p>Con respecto al Ejemplo 1, queremos estimar un intervalo de confianza para el consumo de un hogar que tenga unos ingresos de <span class="math inline">\(x_{o}=18\)</span> \</p>
+<p>En este caso el intervalo de confianza esta dado por:</p>
+<p>Retomando el Ejemplo 1 tenemos. En el supongamos que deseamos estimar un intervalo de confianza para el consumo (<span class="math inline">\(\mu_{Y|x_{o}}\)</span>) para hogares con ingresos de <span class="math inline">\(x_{o} = 18\)</span>.\</p>
+<p> \</p>
+<pre><code>\end{document}</code></pre>
+</div>
 </div>
 
 

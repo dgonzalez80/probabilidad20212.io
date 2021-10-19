@@ -95,6 +95,11 @@ El **taller201** de la unidad 2.1 recoge los elementos estudiados y por tanto  t
 
 # **2. Recursos**
 
+![](img/dados2.gif)
+Tomada : pelicula El dorado 
+
+Muchos relacionamos el concepto de probabilidad con los dados, pues forma parte de su origen y de su desarrollo inicial a traves de preguntas y situaciones imaginarias y de alguna forma modelables desde la matematicas. Peor este concepto va mucho mas alla como lo veremos en esta unidad.
+
 La probabilidad es un concepto que se empieza a trabajar en los años   cuando  , caballero de Mered solicita a b. Pascal le ayude a resolver un problema relacionado con juegos de mesa. En particular este callero manifestaba que las Matemáticas presentaban un vacio, pues sus calculos no coincidian con lo que pasaba en la realidad y como consecuencia de ellos perdia dinero en las apuestas que se presentaban en el juego. 
 
 Encomendado Pascal de esta tarea empieza a compartir su trabajo con Fermat, matematico y de la correspondencia de estos dos brillantes matematicos nace los principios y fundamentos de  lo que hoy conocemos como probabilidad
