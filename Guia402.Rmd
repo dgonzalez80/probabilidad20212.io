@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(readr)
-
+library(paquetepye)
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -24,6 +24,7 @@ c5="#BC2B6A" # MORADO
 
 Valle <- read_csv("data/VALLE.csv")
 Muestra= Valle[sample(1:nrow(Valle),1000,replace=F),]
+
 
 ```
 
@@ -559,9 +560,11 @@ En este caso las varianzas son diferentes, por lo que se debe ajustar la funció
 ![](img/Nota_nota.png){width=10%}
 En cualquiera de los casos los resultados pueden generar que intervalo sea de la forma:
 
-+ $(-,-)$, los dos limites que conforman el IC son negativos. De este resultado se puede concluir que $\mu_{1}<\mu_{2}$
-+ $(-,+)$, el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de $\mu_{1}=\mu_{2}$
-+ $(+,+)$, los dos limites son positivos , entonces podemos decir que $\mu_{1}>\mu_{2}$
+|       |                                                                      |
+|:------|:---------------------------------------------------------------------|
+|$(-,-)$| los dos limites que conforman el IC son negativos. De este resultado se puede concluir que $\mu_{1}<\mu_{2}$ |
+|$(-,+)$| el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de $\mu_{1}=\mu_{2}$ |
+|$(+,+)$| los dos limites son positivos , entonces podemos decir que $\mu_{1}>\mu_{2}$ |
 
 </div>
 	
@@ -624,9 +627,11 @@ El resultado obtenido por R es levemente diferente, debido a ajuste en la formul
 ![](img/Nota_nota.png){width=10%}
 En cualquiera de los casos los resultados pueden generar que intervalo sea de la forma:
 
-+ $(-,-)$, los dos limites que conforman el IC son negativos. De este resultado se puede concluir que $p_{1}<p_{2}$
-+ $(-,+)$, el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de $p_{1}=p_{2}$
-+ $(+,+)$, los dos limites son positivos , entonces podemos decir que $p_{1}>p_{2}$
+|        |                                                                      |
+|:-------|:---------------------------------------------------------------------|
+|$(-,-)$ | los dos limites que conforman el IC son negativos. De este resultado se puede concluir que $p_{1}<p_{2}$ |
+|$(-,+)$ | el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de $p_{1}=p_{2}$ |
+|$(+,+)$ | los dos limites son positivos , entonces podemos decir que $p_{1}>p_{2}$ |
 
 </div>
 
@@ -679,14 +684,14 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila
 <br/><br/>
 
 ```{r}
-ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC metodo 1
+ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1
 ```
 
 <br/><br/>
 
 ```{r}
-ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC metodo 2
+ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2
 ```
 
@@ -825,5 +830,22 @@ $$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5y7MJiPXIjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/><br/><br/><br/>
+
+# **Tutorial**
+
+<br/><br/>
+
+El siguiente código permite la activación de tutorial 
+<br/><br/>
+
+```{r eval=FALSE}
+install.packages("learnr") # solo una vez
+install.packages('remotes')  # solo una vez
+library(remotes) # solo una vez
+install_github("dgonzalez80/paquetepye", force = TRUE) # solo una vez
+learnr::run_tutorial("Taller_Intervalos", "paquetepye")
+```
 
 

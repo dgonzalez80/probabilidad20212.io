@@ -118,7 +118,9 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 ## **Introducción**
 
 
-![](img/poblacion.png)
+![](img/valiente3.gif)
+
+Tomado de : Valiente Disney Channel
 
 La inferencia estadística permite generalizar lo hallado en una muestra a toda la población. Para realizar este proceso contamos con dos opciones: Estimación y las Pruebas de hipótesis. El fundamento de estos procesos está relacioando con varios conceptos como:
 

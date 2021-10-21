@@ -783,10 +783,10 @@ e=1 # año
 n=(za1.2)^2*(s2.edad)/(e^2)
 
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>[1] 1680</code></pre>
+<pre><code>[1] 1835</code></pre>
 <pre class="r"><code>library(paquetepye)
 nmu(qnorm(0.99),s2.edad,1)</code></pre>
-<pre><code>[1] 1679.629</code></pre>
+<pre><code>[1] 1835.492</code></pre>
 <p><br/><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción" class="section level3">
@@ -1065,11 +1065,26 @@ summary(inf.fin)</code></pre>
                      background-color: #FFFFFF ; 
                      border-color: #000000;">
 <p><img src="img/Nota_nota.png" style="width:10.0%" /> En cualquiera de los casos los resultados pueden generar que intervalo sea de la forma:</p>
-<ul>
-<li><span class="math inline">\((-,-)\)</span>, los dos limites que conforman el IC son negativos. De este resultado se puede concluir que <span class="math inline">\(\mu_{1}&lt;\mu_{2}\)</span></li>
-<li><span class="math inline">\((-,+)\)</span>, el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de <span class="math inline">\(\mu_{1}=\mu_{2}\)</span></li>
-<li><span class="math inline">\((+,+)\)</span>, los dos limites son positivos , entonces podemos decir que <span class="math inline">\(\mu_{1}&gt;\mu_{2}\)</span></li>
-</ul>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\((-,-)\)</span></td>
+<td align="left">los dos limites que conforman el IC son negativos. De este resultado se puede concluir que <span class="math inline">\(\mu_{1}&lt;\mu_{2}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\((-,+)\)</span></td>
+<td align="left">el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de <span class="math inline">\(\mu_{1}=\mu_{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\((+,+)\)</span></td>
+<td align="left">los dos limites son positivos , entonces podemos decir que <span class="math inline">\(\mu_{1}&gt;\mu_{2}\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
 <p><br/><br/><br/></p>
 </div>
@@ -1118,11 +1133,26 @@ attr(,&quot;conf.level&quot;)
                      background-color: #FFFFFF ; 
                      border-color: #000000;">
 <p><img src="img/Nota_nota.png" style="width:10.0%" /> En cualquiera de los casos los resultados pueden generar que intervalo sea de la forma:</p>
-<ul>
-<li><span class="math inline">\((-,-)\)</span>, los dos limites que conforman el IC son negativos. De este resultado se puede concluir que <span class="math inline">\(p_{1}&lt;p_{2}\)</span></li>
-<li><span class="math inline">\((-,+)\)</span>, el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de <span class="math inline">\(p_{1}=p_{2}\)</span></li>
-<li><span class="math inline">\((+,+)\)</span>, los dos limites son positivos , entonces podemos decir que <span class="math inline">\(p_{1}&gt;p_{2}\)</span></li>
-</ul>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="89%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\((-,-)\)</span></td>
+<td align="left">los dos limites que conforman el IC son negativos. De este resultado se puede concluir que <span class="math inline">\(p_{1}&lt;p_{2}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\((-,+)\)</span></td>
+<td align="left">el limite inferior es negativo y el superior es positivo. Este intervalo contiene la posibilidad de <span class="math inline">\(p_{1}=p_{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\((+,+)\)</span></td>
+<td align="left">los dos limites son positivos , entonces podemos decir que <span class="math inline">\(p_{1}&gt;p_{2}\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
 <p><br/><br/><br/></p>
 </div>
@@ -1161,15 +1191,15 @@ boot=sample(x,7000,replace=TRUE)   # se extraen n x m muestras
 b=matrix(boot,nrow=1000,ncol=7)    # se construye matriz de n x m 
 mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <p><br/><br/></p>
-<pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC metodo 1
+<pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
 <pre><code>    2.5%    97.5% 
-4.741321 6.424536 </code></pre>
+4.689964 6.460250 </code></pre>
 <p><br/><br/></p>
-<pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC metodo 2
+<pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
 <pre><code>   97.5%     2.5% 
-4.614701 6.297916 </code></pre>
+4.607313 6.377599 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)
@@ -1394,6 +1424,17 @@ Donde:</p>
 <h1><strong>Video</strong></h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5y7MJiPXIjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="tutorial" class="section level1">
+<h1><strong>Tutorial</strong></h1>
+<p><br/><br/></p>
+<p>El siguiente código permite la activación de tutorial <br/><br/></p>
+<pre class="r"><code>install.packages(&quot;learnr&quot;) # solo una vez
+install.packages(&#39;remotes&#39;)  # solo una vez
+library(remotes) # solo una vez
+install_github(&quot;dgonzalez80/paquetepye&quot;, force = TRUE) # solo una vez
+learnr::run_tutorial(&quot;Taller_Intervalos&quot;, &quot;paquetepye&quot;)</code></pre>
 </div>
 
 

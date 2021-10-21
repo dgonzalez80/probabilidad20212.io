@@ -18,3 +18,256 @@ Estadística para ingenieros y científicos - Navidi W. (2006)
 
 # Texto 3
 Probabilidad y Estadística para ingeniería y Ciencias - Walpole, Meyers,Ye (2007)
+
+
+
+## Paginas de interes
+
+### Cómo usar Git/GitHub con R
+
+http://destio.us.es/calvo/asignaturas/ge_esco/tutorialusargitgithubrstudio/UsarGitGithubconRStudio.html#C%C3%B3mo_usar_GitGitHub_con_R
+
+
+### Pagina de presentaciones 005
+
+https://dgonxalex.github.io/index.html
+
+
+### Guia de instalcion de paquetes en R
+
+https://rpubs.com/DeepenData/r00-instalacion-paquetes
+
+
+### COVID-19 - Forecasting and compare machine learning models
+
+https://rpubs.com/aborderon/covid-19-models-forecasting
+
+
+### Series de tiempo multivariadas con R
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eeje8DqN0bQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### ¿Qué es R y para qué nos sirve? | Aprende a utilizar R
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3hR2A2nCI4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Presentaciones Xaringan
+
+https://cienciasocialabierta.netlify.app/class/01-class/#documento-presentaci%C3%B3n
+
+### Capacitación gratuita de R para análisis de datos enfocado a principiantes
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WVQS9xVfAQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Curso de R 
+
+https://cienciasocialabierta.netlify.app/class/01-class/
+
+
+
+### Usando flexdashboard
+
+https://rstudio.github.io/flexdashboard/articles/using.html
+
+
+### Pronosticar precios de acciones con Machine Learning en R (Parte 1)
+
+https://www.youtube.com/watch?v=5Z7bfs6WJIo
+
+
+### Colores en R
+
+https://r-charts.com/colors/
+
+### Cómo crear tu propia fuente tipográfica en tu móvil o PC : 
+
+https://www.elespanol.com/omicrono/software/20170210/crear-propia-fuente-tipografica-movil-pc/192732018_0.html
+
+
+### Integración de Jupyter Notebooks en sitios web de R Markdown : 
+
+http://jmausolf.github.io/courses/cfss/project_python.html
+
+
+### ¿Cómo crear evaluaciones con mi biblioteca de preguntas de Brightspace?
+
+https://dti.anahuacmayab.mx/blog/2020/04/27/como-crear-evaluaciones-con-mi-biblioteca-de-preguntas-de-brightspace%E2%80%8B/
+
+### Leer archivos de datos grandes en R :
+
+https://inbo.github.io/tutorials/tutorials/r_large_data_files_handling/
+
+
+### Creando un blog con R
+
+https://rstudio.github.io/distill/blog.html
+
+
+### Shiny sever:  
+
+https://www.shinyapps.io/admin/#/dashboard
+
+
+### RedCap pruebas: 
+
+https://redcappruebas.javerianacali.edu.co/
+
+
+### R blogdon : 
+
+https://www.youtube.com/watch?v=MvaG8sC8Me0
+
+
+### Poema del ciclista
+
+https://co.pinterest.com/pin/657947826812437628/
+
+
+### Toturiales profesores Bs
+
+https://www.javerianacali.edu.co/implementacion-lms/tutoriales-profesores
+
+
+### themes de Hugo : 
+
+https://themes.gohugo.io/
+
+
+### Configurar CASIO
+
+https://casiofanmag.com/es/how-to/adjust-time-on-casio-wdb-36/
+
+
+### Curso de computacion en la nube
+
+https://learndigital.withgoogle.com/activate/course/cloud-computing
+
+### xxx
+
+SHA256: 0FoJnFP5HL8zP6dLo2 / ZgzH p2o3CAx4q1 / 1x / VkfNQg
+
+
+### Cómo configurar una clave SSH con Git
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G69dfwG2DJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+### How to Add SSH Keys to Your GitHub Account
+https://www.inmotionhosting.com/support/server/ssh/how-to-add-ssh-keys-to-your-github-account/
+
+
+### Multiples claves SSH
+https://gist.github.com/jexchan/2351996
+
+
+### Crear Blogs y Websites en R con Blogdown
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/31EzFKNzObk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### RedCap : 
+https://www.youtube.com/watch?v=WxikTmbKWIY
+
+### blogdown : 
+https://bookdown.org/yihui/blogdown/
+https://www.storybench.org/how-to-build-a-website-with-blogdown-in-r/
+https://rstudio.github.io/distill/blog_workflow.html
+
+
+### theme blogdown interesante : 
+https://docs.gethugothemes.com/airspace/?ref=github
+
+### web interesante para replicar : 
+https://www.uv.es/vcoll/index.html
+
+
+### R learnr : 
+https://rstudio.cloud/learn/primers
+
+### Ejemplo de tutorial :
+https://learnr-examples.shinyapps.io/ex-setup-r/#section-install-rstudio
+
+
+Color texto HTML : <span style="color:#E77C00">*En construcción*</span>
+
+### Colores
+https://htmlcolorcodes.com/
+https://www.cdmon.com/es/tabla-colores
+
+### Presentacion
+https://rstudio-education.github.io/sharing-short-notice/#3
+
+
+### Creando web
+https://rstudio.github.io/distill/website.html
+
+
+
+Blog ixa
+https://confident-yalow-0dec9e.netlify.app/
+
+
+## Ixa
+
+https://cloud.google.com/blog/topics/training-certifications/google-cloud-to-train-more-than-40-million-with-cloud-skills
+
+https://inthecloud.withgoogle.com/free-training-21/register.html
+
+https://pagedown.rbind.io/
+
+https://www.synthpop.org.uk/get-started.html
+
+solo ixa
+https://www.science.smith.edu/~jcrouser/SDS293/ 
+
+https://www.equator-network.org/library/spanish-resources-recursos-en-espanol/
+
+https://www.revespcardiol.org/index.php?p=revista&tipo=pdf-simple&pii=S1885585721002401
+
+
+https://rviews.rstudio.com/2021/09/09/a-guide-to-binge-watching-r-medicine/
+
+https://community.rstudio.com/t/a-beginners-guide-to-shiny-modules-r-views-submission/115794
+
+https://testthat.r-lib.org/
+
+
+https://www.rstudio.com/resources/webinars/what-every-data-scientist-should-know-about-education/
+
+https://teachtogether.tech/es/index.html
+
+https://emilyriederer.netlify.app/post/rmarkdown-driven-development/
+
+https://onlinelibrary.wiley.com/doi/10.1002/cam4.4175
+
+https://www.mdpi.com/2072-6643/13/9/3173/htm
+
+http://wgf.org/grants/
+
+https://www.youtube.com/playlist?list=PL4IzsxWztPdljYo7uE5G_R2PtYw3fUReo
+
+https://www.statlearning.com/
+
+https://www3.paho.org/ish/index.php/es/8-principios
+
+https://www.optum.com/business/solutions.html
+
+https://datastudio.google.com/reporting/1ldWa0RbhYkQhskp-30ZXYNMAElg2Pwng/page/FrrT?s=uXXGeGX517E
+
+https://shinyproxy.io/
+
+
+## Paquetes en R para instructivos
+
+install.packages('remotes') ## solo primera vez
+library(remotes)
+## https://github.com/dgonzalez80/paquetepye
+install_github("dgonzalez80/paquetepye", force = TRUE) 
+
+learnr::run_tutorial("Taller_discretas", "paquetepye")
+learnr::run_tutorial("Taller_continuas", "paquetepye")
+learnr::run_tutorial("Taller_Intervalos", "paquetepye")
+
+
