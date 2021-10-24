@@ -1,0 +1,113 @@
+---
+title: "Asignación"
+author: "dgonzalez80"
+date: " "
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+A partir del problema asignado (del cuestionario de la segunda evaluación parcial) realice un vídeo a manera de sustentación  del mismo.
+
+
+Requisitos:
+
+Debe contener:
+
+   Contextualización del problema (presentación del enunciado)
+   Metodologóa empleada para su solución
+   Solución del problema
+   Conclusiones y/o recomendaciones 
+
+En el vídeo se debe visualizar al presentador (camara encendida)  
+
+En la plataforma de Brightspace se debe colocar compartir el enlace del vídeo ( es posible alojar el video en OneDrive del correo institucional, YouTube, Google Drive  y compartir el enlace)
+
+
+
+Asignación del problema:
+Grupos - 300MAE005 - B
+
+
+Problema-Nombre estudiante
+----------------------------------------------------
+|1       |Benavides Martinez Jose David       |
+|2       |Bonilla Castro	Isabella            |
+|3       |Burckhardt Hernandez	Erika         |
+|4       |Buritica Martinez	Juan              |
+|5       |Cardona Giraldo	Jhon Elkin          |
+|1       |Castiblanco Londoño	Juan Esteban    |
+|2       |Correa Ortiz	Dilan                 |
+|3       |Escobar Vallejo	Daniela             |
+|4       |Espinosa Martinez	Juan              |
+|5       |Esteban Guevara	Jorge Armando       |
+|1       |Lopez Niño	Juan                    |
+|2       |Lozano Casadiego	Nicolas           |
+|3       |Marmolejo Osorio	Juan              |
+|4       |Martinez Lopez	Juan                |
+|5       |Mendoza Ortiz	Luis                  |
+|1       |Mesa Moriano	Sebastian             |
+|2       |Molina Ramos	Dayani Odalis         |
+|3       |Molineros Sanchez	Nicole            |
+|4       |Mora Alzate	Mateo                   |
+|5       |Moreno Viedma	Tomas                 |
+|1       |Palacios Prado	Daniel              |
+|2       |Portocarrero Plaza	Jhon            |
+|3       |Prado Marin	Fabio Camilo            |
+|4       |Quintero Mendez	Cristian            |
+|5       |Quintero Solano	Esteban             |
+|1       |Ricardo Muñoz	Miguel                |
+|2       |Rios Cadavid	Camilo                |
+|3       |Rodriguez Rengifo	Stephany          |
+|4       |Rojas Morales	Juan                  |
+|5       |Sierra Lezama	Sebastian             |
+|1       |Sinisterra Velez	Daniel            |
+|2       |Soto Rosasco	Juan                  |
+|3       |Suarez Peña	Maria Jose              |
+|4       |Tobar Vallejo	Evelyn                |
+|5       |Torres Rincon	Santiago              |
+
+
+<br/><br/><br/>
+
+## **Grupos - 300MAE005 - E**
+
+<br/><br/>
+
+|Problema| **Nombre**                         |
+|:------:|:-----------------------------------|
+|1       |Bolaños Ruiz	Nicolas Dusolei       |
+|2       |Aponza Uzuriaga	Alejandra           |
+|3       |Azcarate Garcia	Ana                 |
+|4       |Espinosa Salazar	Daniela           |
+|5       |Garcia Valencia	Santiago            |
+|1       |Jimenez Millan	Juan                |
+|2       |Lerma Ramirez	Juan                  |
+|3       |Mafla Botina	Julian                |
+|4       |Moncaleano Rodriguez Daniel         |
+|5       |Olaya Cabezas	Jose                  |
+|1       |Perez Garcia	Alejandro             |
+|2       |Rosero Chamorro	Luis                |
+|3       |Rubio Lopez	Ana                     |
+|4       |Ruiz Leal	Santiago                  |
+|5       |Timana Rosero	Adrián Camilo         |
+|1       |Troncoso Barona	Gabriela            |
+|2       |Velandia Sierra	David               |
+|3       |Viteri Ordoñez	Juan Fernando       |
+|4       |Zambrano Guerrero	Daniel            |
+|5       |Zuleta Cardenas	Juan                |
+
+
+
+Rubrica
+
+Se realiza presentación del problema (contexto)
+Se sustenta metodología empleada (resolución)
+Se presenta conclusiones y/o recomendaciones (cierre)
+Se evidencia conocimiento del tema por parte del presentador (comunicación)
+El video queda bien realizado (calidad video)
+
+	
