@@ -270,4 +270,5 @@ learnr::run_tutorial("Taller_discretas", "paquetepye")
 learnr::run_tutorial("Taller_continuas", "paquetepye")
 learnr::run_tutorial("Taller_Intervalos", "paquetepye")
 
-
+Ejercicios iniciales de guitarra
+https://www.youtube.com/watch?v=FLcHBKHsuq4

@@ -688,36 +688,31 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
     {\widehat{u}_{n}}\\
     \end{bmatrix}[\widehat{u}_{1},\widehat{u}_{2},\dots,\widehat{u}_{n}] 
     \end{equation*}\]</span></p>
-<pre><code>$$\begin{eqnarray*}
-    SCRes&amp;=&amp;[\widehat{y}-Xb]^{T}[\widehat{y}-Xb]\\
-    &amp;=&amp; y^{T}y -y^{T}Xb-b^{T}X^{T}y+b^{T}X^{T}Xb \\
-    &amp;=&amp; y^{T}y -2bX^{T}y+b^{T}X^{T}Xb \\ 
-\end{eqnarray*}$$
-
-Para encontrar los valores óptimos de los coeficientes, se debe derivar parcialmente con respecto al vector $\beta$ e igualarlo a cero
-
-$$\begin{equation*}
-\dfrac{\partial{SCRes}}{\partial{\beta}}= -2X^{T}+ 2X^{T}Xb=0
-\end{equation*}$$
-
-De la ecuación anterior se despeja $b$ ($\widehat{\beta}$)
-
-$$\begin{eqnarray*}
-    2X^{T} &amp;=&amp; 2X^{T}Xb\\
-    (X^{T}X)^{-1}X^{T}y &amp;=&amp;(X^{T}X)^{-1}X^{T}X b\\
-    (X^{T}X)^{-1}X^{T}y&amp;=&amp; b
-\end{eqnarray*}$$
-
-El estimador MCO de los coeficientes $b$ es:</code></pre>
+<p><span class="math display">\[\begin{eqnarray*}
+        SCRes&amp;=&amp;[\widehat{y}-Xb]^{T}[\widehat{y}-Xb]\\
+        &amp;=&amp; y^{T}y -y^{T}Xb-b^{T}X^{T}y+b^{T}X^{T}Xb \\
+        &amp;=&amp; y^{T}y -2bX^{T}y+b^{T}X^{T}Xb \\ 
+    \end{eqnarray*}\]</span></p>
+<pre><code>Para encontrar los valores óptimos de los coeficientes, se debe derivar parcialmente con respecto al vector $\beta$ e igualarlo a cero</code></pre>
+<p><span class="math display">\[\begin{equation*}
+    \dfrac{\partial{SCRes}}{\partial{\beta}}= -2X^{T}+ 2X^{T}Xb=0
+    \end{equation*}\]</span></p>
+<pre><code>De la ecuación anterior se despeja $b$ ($\widehat{\beta}$)</code></pre>
+<p><span class="math display">\[\begin{eqnarray*}
+        2X^{T} &amp;=&amp; 2X^{T}Xb\\
+        (X^{T}X)^{-1}X^{T}y &amp;=&amp;(X^{T}X)^{-1}X^{T}X b\\
+        (X^{T}X)^{-1}X^{T}y&amp;=&amp; b
+    \end{eqnarray*}\]</span></p>
+<pre><code>El estimador MCO de los coeficientes $b$ es:</code></pre>
 <p><span class="math display">\[\widehat{\beta}_{_{MCO}}= b = (X^{T}X)^{-1}X^{T}y\]</span></p>
 <p>Es claro que para poder realizar este proceso es condición necesaria que la matriz <span class="math inline">\((X^{T}X)\)</span> sea invertible. En caso contrario los estimadores MCO no se pueden hallar. La versión del método MCO a partir de sumatorias se encuentra desarrollada en el texto guía (Walpole-2012 pp.395)</p>
 <p>Para que la estimación por MCO sea valida y utilizada, se deben verificar que se cumplan los supuestos sobre los errores <span class="math inline">\(u\)</span> y las pruebas de significancia global y unitarias</p>
 <ul>
-<li><span class="math inline">\(S_1\)</span>: El valor esperado de <span class="math inline">\(u\)</span> es cero.<span class="math inline">\(E[u]=0\)</span> <span class="math inline">\(E[u]=0\)</span></li>
-<li><span class="math inline">\(S_2\)</span>: Los errores tienen varianza constante. <span class="math inline">\(V[u_{i}]=\sigma^{2}\)</span></li>
-<li><span class="math inline">\(S_3\)</span>: <span class="math inline">\(u\)</span> es una variable con distribución normal. <span class="math inline">\(u \sim\)</span> <span class="math inline">\(Normal\)</span></li>
-<li><span class="math inline">\(S_4\)</span>: Los errores son independientes unos de otros <span class="math inline">\(E[u_i,u_j]\)</span> que se entiende como la no autocorrelacion de los errores</li>
-<li><span class="math inline">\(S_5\)</span>: Para el caso de regresión lineal múltiple se incluye el supuesto de no multicolinealidad. En caso de que se presenta multicolinealidad entre dos variables independientes da como resultado la imposibilidad de poder realizar la estimaciones mediante MCO</li>
+<li><p><span class="math inline">\(S_1\)</span>: El valor esperado de <span class="math inline">\(u\)</span> es cero.<span class="math inline">\(E[u]=0\)</span> <span class="math inline">\(E[u]=0\)</span></p></li>
+<li><p><span class="math inline">\(S_2\)</span>: Los errores tienen varianza constante. <span class="math inline">\(V[u_{i}]=\sigma^{2}\)</span></p></li>
+<li><p><span class="math inline">\(S_3\)</span>: <span class="math inline">\(u\)</span> es una variable con distribución normal. <span class="math inline">\(u \sim\)</span> <span class="math inline">\(Normal\)</span></p></li>
+<li><p><span class="math inline">\(S_4\)</span>: Los errores son independientes unos de otros <span class="math inline">\(E[u_i,u_j]\)</span> que se entiende como la no autocorrelacion de los errores</p></li>
+<li><p><span class="math inline">\(S_5\)</span>: Para el caso de regresión lineal múltiple se incluye el supuesto de no multicolinealidad. En caso de que se presenta multicolinealidad entre dos variables independientes da como resultado la imposibilidad de poder realizar la estimaciones mediante MCO</p></li>
 </ul>
 <p>Ejemplo 1: Se quiere determinar si existe relación entre los ingresos que recibe una familia y el valor de su consumo. Con en este propósito se toma información de 12 hogares</p>
 <table>
@@ -765,260 +760,566 @@ pch=21, bg=&quot;blue&quot;, xlim=c(0,35), ylim=c(0,25), las=1)</code></pre>
 <p><img src="Guia501_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Esta recta representa la relación lineal entre las dos variables, en este caso tiene una pendiente positiva que mide la magnitud del cambio en la variable dependiente ante un cambio unitario en la variable independiente.</p>
 <p>Para encontrar la los valores estimados del intercepto y de la pendiente, utilizaremos el método de mínimos cuadrados ordinario (MCO)</p>
+<pre class="r"><code>regresion=lm(y ~ x)
+summary(regresion)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.1928 -0.5426  0.0088  0.8500  3.5613 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.77788    1.58292   1.123    0.288    
+x            0.55817    0.07567   7.376 2.38e-05 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 2.251 on 10 degrees of freedom
+Multiple R-squared:  0.8447,    Adjusted R-squared:  0.8292 
+F-statistic: 54.41 on 1 and 10 DF,  p-value: 2.38e-05</code></pre>
 <p>De acuerdo con estos resultados obtenidos en R, muestra que la ecuación estimada es :</p>
 <p><span class="math display">\[\widehat{y} = 1.77788 + 0.55817\]</span></p>
-Para validar estos resultados, para poder ser utilizados se debe:
-<p>\</p>
-<p>Los supuestos a validar se deben verificar sobre los residuales <span class="math inline">\(\widehat{u_{i}}\)</span> que corresponde a la diferencia entre <span class="math inline">\(\widehat{y_{i}}\)</span> y <span class="math inline">\(y\)</span> y que son las realizaciones de los errores.</p>
-<p>\</p>
-<p>\</p>
-\
-\
-<p>\ Después de verificar el cumplimiento de los supuestos sobre los errores se pasa a analizar los resultados de la estimación.</p>
-<p>Las pruebas a realizar corresponden a la validación si los resultados obtenidos sobre el intercepto y la pendiente son significativamente diferentes de cero:\</p>
-&amp;
-<p>\ \end{tabular}</p>
-<p>\</p>
-<p>ANOVA corresponde a una prueba de hipotesis conjunta sobre todos las pendienes del modelo de manera conjunta:</p>
-<p><span class="math inline">\(Ho: \beta_{1} = \beta_{2} = ....= \beta_{k} = 0\)</span>\ <span class="math inline">\(Ha: \beta_{j}\)</span> es diferente de cero\</p>
-<p>Esta prueba se fundamenta en la comparacion de dos varianza : La varianza relacionada con el modelo (<span class="math inline">\(\sigma^{2}\)</span>) y la varianza relacionada con los errores (<span class="math inline">\(\sigma^{2}_{u}\)</span>).</p>
+<p>Para validar estos resultados, para poder ser utilizados se debe:</p>
+<ul>
+<li>Validar que se cumplen los supuestos sobre <span class="math inline">\(u\)</span></li>
+<li>Verificar en los valores de los coeficientes mediante las pruebas de hipótesis individuales</li>
+</ul>
+</div>
+<div id="validación-de-los-supuestos" class="section level2">
+<h2><strong>Validación de los supuestos</strong></h2>
+<p>Los supuestos a validar se deben verificar sobre los residuales <span class="math inline">\(\widehat{u_{i}}\)</span> que corresponde a la diferencia entre <span class="math inline">\(\widehat{y_{i}}\)</span> y <span class="math inline">\(y\)</span> y que son las realizaciones de los errores.( <span class="math inline">\(\widehat{u_{i}} = \widehat{y_{i}}-y_{i}\)</span>)</p>
+<pre class="r"><code>yhat=predict(regresion)
+u=yhat-y
+u</code></pre>
+<pre><code>         1          2          3          4          5          6          7 
+-0.8585544  0.2550230  4.1928284  0.4066799 -2.8303031 -3.5613199 -0.2725429 
+         8          9         10         11         12 
+ 0.2595944  3.0223373 -0.8471942 -0.7169999  0.9504515 </code></pre>
+<div id="supuesto-1" class="section level3">
+<h3><strong>Supuesto 1</strong></h3>
+<p>El valor esperado de los errores es cero <span class="math inline">\(E[u]=0\)</span></p>
+<pre class="r"><code>summary(u)</code></pre>
+<pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-3.56132 -0.85003 -0.00876  0.00000  0.54262  4.19283 </code></pre>
+<pre class="r"><code>t.test(u, mu=0)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  u
+t = -1.0873e-14, df = 11, p-value = 1
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -1.363421  1.363421
+sample estimates:
+    mean of x 
+-6.735394e-15 </code></pre>
+</div>
+<div id="supuesto-2" class="section level3">
+<h3><strong>Supuesto 2</strong></h3>
+<p>Los errores tienen varianza constante <span class="math inline">\(V[u]=\sigma^{2}\)</span>. Homoscedasticidad}\</p>
+<p>Prueba de Goldfeld-Quandt Ho no existe heteroscedasticidad</p>
+<pre class="r"><code>lmtest::gqtest(y~x)</code></pre>
+<pre><code>
+    Goldfeld-Quandt test
+
+data:  y ~ x
+GQ = 0.19285, df1 = 4, df2 = 4, p-value = 0.93
+alternative hypothesis: variance increases from segment 1 to 2</code></pre>
+</div>
+<div id="supuesto-3" class="section level3">
+<h3><strong>Supuesto 3</strong></h3>
+<p>Los errores se distribuyen normal <span class="math inline">\(u\sim\)</span> <span class="math inline">\(N(0,\sigma^{2})\)</span>}\</p>
+<pre class="r"><code>shapiro.test(u)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  u
+W = 0.94569, p-value = 0.5751</code></pre>
+</div>
+<div id="supuesto-4" class="section level3">
+<h3><strong>Supuesto 4</strong></h3>
+<p>Los errores son independientes <span class="math inline">\(E[u_i,u_j]=0\)</span>}\</p>
+<pre class="r"><code>lmtest::dwtest(y~x)</code></pre>
+<pre><code>
+    Durbin-Watson test
+
+data:  y ~ x
+DW = 1.5517, p-value = 0.1769
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+</div>
+</div>
+<div id="pruebas-de-significancia-individuales" class="section level2">
+<h2>** Pruebas de significancia individuales**</h2>
+<p>Después de verificar el cumplimiento de los supuestos sobre los errores se pasa a analizar los resultados de la estimación.</p>
+<p>Las pruebas a realizar corresponden a la validación si los resultados obtenidos sobre el intercepto y la pendiente son significativamente diferentes de cero:</p>
+<p><code>Coefficients:              Estimate   Std. Error   t value   Pr(&gt;|t|)     (Intercept)  1.77788    1.58292      1.123     0.288     x            0.55817    0.07567      7.376     2.38e-05 *** --- Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="18%" />
+<col width="22%" />
+<col width="18%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">parámetro</th>
+<th align="left"><span class="math inline">\(Ho\)</span></th>
+<th align="left"><span class="math inline">\(Ha\)</span></th>
+<th align="left"><span class="math inline">\(EdeP\)</span></th>
+<th align="left">valor-p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">intercepto <span class="math inline">\(\beta_{0}\)</span></td>
+<td align="left"><span class="math inline">\(Ho: \beta_{0} = 0\)</span></td>
+<td align="left"><span class="math inline">\(Ha: \beta_{0} \neq 0\)</span></td>
+<td align="left"><span class="math inline">\(EdeP:\)</span> <span class="math inline">\(t=1,123\)</span></td>
+<td align="left"><span class="math inline">\(valor-p:\)</span> <span class="math inline">\(0.288\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">pendiente <span class="math inline">\(\beta_{1}\)</span></td>
+<td align="left"><span class="math inline">\(Ho: \beta_{1} = 0\)</span></td>
+<td align="left"><span class="math inline">\(Ha: \beta_{1} \neq 0\)</span></td>
+<td align="left"><span class="math inline">\(EdeP :\)</span> <span class="math inline">\(t=7.376\)</span></td>
+<td align="left"><span class="math inline">\(valor-p:\)</span> <span class="math inline">\(0.00005\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="anova" class="section level2">
+<h2><strong>ANOVA</strong></h2>
+<p>La ANOVA corresponde a una prueba de hipótesis conjunta sobre todos las pendientes del modelo de manera conjunta:</p>
+<p><span class="math inline">\(Ho: \beta_{1} = \beta_{2} = ....= \beta_{k} = 0\)</span> <span class="math inline">\(Ha: \beta_{j}\)</span> es diferente de cero</p>
+<p>Esta prueba se fundamenta en la comparación de dos varianza : La varianza relacionada con el modelo (<span class="math inline">\(\sigma^{2}\)</span>) y la varianza relacionada con los errores (<span class="math inline">\(\sigma^{2}_{u}\)</span>).</p>
+<pre class="r"><code>anova(regresion)</code></pre>
+<pre><code>Analysis of Variance Table
+
+Response: y
+          Df  Sum Sq Mean Sq F value   Pr(&gt;F)    
+x          1 275.590 275.590  54.408 2.38e-05 ***
+Residuals 10  50.652   5.065                     
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Ahora podemos realizar la interpretación de los resultados</p>
 <p><span class="math display">\[\widehat{y} = 1.77788 + 0.55817 x\]</span></p>
-<p><span class="math inline">\(\widehat{\beta_{0}} = 1.7788\)</span>, se interpreta como la parte del consumo que no depende de los ingresos al cual se le llama consumo autónomo.\</p>
+<p><span class="math inline">\(\widehat{\beta_{0}} = 1.7788\)</span>, se interpreta como la parte del consumo que no depende de los ingresos al cual se le llama consumo autónomo.</p>
 <p><span class="math inline">\(\widehat{\beta_{1}} = 0.55817\)</span> . Correspondiente a la estimación de la pendiente, indica que por cada aumento unitario de los ingresos, el consumo se aumenta en 0.55817 unidades.</p>
-<p>Otro indicador importante en el análisis corresponde al coeficiente de determinación (<span class="math inline">\(R^{2}\)</span>), que en este caso tiene un valor de <span class="math inline">\(0.8447\)</span> e indica que el modelo explica un <span class="math inline">\(84.47\)</span>% de la variacion o del comportamiento de la variable <span class="math inline">\(Y\)</span></p>
-<div style="page-break-after: always;"></div>
-<p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%<br />
- Un fabricante de equipos de aire acondicionado tiene problemas en la etapa de montaje, debido principalmente a la falta de una biela, pues debido a su peso no satisface las especificaciones establecidas para el producto por sobrepeso. Para reducir este costo, el fabricante estima que estudiando la relación entre el peso de la barra en bruto y su peso final, es probable encontrar una relación entre ellas y de esta manera reducir el problema mediante la detección de elementos que probablemente no cumplan con las condiciones exigidas para el producto. \</p>
-<p>En el estudio se midieron un total de 25 (x, y) pares de barras, siendo <span class="math inline">\(X\)</span> el peso de la pieza colada en espera de ser procesada (materia prima) y <span class="math inline">\(Y\)</span> el peso de una biela terminada que forma parte del producto final. Se requiere estimar un modelo que permita predecir el valores del peso futuro de la biela terminada como función del peso bruto del bloque de metal. \</p>
-<p>Los datos recogidos se muestran a continuación: \</p>
-<pre><code>Antes de realizar la estimación debemos visualizar mediante un diagrama de dispersión la relación lineal entre las variables. \\
+<p>Otro indicador importante en el análisis corresponde al coeficiente de determinación (<span class="math inline">\(R^{2}\)</span>), que en este caso tiene un valor de <span class="math inline">\(0.8447\)</span> e indica que el modelo explica un <span class="math inline">\(84.47\)</span>% de la variación o del comportamiento de la variable <span class="math inline">\(Y\)</span></p>
+<p>Ejemplo 2: Un fabricante de equipos de aire acondicionado tiene problemas en la etapa de montaje, debido principalmente a la falta de una biela, pues debido a su peso no satisface las especificaciones establecidas para el producto por sobrepeso. Para reducir este costo, el fabricante estima que estudiando la relación entre el peso de la barra en bruto y su peso final, es probable encontrar una relación entre ellas y de esta manera reducir el problema mediante la detección de elementos que probablemente no cumplan con las condiciones exigidas para el producto.</p>
+<p>En el estudio se midieron un total de 25 (x, y) pares de barras, siendo <span class="math inline">\(X\)</span> el peso de la pieza colada en espera de ser procesada (materia prima) y <span class="math inline">\(Y\)</span> el peso de una biela terminada que forma parte del producto final. Se requiere estimar un modelo que permita predecir el valores del peso futuro de la biela terminada como función del peso bruto del bloque de metal. Los datos recogidos se muestran a continuación:</p>
+<p>Antes de realizar la estimación debemos visualizar mediante un diagrama de dispersión la relación lineal entre las variables. \</p>
+<table style="width:100%;">
+<colgroup>
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="4%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+<th align="right">5</th>
+<th align="right">6</th>
+<th align="right">7</th>
+<th align="right">8</th>
+<th align="right">9</th>
+<th align="right">10</th>
+<th align="right">11</th>
+<th align="right">12</th>
+<th align="right">13</th>
+<th align="right">14</th>
+<th align="right">15</th>
+<th align="right">16</th>
+<th align="right">17</th>
+<th align="right">18</th>
+<th align="right">19</th>
+<th align="right">20</th>
+<th align="right">21</th>
+<th align="right">22</th>
+<th align="right">23</th>
+<th align="right">24</th>
+<th align="right">25</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>x</strong></td>
+<td align="right">2.745</td>
+<td align="right">2.700</td>
+<td align="right">2.690</td>
+<td align="right">2.680</td>
+<td align="right">2.675</td>
+<td align="right">2.670</td>
+<td align="right">2.665</td>
+<td align="right">2.660</td>
+<td align="right">2.655</td>
+<td align="right">2.655</td>
+<td align="right">2.650</td>
+<td align="right">2.650</td>
+<td align="right">2.645</td>
+<td align="right">2.635</td>
+<td align="right">2.630</td>
+<td align="right">2.625</td>
+<td align="right">2.625</td>
+<td align="right">2.620</td>
+<td align="right">2.615</td>
+<td align="right">2.615</td>
+<td align="right">2.615</td>
+<td align="right">2.615</td>
+<td align="right">2.590</td>
+<td align="right">2.590</td>
+<td align="right">2.565</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>y</strong></td>
+<td align="right">2.080</td>
+<td align="right">2.045</td>
+<td align="right">2.050</td>
+<td align="right">2.005</td>
+<td align="right">2.035</td>
+<td align="right">2.035</td>
+<td align="right">2.020</td>
+<td align="right">2.005</td>
+<td align="right">2.010</td>
+<td align="right">2.000</td>
+<td align="right">2.000</td>
+<td align="right">2.005</td>
+<td align="right">2.015</td>
+<td align="right">1.990</td>
+<td align="right">1.990</td>
+<td align="right">1.995</td>
+<td align="right">1.985</td>
+<td align="right">1.970</td>
+<td align="right">1.985</td>
+<td align="right">1.990</td>
+<td align="right">1.995</td>
+<td align="right">1.990</td>
+<td align="right">1.975</td>
+<td align="right">1.995</td>
+<td align="right">1.955</td>
+</tr>
+</tbody>
+</table>
+<p><strong>x</strong> : peso barra en bruto <strong>y</strong> : peso producto final</p>
+<pre class="r"><code>    y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
+    x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
 
-\begin{center}
-    \begin{tabular}{ccc|ccc}
-        \hline
-        barra  &amp; peso   &amp; peso &amp; barra  &amp; peso   &amp; peso \\
-        Numero &amp; bruto  &amp; final&amp; Numero &amp; bruto  &amp; final \\ 
-        \hline
-        1      &amp; 2.745  &amp; 2.080 &amp; 14     &amp; 2.635  &amp; 1.990 \\
-        2      &amp; 2.700  &amp; 2.045 &amp; 15     &amp; 2.630  &amp; 1.990 \\
-        3      &amp; 2.690  &amp; 2.050 &amp; 16     &amp; 2.625  &amp;1.995 \\
-        4      &amp; 2.680  &amp; 2.005 &amp; 17     &amp; 2.625  &amp;1.985 \\ 
-        5      &amp; 2.675  &amp; 2.035 &amp; 18     &amp; 2.620  &amp;1.970 \\
-        6      &amp; 2.670  &amp; 2.035 &amp; 19     &amp; 2.615  &amp;1.985 \\
-        7      &amp; 2.665  &amp; 2.020 &amp; 20     &amp; 2.615  &amp;1.990 \\
-        8      &amp; 2.660  &amp; 2.005 &amp; 21     &amp; 2.615  &amp;1.995 \\
-        9      &amp; 2.655  &amp; 2.010 &amp; 22     &amp; 2.615  &amp; 1.990 \\
-        10     &amp; 2.655  &amp; 2.000 &amp; 23     &amp; 2.590  &amp;1.975 \\
-        11     &amp; 2.650  &amp; 2.000 &amp; 24     &amp; 2.590  &amp;1.995 \\
-        12     &amp; 2.650  &amp; 2.005 &amp; 25     &amp; 2.565  &amp;1.955 \\
-        13     &amp; 2.645  &amp; 2.015 &amp; &amp;&amp;\\
-        \hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \includegraphics[scale=.7]{grafica_ej1}
-\end{center}</code></pre>
-<p>En la grafica se puede observar que existe una posible relación positiva entre las variables, la cual se puede representar a través de una linea recta con pendiente positiva.</p>
+plot(x,y, xlab = &quot;peso inicial&quot;, ylab = &quot;peso final&quot;, pch=21, bg=&quot;blue&quot;, las=1)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>En la gráfica se puede observar que existe una posible relación positiva entre las variables, la cual se puede representar a través de una linea recta con pendiente positiva.</p>
 <p>Inicialmente se plantea el modelo formado por una variable respuesta (<span class="math inline">\(y\)</span>) y una variable independiente (<span class="math inline">\(x\)</span>), una variable aleatoria no observable o error (<span class="math inline">\(u\)</span>) y dos coeficientes <span class="math inline">\(\beta_{0}\)</span> y <span class="math inline">\(\beta_{1}\)</span> y un conjunto de 25 observaciones.</p>
-<pre><code>$$y_{i}=\beta_{0}+\beta_{1}x_{i}+u_{i} \hspace{.7cm}\text{ con }\hspace{.2cm} i=1,2,3,\dots 25$$</code></pre>
+<p><span class="math display">\[y_{i}=\beta_{0}+\beta_{1}x_{i}+u_{i} \hspace{.7cm}\text{ con }\hspace{.2cm} i=1,2,3,\dots 25\]</span></p>
 <p>Este modelo representa 25 igualdades que originan un sistema matricial <span class="math inline">\(y= X \beta + u\)</span>, el cual se resuelve mendiante MCO con el siguiente resultado:</p>
-<pre><code>\begin{eqnarray*}
-    b&amp;=&amp;(X^{T}X)^{-1}X^{T}y \\
-    &amp;=&amp;\begin{bmatrix}
-        {n}     &amp;{\displaystyle\sum_{i=1}^{n} x_{i}}\\
-        {\displaystyle\sum_{i=1}^{n} x_{i}}&amp;{\displaystyle\sum_{i=1}^{n} x^{2}_{i}}\\
-    \end{bmatrix}^{-1}
-    \begin{bmatrix}
-        {\displaystyle\sum_{i=1}^{n} y_{i}}\\
-        {\displaystyle\sum_{i=1}^{n} y_{i}x_{i}}
-    \end{bmatrix}      \\
-    &amp;=&amp; 
-    \begin{bmatrix}
-        {25.00}  &amp;{50.1200}\\
-        {50.12}  &amp;{100.4986}\\
-    \end{bmatrix} ^{-1}
-    \begin{bmatrix}
-        {66.0800}\\
-        {132.5007}\\
-    \end{bmatrix}\\
-    &amp;=&amp;
-    \begin{bmatrix}
-        {222.4160} &amp;  {-110.9218}\\
-        {-110.9218}&amp;  { 55.3281}\\
-    \end{bmatrix}
-    \begin{bmatrix}
-        {66.0800}\\
-        {132.5007}\\
-    \end{bmatrix}\\
-    \begin{bmatrix}
-        {b_{0}}\\
-        {b_{1}}\\
-    \end{bmatrix}&amp;=&amp;
-    \begin{bmatrix}
-        {0.03753679}\\
-        {1.29971229}\\
-    \end{bmatrix}
-\end{eqnarray*}</code></pre>
+<p><span class="math display">\[\begin{eqnarray*}
+        b&amp;=&amp;(X^{T}X)^{-1}X^{T}y \\
+        &amp;=&amp;\begin{bmatrix}
+            {n}     &amp;{\displaystyle\sum_{i=1}^{n} x_{i}}\\
+            {\displaystyle\sum_{i=1}^{n} x_{i}}&amp;{\displaystyle\sum_{i=1}^{n} x^{2}_{i}}\\
+        \end{bmatrix}^{-1}
+        \begin{bmatrix}
+            {\displaystyle\sum_{i=1}^{n} y_{i}}\\
+            {\displaystyle\sum_{i=1}^{n} y_{i}x_{i}}
+        \end{bmatrix}      \\
+        &amp;=&amp; 
+        \begin{bmatrix}
+            {25.00}  &amp;{50.1200}\\
+            {50.12}  &amp;{100.4986}\\
+        \end{bmatrix} ^{-1}
+        \begin{bmatrix}
+            {66.0800}\\
+            {132.5007}\\
+        \end{bmatrix}\\
+        &amp;=&amp;
+        \begin{bmatrix}
+            {222.4160} &amp;  {-110.9218}\\
+            {-110.9218}&amp;  { 55.3281}\\
+        \end{bmatrix}
+        \begin{bmatrix}
+            {66.0800}\\
+            {132.5007}\\
+        \end{bmatrix}\\
+        \begin{bmatrix}
+            {b_{0}}\\
+            {b_{1}}\\
+        \end{bmatrix}&amp;=&amp;
+        \begin{bmatrix}
+            {0.03753679}\\
+            {1.29971229}\\
+        \end{bmatrix}
+    \end{eqnarray*}\]</span></p>
 <p>Mediante operaciones matriciales podemos obtener los estimadores de los coeficientes así:</p>
-<pre><code>\begin{Box3}{} 
-\begin{verbatim} 
-y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 
-    2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 
-    2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 
-    2.565)
-
-x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 
-    2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995,  
-    1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995,  
-    1.955)
-
-unos=rep(1,25)
-X=matrix(c(unos,x),nrow=25)
-
+<pre class="r"><code>y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
+x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
+    
+unos=rep(1,25)       # vector de unos
+X=matrix(c(unos,x),nrow=25) # matriz X 
+    
 # Estimador MCO - Enfoque matricial
 b=solve(t(X)%*%X)%*%(t(X)%*%y)
-
-&gt; b
-[,1]
+b    # vector de estimadores </code></pre>
+<pre><code>           [,1]
 [1,] 0.03753679
-[2,] 1.29971229
-\end{verbatim}
-\end{Box3}</code></pre>
+[2,] 1.29971229</code></pre>
 <p>Finalmente el modelo estimado por MCO corresponde a la ecuación:</p>
-<pre><code>$$ \widehat{y}= 0.03753679 + 1.29971229 \hspace{.2cm}x$$
+<p><span class="math display">\[ \widehat{y}= 0.03753679 + 1.29971229 \hspace{.2cm}x\]</span> El signo esperado para el coeficiente <span class="math inline">\(b_{1}\)</span>, está de acuerdo con los resultados encontrados. Como se ha mencionado anteriormente <span class="math inline">\(b_{1}\)</span> corresponde a la estimación de la pendiente de la recta de regresión muestral y su signo positivo indica que para un mayor peso de la barra antes de iniciar el proceso, el producto final tendrá un mayor peso.</p>
+<pre><code>Para realizar la estimación de los coeficientes en R se debe correr el siguiente codigo:</code></pre>
+<pre class="r"><code>regresion=lm(y~x)
+summary(regresion)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x)
 
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.040463 -0.011457  0.002044  0.007534  0.036540 
 
-El signo esperado para el coeficiente $b_{1}$, está de acuerdo con los resultados encontrados. Como se ha mencionado anteriormente $b_{1}$ corresponde a la estimación de la pendiente de la recta de regresión muestral y su signo positivo indica que para un mayor peso de la barra antes de iniciar el proceso, el producto final tendrá un mayor peso. 
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.03754    0.23810   0.158    0.876    
+x            1.29971    0.11875  10.945 1.36e-10 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Para realizar la estimacion de los coeficientes en R se debe correr el siguiente codigo:
-
-\begin{Box3}{}
-\begin{verbatim}
-regresion=lm(y~x)
-\end{verbatim}
-\end{Box3}
-Esta instrucción produce el siguiente resultado \\</code></pre>
-<p>En el listado para cada estimacion se presenta una prueba-t individual sobre la significancia de cada coeficiente asi:</p>
-<pre><code>$Ho: \beta_{0} =0$ \\
-$Ha: \beta_{0} \neq 0$\\
-$EdeP : T = 0.158$\\
-valor-p:$  0.876$\\
-
-Indicando que no se rechaza la hipótesis nula y por tanto se asume que Ho es verdad , $\beta_{0}=0$. En este caso se recomienda que aunque la prueba de hipotesis indique que el intersecto es no significativo, se debe dejar en el modelo, pues el no incluirlo puede generar que la o las pendientes estimadas presenten un sesgo.
-\\
-
-Para el caso de la pendiente los resultados son los siguientes.
-
-$Ho: \beta_{1} =0$ \\
-$Ha: \beta_{1} \neq 0$\\
-$EdeP : T = 10.945$\\
-valor-p:$  0.0000$\\
-
-Lo cual ratifica que el modelo es valido y existe una relación lineal entre la variable de la barra inicial y el peso del producto terminado\\
-
-Además de los coeficientes estimados y de la validación de sus respectivas pruebas de hipótesis individuales, existe una medida para determinar el grado de explicación de la variable dependiente que es estimada por el modelo ($R^{2}=83.9\%$). En este caso el modelo explica el 83.9\% del comportamiento de $y$ o de su variación.\\
-
-
-Finalmente la salida reporta el valor del estadístico  F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para $\beta_{1}$\\
-
-
-\textcolor{col4}{\Large Validación de supuestos}\\
-
-El método de MCO, no requiere ningún supuesto de tipo estadístico, pues es un método que se basa en la optimización matemática. Sin embargo cuando se requiere realizar inferencia - construcción de intervalos de confianza o la realización de pruebas de hipótesis asociadas con los resultados obtenidos -  es necesario plantear y verificar el cumplimiento de supuestos estadístico sobre las variables que intervienen en el modelo. Algunos de ellos se realizan sobre las variables independientes y otros sobre la variable no observable error ($u$). Haremos énfasis sobre el cumplimiento de los siguientes supuestos, pues su violación genera estimaciones ineficientes y sesgados.
-
-\begin{itemize}
-    \item[S1.] $E[u]=0$ . El modelo esta completo. Este supuesto garantiza que al hacer estimaciones el componente aleatorio desaparezca. Se valida mediante el calculo de la media de los residuales.
-    \item[S2.] $V[u]=\sigma^{2}$. La varianza de los errores es constante. El supuesto de HOMOSCEDASTICIDAD o varianza constante hace que los estimadores MCO sean eficientes. Este supuesto se pude validar mediante la realización de otra regresión donde se toma como regresora una proxis de la varianza ($u^{2}$) y como variables independientes las mismas del modelo. Esta prueba se conoce como Test de White. En caso de que los coeficientes asociados con las variables independientes sean no significativos, este resultado será indicio de que la varianza es constante.
-    
-        $$\widehat{u}^{2} = \alpha_{0} + \alpha_{1} x + \epsilon $$
-    
-    \item[S3.] $Cor[u_{i},u_{i-1}]=0$. Los errores no están auto-correlacionados. El supuesto de no autocorrelación de errores se puede verificar mediante el estadístico Durbin-Watson. Para determinar si se rechaza o no el cumplimiento de este supuesto se debe construir una región de rechaz a partir de los datos obtenidos en la table de D-W
-    \item[S4.] $u \sim N(0, \sigma^{2})$ . Para verificar este supuesto se puede construir una grafica de los residuales $qqnorm$ y una prueba de hipotesis de normalidad
-\end{itemize}
-
-
-Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anteriores supuestos.\\</code></pre>
-<div style="page-break-after: always;"></div>
-<p></p>
-<pre><code>    Listado 1. Supuesto de modelo completo\\
-    \begin{Box3}{}  
-    \begin{verbatim}
-    &gt; summary(residuos)
-    Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
-    -2.593880 -0.734629  0.131571 -0.002484  0.487185  2.335921 
-    
-    &gt; t.test(residuos)
+Residual standard error: 0.01597 on 23 degrees of freedom
+Multiple R-squared:  0.8389,    Adjusted R-squared:  0.8319 
+F-statistic: 119.8 on 1 and 23 DF,  p-value: 1.356e-10</code></pre>
+<p>En el listado para cada estimación se presenta una prueba-t individual sobre la significancia de cada coeficiente asi:</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="18%" />
+<col width="22%" />
+<col width="18%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">parámetro</th>
+<th align="left"><span class="math inline">\(Ho\)</span></th>
+<th align="left"><span class="math inline">\(Ha\)</span></th>
+<th align="left"><span class="math inline">\(EdeP\)</span></th>
+<th align="left">valor-p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">intercepto <span class="math inline">\(\beta_{0}\)</span></td>
+<td align="left"><span class="math inline">\(Ho: \beta_{0} =0\)</span></td>
+<td align="left"><span class="math inline">\(Ha:\beta_{0}\neq 0\)</span></td>
+<td align="left"><span class="math inline">\(EdeP : T = 0.158\)</span></td>
+<td align="left">valor-p:$ 0.876$</td>
+</tr>
+<tr class="even">
+<td align="left">pendiente <span class="math inline">\(\beta_{1}\)</span></td>
+<td align="left"><span class="math inline">\(Ho: \beta_{1} =0\)</span></td>
+<td align="left"><span class="math inline">\(Ha: \beta_{1} \neq 0\)</span></td>
+<td align="left"><span class="math inline">\(EdeP : T = 10.945\)</span></td>
+<td align="left">valor-p:$ 0.0000$</td>
+</tr>
+</tbody>
+</table>
+<p>Indicando que no se rechaza la hipótesis nula y por tanto se asume que <span class="math inline">\(Ho\)</span> es verdad , <span class="math inline">\(\beta_{0}=0\)</span>. En este caso se recomienda que aunque la prueba de hipótesis indique que el intercepto es no significativo, se debe dejar en el modelo, pues el no incluirlo puede generar que la o las pendientes estimadas presenten un sesgo.</p>
+<p>Para el caso de la pendiente los resultados son los siguientes.</p>
+<p>Lo cual ratifica que el modelo es valido y existe una relación lineal entre la variable de la barra inicial y el peso del producto terminado</p>
+<p>Además de los coeficientes estimados y de la validación de sus respectivas pruebas de hipótesis individuales, existe una medida para determinar el grado de explicación de la variable dependiente que es estimada por el modelo (<span class="math inline">\(R^{2}=83.9\%\)</span>). En este caso el modelo explica el 83.9% del comportamiento de <span class="math inline">\(y\)</span> o de su variación.</p>
+<p>Finalmente la salida reporta el valor del estadístico F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para <span class="math inline">\(\beta_{1}\)</span>\</p>
+<div id="validación-de-supuestos" class="section level3">
+<h3><strong>Validación de supuestos</strong></h3>
+<p>El método de MCO, no requiere ningún supuesto de tipo estadístico, pues es un método que se basa en la optimización matemática. Sin embargo cuando se requiere realizar inferencia - construcción de intervalos de confianza o la realización de pruebas de hipótesis asociadas con los resultados obtenidos - es necesario plantear y verificar el cumplimiento de supuestos estadístico sobre las variables que intervienen en el modelo. Algunos de ellos se realizan sobre las variables independientes y otros sobre la variable no observable error (<span class="math inline">\(u\)</span>). Haremos énfasis sobre el cumplimiento de los siguientes supuestos, pues su violación genera estimaciones ineficientes y sesgados.</p>
+<p><strong>Supuesto 1</strong> <span class="math inline">\(E[u]=0\)</span> . El modelo esta completo. Este supuesto garantiza que al hacer estimaciones el componente aleatorio desaparezca. Se valida mediante el calculo de la media de los residuales.</p>
+<p><strong>Supuesto 2</strong> <span class="math inline">\(V[u]=\sigma^{2}\)</span>. La varianza de los errores es constante. El supuesto de HOMOSCEDASTICIDAD o varianza constante hace que los estimadores MCO sean eficientes. Este supuesto se pude validar mediante la realización de otra regresión donde se toma como regresora una proxis de la varianza (<span class="math inline">\(u^{2}\)</span>) y como variables independientes las mismas del modelo. Esta prueba se conoce como Test de White. En caso de que los coeficientes asociados con las variables independientes sean no significativos, este resultado será indicio de que la varianza es constante.</p>
+<p><span class="math display">\[\widehat{u}^{2} = \alpha_{0} + \alpha_{1} x + \epsilon \]</span></p>
+<p><strong>Supuesto 3</strong> <span class="math inline">\(Cor[u_{i},u_{i-1}]=0\)</span>. Los errores no están auto-correlacionados. El supuesto de no autocorrelación de errores se puede verificar mediante el estadístico Durbin-Watson. Para determinar si se rechaza o no el cumplimiento de este supuesto se debe construir una región de rechaza partir de los datos obtenidos en la table de D-W</p>
+<p><strong>Supuesto 4</strong> <span class="math inline">\(u \sim N(0, \sigma^{2})\)</span> . Para verificar este supuesto se puede construir una gráfica de los residuales <span class="math inline">\(qqnorm\)</span> y una prueba de hipótesis de normalidad</p>
+<p>Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anteriores supuestos.\</p>
+<p><strong>Analisis de los resultados</strong></p>
+<p>Listado 1. Supuesto de modelo completo\</p>
+<pre class="r"><code>residuos=regresion$residuals
+summary(residuos)</code></pre>
+<pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+-0.040463 -0.011457  0.002044  0.000000  0.007534  0.036540 </code></pre>
+<pre class="r"><code>t.test(residuos)</code></pre>
+<pre><code>
     One Sample t-test
-    data:  residuos
-    t = -0.012286, df = 24, p-value = 0.9903
-    alternative hypothesis: true mean is not equal to 0
-    95 percent confidence interval:
-    -0istado\\.4196776  0.4147105
-    sample estimates:
-    mean of x 
-    -0.00248355  
-    \end{verbatim}
-\end{Box3}
-    
-    Por un lado el  promedio de los residuales es cercano a cero y por otro lado la prueba de hipótesis Ho: $\mu_{u}=0$ vs Ha: $\mu_{u} \neq 0$, no se rechaza, asumimos que el valor esperado de los errores es cero.
-    
-    
-    Listado 2   Supuesto de no autocorrelación de errores \\    
-    \begin{Box3}{}ç
-    \begin{verbatim}
-    # Es necesario cargar el paquete 
-    library(lmtest)
-    dwtest(y~x)
-    &gt; Durbin-Watson test
-    &gt; data:  y ~ x 
-    &gt; DW = 1.518, p-value = 0.07668
-    &gt; alternative hypothesis: true autocorrelation is greater than 0
-    \end{verbatim} 
-   \end{Box3}
 
-    Los resultados indican que no se cumple el supuesto de no autocorrelacion, los errores estan correlacionados
-    
-    
-    Listado 3 Supuesto de normalidad de los errores\\
-    \begin{Box3}{}
-    \begin{verbatim}
-    shapiro.test(residuos)
-    &gt; Shapiro-Wilk normality test
-    &gt; data:  residuos 
-    &gt; W = 0.9658, p-value = 0.5415
-    \end{verbatim}
-    \end{Box3}  
-    
-    El valor-p correspondiente a la prueba de Shapiro-Wilk indica que los errores se pueden asumir como normales
-    
-    Listado 4\\ 
-    \begin{Box3}{}
-    \begin{verbatim}
-    # Supuesto de varianza constante de errores o homoscedasticidad
-    summary(lm(residuos^2 ~ x))
-    
-    Residuals:
-    Min      1Q  Median      3Q     Max 
-    -1.1515 -0.8039 -0.4418 -0.0125  5.6504 
-    
-    Coefficients:
-    Estimate Std. Error t value Pr(&gt;|t|)
-    (Intercept)   20.855     24.420   0.854    0.402
-    x             -9.913     12.180  -0.814    0.424
-    
-    Residual standard error: 1.637 on 23 degrees of freedom
-    Multiple R-squared:  0.028, Adjusted R-squared:  -0.01426 
-    F-statistic: 0.6625 on 1 and 23 DF,  p-value: 0.424
-    \end{verbatim}
-  \end{Box3}
-    
-    Para la verificación del supuesto de homoscedasticidad indica que la variable independiente no esta relacionada con la varianza. Se puede suponer la varianza de los errores es constante.</code></pre>
-%<br />
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %<br />
- % <br />
+data:  residuos
+t = 8.8708e-17, df = 24, p-value = 1
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -0.00645138  0.00645138
+sample estimates:
+   mean of x 
+2.772847e-19 </code></pre>
+<p>Por un lado el promedio de los residuales es cercano a cero y por otro lado la prueba de hipótesis Ho: <span class="math inline">\(\mu_{u}=0\)</span> vs Ha: <span class="math inline">\(\mu_{u} \neq 0\)</span>, no se rechaza, asumimos que el valor esperado de los errores es cero.</p>
+<p>Listado 2 Supuesto de no autocorrelación de errores</p>
+<pre class="r"><code># Es necesario cargar el paquete 
+library(lmtest)
+dwtest(y~x)</code></pre>
+<pre><code>
+    Durbin-Watson test
 
+data:  y ~ x
+DW = 1.518, p-value = 0.07668
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<p>Los resultados indican que no se cumple el supuesto de no autocorrelacion, los errores estan correlacionados</p>
+<p>Listado 3 Supuesto de normalidad de los errores</p>
+<pre class="r"><code>    shapiro.test(residuos)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  residuos
+W = 0.96464, p-value = 0.5143</code></pre>
+<p>El valor-p correspondiente a la prueba de Shapiro-Wilk indica que los errores se pueden asumir como normales</p>
+<p>Listado 4</p>
+<pre class="r"><code># Supuesto de varianza constante de errores o homoscedasticidad
+        summary(lm(residuos^2 ~ x))</code></pre>
+<pre><code>
+Call:
+lm(formula = residuos^2 ~ x)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-2.749e-04 -1.913e-04 -1.081e-04 -8.540e-06  1.380e-03 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)  0.004942   0.005957    0.83    0.415
+x           -0.002348   0.002971   -0.79    0.437
+
+Residual standard error: 0.0003994 on 23 degrees of freedom
+Multiple R-squared:  0.02645,   Adjusted R-squared:  -0.01588 
+F-statistic: 0.6248 on 1 and 23 DF,  p-value: 0.4373</code></pre>
+<p>Para la verificación del supuesto de homoscedasticidad indica que la variable independiente no esta relacionada con la varianza. Se puede suponer la varianza de los errores es constante.</p>
+<p>Código R</p>
+<pre class="r"><code>y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
+        x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
+        
+        # Descriptivas
+        summary(y); summary(x)</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  2.565   2.615   2.645   2.643   2.665   2.745 </code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.955   1.990   2.000   2.005   2.015   2.080 </code></pre>
+<pre class="r"><code># Diagrama de dispersión X vs Y
+        plot(y,x, main=&quot;Diagrama de dispersión&quot;,xlab=&quot;X:Peso inicial&quot;, 
+             ylab=&quot;Y:Peso final&quot;, pch=19)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<pre class="r"><code># Estimación por MCO
+        regresion=lm(y~x)
+        summary(regresion)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.040463 -0.011457  0.002044  0.007534  0.036540 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.03754    0.23810   0.158    0.876    
+x            1.29971    0.11875  10.945 1.36e-10 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.01597 on 23 degrees of freedom
+Multiple R-squared:  0.8389,    Adjusted R-squared:  0.8319 
+F-statistic: 119.8 on 1 and 23 DF,  p-value: 1.356e-10</code></pre>
+<pre class="r"><code>        confint(regresion)</code></pre>
+<pre><code>                 2.5 %    97.5 %
+(Intercept) -0.4550101 0.5300837
+x            1.0540506 1.5453740</code></pre>
+<pre class="r"><code>        plot(y~x, xlab = &quot;Peso inicial&quot;, ylab = &quot;Peso final&quot;, pch=19)
+        abline(regresion)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre class="r"><code># Analisis de la varianza
+        anova(regresion)</code></pre>
+<pre><code>Analysis of Variance Table
+
+Response: y
+          Df    Sum Sq   Mean Sq F value    Pr(&gt;F)    
+x          1 0.0305315 0.0305315  119.78 1.356e-10 ***
+Residuals 23 0.0058625 0.0002549                      
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code># Residuos
+        residuos &lt;- rstandard(regresion)
+        valores.ajustados &lt;- fitted(regresion)
+        plot(valores.ajustados, residuos)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<pre class="r"><code># Diagnostico de normalidad
+        qqnorm(residuos, main=&quot;Normalidad de los Residuales&quot;)
+        qqline(residuos)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<pre class="r"><code>        plot(y,x, xlab = &quot;peso-F&quot;, ylab = &quot;peso-b&quot;)
+        abline(y~x)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<pre class="r"><code># validación de supuestos del modelo
+        residuos=rstandard(regresion)
+        valores.ajustados &lt;- fitted(regresion)
+        plot(valores.ajustados, residuos)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<pre class="r"><code>        dwtest(y~x)</code></pre>
+<pre><code>
+    Durbin-Watson test
+
+data:  y ~ x
+DW = 1.518, p-value = 0.07668
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<pre class="r"><code>        bgtest(y~x)</code></pre>
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  y ~ x
+LM test = 1.4445, df = 1, p-value = 0.2294</code></pre>
+<pre class="r"><code>        resettest(y~x , power=2, type=&quot;regressor&quot;)</code></pre>
+<pre><code>
+    RESET test
+
+data:  y ~ x
+RESET = 0.18173, df1 = 1, df2 = 22, p-value = 0.674</code></pre>
+<pre class="r"><code>        shapiro.test(residuos)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  residuos
+W = 0.9658, p-value = 0.5415</code></pre>
+<pre><code>    \begin{Box3}{ Código completo en R}
+    \begin{verbatim}
+
+    \end{verbatim}
+   \end{Box3}</code></pre>
 <p>  \ </p>
 <p>Hasta ahora se ha presentado el modelo de regresión lineal mediante una función de linea recta <span class="math inline">\(y= \beta_{0} + \beta_{1} x + u\)</span>, asumiendo que <span class="math inline">\(y\)</span> y <span class="math inline">\(x\)</span> son variables que se ajustan a este modelo.</p>
 <p>A continuación se presentan situaciones donde la relación no es lineal, teniendo que realizarse transformaciones en <span class="math inline">\(x\)</span>, en <span class="math inline">\(y\)</span> o en ambas con el fin de lograr que el modelo resultante se lineal en los parámetros:</p>
@@ -1039,6 +1340,8 @@ A continuación se presentan algunas formas de linealización que permiten la es
 <p>Retomando el Ejemplo 1 tenemos. En el supongamos que deseamos estimar un intervalo de confianza para el consumo (<span class="math inline">\(\mu_{Y|x_{o}}\)</span>) para hogares con ingresos de <span class="math inline">\(x_{o} = 18\)</span>.\</p>
 <p> \</p>
 <pre><code>\end{document}</code></pre>
+<p><a href="https://rpubs.com/Edimer/520130" class="uri">https://rpubs.com/Edimer/520130</a> <a href="https://www.gradiant.org/blog/claves-analisis-causal/" class="uri">https://www.gradiant.org/blog/claves-analisis-causal/</a> <a href="https://www.psicoactiva.com/biografias/francis-galton/" class="uri">https://www.psicoactiva.com/biografias/francis-galton/</a></p>
+</div>
 </div>
 </div>
 
