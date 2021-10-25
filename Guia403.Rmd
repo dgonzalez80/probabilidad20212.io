@@ -1039,9 +1039,9 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 |                 |  **Reglas de decisión**                                        |
 |:----------------|:---------------------------------------------------------------|
-| Regla1:         | Si el EdeP cae en la RdeR, entonce se rechaza la $H_{0}$ y se **acepta** $H_{a}$ como verdadera. Si por el contrario el EdeP NO cae en la RdeR, entonces NO se rechaza $H_{0}$, no existe suficiente evidencia para rechazarla, **asumimos** que $H_{0}$ es verdad.|
-| Regla2:         | Si $\alpha <$ valor-p entonces rechazamos $H_{0}$, se **acepta** $H_{a}$. Si por el contrario $\alpha >$ valor-p, no rechazamos $H_{0}$, **asumimos** 	que $H_{0}$ es verdad. |
-| Regla3:         | El valor-p se interpreta como el error que puedo cometer al rechazar $H_{0}$, siendo esta verdadera (cometer error tipo I). Si este valor es considerado como pequeño, rechazo $H_{0}$, se **acepta** $H_{a}$. Si por el contrario se considera este valor grande, entonce no rechazo $H_{0}$, asumo que $H_{0}$ es verdad.|
+| Regla1:         | Si el $EdeP$ cae en la $RdeR$, entonce se rechaza la $H_{0}$ y se **acepta** $H_{a}$ como verdadera. Si por el contrario el $EdeP$ NO cae en la $RdeR$, entonces NO se rechaza $H_{0}$, no existe suficiente evidencia para rechazarla, **asumimos** que $H_{0}$ es verdad.|
+| Regla2:         | Si $\alpha >$ `valor-p` entonces rechazamos $H_{0}$, se **acepta** $H_{a}$. Si por el contrario $\alpha < $ `valor-p`, no rechazamos $H_{0}$, **asumimos** 	que $H_{0}$ es verdad. |
+| Regla3:         | El `valor-p` se interpreta como el error que puedo cometer al rechazar $H_{0}$, siendo esta verdadera (cometer error tipo I). Si este valor es considerado como pequeño, rechazo $H_{0}$, se **acepta** $H_{a}$. Si por el contrario se considera este valor grande, entonce no rechazo $H_{0}$, asumo que $H_{0}$ es verdad.|
 
 
 ```{r}
@@ -1070,7 +1070,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 ||`prop.test(x=22,n=100, p=0.20, conf.level=0.98)`                             |
 |Dos poblaciones    |                                                          |
 |                   |`t.test(x1,x2,  paired=TRUE)`                             |    
-|                   |`t.test(x1,x2,  paired=FALSE, var.equal=TRUE, conf.level=0-98)` |
+|                   |`t.test(x1,x2,  paired=FALSE, var.equal=TRUE, conf.level=0.95)` |
 |                   |`t.test(x1,x2,  paired=FALSE, var.equal=FALSE, conf.level=0.98)`|
 |                   |`var.test(x,y)`                                           |
 |                   |`prop.test(c(x1,x2), c(n1,n2))`                           |

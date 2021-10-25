@@ -321,9 +321,6 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="index.html">
     <span class="fa fa-home"></span>
@@ -527,6 +524,9 @@ div.tocify {
     </li>
   </ul>
 </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -1953,8 +1953,7 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 0.20102, runs = 52, n1 = 50, n2 = 50, n = 100, p-value =
-0.8407
+statistic = 0, runs = 51, n1 = 50, n2 = 50, n = 100, p-value = 1
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1974,7 +1973,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.9972, p-value = 0.9778</code></pre>
+W = 0.99442, p-value = 0.6629</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1986,19 +1985,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.15377, p-value = 0.925</code></pre>
+JB = 0.28126, p-value = 0.858</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.8828, p-value = 0.7205</code></pre>
+T = 2.8556, p-value = 0.6575</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.034351, p-value = 0.834</code></pre>
+T = -0.05677, p-value = 0.7425</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -2007,13 +2006,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.032061, p-value = 0.8846</code></pre>
+D = 0.040548, p-value = 0.5849</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 12.5, p-value = 0.5662</code></pre>
+P = 9.95, p-value = 0.7658</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
@@ -2152,15 +2151,15 @@ P = 12.5, p-value = 0.5662</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left">Regla1:</td>
-<td align="left">Si el EdeP cae en la RdeR, entonce se rechaza la <span class="math inline">\(H_{0}\)</span> y se <strong>acepta</strong> <span class="math inline">\(H_{a}\)</span> como verdadera. Si por el contrario el EdeP NO cae en la RdeR, entonces NO se rechaza <span class="math inline">\(H_{0}\)</span>, no existe suficiente evidencia para rechazarla, <strong>asumimos</strong> que <span class="math inline">\(H_{0}\)</span> es verdad.</td>
+<td align="left">Si el <span class="math inline">\(EdeP\)</span> cae en la <span class="math inline">\(RdeR\)</span>, entonce se rechaza la <span class="math inline">\(H_{0}\)</span> y se <strong>acepta</strong> <span class="math inline">\(H_{a}\)</span> como verdadera. Si por el contrario el <span class="math inline">\(EdeP\)</span> NO cae en la <span class="math inline">\(RdeR\)</span>, entonces NO se rechaza <span class="math inline">\(H_{0}\)</span>, no existe suficiente evidencia para rechazarla, <strong>asumimos</strong> que <span class="math inline">\(H_{0}\)</span> es verdad.</td>
 </tr>
 <tr class="even">
 <td align="left">Regla2:</td>
-<td align="left">Si <span class="math inline">\(\alpha &lt;\)</span> valor-p entonces rechazamos <span class="math inline">\(H_{0}\)</span>, se <strong>acepta</strong> <span class="math inline">\(H_{a}\)</span>. Si por el contrario <span class="math inline">\(\alpha &gt;\)</span> valor-p, no rechazamos <span class="math inline">\(H_{0}\)</span>, <strong>asumimos</strong> que <span class="math inline">\(H_{0}\)</span> es verdad.</td>
+<td align="left">Si <span class="math inline">\(\alpha &gt;\)</span> <code>valor-p</code> entonces rechazamos <span class="math inline">\(H_{0}\)</span>, se <strong>acepta</strong> <span class="math inline">\(H_{a}\)</span>. Si por el contrario $&lt; $ <code>valor-p</code>, no rechazamos <span class="math inline">\(H_{0}\)</span>, <strong>asumimos</strong> que <span class="math inline">\(H_{0}\)</span> es verdad.</td>
 </tr>
 <tr class="odd">
 <td align="left">Regla3:</td>
-<td align="left">El valor-p se interpreta como el error que puedo cometer al rechazar <span class="math inline">\(H_{0}\)</span>, siendo esta verdadera (cometer error tipo I). Si este valor es considerado como pequeño, rechazo <span class="math inline">\(H_{0}\)</span>, se <strong>acepta</strong> <span class="math inline">\(H_{a}\)</span>. Si por el contrario se considera este valor grande, entonce no rechazo <span class="math inline">\(H_{0}\)</span>, asumo que <span class="math inline">\(H_{0}\)</span> es verdad.</td>
+<td align="left">El <code>valor-p</code> se interpreta como el error que puedo cometer al rechazar <span class="math inline">\(H_{0}\)</span>, siendo esta verdadera (cometer error tipo I). Si este valor es considerado como pequeño, rechazo <span class="math inline">\(H_{0}\)</span>, se <strong>acepta</strong> <span class="math inline">\(H_{a}\)</span>. Si por el contrario se considera este valor grande, entonce no rechazo <span class="math inline">\(H_{0}\)</span>, asumo que <span class="math inline">\(H_{0}\)</span> es verdad.</td>
 </tr>
 </tbody>
 </table>
@@ -2225,7 +2224,7 @@ P = 12.5, p-value = 0.5662</code></pre>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><code>t.test(x1,x2,  paired=FALSE, var.equal=TRUE, conf.level=0-98)</code></td>
+<td align="left"><code>t.test(x1,x2,  paired=FALSE, var.equal=TRUE, conf.level=0.95)</code></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>

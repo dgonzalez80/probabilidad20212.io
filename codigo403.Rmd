@@ -22,12 +22,22 @@ Valle <- read_csv("data/VALLE.csv")
 
 Supongamos la hipótesis:
 
-$Ho$ : $\mu_{W} = 1000$  </br>
-$Ha$ : $\mu_{W} \neq 1000$ 
+|                                 |
+|:--------------------------------|
+|$Ho$ : $\mu_{W} = 1000$          |
+|$Ha$ : $\mu_{W} \neq 1000$       |
 
 ```{r}
 # Problema 1
 w=rnorm(100,1000,2) # simulación de los datos
+```
+
+|                                 |
+|:--------------------------------|
+|$Ho$ : $X \sim norm$             |
+|$Ha$ : $X no \sim norm$          |
+
+```{r}
 shapiro.test(w)  # verificación de normalidad
 ```
 
@@ -172,8 +182,10 @@ t.test(g1,g2)
 
 Existen varias pruebas de hipótesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hipóteisis planteadas son:
 
-$Ho$: $X$ tiene distribución Normal <br/> 
-$Ha$: $X$ no tiene distribución Normal
+|                                       |
+|:--------------------------------------|
+|$Ho$: $X$ tiene distribución Normal    | 
+|$Ha$: $X$ no tiene distribución Normal |
 
 ```{r}
 # se genera una variable aleatoria normal
