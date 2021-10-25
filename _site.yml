@@ -2,7 +2,7 @@ name: " "
 output_dir: "."
 navbar:
   title: " "
-  right:
+  left:
     - text: "PyE"
       icon: fa-home
       href: index.html
