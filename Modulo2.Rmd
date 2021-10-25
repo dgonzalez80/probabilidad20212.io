@@ -14,7 +14,10 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<br/>
+
 ![](img/baner2.png)
+
 
 <br/><br/><br/>
 
