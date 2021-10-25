@@ -775,10 +775,10 @@ e=1 # año
 n=(za1.2)^2*(s2.edad)/(e^2)
 
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>[1] 1715</code></pre>
+<pre><code>[1] 1680</code></pre>
 <pre class="r"><code>library(paquetepye)
 nmu(qnorm(0.99),s2.edad,1)</code></pre>
-<pre><code>[1] 1715.369</code></pre>
+<pre><code>[1] 1679.629</code></pre>
 <p><br/><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción" class="section level3">
@@ -1186,12 +1186,12 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
 <pre><code>    2.5%    97.5% 
-4.716964 6.470143 </code></pre>
+4.741321 6.424536 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
 <pre><code>   97.5%     2.5% 
-4.616434 6.369613 </code></pre>
+4.614701 6.297916 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)
