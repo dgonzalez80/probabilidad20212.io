@@ -1,7 +1,7 @@
 ---
-title: "**Probabilidad y Estadística**"
-author: "dgonzalez"
-date: "2021"
+title: " "
+author: " "
+date: " "
 output:
   html_document:
     toc: yes
@@ -34,7 +34,7 @@ c5="#BC2B6A" # MORADO
 
 <br/><br/><br/>
 
-# **Atención a estudiantes**
+**Atención a estudiantes**
 
 
 <html>
@@ -43,7 +43,7 @@ c5="#BC2B6A" # MORADO
 
 <br/><br/><br/>
 
-# **Calendario 2021-2**
+**Calendario 2021-2**
 
 ```{r, fig}
 
