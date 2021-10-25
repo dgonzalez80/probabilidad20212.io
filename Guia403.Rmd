@@ -90,7 +90,7 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 |Trabajo individual|                                |
 |Fecha             | octubre 31 de 2021             |
 |Hora              | 23:59                          |
-|**Actividad 432** | Resuelva las preguntas y problemas planteadas en el **Taller 431** y entregue su solución  en formato  pdf en el enlace correspondiente de  Brightspace|
+|**Actividad 432** | Resuelva las preguntas y problemas planteadas en el [**Taller 431**](https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Taller431.pdf) y entregue su solución  en formato  pdf en el enlace correspondiente de  Brightspace|
 |Trabajo individual|                                |
 |Fecha             | octubre 31 de 2021 |
 |Hora              | 23:59 hora local       |
