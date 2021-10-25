@@ -1,8 +1,8 @@
 name: " "
 output_dir: "."
 navbar:
-  title: "Probabilidad y Estadística 2021-2 "
-  left:
+  title: " "
+  right:
     - text: "PyE"
       icon: fa-home
       href: index.html
