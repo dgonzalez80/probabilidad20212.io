@@ -344,6 +344,7 @@ qt(c(0.025,0.975),99)
 <br/>
 
 ```{r, fig.width=7, fig.height=3}
+library(ggdistribute)
 p=ggdistribution(dt, seq(-3, +3, 0.1), df = 99, colour = "blue")
 p=ggdistribution(dt, seq(-3, qt(0.025,99), 0.1), df = 99, colour = 'blue', fill="red", p=p)   
 p=ggdistribution(dt, seq(qt(0.975,99),+3, 0.1), df = 99, colour = 'blue', fill="red", p=p)+ 
@@ -445,6 +446,7 @@ Como el valor-p (p-value = 0.01447) es menor que el nivel de significancia ($\al
 <br/>
 
 ```{r, fig.width=7, fig.height=3}
+library(ggdistribute)
 pRdeR=qchisq(c(0.025,0.975),9)
 p=ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = 'blue')
 p=ggdistribution(dchisq, seq(0, pRdeR[1], 0.1), df = 9, colour = 'blue', fill="blue", p=p)

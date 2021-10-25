@@ -944,7 +944,8 @@ mean of x
 <pre class="r"><code>qt(c(0.025,0.975),99)</code></pre>
 <pre><code>[1] -1.984217  1.984217</code></pre>
 <p><br/></p>
-<pre class="r"><code>p=ggdistribution(dt, seq(-3, +3, 0.1), df = 99, colour = &quot;blue&quot;)
+<pre class="r"><code>library(ggdistribute)
+p=ggdistribution(dt, seq(-3, +3, 0.1), df = 99, colour = &quot;blue&quot;)
 p=ggdistribution(dt, seq(-3, qt(0.025,99), 0.1), df = 99, colour = &#39;blue&#39;, fill=&quot;red&quot;, p=p)   
 p=ggdistribution(dt, seq(qt(0.975,99),+3, 0.1), df = 99, colour = &#39;blue&#39;, fill=&quot;red&quot;, p=p)+ 
       ggtitle(&quot;Región de rechazo : (-Inf, -1.984217)  (1.984217, +Inf)&quot;)
@@ -1056,7 +1057,8 @@ sample estimates:
 </tbody>
 </table>
 <p><br/></p>
-<pre class="r"><code>pRdeR=qchisq(c(0.025,0.975),9)
+<pre class="r"><code>library(ggdistribute)
+pRdeR=qchisq(c(0.025,0.975),9)
 p=ggdistribution(dchisq, seq(0, 30, 0.1), df = 9, colour = &#39;blue&#39;)
 p=ggdistribution(dchisq, seq(0, pRdeR[1], 0.1), df = 9, colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)
 p=ggdistribution(dchisq, seq(pRdeR[2], 30, 0.1), df = 9, colour = &#39;blue&#39;, fill=&quot;blue&quot;, p=p)+
@@ -1951,8 +1953,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 2.0102, runs = 61, n1 = 50, n2 = 50, n = 100, p-value =
-0.04441
+statistic = 1.2061, runs = 57, n1 = 50, n2 = 50, n = 100, p-value =
+0.2278
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1972,7 +1974,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99608, p-value = 0.891</code></pre>
+W = 0.98411, p-value = 0.02353</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1984,19 +1986,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.80414, p-value = 0.646</code></pre>
+JB = 5.8084, p-value = 0.046</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.7931, p-value = 0.521</code></pre>
+T = 3.0523, p-value = 0.8835</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.11584, p-value = 0.482</code></pre>
+T = 0.41661, p-value = 0.015</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -2005,13 +2007,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.033212, p-value = 0.8528</code></pre>
+D = 0.068032, p-value = 0.02508</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 7.74, p-value = 0.9024</code></pre>
+P = 13.86, p-value = 0.4602</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

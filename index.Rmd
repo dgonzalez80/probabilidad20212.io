@@ -10,11 +10,28 @@ output:
     theme: cosmo
 ---
 
+<br/><br/><br/><br/>
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
+library(ggplot2)
+library(ggfortify)
+library(ggdistribute)
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+  
+
 ```
 
-<br/><br/><br/>
+<br/><br/>
+
+![](img/banerpye.png)
+<br/><br/>
 
 # **Presentación curso**
 
