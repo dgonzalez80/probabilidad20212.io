@@ -1953,7 +1953,7 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = -0.20102, runs = 50, n1 = 50, n2 = 50, n = 100, p-value =
+statistic = 0.20102, runs = 52, n1 = 50, n2 = 50, n = 100, p-value =
 0.8407
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
@@ -1974,7 +1974,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99142, p-value = 0.285</code></pre>
+W = 0.9972, p-value = 0.9778</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1986,19 +1986,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.79056, p-value = 0.65</code></pre>
+JB = 0.15377, p-value = 0.925</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 3.1097, p-value = 0.739</code></pre>
+T = 2.8828, p-value = 0.7205</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.1439, p-value = 0.381</code></pre>
+T = 0.034351, p-value = 0.834</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -2007,13 +2007,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.059803, p-value = 0.07876</code></pre>
+D = 0.032061, p-value = 0.8846</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 20.32, p-value = 0.1204</code></pre>
+P = 12.5, p-value = 0.5662</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
@@ -2373,6 +2373,16 @@ P = 20.32, p-value = 0.1204</code></pre>
 <h1><strong>Video</strong></h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/phUkdjdj95c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
+</div>
+<div id="tutorial" class="section level1">
+<h1><strong>Tutorial</strong></h1>
+<p><br/><br/></p>
+<p>El siguiente código permite la activación de tutorial <br/><br/></p>
+<pre class="r"><code>install.packages(&quot;learnr&quot;) # solo una vez
+install.packages(&#39;remotes&#39;)  # solo una vez
+library(remotes) # solo una vez
+install_github(&quot;dgonzalez80/paquetepye&quot;, force = TRUE) # solo una vez
+learnr::run_tutorial(&quot;Taller_pruebas1&quot;, &quot;paquetepye&quot;)</code></pre>
 </div>
 
 
