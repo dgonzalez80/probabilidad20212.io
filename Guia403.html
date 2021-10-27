@@ -1709,96 +1709,24 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </tbody>
 </table>
 <p>Nota: antes de realizar la comparación de medias, se debe realizar una prueba de bondad de ajuste para establecer si los datos siguen una distribución normal o no. En caso de que los datos no tengan distribución normal, entonces se debe realizar una prueba no paramétrica.</p>
-<p><strong>Conclusión</strong> :</p>
-<p>Como T obtenido &gt; T critico ( 35 &gt; 13) no se rechaza Ho, no existe suficiente evidencia para concluir que existen diferencias entre los ritmos respiratorios de los niños</p>
-<p><br/><br/></p>
-</div>
-</div>
-<div id="u-de-mann-whitney" class="section level2">
-<h2><strong>U de Mann-Whitney</strong></h2>
-<table>
-<colgroup>
-<col width="14%" />
-<col width="85%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Numero de grupos</td>
-<td align="left">2</td>
-</tr>
-<tr class="even">
-<td align="left">Variable dependiente</td>
-<td align="left">En escala al menos ordinal</td>
-</tr>
-<tr class="odd">
-<td align="left">Objetivo</td>
-<td align="left">Determinar si la diferencia entre el numero de veces en que el valor de la variable en un grupo es mayor que el otro y el numero de veces en que es menor es estadísticamente significativa</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">Versión no paramétrica de la prueba t para muestras independientes</td>
-</tr>
-</tbody>
-</table>
-<p><br/><br/></p>
-<table>
-<colgroup>
-<col width="9%" />
-<col width="90%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="center"><img src="img/ej13.png" /></td>
-<td align="left">Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1) y adolescentes con bulimia (G2). El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías. Los datos obtenidos son los siguientes :</td>
-</tr>
-</tbody>
-</table>
-<table>
-<tbody>
-<tr class="odd">
-<td align="center">Grupo 1:</td>
-<td align="center">39</td>
-<td align="center">10</td>
-<td align="center">21</td>
-<td align="center">29</td>
-<td align="center">11</td>
-<td align="center">26</td>
-<td align="center">7</td>
-<td align="center">12</td>
-<td align="center">28</td>
-<td align="center">82</td>
-<td align="center">30</td>
-<td align="center">27</td>
-<td align="center">50</td>
-<td align="center">19</td>
-<td align="center">24</td>
-</tr>
-<tr class="even">
-<td align="center">Grupo 2:</td>
-<td align="center">68</td>
-<td align="center">32</td>
-<td align="center">58</td>
-<td align="center">16</td>
-<td align="center">23</td>
-<td align="center">53</td>
-<td align="center">55</td>
-<td align="center">32</td>
-<td align="center">61</td>
-<td align="center">29</td>
-<td align="center">50</td>
-<td align="center">64</td>
-<td align="center">67</td>
-<td align="center">37</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-<p>Nota: Antes de realizar la comparación de medias se debe realizar una prueba chi-cuadrado de bondad de ajuste para determinar si los datos siguen una distribución normal o no. En caso de que los datos no tengan una distribución aproximadamente normal entonces se debe realizar la prueba de signos.</p>
+<pre class="r"><code>g1=c(39,10,21,29,11,26,7,12,28,82,30,27,50,19,24)
+g2=c(68,32,58,16,23,53,55,32,61,29,50,64,67,37)
+# independent 2-group Mann-Whitney U Test 
+wilcox.test(g1,g2,paired = FALSE,alternative = &quot;less&quot;)</code></pre>
+<pre><code>Warning in wilcox.test.default(g1, g2, paired = FALSE, alternative = &quot;less&quot;):
+cannot compute exact p-value with ties</code></pre>
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  g1 and g2
+W = 42, p-value = 0.003179
+alternative hypothesis: true location shift is less than 0</code></pre>
 <p><strong>Conclusión</strong> :</p>
 <p>Se rechaza Ho , se acepta Ha. Se puede concluir que las dos poblaciones son diferentes. por lo tanto las medias son diferentes.</p>
 <p>Para analizar cual de los grupos presenta un mayor consumo de calorías, se observa que el Grupo I tiene suma de rangos de 168 y el Grupo II tiene suma de rangos de 273, lo que indica que los datos del Grupo I tienen valores menores en que los del Grupo II</p>
 <p>Por lo tanto los estudiantes sanos presentan consumo de calorías menores que los estudiantes que padecen de bulimia.</p>
 <p><br/><br/></p>
+</div>
 </div>
 <div id="kruskal-wallis" class="section level2">
 <h2><strong>Kruskal-Wallis</strong></h2>
@@ -1830,7 +1758,7 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="center"><img src="img/ej14.png" /></td>
+<td align="center"><img src="img/ej13.png" /></td>
 <td align="left">Para verificar si la memoria cambia con la edad, una investigadora realiza un estudio en el cual hay tres grupos de personas: G1- 60 años de edad, G2: con 50 años de edad, G3: con 40 años de edad. A cada persona se le presenta una serie de palabras. La serie es presentada dos veces y se cuenta el número de palabras que pueden recordar.</td>
 </tr>
 </tbody>
@@ -1870,6 +1798,16 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </tbody>
 </table>
 <p>Ho : Las poblaciones son idénticas Ha : Las poblaciones no son idénticas</p>
+<pre class="r"><code>g1=c(28,19,13,28,29,21)
+g2=c(26,20,11,14,22,21)
+g3=c(37,28,26,35,31)
+
+kruskal.test(g1,g2,g3)</code></pre>
+<pre><code>
+    Kruskal-Wallis rank sum test
+
+data:  g1 and g2
+Kruskal-Wallis chi-squared = 5, df = 5, p-value = 0.4159</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="correlación-de-spearman" class="section level2">
@@ -1881,7 +1819,7 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="center"><img src="img/ej15.png" /></td>
+<td align="center"><img src="img/ej14.png" /></td>
 <td align="left">Se requiere establecer si existe relación entre el tiempo de estudio dedicado a la preparación de una evaluación y la nota obtenida. Como la nota obtenida representa una variable cualitativa, se debe utilizar una prueba no paramétrica (coeficiente de correlación de Spearman). Los datos obtenidos son los siguientes:</td>
 </tr>
 </tbody>
@@ -1940,7 +1878,7 @@ sample estimates:
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="center"><img src="img/ej16.png" /></td>
+<td align="center"><img src="img/ej15.png" /></td>
 <td align="left">Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .</td>
 </tr>
 </tbody>
@@ -1953,7 +1891,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 0, runs = 51, n1 = 50, n2 = 50, n = 100, p-value = 1
+statistic = -1.0051, runs = 46, n1 = 50, n2 = 50, n = 100, p-value =
+0.3149
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1973,7 +1912,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99442, p-value = 0.6629</code></pre>
+W = 0.98773, p-value = 0.08213</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1985,19 +1924,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.28126, p-value = 0.858</code></pre>
+JB = 3.7028, p-value = 0.1365</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.8556, p-value = 0.6575</code></pre>
+T = 2.5615, p-value = 0.1655</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = -0.05677, p-value = 0.7425</code></pre>
+T = 0.25104, p-value = 0.141</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -2006,13 +1945,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.040548, p-value = 0.5849</code></pre>
+D = 0.052709, p-value = 0.1918</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 9.95, p-value = 0.7658</code></pre>
+P = 13.52, p-value = 0.486</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

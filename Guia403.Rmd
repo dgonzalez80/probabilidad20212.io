@@ -840,51 +840,20 @@ Nota: antes de realizar la comparación de medias, se debe realizar una prueba d
 
 
 ```{r}
-
+g1=c(39,10,21,29,11,26,7,12,28,82,30,27,50,19,24)
+g2=c(68,32,58,16,23,53,55,32,61,29,50,64,67,37)
+# independent 2-group Mann-Whitney U Test 
+wilcox.test(g1,g2,paired = FALSE,alternative = "less")
 ```
 
 **Conclusión** :  
-
-Como T obtenido > T critico  ( 35 > 13) no se rechaza Ho, no existe suficiente evidencia  para concluir que existen diferencias entre los ritmos respiratorios de los niños
-
-
-<br/><br/>
-
-## **U de Mann-Whitney**
-
-|            |                                                                 |
-|:---------- |:----------------------------------------------------------------|
-|Numero de grupos| 	2                                                          |
-|Variable dependiente  |	En escala al menos ordinal	                         |
-|Objetivo	 | Determinar si la diferencia entre el numero de veces en que el valor de la variable en un grupo es mayor que el otro y el numero de veces en que es menor es estadísticamente significativa |
-|          |Versión no paramétrica de la prueba t para muestras independientes |
-
-<br/><br/>
-
-|    |                                     |
-|:--:|:------------------------------------|
-| ![](img/ej13.png) | Los siguientes datos se tomaron de un estudio de comparación de adolescentes sanos (G1)  y adolescentes con bulimia (G2).  El primero esta conformado por 15 estudiantes y el segundo grupo (G2) por 14 estudiantes, corresponden al consumo diario de calorías. Los datos obtenidos son los siguientes : |
-     
-|         |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
-|:-------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|     
-|Grupo 1: |39  |10  |21  |29  |11  |26  |7   |12  |28  |82  |30  |27  |50  |19  |24  | 
-|Grupo 2: |68  |32  |58  |16  |23  |53  |55  |32  |61  |29  |50  |64  |67  |37  |    |
-
-
-Nota: Antes de realizar la comparación de medias se debe realizar una prueba chi-cuadrado de bondad de ajuste para determinar si los datos siguen una distribución normal o no. En caso de que los datos no tengan una distribución aproximadamente normal entonces se debe realizar la prueba de signos.
-
-```{r}
-
-```
-
-**Conclusión** :
 
 Se rechaza Ho , se acepta Ha. Se puede concluir que las dos poblaciones son diferentes. por lo tanto las medias son diferentes.
 
 Para analizar cual de los grupos presenta un mayor consumo de calorías, se observa  que el Grupo I   tiene suma de rangos de 168  y el Grupo II tiene suma de rangos de 273, lo que indica que los datos del Grupo I tienen valores menores en que los del Grupo II
 
 Por lo tanto los estudiantes sanos presentan consumo de calorías menores que los estudiantes que padecen de bulimia.
-	
+
 <br/><br/>
 
 ## **Kruskal-Wallis**
@@ -899,7 +868,7 @@ Objetivo	            |Determinar si las diferencias entre las medias de los rang
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej14.png)| Para verificar si la memoria cambia con la edad, una investigadora realiza un estudio en el cual hay tres grupos de personas: G1- 60 años de edad, G2: con 50 años de edad, G3: con 40 años de edad. A cada persona se le presenta una serie de palabras. La serie es presentada dos veces y se cuenta el número de palabras que pueden recordar. |
+| ![](img/ej13.png)| Para verificar si la memoria cambia con la edad, una investigadora realiza un estudio en el cual hay tres grupos de personas: G1- 60 años de edad, G2: con 50 años de edad, G3: con 40 años de edad. A cada persona se le presenta una serie de palabras. La serie es presentada dos veces y se cuenta el número de palabras que pueden recordar. |
 
 |         |    |    |    |    |    |    |    |
 |:-------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
@@ -910,13 +879,22 @@ Objetivo	            |Determinar si las diferencias entre las medias de los rang
 Ho : Las poblaciones son idénticas
 Ha : Las poblaciones no son idénticas
 
+
+```{r}
+g1=c(28,19,13,28,29,21)
+g2=c(26,20,11,14,22,21)
+g3=c(37,28,26,35,31)
+
+kruskal.test(g1,g2,g3)
+```
+
 <br/><br/>
 
 ## **Correlación de Spearman**
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej15.png) |Se requiere establecer si existe relación entre el tiempo de estudio dedicado a la preparación de una evaluación y la nota obtenida. Como la nota obtenida representa una variable cualitativa, se debe utilizar una prueba no paramétrica (coeficiente de correlación de Spearman). Los datos obtenidos son los siguientes: |
+| ![](img/ej14.png) |Se requiere establecer si existe relación entre el tiempo de estudio dedicado a la preparación de una evaluación y la nota obtenida. Como la nota obtenida representa una variable cualitativa, se debe utilizar una prueba no paramétrica (coeficiente de correlación de Spearman). Los datos obtenidos son los siguientes: |
 
 |       |      |      |      |       |      |      |      |      |      |      |
 |:------|-----:|-----:|-----:|------:|-----:|-----:|-----:|-----:|-----:|-----:|
@@ -938,7 +916,7 @@ En este caso se utiliza el coeficiente de correlación de Sperman para valorar l
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej16.png) |Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .|
+| ![](img/ej15.png) |Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .|
 
 Ho : La muestra es aleatoria <br/>
 Ha: La muestra no es aleatoria <br/>
