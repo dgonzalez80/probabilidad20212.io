@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### <span style="color:#E77C00">**Introducción**</span>
 
-Este primer módulo te permitira recorrer los  pasos de la metodología estadística  y realizar un análisis descritivos de tus datos, empleando para ellos software estadístico y diversas bases de datos disponibles en internet.  Para lograrlo se plantean tres unidades : Bases de datos, Tablas de frecuencia e indicadores descriptivos y por último la representación  gráfica o visualizacián de  datos.  Requiere revisar los conceptos de sumatoria  y productoria contenidos en  el Modulo 0
+Este primer módulo te permitirá recorrer los  pasos de la metodología estadística  y realizar un análisis descriptivos de tus datos, empleando para ellos software estadístico y diversas bases de datos disponibles en internet.  Para lograrlo se plantean tres unidades : Bases de datos, Tablas de frecuencia e indicadores descriptivos y por último la representación  gráfica o visualización de  datos.  Requiere revisar los conceptos de sumatoria  y productoria contenidos en  el Modulo 0
 
 <br/><br/><br/>
 

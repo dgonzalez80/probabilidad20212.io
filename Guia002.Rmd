@@ -389,8 +389,8 @@ Problemas tomados y basados en  Meyer(1986)
 Códigos en R 
 
 ```{r}
-nPk=function(a,b){choose(n,k)*factorial(k)} # permutacion
-nCk=function(a,b){choose(n,k)}  # combinacion
+nPk=function(a,b){choose(n,k)*factorial(k)} # permutación
+nCk=function(a,b){choose(n,k)}  # combinación
 ```
 
 
