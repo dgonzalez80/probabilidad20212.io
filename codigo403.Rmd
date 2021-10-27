@@ -20,43 +20,82 @@ Valle <- read_csv("data/VALLE.csv")
 
 # **Pruebas paramétricas**
 
-Supongamos la hipótesis:
+<br/>
+
+Supongamos las hipótesis:
 
 |                                 |
 |:--------------------------------|
 |$Ho$ : $\mu_{W} = 1000$          |
 |$Ha$ : $\mu_{W} \neq 1000$       |
 
+<br/>
+
 ```{r}
 # Problema 1
 w=rnorm(100,1000,2) # simulación de los datos
 ```
+
+<br/><br/>
 
 |                                 |
 |:--------------------------------|
 |$Ho$ : $X \sim norm$             |
 |$Ha$ : $X no \sim norm$          |
 
+<br/>
+
 ```{r}
 shapiro.test(w)  # verificación de normalidad
 ```
 
+<br/><br/><br/>
+
 ### **Prueba de hipótesis para una media**
 
+<br/>
+
 Supuestos:
-+ X \sim normal
-+ Varianza conocida ($\sigma^{2}=4$)
+
+|                                 |
+|:--------------------------------|
+| X \sim normal                   |
+| Varianza conocida ($\sigma^{2}=4$)|
+
+<br/><br/>
 
 ```{r}
 BSDA::z.test(w, mu=1000, sigma.x = 2)
 
 ```
+<br/><br/><br/>
+
 ### **Prueba de hipótesis para una media**
 
-Supuestos:
-+ X \sim normal
-+ Varianza desconocida
+<br/><br/>
 
+|                                 |                              |                                  |
+|:--------------------------------|:-----------------------------|:---------------------------------|
+|$Ho$ : $\mu = \mu_o$             |$Ho$ : $\mu \leq \mu_o$       |  $Ho$ : $\mu \geq \mu_o$         |
+|$Ha$ : $\mu \neq \mu_o$          |$Ha$ : $\mu > \mu_o$          |$Ha$ : $\mu < \mu_o$              |
+
+<br/><br/>
+
+Supuestos:
+
+|                                 |
+|:--------------------------------|
+| X \sim normal                   |
+| Varianza desconocida            |
+
+<br/><br/>
+
+|                                 | 
+|:--------------------------------|
+| $Ho$ : $\mu \geq 5$             |
+| $Ha$ : $\mu < 5$                |
+
+<br/><br/>
 
 
 ```{r}
@@ -68,6 +107,14 @@ sd(t)
 t.test(t,mu=5, alternative="less")
 ```
 
+<br/><br/>
+
+|                                 | 
+|:--------------------------------|
+| $Ho$ : $p \geq 5$               |
+| $Ha$ : $p < 5$                  |
+
+<br/>
 
 ```{r}
 #-------------------------------------------------------------------------------
@@ -77,6 +124,14 @@ z=(24/40-.76)/(sqrt(.76*(1-.76)/40))
 prop.test(24,40,0.76,alternative="less")
 ```
 
+<br/><br/>
+
+|                                 | 
+|:--------------------------------|
+| $Ho$ : $\mu_1 \geq \mu_2$       |
+| $Ha$ : $\mu_1 < \mu_2$          |
+
+<br/>
 
 ```{r}
 #---------------------------------------------------------------------------------
@@ -94,6 +149,14 @@ T4=(mx1-mx2)/(sp*sqrt(1/n1+1/n2))
 RdeRT4=qt(0.05,(n1+n2-2))
 ```
 
+<br/><br/><br/>
+
+|                                 | 
+|:--------------------------------|
+| $Ho$ : $\mu_{g1} \geq \mu_{g2}$ |
+| $Ha$ : $\mu_{g1} < \mu_{g2}$    |
+
+<br/>
 
 ```{r}
 #-----------------------------------------------------------------------------------
@@ -101,6 +164,11 @@ RdeRT4=qt(0.05,(n1+n2-2))
 p5=3/40
 z5=(p5-0.05)/sqrt(0.05*0.95/40)
 #----------------------------------------------------------------------------------
+```
+
+<br/><br/>
+
+```{r}
 # Problema 6
 g1=c(75,76,74,80,72,798,76,73,72,75)
 g2=c(86,78,86,84,81,79,78,84,88,80)
@@ -112,6 +180,14 @@ var.test(g1,g2)
 t.test(g1,g2)
 ```
 
+<br/><br/>
+
+|                                 | 
+|:--------------------------------|
+| $Ho$ : $p_1 = p_2$              |
+| $Ha$ : $p \neq p_2$             |
+
+<br/>
 
 ```{r}
 #---------------------------------------------------------------------------------
@@ -122,6 +198,15 @@ n2=400 ; x2=88
 
 prop.test(c(80,88),c(400,400))
 ```
+
+<br/><br/>
+
+|                                 | 
+|:--------------------------------|
+| $Ho$ : $\mu_1 \geq \mu_2$       |
+| $Ha$ : $\mu_1 < \mu_2$          |
+
+<br/>
 
 
 ```{r}
@@ -137,6 +222,15 @@ sd(d)
 t.test(x1,x2,paired = TRUE)
 ```
 
+<br/><br/>
+
+|                                 | 
+|:--------------------------------|
+| $Ho$ : $\mu_{pa} \geq \mu_{pd}$ |
+| $Ha$ : $\mu_{pa} < \mu_{pd}$    |
+
+<br/>
+
 
 ```{r}
 #------------------------------------------------------------------------------------
@@ -151,6 +245,14 @@ sd(d)
 t.test(pa,pd,paired = TRUE)
 ```
 
+<br/><br/>
+
+| Verificación de normalidad  | Comparación de varianzas                        | Diferencia de medias              |
+|:----------------------------|:------------------------------------------------|:----------------------------------|   
+|$Ho$ : $X_{g1} \sim norm$    |$Ho$ : $\sigma^{2}_{g1} = \sigma^{2}_{g2}$       | $Ho$ : $\mu_{g1} \geq \mu_{g2}$   | 
+|$Ha$ : $X_{g2} no \sim norm$ |$Ha$ : $\sigma^{2}_{g1} \neq \sigma^{2}_{g2}$    |  $Ha$ : $\mu_{g1} < \mu_{g2}$     |
+
+<br/>
 
 ```{r}
 #-----------------------------------------------------------------------
@@ -167,31 +269,32 @@ t.test(g1,g2)
 ```
 
 
-
-
-
 <br/><br/><br/><br/>
 
 # **Pruebas no paramétricas**
 
-
-
-<br/><br/><br/><br/>
+<br/><br/><br/>
 
 # **Pruebas de normalidad**
 
-Existen varias pruebas de hipótesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hipóteisis planteadas son:
+Existen varias pruebas de hipótesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hipótesis planteadas son:
+
+<br/>
 
 |                                       |
 |:--------------------------------------|
 |$Ho$: $X$ tiene distribución Normal    | 
 |$Ha$: $X$ no tiene distribución Normal |
 
+<br/>
+
 ```{r}
 # se genera una variable aleatoria normal
 x=rnorm(200,1000,50)
 plot(density(x), las=1)
 ```
+
+<br/><br/>
 
 ## **Shapiro Wilk**
 
@@ -201,6 +304,7 @@ shapiro.test(x)
 Esta prueba no requiere la instalación de paquetes adicionales, está disponible en la configuración básica de R
 
 
+<br/><br/>
 
 ## **Paquete normtest**
 
@@ -211,11 +315,15 @@ Las siguientes pruebas requieren instalar y cargar el paquete: `normtest`
  library(normtest)
 ```
 
+<br/><br/>
+
 ## **Jarque-Bera ajustado**
 
 ```{r}
 ajb.norm.test(x)	
 ```
+
+<br/><br/>
 
 ## **Frosini**
 
@@ -223,11 +331,15 @@ ajb.norm.test(x)
 frosini.norm.test(x)	
 ```
 
+<br/><br/>
+
 ## **Geary**
 
 ```{r}
 geary.norm.test(x)	
 ```
+
+<br/><br/>
 
 ## **Hagazy-Green 1**
 
@@ -235,11 +347,15 @@ geary.norm.test(x)
 hegazy1.norm.test(x)	
 ```
 
+<br/>
+
 ## **Hagazy-Green 2**
 
 ```{r}
 hegazy2.norm.test(x)
 ```
+
+<br/><br/>
 
 ## **Jarque-Bera**
 
@@ -247,11 +363,15 @@ hegazy2.norm.test(x)
 jb.norm.test(x)	
 ```
 
+<br/><br/>
+
 ## **de kurtosis**
 
 ```{r}
 kurtosis.norm.test(x)
 ```
+
+<br/><br/>
 
 ## **de sesgo**
 
@@ -259,17 +379,23 @@ kurtosis.norm.test(x)
 skewness.norm.test(x)	
 ```
 
+<br/><br/>
+
 ## **Spiegelhalter**
 
 ```{r}
 spiegelhalter.norm.test(x)	
 ```
 
+<br/><br/>
+
 ## **Weisberg-Bingham**
 
 ```{r}
 wb.norm.test(x)	
 ```
+
+<br/><br/><br/>
 
 ## **Paquete nortest**
 
@@ -280,11 +406,15 @@ Las siguientes pruebas requieren instalar y cargar el paquete: `nortest`
  library(nortest)
 ```
 
+<br/>
+
 ## **Anderson-Darling**
 
 ```{r}
 ad.test(x)
 ```
+
+<br/>
 
 ## **Cramer-von Mises**
 
@@ -292,17 +422,24 @@ ad.test(x)
 cvm.test(x)
 ```
 
+
+<br/>
+
 ## **Lilliefors (Kolmogorov-Smirnov)**
 
 ```{r}
 lillie.test(x)
 ```
 
+<br/>
+
 ## **chi-cuadrado de Pearson**
 
 ```{r}
 pearson.test(x)
 ```
+
+<br/>
 
 ## **Shapiro-Francia**
 

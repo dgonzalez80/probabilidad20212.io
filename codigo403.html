@@ -545,7 +545,8 @@ div.tocify {
 
 <div id="pruebas-paramétricas" class="section level1">
 <h1><strong>Pruebas paramétricas</strong></h1>
-<p>Supongamos la hipótesis:</p>
+<p><br/></p>
+<p>Supongamos las hipótesis:</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -556,8 +557,10 @@ div.tocify {
 </tr>
 </tbody>
 </table>
+<p><br/></p>
 <pre class="r"><code># Problema 1
 w=rnorm(100,1000,2) # simulación de los datos</code></pre>
+<p><br/><br/></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -568,31 +571,84 @@ w=rnorm(100,1000,2) # simulación de los datos</code></pre>
 </tr>
 </tbody>
 </table>
+<p><br/></p>
 <pre class="r"><code>shapiro.test(w)  # verificación de normalidad</code></pre>
 <pre><code>
     Shapiro-Wilk normality test
 
 data:  w
-W = 0.99166, p-value = 0.7959</code></pre>
+W = 0.9859, p-value = 0.3682</code></pre>
+<p><br/><br/><br/></p>
 <div id="prueba-de-hipótesis-para-una-media" class="section level3">
 <h3><strong>Prueba de hipótesis para una media</strong></h3>
-<p>Supuestos: + X normal + Varianza conocida (<span class="math inline">\(\sigma^{2}=4\)</span>)</p>
+<p><br/></p>
+<p>Supuestos:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">X normal</td>
+</tr>
+<tr class="even">
+<td align="left">Varianza conocida (<span class="math inline">\(\sigma^{2}=4\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
 <pre class="r"><code>BSDA::z.test(w, mu=1000, sigma.x = 2)</code></pre>
 <pre><code>
     One-sample z-Test
 
 data:  w
-z = -1.0374, p-value = 0.2996
+z = -0.73527, p-value = 0.4622
 alternative hypothesis: true mean is not equal to 1000
 95 percent confidence interval:
-  999.4005 1000.1845
+  999.461 1000.245
 sample estimates:
 mean of x 
- 999.7925 </code></pre>
+ 999.8529 </code></pre>
+<p><br/><br/><br/></p>
 </div>
 <div id="prueba-de-hipótesis-para-una-media-1" class="section level3">
 <h3><strong>Prueba de hipótesis para una media</strong></h3>
-<p>Supuestos: + X normal + Varianza desconocida</p>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu = \mu_o\)</span></td>
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu \leq \mu_o\)</span></td>
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu \geq \mu_o\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu \neq \mu_o\)</span></td>
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu &gt; \mu_o\)</span></td>
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu &lt; \mu_o\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<p>Supuestos:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">X normal</td>
+</tr>
+<tr class="even">
+<td align="left">Varianza desconocida</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu \geq 5\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu &lt; 5\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
 <pre class="r"><code>#-------------------------------------------------------------------------------
 # Problema 2
 t=c(4.21,5.55,3.02,5.13,4.77,2.34,5.42,4.50,6.10,3.80,5.12,6.46,6.19,3.79,3.54)
@@ -612,6 +668,18 @@ alternative hypothesis: true mean is less than 5
 sample estimates:
 mean of x 
  4.662667 </code></pre>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(p \geq 5\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(p &lt; 5\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
 <pre class="r"><code>#-------------------------------------------------------------------------------
 #Problema 3
 z=(24/40-.76)/(sqrt(.76*(1-.76)/40))
@@ -628,6 +696,18 @@ alternative hypothesis: true p is less than 0.76
 sample estimates:
   p 
 0.6 </code></pre>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_1 \geq \mu_2\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_1 &lt; \mu_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
 <pre class="r"><code>#---------------------------------------------------------------------------------
 # Problema 4
 n1=36 ; mx1=6 ; sx1=4
@@ -641,12 +721,25 @@ s2p=((n1-1)*sx1^2+(n2-1)*sx2^2)/(n1+n2-2)
 sp=sqrt(s2p)
 T4=(mx1-mx2)/(sp*sqrt(1/n1+1/n2))
 RdeRT4=qt(0.05,(n1+n2-2))</code></pre>
+<p><br/><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_{g1} \geq \mu_{g2}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_{g1} &lt; \mu_{g2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
 <pre class="r"><code>#-----------------------------------------------------------------------------------
 # Problema 5
 p5=3/40
 z5=(p5-0.05)/sqrt(0.05*0.95/40)
-#----------------------------------------------------------------------------------
-# Problema 6
+#----------------------------------------------------------------------------------</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code># Problema 6
 g1=c(75,76,74,80,72,798,76,73,72,75)
 g2=c(86,78,86,84,81,79,78,84,88,80)
 
@@ -680,6 +773,18 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of x mean of y 
     147.1      82.4 </code></pre>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(p_1 = p_2\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(p \neq p_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
 <pre class="r"><code>#---------------------------------------------------------------------------------
 # Problema 7
 
@@ -698,6 +803,18 @@ alternative hypothesis: two.sided
 sample estimates:
 prop 1 prop 2 
   0.20   0.22 </code></pre>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_1 \geq \mu_2\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_1 &lt; \mu_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
 <pre class="r"><code>#-----------------------------------------------------------------------------------
 # Problema 8
 x1=c(45,73,46,124,30,57,83,34,26,17)
@@ -720,6 +837,18 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of the differences 
                     4.9 </code></pre>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_{pa} \geq \mu_{pd}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_{pa} &lt; \mu_{pd}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
 <pre class="r"><code>#------------------------------------------------------------------------------------
 #Problema 9
 
@@ -742,6 +871,34 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of the differences 
                  2.0625 </code></pre>
+<p><br/><br/></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="43%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Verificación de normalidad</th>
+<th align="left">Comparación de varianzas</th>
+<th align="left">Diferencia de medias</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(X_{g1} \sim norm\)</span></td>
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\sigma^{2}_{g1} = \sigma^{2}_{g2}\)</span></td>
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_{g1} \geq \mu_{g2}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(X_{g2} no \sim norm\)</span></td>
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\sigma^{2}_{g1} \neq \sigma^{2}_{g2}\)</span></td>
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_{g1} &lt; \mu_{g2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
 <pre class="r"><code>#-----------------------------------------------------------------------
 # Problema 10
 g1=c(37,19,21,35,16,4,0,12,63,25,12,15)
@@ -782,11 +939,12 @@ mean of x mean of y
 </div>
 <div id="pruebas-no-paramétricas" class="section level1">
 <h1><strong>Pruebas no paramétricas</strong></h1>
-<p><br/><br/><br/><br/></p>
+<p><br/><br/><br/></p>
 </div>
 <div id="pruebas-de-normalidad" class="section level1">
 <h1><strong>Pruebas de normalidad</strong></h1>
-<p>Existen varias pruebas de hipótesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hipóteisis planteadas son:</p>
+<p>Existen varias pruebas de hipótesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hipótesis planteadas son:</p>
+<p><br/></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -797,10 +955,12 @@ mean of x mean of y
 </tr>
 </tbody>
 </table>
+<p><br/></p>
 <pre class="r"><code># se genera una variable aleatoria normal
 x=rnorm(200,1000,50)
 plot(density(x), las=1)</code></pre>
-<p><img src="codigo403_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="codigo403_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><br/><br/></p>
 <div id="shapiro-wilk" class="section level2">
 <h2><strong>Shapiro Wilk</strong></h2>
 <pre class="r"><code>shapiro.test(x)</code></pre>
@@ -808,14 +968,16 @@ plot(density(x), las=1)</code></pre>
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99636, p-value = 0.9201</code></pre>
+W = 0.99584, p-value = 0.8637</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, está disponible en la configuración básica de R</p>
+<p><br/><br/></p>
 </div>
 <div id="paquete-normtest" class="section level2">
 <h2><strong>Paquete normtest</strong></h2>
 <p>Las siguientes pruebas requieren instalar y cargar el paquete: <code>normtest</code></p>
 <pre class="r"><code># install.packages(&quot;normtets&quot;)
  library(normtest)</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="jarque-bera-ajustado" class="section level2">
 <h2><strong>Jarque-Bera ajustado</strong></h2>
@@ -824,7 +986,8 @@ W = 0.99636, p-value = 0.9201</code></pre>
     Adjusted Jarque-Bera test for normality
 
 data:  x
-AJB = 0.52426, p-value = 0.758</code></pre>
+AJB = 0.34565, p-value = 0.8435</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="frosini" class="section level2">
 <h2><strong>Frosini</strong></h2>
@@ -833,7 +996,8 @@ AJB = 0.52426, p-value = 0.758</code></pre>
     Frosini test for normality
 
 data:  x
-B = 0.11855, p-value = 0.947</code></pre>
+B = 0.097998, p-value = 0.995</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="geary" class="section level2">
 <h2><strong>Geary</strong></h2>
@@ -842,7 +1006,8 @@ B = 0.11855, p-value = 0.947</code></pre>
     Geary test for normality
 
 data:  x
-d = 0.79634, p-value = 0.5855</code></pre>
+d = 0.79556, p-value = 0.593</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="hagazy-green-1" class="section level2">
 <h2><strong>Hagazy-Green 1</strong></h2>
@@ -851,7 +1016,8 @@ d = 0.79634, p-value = 0.5855</code></pre>
     Hegazy-Green test for normality
 
 data:  x
-T = 0.039784, p-value = 0.9405</code></pre>
+T = 0.034589, p-value = 0.99</code></pre>
+<p><br/></p>
 </div>
 <div id="hagazy-green-2" class="section level2">
 <h2><strong>Hagazy-Green 2</strong></h2>
@@ -860,7 +1026,8 @@ T = 0.039784, p-value = 0.9405</code></pre>
     Hegazy-Green test for normality
 
 data:  x
-T = 0.0035053, p-value = 0.93</code></pre>
+T = 0.0031219, p-value = 0.965</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="jarque-bera" class="section level2">
 <h2><strong>Jarque-Bera</strong></h2>
@@ -869,7 +1036,8 @@ T = 0.0035053, p-value = 0.93</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.55616, p-value = 0.741</code></pre>
+JB = 0.41768, p-value = 0.802</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="de-kurtosis" class="section level2">
 <h2><strong>de kurtosis</strong></h2>
@@ -878,7 +1046,8 @@ JB = 0.55616, p-value = 0.741</code></pre>
     Kurtosis test for normality
 
 data:  x
-T = 2.8842, p-value = 0.721</code></pre>
+T = 2.7967, p-value = 0.5355</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="de-sesgo" class="section level2">
 <h2><strong>de sesgo</strong></h2>
@@ -887,7 +1056,8 @@ T = 2.8842, p-value = 0.721</code></pre>
     Skewness test for normality
 
 data:  x
-T = 0.11547, p-value = 0.509</code></pre>
+T = 0.046903, p-value = 0.772</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="spiegelhalter" class="section level2">
 <h2><strong>Spiegelhalter</strong></h2>
@@ -896,7 +1066,8 @@ T = 0.11547, p-value = 0.509</code></pre>
     Spiegelhalter test for normality
 
 data:  x
-T = 1.2557, p-value = 0.4095</code></pre>
+T = 1.257, p-value = 0.411</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="weisberg-bingham" class="section level2">
 <h2><strong>Weisberg-Bingham</strong></h2>
@@ -905,13 +1076,15 @@ T = 1.2557, p-value = 0.4095</code></pre>
     Weisberg-Bingham test for normality
 
 data:  x
-WB = 0.99708, p-value = 0.9465</code></pre>
+WB = 0.99703, p-value = 0.9425</code></pre>
+<p><br/><br/><br/></p>
 </div>
 <div id="paquete-nortest" class="section level2">
 <h2><strong>Paquete nortest</strong></h2>
 <p>Las siguientes pruebas requieren instalar y cargar el paquete: <code>nortest</code></p>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
  library(nortest)</code></pre>
+<p><br/></p>
 </div>
 <div id="anderson-darling" class="section level2">
 <h2><strong>Anderson-Darling</strong></h2>
@@ -920,7 +1093,8 @@ WB = 0.99708, p-value = 0.9465</code></pre>
     Anderson-Darling normality test
 
 data:  x
-A = 0.16552, p-value = 0.9397</code></pre>
+A = 0.13262, p-value = 0.9805</code></pre>
+<p><br/></p>
 </div>
 <div id="cramer-von-mises" class="section level2">
 <h2><strong>Cramer-von Mises</strong></h2>
@@ -929,7 +1103,8 @@ A = 0.16552, p-value = 0.9397</code></pre>
     Cramer-von Mises normality test
 
 data:  x
-W = 0.021969, p-value = 0.948</code></pre>
+W = 0.015678, p-value = 0.9923</code></pre>
+<p><br/></p>
 </div>
 <div id="lilliefors-kolmogorov-smirnov" class="section level2">
 <h2><strong>Lilliefors (Kolmogorov-Smirnov)</strong></h2>
@@ -938,7 +1113,8 @@ W = 0.021969, p-value = 0.948</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.028284, p-value = 0.9604</code></pre>
+D = 0.026415, p-value = 0.9817</code></pre>
+<p><br/></p>
 </div>
 <div id="chi-cuadrado-de-pearson" class="section level2">
 <h2><strong>chi-cuadrado de Pearson</strong></h2>
@@ -947,7 +1123,8 @@ D = 0.028284, p-value = 0.9604</code></pre>
     Pearson chi-square normality test
 
 data:  x
-P = 10.12, p-value = 0.7534</code></pre>
+P = 6.38, p-value = 0.956</code></pre>
+<p><br/></p>
 </div>
 <div id="shapiro-francia" class="section level2">
 <h2><strong>Shapiro-Francia</strong></h2>
@@ -956,7 +1133,7 @@ P = 10.12, p-value = 0.7534</code></pre>
     Shapiro-Francia normality test
 
 data:  x
-W = 0.99708, p-value = 0.938</code></pre>
+W = 0.99703, p-value = 0.9333</code></pre>
 <p>En todos los casos se presenta un valor-p grande por lo cual no se rechaza <span class="math inline">\(Ho\)</span>, asumimos que <span class="math inline">\(Ho\)</span> es verdad. Asumimos que la distribución de la variable <span class="math inline">\(X\)</span> es normal</p>
 </div>
 </div>
