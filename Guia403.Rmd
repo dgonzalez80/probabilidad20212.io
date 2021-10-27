@@ -1104,9 +1104,8 @@ El siguiente código permite la activación de tutorial
 
 ```{r eval=FALSE}
 install.packages("learnr") # solo una vez
-install.packages('remotes')  # solo una vez
-library(remotes) # solo una vez
-install_github("dgonzalez80/paquetepye", force = TRUE) # solo una vez
+install.packages("devtools") # solo una vez
+devtools::install_github("dgonzalez80/paquetepye")
 learnr::run_tutorial("Taller_pruebas1", "paquetepye")
 ```
 
