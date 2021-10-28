@@ -102,6 +102,8 @@ navbar:
           href: Taller_continuas.html
         - text: "Taller IC"
           href: TallerIC.html
+        - text: "Taller Pruebas 1"
+          href: Taller_pruebas1.html          
         - text: "Trabajo final"
           href: Guia_trabajo.html
 output:

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="dgonzalez80" />
+
+
+<title>Taller Prubas de hipótesis paramétricas</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    PyE
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 0
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo0.html">Módulo 0</a>
+    </li>
+    <li>
+      <a href="Guia001.html">Guía 0.1</a>
+    </li>
+    <li>
+      <a href="Guia002.html">Guía 0.2</a>
+    </li>
+    <li>
+      <a href="Guia003.html">Guía 0.3</a>
+    </li>
+    <li>
+      <a href="Guia004.html">Guía 0.4</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 1
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo1.html">Módulo 1</a>
+    </li>
+    <li>
+      <a href="Guia101.html">Guía 1.1</a>
+    </li>
+    <li>
+      <a href="Guia102.html">Guía 1.2</a>
+    </li>
+    <li>
+      <a href="Guia103.html">Guía 1.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 2
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo2.html">Módulo 2</a>
+    </li>
+    <li>
+      <a href="Guia201.html">Guía 2.1</a>
+    </li>
+    <li>
+      <a href="Guia202.html">Guía 2.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 3
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo3.html">Módulo 3</a>
+    </li>
+    <li>
+      <a href="Guia301.html">Guía 3.1</a>
+    </li>
+    <li>
+      <a href="Guia302.html">Guía 3.2</a>
+    </li>
+    <li>
+      <a href="Guia303.html">Guía 3.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 4
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo4.html">Módulo 4</a>
+    </li>
+    <li>
+      <a href="Guia401.html">Guía 4.1</a>
+    </li>
+    <li>
+      <a href="Guia402.html">Guía 4.2</a>
+    </li>
+    <li>
+      <a href="Guia403.html">Guía 4.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Módulo 5
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo5.html">Módulo 5</a>
+    </li>
+    <li>
+      <a href="Guia501.html">Guía 5.1</a>
+    </li>
+    <li>
+      <a href="Guia502.html">Guía 5.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-code"></span>
+     
+    Código R
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="introduccionR.html">Introducción a R</a>
+    </li>
+    <li>
+      <a href="codigo101.html">Código u1.1</a>
+    </li>
+    <li>
+      <a href="codigo102.html">Código u1.2</a>
+    </li>
+    <li>
+      <a href="codigo103.html">Código u1.3</a>
+    </li>
+    <li>
+      <a href="codigo201.html">Código u2.1</a>
+    </li>
+    <li>
+      <a href="codigo301.html">Código u3.1</a>
+    </li>
+    <li>
+      <a href="codigo302.html">Código u3.2</a>
+    </li>
+    <li>
+      <a href="simulacion.html">Simulación</a>
+    </li>
+    <li>
+      <a href="codigo401.html">Código u4.1</a>
+    </li>
+    <li>
+      <a href="codigo402.html">Código u4.2</a>
+    </li>
+    <li>
+      <a href="codigo403.html">Código u4.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-chess-pawn"></span>
+     
+    Actividades
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="actividad331.html">Actividasd 331</a>
+    </li>
+    <li>
+      <a href="actividad332.html">Actividad 332</a>
+    </li>
+    <li>
+      <a href="Taller_discretas.html">Taller Discretas</a>
+    </li>
+    <li>
+      <a href="Taller_continuas.html">Taller Continuas</a>
+    </li>
+    <li>
+      <a href="TallerIC.html">Taller IC</a>
+    </li>
+    <li>
+      <a href="Guia_trabajo.html">Trabajo final</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Taller Prubas de hipótesis paramétricas</h1>
+<h4 class="author">dgonzalez80</h4>
+
+</div>
+
+
+<div id="punto-1" class="section level2">
+<h2>punto 1</h2>
+<p>Suponga que se estudia la compra de una nueva maquina para una empresa. Se comprará si la proporción de la producción que necesita ser reprecesados por tener defectos es inferior al 5%. Se examina una muestra de 40 artículos construidos por la máquina y 3 necesitan ser reprocesados. ¿Que decisión se toma? (Se compra o no la máquina?)</p>
+<p><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(p \geq 0.05\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : p &lt; 0.05 $</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<pre class="r"><code>prop.test(x=3,n=40, p=0.05, conf.level=0.95, alternative = &quot;less&quot;)</code></pre>
+<pre><code>Warning in prop.test(x = 3, n = 40, p = 0.05, conf.level = 0.95, alternative =
+&quot;less&quot;): Chi-squared approximation may be incorrect</code></pre>
+<pre><code>
+    1-sample proportions test with continuity correction
+
+data:  3 out of 40, null probability 0.05
+X-squared = 0.13158, df = 1, p-value = 0.6416
+alternative hypothesis: true p is less than 0.05
+95 percent confidence interval:
+ 0.0000000 0.1894048
+sample estimates:
+    p 
+0.075 </code></pre>
+<p><br/></p>
+<p><strong>Conclusión</strong></p>
+<p>Como el <code>p-value = 0.6416</code> &gt; <span class="math inline">\(\alpha\)</span>, no rechazamos <span class="math inline">\(Ho\)</span>, no existe suficiente evidencia en la muestra que permita su rechazo, asumimos que <span class="math inline">\(Ho\)</span> es verdadera.</p>
+<p>Debido a que no se pudo confirmar que la maquina produce menos del 5% de articulos defectuosos, se recomienda no comprar la máquina</p>
+<p><br/><br/><br/></p>
+</div>
+<div id="punto-2" class="section level2">
+<h2>punto 2</h2>
+<p>Suponga que una empresa desarrolla un curso de entrenamiento para sus empleados, formando dos grupos y aplicándoles dos métodos distintos de entrenamiento. El primer grupo lo componen 36 empleados, mientras que el segundo grupo por 40 empleados. Los resultados en calificaciones entre 0 y 10, se presentan a continuación:</p>
+<p><br/></p>
+<pre class="r"><code>g1=c(6.2,  5.0,  6.9,  7.5,  8.6,  9.0,  7.0,  6.3, 9.9,  7.2,  8.1,  6.3,  5.2,  7.7,  5.7,  7.1,  6.4,  7.1,  8.3,  8.2,  6.4,  7.0,  7.8,  6.9,  8.5,  7.7,  8.2,  5.9,  9.8,  5.9,  6.7,  6.3,  6.7,  5.4,  7.2,  6.4)
+
+g2=c(8.2,  6.7,  7.6,  8.3,  9.4,  7.3,  6.7,  7.2,  9.8,  9.6,  8.9,  7.3,  9.7,  7.9,  9.1,  9.0,  9.2, 7.4,  8.3,  8.6,  8.5,  9.2,  7.0,  6.6,  8.4, 8.3,  7.5,  6.8,  7.0,  7.3, 8.9,  6.2,  7.1,  8.5, 9.1,  7.9,  8.1,  8.6,  6.8,  9.0)
+
+par(mfrow = c(1, 2))
+boxplot(g1, las=1, col = c2, ylim=c(0,10))
+boxplot(g2, las=1, col = c3, ylim=c(0,10))</code></pre>
+<p><img src="Taller_pruebas1_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><br/></p>
+<p>En este caso se trata de una comparación de medias, para grupos independientes.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_1 = \mu_2\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_1 \neq \mu_2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p>Antes de proceder a realizar la prueba de hipótesis debemos de verificar algunos supuestos.</p>
+<ol style="list-style-type: lower-roman">
+<li>Supuesto de normalidad</li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(X_1 \hspace{.3cm} \sim norm\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(X_1 \hspace{.3cm}no \sim norm\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>shapiro.test(g1) </code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  g1
+W = 0.9728, p-value = 0.5069</code></pre>
+<pre class="r"><code>shapiro.test(g2) </code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  g2
+W = 0.95887, p-value = 0.1533</code></pre>
+<p><br/></p>
+<p>En el caso de <span class="math inline">\(X_1\)</span> la prueba de Shapiro-Wilk arroja un <code>p-value = 0.5069</code>, lo cual indica que podemos asumir que la variable <span class="math inline">\(X_1\)</span>, se distribuye normal. Igual ocurre con el resultado de la prueba para la variable <span class="math inline">\(X_2\)</span> (<code>p-value = 0.1533</code>)</p>
+<p>Ahora se realiza la prueba de hipotesis para determinar si las varianzas de los dos grupos son iguales o diferentes</p>
+<p><br/> | | |:—————————| | <span class="math inline">\(Ho\)</span> : <span class="math inline">\(\sigma_{1}^{2} = \sigma_{2}^{2}\)</span> | | <span class="math inline">\(Ha\)</span> : <span class="math inline">\(\sigma_{1}^{2} \neq \sigma_{2}^{2}\)</span> | | |</p>
+<pre class="r"><code>var.test(g1,g2) </code></pre>
+<pre><code>
+    F test to compare two variances
+
+data:  g1 and g2
+F = 1.4447, num df = 35, denom df = 39, p-value = 0.2643
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.7545004 2.7989666
+sample estimates:
+ratio of variances 
+          1.444723 </code></pre>
+<p>En este caso el resultado (<code>p-value = 0.2643</code>) indica que no se rechaza <span class="math inline">\(Ho\)</span>, la muestra no da suficiente evidencia estadística para rechazarla, asumimos que las varianzas son iguales</p>
+<p>Con este resultado y sabiendo que los datos corresponden a grupos independientes realizamos la seguiente prueba</p>
+<pre class="r"><code>t.test(g1,g2,                 # variables 
+       paired=FALSE,          # grupos independientes
+       var.equal=TRUE,        # varianzas iguales
+       conf.level=0.95)       # alpha = 0.05</code></pre>
+<pre><code>
+    Two Sample t-test
+
+data:  g1 and g2
+t = -3.7972, df = 74, p-value = 0.0002975
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -1.4485078 -0.4514922
+sample estimates:
+mean of x mean of y 
+    7.125     8.075 </code></pre>
+<p>Conclusión</p>
+<p>Como el <code>p-value = 0.0002975</code> , rechazamos <span class="math inline">\(Ho\)</span>, aceptamos Ha como verdadera. <span class="math inline">\(\mu_1 \neq \mu_2\)</span>. Ahora podemos valorar las hipótesis</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_1 \geq \mu_2\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_1 &lt; \mu_2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>t.test(g1,g2,                 # variables 
+       paired=FALSE,          # grupos independientes
+       var.equal=TRUE,        # varianzas iguales
+       conf.level=0.95,       # alpha = 0.05
+       alternative = &quot;less&quot;)  # hipótesis alterna menor que (cola inferior)</code></pre>
+<pre><code>
+    Two Sample t-test
+
+data:  g1 and g2
+t = -3.7972, df = 74, p-value = 0.0001488
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+       -Inf -0.5332623
+sample estimates:
+mean of x mean of y 
+    7.125     8.075 </code></pre>
+<p>Con este resultado podemos concluir que <span class="math inline">\(\mu_1 &lt; \mu_2\)</span>, lo cual indica que el segundo grupo obtuvo un mejor rendimiento que el primer grupo. Se puede concluir que el método empleado con el segundo grupo genera mejores resultados.</p>
+</div>
+<div id="punto-3" class="section level2">
+<h2>punto 3</h2>
+<p>Los ingenieros de una ensambladora de automóviles requieren decidir sobre cual de dos de las marcas de neumáticos de deben comprar. La marca FB o la marca KT. Con el fin de tomar una decisión basada en evidencias estadísticas, deciden realizar un experimento en el que usan 12 neumáticos de cada marca. Los neumáticos se utilizan hasta su terminación . Los resultados obtenidos (en miles de kilometros) se presentan a continuación :</p>
+<pre class="r"><code>FB=c(41.8, 41.6, 31.5, 48.7, 40.8, 31.2, 36.5, 36.2, 32.8, 36.3, 38.6, 30.5)
+KT=c(40.5, 38.4, 44.0, 34.9, 44.0, 44.7, 44.0, 47.1, 39.8, 43.9, 38.5, 40.2)
+par(mfrow = c(1, 2))
+boxplot(FB, las=1, col = c2, ylim=c(0,50))
+boxplot(KT, las=1, col = c3, ylim=c(0,50))</code></pre>
+<p><img src="Taller_pruebas1_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>¿Cual de las marcas de neumáticos recomendaría comprar? ¿Que supuestos deberá confirmar?. Utilice un <span class="math inline">\(\alpha=0.05\)</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\mu_{FB} = \mu_{KT}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\mu_{FB} \neq \mu_{KT}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Como en los casos anteriores para una comparación de medias, suponiendo que las variables presentan una distribución normal ( conocimiento previo de este tipo de variables), procedemos a realizar una prueba de comparación de varianzas</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(\sigma_{FB}^{2} = \sigma_{KT}^{2}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(\sigma_{FB}^{2} \neq \sigma_{KT}^{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>var.test(FB,KT) </code></pre>
+<pre><code>
+    F test to compare two variances
+
+data:  FB and KT
+F = 2.417, num df = 11, denom df = 11, p-value = 0.1589
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.6957897 8.3958061
+sample estimates:
+ratio of variances 
+          2.416964 </code></pre>
+<p><code>p-value = 0.1589</code>, resultante del contraste indica que podemos decir que las varianzas se asumen iguales</p>
+<p>Ahora procedemos a realizar el contraste de medias</p>
+<pre class="r"><code>t.test(FB,KT,                 # variables 
+       paired=FALSE,          # grupos independientes
+       var.equal=TRUE,        # varianzas iguales
+       conf.level=0.95)       # alpha = 0.05</code></pre>
+<pre><code>
+    Two Sample t-test
+
+data:  FB and KT
+t = -2.398, df = 22, p-value = 0.0254
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -8.3139995 -0.6026672
+sample estimates:
+mean of x mean of y 
+ 37.20833  41.66667 </code></pre>
+<p><code>p-value = 0.0254</code>, indica que podemos rechazar <span class="math inline">\(Ho\)</span>, aceptamos como verdadera <span class="math inline">\(Ha\)</span>, <span class="math inline">\(\mu_{FB} \neq \mu_{KT}\)</span></p>
+<p>Con este resultado procedemos a realizar una prueba de cola inferior</p>
+<pre class="r"><code>t.test(FB,KT,                 # variables 
+       paired=FALSE,          # grupos independientes
+       var.equal=TRUE,        # varianzas iguales
+       conf.level=0.95,       # alpha = 0.05
+       alternative = &quot;less&quot;  )</code></pre>
+<pre><code>
+    Two Sample t-test
+
+data:  FB and KT
+t = -2.398, df = 22, p-value = 0.0127
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+      -Inf -1.265884
+sample estimates:
+mean of x mean of y 
+ 37.20833  41.66667 </code></pre>
+<p><code>p-value = 0.0127</code>, nos indica que se rechaza <span class="math inline">\(Ho\)</span>, se acepta <span class="math inline">\(Ha\)</span> como verdadera, las llantas KT tienen un mayor rendimiento promedio que las llantas FB. Se recomienda la compra de las llantas KT.</p>
+</div>
+<div id="punto-4" class="section level2">
+<h2>punto 4</h2>
+<p>Un ingeniero desea establecer si existen diferencias entre dos métodos diferentes de realizar el ensamble de una casa prefabricada. Para comprobarlo recogen información del tiempo empleado en el ensamble de una pieza para ambos métodos en horas, los cuales se presentan a continuación:</p>
+<pre class="r"><code>met.nue=c(32, 37, 35, 28, 41, 44, 35, 31, 34) 
+met.est=c(35, 31, 29, 25, 34, 40, 27, 32, 31)
+
+par(mfrow = c(1, 2))
+boxplot(met.nue, las=1, col = c2, ylim=c(0,45))
+boxplot(met.est, las=1, col = c3, ylim=c(0,45))</code></pre>
+<p><img src="Taller_pruebas1_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Presentan los datos suficiente evidencia que permita afirmar que el nuevo método es mas eficiente que el método estándar? (Utilice un <span class="math inline">\(\alpha=0.05\)</span>)</p>
+</div>
+<div id="punto-5" class="section level2">
+<h2>punto 5</h2>
+<p>El director de un gimnasio quiere determinar si un instructor de ejercicios debe ser contratado o no para su campaña estrella “Reducción de peso”. Para tomar la decisión indica a un candidato que pruebe con 16 personas que asisten habitualmente al gimnasio. Los siguientes datos corresponden a los pesos tomados al inicio del programa (<span class="math inline">\(x1\)</span>) y sus pesos al finalizar el programa (<span class="math inline">\(x2\)</span>)</p>
+<pre class="r"><code>x1=c(104, 89, 84, 106, 90, 96, 79, 90, 85, 76, 91, 82, 100, 89, 121, 72)
+x2=c( 98, 85, 85, 103, 88, 95, 79, 90, 82, 76, 89, 81,  99, 86, 111, 70)</code></pre>
+<p>¿Que supuestos se deben verificar? ¿Se podría decir que las rutinas empleadas por el instructor producen los efectos indicados?</p>
+</div>
+<div id="punto-6" class="section level2">
+<h2>punto 6</h2>
+<p>Se realizan pruebas de un nuevo lector láser manual para uso en la realización de inventarios y del lector utilizado actualmente, con el fin de decidir si se adquiere el primero. Se obtienen los datos sobre el número de códigos de barra leídos por segundo con el cada uno de los dispositivos.</p>
+<pre class="r"><code>lec.nue=c(35, 40, 36, 42, 41, 52, 36, 41, 49, 41, 45, 38, 31, 54, 37, 47, 38, 34, 46, 39, 45, 44, 41, 42, 36, 43, 35, 31, 38, 38, 41, 41, 44, 44, 35, 44, 38, 33, 38, 49, 45, 45,  38, 46, 28, 40, 41, 47, 43, 50, 39, 36, 39, 38, 37, 37, 47, 37, 41, 40, 35)
+lec.act=c(41, 33, 22, 27, 31, 25, 28, 36, 29, 32, 25, 31, 31, 30, 31, 36, 26, 29, 29, 26, 27, 27, 30, 34, 26, 30, 23, 22, 29, 31, 37, 32, 34, 25, 25, 36, 32, 30, 23, 31, 33, 27, 27, 29, 35, 36, 27, 29, 25, 34, 27, 25, 32, 37, 31, 33, 27, 31, 26, 25, 24)
+
+par(mfrow = c(1, 2))
+boxplot(lec.nue, las=1, col = c2, ylim=c(0,60))
+boxplot(lec.act, las=1, col = c3, ylim=c(0,60))</code></pre>
+<p><img src="Taller_pruebas1_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre class="r"><code># dos poblaciones independientes 
+# Ho: x1 es normal 
+# Ha: x1 no es normal 
+shapiro.test(lec.nue)  # p-value = 0.76  &gt;&gt; alpha, no rechazamos Ho, asumimos que x1 es normal </code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  lec.nue
+W = 0.98691, p-value = 0.76</code></pre>
+<pre class="r"><code># Ho: x2 es normal 
+# Ha: x2 no es normal 
+
+shapiro.test(lec.act)  # p-value = 0.2296 &gt;&gt; alpha, no rechazamos Ho, asumimos que x2 es normal </code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  lec.act
+W = 0.97442, p-value = 0.2296</code></pre>
+<pre class="r"><code># Ho: va1  =  va2
+# Ha: var1 != var2
+var.test(lec.nue, lec.act) # p-value = 0.09654 &gt; alpha, por tanto no rechazamos Ho, asumimos que las varianzas son iguales</code></pre>
+<pre><code>
+    F test to compare two variances
+
+data:  lec.nue and lec.act
+F = 1.5412, num df = 60, denom df = 60, p-value = 0.09654
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.9246342 2.5688108
+sample estimates:
+ratio of variances 
+          1.541172 </code></pre>
+<pre class="r"><code># Ho : mu_lec.nue  &lt;=  mu_lec.act
+# Ha : mu_lec.nue &gt;  mu_lec.act
+t.test(lec.nue,lec.act,  paired=FALSE, var.equal=TRUE, conf.level=0.95, alternative = &quot;greater&quot;)</code></pre>
+<pre><code>
+    Two Sample t-test
+
+data:  lec.nue and lec.act
+t = 12.801, df = 120, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is greater than 0
+95 percent confidence interval:
+ 9.547053      Inf
+sample estimates:
+mean of x mean of y 
+ 40.50820  29.54098 </code></pre>
+<p>De acuerdo con la información, es posible preferir alguno de ellos? ¿Que supuestos se deben verificar?</p>
+</div>
+<div id="punto-7" class="section level2">
+<h2>punto 7</h2>
+<p>Un empresario registro el número de artículos producidos durante 10 días para un grupo conformado por 15 obreros los cuales tienen un salario fijo (grupo 1). El gerente piensa que si se cambia la forma del salario tendrán mejores resultados. Para verificarlo introduce cambios en la forma de pago a un segundo grupo (grupo 2) . El numero de artículos producidos por ambos grupos son los siguientes:</p>
+<pre class="r"><code>g1=c(75, 76, 74, 80, 72, 78, 76, 73, 72, 75)
+g2=c(86, 78, 86, 84, 81, 79, 78, 84, 88, 80)
+
+par(mfrow = c(1, 2))
+boxplot(g1, las=1, col = c2, ylim=c(70,90))
+boxplot(g2, las=1, col = c3, ylim=c(70,90))</code></pre>
+<p><img src="Taller_pruebas1_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code># dos poblaciones, de grupos independientes
+# Ho: var1 = var2
+# Ha: var1 != var2 
+var.test(g1,g2) # como el valor-p &gt;&gt; alpha, no rechazamos Ho, asumimos que las varianzas son iguales</code></pre>
+<pre><code>
+    F test to compare two variances
+
+data:  g1 and g2
+F = 0.4892, num df = 9, denom df = 9, p-value = 0.3018
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.121511 1.969527
+sample estimates:
+ratio of variances 
+         0.4892027 </code></pre>
+<pre class="r"><code># Ho: mu1 &gt;= mu2 
+# Ha: mu1 &lt;  mu2 
+t.test(g1,g2,  paired=FALSE, var.equal=TRUE, conf.level=0.95, alternative = &quot;less&quot;)</code></pre>
+<pre><code>
+    Two Sample t-test
+
+data:  g1 and g2
+t = -5.1719, df = 18, p-value = 3.204e-05
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+      -Inf -4.852437
+sample estimates:
+mean of x mean of y 
+     75.1      82.4 </code></pre>
+<p>Suponiendo que los salarios pagados a ambos grupos son equivalentes, se podría afirmar que el plan de incentivos es efectivo? ¿Que supuestos se deben verificar?</p>
+</div>
+<div id="punto-8" class="section level2">
+<h2>punto 8</h2>
+<p>La pizzeria P20 realizó el mes pasado una encuestas (<span class="math inline">\(n_1=200\)</span>) para determinar la proporción de clientes que prefieren el tamaño familiar. La encuesta recogida muestra que el 20% de sus clientes prefieren el tamaño familiar. Con el fin de aumentar las ventas, realiza una estrategia de publicidad en redes. Pasado dos meses de la campaña la empresa realizó una segunda encuesta (<span class="math inline">\(n_2=200\)</span>), obteniendo en este caso una proporción de 25%.</p>
+<p>De acuerdo con los resultados podría decirse que la campaña realizada es efectiva? (utilice un <span class="math inline">\(\alpha=0.05\)</span>)</p>
+<pre class="r"><code>prop.test(c(40,50), c(200,200),  conf.level = 0.95)</code></pre>
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  c(40, 50) out of c(200, 200)
+X-squared = 1.1613, df = 1, p-value = 0.2812
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.13669783  0.03669783
+sample estimates:
+prop 1 prop 2 
+  0.20   0.25 </code></pre>
+<pre class="r"><code># p-value = 0.1406 &gt;&gt; alpha=0.05, no rechazamos Ho, asumimos que Ho es verdadera
+# no existe suficiente evencia en la muestra que nos permita afirmar que la campaña fue efectiva
+
+# Regla 2 : si valor-p &lt; alpha, rechazamos Ho     , aceptamos Ha  como verdadera
+#           si valor-p &gt; alpha, no rechazamos Ho  , asumimos que Ho es verdad              </code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -449,3 +449,8 @@ sf.test(x)
 
 En todos los casos se presenta un valor-p grande por lo cual no se rechaza $Ho$, asumimos que $Ho$ es verdad. Asumimos que la distribución de la variable $X$ es normal
 
+
+
+
+
+

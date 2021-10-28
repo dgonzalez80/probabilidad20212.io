@@ -1041,7 +1041,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 |                   |`x1=c(7, 13, 6, 5, 5, 10, 8, 6, 7)`                       |
 |                   |`x2=c(3,7,2,3,6,2,1,0,2)`                                 |  
 |Una población      |                                                          |
-||`z.test(datos,mu=10,stdev=4, conf.level=98)`                                 |
+||`z.test(datos,mu=10,stdev=4, conf.level=0.98)`                                 |
 ||`t.test(datos, mu=10,conf.level=0.98)`                                       |
 ||`t.test(datos, mu=10,conf.level=0.98,alternative="greater")`                 |
 ||`t.test(datos, mu=10,conf.level=0.98,alternative="less)`                     |
