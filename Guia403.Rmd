@@ -1092,8 +1092,14 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 # **Video**
 
+## **Video paramétricas**
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/phUkdjdj95c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br/><br/>
+
+## **Video no paramétricas**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m3YIdS2TVHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # **Tutorial**
 

@@ -520,6 +520,9 @@ div.tocify {
       <a href="TallerIC.html">Taller IC</a>
     </li>
     <li>
+      <a href="Taller_pruebas1.html">Taller Pruebas 1</a>
+    </li>
+    <li>
       <a href="Guia_trabajo.html">Trabajo final</a>
     </li>
   </ul>
@@ -1891,8 +1894,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 0.80407, runs = 55, n1 = 50, n2 = 50, n = 100, p-value =
-0.4214
+statistic = 0.40204, runs = 53, n1 = 50, n2 = 50, n = 100, p-value =
+0.6877
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1912,7 +1915,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99242, p-value = 0.3888</code></pre>
+W = 0.99255, p-value = 0.4034</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1924,19 +1927,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 1.9013, p-value = 0.342</code></pre>
+JB = 1.5773, p-value = 0.3935</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.6153, p-value = 0.219</code></pre>
+T = 2.8035, p-value = 0.546</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.14156, p-value = 0.405</code></pre>
+T = -0.19408, p-value = 0.24</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1945,13 +1948,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.031575, p-value = 0.8969</code></pre>
+D = 0.038325, p-value = 0.6728</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 14.03, p-value = 0.4475</code></pre>
+P = 11.48, p-value = 0.648</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
@@ -2309,8 +2312,17 @@ P = 14.03, p-value = 0.4475</code></pre>
 </div>
 <div id="video" class="section level1">
 <h1><strong>Video</strong></h1>
+<div id="video-paramétricas" class="section level2">
+<h2><strong>Video paramétricas</strong></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/phUkdjdj95c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
+<p><br/><br/></p>
+</div>
+<div id="video-no-paramétricas" class="section level2">
+<h2><strong>Video no paramétricas</strong></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m3YIdS2TVHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
 </div>
 <div id="tutorial" class="section level1">
 <h1><strong>Tutorial</strong></h1>
