@@ -1357,7 +1357,7 @@ prop 1 prop 2
 <div id="ventajas-de-utilizar-pruebas-no-paramétricas" class="section level3">
 <h3><strong>Ventajas de utilizar pruebas no paramétricas</strong></h3>
 <ul>
-<li>Son fáciles de usar</li>
+<li>Son fáciles de usar (aunque dada la facilidad de los códigos en R ambas se corren con una línea)</li>
 <li>No se requieren comprobar supuestos</li>
 <li>Se pueden usar con muestras pequeñas</li>
 <li>Se pueden usar con variables cualitativas</li>
@@ -1383,8 +1383,8 @@ prop 1 prop 2
 </ul>
 <p><br/><br/></p>
 </div>
-<div id="de-signos" class="section level2">
-<h2><strong>de signos</strong></h2>
+<div id="p.-de-signos" class="section level2">
+<h2><strong>P. de signos</strong></h2>
 <table>
 <colgroup>
 <col width="14%" />
@@ -1447,7 +1447,7 @@ prop 1 prop 2
 <td align="center">-</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td align="center">+</td>
+<td align="center"></td>
 <td align="center">+</td>
 <td align="center">+</td>
 <td align="center">+</td>
@@ -1464,6 +1464,11 @@ prop 1 prop 2
 </tr>
 </tbody>
 </table>
+<ul>
+<li>número de signos positivos : 13</li>
+<li>número de signos negativos : 4</li>
+<li>en el valor 15 se omite el signo</li>
+</ul>
 <p>M+ = 13 Regla de Decisión (Distribución Binomial p=0.5 n= 17) <span class="math inline">\(P(X\leq 13) = 1-0.9755 = 0.0245\)</span> ( valor-p)</p>
 <p><strong>Conclusión</strong>:</p>
 <p>Se rechaza la hipótesis nula, se acepta la hipótesis alterna. Se puede afirmar que las personas tienen la creencia que el deporte afecta positivamente su imagen.</p>
@@ -1495,8 +1500,8 @@ Interpolated CI       0.9500     16    Inf
 Upper Achieved CI     0.9519     16    Inf</code></pre>
 <p><br/><br/></p>
 </div>
-<div id="chi2-de-bondad-de-ajuste" class="section level2">
-<h2><strong><span class="math inline">\(\chi^{2}\)</span> de bondad de ajuste </strong></h2>
+<div id="p.-chi-cuadrado-de-bondad-de-ajuste" class="section level2">
+<h2><strong>P. chi-cuadrado de bondad de ajuste </strong></h2>
 <table>
 <colgroup>
 <col width="14%" />
@@ -1526,7 +1531,7 @@ Upper Achieved CI     0.9519     16    Inf</code></pre>
 <tbody>
 <tr class="odd">
 <td align="center"><img src="img/ej9.png" /></td>
-<td align="left">El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un dia:</td>
+<td align="left">El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un día:</td>
 </tr>
 </tbody>
 </table>
@@ -1609,8 +1614,8 @@ data:  obs.nf
 X-squared = 2.8988, df = 5, p-value = 0.7156</code></pre>
 <p><br/><br/></p>
 </div>
-<div id="chi2-de-independencia" class="section level2">
-<h2><strong><span class="math inline">\(\chi^{2}\)</span> de independencia</strong></h2>
+<div id="p.-chi-cuadrado-de-independencia" class="section level2">
+<h2><strong>P. chi-cuadrado de independencia</strong></h2>
 <p><br/><br/></p>
 <table>
 <colgroup>
@@ -1667,17 +1672,23 @@ X-squared = 2.8988, df = 5, p-value = 0.7156</code></pre>
 </tbody>
 </table>
 <p><br/><br/></p>
+<p><strong>Solución</strong>: | | |:—————————| | <span class="math inline">\(Ho\)</span> : Las variables lugar de residencia e calificación son independientes | | <span class="math inline">\(Ha\)</span> : Las variables lugar de residencia e calificación no son independientes |</p>
+<p>El siguiente código da solución a la constrastación de las hipótesis</p>
 <pre class="r"><code>m=c(20,40,15,11,8,6)
-M=as.table(matrix(m,nrow=3))
-chisq.test(M)</code></pre>
+m=as.table(matrix(m,nrow=3))
+rownames(m)=c(&quot;Bueno&quot;, &quot;Regular&quot;, &quot;Malo&quot;)
+colnames(m)=c(&quot;Urbano&quot;, &quot;Rural&quot;)
+
+chisq.test(m)</code></pre>
 <pre><code>
     Pearson&#39;s Chi-squared test
 
-data:  M
+data:  m
 X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
+<p>Como p-value = 0.1543 lo podemos considerar grande, no se rechaza <span class="math inline">\(Ho\)</span>, asumimos que <span class="math inline">\(Ho\)</span> es verdad, es decir que las variables lugar de residencia y calificación son independientes. Esto implica que la calificación dada por las personas entrevistadas no está relacionada con su calificación.</p>
 <p><br/><br/><br/></p>
-<div id="de-wilcoxon" class="section level3">
-<h3><strong>de Wilcoxon</strong></h3>
+<div id="p.-de-wilcoxon" class="section level3">
+<h3><strong>P. de Wilcoxon</strong></h3>
 <table>
 <colgroup>
 <col width="14%" />
@@ -1712,18 +1723,28 @@ X-squared = 3.7378, df = 2, p-value = 0.1543</code></pre>
 </tbody>
 </table>
 <p>Nota: antes de realizar la comparación de medias, se debe realizar una prueba de bondad de ajuste para establecer si los datos siguen una distribución normal o no. En caso de que los datos no tengan distribución normal, entonces se debe realizar una prueba no paramétrica.</p>
-<pre class="r"><code>g1=c(39,10,21,29,11,26,7,12,28,82,30,27,50,19,24)
-g2=c(68,32,58,16,23,53,55,32,61,29,50,64,67,37)
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : <span class="math inline">\(Me_{g1} \leq Me_{g2}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : <span class="math inline">\(Me_{g1} &gt; Me_{g2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>g1=c(68,32,58,16,23,53,55,32,61,29,50,64,67,37)
+g2=c(39,10,21,29,11,26,7,12,28,32,30,27,50,19,24)
 # independent 2-group Mann-Whitney U Test 
-wilcox.test(g1,g2,paired = FALSE,alternative = &quot;less&quot;)</code></pre>
-<pre><code>Warning in wilcox.test.default(g1, g2, paired = FALSE, alternative = &quot;less&quot;):
+wilcox.test(g1,g2,paired = FALSE,alternative = &quot;greater&quot;)</code></pre>
+<pre><code>Warning in wilcox.test.default(g1, g2, paired = FALSE, alternative = &quot;greater&quot;):
 cannot compute exact p-value with ties</code></pre>
 <pre><code>
     Wilcoxon rank sum test with continuity correction
 
 data:  g1 and g2
-W = 42, p-value = 0.003179
-alternative hypothesis: true location shift is less than 0</code></pre>
+W = 178, p-value = 0.0007714
+alternative hypothesis: true location shift is greater than 0</code></pre>
 <p><strong>Conclusión</strong> :</p>
 <p>Se rechaza Ho , se acepta Ha. Se puede concluir que las dos poblaciones son diferentes. por lo tanto las medias son diferentes.</p>
 <p>Para analizar cual de los grupos presenta un mayor consumo de calorías, se observa que el Grupo I tiene suma de rangos de 168 y el Grupo II tiene suma de rangos de 273, lo que indica que los datos del Grupo I tienen valores menores en que los del Grupo II</p>
@@ -1731,8 +1752,8 @@ alternative hypothesis: true location shift is less than 0</code></pre>
 <p><br/><br/></p>
 </div>
 </div>
-<div id="kruskal-wallis" class="section level2">
-<h2><strong>Kruskal-Wallis</strong></h2>
+<div id="p.-kruskal-wallis" class="section level2">
+<h2><strong>P. Kruskal-Wallis</strong></h2>
 <table>
 <colgroup>
 <col width="14%" />
@@ -1800,7 +1821,17 @@ alternative hypothesis: true location shift is less than 0</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Ho : Las poblaciones son idénticas Ha : Las poblaciones no son idénticas</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : Las poblaciones son idénticas</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : Las poblaciones no son idénticas</td>
+</tr>
+</tbody>
+</table>
+<p>Las anteriores hipótesis implica que sus distribuciones son las mismas (medias y varianzas iguales)</p>
 <pre class="r"><code>g1=c(28,19,13,28,29,21)
 g2=c(26,20,11,14,22,21)
 g3=c(37,28,26,35,31)
@@ -1859,7 +1890,9 @@ Kruskal-Wallis chi-squared = 5, df = 5, p-value = 0.4159</code></pre>
 </table>
 <pre class="r"><code>x=c(21,18,15,17,18,25,18,4,6,5)
 y=c(4,4,4,3,3,5,3,1,1,2)
-cor.test(x,y, method = &quot;spearman&quot;,continuity = FALSE,conf.level = 0.95)</code></pre>
+plot(x,y, las=1, pch=19, col=c4)</code></pre>
+<p><img src="Guia403_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<pre class="r"><code>cor.test(x,y, method = &quot;spearman&quot;,continuity = FALSE,conf.level = 0.95)</code></pre>
 <pre><code>
     Spearman&#39;s rank correlation rho
 
@@ -1869,11 +1902,11 @@ alternative hypothesis: true rho is not equal to 0
 sample estimates:
       rho 
 0.8139814 </code></pre>
-<p>En este caso se utiliza el coeficiente de correlación de Sperman para valorar la relación entre las variables debido a que la nota es una variable que podriamos llamar cualitativa, operacionalizada cantitativa con una nota.</p>
+<p>En este caso se utiliza el coeficiente de correlación de Sperman para valorar la relación entre las variables debido a que la nota es una variable que podríamos llamar cualitativa, operacionalizada cuntitativa con una nota.</p>
 <p><br/><br/></p>
 </div>
-<div id="de-rachas" class="section level2">
-<h2><strong>de rachas</strong></h2>
+<div id="p.-de-rachas" class="section level2">
+<h2><strong>P. de rachas</strong></h2>
 <table>
 <colgroup>
 <col width="9%" />
@@ -1882,11 +1915,20 @@ sample estimates:
 <tbody>
 <tr class="odd">
 <td align="center"><img src="img/ej15.png" /></td>
-<td align="left">Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .</td>
+<td align="left">Para verificar si los números aleatorios generados por Excel son de verdad aleatorios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resultado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .</td>
 </tr>
 </tbody>
 </table>
-<p>Ho : La muestra es aleatoria <br/> Ha: La muestra no es aleatoria <br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span> : La muestra es aleatoria</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span> : La muestra no es aleatoria</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code>library(&quot;randtests&quot;)
 y=rnorm(100,120,20)
 runs.test(y)</code></pre>
@@ -1894,17 +1936,26 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 2.2112, runs = 62, n1 = 50, n2 = 50, n = 100, p-value =
-0.02702
+statistic = -2.4122, runs = 39, n1 = 50, n2 = 50, n = 100, p-value =
+0.01586
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
 <p><br/><br/></p>
 </div>
-<div id="de-normalidad" class="section level2">
-<h2><strong>de normalidad</strong></h2>
+<div id="p.-de-normalidad" class="section level2">
+<h2><strong>P. de normalidad</strong></h2>
 <p>Uno de los procedimientos mas utilizados en estadística es la relacionada con la verificación de normalidad de una variable.</p>
-<p><span class="math inline">\(Ho\)</span>: X tiene distribución Normal <span class="math inline">\(Ha\)</span>: X no tiene distribución Normal</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Ho\)</span>: X tiene distribución Normal</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(Ha\)</span>: X no tiene distribución Normal</td>
+</tr>
+</tbody>
+</table>
 <p>Existen muchas pruebas que nos ayudan en este propósito, a continuación relacionamos algunas de ellas</p>
 <pre class="r"><code># se genera una variable aleatoria normal
 x=rnorm(200,1000,50)
@@ -1915,7 +1966,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99607, p-value = 0.8899</code></pre>
+W = 0.99576, p-value = 0.8542</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1927,19 +1978,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.013671, p-value = 0.9935</code></pre>
+JB = 0.8226, p-value = 0.644</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.9866, p-value = 0.958</code></pre>
+T = 3.079, p-value = 0.8085</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.019111, p-value = 0.908</code></pre>
+T = 0.15205, p-value = 0.3495</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1948,13 +1999,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.046528, p-value = 0.3625</code></pre>
+D = 0.036568, p-value = 0.7404</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 26.27, p-value = 0.02391</code></pre>
+P = 15.9, p-value = 0.3195</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
@@ -2310,8 +2361,9 @@ P = 26.27, p-value = 0.02391</code></pre>
 </tbody>
 </table>
 </div>
-<div id="video" class="section level1">
-<h1><strong>Video</strong></h1>
+<div id="videos" class="section level1">
+<h1><strong>Videos</strong></h1>
+<p><br/><br/></p>
 <div id="video-paramétricas" class="section level2">
 <h2><strong>Video paramétricas</strong></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/phUkdjdj95c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -2327,12 +2379,14 @@ P = 26.27, p-value = 0.02391</code></pre>
 <div id="tutorial" class="section level1">
 <h1><strong>Tutorial</strong></h1>
 <p><br/><br/></p>
-<p>El siguiente código permite la activación de tutorial <br/><br/></p>
+<p>El siguiente código permite la activación de tutorial</p>
+<p><br/><br/></p>
 <pre class="r"><code>install.packages(&quot;learnr&quot;) # solo una vez
 install.packages(&quot;devtools&quot;) # solo una vez
 devtools::install_github(&quot;dgonzalez80/paquetepye&quot;)
 learnr::run_tutorial(&quot;Taller_pruebas1&quot;, &quot;paquetepye&quot;)</code></pre>
 <pre class="r"><code>learnr::run_tutorial(&quot;Taller_pruebas2&quot;, &quot;paquetepye&quot;)</code></pre>
+<p>deseos de Daniel y</p>
 </div>
 
 

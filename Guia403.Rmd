@@ -667,7 +667,7 @@ Note que la distribución normal esta relacionada con las distribuciones t-stude
 
 ### **Ventajas de utilizar pruebas no paramétricas**
 
-+ Son fáciles de usar
++ Son fáciles de usar (aunque dada la facilidad de los códigos en R ambas se corren con una línea)
 + No se requieren comprobar supuestos
 + Se pueden usar con muestras  pequeñas
 + Se pueden usar con variables  cualitativas
@@ -692,7 +692,7 @@ Entre las principales pruebas no paramétricas estan :
 
 <br/><br/>
 
-## **de signos**  
+## **P. de signos**  
 
 |            |                                           |
 |:---------- |:----------------------------------------------------------------|
@@ -718,7 +718,11 @@ Estadístico de Prueba : M + : Numero de signos positivos
 |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |12  |14  |14  |14  |15  |16  |16  |16  |16  |16  |16  |16  |17  | 17 | 18 |19  |20  |21  |
-|-   |-   |-   |-   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |
+|-   |-   |-   |-   |    |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |+   |
+
++ número de signos positivos : 13
++ número de signos negativos :  4
++ en el valor 15 se omite el signo
 
 M+ = 13
 Regla de Decisión  (Distribución Binomial  p=0.5 n= 17)
@@ -735,7 +739,7 @@ SIGN.test(x.img,md=15,alternative = "greater")
 
 <br/><br/>
 
-## **$\chi^{2}$ de bondad de ajuste **
+## **P. chi-cuadrado de bondad de ajuste **
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -747,7 +751,7 @@ SIGN.test(x.img,md=15,alternative = "greater")
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej9.png) | El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un dia: |
+| ![](img/ej9.png) | El dueño de una panadería tiene la posibilidad de controlar los niveles de inventarios de leche para cuatro marcas diferentes. Con el fin de establecer políticas para la realización de nuevos pedidos requiere saber si la demanda de estas marcas son iguales (distribución uniforme). Con este propósito tomo la información de un día: |
 
 |Producto            | Parmalat | Uno A   | Colanta   | Purace | 
 |-------------------:|:--------:|:-------:|:---------:|:------:|
@@ -793,7 +797,7 @@ chisq.test(x=obs.nf,p=esp.nf)
 
 <br/><br/>
 
-## **$\chi^{2}$ de independencia**
+## **P. chi-cuadrado de independencia**
 
 <br/><br/>
 
@@ -812,17 +816,31 @@ chisq.test(x=obs.nf,p=esp.nf)
 <br/><br/>
 
 
+**Solución**:
+|                            |
+|:---------------------------|
+| $Ho$ : Las variables lugar de residencia e calificación son independientes     |
+| $Ha$ : Las variables lugar de residencia e calificación no son independientes  |
 
+El siguiente código da solución a la constrastación de las hipótesis
 
 ```{r}
 m=c(20,40,15,11,8,6)
-M=as.table(matrix(m,nrow=3))
-chisq.test(M)
+m=as.table(matrix(m,nrow=3))
+rownames(m)=c("Bueno", "Regular", "Malo")
+colnames(m)=c("Urbano", "Rural")
+
+chisq.test(m)
 ```
+Como p-value = 0.1543 lo podemos considerar grande, no se rechaza $Ho$, asumimos que $Ho$ es verdad, es decir que las variables lugar de residencia y calificación son independientes. Esto implica que la calificación dada por las personas entrevistadas no está relacionada con su calificación.
+
+
+
+
 
 <br/><br/><br/>
 
-### **de Wilcoxon**
+### **P. de Wilcoxon**
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -839,11 +857,17 @@ Objetivo	          | Determinar su la diferencia entre la magnitud de las difere
 Nota: antes de realizar la comparación de medias, se debe realizar una prueba de bondad de ajuste para establecer si los datos siguen una distribución normal o no. En caso de que los datos no tengan distribución normal, entonces se debe realizar una prueba no paramétrica.
 
 
+|                                 |
+|:--------------------------------|
+|$Ho$ : $Me_{g1} \leq   Me_{g2}$  |
+|$Ha$ : $Me_{g1} >  Me_{g2}$      |
+
+
 ```{r}
-g1=c(39,10,21,29,11,26,7,12,28,82,30,27,50,19,24)
-g2=c(68,32,58,16,23,53,55,32,61,29,50,64,67,37)
+g1=c(68,32,58,16,23,53,55,32,61,29,50,64,67,37)
+g2=c(39,10,21,29,11,26,7,12,28,32,30,27,50,19,24)
 # independent 2-group Mann-Whitney U Test 
-wilcox.test(g1,g2,paired = FALSE,alternative = "less")
+wilcox.test(g1,g2,paired = FALSE,alternative = "greater")
 ```
 
 **Conclusión** :  
@@ -856,7 +880,7 @@ Por lo tanto los estudiantes sanos presentan consumo de calorías menores que lo
 
 <br/><br/>
 
-## **Kruskal-Wallis**
+## **P. Kruskal-Wallis**
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -876,8 +900,13 @@ Objetivo	            |Determinar si las diferencias entre las medias de los rang
 |Grupo 2  |26  |20  |11  |14  |22  |21  |    |
 |Grupo 3  |37  |28  |26  |35  |31  |    |    |  
 
-Ho : Las poblaciones son idénticas
-Ha : Las poblaciones no son idénticas
+
+|                            |
+|:------------------------------------------|
+|$Ho$ : Las poblaciones son idénticas       |
+|$Ha$ : Las poblaciones no son idénticas    |
+
+Las anteriores hipótesis implica que sus distribuciones son las mismas (medias y varianzas iguales)
 
 
 ```{r}
@@ -905,21 +934,25 @@ kruskal.test(g1,g2,g3)
 ```{r, message=FALSE, warning=FALSE}
 x=c(21,18,15,17,18,25,18,4,6,5)
 y=c(4,4,4,3,3,5,3,1,1,2)
+plot(x,y, las=1, pch=19, col=c4)
+
 cor.test(x,y, method = "spearman",continuity = FALSE,conf.level = 0.95)
 ```
-En este caso se utiliza el coeficiente de correlación de Sperman para valorar la relación entre las variables debido a que la nota es una variable que podriamos llamar cualitativa, operacionalizada cantitativa con una nota.
+En este caso se utiliza el coeficiente de correlación de Sperman para valorar la relación entre las variables debido a que la nota es una variable que podríamos llamar cualitativa, operacionalizada cuntitativa con una nota.
 
 
 <br/><br/>
 
-## **de rachas**
+## **P. de rachas**
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej15.png) |Para verificar si los números aleatórios generados por Excel son de verdad aleatórios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resutado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .|
+| ![](img/ej15.png) |Para verificar si los números aleatorios generados por Excel son de verdad aleatorios se tomó una muestra de ellos mediante la función =aleatorio.entre(), obteniendo como resultado los siguientes números: 0.738, 0.202, 0.357, 0.561, 0.509, 0.146, 0.746, 0.666, 0.133, 0.430, 0.972, 0.999, 0.499, 0.869, 0.821, 0.732, 0.355, 0.189, 0.478, 0.162 .|
 
-Ho : La muestra es aleatoria <br/>
-Ha: La muestra no es aleatoria <br/>
+|                            |
+|:---------------------------|
+|$Ho$ : La muestra es aleatoria    |
+|$Ha$ : La muestra no es aleatoria |
 
 
 ```{r}
@@ -936,12 +969,14 @@ Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hi
 
 <br/><br/>
 
-## **de normalidad**
+## **P. de normalidad**
 
 Uno de los procedimientos mas utilizados en estadística es la relacionada con la verificación de normalidad de una variable. 
 
-$Ho$: X tiene distribución Normal
-$Ha$: X no tiene distribución Normal
+|                                      |
+|:-------------------------------------|
+| $Ho$: X tiene distribución Normal    |
+| $Ha$: X no tiene distribución Normal |
 
 Existen muchas pruebas que nos ayudan en este propósito, a continuación relacionamos algunas de ellas 
 ```{r}
@@ -1090,7 +1125,9 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 
 
-# **Video**
+# **Videos**
+
+<br/><br/>
 
 ## **Video paramétricas**
 
@@ -1106,6 +1143,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 <br/><br/>
 
 El siguiente código permite la activación de tutorial 
+
 <br/><br/>
 
 ```{r eval=FALSE}
@@ -1120,3 +1158,4 @@ learnr::run_tutorial("Taller_pruebas1", "paquetepye")
 learnr::run_tutorial("Taller_pruebas2", "paquetepye")
 ```
 
+deseos de Daniel y 
