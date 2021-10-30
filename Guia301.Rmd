@@ -125,7 +125,7 @@ En esta unidad se tratará el  caso univariado discreto, luego el caso continuo,
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Definición:  Variable aleatoria**
 
@@ -138,7 +138,7 @@ Las variables aleatorias se clasifican teniendo en cuenta las características d
 <br/><br/>
 
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Tipos de variables**
 
@@ -183,7 +183,7 @@ Como se mencionó anteriormente una variable aleatoria se considera como DIACRET
 Para catacterizar la variable se define  la función de distribución de probabilidad que modela la asignación de las probabilidades
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #0063CD ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Definición: Función de distribución de probabilidad**
 
@@ -214,7 +214,7 @@ Por lo general este tipo de variables proceden del conteo. Ejemplos.
 
 Como complemento de $f(x)$ y debido a que puede resultar más interesante calcular probabilidades de rangos de valores se define la función de distribución acumulada $F(x)$
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Función de probabilidad acumulada**
 Sea $X$ una variable aleatoria continua con función de densidad $f_{X}(x)$, se define la  función de distribución acumulada, $F_{X}(x)$, como:
@@ -355,7 +355,7 @@ En este caso las variables por lo general proceden de una medición como por eje
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Función de densidad de probabilidad** 
 La función de densidad de probablidad se define como $f(x)$, tal que cumpla las siguientes condiciones:
@@ -374,7 +374,8 @@ Para el caso continuo la función de distribución de probabilidad corresponde a
 
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
+
 **Función de probabilidad acumulada**
 
 $F_{_X}(x)=P(X \leq x)=\displaystyle\int \limits_{-\infty}^{x}f_{_X}(t)\:dt$
@@ -433,7 +434,7 @@ La esperanza matemática de una variable aleatoria X,  corresponde a un valor qu
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Definición : Valor Esperado**
 
@@ -447,7 +448,7 @@ Sea $X$ una variable aleatoria discreta o continua. La esperanza matemática de 
 
 En el caso continuo y similarmente para el caso discreto.
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Propiedades del Valor Esperado**
 
@@ -469,7 +470,7 @@ En el caso continuo y similarmente para el caso discreto.
 
 Otra caracteristica importante de las variables aleatorias corresponde a la varianza que se denota por $V[X]$ o $\sigma^{2}$. Antes de definirma veremos el concepto de momento de una variable aleatoria
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Definición : Momento**
 
@@ -484,7 +485,7 @@ Sea $X$ una variable aleatoria discreta o continua. El momento de orden $k$ se d
 
 Con este nuevo elemento se define la varianza de una variable aleatorias como la diferencia entre el segundo momento y el cuadrado del primer momento
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #F0F8FF; background-color: #007FFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Definición : Varianza**
 
