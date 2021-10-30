@@ -793,7 +793,8 @@ a este proceso se le llama comúnmente estandarizar.
 </div> 
 
 
-**normal estandar**
+**normal estándar**
+
 ```{r, echo=FALSE, fig.height=3.5}
 library(ggfortify)
 ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,fill = 'blue')
