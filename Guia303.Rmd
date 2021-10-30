@@ -129,6 +129,7 @@ En las unidades abordadas previamente a esta se han trabajado las característic
 Ahora, el siguiente modelo :
 
 $$f(x)= \frac{1}{50}e^{-(\frac{x}{50})} $$ 
+
 <br/><br/>
 
 Llamado exponencial, puede ser estudiado y asociado a sucesos que ocurren diariamente a nuestro alrededor.
@@ -1074,7 +1075,7 @@ $$h(t)=\dfrac{f(t)}{1-F(t)} $$
 
 La duración de una batería se modela mediante una distribución Weibull con parámetros: $\alpha=0.1$ y $\beta=2$. Determine la probabilidad de que una batería dure más de 10 horas. Determine la proporción de baterías que durarán más de 10 horas.
 
-![](img/bateria.png){width=300px}
+![](img/bateria.png){width=800px}
 <br/><br/>
 
 **Solución**
