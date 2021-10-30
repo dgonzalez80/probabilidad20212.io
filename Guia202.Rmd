@@ -166,7 +166,7 @@ O también como un diagrama de Venn:
 Por despeje se pueden obtener la llanada regla de la multiplicación :
 <br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;color: #000000; background-color: #FFFFFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Definición: Regla de la multiplicación de eventos**
 
@@ -312,6 +312,7 @@ Lectura recomendada : https://blogs.scientificamerican.com/cross-check/bayes-s-t
 
 
 <br/><br/> 
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Definición: Teorema de Bayes **

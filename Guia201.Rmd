@@ -95,7 +95,7 @@ El **taller201** de la unidad 2.1 recoge los elementos estudiados y por tanto  t
 
 # **2. Recursos**
 
-![](img/dados2.gif)
+![](img/dados.gif)
 Tomada : pelicula El dorado 
 
 Muchos relacionamos el concepto de probabilidad con los dados, pues forma parte de su origen y de su desarrollo inicial a traves de preguntas y situaciones imaginarias y de alguna forma modelables desde la matematicas. Peor este concepto va mucho mas alla como lo veremos en esta unidad.
@@ -130,7 +130,7 @@ Iniciaremos con algunos conceptos basicos que nos permiten la contrucion de sus 
 
 <br/><br/>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;color: #000000; background-color: #FFFFFF ; border-color: #000000;">
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
 **Experimento aleatorio** 
 
@@ -250,6 +250,8 @@ Ahora suponemos que lo ocurrió en el pasado segirá pasando y asi estudiando la
 
 **Enfoque Frecuentista**
 
+
+
 Este enfoque basa su cálculo en la frecuencia con que ocurre un evento en un tamaño de muestra determinado $n$.
 
 			
@@ -258,6 +260,13 @@ $\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}{
 </div>
 
 <br/><br/>
+
+
+![](img/penalti.gif)
+
+Si observamos el cobro de un penalti en un partido de fútbol, el cobrador tiene un gran número de posibilidades (lugares) para colocar el balón que podemos simplificar en 6 : parte baja derecha, parte alta derecha, parte baja al centro, parte alta central, parte baja izquierda y parte alta izquierda. Por su parte el arquero piensa también es estos lograres para evitar que el disparo termine en gol. Hoy en dia ambos jugadores estudian las frecuencias para determinar cual lugar ofrece mayores probabilidades de obtener exito desde su rol.
+
+
 
 ```{r}
 Colombia=readRDS("data/Colombia.RDS")
