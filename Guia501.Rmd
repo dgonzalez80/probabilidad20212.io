@@ -24,7 +24,7 @@ c5="#BC2B6A" # MORADO
 ```
 
 
-## **Guía de aprendizaje 5.1**
+# **Guía de aprendizaje 5.1**
 
 ![](img/baner5.png)
 
