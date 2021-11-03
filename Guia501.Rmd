@@ -265,7 +265,7 @@ $$u =[u_{1},u_{2},\dots,u_{n}]^{T}$$
 	
 <br/><br/><br/>
 
-## **Estimación de los coeficientes del modelo** 	
+## **Estimación de coeficientes** 	
 	
 El método Mínimos Cuadrados Ordinarios (**MCO**) se basa en la minimizar la suma de cuadrados de los errores ($u$), a través de la información contenida en una muestra 
 
@@ -404,7 +404,7 @@ Para validar estos resultados, para poder ser utilizados se debe:
 
 <br/><br/><br/>
 
-## **Validación de los supuestos**
+## **Validación de supuestos**
 
 Los supuestos a validar se deben verificar sobre los residuales $\widehat{u_{i}}$ que corresponde a la diferencia entre $\widehat{y_{i}}$ y $y$ y que son las realizaciones de los errores.(  $\widehat{u_{i}} = \widehat{y_{i}}-y_{i}$)
 
@@ -493,7 +493,7 @@ lmtest::dwtest(y~x)
 	
 <br/><br/><br/>
 
-## **Pruebas de significancia individuales** 
+## **P.de significancia individuales** 
 
 Después de verificar el cumplimiento de los supuestos sobre los errores se pasa a analizar los resultados de la estimación.
 
@@ -689,7 +689,7 @@ Finalmente la salida reporta el valor del estadístico  F (119.8) y su valor-p a
 	
 <br/><br/><br/>
 
-### **Validación de supuestos**
+## **Validación de supuestos**
 	
 El método de MCO, no requiere ningún supuesto de tipo estadístico, pues es un método que se basa en la optimización matemática. Sin embargo cuando se requiere realizar inferencia - construcción de intervalos de confianza o la realización de pruebas de hipótesis asociadas con los resultados obtenidos -  es necesario plantear y verificar el cumplimiento de supuestos estadístico sobre las variables que intervienen en el modelo. Algunos de ellos se realizan sobre las variables independientes y otros sobre la variable no observable error ($u$). Haremos énfasis sobre el cumplimiento de los siguientes supuestos, pues su violación genera estimaciones ineficientes y sesgados.
 
@@ -722,7 +722,7 @@ Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anter
 
 <br/><br/><br/>
 
-**Analisis de los resultados** 
+**Analisis de resultados** 
 		
 Listado 1. Supuesto de modelo completo
 
@@ -936,7 +936,7 @@ summary(modelo4)
 ```
 <br/><br/><br/>
 
-## **Intervalos de confianza de predicción**
+## **Predicción**
 
 En ocasiones es necesario realizar predicciones de los valores de $y$ para un determinado valor de $x$. 
 
@@ -945,7 +945,7 @@ La ecuación de predicción esta data por $\widehat{y}= b_{0}+ b_{1} x$. Esta ec
 <br/><br/><br/>
 
 
-### **Intervalos de confianza de predicción para una sola respuesta $y_{o}$**
+## **IC predicción $y_{o}$**
 
 *+Intervalo de confianza para $y_{o}$**
 
@@ -979,7 +979,7 @@ predict(object=regresion, newdata=nuevo, interval="confidence", level=0.95)
 <br/><br/><br/>
 
 
-## **Intervalos de confianza de predicción para la respuesta media $\mu_{Y|x_{o}}$**
+## **IC predicción media $\mu_{Y|x_{o}}$**
 
 <br/>
 

@@ -687,8 +687,8 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <p><span class="math display">\[u =[u_{1},u_{2},\dots,u_{n}]^{T}\]</span></p>
 <p><br/><br/><br/></p>
 </div>
-<div id="estimación-de-los-coeficientes-del-modelo" class="section level2">
-<h2><strong>Estimación de los coeficientes del modelo</strong></h2>
+<div id="estimación-de-coeficientes" class="section level2">
+<h2><strong>Estimación de coeficientes</strong></h2>
 <p>El método Mínimos Cuadrados Ordinarios (<strong>MCO</strong>) se basa en la minimizar la suma de cuadrados de los errores (<span class="math inline">\(u\)</span>), a través de la información contenida en una muestra</p>
 <p>De la ecuación del modelo estimado <span class="math inline">\(\widehat{y} = X \widehat{\beta} + \widehat{u}\)</span> se pueden despejar los residuales . Como los errores son variables no observables, el método hace uso de sus respectivos estimadores llamados residuales:</p>
 <p><span class="math display">\[\begin{equation*}
@@ -827,8 +827,8 @@ F-statistic: 54.41 on 1 and 10 DF,  p-value: 2.38e-05</code></pre>
 </ul>
 <p><br/><br/><br/></p>
 </div>
-<div id="validación-de-los-supuestos" class="section level2">
-<h2><strong>Validación de los supuestos</strong></h2>
+<div id="validación-de-supuestos" class="section level2">
+<h2><strong>Validación de supuestos</strong></h2>
 <p>Los supuestos a validar se deben verificar sobre los residuales <span class="math inline">\(\widehat{u_{i}}\)</span> que corresponde a la diferencia entre <span class="math inline">\(\widehat{y_{i}}\)</span> y <span class="math inline">\(y\)</span> y que son las realizaciones de los errores.( <span class="math inline">\(\widehat{u_{i}} = \widehat{y_{i}}-y_{i}\)</span>)</p>
 <pre class="r"><code>yhat=predict(regresion)
 u=yhat-y
@@ -935,8 +935,8 @@ alternative hypothesis: true autocorrelation is greater than 0</code></pre>
 <p><br/><br/><br/></p>
 </div>
 </div>
-<div id="pruebas-de-significancia-individuales" class="section level2">
-<h2><strong>Pruebas de significancia individuales</strong></h2>
+<div id="p.de-significancia-individuales" class="section level2">
+<h2><strong>P.de significancia individuales</strong></h2>
 <p>Después de verificar el cumplimiento de los supuestos sobre los errores se pasa a analizar los resultados de la estimación.</p>
 <p>Las pruebas a realizar corresponden a la validación si los resultados obtenidos sobre el intercepto y la pendiente son significativamente diferentes de cero:</p>
 <p><code>Coefficients:              Estimate   Std. Error   t value   Pr(&gt;|t|)     (Intercept)  1.77788    1.58292      1.123     0.288     x            0.55817    0.07567      7.376     2.38e-05 *** --- Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></p>
@@ -1235,8 +1235,9 @@ F-statistic: 119.8 on 1 and 23 DF,  p-value: 1.356e-10</code></pre>
 <p>Además de los coeficientes estimados y de la validación de sus respectivas pruebas de hipótesis individuales, existe una medida para determinar el grado de explicación de la variable dependiente que es estimada por el modelo (<span class="math inline">\(R^{2}=83.9\%\)</span>). En este caso el modelo explica el 83.9% del comportamiento de <span class="math inline">\(y\)</span> o de su variación.</p>
 <p>Finalmente la salida reporta el valor del estadístico F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para <span class="math inline">\(\beta_{1}\)</span>\</p>
 <p><br/><br/><br/></p>
-<div id="validación-de-supuestos" class="section level3">
-<h3><strong>Validación de supuestos</strong></h3>
+</div>
+<div id="validación-de-supuestos-1" class="section level2">
+<h2><strong>Validación de supuestos</strong></h2>
 <p>El método de MCO, no requiere ningún supuesto de tipo estadístico, pues es un método que se basa en la optimización matemática. Sin embargo cuando se requiere realizar inferencia - construcción de intervalos de confianza o la realización de pruebas de hipótesis asociadas con los resultados obtenidos - es necesario plantear y verificar el cumplimiento de supuestos estadístico sobre las variables que intervienen en el modelo. Algunos de ellos se realizan sobre las variables independientes y otros sobre la variable no observable error (<span class="math inline">\(u\)</span>). Haremos énfasis sobre el cumplimiento de los siguientes supuestos, pues su violación genera estimaciones ineficientes y sesgados.</p>
 <p><br/><br/></p>
 <p><strong>Supuesto 1</strong></p>
@@ -1252,7 +1253,7 @@ F-statistic: 119.8 on 1 and 23 DF,  p-value: 1.356e-10</code></pre>
 <p><span class="math inline">\(u \sim N(0, \sigma^{2})\)</span> . Para verificar este supuesto se puede construir una gráfica de los residuales <span class="math inline">\(qqnorm\)</span> y una prueba de hipótesis de normalidad</p>
 <p>Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anteriores supuestos.\</p>
 <p><br/><br/><br/></p>
-<p><strong>Analisis de los resultados</strong></p>
+<p><strong>Analisis de resultados</strong></p>
 <p>Listado 1. Supuesto de modelo completo</p>
 <pre class="r"><code>residuos=regresion$residuals
 summary(residuos)</code></pre>
@@ -1597,14 +1598,14 @@ F-statistic: 14.28 on 1 and 11 DF,  p-value: 0.003051</code></pre>
 <p><br/><br/><br/></p>
 </div>
 </div>
-</div>
-<div id="intervalos-de-confianza-de-predicción" class="section level2">
-<h2><strong>Intervalos de confianza de predicción</strong></h2>
+<div id="predicción" class="section level2">
+<h2><strong>Predicción</strong></h2>
 <p>En ocasiones es necesario realizar predicciones de los valores de <span class="math inline">\(y\)</span> para un determinado valor de <span class="math inline">\(x\)</span>.</p>
 <p>La ecuación de predicción esta data por <span class="math inline">\(\widehat{y}= b_{0}+ b_{1} x\)</span>. Esta ecuación permite estimar tanto <span class="math inline">\(\widehat{E[y|x_{o}]}\)</span>, como <span class="math inline">\(\widehat{y_{x_{o}}}\)</span> . La primera corresponde al valor promedio para <span class="math inline">\(y\)</span> dado un valor promedio de <span class="math inline">\(x_{o}\)</span>. La segunda a a un valor al valor de <span class="math inline">\(y\)</span> para un valor de <span class="math inline">\(x_{o}\)</span>.</p>
 <p><br/><br/><br/></p>
-<div id="intervalos-de-confianza-de-predicción-para-una-sola-respuesta-y_o" class="section level3">
-<h3><strong>Intervalos de confianza de predicción para una sola respuesta <span class="math inline">\(y_{o}\)</span></strong></h3>
+</div>
+<div id="ic-predicción-y_o" class="section level2">
+<h2><strong>IC predicción <span class="math inline">\(y_{o}\)</span></strong></h2>
 <p>*+Intervalo de confianza para <span class="math inline">\(y_{o}\)</span>**</p>
 <p><span class="math display">\[\widehat{y_{o}} - t_{\alpha/2} s \sqrt{1+\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
 \hspace{.5cm}&lt; y_{o} &lt;\hspace{.5cm}
@@ -1643,9 +1644,8 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 1 11.82497 10.36605 13.28388</code></pre>
 <p><br/><br/><br/></p>
 </div>
-</div>
-<div id="intervalos-de-confianza-de-predicción-para-la-respuesta-media-mu_yx_o" class="section level2">
-<h2><strong>Intervalos de confianza de predicción para la respuesta media <span class="math inline">\(\mu_{Y|x_{o}}\)</span></strong></h2>
+<div id="ic-predicción-media-mu_yx_o" class="section level2">
+<h2><strong>IC predicción media <span class="math inline">\(\mu_{Y|x_{o}}\)</span></strong></h2>
 <p><br/></p>
 <p><strong>Intervalo de confianza para <span class="math inline">\(\mu_{Y|x_{o}}\)</span></strong></p>
 <p><span class="math display">\[\widehat{y_{o}} - t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
