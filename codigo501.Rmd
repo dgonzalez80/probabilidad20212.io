@@ -1,0 +1,120 @@
+---
+title: "Código 10"
+author: "dgonzalez "
+subtitle: "Módulo 5- Unidad 5.1" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+#install.packages("TeachingSampling")
+library(TeachingSampling)
+library(psych)
+library(summarytools)
+library(gtools)
+library(ggplot2)
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
+```
+
+## **Regresión Lineal Simple**
+
+```{r}
+x=c(24.3, 12.5, 31.2, 28.0, 35.1, 10.5, 23.2, 10.0,  8.5,  15.9,  14.7,  15.0)   
+y=c(16.2,  8.5, 15.0, 17.0, 24.2, 11.2, 15.0,  7.1,  3.5,  11.5, 10.7,  9.2) 
+plot(x,y, pch=19, col=c5, las=1)
+```
+
+## **Estimación MCO**
+
+$\widehat{y}= b_{0} + b_{1} x$
+
+```{r}
+regresion=lm(y ~ x)
+summary(regresion)
+plot(x,y, xlab = "Ingresos", ylab = "Consumo", pch=19, col=c5, las=1)
+abline(regresion)
+```
+
+## **Estimaciones y Residuales**
+
+```{r}
+yhat=fitted(regresion) # guarda "y" estimada
+uhat=regresion$residuals # guarda residuales
+
+data.frame(x,y,yhat,uhat)
+
+```
+
+```{r}
+plot(x,yhat, xlab = "Ingresos", ylab = "Consumo estimado", pch=19, col=c3, las=1)
+abline(regresion)
+```
+
+
+
+
+## **Validación de supuestos**
+
+### Supuesto 1
+
+```{r}
+# Test de normalidad de los errores
+# Ho: los errores tienen distribución normal
+ks.test(uhat, "pnorm") # test de normalidad
+shapiro.test(uhat) # test de normalidad
+# se debe instalar paquete fBasics
+# install.packages("fBasics")
+library(fBasics)
+jarqueberaTest(uhat) # test de normalidad
+```
+
+
+### Supuesto 2
+```{r}
+# t-test para verificar E[u]=0, modelo completo
+# Ho: miu_u = 0
+t.test(uhat)
+```
+
+
+
+### Supuesto 3
+```{r}
+# Test de Autocorrelacion de errores
+# Cor[ui,uj]=0
+# Ho: no existe autocorrelacion entre los errores
+# se debe instalar paquete lmtest
+# install.packages("lmtest")
+library(lmtest) #dwtest
+dwtest(y ~ x) # test de Durbin-Wapson
+```
+
+
+
+### Supuesto 4
+```{r}
+# Test de Homoscedasticidad
+# Ho: la varianza de los erroes es constante
+# Ho: V(u) = sigma2
+gqtest(y ~ x)
+```
+
+
+
+
+
+
+
+

@@ -23,7 +23,6 @@ c5="#BC2B6A" # MORADO
 
 ```
 
-<span style="color:#E77C00">**En construcción**</span>
 
 ## **Guía de aprendizaje 5.1**
 
@@ -91,6 +90,14 @@ Actividad511.pdf  Solución problemas planteados en el taller 511 en formato pdf
 # **Recursos**
 
 <br/><br/>
+
+## **Introducción**
+
+![](img/Galton.jpg)
+
+https://es.wikipedia.org/wiki/Francis_Galton
+https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal
+
 
 ## **Modelo de Regresión lineal**
 	
