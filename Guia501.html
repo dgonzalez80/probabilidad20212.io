@@ -1725,6 +1725,19 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 <h2><strong>Video</strong></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l2vx7ZPiaFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
+<p><br/><br/></p>
+</div>
+<div id="tutorial" class="section level2">
+<h2><strong>Tutorial</strong></h2>
+<pre class="r"><code># se deben instalar los pquetes en caso de no haberlo hecho antes
+install.packages(&quot;learnr&quot;) # solo una vez
+install.packages(&#39;remotes&#39;)  # solo una vez
+
+# codigo para cargar instructivo Taller_regresion1
+library(remotes) 
+library(devtools)  
+install_github(&quot;dgonzalez80/paquetepye&quot;, force = TRUE) # bajar paquete
+learnr::run_tutorial(&quot;Taller_regresion1&quot;, &quot;paquetepye&quot;) # correr instructivo</code></pre>
 </div>
 </div>
 
