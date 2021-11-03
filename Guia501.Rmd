@@ -60,7 +60,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 |Actividad      | Descripción                    | 
 |:--------------|:-----------------------------  |
-|Actividad 511  | Resuelva los problemas presentados en el siguiente taller . La solución deberá ser entregada mediante formato pdf en link abierto para tal fin en Brightspace 
+|Actividad 511  | Resuelva los problemas presentados en el [Taller501](https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Taller501.pdf) . La solución deberá ser entregada mediante formato pdf en link abierto para tal fin en Brightspace 
 |Trabajo individual |                             |
 |Recursos       |  [Guia 501](https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Guia_501.pdf)    |
 |               | **Código 501**
