@@ -278,8 +278,10 @@ t.test(g1,g2)
 ```{r}
 
 library(randtests)
-rachas<-c(1,1,0,1,1,1,1,1,1,1,0,1,0,0,1,0,0,0,0,1,0,0,0,1,1,1,0,1,0,0,0,0,1,1,1,0,0,1,1,0,0,1,0,1)
+x=c("N","D","N","N","N","N","N","D","D","D","N","N","N","N","D","N","N","D","N","N","N","D","N","N","N","N","N","N","N","D","D","D","D")
+rachas<-as.numeric(x=="N")
 runs.test(rachas,alternative = "left.sided",threshold = 0.5,pvalue = "exact",plot=F)
+
 ```
 
 
@@ -461,6 +463,8 @@ En todos los casos se presenta un valor-p grande por lo cual no se rechaza $Ho$,
 
 
 
+Referencias :
 
+https://rpubs.com/CJRR/PUJ_DECB_NP
 
 
