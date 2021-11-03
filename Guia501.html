@@ -493,6 +493,9 @@ div.tocify {
     <li>
       <a href="codigo403.html">Código u4.3</a>
     </li>
+    <li>
+      <a href="codigo501.html">Código u5.1</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -593,6 +596,14 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <td align="left"></td>
 </tr>
 <tr class="odd">
+<td align="left">Recursos</td>
+<td align="left"><a href="https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Guia_501.pdf">Guia 501</a></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><strong>Código 501</strong></td>
+</tr>
+<tr class="odd">
 <td align="left">Fecha</td>
 <td align="left">11 de Noviembre de 2020</td>
 </tr>
@@ -614,7 +625,22 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="entregables" class="section level2">
 <h2><strong>6. Entregables</strong></h2>
-<p>Actividad511.pdf Solución problemas planteados en el taller 511 en formato pdf</p>
+<table>
+<colgroup>
+<col width="32%" />
+<col width="67%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left">Actividad511.pdf</td>
+<td align="left">Solución problemas planteados en el <strong>Taller501</strong> en formato pdf</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="presentaciones" class="section level2">
@@ -624,14 +650,27 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <div id="recursos" class="section level1">
 <h1><strong>Recursos</strong></h1>
 <p><br/><br/></p>
-<div id="introducción-1" class="section level2">
-<h2><strong>Introducción</strong></h2>
-<p><img src="img/Galton.jpg" /></p>
-<p><a href="https://es.wikipedia.org/wiki/Francis_Galton" class="uri">https://es.wikipedia.org/wiki/Francis_Galton</a> <a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal" class="uri">https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal</a></p>
-</div>
 <div id="modelo-de-regresión-lineal" class="section level2">
 <h2><strong>Modelo de Regresión lineal</strong></h2>
+</div>
+<div id="introducción-1" class="section level2">
+<h2><strong>Introducción</strong></h2>
 <p>En esta unidad estudiaremos la relación que puede existir entre dos variables o una variable y un conjunto de variables, mediante la construcción de un modelo lineal que represente dicha relación. Se partirá de un modelo general (modelo de Regresión Lineal Múltiple) y se tratará como caso particular el modelo de dos variables también llamado Modelo de Regresión Lineal Simple MRLS.</p>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="70%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/Galton.jpg" /></td>
+<td align="left"><em>La primera forma de regresión lineal documentada fue el método de los mínimos cuadrados que fue publicada por Legendre en 1805, Gauss publicó un trabajo en donde desarrollaba de manera más profunda el método de los mínimos cuadrados y en dónde se incluía una versión del teorema de Gauss-Márkov. El término regresión se utilizó por primera vez en el estudio de variables antropométricas de Francis Galton: al comparar la estatura de padres e hijos, donde resultó que los hijos cuyos padres tenían una estatura muy superior al valor medio, tendían a igualarse a este, mientras que aquellos cuyos padres eran muy bajos tendían a reducir su diferencia respecto a la estatura media; es decir, “regresaban” al promedio. La constatación empírica de esta propiedad se vio reforzada más tarde con la justificación teórica de ese fenómeno.</em></td>
+</tr>
+</tbody>
+</table>
+<p><em>El término lineal se emplea para distinguirlo del resto de técnicas de regresión, que emplean modelos basados en cualquier clase de función matemática. Los modelos lineales son una explicación simplificada de la realidad, mucho más ágiles y con un soporte teórico mucho más extenso por parte de la matemática y la estadística.</em> |</p>
+<p>Tomado de : <a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal" class="uri">https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal</a></p>
+<p><br/><br/></p>
 <p>En unidades anteriores se estudiaron relaciones entre dos variables aleatorias, las cuales se puede medir a través del coeficiente de correlación (<span class="math inline">\(\rho\)</span>), el cual puede presentar valores desde -1 hasta 1 como se representa en las siguientes gráficas :</p>
 <p><img src="Guia501_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-2.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-3.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-4.png" width="672" /><img src="Guia501_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
 <p><br/><br/></p>
@@ -666,6 +705,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="mrl-enfoque-matricial" class="section level2">
 <h2><strong>MRL-enfoque matricial</strong></h2>
+<p><br/><br/></p>
 <p>Para representar el modelo de manera matricial, se puede partir de la siguiente ecuación: <span class="math display">\[\begin{equation*}
     Y_{i}=\beta_{0}+\beta_{1}X_{1i}+\beta_{2}X_{2i}+ \dots + \beta_{k}X_{ki} +u_{i} \hspace{.3cm} i=1,2,\dots,n
     \end{equation*}\]</span></p>
@@ -693,6 +733,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="estimación-de-coeficientes" class="section level2">
 <h2><strong>Estimación de coeficientes</strong></h2>
+<p><br/><br/></p>
 <p>El método Mínimos Cuadrados Ordinarios (<strong>MCO</strong>) se basa en la minimizar la suma de cuadrados de los errores (<span class="math inline">\(u\)</span>), a través de la información contenida en una muestra</p>
 <p>De la ecuación del modelo estimado <span class="math inline">\(\widehat{y} = X \widehat{\beta} + \widehat{u}\)</span> se pueden despejar los residuales . Como los errores son variables no observables, el método hace uso de sus respectivos estimadores llamados residuales:</p>
 <p><span class="math display">\[\begin{equation*}
@@ -732,6 +773,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <p><br/><br/></p>
 <p>Es claro que para poder realizar este proceso es condición necesaria que la matriz <span class="math inline">\((X^{T}X)\)</span> sea invertible. En caso contrario los estimadores MCO no se pueden hallar. La versión del método MCO a partir de sumatorias se encuentra desarrollada en el texto guía (Walpole-2012 pp.395)</p>
 <p>Para que la estimación por MCO sea valida y utilizada, se deben verificar que se cumplan los supuestos sobre los errores <span class="math inline">\(u\)</span> y las pruebas de significancia global y unitarias</p>
+<p><br/></p>
 <ul>
 <li><span class="math inline">\(S_1\)</span>: El valor esperado de <span class="math inline">\(u\)</span> es cero.<span class="math inline">\(E[u]=0\)</span> <span class="math inline">\(E[u]=0\)</span></li>
 </ul>
@@ -752,7 +794,18 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <li><span class="math inline">\(S_5\)</span>: Para el caso de regresión lineal múltiple se incluye el supuesto de no multicolinealidad. En caso de que se presenta multicolinealidad entre dos variables independientes da como resultado la imposibilidad de poder realizar la estimaciones mediante MCO</li>
 </ul>
 <p><br/><br/><br/></p>
-<p>Ejemplo 1: Se quiere determinar si existe relación entre los ingresos que recibe una familia y el valor de su consumo. Con en este propósito se toma información de 12 hogares</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej1.png" style="width:120.0%" /></td>
+<td align="left">Se quiere determinar si existe relación entre los ingresos que recibe una familia y el valor de su consumo. Con en este propósito se toma información de 12 hogares</td>
+</tr>
+</tbody>
+</table>
 <table>
 <tbody>
 <tr class="odd">
@@ -1000,9 +1053,20 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <p><span class="math inline">\(\widehat{\beta_{1}} = 0.55817\)</span> . Correspondiente a la estimación de la pendiente, indica que por cada aumento unitario de los ingresos, el consumo se aumenta en 0.55817 unidades.</p>
 <p>Otro indicador importante en el análisis corresponde al coeficiente de determinación (<span class="math inline">\(R^{2}\)</span>), que en este caso tiene un valor de <span class="math inline">\(0.8447\)</span> e indica que el modelo explica un <span class="math inline">\(84.47\)</span>% de la variación o del comportamiento de la variable <span class="math inline">\(Y\)</span></p>
 <p><br/><br/><br/></p>
-<p>Ejemplo 2: Un fabricante de equipos de aire acondicionado tiene problemas en la etapa de montaje, debido principalmente a la falta de una biela, pues debido a su peso no satisface las especificaciones establecidas para el producto por sobrepeso. Para reducir este costo, el fabricante estima que estudiando la relación entre el peso de la barra en bruto y su peso final, es probable encontrar una relación entre ellas y de esta manera reducir el problema mediante la detección de elementos que probablemente no cumplan con las condiciones exigidas para el producto.</p>
-<p>En el estudio se midieron un total de 25 (x, y) pares de barras, siendo <span class="math inline">\(X\)</span> el peso de la pieza colada en espera de ser procesada (materia prima) y <span class="math inline">\(Y\)</span> el peso de una biela terminada que forma parte del producto final. Se requiere estimar un modelo que permita predecir el valores del peso futuro de la biela terminada como función del peso bruto del bloque de metal. Los datos recogidos se muestran a continuación:</p>
-<p>Antes de realizar la estimación debemos visualizar mediante un diagrama de dispersión la relación lineal entre las variables. \</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej2.png" style="width:120.0%" /></td>
+<td align="left">Un fabricante de equipos de aire acondicionado tiene problemas en la etapa de montaje, debido principalmente a la falta de una biela, pues debido a su peso no satisface las especificaciones establecidas para el producto por sobrepeso. Para reducir este costo, el fabricante estima que estudiando la relación entre el peso de la barra en bruto y su peso final, es probable encontrar una relación entre ellas y de esta manera reducir el problema mediante la detección de elementos que probablemente no cumplan con las condiciones exigidas para el producto.</td>
+</tr>
+</tbody>
+</table>
+<p>En el estudio se midieron un total de 25 (x, y) pares de barras, siendo <span class="math inline">\(X\)</span> el peso de la pieza colada en espera de ser procesada (materia prima) y <span class="math inline">\(Y\)</span> el peso de una biela terminada que forma parte del producto final. Se requiere estimar un modelo que permita predecir el valores del peso futuro de la biela terminada como función del peso bruto del bloque de metal.</p>
+<p>Los datos recogidos se muestran a continuación: Antes de realizar la estimación debemos visualizar mediante un diagrama de dispersión la relación lineal entre las variables.</p>
 <p><br/><br/></p>
 <table>
 <thead>
@@ -1237,7 +1301,7 @@ F-statistic: 119.8 on 1 and 23 DF,  p-value: 1.356e-10</code></pre>
 <p>Para el caso de la pendiente los resultados son los siguientes.</p>
 <p>Lo cual ratifica que el modelo es valido y existe una relación lineal entre la variable de la barra inicial y el peso del producto terminado</p>
 <p>Además de los coeficientes estimados y de la validación de sus respectivas pruebas de hipótesis individuales, existe una medida para determinar el grado de explicación de la variable dependiente que es estimada por el modelo (<span class="math inline">\(R^{2}=83.9\%\)</span>). En este caso el modelo explica el 83.9% del comportamiento de <span class="math inline">\(y\)</span> o de su variación.</p>
-<p>Finalmente la salida reporta el valor del estadístico F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para <span class="math inline">\(\beta_{1}\)</span>\</p>
+<p>Finalmente la salida reporta el valor del estadístico F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para <span class="math inline">\(\beta_{1}\)</span></p>
 <p><br/><br/><br/></p>
 </div>
 <div id="validación-de-supuestos-1" class="section level2">
@@ -1656,7 +1720,11 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 \hspace{.5cm}&lt; \mu_{Y|x_{o}} &lt; \hspace{.5cm}
 \widehat{y_{0}} + t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}\]</span> Donde: <span class="math inline">\(S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}\)</span></p>
 <p><br/><br/></p>
-<p><a href="https://rpubs.com/Edimer/520130" class="uri">https://rpubs.com/Edimer/520130</a> <a href="https://www.gradiant.org/blog/claves-analisis-causal/" class="uri">https://www.gradiant.org/blog/claves-analisis-causal/</a> <a href="https://www.psicoactiva.com/biografias/francis-galton/" class="uri">https://www.psicoactiva.com/biografias/francis-galton/</a></p>
+</div>
+<div id="video" class="section level2">
+<h2><strong>Video</strong></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l2vx7ZPiaFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </div>
 </div>
 

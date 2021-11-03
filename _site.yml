@@ -89,6 +89,8 @@ navbar:
           href: codigo402.html 
         - text: "Código u4.3"
           href: codigo403.html
+        - text: "Código u5.1"
+          href: codigo501.html          
     - text: "Actividades"
       icon: fa-chess-pawn
       menu: 

@@ -61,7 +61,9 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |Actividad      | Descripción                    | 
 |:--------------|:-----------------------------  |
 |Actividad 511  | Resuelva los problemas presentados en el siguiente taller . La solución deberá ser entregada mediante formato pdf en link abierto para tal fin en Brightspace 
-|Trabajo individual |  |    
+|Trabajo individual |                             |
+|Recursos       |  [Guia 501](https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Guia_501.pdf)    |
+|               | **Código 501**
 |Fecha          | 11 de Noviembre de 2020 |
 |Hora           |  23:59 hora local       |
 
@@ -79,8 +81,10 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 ## **6. Entregables** 
 
-Actividad511.pdf  Solución problemas planteados en el taller 511 en formato pdf
-
+|                   |                                       |
+|:------------------|:--------------------------------------|
+|Actividad511.pdf   | Solución problemas planteados en el **Taller501** en formato pdf |
+|                   |                                       |
 <br/><br/><br/><br/>
 
 ## **7. Presentaciones**
@@ -91,18 +95,22 @@ Actividad511.pdf  Solución problemas planteados en el taller 511 en formato pdf
 
 <br/><br/>
 
+## **Modelo de Regresión lineal**
+
 ## **Introducción**
 
-![](img/Galton.jpg)
-
-https://es.wikipedia.org/wiki/Francis_Galton
-https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal
-
-
-## **Modelo de Regresión lineal**
-	
 En esta unidad estudiaremos la relación que puede existir entre dos variables o una variable y un conjunto de variables, mediante la construcción de un modelo lineal que represente dicha relación. Se partirá de un modelo general (modelo de Regresión Lineal Múltiple) y se tratará como caso particular el modelo de dos variables también llamado Modelo de Regresión Lineal Simple MRLS.
-	
+
+|                     |                                                   |
+|:-------------------:|:--------------------------------------------------|
+|![](img/Galton.jpg)  | *La primera forma de regresión lineal documentada fue el método de los mínimos cuadrados que fue publicada por Legendre en 1805, Gauss publicó un trabajo en donde desarrollaba de manera más profunda el método de los mínimos cuadrados y en dónde se incluía una versión del teorema de Gauss-Márkov. El término regresión se utilizó por primera vez en el estudio de variables antropométricas de Francis Galton: al comparar la estatura de padres e hijos, donde resultó que los hijos cuyos padres tenían una estatura muy superior al valor medio, tendían a igualarse a este, mientras que aquellos cuyos padres eran muy bajos tendían a reducir su diferencia respecto a la estatura media; es decir, "regresaban" al promedio. La constatación empírica de esta propiedad se vio reforzada más tarde con la justificación teórica de ese fenómeno.*
+
+*El término lineal se emplea para distinguirlo del resto de técnicas de regresión, que emplean modelos basados en cualquier clase de función matemática. Los modelos lineales son una explicación simplificada de la realidad, mucho más ágiles y con un soporte teórico mucho más extenso por parte de la matemática y la estadística.*                                                  |
+
+Tomado de : https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal
+
+<br/><br/>
+
 En unidades anteriores se estudiaron relaciones entre dos variables aleatorias, las cuales se puede medir a través del coeficiente de correlación ($\rho$),  el cual puede presentar valores desde  -1  hasta 1 como se representa en las siguientes gráficas :
 	
 
@@ -233,6 +241,8 @@ Como cada vez que se toma una muestra, por razones del azar los objetos medidos 
 
 ## **MRL-enfoque matricial**
 
+<br/><br/>
+
 Para representar el modelo de manera matricial, se puede partir de la siguiente ecuación:
 $$\begin{equation*}
 	Y_{i}=\beta_{0}+\beta_{1}X_{1i}+\beta_{2}X_{2i}+ \dots + \beta_{k}X_{ki} +u_{i} \hspace{.3cm} i=1,2,\dots,n
@@ -272,7 +282,9 @@ $$u =[u_{1},u_{2},\dots,u_{n}]^{T}$$
 	
 <br/><br/><br/>
 
-## **Estimación de coeficientes** 	
+## **Estimación de coeficientes** 
+
+<br/><br/>
 	
 El método Mínimos Cuadrados Ordinarios (**MCO**) se basa en la minimizar la suma de cuadrados de los errores ($u$), a través de la información contenida en una muestra 
 
@@ -334,6 +346,8 @@ La versión del método MCO a partir de sumatorias se encuentra desarrollada en 
 
 Para que la estimación por MCO sea valida y utilizada, se deben verificar que se cumplan los supuestos sobre los errores $u$ y las pruebas de significancia global y unitarias
 
+<br/>
+
 + $S_1$: El valor esperado de $u$ es cero.$E[u]=0$\vspace{.3cm} $E[u]=0$
 
 <br/>
@@ -354,8 +368,10 @@ Para que la estimación por MCO sea valida y utilizada, se deben verificar que s
 	
 <br/><br/><br/>
 
-Ejemplo 1:
-Se quiere determinar si existe relación entre los ingresos que recibe una familia y el valor de su consumo. Con en este propósito se toma información de 12 hogares
+
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej1.png){width=120%} | Se quiere determinar si existe relación entre los ingresos que recibe una familia y el valor de su consumo. Con en este propósito se toma información de 12 hogares |
 
 |    |     |     |     |     |     |     |     |     |     |     |     |     |
 |:--:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
@@ -552,13 +568,14 @@ Otro indicador importante en el análisis corresponde al coeficiente de determin
 
 <br/><br/><br/>
 
-Ejemplo 2:
-Un fabricante de equipos de aire acondicionado tiene problemas en la etapa de montaje, debido principalmente a la falta de una biela, pues debido a su peso no satisface las especificaciones establecidas para el producto por sobrepeso. Para reducir este costo, el fabricante estima que estudiando  la relación entre el peso de la barra en bruto y su peso final, es probable encontrar una relación entre ellas y de esta manera reducir el problema mediante la detección de elementos que probablemente no cumplan con las condiciones exigidas para el producto. 
-	
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej2.png){width=120%} | Un fabricante de equipos de aire acondicionado tiene problemas en la etapa de montaje, debido principalmente a la falta de una biela, pues debido a su peso no satisface las especificaciones establecidas para el producto por sobrepeso. Para reducir este costo, el fabricante estima que estudiando  la relación entre el peso de la barra en bruto y su peso final, es probable encontrar una relación entre ellas y de esta manera reducir el problema mediante la detección de elementos que probablemente no cumplan con las condiciones exigidas para el producto. |
+
 En el estudio se midieron un total de 25 (x, y) pares de barras, siendo $X$ el peso de la pieza colada en espera de ser procesada (materia prima) y $Y$ el peso de una biela terminada que forma parte del producto final. Se requiere estimar un modelo que permita predecir el valores del peso futuro de la  biela terminada como función del peso bruto del bloque de metal. 
+
 Los datos recogidos se muestran a continuación: 
-	
-Antes de realizar la estimación debemos visualizar mediante un diagrama de dispersión la relación lineal entre las variables. \\
+Antes de realizar la estimación debemos visualizar mediante un diagrama de dispersión la relación lineal entre las variables. 
 
 <br/><br/>
 
@@ -692,7 +709,7 @@ Lo cual ratifica que el modelo es valido y existe una relación lineal entre la 
 Además de los coeficientes estimados y de la validación de sus respectivas pruebas de hipótesis individuales, existe una medida para determinar el grado de explicación de la variable dependiente que es estimada por el modelo ($R^{2}=83.9\%$). En este caso el modelo explica el 83.9% del comportamiento de $y$ o de su variación.
 	
 	
-Finalmente la salida reporta el valor del estadístico  F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para $\beta_{1}$\\
+Finalmente la salida reporta el valor del estadístico  F (119.8) y su valor-p asociado (0.0000), correspondiente al análisis de varianza o ANOVA , útil en análisis de regresión lineal múltiple. Para el caso del modelo de regresión lineal simple el análisis de varianza arroja los mismos resultados que la hipótesis individual para $\beta_{1}$
 	
 <br/><br/><br/>
 
@@ -1001,7 +1018,8 @@ $S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$
 
 <br/><br/>
 
-https://rpubs.com/Edimer/520130
-https://www.gradiant.org/blog/claves-analisis-causal/
-https://www.psicoactiva.com/biografias/francis-galton/
+## **Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l2vx7ZPiaFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
