@@ -493,6 +493,9 @@ div.tocify {
     <li>
       <a href="codigo403.html">Código u4.3</a>
     </li>
+    <li>
+      <a href="codigo501.html">Código u5.1</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -1936,8 +1939,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = -2.4122, runs = 39, n1 = 50, n2 = 50, n = 100, p-value =
-0.01586
+statistic = 1.4071, runs = 58, n1 = 50, n2 = 50, n = 100, p-value =
+0.1594
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se rechaza la hipótesis nula, no existe suficiente evidencia en la muestra que permita rechazarla, asumimos que los datos son aleatorios.</p>
@@ -1966,7 +1969,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99576, p-value = 0.8542</code></pre>
+W = 0.98918, p-value = 0.1355</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span class="math inline">\(\alpha\)</span>, no se rechaza <span class="math inline">\(Ho\)</span>, se asume que la distribución de la variable es normal.</p>
 <p>Otras pruebas de normalidad utilizadas con frecuencia son:</p>
@@ -1978,19 +1981,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 0.8226, p-value = 0.644</code></pre>
+JB = 3.1487, p-value = 0.1505</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 3.079, p-value = 0.8085</code></pre>
+T = 3.3019, p-value = 0.357</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.15205, p-value = 0.3495</code></pre>
+T = -0.26773, p-value = 0.119</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -1999,13 +2002,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.036568, p-value = 0.7404</code></pre>
+D = 0.056854, p-value = 0.1186</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 15.9, p-value = 0.3195</code></pre>
+P = 20.66, p-value = 0.1107</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>

@@ -273,6 +273,16 @@ t.test(g1,g2)
 
 # **Pruebas no paramétricas**
 
+## **de rachas**
+
+```{r}
+
+library(randtests)
+rachas<-c(1,1,0,1,1,1,1,1,1,1,0,1,0,0,1,0,0,0,0,1,0,0,0,1,1,1,0,1,0,0,0,0,1,1,1,0,0,1,1,0,0,1,0,1)
+runs.test(rachas,alternative = "left.sided",threshold = 0.5,pvalue = "exact",plot=F)
+```
+
+
 <br/><br/><br/>
 
 # **Pruebas de normalidad**
