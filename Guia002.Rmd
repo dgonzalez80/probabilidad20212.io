@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
 # colores
 c0="#0DA5A6" # VERDE CLARO
@@ -32,13 +32,13 @@ c5="#BC2B6A" # MORADO
 
 # **Teoría de conjuntos**
 
-## **1. Introducción** 
+## **Introducción** 
 
 A continuación se relacionan las principales características de los conjuntos y sus principales relaciones. Estos conceptos serán importante en el momento de abordar los conceptos básicos de  probabilidad que serán expuestos en el Modulo 2. 
 
 En pesaremos con su definición
 
-## **2. Definición de conjunto**
+## **Definición de conjunto**
 
 Un conjunto es una colección de objetos que se denota con una letra mayúscula (comúnmente las primeras letras del alfabeto A,B,C..) . 
 
@@ -52,38 +52,37 @@ Se pueden escribir por:
 
 Al  comparar o combinar conjuntos debemos hacer uso de sus propiedades y operaciones, dentro de  las  cuales se encuentran $A \cup B$, $A \cap B$, 
 
-## **3. Unión del conjunto**
+## **Unión del conjunto**
 
 Unión del $A$ con el conjunto $B$.\hspace{.4cm} $A \cup B$, $\overline{A}$ ,$A - B$, entre  otras. La zona sombreada en la siguiente figura representa estas operación
 
 ![](img/union.png){width=50%}
 
-Ejemplo:  Supongamos los siguientes conjuntos :
- 
-+ $A = \{a,e,i,o,u \}$
-+ $B = \{1,2,3,4,5,6,7,8,9,0\}$
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej1.png)|Supongamos los siguientes conjuntos : $A = \{a,e,i,o,u \}$ y $B = \{1,2,3,4,5,6,7,8,9,0\}$ |
  
  $A \cup B \{a,e,i,o,u, 1,2,3,4,5,6,7,8,9,0 \}$ 
  
  <br/><br/>
  
-## **4. Intersección** 
+## **Intersección** 
 
 La intersección entre el conjunto $A$ y el $B$ se denota por : $A \cap B$ y se representa por la siguiente zona sombreada
 
 ![](img/interseccion.png){width=50%}
 
 
-Ejemplo:  Supongamos los siguientes conjuntos :
- 
-+ $A = \{1,2,3,4,5,6 \}$ 
-+ $B = \{2,4,6,8,10,12,14,16,18,20 \}$ 
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej2.png) |Supongamos los siguientes conjuntos : $A = \{1,2,3,4,5,6 \}$ y $B = \{2,4,6,8,10,12,14,16,18,20 \}$  |
+
 
 $A \cap B = \{ 2,4,6 \}$ 
 
 <br/><br/>
 
-## **4. Complemento**
+## **Complemento**
 
 El complemento del conjunto $A$ se escribe como: $\overline{A}$ y se representa por la siguiente zona sombreada
 
@@ -91,23 +90,21 @@ El complemento del conjunto $A$ se escribe como: $\overline{A}$ y se representa 
 
 <br/><br/>
 
-## **5. Resta**
+## **Resta**
  
 La resta del conjunto $B$ menos el conjunto $A$ : $B-A$ , está representada por la zona sombreada en la siguiente figura
  
  ![](img/resta.png){width=50%}
 
-Ejemplo:  Supongamos los siguientes conjuntos :
-
-+ $A = \{1,2,3,4,5,6 \}$ 
-+ $B = \{2,4,6,8,10,12,14,16,18,20 \}$ 
-
+|    |                                     |
+|:--:|:------------------------------------|
+|![](img/ej3.png) |Supongamos los siguientes conjuntos : $A = \{1,2,3,4,5,6 \}$ y $B = \{2,4,6,8,10,12,14,16,18,20 \}$ |
 
 $B-A =\{ 8,10,12,14,16,18,20 \}$
 
 <br/><br/>
 
-##  **6. Problemas propuestos** 
+##  **Problemas propuestos** 
 
 1. **Lanzamiento de un dado**: Un experimento consiste en lanzar un dado. Algunos eventos que se pueden definir a partir del experimento pueden ser:
 
@@ -199,33 +196,35 @@ Las técnicas de conteo constituyen una serie de estrategias que permiten a trav
 
 Inicialmente empezaremos por definir dos reglas:
 
-## **1. Principio de la adicción**
+## **Principio de la adicción**
 Supongamos que un  procedimiento, designado con $P_1$, se puede hacer de $n_1$ manera diferentes. Supongamos que un  segundo  procedimiento $P_2$ se puede  realizar de $n_2$ maneras diferentes. Ademas suponga que los dos procedimientos no  se  pueden realizar juntos. Entonces  el numero de formas diferentes como se puede  realizar el procedimiento $P_1$ o el procedimiento  $P_2$ es de $n_1 + n_2$ maneras diferentes. 	
 
 <br/><br/>
 
-### **Ejemplo** 
-Un estudiante tiene dos posibilidades de ir de su casa a la universidad: En transporte público o en transporte particular. Para el caso del transporte público existen 5 alternativas. Para el caso de transporte particular tienen 6 alternativas. En este caso $n_{1}=5$ y $n_{2}=6$. El número de maneras como se puede transportar de la casa a la universidad será $n=n_{1}+n_{2}=11$ formas diferentes de ir a la U.\\
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej4.png) | Un estudiante tiene dos posibilidades de ir de su casa a la universidad: En transporte público o en transporte particular. Para el caso del transporte público existen 5 alternativas. Para el caso de transporte particular tienen 6 alternativas. En este caso $n_{1}=5$ y $n_{2}=6$. El número de maneras como se puede transportar de la casa a la universidad será $n=n_{1}+n_{2}=11$ formas diferentes de ir a la U. |
 
 ![](img/psuma.png){width=50%}
 <br/><br/>
 
-## **2. Principio de la multiplicación**
+## **Principio de la multiplicación**
 
 Supongamos que un  procedimiento $P1$ , se  puede realizar de $n_1$ maneras diferentes y que  otro procedimiento $P2$ se puede realizar de $n_2$ maneras diferentes, Ahora supongamos que la  manera  de  realizar  los procedimientos es  uno  después del  otro. Entonces el numero  de  formas  diferentes como  se  pueden  realizar los procedimientos $P1$ y  $P2$ de manera consecutiva es $n1*n2$ formas diferentes.	
 
 <br/><br/>
 
-###  **Ejemplo**: 
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej5.png) |En el proceso de fabricación de una silla se diferencian las siguientes etapas: El diseño de la silla ($P_{1}$) y el proceso de pintado ($P_{2}$). El proceso $P_{1}$ se puede realizar de 3 formas diferentes. Para el proceso $P_{2}$ se puede optar por 4 formas diferentes. ¿De cuantas formas diferentes se puede construir una silla? |
 
-En el proceso de fabricación de una silla se diferencian las siguientes etapas: El diseño de la silla ($P_{1}$) y el proceso de pintado ($P_{2}$). El proceso $P_{1}$ se puede realizar de 3 formas diferentes. Para el proceso $P_{2}$ se puede optar por 4 formas diferentes. El número de posibles formas como puede fabricar una silla será: $n_{1} \times n_{2} = 3 \times 4 = 14$
-
+El número de posibles formas como puede fabricar una silla será:  $n_{1} \times n_{2} = 3 \times 4 = 14$
 
 ![](img/pmultiplicacion.png){width=50%}
 
 <br/><br/>
 
-## **3. Otras técnicas de conteo** 
+## **Otras técnicas de conteo** 
 
 Para explicar un poco los otros casos de conteo utilizaremos el siguiente experimento aleatorio:
 
@@ -281,8 +280,10 @@ El numero de  maneras diferentes como  se  puede extraer  una  muestra de tamañ
  
 <br/><br/>
  
-### **Ejemplo** 
-Un Ingeniero debe realizar  visitas a 6 aéreas de trabajo diferentes durante el día. A fin de impedir a los funcionarios que sepan cuando realizara su visita, varía el orden de sus visitas. De cuantas maneras puede hacerlo?
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej6.png) | Un Ingeniero debe realizar  visitas a 6 aéreas de trabajo diferentes durante el día. A fin de impedir a los funcionarios que sepan cuando realizara su visita, varía el orden de sus visitas. De cuantas maneras puede hacerlo? |
+
 
 $$ _{6}\mathcal{P}_{6} = \dfrac{6!}{(6-6)!}=6! =720$$
 
@@ -297,8 +298,13 @@ El número de  maneras diferentes como  se  puede extraer  una  muestra de tama�
 
 <br/><br/>
 
-### **Ejemplo** 
-El juego del Baloto está conformado por una urna que contiene 45 bolas numeradas del 1 al 46, de las cueles se eligen 6 sin importar el orden y sin que ninguna de las bolas se repita. Este experimento cumple con las condiciones de una combinación. El número de formas diferentes como se puede salir el resultado del Baloto será:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej7.png) | El juego del Baloto está conformado por una urna que contiene 45 bolas numeradas del 1 al 46. ¿De cuantas formas diferentes puede salir el resultado un sorteo? |
+
+De las 46 bolas se pueden eligen 6 sin importar el orden y sin que ninguna de las bolas se repita. Este experimento cumple con las condiciones de una combinación.  
+
+El número de formas diferentes como se puede salir el resultado del Baloto será:
 
 $$_{45}\mathcal{C}_{6} = \binom{45}{6}=8'145,060$$
 
@@ -312,7 +318,7 @@ El numero de  maneras diferentes como  se  puede extraer  una  muestra de tamañ
 
 <br/><br/>
 
-## **4. Problemas propuestos** 
+## **Problemas propuestos** 
 
 1. Cuántos números de 4 dígitos se pueden formar con los números 0,1,2,3,4,5,6,7? 
   a. Cuántos de los anteriores números son impares? 
@@ -387,11 +393,12 @@ Problemas tomados y basados en  Meyer(1986)
 <br/><br/>
 
 Códigos en R 
+|               |                                                      |
+|:--------------|:-----------------------------------------------------|
+|permutación    | `nPk=function(a,b){choose(n,k)*factorial(k)} `       |
+|combinación    | `nCk=function(a,b){choose(n,k)}`                     |
+|               |                                                      |
 
-```{r}
-nPk=function(a,b){choose(n,k)*factorial(k)} # permutación
-nCk=function(a,b){choose(n,k)}  # combinación
-```
 
 
 

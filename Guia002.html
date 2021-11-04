@@ -530,6 +530,20 @@ div.tocify {
     </li>
   </ul>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-chess-pawn"></span>
+     
+    Atención
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="atencion.html">Atención</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -557,12 +571,12 @@ div.tocify {
 <div id="teoría-de-conjuntos" class="section level1">
 <h1><strong>Teoría de conjuntos</strong></h1>
 <div id="introducción" class="section level2">
-<h2><strong>1. Introducción</strong></h2>
+<h2><strong>Introducción</strong></h2>
 <p>A continuación se relacionan las principales características de los conjuntos y sus principales relaciones. Estos conceptos serán importante en el momento de abordar los conceptos básicos de probabilidad que serán expuestos en el Modulo 2.</p>
 <p>En pesaremos con su definición</p>
 </div>
 <div id="definición-de-conjunto" class="section level2">
-<h2><strong>2. Definición de conjunto</strong></h2>
+<h2><strong>Definición de conjunto</strong></h2>
 <p>Un conjunto es una colección de objetos que se denota con una letra mayúscula (comúnmente las primeras letras del alfabeto A,B,C..) .</p>
 <p>Se pueden escribir por:</p>
 <ul>
@@ -573,49 +587,70 @@ div.tocify {
 <p>Al comparar o combinar conjuntos debemos hacer uso de sus propiedades y operaciones, dentro de las cuales se encuentran <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(A \cap B\)</span>,</p>
 </div>
 <div id="unión-del-conjunto" class="section level2">
-<h2><strong>3. Unión del conjunto</strong></h2>
+<h2><strong>Unión del conjunto</strong></h2>
 <p>Unión del <span class="math inline">\(A\)</span> con el conjunto <span class="math inline">\(B\)</span>. <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(\overline{A}\)</span> ,<span class="math inline">\(A - B\)</span>, entre otras. La zona sombreada en la siguiente figura representa estas operación</p>
 <p><img src="img/union.png" style="width:50.0%" /></p>
-<p>Ejemplo: Supongamos los siguientes conjuntos :</p>
-<ul>
-<li><span class="math inline">\(A = \{a,e,i,o,u \}\)</span></li>
-<li><span class="math inline">\(B = \{1,2,3,4,5,6,7,8,9,0\}\)</span></li>
-</ul>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej1.png" /></td>
+<td align="left">Supongamos los siguientes conjuntos : <span class="math inline">\(A = \{a,e,i,o,u \}\)</span> y <span class="math inline">\(B = \{1,2,3,4,5,6,7,8,9,0\}\)</span></td>
+</tr>
+</tbody>
+</table>
 <p><span class="math inline">\(A \cup B \{a,e,i,o,u, 1,2,3,4,5,6,7,8,9,0 \}\)</span></p>
 <p><br/><br/></p>
 </div>
 <div id="intersección" class="section level2">
-<h2><strong>4. Intersección</strong></h2>
+<h2><strong>Intersección</strong></h2>
 <p>La intersección entre el conjunto <span class="math inline">\(A\)</span> y el <span class="math inline">\(B\)</span> se denota por : <span class="math inline">\(A \cap B\)</span> y se representa por la siguiente zona sombreada</p>
 <p><img src="img/interseccion.png" style="width:50.0%" /></p>
-<p>Ejemplo: Supongamos los siguientes conjuntos :</p>
-<ul>
-<li><span class="math inline">\(A = \{1,2,3,4,5,6 \}\)</span></li>
-<li><span class="math inline">\(B = \{2,4,6,8,10,12,14,16,18,20 \}\)</span></li>
-</ul>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej2.png" /></td>
+<td align="left">Supongamos los siguientes conjuntos : <span class="math inline">\(A = \{1,2,3,4,5,6 \}\)</span> y <span class="math inline">\(B = \{2,4,6,8,10,12,14,16,18,20 \}\)</span></td>
+</tr>
+</tbody>
+</table>
 <p><span class="math inline">\(A \cap B = \{ 2,4,6 \}\)</span></p>
 <p><br/><br/></p>
 </div>
 <div id="complemento" class="section level2">
-<h2><strong>4. Complemento</strong></h2>
+<h2><strong>Complemento</strong></h2>
 <p>El complemento del conjunto <span class="math inline">\(A\)</span> se escribe como: <span class="math inline">\(\overline{A}\)</span> y se representa por la siguiente zona sombreada</p>
 <p><img src="img/complemento.png" style="width:50.0%" /></p>
 <p><br/><br/></p>
 </div>
 <div id="resta" class="section level2">
-<h2><strong>5. Resta</strong></h2>
+<h2><strong>Resta</strong></h2>
 <p>La resta del conjunto <span class="math inline">\(B\)</span> menos el conjunto <span class="math inline">\(A\)</span> : <span class="math inline">\(B-A\)</span> , está representada por la zona sombreada en la siguiente figura</p>
 <p><img src="img/resta.png" style="width:50.0%" /></p>
-<p>Ejemplo: Supongamos los siguientes conjuntos :</p>
-<ul>
-<li><span class="math inline">\(A = \{1,2,3,4,5,6 \}\)</span></li>
-<li><span class="math inline">\(B = \{2,4,6,8,10,12,14,16,18,20 \}\)</span></li>
-</ul>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej3.png" /></td>
+<td align="left">Supongamos los siguientes conjuntos : <span class="math inline">\(A = \{1,2,3,4,5,6 \}\)</span> y <span class="math inline">\(B = \{2,4,6,8,10,12,14,16,18,20 \}\)</span></td>
+</tr>
+</tbody>
+</table>
 <p><span class="math inline">\(B-A =\{ 8,10,12,14,16,18,20 \}\)</span></p>
 <p><br/><br/></p>
 </div>
 <div id="problemas-propuestos" class="section level2">
-<h2><strong>6. Problemas propuestos</strong></h2>
+<h2><strong>Problemas propuestos</strong></h2>
 <ol style="list-style-type: decimal">
 <li><strong>Lanzamiento de un dado</strong>: Un experimento consiste en lanzar un dado. Algunos eventos que se pueden definir a partir del experimento pueden ser:</li>
 </ol>
@@ -748,28 +783,45 @@ div.tocify {
 <p>Las técnicas de conteo constituyen una serie de estrategias que permiten a través de reglas establecer el numero de elementos de un conjunto finito.</p>
 <p>Inicialmente empezaremos por definir dos reglas:</p>
 <div id="principio-de-la-adicción" class="section level2">
-<h2><strong>1. Principio de la adicción</strong></h2>
+<h2><strong>Principio de la adicción</strong></h2>
 <p>Supongamos que un procedimiento, designado con <span class="math inline">\(P_1\)</span>, se puede hacer de <span class="math inline">\(n_1\)</span> manera diferentes. Supongamos que un segundo procedimiento <span class="math inline">\(P_2\)</span> se puede realizar de <span class="math inline">\(n_2\)</span> maneras diferentes. Ademas suponga que los dos procedimientos no se pueden realizar juntos. Entonces el numero de formas diferentes como se puede realizar el procedimiento <span class="math inline">\(P_1\)</span> o el procedimiento <span class="math inline">\(P_2\)</span> es de <span class="math inline">\(n_1 + n_2\)</span> maneras diferentes.</p>
 <p><br/><br/></p>
-<div id="ejemplo" class="section level3">
-<h3><strong>Ejemplo</strong></h3>
-<p>Un estudiante tiene dos posibilidades de ir de su casa a la universidad: En transporte público o en transporte particular. Para el caso del transporte público existen 5 alternativas. Para el caso de transporte particular tienen 6 alternativas. En este caso <span class="math inline">\(n_{1}=5\)</span> y <span class="math inline">\(n_{2}=6\)</span>. El número de maneras como se puede transportar de la casa a la universidad será <span class="math inline">\(n=n_{1}+n_{2}=11\)</span> formas diferentes de ir a la U.\</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej4.png" /></td>
+<td align="left">Un estudiante tiene dos posibilidades de ir de su casa a la universidad: En transporte público o en transporte particular. Para el caso del transporte público existen 5 alternativas. Para el caso de transporte particular tienen 6 alternativas. En este caso <span class="math inline">\(n_{1}=5\)</span> y <span class="math inline">\(n_{2}=6\)</span>. El número de maneras como se puede transportar de la casa a la universidad será <span class="math inline">\(n=n_{1}+n_{2}=11\)</span> formas diferentes de ir a la U.</td>
+</tr>
+</tbody>
+</table>
 <p><img src="img/psuma.png" style="width:50.0%" /> <br/><br/></p>
 </div>
-</div>
 <div id="principio-de-la-multiplicación" class="section level2">
-<h2><strong>2. Principio de la multiplicación</strong></h2>
+<h2><strong>Principio de la multiplicación</strong></h2>
 <p>Supongamos que un procedimiento <span class="math inline">\(P1\)</span> , se puede realizar de <span class="math inline">\(n_1\)</span> maneras diferentes y que otro procedimiento <span class="math inline">\(P2\)</span> se puede realizar de <span class="math inline">\(n_2\)</span> maneras diferentes, Ahora supongamos que la manera de realizar los procedimientos es uno después del otro. Entonces el numero de formas diferentes como se pueden realizar los procedimientos <span class="math inline">\(P1\)</span> y <span class="math inline">\(P2\)</span> de manera consecutiva es <span class="math inline">\(n1*n2\)</span> formas diferentes.</p>
 <p><br/><br/></p>
-<div id="ejemplo-1" class="section level3">
-<h3><strong>Ejemplo</strong>:</h3>
-<p>En el proceso de fabricación de una silla se diferencian las siguientes etapas: El diseño de la silla (<span class="math inline">\(P_{1}\)</span>) y el proceso de pintado (<span class="math inline">\(P_{2}\)</span>). El proceso <span class="math inline">\(P_{1}\)</span> se puede realizar de 3 formas diferentes. Para el proceso <span class="math inline">\(P_{2}\)</span> se puede optar por 4 formas diferentes. El número de posibles formas como puede fabricar una silla será: <span class="math inline">\(n_{1} \times n_{2} = 3 \times 4 = 14\)</span></p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej5.png" /></td>
+<td align="left">En el proceso de fabricación de una silla se diferencian las siguientes etapas: El diseño de la silla (<span class="math inline">\(P_{1}\)</span>) y el proceso de pintado (<span class="math inline">\(P_{2}\)</span>). El proceso <span class="math inline">\(P_{1}\)</span> se puede realizar de 3 formas diferentes. Para el proceso <span class="math inline">\(P_{2}\)</span> se puede optar por 4 formas diferentes. ¿De cuantas formas diferentes se puede construir una silla?</td>
+</tr>
+</tbody>
+</table>
+<p>El número de posibles formas como puede fabricar una silla será: <span class="math inline">\(n_{1} \times n_{2} = 3 \times 4 = 14\)</span></p>
 <p><img src="img/pmultiplicacion.png" style="width:50.0%" /></p>
 <p><br/><br/></p>
 </div>
-</div>
 <div id="otras-técnicas-de-conteo" class="section level2">
-<h2><strong>3. Otras técnicas de conteo</strong></h2>
+<h2><strong>Otras técnicas de conteo</strong></h2>
 <p>Para explicar un poco los otros casos de conteo utilizaremos el siguiente experimento aleatorio:</p>
 <p>Se tiene una urna que contiene <span class="math inline">\(n\)</span> elementos todos numerables ( se pueden contar) y de ellos se quiere seleccionar <span class="math inline">\(k\)</span> elementos como se muestra en la siguiente figura.</p>
 <p><img src="img/urna.png" /></p>
@@ -803,10 +855,18 @@ div.tocify {
 <p><span class="math display">\[\mathcal{P}(n,k) = n \times ()n-1) \times (n-2)  ........ (n-k) = \dfrac{n!}{(n-k)!}\]</span></p>
 <p>El numero de maneras diferentes como se puede extraer una muestra de tamaño k de una urna que contiene n elementos importando el orden y sin sustitución es: <span class="math inline">\(\dfrac{n!}{(n-k)!}\)</span>, el cual se lee n permutado con k.</p>
 <p><br/><br/></p>
-</div>
-<div id="ejemplo-2" class="section level3">
-<h3><strong>Ejemplo</strong></h3>
-<p>Un Ingeniero debe realizar visitas a 6 aéreas de trabajo diferentes durante el día. A fin de impedir a los funcionarios que sepan cuando realizara su visita, varía el orden de sus visitas. De cuantas maneras puede hacerlo?</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej6.png" /></td>
+<td align="left">Un Ingeniero debe realizar visitas a 6 aéreas de trabajo diferentes durante el día. A fin de impedir a los funcionarios que sepan cuando realizara su visita, varía el orden de sus visitas. De cuantas maneras puede hacerlo?</td>
+</tr>
+</tbody>
+</table>
 <p><span class="math display">\[ _{6}\mathcal{P}_{6} = \dfrac{6!}{(6-6)!}=6! =720\]</span></p>
 <p><br/><br/></p>
 </div>
@@ -815,10 +875,20 @@ div.tocify {
 <p><span class="math display">\[\mathcal{C}(n,k) = \dfrac{n!}{(n-k)! k!}= \binom{n}{k}\]</span></p>
 <p>El número de maneras diferentes como se puede extraer una muestra de tamaño k de una urna que contiene n elementos importando el orden y sin sustitución es: <span class="math inline">\(\binom{n}{k}\)</span>, el cual se lee n combinado con k</p>
 <p><br/><br/></p>
-</div>
-<div id="ejemplo-3" class="section level3">
-<h3><strong>Ejemplo</strong></h3>
-<p>El juego del Baloto está conformado por una urna que contiene 45 bolas numeradas del 1 al 46, de las cueles se eligen 6 sin importar el orden y sin que ninguna de las bolas se repita. Este experimento cumple con las condiciones de una combinación. El número de formas diferentes como se puede salir el resultado del Baloto será:</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/ej7.png" /></td>
+<td align="left">El juego del Baloto está conformado por una urna que contiene 45 bolas numeradas del 1 al 46. ¿De cuantas formas diferentes puede salir el resultado un sorteo?</td>
+</tr>
+</tbody>
+</table>
+<p>De las 46 bolas se pueden eligen 6 sin importar el orden y sin que ninguna de las bolas se repita. Este experimento cumple con las condiciones de una combinación.</p>
+<p>El número de formas diferentes como se puede salir el resultado del Baloto será:</p>
 <p><span class="math display">\[_{45}\mathcal{C}_{6} = \binom{45}{6}=8&#39;145,060\]</span></p>
 <p><br/><br/></p>
 </div>
@@ -830,7 +900,7 @@ div.tocify {
 </div>
 </div>
 <div id="problemas-propuestos-1" class="section level2">
-<h2><strong>4. Problemas propuestos</strong></h2>
+<h2><strong>Problemas propuestos</strong></h2>
 <ol style="list-style-type: decimal">
 <li>Cuántos números de 4 dígitos se pueden formar con los números 0,1,2,3,4,5,6,7?</li>
 </ol>
@@ -914,9 +984,7 @@ div.tocify {
 </ol>
 <p>Problemas tomados y basados en Meyer(1986)</p>
 <p><br/><br/></p>
-<p>Códigos en R</p>
-<pre class="r"><code>nPk=function(a,b){choose(n,k)*factorial(k)} # permutación
-nCk=function(a,b){choose(n,k)}  # combinación</code></pre>
+<p>Códigos en R | | | |:————–|:—————————————————–| |permutación | <code>nPk=function(a,b){choose(n,k)*factorial(k)}</code> | |combinación | <code>nCk=function(a,b){choose(n,k)}</code> | | | |</p>
 </div>
 </div>
 

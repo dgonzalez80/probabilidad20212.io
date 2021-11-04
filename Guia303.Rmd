@@ -23,14 +23,14 @@ c5="#BC2B6A" # MORADO
 
 ```
 
-# **1. Guía de aprendizaje 3.3**
+# **Guía de aprendizaje 3.3**
 
 ![](img/baner3.png)
 <br/><br/>
 
 <br/><br/>
 
-## **1.1 Introducción**
+## **Introducción**
 
 En las unidades 3.1 y 3.2 hemos recorrido los principales conceptos relacionados caracterización de las variables aleatorias tanto discretas como continuas.  Características como:  $f(x)$, $F(x)$, $E[X]$, $V[X]$, en el caso univariado. Para el caso conjunto : $f(x,y)$, $F(x,y)$, $E[XY]$, $Cov[XY]$  y  $\rho$. 
 
@@ -39,13 +39,13 @@ En esta unidad se presentan los principales modelos estadísticos tanto para var
 
 <br/><br/>
 
-## **1.2 Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 Al finalizar la unidad los estudiantes estarán  en  capacidad de  IDENTIFICAR, CALCULAR y APLICAR los diferentes modelos de probabilidad para la solución de problemas en contexto  y su representación a través de la simulación.
 
 <br/><br/>
 
-## **1.3 Duración**
+## **Duración**
 
 La presente  unidad será desarrollada durante la comprendida entre 19 a 26 de septiembre     
 Ademas del material suministrado  contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entegables para esta unidad podrán enviarse a través de la plataforma Brightspace hasta el  26 de septiembre.
@@ -54,7 +54,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **1.4 Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 
 |Actividad        | Descripción                                                             | 
@@ -78,7 +78,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **1.5 Criterios de evaluación**
+## **Criterios de evaluación**
 
 <br/><br/>
 
@@ -91,7 +91,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 	
 <br/><br/>
 
-## **1.6 Entregables** 
+## **Entregables** 
 
 <br/><br/>
 
@@ -105,7 +105,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/><br/><br/>
 
-## **1.7 Presentaciones**
+## **Presentaciones**
 
 [**Presentación 331**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Presentacion331.pdf)<br/>
 [**Taller 307**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller_%20307.pdf)<br/>
@@ -113,13 +113,13 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/><br/><br/>
 
-# **2. Modelos especiales**
+# **Modelos especiales**
 
 <br/><br/>
 
 A continuación se presentan los principales conceptos teóricos de esta unidad, acompañados de ejemplos resueltos. 
 
-**Introducción**
+## **Introducción**
 
 <br/><br/>
 
@@ -145,7 +145,7 @@ Fuente: construcción propia. basado en Univariate Distribution Relationships  (
 
 <br/><br/>
 
-# **2.1 Algunos modelos discretos**	
+# **Algunos modelos discretos**	
 
 <br/>
 
@@ -165,7 +165,7 @@ A continuación se presentan los principales modelos discretos.\\
 
 <br/><br/>
 
-## **2.1.1 Bernoulli**
+## **Bernoulli**
 
 <br/>
 
@@ -244,7 +244,7 @@ $$V[X] =p(1-p)= 0.16$$
 <br/><br/>
 
 
-## **2.1.2 binomial** 
+## **binomial** 
 
 <br/>
 
@@ -353,7 +353,7 @@ fig_binom.pdf
 <br/><br/>
 
 
-## **2.1.3 Poisson**
+## **Poisson**
 
 <br/>
 
@@ -439,7 +439,7 @@ dpois(0,2)
 
 <br/><br/>
 
-## **2.1.4 hipergeometrica**
+## **hipergeometrico**
 
 Este modelo nace de la necesidad de modelar eventos Bernoulli con probabilidad no constante generados en elecciones sin repetición. 
 
@@ -506,7 +506,7 @@ $\begin{eqnarray*}
 
 <br/><br/>
 
-## **2.1.5 geométrica o de Pascal**
+## **geométrico o de Pascal**
 
 La distribución geométrica también conocida como distribución de Pascal, fue esbozada en el escrito El arte de la conjetura, escrita por Jakob Bernoulli. Esta distribución modela el número de ensayos Bernoulli necesarios para obtener el primer éxito. Los valores que puede tomar esta variable son:
 
@@ -588,7 +588,7 @@ $$\begin{eqnarray*}
 
 <br/><br/>
 
-## **2.1.6 binomial negativa**
+## **binomial negativo**
 
 <br/>
 
@@ -656,7 +656,7 @@ ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 3) +
 $$E[X]=\dfrac{3}{0.0005}= 6000 $$
 <br/><br/>
 
-# **2.2 Algunos modelos continuos**
+# **Algunos modelos continuos**
 
 Las variables continuas proceden en su mayoría de la medición y se clasifican así debido a que su rango esta formado por un conjunto infinito no numerable. A continuación se presentan los principales modelos continuos.
 
@@ -671,7 +671,7 @@ Las variables continuas proceden en su mayoría de la medición y se clasifican 
 
 <br/><br/>
 
-## **2.2.1 uniforme**
+## **uniforme**
 
 <br/>
 
@@ -722,7 +722,7 @@ ggplot(data=dat,aes(x=x, y=fx))+
 
 <br/><br/>
 
-## **2.2.2 normal**
+## **normal**
 
 La distribución normal es uno de los modelos más utilizados en las aplicaciones de la Estadística. Estas aplicaciones están relacionadas con:
 
@@ -844,7 +844,7 @@ pnorm(70, mean=60, sd=4, lower.tail=FALSE)
 <br/><br/>
 
 
-## **2.2.3 exponencial** 
+## **exponencial** 
 
 Este modelo fue  planteado por el matemático estadístico e ingeniero Agner Kraru Erlang, experto en el trafico de las comunicaciones y la teoría de colas. 
 Distribución utilizada para modelar el tiempo entre dos eventos consecutivos. 
@@ -945,7 +945,7 @@ Con las siguientes propiedades:
 
 <br/><br/>
 
-## **2.2.4 gamma**
+## **gamma**
 
 Esta distribución tiene su origen en la familia de curvas sesgadas propuestas por Karl Pearson. Esta distribución es otra alternativa para modelar los tiempos de espera de ocurrencia de sucesos o eventos. En ocasiones puede relacionarse con la suma de los tiempos de variables exponenciales sucesivas con igual media.
 
@@ -1017,7 +1017,7 @@ $$\begin{eqnarray*}
 
 <br/><br/>
 
-## **2.2.5 Weibull** 
+## **Weibull** 
 
 Esta distribución fue descubierta Maurice Frechet matemático francés y luego trabajada por  Rosin y Rammler quienes en 1933 estudiaron el tamaño de una partícula y posteriormente recibe su nombre del  ingeniero y matemático Waloddi Weibull . Esta distribución se utiliza para modelar el tiempo de vida de algunos componentes. La Weibull tiene dos parámetros $\alpha$ y $\beta$. Su función de distribución y sus principales características son:
 
