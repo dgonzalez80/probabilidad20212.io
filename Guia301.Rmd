@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
 # colores
 c0="#0DA5A6" # VERDE CLARO
@@ -24,7 +24,7 @@ c5="#BC2B6A" # MORADO
 ```
 
 
-# **1. Guía de aprendizaje 3.1**
+# **Guía de aprendizaje 3.1**
 
 ![](img/baner3.png)
 
@@ -32,26 +32,26 @@ c5="#BC2B6A" # MORADO
 
 <br/><br/>
 
-## **1.1. Introducción**
+## **Introducción**
 
 El concepto de variable  aleatoria  y sus principales características como es su tipo, su función de probabilidad, función de distribución acumulada,  valor esperado y la varianza, permiten la identificación de diferentes modelos para su uso a través funciones matemáticas y su posterior aplicación  computacional con el fin de representar situaciones reales en la búsqueda de solución a problemas. 
 
 <br/><br/>
 
-## **1.2. Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 Al finalizar la unidad los estudiantes estarán  en  capacidad de IDENTIFICAR, CALCULAR y APLICAR los conceptos y las principales características  de las VARIABLE ALEATORIA para representar situaciones reales en la búsqueda de soluciones a problemas o valorar los riesgos que se pueden presentar en toma de decisiones
 
 <br/><br/>
 
-## **1.3. Duración**
+## **Duración**
 
 La presente  unidad será desarrollada durante la semana séptima del semestre ( 6 al 12 de septiembre de 2021). Ademas del material suministrado  contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entregables para esta unidad podrán enviarse a través de la plataforma Brightsce hasta el  12 de septiembre.
 
 Para alcanzar los objetivos planteados se propone realizar las siguientes actividades
 <br/><br/>
 
-## **1.4. Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 
 |Actividad      | Descripción                    | 
@@ -62,7 +62,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |               | Capitulos  3 y 4 Walpole. Walpole, R. Myers, R. Myers, S. Ye, K. Probabilidad y Estadística para ingeniería y Ciencias.8 Ed. Editorial Pearson. 2007 |
 <br/><br/>
 
-## **1.5. Criterios de evaluación**
+## **Criterios de evaluación**
 
 * Reconoce los diferentes tipos de variables aleatorias y sus principales características 
 
@@ -74,7 +74,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **1.6. Entregables** 
+## **Entregables** 
 
 |                   |                                       |
 |:------------------|:--------------------------------------|
@@ -84,7 +84,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/><br/><br/>
 
-## **1.7. Presentaciones**
+## **Presentaciones**
 
 [**Taller 302**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller_302.pdf)<br/>
 [**Taller 303**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller_303.pdf)<br/>
@@ -93,12 +93,11 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/><br/>
 
-# **2. Recursos **
+# **Recursos **
 
-## **2.1  Variables aleatorias**  
 ![](img/variables1.png)
 
-**Introducción**
+## **Introducción**
 
 El concepto de variable aleatoria constituye uno de los conceptos principales de la probabilidad y estadística. A este concepto se pueden asociar dos paradigmas de evolución histórica segun J.A. Alberth & B. Ruiz (2013) , El primero basada en el resultado de fenómenos aleatorios y por otro lado el proceso que relaciona los conjuntos de espacio muestral y sus respectivas probabilidades, para definir el concepto de variable aleatória como función de números reales y  el espacio para el sustento matemático. 
 
@@ -108,7 +107,7 @@ Ahora, se puede relacionar el concepto de variable aleatoria a diferentes contex
 
 * ¿Cuál será  el resultado en mi próximo examen de estadística? 
 
-* El dueño de la cafetería se puede preguntar ¿Cúantas botellas de agua se venderán esta semana?
+* El dueño de la cafetería se puede preguntar ¿Cuantas botellas de agua se venderán esta semana?
 
 * ¿Cuánto  tiempo tardaría  la entrega de un  paquete una empresa  de mensajería?
 
@@ -127,7 +126,7 @@ En esta unidad se tratará el  caso univariado discreto, luego el caso continuo,
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Definición:  Variable aleatoria**
+## **Definición Variable aleatoria**
 
 Una variable aleatoria $X$ es una función que asigna a cada valor de un espacio muestral $S$ un numero . El conjunto formado por estos números conforman un subconjunto de los  reales llamado rango de la variable X, ($R_{_{X}}$) 
 
@@ -140,7 +139,7 @@ Las variables aleatorias se clasifican teniendo en cuenta las características d
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Tipos de variables**
+### **Tipos de variables**
 
 + Una variable $X$ se considera **DISCRETA** si su rango $R_{_{X}}$ es un conjunto finito o infinito numerable de valores.
 
@@ -149,7 +148,9 @@ Las variables aleatorias se clasifican teniendo en cuenta las características d
 </div> 
 
 
-**Ejemplo 1 :**  Un experimento aleatorio $E$, consiste en lanzar una moneda balanceada al aire tres veces y observar el orden de caras ($c$) y sellos ($s$) que se obtienen en los tres lanzamientos. El espacio muestral $S$ de $E$, estará dado por:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej1.png) |  Un experimento aleatorio $E$, consiste en lanzar una moneda balanceada al aire tres veces y observar el orden de caras ($c$) y sellos ($s$) que se obtienen en los tres lanzamientos. El espacio muestral $S$ de $E$, estará dado por: |
 
 $$S =\{(s,s,s),(s,s,c),(s,c,s),(s,c,c),(c,s,s),(c,s,c),(c,c,s),(c,c,c)\} $$
 
@@ -176,7 +177,7 @@ $$f_{_{X}}(2) = P(X=2)=\frac{3}{8}\hspace{.2cm} ,\hspace{.5cm} f_{_{X}}(3) =P(X=
 <br/><br/><br/><br/>
 
 
-##  **2.2 Variables discretas** 
+## **Variables discretas** 
 
 Como se mencionó anteriormente una variable aleatoria se considera como DIACRETA cuando el conjunto de posibles valores que puede tomar la variables es un conjunto finito o infinito numerable. En la gran mayoria de los casos este conjunto corresponde a los números enteros.
 
@@ -185,7 +186,9 @@ Para catacterizar la variable se define  la función de distribución de probabi
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Definición: Función de distribución de probabilidad**
+<br/><br/>
+
+### **Definición: Función de distribución de probabilidad**
 
 Para $X$ un variable aleatoria discreta, su función de distribución de probabilidad estará dada por $f(x)$, la cual proporciona las probabilidades asociadas a todos los valores de su rango $R_{X}$ . Esta función debe cumplir las siguientes propiedades:
 
@@ -216,7 +219,10 @@ Como complemento de $f(x)$ y debido a que puede resultar más interesante calcul
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Función de probabilidad acumulada**
+<br/><br/>
+
+### **Función de probabilidad acumulada**
+
 Sea $X$ una variable aleatoria continua con función de densidad $f_{X}(x)$, se define la  función de distribución acumulada, $F_{X}(x)$, como:
 
 $$F(x)=P(X\leq x)=\sum _{t \leq x}f(t)$$
@@ -225,9 +231,9 @@ $$F(x)=P(X\leq x)=\sum _{t \leq x}f(t)$$
 
 <br/><br/>
 
-### **Ejemplo 1**
-
-Para la variable definida como $X$ número de puntos obtenidos al lanzar un dado tenemos  que :
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej2.png) | Para la variable definida como $X$ número de puntos obtenidos al lanzar un dado tenemos  que : |
 
 |  $x_{i}$  |             1  |             2  |             3  |             4  |             5  |             6  |
 |:---------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
@@ -273,9 +279,9 @@ data.frame(x,fx,Fx)
 
 <br/><br/>
 
-### **Ejemplo 2**
-
-El restaurante "Asados y algo más"  solo da servicio mediante reservas. De acuerdo con los registros diarios en los últimos diez años se sabe que el treinta por ciento de las personas que reservan no llegan al restaurante. El restaurante tiene treinta mesas y acepta cuarenta reservas. La función de distribución probabilidad que modela el número de personas que llegan al restaurante es $f$, dada por:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej3.png) | El restaurante "Asados y algo más"  solo da servicio mediante reservas. De acuerdo con los registros diarios en los últimos diez años se sabe que el treinta por ciento de las personas que reservan no llegan al restaurante. El restaurante tiene treinta mesas y acepta cuarenta reservas. La función de distribución probabilidad que modela el número de personas que llegan al restaurante es $f$, dada por: |
 
 <br/>
 
@@ -330,7 +336,7 @@ cat("P(X >25) = 1 - P(X<=24) =", 1-Fx[25])
 <br/><br/><br/><br/>
 
 
-## **2.3 Variables continuas**
+## **Variables continuas**
 
 Como se mencionó se considera una variable como continua cuando el conjunto de valores que puede tomar es un conjunto infinito no numerable, es decir que siempre podrá haber un valor entre dos valores de ella.
 
@@ -357,7 +363,10 @@ En este caso las variables por lo general proceden de una medición como por eje
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Función de densidad de probabilidad** 
+<br/><br/>
+
+### **Función de densidad de probabilidad** 
+
 La función de densidad de probablidad se define como $f(x)$, tal que cumpla las siguientes condiciones:
 
 + $f(x) \geq 0$
@@ -376,7 +385,7 @@ Para el caso continuo la función de distribución de probabilidad corresponde a
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Función de probabilidad acumulada**
+### **Función de probabilidad acumulada**
 
 $F_{_X}(x)=P(X \leq x)=\displaystyle\int \limits_{-\infty}^{x}f_{_X}(t)\:dt$
 
@@ -385,9 +394,9 @@ $F(x) = P(X \leq x) = P(X < x)$
 
 <br/><br/>
 
-**Ejemplo 3**
-
-Con base en información histórica una compañía que fabrica lavadoras determinó que el tiempo $Y$ (en años) para que el electrodoméstico requiera una reparación mayor se obtiene mediante la siguiente función de densidad de probabilidad:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej4.png) | Con base en información histórica una compañía que fabrica lavadoras determinó que el tiempo $Y$ (en años) para que el electrodoméstico requiera una reparación mayor se obtiene mediante la siguiente función de densidad de probabilidad: |
 
 <br/>
 
@@ -426,7 +435,7 @@ O tambien utilizando la plataforma Wolfram Alpha (https://www.wolframalpha.com/)
 <br/><br/><br/><br/>
 
 
-## **2.4 Valor esperado**
+## **Valor esperado**
 
 El valor esperado o esperanza matemática y la varianza corresponde a dos los conceptos principales asociados a una variable aleatoria. El concepto de esperanza está relacionado en un principio con los juegos de azar, pues los jugadores querían conocer cual era el valor esperado de ganar cuando jugaban un gran número de veces. 
 
@@ -436,7 +445,7 @@ La esperanza matemática de una variable aleatoria X,  corresponde a un valor qu
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Definición : Valor Esperado**
+### **Definición Valor Esperado**
 
 Sea $X$ una variable aleatoria discreta o continua. La esperanza matemática de $X$ o valor esperado, $E(X)$ o bien $\mu$, se define respectivamente como,
 \begin{eqnarray*}
@@ -450,7 +459,7 @@ En el caso continuo y similarmente para el caso discreto.
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Propiedades del Valor Esperado**
+### **Propiedades del Valor Esperado**
 
 + $E(k) = k$, para todo numero real $k$.
 
@@ -466,13 +475,13 @@ En el caso continuo y similarmente para el caso discreto.
 <br/><br/><br/><br/>
 
 
-## **2.5 Varianza**
+## **Varianza**
 
 Otra caracteristica importante de las variables aleatorias corresponde a la varianza que se denota por $V[X]$ o $\sigma^{2}$. Antes de definirma veremos el concepto de momento de una variable aleatoria
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Definición : Momento**
+### **Definición Momento**
 
 Sea $X$ una variable aleatoria discreta o continua. El momento de orden $k$ se define como:
 \begin{eqnarray*}
@@ -487,7 +496,7 @@ Con este nuevo elemento se define la varianza de una variable aleatorias como la
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Definición : Varianza**
+### **Definición Varianza**
 
 $V[X] = E[X^{2}]-(E[X])^{2}  = E[X^{2}]-\mu^{2}$ 
 
@@ -496,7 +505,10 @@ $V[X] = E[X^{2}]-(E[X])^{2}  = E[X^{2}]-\mu^{2}$
 <br/><br/>
 
 
-**Ejemplo 4**
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej5.png) | El valor esperado y la varianza para el número de personas que asisten al restaurante del ejemplo 3 son : |
+
 ```{r}
 x=0:40
 fx=round(choose(40,x)*0.70^x*0.30^(40-x),6)
@@ -506,13 +518,13 @@ cat("E[X] =",Ex, "\n")
 cat("V[X] = ", Ex2-Ex^2)
 ```
 
-Este resultado nos indica que en promedio asisten al restaurante 28 personas de las cuarenta reservas aceptadas, con una varianza de 8.4 de la cual podemos obtener la desviación estandar y el coeficiente de variación
+Este resultado nos indica que en promedio asisten al restaurante 28 personas de las cuarenta reservas aceptadas, con una varianza de 8.4 de la cual podemos obtener la desviación estándar y el coeficiente de variación
 
 <br/><br/>
 
-
-**Ejemplo 5**
-Para el ejemplo 3 correspondiente al tiempo que requiere una lavadora requiere una reparación mayor, tenemos:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej6.png) | Para el ejemplo 4 correspondiente al tiempo que requiere una lavadora requiere una reparación mayor, tenemos:
 
 ```{r}
 fy=function(y){1/4*exp(-y/4)}
@@ -528,15 +540,15 @@ Esto nos indica que el valor esperado correspondiente al tiempo en que una lavad
 
 <br/><br/><br/><br/>
 
-# **3. Resumen**
+# **Videos**
 
 
-## **3.1 Variables aleatorias**
+## **Variables aleatorias**
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ABhDYVIfF0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/><br/>
 
-## **3.2 Variables discretas**
+## **Variables discretas**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CUMJ-MUiMaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

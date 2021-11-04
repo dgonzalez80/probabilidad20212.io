@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
 # colores
 c0="#0DA5A6" # VERDE CLARO
@@ -23,7 +23,7 @@ c5="#BC2B6A" # MORADO
 cbox="#007FFF"  # AZUL BOX
 ```
 
-# **1. Guía de aprendizaje**
+# **Guía de aprendizaje**
 
 ![](img/baner3.png)
 
@@ -31,9 +31,9 @@ cbox="#007FFF"  # AZUL BOX
 
 <br/><br/>
 
-## **1.1. Introducción**
+## **Introducción**
 
-br/>
+<br/>
 
 El concepto de variable  aleatoria  conjunta y sus principales características como la correlación constituyen las bases para aplicaciones estadísticas como los modelos de regresión.  
 
@@ -41,7 +41,7 @@ En esta  unidad se presentan las principales características de las variables a
 
 <br/><br/>
 
-## **1.2. Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 <br/>
 
@@ -49,7 +49,7 @@ Al finalizar la unidad los estudiantes estarán  en  capacidad de IDENTIFICAR, C
 
 <br/><br/>
 
-## **1.3. Duración**
+## **Duración**
 
 <br/>
 
@@ -59,7 +59,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **1.4. Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 <br/>
 
@@ -76,7 +76,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **1.5. Criterios de evaluación**
+## **Criterios de evaluación**
 
 <br/>
 
@@ -89,7 +89,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 + Interpreta y expresa el desarrollo de los problemas con el lenguaje propio de la estadística
 <br/><br/>
 
-## **1.6. Entregables** 
+## **Entregables** 
 
 <br/>
 
@@ -99,13 +99,13 @@ Hora  :  23:59 hora local <br/>
 
 <br/><br/><br/><br/>
 
-## **1.7. Presentaciones**
+## **Presentaciones**
 
 [**Taller 309**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Solucion_Taller_%20309.%20pdf.pdf)
 
 <br/><br/><br/><br/>
 
-# **2. Recursos **
+# **Recursos **
 
 
 
@@ -134,7 +134,7 @@ persp(x,y,z,theta=20, phi=15,
 
 <br/><br/>
 
-## **2.1 Introducción**
+## **Introducción**
 
 Los resultados de un experimento pueden ser causa de múltiples variables como ocurre con el precio de un producto y sus ventas, el tiempo de preparación de un examen y su nota final, la cantidad de arena y de cemento en concreto, la cantidad de abono suministrado a una planta y su producción final. En estos casos se requiere una función de densidad que describa la variación de la probabilidad  de ocurrencia de ambas variables, probabilidad que describe el comportamiento conjunto de las variables. 
 
@@ -144,7 +144,7 @@ En esta guía se presentan los casos : discreta-discreta y el caso continua-cont
 
 <br/><br/>
 
-## **2.2 Discreto-Discreto**
+## **Discreto-Discreto**
 
 
 ### **Función de distribución de probabilidad conjunta**
@@ -165,15 +165,15 @@ la cual debe cumplir con las siguientes características:
 
 
 
-**Ejemplo 1**
-
-El número de veces que falla una máquina $X$ con $R_{X}=\{1,2,3\}$ durante un dia y el número de veces en que el operario requiere llamar al técnico para su arreglo esta dado por $Y$ con $R_{Y}=\{1,2,3\}$. Su función de probabilidad conjunta para $X,Y$ está dada por :
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej1.png)| El número de veces que falla una máquina $X$ con $R_{X}=\{1,2,3\}$ durante un dia y el número de veces en que el operario requiere llamar al técnico para su arreglo esta dado por $Y$ con $R_{Y}=\{1,2,3\}$. Su función de probabilidad conjunta para $X,Y$ está dada por : |
 
 |    |        |       |  $x$ |      |
 |:--:|:------:|:-----:|:----:|:----:|
 |    |$f(x,y)$| 1     |  2   |  3   |
 |$y$ |  1     | 0.05  | 0.05 | 0.10 |
-|    |  2     | 0.05 | 0.10 | 0.35 |
+|    |  2     | 0.05 | 0.10 | 0.35  |
 |    |  3     | 0     | 0.20 | 0.10 |
  
 
@@ -292,7 +292,7 @@ Para el caso de las funciones de distribución de probabilida se opera de la mis
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
-**Función de densidad condicional** 
+### **Función de densidad condicional** 
 <br/><br/>
 
 La función de densidad condicional de $X$ dado que $Y=y_0$ está dada por:
@@ -346,7 +346,7 @@ Para ilustrarlo utilizamos la función del Ejemplo 1 para la función condiciona
 
 
 
-## **2.3 Caso Continuo-Continuo**
+## **Caso Continuo-Continuo**
 
 
 En el caso de variables continuas se utilizan los mismo conceptos vistos en el caso discreto-discreto, haciendo el cambio de las sumatorias por integrales definidas. 
@@ -372,9 +372,9 @@ Lafunción de densidad conjunta para las variables $X$ y $Y$ $f(x,y)$ debe cumpl
 
 <br/><br/>
 
-**Ejemplo 2**
-
-Una empresa prestadora se servicios a domicilio tienen dos lineas telefónicas para que los clientes puedan realizar sus pedidos. Sea X y Y la proporción del tiempo en que las lineas se encuentran ocupadas. La función de densidad conjunta que modela $f(x,y)$ esta dada por:
+|    |                                     |
+|:--:|:------------------------------------|
+| ![](img/ej2.png)| Una empresa prestadora se servicios a domicilio tienen dos lineas telefónicas para que los clientes puedan realizar sus pedidos. Sea X y Y la proporción del tiempo en que las lineas se encuentran ocupadas. La función de densidad conjunta que modela $f(x,y)$ esta dada por: |
 
 $$f(x,y) = \left \{ \begin{matrix} \dfrac{3}{2}(x^{2}+y^{2}) & \mbox{ } 0 \leq x \leq 1\\ 
                                      & \mbox{ } 0 \leq y \leq 1 \\
@@ -534,7 +534,7 @@ La función de densidad condicional de $Y$ dado que $X=x_0$ está dada por:
 
 <br/><br/>
 
-## **2.4 Covarianza y correlación**
+## **Covarianza y correlación**
 
 Para definir el concepto de covarianza se requiere el concepto de valor esperado conjunto:
 
@@ -661,7 +661,7 @@ grid()
 
 <br/><br/>
 
-## **2.5 Independencia**
+## **Independencia**
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 
@@ -674,14 +674,14 @@ $$f(x,y)= g(x) h(y) $$
 
 <br/><br/><br/>
 
-# **3. Solución Taller 321**
+# **Solución Taller 321**
 
 ![](img/Taller301.png)
 [**Solución**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Taller301.pdf)
 
 <br/><br/><br/>
 
-# **4. Solución Taller 322**
+# **Solución Taller 322**
 
 <br/><br/>
 
@@ -737,7 +737,7 @@ d) Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos d
 
 <br/><br/><br/>
 
-# **4. Videos**
+# **Videos**
 
 <br/><br/>
 

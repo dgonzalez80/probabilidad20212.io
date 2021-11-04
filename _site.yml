@@ -108,6 +108,11 @@ navbar:
           href: Taller_pruebas1.html          
         - text: "Trabajo final"
           href: Guia_trabajo.html
+    - text: "Atención"
+      icon: fa-chess-pawn
+      menu:           
+        - text: "Atención"
+          href: atencion.html          
 output:
   html_document:
     theme: cosmos
