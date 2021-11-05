@@ -299,11 +299,7 @@ Existen repositorio de bases de datos para uso general
 + [Open data initiative of the Government of Spain](https://datos.gob.es/en)
 
 
-
-
-
-
-[*] Open Data Barometer : https://opendatabarometer.org/4thedition/report/?lang=es]
+Open Data Barometer : https://opendatabarometer.org/4thedition/report/?lang=es]
 
 <br/><br/>
 
@@ -325,10 +321,12 @@ DT::datatable(head(bd0052[var1],53),fillContainer = FALSE, options = list(pageLe
 
 ## **Etapas del proceso de datos**
 
+Las siguientes etapas comprenden el ciclo de los datos desde la importación hasta la comunicación. Estas etapas suceden al interior de la Metodología Estadística antes mencionada
+
 <img src="img/proceso_datos.png" width="500">
 <br/><br/>
 
-[*] Imagen tomada de : https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/
+Imagen tomada de : https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/
 
 
 <br/><br/>
@@ -444,25 +442,25 @@ Las bases de datos debe estar acompañadas de una ficha técnica donde si indica
 
 <br/>
 
-|   |    ventana    |  función                      |
-|:--|:--------------|:------------------------------|
-|1. | Rscrip        |                               |
-|2  | Consola       |                               |
-|   | Terminal      |                               |
-|   | R Mardown     |                               |
-|   | Jobs          |                               | 
-|3  | Environment   |                               |
-|   | History       ||
-|   | Connections   ||
-|   | Build         ||
-|   | Git           ||
-|   | Tutorial      ||
-|4  | Files         ||
-|5  | Plot          ||
-|6  | Packages      ||
-|7  | Help          ||
-|   | Viewer        ||
-|   |               ||
+|   |    ventana    |  función                                      |
+|:--|:--------------|:----------------------------------------------|
+|1. | Rscrip        | escritura de código R para guardarlo          |
+|2  | Consola       | escritura de código                           |
+|   | Terminal      |                                               |
+|   | R Mardown     | visualización de proceso RMarkdown            |
+|   | Jobs          |                                               | 
+|3  | Environment   | visualización de variables en memoria         |
+|   | History       | visualización de códigos anteriores           |
+|   | Connections   |                                               |
+|   | Build         |ejecutar código Rmd                            |
+|   | Git           |realizar proceso de subida código a GitHub     |
+|   | Tutorial      |visualización de tutoriales                    |
+|4  | Files         |visualización de archivos y directorio local   |
+|5  | Plot          |visualización de gráficos                      |
+|6  | Packages      |cargar paquetes                                |
+|7  | Help          |ayudas de sintaxis con ejemplos                |
+|   | Viewer        |visualización de resultados como paginas html  |
+|   |               |                                               |
 
 
 
