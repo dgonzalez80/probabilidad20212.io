@@ -1018,6 +1018,28 @@ $S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$
 
 <br/><br/>
 
+## **Código R**
+
+|                   |                        |                                                          |
+|:------------------|:-----------------------|:---------------------------------------------------------|
+![](img/Nota_R.png){width=50%}               |                                                          |
+|Representación gráfica |                    |`plot(x,y)`                                           |
+|Estimación modelo  |                        |  `modelo=lm(y~x)`                                        |
+|Visualización de resultados|                | `summary(modelo)`                                |
+|Visualización de la recta  |                |`plot(y~x, xlab="variable x", ylab="variable y", pch=19)`|
+|                           |                |`abline(modelo)`                                  |
+|Guardado de y estimados    |                | `yhat=modelo$fitted.values`                      |
+|Guardado de los residuos   |                | `uhat=modelo$residuals`                          |
+|Validación de supuestos :  |                |                                               |
+|S1: normalidad de errores  | $u \sim norm$  | `shapiro.test(uhat)`                              |
+|S2: modelo completo        |$E[u]=0$        | `t.test(uhat) `                                  |
+|S3: Homoscedasticidad      |$V[u] = \sigma^{2}$ | `lmtest::bgtest(modelo)`                         |
+|S4: No autocorrelacón de errores  |$Cor(u_{i},u_{j})=0$ |   `lmtest::dwtest(modelo)`                   |
+
+Nota : para verificar los supuestos S3 y S4 se requiere descargar el paquete : `lmtest`
+
+<br/><br/>
+
 ## **Video**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l2vx7ZPiaFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

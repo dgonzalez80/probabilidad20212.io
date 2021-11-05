@@ -530,6 +530,20 @@ div.tocify {
     </li>
   </ul>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-chess-pawn"></span>
+     
+    Atención
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="atencion.html">Atención</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -1719,6 +1733,85 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 <p><span class="math display">\[\widehat{y_{o}} - t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
 \hspace{.5cm}&lt; \mu_{Y|x_{o}} &lt; \hspace{.5cm}
 \widehat{y_{0}} + t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}\]</span> Donde: <span class="math inline">\(S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}\)</span></p>
+<p><br/><br/></p>
+</div>
+<div id="código-r" class="section level2">
+<h2><strong>Código R</strong></h2>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="23%" />
+<col width="57%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="img/Nota_R.png" style="width:50.0%" /></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Representación gráfica</td>
+<td align="left"></td>
+<td align="left"><code>plot(x,y)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Estimación modelo</td>
+<td align="left"></td>
+<td align="left"><code>modelo=lm(y~x)</code></td>
+</tr>
+<tr class="even">
+<td align="left">Visualización de resultados</td>
+<td align="left"></td>
+<td align="left"><code>summary(modelo)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Visualización de la recta</td>
+<td align="left"></td>
+<td align="left"><code>plot(y~x, xlab="variable x", ylab="variable y", pch=19)</code></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><code>abline(modelo)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Guardado de y estimados</td>
+<td align="left"></td>
+<td align="left"><code>yhat=modelo$fitted.values</code></td>
+</tr>
+<tr class="even">
+<td align="left">Guardado de los residuos</td>
+<td align="left"></td>
+<td align="left"><code>uhat=modelo$residuals</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Validación de supuestos :</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">S1: normalidad de errores</td>
+<td align="left"><span class="math inline">\(u \sim norm\)</span></td>
+<td align="left"><code>shapiro.test(uhat)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">S2: modelo completo</td>
+<td align="left"><span class="math inline">\(E[u]=0\)</span></td>
+<td align="left"><code>t.test(uhat)</code></td>
+</tr>
+<tr class="even">
+<td align="left">S3: Homoscedasticidad</td>
+<td align="left"><span class="math inline">\(V[u] = \sigma^{2}\)</span></td>
+<td align="left"><code>lmtest::bgtest(modelo)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">S4: No autocorrelacón de errores</td>
+<td align="left"><span class="math inline">\(Cor(u_{i},u_{j})=0\)</span></td>
+<td align="left"><code>lmtest::dwtest(modelo)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Nota : para verificar los supuestos S3 y S4 se requiere descargar el paquete : <code>lmtest</code></p>
 <p><br/><br/></p>
 </div>
 <div id="video" class="section level2">
