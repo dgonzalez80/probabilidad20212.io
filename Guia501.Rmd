@@ -1020,16 +1020,20 @@ $S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$
 
 ## **Código R**
 
+|                               |                                                         |
+|:------------------------------|:--------------------------------------------------------|
+![](img/Nota_R.png){width=50%}  |                                                         |
+|Representación gráfica         |`plot(x,y)`                                              |
+|Estimación modelo              |`modelo=lm(y~x)`                                         |
+|Visualización de resultados    |`summary(modelo)`                                        |
+|Visualización de la recta      |`plot(y~x, xlab="variable x", ylab="variable y", pch=19)`|
+|                               |`abline(modelo)`                                         |
+|Guardado de y estimados        |`yhat=modelo$fitted.values`                              |
+|Guardado de los residuos       |`uhat=modelo$residuals`                                  |
+|                               |                                                         |
+
 |                   |                        |                                                          |
 |:------------------|:-----------------------|:---------------------------------------------------------|
-![](img/Nota_R.png){width=50%}               |                                                          |
-|Representación gráfica |                    |`plot(x,y)`                                           |
-|Estimación modelo  |                        |  `modelo=lm(y~x)`                                        |
-|Visualización de resultados|                | `summary(modelo)`                                |
-|Visualización de la recta  |                |`plot(y~x, xlab="variable x", ylab="variable y", pch=19)`|
-|                           |                |`abline(modelo)`                                  |
-|Guardado de y estimados    |                | `yhat=modelo$fitted.values`                      |
-|Guardado de los residuos   |                | `uhat=modelo$residuals`                          |
 |Validación de supuestos :  |                |                                               |
 |S1: normalidad de errores  | $u \sim norm$  | `shapiro.test(uhat)`                              |
 |S2: modelo completo        |$E[u]=0$        | `t.test(uhat) `                                  |
