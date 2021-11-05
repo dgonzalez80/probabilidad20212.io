@@ -43,7 +43,11 @@ knitr::include_url("pdf/Guia_de_aprendizaje_101.pdf", height="1000px")
 
 ## **Introducción**
 
+<br/>
+
 En esta unidad se  presenta  la **Metodología Estadística** como  estrategia que  permite  visualizar las diferentes etapas presentes en una investigación  o análisis de  datos :
+
+<br/><br/>
 
 * Definición del problema
 * Definición de los objetivos
@@ -55,6 +59,8 @@ En esta unidad se  presenta  la **Metodología Estadística** como  estrategia q
 * Inferencia estadística
 * Recomendaciones y conclusiones
 
+<br/><br/>
+
 Haciendo especial referencia a la construcción, depuración  y documentación  de las bases de datos, acciones necesarias para un  buen  análisis de datos.
 
 Con este ropósito se hará uso del portal **Bases de Datos Abiertos Colombia**,  de la hoja electrónica **Excel** y del lenguaje  **R**.
@@ -63,11 +69,15 @@ Con este ropósito se hará uso del portal **Bases de Datos Abiertos Colombia**,
 
 ## **Objetivos de la unidad**
 
+<br/>
+
 Al finalizar la unidad los estudiantes estarán  en  capacidad de  RECONOCER los  pasos de la Metodología Estadística y podrán ESTRUCTURAR, LIMPIAR y DOCUMENTAR una  base de datos con  el fin de  garantizar los elementos  necesarios  para  realizar  un  procesamiento  de  datos. Para ello seleccionaran una base de datos  del  portal de  Datos Abiertos Colombia. Adicionalmente propondrán un problema que les permita el desarrollo de la metodológica estadística. 
 
 <br/><br/>
 
 ## **Duración**
+
+<br/>
 
 La presente  unidad será desarrollada durante la  primera semana del semestre ( 26 de julio  al 01  de agosto de 2021). Ademas del material suministrado  contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entregables para esta unidad deberán ser entregados a través de la plataforma Brightspace hasta el  01 de agosto. 
 
@@ -77,6 +87,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 ## **Cronograma de trabajo**
 
+<br/>
 
 |Actividad101   | Descripción                    | 
 |:--------------|:-----------------------------  |
@@ -112,6 +123,8 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 ## **Criterios de evaluación**
 
+<br/>
+
 * Reconocer la relación existente ente la  definición del problema, el planteamiento de los objetivos y la  definición de las variables de interés dentro de la  Metodología Estadística.
 
 * Reconocer e identificar los diferentes tipos de variables  y sus respectivas escalas de medición.
@@ -119,12 +132,15 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 * Identificar la estructura de una base de datos
 
 <br/> 
+
 Los entregables completos y enviados dentro de los tiempos establecidos  otorgarán 20 puntos por la actividad101 y 10 puntos por la actividad102, para un  total de 30 puntos. 
 
 
 <br/><br/>
 
 ## **Entregables** 
+
+<br/>
 
 | Entregable |  Descripción                    |
 |:--------------|:-----------------------------|
@@ -166,53 +182,14 @@ Con el fin de tener una idea inicial del propósito de este módulo, se presenta
 
 **Grupos Probabilidad y Estadística 2021-2**
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-attach(bd0052)
-t1011=table(programa,grupo)
-knitr::kable(t1011)
-
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8, fig.height=8  }
-rownames(t1011)=c("Biología", "Ing. Civil", "Ing. Mecánica", "Ing. Sistemas")
-t1011
-barplot(t1011,col = brewer.pal(6,"Set1"), las=1,legend = rownames(t1011))
-```
-
-
-**Promedio académico**
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=7, fig.height=7}
-library(ggplot2)
-
-p=ggplot(bd0052, aes(x=promedio))+
-geom_density()
-p      
-```
-
-
-```{r, echo=FALSE,fig.width=7, fig.height=7 }
-p1012<-ggplot(bd0052, aes(x=grupo, y=promedio)) +
-         geom_boxplot(fill = "palegreen", color = "blue4", 
-                      size=0.5, outlier.color = "blue4", outlier.size = 2)+
-         geom_jitter(color="black", size=0.4, alpha=0.9)
-p1012  
-```
-
+![](img/pye2021a.png)
+![](img/pye2021b.png)
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 des=summarytools::descr(bd0052$promedio); 
 des=round(des,3)
-knitr::kable(des)
-```
-
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-p1013= ggplot(bd0052, aes(x=promedio))+
-  geom_histogram(col="black", 
-                 fill="blue", alpha=0.6,binwidth = 0.25)
-p1013
+des
 ```
 
 <br/><br/>
