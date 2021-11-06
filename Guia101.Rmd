@@ -170,9 +170,10 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 
 <br/><br/>
 
-### **Que es Estadística ?**
+![](img/queesestadistica.png)
 
-Análisis de datos para la toma de decisiones
+
+### **Análisis de datos para la toma de decisiones**
 
 <br/><br/>
 
@@ -198,6 +199,8 @@ des
 ## **Metodología estadística**
 <br/><br/>
 
+Una forma de abordar el curso de Probabilidad y Estadística e mediante la metodolgía estadística, que al igual que el método cientifico está conformada por una serie de etapas que van desde la definición del problema hasta la escritura del informe final con las conclusiones y recomendaciones.
+
 1. Definición del problema
 
 2. Definición de los objetivos
@@ -216,6 +219,8 @@ des
 
 9. Conclusiones y recomendaciones
 
+La descripción de cada una de ellas se presenta a continuación: 
+
 
 <html>
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f1ba8da1829700da368b4ab" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
@@ -223,6 +228,10 @@ des
 
 
 <br/><br/>
+
+Para abordar las primeras etapas se plantea la **actividad 101*, donde se plantea la necesidad de definir un prolema, definir unos objetivos y determinar las variables que serán empleadas para poder cumplir con los objetivos planteados.
+
+Continuaremos con una parte importante de esta metodología que está relacionada con la obtención de la información y la construcción de la base de datos.
 
 ## **Base de datos**
 
@@ -233,7 +242,9 @@ des
 
 <br/><br/>
 
-Una base de datos en estadística es un conjunto de información relacionada con una población organizada en filas y columnas. Las columnas corresponden a las variables y las filas están relacionadas con los individuos u objetos de estudio.
+Una base de datos en estadística es un conjunto de información relacionada con una población organizada en filas y columnas. Las columnas corresponden a las variables y las filas están relacionadas con los individuos u objetos de estudio.  
+
+Es importente indicar que variables como: número de la encuesta, número de identificación, telefono, dirección, entre otros, no constituyen variables estadística, auque pueden ser utilzadas para la identificación de la persona u objeto  de donde proviene la información. 
 
 <br/>
 
@@ -263,8 +274,7 @@ Datos de iris (de Fisher o Anderson)
 
 <br/><br/>
 
-Base de datos estadísticos : arreglo de filas y columnas (matriz) donde por lo general las columnas representan las variables y las filas los registros de los objetos de estudio
-
+Base de datos estadísticos se estructura mediante arreglo de filas y columnas (matriz) donde por lo general las columnas representan las variables y las filas los registros de los objetos de estudio
 
 Una base de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso.
 
@@ -321,13 +331,16 @@ DT::datatable(head(bd0052[var1],53),fillContainer = FALSE, options = list(pageLe
 
 ## **Etapas del proceso de datos**
 
-Las siguientes etapas comprenden el ciclo de los datos desde la importación hasta la comunicación. Estas etapas suceden al interior de la Metodología Estadística antes mencionada
+Las siguientes etapas comprenden el ciclo de los datos desde la importación hasta la comunicación. Estas etapas suceden al interior de la Metodología Estadística antes mencionada y constituyen una parte muy importante del proceso, pues de la calidad de los datos, depende la calidad de los resultados.
+
 
 <img src="img/proceso_datos.png" width="500">
 <br/><br/>
 
 Imagen tomada de : https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/
 
+
+Utilizaremos para este proceso el lenguaje estadístico **R** , bajo **RStudio**
 
 <br/><br/>
 
@@ -366,6 +379,7 @@ Imagen tomada de : https://bitsandbricks.github.io/ciencia_de_datos_gente_sociab
 
 ###  **Herramientas computacionales**
 
+Algunas de las herramientas utilziadas en el manejo de información  son :
 <br/>
 
 + Excel
@@ -373,14 +387,11 @@ Imagen tomada de : https://bitsandbricks.github.io/ciencia_de_datos_gente_sociab
 + Oracle
 + SAS
 
-+ R 
-+ RStudio
++ R,  RStudio
 + Python
 
+En nuesro caso haremos uso del lenguaje estadistico **R*
 
-Video: Importar datos en R  <br/>
-por Rafa Gonzalez Gouveia<br/>
-https://youtu.be/Bi0PoYq_gjE
 
 <br/><br/>
 
@@ -396,8 +407,7 @@ Es importante después de haber importado la base de datos, hacer una revisión 
 
 + Etiquetas mal colocadas ( minúsculas, MAYÚSCULAS, Titulo...)
 
-
-Existen metodologías para corregir estos problemas sin afectar la información contenida en la data
+Existen metodologías para corregir estos problemas sin afectar la información contenida en la data, para lo cual debemos realizar una verificación inicial mediante la construcción de tablas y resumen de datos.
 
 
 <br/><br/>
@@ -416,6 +426,7 @@ Las bases de datos debe estar acompañadas de una ficha técnica donde si indica
 
 ## **Entornos R - RStudio**
 
+A continuación se dará un breve introducción al programa R y RStudio (complementadas con Introducción a R en el Menú : < Código R >)
 <br/>
 
 ![](img/RRStudio.jpeg)
@@ -430,17 +441,24 @@ Las bases de datos debe estar acompañadas de una ficha técnica donde si indica
 
 <br/>
 
+El entorno de R consiste en una terminal donde se digitan los códigos de R requidiros para realizar los distintos proceso
+
 ![](img/R_terminal.png)
 
 <br/>
 
 **RStudio**
 
+Tambien existe otro entorno con más elemento que permite una mejor interacción con el lenguaje
+
 <br/>
 
 ![](img/VRStudio.png)
 
 <br/>
+
+Este entorno está conformado por ventanas con diferentes funciones:
+
 
 |   |    ventana    |  función                                      |
 |:--|:--------------|:----------------------------------------------|
@@ -467,6 +485,8 @@ Las bases de datos debe estar acompañadas de una ficha técnica donde si indica
 <br/><br/>
 
 ## **Importar bases de datos**
+
+Los datos se pueden importar de diferentes fornas :
 
 <br/>
 
