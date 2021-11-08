@@ -65,3 +65,99 @@ c5="#BC2B6A" # MORADO
 ## **7. Presentaciones**
 
 
+# **Recursos**
+
+
+## **Modelo**
+
+Se requiere modelar el numero de días que un trabajador se ausenta de su puesto de trabajo durante un año, para lo cual se tienen en cuenta las siguientes variables :
+
+|            |                                                   |
+|:-----------|:--------------------------------------------------|
+| Taller     | si la persona trabaja en el taller (1)  o no  (0) |
+| sexo       | hombre (1) , mujer (0                             |
+| edad       | edad del trabajador en año                        |    
+| antigüedad | años de trabajo en la empresa                     |  
+| salario    | cuanto devenga el trabajador (U$)                 |
+
+
+$$y_{i} = \beta_{0} + \beta_{1} Taller_{i} + \beta_{2} sexo_{i} + \beta_{3} edad_{i} + \beta_{4} antiguedad_{i} + \beta_{5} salario_{i} + u$$ 
+
+para $i=1,.....n$
+
+```{r}
+library(readr)
+data=read_delim("data/ausentismo.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+round(cov(data), 2) # matriz de varianzas-covarianzas
+round(cor(data), 2) # matriz de correlaciones
+```
+
+
+```{r}
+# Estimación del modelo
+attach(data)
+modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+summary(modelo1)
+```
+
+
+```{r}
+# diagnostico
+coefficients(modelo1) # coeficientes estimados
+yhat=fitted(modelo1) # valores estimados
+u=residuals(modelo1) # residuales
+anova(modelo1) # tabla de anova
+vcov(modelo1) # matriz de varianzas covarianza de parámetros ( de los betas)
+```
+
+
+```{r}
+# Stepwise Regression
+library(MASS)
+modelo2=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+step=stepAIC(modelo2, direction="both")
+step$anova # display results
+```
+
+
+```{r}
+modelo3=lm(ausen ~ taller + sexo + antg + sala , data=data)
+summary(modelo3)
+```
+
+
+```{r}
+modelo4=lm(ausen ~ sexo + antg + sala , data=data)
+summary(modelo4)
+
+uhat=modelo4$residuals
+#-----------------------------------------------------------------
+# Examen de normalidad de errores
+shapiro.test(uhat)
+
+# Supuesto de no autocorrelacion
+# install.packages("lmtest")
+library(lmtest)
+# Prueba de D-W  - autocorrelacion
+# Ho: los erreres no estan autocorrelacionados
+dwtest(modelo4)
+
+# Supuesto de homoscedasticidad
+# Prueba de Goldfeld-Quandt
+# Ho no existe heteroscedasticidad
+gqtest(modelo4)
+
+# Supuesto de correcta especificacion
+# Prueba de especificacion
+# Prueba RESET
+resettest(modelo4, power=2, type="regressor")
+```
+
+
+```{r}
+modelo5=lm(ausen ~ antg + sala , data=data)
+summary(modelo5)
+
+```
+

@@ -496,6 +496,9 @@ div.tocify {
     <li>
       <a href="codigo501.html">Código u5.1</a>
     </li>
+    <li>
+      <a href="codigo502.html">Código u5.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -606,6 +609,276 @@ div.tocify {
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
+</div>
+<div id="recursos" class="section level1">
+<h1><strong>Recursos</strong></h1>
+<div id="modelo" class="section level2">
+<h2><strong>Modelo</strong></h2>
+<p>Se requiere modelar el numero de días que un trabajador se ausenta de su puesto de trabajo durante un año, para lo cual se tienen en cuenta las siguientes variables :</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">Taller</td>
+<td align="left">si la persona trabaja en el taller (1) o no (0)</td>
+</tr>
+<tr class="even">
+<td align="left">sexo</td>
+<td align="left">hombre (1) , mujer (0</td>
+</tr>
+<tr class="odd">
+<td align="left">edad</td>
+<td align="left">edad del trabajador en año</td>
+</tr>
+<tr class="even">
+<td align="left">antigüedad</td>
+<td align="left">años de trabajo en la empresa</td>
+</tr>
+<tr class="odd">
+<td align="left">salario</td>
+<td align="left">cuanto devenga el trabajador (U$)</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[y_{i} = \beta_{0} + \beta_{1} Taller_{i} + \beta_{2} sexo_{i} + \beta_{3} edad_{i} + \beta_{4} antiguedad_{i} + \beta_{5} salario_{i} + u\]</span></p>
+<p>para <span class="math inline">\(i=1,.....n\)</span></p>
+<pre class="r"><code>library(readr)
+data=read_delim(&quot;data/ausentismo.csv&quot;, delim = &quot;;&quot;, escape_double = FALSE, trim_ws = TRUE)</code></pre>
+<pre><code>Rows: 48 Columns: 7</code></pre>
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;;&quot;
+dbl (7): id, ausen, taller, sexo, edad, antg, sala</code></pre>
+<pre><code>
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>round(cov(data), 2) # matriz de varianzas-covarianzas</code></pre>
+<pre><code>            id    ausen taller   sexo    edad    antg      sala
+id      196.00   -17.60   1.09   0.95   39.20   18.21   3327.02
+ausen   -17.60    14.34   0.43  -0.20  -34.84  -27.74  -1223.19
+taller    1.09     0.43   0.19   0.02   -0.89   -0.50    -22.34
+sexo      0.95    -0.20   0.02   0.25    0.24    1.33    118.24
+edad     39.20   -34.84  -0.89   0.24  185.61  121.65   2081.76
+antg     18.21   -27.74  -0.50   1.33  121.65  104.92   2175.43
+sala   3327.02 -1223.19 -22.34 118.24 2081.76 2175.43 234470.21</code></pre>
+<pre class="r"><code>round(cor(data), 2) # matriz de correlaciones</code></pre>
+<pre><code>          id ausen taller  sexo  edad  antg  sala
+id      1.00 -0.33   0.18  0.13  0.21  0.13  0.49
+ausen  -0.33  1.00   0.26 -0.11 -0.68 -0.72 -0.67
+taller  0.18  0.26   1.00  0.07 -0.15 -0.11 -0.11
+sexo    0.13 -0.11   0.07  1.00  0.03  0.26  0.49
+edad    0.21 -0.68  -0.15  0.03  1.00  0.87  0.32
+antg    0.13 -0.72  -0.11  0.26  0.87  1.00  0.44
+sala    0.49 -0.67  -0.11  0.49  0.32  0.44  1.00</code></pre>
+<pre class="r"><code># Estimación del modelo
+attach(data)
+modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+summary(modelo1)</code></pre>
+<pre><code>
+Call:
+lm(formula = ausen ~ taller + sexo + edad + antg + sala, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.0713 -0.5383  0.3031  0.9391  3.5793 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 12.4436075  1.6404323   7.586 2.14e-09 ***
+taller       0.9684600  0.6688242   1.448  0.15504    
+sexo         2.0492914  0.7122235   2.877  0.00628 ** 
+edad        -0.0372111  0.0469913  -0.792  0.43288    
+antg        -0.1507700  0.0652833  -2.309  0.02590 *  
+sala        -0.0044288  0.0007348  -6.027 3.63e-07 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 1.964 on 42 degrees of freedom
+Multiple R-squared:  0.7597,    Adjusted R-squared:  0.7311 
+F-statistic: 26.56 on 5 and 42 DF,  p-value: 5.282e-12</code></pre>
+<pre class="r"><code># diagnostico
+coefficients(modelo1) # coeficientes estimados</code></pre>
+<pre><code> (Intercept)       taller         sexo         edad         antg         sala 
+12.443607478  0.968459990  2.049291411 -0.037211075 -0.150770045 -0.004428793 </code></pre>
+<pre class="r"><code>yhat=fitted(modelo1) # valores estimados
+u=residuals(modelo1) # residuales
+anova(modelo1) # tabla de anova</code></pre>
+<pre><code>Analysis of Variance Table
+
+Response: ausen
+          Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+taller     1  44.444  44.444 11.5262  0.001510 ** 
+sexo       1  10.612  10.612  2.7522  0.104573    
+edad       1 275.299 275.299 71.3956 1.331e-10 ***
+antg       1  41.613  41.613 10.7919  0.002062 ** 
+sala       1 140.080 140.080 36.3283 3.629e-07 ***
+Residuals 42 161.950   3.856                      
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>vcov(modelo1) # matriz de varianzas covarianza de parámetros ( de los betas)</code></pre>
+<pre><code>              (Intercept)        taller          sexo          edad
+(Intercept)  2.6910180499 -0.4609636984 -0.1696280253 -5.605492e-02
+taller      -0.4609636984  0.4473257798 -0.0535216133  2.117073e-03
+sexo        -0.1696280253 -0.0535216133  0.5072623436  1.228218e-02
+edad        -0.0560549171  0.0021170730  0.0122821769  2.208178e-03
+antg         0.0686105842 -0.0008662038 -0.0163953239 -2.692865e-03
+sala        -0.0006247407  0.0000588528 -0.0002178462 -6.131445e-07
+                     antg          sala
+(Intercept)  6.861058e-02 -6.247407e-04
+taller      -8.662038e-04  5.885280e-05
+sexo        -1.639532e-02 -2.178462e-04
+edad        -2.692865e-03 -6.131445e-07
+antg         4.261912e-03 -7.447761e-06
+sala        -7.447761e-06  5.399159e-07</code></pre>
+<pre class="r"><code># Stepwise Regression
+library(MASS)
+modelo2=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+step=stepAIC(modelo2, direction=&quot;both&quot;)</code></pre>
+<pre><code>Start:  AIC=70.37
+ausen ~ taller + sexo + edad + antg + sala
+
+         Df Sum of Sq    RSS    AIC
+- edad    1     2.418 164.37 69.084
+&lt;none&gt;                161.95 70.372
+- taller  1     8.085 170.03 70.711
+- antg    1    20.566 182.52 74.111
+- sexo    1    31.923 193.87 77.008
+- sala    1   140.080 302.03 98.288
+
+Step:  AIC=69.08
+ausen ~ taller + sexo + antg + sala
+
+         Df Sum of Sq    RSS    AIC
+&lt;none&gt;                164.37 69.084
+- taller  1     8.731 173.10 69.568
++ edad    1     2.418 161.95 70.372
+- sexo    1    44.720 209.09 78.635
+- sala    1   140.779 305.15 96.781
+- antg    1   151.697 316.07 98.468</code></pre>
+<pre class="r"><code>step$anova # display results</code></pre>
+<pre><code>Stepwise Model Path 
+Analysis of Deviance Table
+
+Initial Model:
+ausen ~ taller + sexo + edad + antg + sala
+
+Final Model:
+ausen ~ taller + sexo + antg + sala
+
+    Step Df Deviance Resid. Df Resid. Dev      AIC
+1                           42   161.9505 70.37230
+2 - edad  1 2.417928        43   164.3684 69.08364</code></pre>
+<pre class="r"><code>modelo3=lm(ausen ~ taller + sexo + antg + sala , data=data)
+summary(modelo3)</code></pre>
+<pre><code>
+Call:
+lm(formula = ausen ~ taller + sexo + antg + sala, data = data)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.989 -0.597  0.310  1.041  3.826 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 11.4989988  1.1211859  10.256 3.98e-13 ***
+taller       1.0041358  0.6644050   1.511  0.13802    
+sexo         2.2562643  0.6596516   3.420  0.00138 ** 
+antg        -0.1961488  0.0311366  -6.300 1.34e-07 ***
+sala        -0.0044391  0.0007315  -6.069 2.91e-07 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 1.955 on 43 degrees of freedom
+Multiple R-squared:  0.7561,    Adjusted R-squared:  0.7334 
+F-statistic: 33.33 on 4 and 43 DF,  p-value: 1.15e-12</code></pre>
+<pre class="r"><code>modelo4=lm(ausen ~ sexo + antg + sala , data=data)
+summary(modelo4)</code></pre>
+<pre><code>
+Call:
+lm(formula = ausen ~ sexo + antg + sala, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.8757 -0.9888  0.2701  1.3332  4.0126 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 12.4172771  0.9559277  12.990  &lt; 2e-16 ***
+sexo         2.4035082  0.6618691   3.631 0.000732 ***
+antg        -0.2000174  0.0314808  -6.354 1.02e-07 ***
+sala        -0.0045732  0.0007366  -6.208 1.67e-07 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 1.983 on 44 degrees of freedom
+Multiple R-squared:  0.7432,    Adjusted R-squared:  0.7257 
+F-statistic: 42.44 on 3 and 44 DF,  p-value: 4.805e-13</code></pre>
+<pre class="r"><code>uhat=modelo4$residuals
+#-----------------------------------------------------------------
+# Examen de normalidad de errores
+shapiro.test(uhat)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  uhat
+W = 0.92696, p-value = 0.005279</code></pre>
+<pre class="r"><code># Supuesto de no autocorrelacion
+# install.packages(&quot;lmtest&quot;)
+library(lmtest)</code></pre>
+<pre><code>Loading required package: zoo</code></pre>
+<pre><code>
+Attaching package: &#39;zoo&#39;</code></pre>
+<pre><code>The following objects are masked from &#39;package:base&#39;:
+
+    as.Date, as.Date.numeric</code></pre>
+<pre class="r"><code># Prueba de D-W  - autocorrelacion
+# Ho: los erreres no estan autocorrelacionados
+dwtest(modelo4)</code></pre>
+<pre><code>
+    Durbin-Watson test
+
+data:  modelo4
+DW = 1.8731, p-value = 0.3097
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<pre class="r"><code># Supuesto de homoscedasticidad
+# Prueba de Goldfeld-Quandt
+# Ho no existe heteroscedasticidad
+gqtest(modelo4)</code></pre>
+<pre><code>
+    Goldfeld-Quandt test
+
+data:  modelo4
+GQ = 0.46949, df1 = 20, df2 = 20, p-value = 0.9506
+alternative hypothesis: variance increases from segment 1 to 2</code></pre>
+<pre class="r"><code># Supuesto de correcta especificacion
+# Prueba de especificacion
+# Prueba RESET
+resettest(modelo4, power=2, type=&quot;regressor&quot;)</code></pre>
+<pre><code>
+    RESET test
+
+data:  modelo4
+RESET = 1.7756, df1 = 3, df2 = 41, p-value = 0.1669</code></pre>
+<pre class="r"><code>modelo5=lm(ausen ~ antg + sala , data=data)
+summary(modelo5)</code></pre>
+<pre><code>
+Call:
+lm(formula = ausen ~ antg + sala, data = data)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-5.508 -1.103  0.033  1.914  3.610 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 11.9557841  1.0680594  11.194 1.35e-14 ***
+antg        -0.1934922  0.0354307  -5.461 1.95e-06 ***
+sala        -0.0034216  0.0007495  -4.565 3.85e-05 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 2.236 on 45 degrees of freedom
+Multiple R-squared:  0.6662,    Adjusted R-squared:  0.6514 
+F-statistic: 44.91 on 2 and 45 DF,  p-value: 1.898e-11</code></pre>
+</div>
 </div>
 
 
