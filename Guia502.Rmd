@@ -68,7 +68,9 @@ c5="#BC2B6A" # MORADO
 # **Recursos**
 
 
-## **Modelo**
+## **Ejemplo 1**
+
+#### **Modelo**
 
 Se requiere modelar el numero de días que un trabajador se ausenta de su puesto de trabajo durante un año, para lo cual se tienen en cuenta las siguientes variables :
 
