@@ -35,8 +35,8 @@ c5="#BC2B6A" # MORADO
 library(readr)
 data=read_delim("data/ausentismo.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
 
-round(cov(data),2)
-round(cor(data),2)
+cov(data)
+cor(data)
 # Estimacion del modelo
 attach(data)
 modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
@@ -87,6 +87,8 @@ resettest(modelo4, power=2, type="regressor")
 
 modelo5=lm(ausen ~ antg + sala , data=data)
 summary(modelo5)
+
+
 ```
 
 

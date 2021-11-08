@@ -114,7 +114,7 @@ navbar:
       icon: fa-chess-pawn
       menu:           
         - text: "Atención"
-          href: atencion.html          
+          href: atencion.html         
 output:
   html_document:
     theme: cosmos

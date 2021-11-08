@@ -13,9 +13,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(ggplot2)
-casas=read.csv("data/casas.csv", header = TRUE, sep=",")
+library(readr)
+casas=read_delim("data/casas.csv", delim = ";",escape_double = FALSE, trim_ws = TRUE)
 beer=read.csv("data/beer.csv",header=TRUE, sep = ";")
-
+mes=c(1,2,3)
+casas$mes=rep(1:3, each =18 ) 
 ```
 
 # **Introducción**
@@ -322,7 +324,6 @@ Se empieza con el primero de los lienzo, donde se declara la data que vamos a ut
 ![](img/ge_data.png){width=50%}
 
 ```{r}
-casas=read.csv("data/casas.csv")
 fig=ggplot(data=casas)
 fig
 ```
@@ -333,7 +334,7 @@ Como segundo paso se definen las variables que se van a utilizar en la construcc
 ![](img/ge_aes.png){width=50%}
 
 ```{r}
-fig=ggplot(data=casas,  aes(x=areaconst , y=precio))
+fig=ggplot(data=casas,  aes(x=area.con , y=precio))
 fig
 ```
 
@@ -342,7 +343,7 @@ Luego de tener definida la base y las variables a utilizar se indica la geometri
 ![](img/ge_geom.png){width=50%}
 
 ```{r}
-fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+fig=ggplot(data=casas,  aes(x=area.con , y=precio))+
   geom_point()
 fig
 ```
@@ -355,7 +356,7 @@ Otros elementos a utilizar son :
 ![](img/ge_facet.png){width=50%}
 
 ```{r}
-fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+fig=ggplot(data=casas,  aes(x=area.con , y=precio))+
   geom_point() + facet_wrap(~ mes)
 fig
 ```
@@ -365,7 +366,7 @@ fig
 ![](img/ge_stats.png){width=50%}
 
 ```{r}
-fig=ggplot(data=casas,  aes(x=areaconst , y=precio))+
+fig=ggplot(data=casas,  aes(x=area.con , y=precio))+
   geom_point() + facet_wrap(~ mes)+stat_smooth(method = "loess" , formula =y ~ x)
 fig
 ```
@@ -375,7 +376,7 @@ fig
 ![](img/ge_coord.png){width=50%}
 
 ```{r}
-fig=ggplot(data=casas,  aes(x=areaconst , y=precio)) + geom_point() +
+fig=ggplot(data=casas,  aes(x=area.con , y=precio)) + geom_point() +
         facet_wrap(~ mes) + 
         stat_smooth(method = "loess" , formula =y ~ x) +
         coord_cartesian(xlim = c(1500,3000))
@@ -388,7 +389,7 @@ fig
 ![](img/ge_themes.png){width=50%}
 
 ```{r}
-fig=ggplot(data=casas,  aes(x=areaconst , y=precio)) + geom_point() +
+fig=ggplot(data=casas,  aes(x=area.con , y=precio)) + geom_point() +
         facet_wrap(~ mes) + 
         stat_smooth(method = "loess" , formula =y ~ x) +
         coord_cartesian(xlim = c(1500,3000)) +
@@ -400,7 +401,7 @@ fig
 ### **Otros ejemplos de ggplot2**
 
 ```{r}
-casas$mes=as.factor(casas$mes)
+casas$mes=as.factor(casas$id)
 fig2 = ggplot(data=casas, aes(x=precio, y=mes)) +
   geom_boxplot(fill="lightSalmon", 
                color="black")+
@@ -413,7 +414,7 @@ fig2
 
 
 ```{r}
-fig3=ggplot(casas, aes(antigüedad)) +
+fig3=ggplot(casas, aes(edad)) +
        geom_histogram(bins = 7,fill="#69b3a2", color="#e9ecef", alpha=0.9)+
        theme_minimal() +
        labs(x = "años", y = "frecuencia absoluta") +
