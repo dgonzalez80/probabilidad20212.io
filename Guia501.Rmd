@@ -991,7 +991,7 @@ y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
 regresion=lm(y ~ x)
 summary(regresion)
 nuevo <- data.frame(x=18)
-predict(object=regresion, newdata=nuevo, interval="confidence", level=0.95)
+predict(object=regresion, newdata=nuevo, interval="predict", level=0.95)
 ```
 
 <br/><br/><br/>
@@ -1009,6 +1009,11 @@ $$\widehat{y_{o}} - t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2
 	Donde: 
 $S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$	
 	
+
+
+```{r}
+predict(object=regresion, newdata=nuevo, interval="confidence", level=0.95)
+```
 
 <br/><br/>
 
@@ -1029,7 +1034,7 @@ $S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$
 | IC predicción $y_{0}$         |`nuevo <- data.frame(x=18)`                              |
 |                               |`predict(object=modelo, newdata=nuevo, interval="prediction", level=0.95) ` |
 |Intervalo de confianza para    |                                                          |
-| IC predicción $\mu_{Y|x_{0}}$ |`predict(object=mod1, newdata=nuevo, interval="confidence", level=0.95)`|
+| IC predicción $\mu_{Y|x_{0}}$ |`predict(object=modelo, newdata=nuevo, interval="confidence", level=0.95)`|
 
 
 |                   |                        |                                                          |

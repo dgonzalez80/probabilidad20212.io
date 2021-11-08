@@ -1740,9 +1740,9 @@ Residual standard error: 2.251 on 10 degrees of freedom
 Multiple R-squared:  0.8447,    Adjusted R-squared:  0.8292 
 F-statistic: 54.41 on 1 and 10 DF,  p-value: 2.38e-05</code></pre>
 <pre class="r"><code>nuevo &lt;- data.frame(x=18)
-predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=0.95)</code></pre>
-<pre><code>       fit      lwr      upr
-1 11.82497 10.36605 13.28388</code></pre>
+predict(object=regresion, newdata=nuevo, interval=&quot;predict&quot;, level=0.95)</code></pre>
+<pre><code>       fit     lwr      upr
+1 11.82497 6.60239 17.04754</code></pre>
 <p><br/><br/><br/></p>
 </div>
 </div>
@@ -1754,6 +1754,9 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 <p><span class="math display">\[\widehat{y_{o}} - t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
 \hspace{.5cm}&lt; \mu_{Y|x_{o}} &lt; \hspace{.5cm}
 \widehat{y_{0}} + t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}\]</span> Donde: <span class="math inline">\(S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}\)</span></p>
+<pre class="r"><code>predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=0.95)</code></pre>
+<pre><code>       fit      lwr      upr
+1 11.82497 10.36605 13.28388</code></pre>
 <p><br/><br/></p>
 </div>
 </div>
@@ -1819,7 +1822,7 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 </tr>
 <tr class="even">
 <td align="left">IC predicción <span class="math inline">\(\mu_{Y|x_{0}}\)</span></td>
-<td align="left"><code>predict(object=mod1, newdata=nuevo, interval="confidence", level=0.95)</code></td>
+<td align="left"><code>predict(object=modelo, newdata=nuevo, interval="confidence", level=0.95)</code></td>
 </tr>
 </tbody>
 </table>
