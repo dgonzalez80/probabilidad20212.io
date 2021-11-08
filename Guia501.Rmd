@@ -863,7 +863,7 @@ A continuación se presentan algunas formas de linealización que permiten la es
 |:----------------------|:-------------------------------|:--------------------|:--------------------|:------------------------------------|
 |(1) Modelo exponencial |$Y = \alpha e^{\beta X}$        | $Y^{*}=ln(Y)$       |                     |$Y^{*} =ln(\alpha) + \beta X$        |  
 |(2) Modelo potencial   |$Y = \alpha X^{\beta}$          | $Y^{*}=log(Y)$      |$X^{*}=log(X)$       |$Y^{*} =log(\alpha) + \beta X^{*}$   |
-|(3) Modelo reciproco   |$Y = \alpha + \dfrac{\beta}{X} $|                     |$X^{*}=\dfrac{1}{X}$ |$Y =\alpha + \beta X^{*}$            | 
+|(3) Modelo reciproco   |$Y = \alpha + \dfrac{\beta}{X}$|                     |$X^{*}=\dfrac{1}{X}$ |$Y =\alpha + \beta X^{*}$            | 
 |(4) Modelo hiperbólico |$Y=\dfrac{X}{\alpha X + \beta }$|$Y^{*}=\dfrac{1}{Y}$ |$X^{*}=\dfrac{1}{X}$ |$Y^{*} =\alpha + \beta X^{*}$        |
 
 <br/>
