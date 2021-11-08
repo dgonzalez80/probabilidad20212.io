@@ -1010,7 +1010,25 @@ alternative hypothesis: true autocorrelation is greater than 0</code></pre>
 <h2><strong>P.de significancia individuales</strong></h2>
 <p>Después de verificar el cumplimiento de los supuestos sobre los errores se pasa a analizar los resultados de la estimación.</p>
 <p>Las pruebas a realizar corresponden a la validación si los resultados obtenidos sobre el intercepto y la pendiente son significativamente diferentes de cero:</p>
-<p><code>Coefficients:              Estimate   Std. Error   t value   Pr(&gt;|t|)     (Intercept)  1.77788    1.58292      1.123     0.288     x            0.55817    0.07567      7.376     2.38e-05 *** --- Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></p>
+<pre class="r"><code>summary(regresion)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.1928 -0.5426  0.0088  0.8500  3.5613 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.77788    1.58292   1.123    0.288    
+x            0.55817    0.07567   7.376 2.38e-05 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 2.251 on 10 degrees of freedom
+Multiple R-squared:  0.8447,    Adjusted R-squared:  0.8292 
+F-statistic: 54.41 on 1 and 10 DF,  p-value: 2.38e-05</code></pre>
 <table>
 <colgroup>
 <col width="20%" />
@@ -1195,7 +1213,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
     x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
 
 plot(x,y, xlab = &quot;peso inicial&quot;, ylab = &quot;peso final&quot;, pch=21, bg=&quot;blue&quot;, las=1)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p><br/><br/></p>
 <p>En la gráfica se puede observar que existe una posible relación positiva entre las variables, la cual se puede representar a través de una linea recta con pendiente positiva.</p>
 <p>Inicialmente se plantea el modelo formado por una variable respuesta (<span class="math inline">\(y\)</span>) y una variable independiente (<span class="math inline">\(x\)</span>), una variable aleatoria no observable o error (<span class="math inline">\(u\)</span>) y dos coeficientes <span class="math inline">\(\beta_{0}\)</span> y <span class="math inline">\(\beta_{1}\)</span> y un conjunto de 25 observaciones.</p>
@@ -1394,7 +1412,7 @@ Multiple R-squared:  0.02645,   Adjusted R-squared:  -0.01588
 F-statistic: 0.6248 on 1 and 23 DF,  p-value: 0.4373</code></pre>
 <p>Para la verificación del supuesto de homoscedasticidad indica que la variable independiente no esta relacionada con la varianza. Se puede suponer la varianza de los errores es constante.</p>
 <p><br/><br/></p>
-<p>Código R</p>
+<p>*<strong>Código R</strong></p>
 <pre class="r"><code>y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
         x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
         
@@ -1407,7 +1425,7 @@ F-statistic: 0.6248 on 1 and 23 DF,  p-value: 0.4373</code></pre>
 <pre class="r"><code># Diagrama de dispersión X vs Y
         plot(y,x, main=&quot;Diagrama de dispersión&quot;,xlab=&quot;X:Peso inicial&quot;, 
              ylab=&quot;Y:Peso final&quot;, pch=19)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <pre class="r"><code># Estimación por MCO
         regresion=lm(y~x)
         summary(regresion)</code></pre>
@@ -1435,7 +1453,7 @@ F-statistic: 119.8 on 1 and 23 DF,  p-value: 1.356e-10</code></pre>
 x            1.0540506 1.5453740</code></pre>
 <pre class="r"><code>        plot(y~x, xlab = &quot;Peso inicial&quot;, ylab = &quot;Peso final&quot;, pch=19)
         abline(regresion)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <pre class="r"><code># Analisis de la varianza
         anova(regresion)</code></pre>
 <pre><code>Analysis of Variance Table
@@ -1450,33 +1468,33 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
         residuos &lt;- rstandard(regresion)
         valores.ajustados &lt;- fitted(regresion)
         plot(valores.ajustados, residuos)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <pre class="r"><code># Diagnostico de normalidad
         qqnorm(residuos, main=&quot;Normalidad de los Residuales&quot;)
         qqline(residuos)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <pre class="r"><code>        plot(y,x, xlab = &quot;peso-F&quot;, ylab = &quot;peso-b&quot;)
         abline(y~x)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
 <pre class="r"><code># validación de supuestos del modelo
         residuos=rstandard(regresion)
         valores.ajustados &lt;- fitted(regresion)
         plot(valores.ajustados, residuos)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
-<pre class="r"><code>        dwtest(y~x)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<pre class="r"><code>        lmtest::dwtest(y~x)</code></pre>
 <pre><code>
     Durbin-Watson test
 
 data:  y ~ x
 DW = 1.518, p-value = 0.07668
 alternative hypothesis: true autocorrelation is greater than 0</code></pre>
-<pre class="r"><code>        bgtest(y~x)</code></pre>
+<pre class="r"><code>        lmtest::bgtest(y~x)</code></pre>
 <pre><code>
     Breusch-Godfrey test for serial correlation of order up to 1
 
 data:  y ~ x
 LM test = 1.4445, df = 1, p-value = 0.2294</code></pre>
-<pre class="r"><code>        resettest(y~x , power=2, type=&quot;regressor&quot;)</code></pre>
+<pre class="r"><code>        lmtest::resettest(y~x , power=2, type=&quot;regressor&quot;)</code></pre>
 <pre><code>
     RESET test
 
@@ -1545,21 +1563,21 @@ W = 0.9658, p-value = 0.5415</code></pre>
 </table>
 <p><br/></p>
 <pre class="r"><code>curve(.2*x^2, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
-<pre class="r"><code>curve(.2*x^1, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;red&quot;, lwd=2, main=&quot;(1b)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-25-2.png" width="672" /></p>
-<pre class="r"><code>curve(.2*x^0.1, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-25-3.png" width="672" /></p>
-<pre class="r"><code>curve(exp(-2*x), from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
 <p><img src="Guia501_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
-<pre class="r"><code>curve(exp(2*x), from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
+<pre class="r"><code>curve(.2*x^1, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;red&quot;, lwd=2, main=&quot;(1b)&quot;)</code></pre>
 <p><img src="Guia501_files/figure-html/unnamed-chunk-26-2.png" width="672" /></p>
-<pre class="r"><code>curve(2-3*log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
+<pre class="r"><code>curve(.2*x^0.1, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-26-3.png" width="672" /></p>
+<pre class="r"><code>curve(exp(-2*x), from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
 <p><img src="Guia501_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
-<pre class="r"><code>curve(2+log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;red&quot;, lwd=2, main=&quot;(1b)&quot;)</code></pre>
+<pre class="r"><code>curve(exp(2*x), from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
 <p><img src="Guia501_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
+<pre class="r"><code>curve(2-3*log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<pre class="r"><code>curve(2+log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;red&quot;, lwd=2, main=&quot;(1b)&quot;)</code></pre>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-28-2.png" width="672" /></p>
 <pre class="r"><code>curve(2+3*log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-27-3.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-28-3.png" width="672" /></p>
 <p><br/></p>
 <p>El realizar el diagrama de dispersión y visualizar la relación entre <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span>, se puede intuir si existe una relación lineal o no entre las variables o si por el contrario se deben realizar transformaciones para mejorar la estimación por MCO.</p>
 <p><br/><br/></p>
@@ -1579,7 +1597,7 @@ W = 0.9658, p-value = 0.5415</code></pre>
 y=c(251,4690,124,294,138,1085,345,355,5753,1377,802,945,2327)
 plot(x,y)
 grid()</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <p>En la gráfica se visualiza una relación con una leve curvatura que puede hacer pensar que la relación entre las variables no es del todo lineal.</p>
 <p>Inicialmente se realiza la estimación lineal con el fin de poder comparar los otros modelos estimados.</p>
 <p><br/><br/></p>
@@ -1779,6 +1797,26 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 <td align="left"></td>
 <td align="left"></td>
 </tr>
+<tr class="even">
+<td align="left">Intervalo de confianza para predicción</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">IC predicción <span class="math inline">\(y_{0}\)</span></td>
+<td align="left"><code>nuevo &lt;- data.frame(x=18)</code></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><code>predict(object=modelo, newdata=nuevo, interval="prediction", level=0.95)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Intervalo de confianza para</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">IC predicción <span class="math inline">\(\mu_{Y|x_{0}}\)</span></td>
+<td align="left"><code>predict(object=mod1, newdata=nuevo, interval="confidence", level=0.95)</code></td>
+</tr>
 </tbody>
 </table>
 <table>
@@ -1829,7 +1867,20 @@ install.packages(&#39;remotes&#39;)  # solo una vez
 library(remotes) 
 library(devtools)  
 install_github(&quot;dgonzalez80/paquetepye&quot;, force = TRUE) # bajar paquete
-learnr::run_tutorial(&quot;Taller_regresion1&quot;, &quot;paquetepye&quot;) # correr instructivo</code></pre>
+learnr::run_tutorial(&quot;Taller_regresion1&quot;, &quot;paquetepye&quot;) # correr instructivo 1
+
+learnr::run_tutorial(&quot;Taller_regresion2&quot;, &quot;paquetepye&quot;) # correr instructivo 2 (se corre uno de los dos !!)</code></pre>
+<pre class="r"><code># codigo para cargar instructivo Taller_regresion1
+library(remotes) 
+library(devtools)  
+install_github(&quot;dgonzalez80/paquetepye&quot;, force = TRUE) # bajar paquete
+learnr::run_tutorial(&quot;Taller_regresion2&quot;, &quot;paquetepye&quot;) # correr instructivo 2 (se corre uno de los dos !!)</code></pre>
+<p><br/><br/></p>
+<p><strong>Referencias</strong> :</p>
+<ul>
+<li><p><a href="https://fhernanb.github.io/libro_regresion/predict.html" class="uri">https://fhernanb.github.io/libro_regresion/predict.html</a></p></li>
+<li><p><a href="https://thomasadventure.blog/es/posts/ggplot-recta-de-regresion/" class="uri">https://thomasadventure.blog/es/posts/ggplot-recta-de-regresion/</a></p></li>
+</ul>
 </div>
 </div>
 

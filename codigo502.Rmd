@@ -1,0 +1,99 @@
+---
+title: "Código 11"
+author: "dgonzalez "
+subtitle: "Módulo 5- Unidad 5.2" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,comment = NA)
+#install.packages("TeachingSampling")
+library(TeachingSampling)
+library(psych)
+library(summarytools)
+library(gtools)
+library(ggplot2)
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
+```
+
+## **Regresión Lineal Múltiple**
+
+
+```{r}
+library(readr)
+data=read_delim("data/ausentismo.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+round(cov(data),2)
+round(cor(data),2)
+# Estimacion del modelo
+attach(data)
+modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+summary(modelo1) 
+
+# diagnostico
+coefficients(modelo1) # coeficientes estimados
+yhat=fitted(modelo1) # valores estimados
+u=residuals(modelo1) # residuales
+anova(modelo1) # tabla de anova
+vcov(modelo1) # matriz de varianzas covarianza de parametros 
+
+
+# Stepwise Regression
+library(MASS)
+modelo2=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+step=stepAIC(modelo2, direction="both")
+step$anova # display results
+
+
+modelo3=lm(ausen ~ taller + sexo + antg + sala , data=data)
+summary(modelo3)
+
+modelo4=lm(ausen ~ sexo + antg + sala , data=data)
+summary(modelo4)
+
+uhat=modelo4$residuals
+#-----------------------------------------------------------------
+# Examen de normalidad de errores
+shapiro.test(uhat)
+
+# Supuesto de no autocorrelacion
+# install.packages("lmtest")
+library(lmtest)
+# Prueba de D-W  - autocorrelacion
+# Ho: los erreres no estan autocorrelacionados
+dwtest(modelo4)
+
+# Supuesto de homoscedasticidad
+# Prueba de Goldfeld-Quandt
+# Ho no existe heteroscedasticidad
+gqtest(modelo4)
+
+# Supuesto de correcta especificacion
+# Prueba de especificacion
+# Prueba RESET
+resettest(modelo4, power=2, type="regressor")
+
+modelo5=lm(ausen ~ antg + sala , data=data)
+summary(modelo5)
+```
+
+
+
+
+
+
+
+
+
