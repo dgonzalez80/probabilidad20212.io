@@ -965,7 +965,7 @@ La ecuación de predicción esta data por $\widehat{y}= b_{0}+ b_{1} x$. Esta ec
 
 ## **IC predicción $y_{o}$**
 
-*+Intervalo de confianza para $y_{o}$**
+### **Intervalo de confianza para $y_{o}$**
 
 $$\widehat{y_{o}} - t_{\alpha/2} s \sqrt{1+\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
 \hspace{.5cm}< y_{o} <\hspace{.5cm}
@@ -1001,7 +1001,7 @@ predict(object=regresion, newdata=nuevo, interval="confidence", level=0.95)
 
 <br/>
 
-**Intervalo de confianza para $\mu_{Y|x_{o}}$**
+### **Intervalo de confianza para $\mu_{Y|x_{o}}$**
 
 $$\widehat{y_{o}} - t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
 \hspace{.5cm}< \mu_{Y|x_{o}} < \hspace{.5cm}

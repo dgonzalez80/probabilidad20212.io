@@ -1706,7 +1706,8 @@ F-statistic: 14.28 on 1 and 11 DF,  p-value: 0.003051</code></pre>
 </div>
 <div id="ic-predicción-y_o" class="section level2">
 <h2><strong>IC predicción <span class="math inline">\(y_{o}\)</span></strong></h2>
-<p>*+Intervalo de confianza para <span class="math inline">\(y_{o}\)</span>**</p>
+<div id="intervalo-de-confianza-para-y_o" class="section level3">
+<h3><strong>Intervalo de confianza para <span class="math inline">\(y_{o}\)</span></strong></h3>
 <p><span class="math display">\[\widehat{y_{o}} - t_{\alpha/2} s \sqrt{1+\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
 \hspace{.5cm}&lt; y_{o} &lt;\hspace{.5cm}
 \widehat{y_{o}} + t_{\alpha/2} s \sqrt{1+\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}\]</span> Donde: <span class="math inline">\(S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}\)</span></p>
@@ -1744,14 +1745,17 @@ predict(object=regresion, newdata=nuevo, interval=&quot;confidence&quot;, level=
 1 11.82497 10.36605 13.28388</code></pre>
 <p><br/><br/><br/></p>
 </div>
+</div>
 <div id="ic-predicción-media-mu_yx_o" class="section level2">
 <h2><strong>IC predicción media <span class="math inline">\(\mu_{Y|x_{o}}\)</span></strong></h2>
 <p><br/></p>
-<p><strong>Intervalo de confianza para <span class="math inline">\(\mu_{Y|x_{o}}\)</span></strong></p>
+<div id="intervalo-de-confianza-para-mu_yx_o" class="section level3">
+<h3><strong>Intervalo de confianza para <span class="math inline">\(\mu_{Y|x_{o}}\)</span></strong></h3>
 <p><span class="math display">\[\widehat{y_{o}} - t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}
 \hspace{.5cm}&lt; \mu_{Y|x_{o}} &lt; \hspace{.5cm}
 \widehat{y_{0}} + t_{\alpha/2} s \sqrt{\dfrac{1}{n}+ \dfrac{(x_{o}-\bar{x})^{2}}{S_{xx}}}\]</span> Donde: <span class="math inline">\(S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}\)</span></p>
 <p><br/><br/></p>
+</div>
 </div>
 <div id="código-r" class="section level2">
 <h2><strong>Código R</strong></h2>
