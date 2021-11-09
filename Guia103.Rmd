@@ -178,7 +178,7 @@ barplot(counts, main="Numero de cambios adelante por Tipo de motor",  xlab="Nume
 ```
 
 
-### **Graficas variables cuantitativas con R base**
+### **Gráficas variables cuantitativas con R base**
 
 ### **Diagrama de árbol**
 
