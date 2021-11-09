@@ -496,6 +496,9 @@ div.tocify {
     <li>
       <a href="codigo501.html">Código u5.1</a>
     </li>
+    <li>
+      <a href="codigo502.html">Código u5.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -563,32 +566,31 @@ div.tocify {
 </div>
 
 
-<div id="guía-de-aprendizaje-1.3" class="section level2">
-<h2><strong>Guía de aprendizaje 1.3</strong></h2>
+<div id="guía-de-aprendizaje-1.3" class="section level1">
+<h1><strong>Guía de aprendizaje 1.3</strong></h1>
 <p><img src="img/baner1.png" /></p>
 <p><br/><br/></p>
 <p><br/><br/></p>
-</div>
 <div id="introducción" class="section level2">
-<h2><strong>1. Introducción</strong></h2>
+<h2><strong>Introducción</strong></h2>
 <p>La representación grafica de información constituye una de las herramientas mas importantes de la estadística. Con ella podemos observar lo ocurrido en el pasado, el presente y lo que podría ocurrir en el futuro y de esta forma orientar nuestras decisiones.</p>
 <p>Es necesario realizar una correcta visualización de los datos y para ello requerimos seleccionar la gráfica o representación apropiada, conociendo el tipo de variable, su escala de medición y sobre todo lo que queremos resaltar en ella.</p>
 <p>Las gráficas pueden formar parte de un informe en un estudio, para lo cual es necesario conocer los lineamientos exigidos por las normas que los rigen AP, EEE, entre otros. En todos los casos los gráficos deben tener una enumeración que los permita citar, titulo que permita visualizar lo que están representando, fuente, que indique de donde son extraídos los datos que la originan. En esta unidad se trataran las diferentes formas de visualización de datos.</p>
 <p><br/><br/></p>
 </div>
 <div id="objetivos-de-la-unidad" class="section level2">
-<h2><strong>2. Objetivos de la unidad</strong></h2>
+<h2><strong>Objetivos de la unidad</strong></h2>
 <p>Al finalizar la unidad los estudiantes estarán en capacidad de RECONOCER los tipos de gráficos estadísticos y podrán REPRESENTAR e INTERPRETAR información a través de las diferentes formas, que les permita complementar un análisis de datos estadístico.</p>
 <p><br/><br/></p>
 </div>
 <div id="duración" class="section level2">
-<h2><strong>3. Duración</strong></h2>
+<h2><strong>Duración</strong></h2>
 <p>La presente unidad será desarrollada durante la tercera semana del semestre ( 9 al 16 de agosto ). Ademas del material suministrado contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica. Los entregables para esta unidad podrán enviarse a través de la plataforma Brightspace hasta el 17 de agosto.</p>
 <p>Para alcanzar los objetivos planteados se propone realizar las siguientes actividades</p>
 <p><br/><br/></p>
 </div>
 <div id="cronograma-de-trabajo" class="section level2">
-<h2><strong>4. Cronograma de trabajo</strong></h2>
+<h2><strong>Cronograma de trabajo</strong></h2>
 <table>
 <colgroup>
 <col width="33%" />
@@ -690,7 +692,7 @@ div.tocify {
 <p><br/><br/></p>
 </div>
 <div id="criterios-de-evaluación" class="section level2">
-<h2><strong>5. Criterios de evaluación</strong></h2>
+<h2><strong>Criterios de evaluación</strong></h2>
 <ul>
 <li><p>Reconocer los principales elementos de un análisis descriptivo de datos y su incidencia en la toma de decisiones.</p></li>
 <li><p>Reconocer e identificar los diferentes tipos de representaciones gráficas y sus respectivas interpretación.</p></li>
@@ -699,7 +701,7 @@ div.tocify {
 <p><br/><br/></p>
 </div>
 <div id="entregables" class="section level2">
-<h2><strong>6. Entregables</strong></h2>
+<h2><strong>Entregables</strong></h2>
 <table>
 <colgroup>
 <col width="32%" />
@@ -741,8 +743,305 @@ div.tocify {
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="presentaciones" class="section level2">
-<h2><strong>7. Presentaciones</strong></h2>
+<h2><strong>Presentaciones</strong></h2>
 <p><a href="https://dgonzalez80.github.io/presentacionespye.io/punidad107.html#1">Presentación 107 - 06-ago-2021</a></p>
+<p><br/><br/><br/></p>
+</div>
+</div>
+<div id="recursos" class="section level1">
+<h1><strong>Recursos</strong></h1>
+<div id="introducción-1" class="section level2">
+<h2><strong>Introducción</strong></h2>
+<p><em>Una gráfica o una representación gráfica o un gráfico, es un tipo de representación de datos, generalmente cuantitativos, mediante recursos visuales (líneas, vectores, superficies o símbolos), para que se manifieste visualmente la relación matemática o correlación estadística que guardan entre sí.</em></p>
+<p>Wikipedia</p>
+</div>
+<div id="paquetes-de-r-para-graficos" class="section level2">
+<h2><strong>Paquetes de R para graficos</strong></h2>
+<p>R posee una serie de paquetes construido para la visualización de datos que hacen que tengan una excelente presentación. Empezando por funciones del núcleo base, hasta paquetes que elaboran gráficos interactivos</p>
+<p><img src="img/RStudio.jpeg" width="110"> <img src="img/ggplot2.png" width="100"> <img src="img/highcharter.png" width="100"> <img src="img/shiny.png" width="100"> <img src="img/plotly.png" width="100"></p>
+<p>Elegir el gráfico adecuado es muy importante pues existen diferentes alternativos y se debe escoger el apropiado para representar los datos. El tipo de dato determina el tipo de grafico asi:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Tipo de variable</th>
+<th align="left">Escala</th>
+<th align="left">Gráfico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cualitativas</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Nominal</td>
+<td align="left">torta</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Ordinal</td>
+<td align="left">barras</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Cuantitativas</td>
+<td align="left">Intervalo-razón</td>
+<td align="left">diagrama de tallos y hojas</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">histograma</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de tallos y hojas</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de cajas</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de densidad</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de puntos</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de lineas</td>
+</tr>
+</tbody>
+</table>
+<div id="gráficos-variables-cualitativas-con-r-base" class="section level3">
+<h3><strong>Gráficos variables cualitativas con R base</strong></h3>
+<p>Gráfico de tortas</p>
+<pre class="r"><code>cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20); labs=c(&quot;Ing. Industrial&quot;,&quot;Administración &quot;,&quot;Contaduría &quot;); pct=round(table(cc)/sum(table(cc))*100); labs=paste(labs, pct);labs=paste(labs, &quot;%&quot;, sep = &quot; &quot;) 
+pie(table(cc), labels=labs, main=&quot; Distribución por carrera&quot;)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="diagrama-de-barras" class="section level3">
+<h3><strong>Diagrama de barras</strong></h3>
+<pre class="r"><code>ev=table(rbinom(90,5,0.80)); 
+barplot(ev, col=c(&quot;red&quot;,&quot;yellow&quot;,&quot;orange&quot;,&quot;green&quot;,&quot;blue&quot;), main = &quot;Evaluación proceso de inducción&quot;)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="diagrama-de-barras-dos-variables" class="section level3">
+<h3><strong>Diagrama de barras dos variables</strong></h3>
+<pre class="r"><code>counts &lt;- table(mtcars$vs, mtcars$gear); rownames(counts)=c(&quot;Montor en linea&quot;, &quot;Motor en V&quot;)
+barplot(counts, main=&quot;Numero de cambios adelante por Tipo de motor&quot;,  xlab=&quot;Numero de cambios adelante &quot;,col=c(&quot;dodgerblue3&quot;,&quot;orange&quot;),
+  legend = rownames(counts))</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="graficas-variables-cuantitativas-con-r-base" class="section level3">
+<h3><strong>Graficas variables cuantitativas con R base</strong></h3>
+</div>
+<div id="diagrama-de-árbol" class="section level3">
+<h3><strong>Diagrama de árbol</strong></h3>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+stem(nf)</code></pre>
+<pre><code>
+  The decimal point is at the |
+
+  1 | 67
+  2 | 00012244444
+  2 | 555677777778
+  3 | 0000000000000011111111222222223344
+  3 | 555555566677777777888999
+  4 | 0111123</code></pre>
+</div>
+<div id="histograma" class="section level3">
+<h3><strong>Histograma</strong></h3>
+<pre class="r"><code>h1=hist(nf, main = &quot;Nota final matemáticas fundamentales&quot;, xlab = &quot;nota&quot;, ylab=&quot;frecuencias absolutas&quot;, labels=TRUE, col=&quot;dodgerblue3&quot;, ylim = c(0,30))
+abline(v=3,col=&quot;red&quot;)
+grid()</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-densidad" class="section level3">
+<h3><strong>Diagrama de densidad</strong></h3>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+plot(density(nf), main=&quot;Distribucion de las notas de matematias fundamentales&quot;, col=&quot;dodgerblue3&quot;)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-cajas" class="section level3">
+<h3><strong>Diagrama de cajas</strong></h3>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+boxplot(nf, main=&quot;Nota final matemáticas fundamentales&quot;,col=&quot;dodgerblue3&quot;)
+abline(h=3, col=&quot;red&quot;)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-cajas-1" class="section level3">
+<h3><strong>Diagrama de cajas</strong></h3>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
+labs=c(&quot;Ing. Industrial&quot;,&quot;Administración &quot;,&quot;Contaduría &quot;)
+boxplot((nf~cc),main=&quot;Nota final matemáticas fundamentales por carrera&quot;, col=&quot;dodgerblue3&quot;); abline(h=3, col=&quot;red&quot;); abline(h=4, col=&quot;blue&quot;)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-dispersión" class="section level3">
+<h3><strong>Diagrama de dispersión</strong></h3>
+<pre class="r"><code>ed=round(rnorm(90,18,1),1)
+plot(ed,nf, main=&quot;Edad vs Nota final matemáticas fundamentales&quot;, ylim = c(0,5), xlab = &quot;Edad&quot;, ylab = &quot;Nota final&quot;,col=&quot;dodgerblue3&quot;,pch=19)
+grid()</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="gráfica-de-series-de-tiempo" class="section level3">
+<h3><strong>Gráfica de series de tiempo</strong></h3>
+<pre class="r"><code>plot(AirPassengers, main=&quot;Numero de pasajeros por mes&quot;, col=&quot;dodgerblue3&quot;, lwd = 2)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="resumen" class="section level3">
+<h3><strong>Resumen</strong></h3>
+<pre class="r"><code>x=rnorm(100,100,20)
+y=rnorm(100,100,25)
+z=rbinom(100,4,0.30)
+t=1:100
+par(mfrow=c(2, 2))
+pie(table(z))
+barplot(table(z))
+stem(x)
+hist(x)
+boxplot(x)
+plot(x,y)
+plot(t,y, type=&quot;l&quot;)
+plot(density(x))
+par(mfrow=c(1, 1))</code></pre>
+<p><a href="https://rextester.com/CBC3320" class="uri">https://rextester.com/CBC3320</a> <br/> <a href="https://rextester.com/KBQL21515" class="uri">https://rextester.com/KBQL21515</a> <br/> <a href="https://rdrr.io/snippets/" class="uri">https://rdrr.io/snippets/</a></p>
+</div>
+</div>
+<div id="gráficos-con-ggplot2" class="section level2">
+<h2><strong>Gráficos con ggplot2</strong></h2>
+<p><img src="img/ge_themes.png" /></p>
+<ul>
+<li><p><strong>Data</strong>: capa de los datos</p></li>
+<li><p><strong>Aesthetics</strong>: capa estética (<strong>aes</strong>), definimos las variables a utilizar en el gráfico</p></li>
+<li><p><strong>Geometries</strong>: capa de geometrías, se define el tipo de gráfica a realizar</p></li>
+<li><p><strong>Facets</strong>: capa de facetas, permite detallar la gráfica por categorías</p></li>
+<li><p><strong>Statistics</strong>: capa de estadística, permite agregar modelos</p></li>
+<li><p><strong>Coordinates</strong>: capa de coordenadas, permite ajustar las escalas de los ejes</p></li>
+<li><p><strong>Theme</strong>: capas de características del gráfico que no dependen de los datos</p></li>
+</ul>
+<p><br/><br/></p>
+<p><a href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">Visualizacion de datos con ggplot2</a></p>
+<pre class="r"><code>library(readr)
+library(ggplot2)
+clasificacion=read.csv(&quot;data/spi_global_rankings_intl.csv&quot;)
+ggplot(clasificacion, aes(x=off , y=def))</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(clasificacion, aes(x=off , y=def))+
+  geom_point()</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(clasificacion, aes(x=off , y=def))+
+  geom_point()</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">geo_point()</td>
+<td align="left">geom_bar()</td>
+<td align="left">geom_col()</td>
+<td align="left">stat_count()</td>
+</tr>
+<tr class="even">
+<td align="left">geom_boxplot()</td>
+<td align="left">stat_boxplot()</td>
+<td align="left">geom_density()</td>
+<td align="left">stat_density()</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_histogram()</td>
+<td align="left">geom_violin()</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>ggplot(clasificacion, aes(x=off , y=def))+
+  geom_point()+
+  facet_wrap(~ confed)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(clasificacion, aes(x=off , y=def))+  geom_point()+
+  facet_wrap(~ confed)+ stat_smooth(method = &quot;loess&quot; , formula =y ~ x)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(clasificacion, aes(x=off , y=def))+  geom_point()+  facet_wrap(~ confed)+ stat_smooth(method = &quot;loess&quot; , formula =y ~ x)+
+    coord_cartesian(ylim = c(0, 10))</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>library(ggplot2)
+data=data.frame(grupo=c(&quot;A&quot;,&quot;B&quot;,&quot;F&quot;),frecuencia=c(36,26,19))
+
+ggplot(data, aes(x=grupo, y=frecuencia)) +
+  geom_bar(stat=&quot;identity&quot;, fill=&quot;steelblue&quot;)+
+  geom_text(aes(label=grupo), vjust=1.6, color=&quot;white&quot;, size=3.5)+
+  theme_minimal()</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<pre class="r"><code>library(ggplot2)
+ggplot(mtcars, aes(x=mpg, y=wt, colour = cyl)) + 
+  geom_point()</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(iris, aes(Sepal.Length)) +
+       geom_histogram(bins = 7,fill=&quot;#69b3a2&quot;, color=&quot;#e9ecef&quot;, alpha=0.9)+
+       theme_minimal() +
+       labs(x = &quot;Nota&quot;, y = &quot;n&quot;) +
+       ggtitle(&quot; Promedio acumulado estudiantes de PyE 2021-1&quot;)</code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre class="r"><code>library(ggplot2)
+bd0052 = read.csv2(&quot;data/bd0052.csv&quot;)
+ggplot(bd0052, aes(x=promacum, y=grupo)) +
+  geom_boxplot(fill=&quot;#313ae8&quot;,              # color de relleno
+               color=&quot;#bf6f2e&quot;,             # color de lineas
+               alpha=0.5)+
+  geom_point(color=&quot;#b431e8&quot;,alpha=0.9) </code></pre>
+<p><img src="Guia103_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<pre class="r"><code># Colour picker</code></pre>
+<p><a href="https://rafalab.github.io/dslibro/ggplot2.html">Anàlisis de datos con R Cap,7 ggplot2</a><br/> <a href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">ggplot2 resumen</a></p>
+</div>
+<div id="graficos-con-highcharter" class="section level2">
+<h2><strong>Graficos con highcharter</strong></h2>
+<p><a href="https://jkunst.com/highcharter/" class="uri">https://jkunst.com/highcharter/</a></p>
+<p><a href="https://rstudio-pubs-static.s3.amazonaws.com/320413_6ab300527e8548b1a3cbd0d4c6200fcc.html" class="uri">https://rstudio-pubs-static.s3.amazonaws.com/320413_6ab300527e8548b1a3cbd0d4c6200fcc.html</a></p>
+</div>
+<div id="graficos-con-plotly" class="section level2">
+<h2><strong>Graficos con plotly</strong></h2>
+<p><a href="https://plotly.com/r/" class="uri">https://plotly.com/r/</a></p>
+<p><a href="https://plotly-r.com/" class="uri">https://plotly-r.com/</a></p>
+</div>
+<div id="graficos-con-shiny" class="section level2">
+<h2><strong>Graficos con Shiny</strong></h2>
+<ul>
+<li><p><a href="https://shiny.rstudio.com/gallery/genome-browser.html">Genoma humano</a></p></li>
+<li><p><a href="https://gallery.shinyapps.io/087-crandash/">Paquetes de R</a></p></li>
+<li><p><a href="https://shiny.rstudio.com/gallery/">Galeria</a></p></li>
+</ul>
+<div id="rmarkdown" class="section level3">
+<h3>RMarkdown</h3>
+<p><a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">RMarkdown resumen</a><br/></p>
+<p><a href="https://rpubs.com/joscani/flexdashboard_examples">R flexdashboard - ejemplo</a><br/> <a href="https://geoprocesamiento-2020i.github.io/tutorial-flexdashboard/">R flexdashboard - implementaciòn</a></p>
+<p>background-image: url(“img/pujcali.jpeg”)</p>
+<p>Una imagen dice mas que mil palabras…</p>
+<p>Daniel Enrique González Gómez</p>
+<p>Imagen tomada de :<a href="https://javerianacali.edu.co/noticias/la-javeriana-bogota-y-cali-1-de-colombia" class="uri">https://javerianacali.edu.co/noticias/la-javeriana-bogota-y-cali-1-de-colombia</a></p>
+</div>
+</div>
 </div>
 
 

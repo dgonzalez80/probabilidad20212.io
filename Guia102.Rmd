@@ -13,6 +13,12 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
+library(readxl)
+bd0052=read_excel("data/bd0052.xlsx", sheet = "base20211",col_types = c("numeric", "numeric", "text", "text", "numeric", "numeric", "text", "numeric"))
+bd0052$carrera[bd0052$carrera=="Biologia"]="Biología"
+matrix(bd0052$promacum, ncol = 12)
+
+
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -38,7 +44,7 @@ knitr::include_url("tex/modulo1/unidad12/Guia_de_aprendizaje_102.pdf", height="6
 
 <br/><br/>
 
-## **1. Introducción**
+## **Introducción**
 
 El **Análisis Descriptivo** permite examinar información contenida en una base de datos, procesarla y mediante la construcción de tablas, indicadores y gráficos y con esto elementos realizar un primer análisis de la información, permitiendo así tener una primera impresión de lo que dicen los datos, con la cual se pueden construir hipotesis que luego podran ser verificadas.
 
@@ -48,13 +54,13 @@ En esta unidad se tratara en primer lugar el resumen de información mediante ta
 
 <br/><br/>
 
-## **2. Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 Al finalizar esta unidad el estudiante estará en capacidad de RESUMIR e INTERPRETAR información mediante la construcción de TABLAS DE FRECUENCIA, INDICADORES DESCRIPTIVOS que permitan un correcto análisis de datos.
 
 <br/><br/>
 
-## **3. Duración**
+## **Duración**
 
 La presente unidad será desarrollada durante la segunda semana del semestre ( 2 al 8 de agosto 
 de 2021). Ademas del material suministrado contaran con el acompañamiento del profesor en
@@ -66,7 +72,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **4. Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 
 |Actividad103   | Descripción                    | 
@@ -92,7 +98,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **5. Criterios de evaluación**
+## **Criterios de evaluación**
 
 + Reconocer e interpretar las diferentes formas de resumir los datos a través de tablas de
 frecuencia para los casos de variables cuantitativas y para variables cualitativas.
@@ -109,18 +115,18 @@ cada caso, para un total de 40 puntos.
 
 <br/><br/>
 
-## **6. Entregables** 
+## **Entregables** 
 
 | Entregable    |  Descripción                   |
 |:--------------|:-------------------------------|
 |Entregable 1:  | **Actividad103.pdf** : Caso 101 |
 |Entregable 2:  | **Actividad104.pdf** : Aplicar lo aprendido a base de datos actividad102 |
-|**Fecha**      |Domingo 08 de agosto de 2021    | 
-|**Hora límite**| 23:59  hora  local             |
+|Fecha**      |Domingo 08 de agosto de 2021    | 
+|Hora límite| 23:59  hora  local             |
 
 <br/><br/><br/><br/>
 
-## **7. Presentaciones**
+## **Presentaciones**
 
 [**Presentación 104 - ago 01 2021**](https://dgonzalez80.github.io/presentacionespye.io/punidad104.html#1)
 <br/><br/>
@@ -133,7 +139,7 @@ cada caso, para un total de 40 puntos.
 
 <br/><br/><br/><br/>
 
-## **8. Caso 101**
+## **Caso de estudio 101**
 
 **Caso de estudio : CARACTERISTICAS DE LA CERVEZA**
 
@@ -160,16 +166,489 @@ Su trabajo consiste en escribir un primer informe basado en una evaluación desc
 
 Finalmente adjunte un análisis de los resultados obtenidos.
 
+<br/>
 
-|Producto | Precio | Calorías  | Alcohol  | Tipo   | Origen |
+|Producto | Precio | Calorías  | Alcohol   | Tipo   | Origen |
 |:--------|-------:|-----------:|---------:|-------:|-------:|
-|c1       |  6.24  | 159        |5.2       |   1    |   1    |
-|c2 |4.49 |160 |5.0 |1 |1 |
-|c2 |5.96 |160 |4.9| 1| 1|
-|...|...|...|...|...|..|
-|...|...|...|...|...|..|
+|c1       |  6.24  | 159        |5.2       |1       |1       |
+|c2       |4.49    |160         |5.0       |1       |1       |
+|c2       |5.96    |160         |4.9       | 1      |1       |
+|...      |........|............|..........|........|........|
+|...      |........|............|..........|........|........|
+|         |        |            |          |        |        | 
+
+<br/>
 
 [DATOS: beer.xlsx](https://docs.google.com/spreadsheets/d/1z_Ynldg1inVVledxoy1qEujiHgSGAm7GnrqedMOd_-Y/edit?usp=sharing)
+
+<br/><br/> <br/>
+
+# **Recursos**
+
+<br/> <br/>
+
+### **¿Que es un indicador?**
+
+<br/>
+
+<img src="img/tablero1.jpg" width="1000">
+
+<br/>
+
+Cuando nos subimos a un auto  observamos un tablero con muchos indicadores que permiten al conductor validar el estado del vehículo. Todos los podemos visualizar al tiempo con el fin de darnos una idea del nivel de combustible, la temperatura, el estado de la batería, si alguna puerta esta abierta, la velocidad a la que se viaja, entre otros.
+
+<br/>
+
+Al igual que la situación anterior cuando nos enfrentamos a una análisis de datos, requerimos resumirlos en indicadores, tablas y gráficos que nos permitan un fácil análisis de ellos
+
+<br/> <br/> <br/>
+
+## **Tablas de frecuencia** 
+
+ <br/>
+ 
+### **Tablas de frecuencia para variables cualitativas**
+
+<br/>
+
+| Categorías     | frecuencia absoluta| frecuencia relativa     | 
+|:---------------|:-------------------|:------------------------|
+|                |                    |                         |
+
+<br/>
+
+Las distribuciones de frecuencia o también llamadas tablas de frecuencia nos sirven para agrupar los datos y así permitir resumir para poder tener una idea mas clara de sus características.
+
+Para las variables cualitativas la tabla posee 3 columnas : 
+
++ C1: los diferentes valores que toma la variable. 
+
++ C2:  **frecuencia absoluta** que consiste en el conteo para cada uno de los valores distintos que toma la variable. 
+
++ C3: **frecuencia relativa ** que corresponde  al porcentaje la cantidad de datos para cada los valores
+
+
+ <br/> <br/>
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+# Forma simple
+library(readxl)
+bd0052=read_excel("data/bd0052.xlsx", sheet = "base20211",col_types = c("numeric", "numeric", "text", "text", "numeric", "numeric", "text", "numeric"))
+bd0052$carrera[bd0052$carrera=="Biologia"]="Biología"
+data.frame(table(bd0052$carrera))
+```
+ 
+ <br/> <br/>
+
+```{r, message=FALSE}
+#utilizando summarytools
+library(summarytools)
+t1=freq(bd0052$carrera, cumul = FALSE, headings = FALSE)
+t1
+```
+
+Nota: paquete [summarytools](https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html) 
+
+ <br/> <br/>
+ 
+### **Tablas de frecuencia para variables cuantitativas**
+
+Para las variables cuantitativas las tablas de frecuencias tiene una presentacion diferente a la vista anteriormente. Como se trata de variables con una gran numero de valores diferentes, es necesario dividirlas por intervalos .
+
+```{r,  echo=TRUE, message=FALSE, warning=FALSE}
+library(agricolae)
+h2=with(bd0052,graph.freq(promacum,plot=FALSE));t2=table.freq(h2);
+colnames(t2) = c("  LI  ", "  LS  ", "marca clase'", "Frec.Abs","Frec.Rel", "Frec.Abs.Ac","Frec.Rel.Ac")
+t2
+```
+Frec.Abs : Frecuencia absoluta <br/>
+Frec.Rel : Frecuencia relativa <br/><br/>
+Frec.Abs.Ac : Frecuencia Absoluta Acumuada <br/>
+Frec.Rel.Ac : Frecuencia Relativa Acumulada 
+
+ <br/> <br/>
+
+```{r}
+library(stringr)
+data("iris")
+t1=freq(iris$Species, cumul = FALSE, headings = FALSE)
+t1
+```
+
+ <br/> <br/> <br/>
+ 
+## **Rango percentil**
+
+ <br/>
+ 
+Es un número que divide la muestra en dos partes. $x$ % de los datos de la muestra son iguales o menores que $P_x$ y un $(100-x)$ % por encima  de el.
+
+![](img/carrera.jpg)
+
+ <br/> <br/>
+ 
++ Participé en una carrera **K10** y ocupé el percentil 30 : $P_{30}$
+
++ Mi nota en un examen de matemáticas ocupó el percentil 90 : $P_{90}$
+
++ Que significa: $P_{25}$ ; $P_{50}$ ;  $P_{75}$
+
+
+ <br/> <br/> <br/>
+ 
+### **Diagrama de cajas** 
+
+ <br/>
+ 
+```{r, warning=FALSE, message=FALSE, fig.height=2, fig.width=10.7} 
+library(ggplot2);bd0052[23,5]=5.1; bd0052[24,5]=2.6; ggplot(bd0052, aes(x=promacum))+geom_boxplot()
+
+
+```
+
+ <br/>
+ 
+atipico | $LI=Q_{1}- 1.5(Q_{3}-Q_{1})$ | $Q_{1}$ | $Q_{2}$ | $Q_{3}$ | $LS=Q_{3}+ 1.5(Q_{3}-Q_{1})$ |  atipico 
+
+ <br/> <br/> <br/>
+ 
+## **Características de los  datos**
+
+ <br/>
+ 
+| Tendencia central          | Dispersión                   | Forma                          |
+|:---------------------------|:-----------------------------|:-------------------------------|
+| media                      | rango                        | sesgo o asimetría              |
+| mediana                    | varianza                     | curtosis                       |
+| moda                       | desviación estándar          |                                |
+| media truncada             | coeficiente de variación     |                                |
+| rango medio                |                              |                                |
+| media armónica             |                              |                                |
+| media geométrica           |                              |                                |
+|                            |                              |                                |
+ 
+
+ <br/> <br/>
+
+
+### **Media aritmética** 
+
+ <br/>
+ 
+$$\widehat{x}= \frac{1}{n} \sum_{i=1}^{n} x_{i}$$
+
+ <br/>
+ 
+Es una de los indicadores estadísticos mas conocidos
+
+Propiedades de la media :
++ La suma de las desviaciones de los datos con respecto a la media es cero. $\sum (x_{i}-\bar{x})=0$.
+
++ La suma de los cuadrados de las desviaciones de los datos con respecto a un valor {\bf $a$} es mínimo cuando $a=\bar{x}$.
+
++ Si $x_{i}=k$ para todo $i$, entonces, $\bar{x}=k$.
+
++ Si todos los datos de una variable se multiplican por una constante $k$, es decir $y_{i}=kx_{i}$, entonces $\bar{y}=k\bar{x}$
+
++ Si $z_{i}=a x_{i}+b y_{i}$, donde: ***a***, ***b*** constantes y $x_{i}$, $y_{i}$ variables, entonces: $\bar{z}=a\bar{x}+b\bar{y}$. 
+
+ <br/> <br/>
+ 
+Ejemplo1
+
+
+```{r}
+mean(mtcars$mpg,na.rm = TRUE)
+```
+
+ <br/> <br/>
+
+Ejemplo2
+
+```{r}
+mean(bd0052$promacum, na.rm = TRUE)
+```
+
+ <br/> <br/>
+ 
+Ejemplo3
+
+```{r}
+x=1:10
+x
+cat("media :",mean(x))
+
+
+```
+
+
+ <br/> <br/>
+ 
+ Ejemplo4
+
+```{r}
+x[10]=20
+x
+cat("media :" ,mean(x))
+```
+
+ <br/> <br/>
+ 
+ ## Mediana : 
+
+**Me** :Es el número que divide la muestra en dos partes de igual proporción (50% : 50%). Es decir que corresponde a:
+
+$P_{50} = D_{5} = Q_{2}$
+
+también corresponde a la linea central del diagrama de cajas.
+
+```{r}
+median(bd0052$promacum,na.rm = TRUE)
+```
+
+ <br/> <br/>
+ 
+```{r, warning=FALSE, message=FALSE, fig.height=3, fig.width=7}
+boxplot(bd0052$promacum, las=1, horizontal = TRUE, col = c1)
+```
+ 
+ <br/> <br/>
+ 
+La **Me** corresponde a la linea central de a caja en el diagrama de cajas
+
+
+La mediana es mas robusta a los cambio en los datos extremos. En presencia de datos atípicos es mejor utilizar la mediana en lugar que la media.
+
+```{r}
+x=1:10
+x
+cat("media :" ,median(x))
+```
+
+ <br/> <br/>
+ 
+```{r}
+x[10]=20
+x
+cat("media :" ,median(x))
+```
+
+ <br/> <br/>
+
+### **La moda**  
+
+**Mo** : Dato o valor que más se repite. Es utilizada como medida de tendencia central en variables cualitativas o o en cuantitativas discretas con pocos valores. En una tabla o  gráfico se puede distinguir fácilmente. 
+
+```{r, message=FALSE}
+#utilizando summarytools
+library(summarytools)
+t1=freq(bd0052$carrera, cumul = FALSE, headings = FALSE)
+t1
+```
+
+moda : **Ingeniería Civil**
+
+
+### **Otras medidas de centro**
+
+### **Media truncada**
+
+```{r, warning=FALSE, message=FALSE}
+
+mean(bd0052$promacum, na.rm = TRUE, trim = 0.10)
+```
+
+### **Rango medio**  
+
+$\frac{1}{2}(max(x)+min(x))$
+
+
+```{r, warning=FALSE, message=FALSE}
+(max(bd0052$promacum,na.rm = TRUE)+min(bd0052$promacum,na.rm = TRUE))/2
+```
+
+###  **Media geométrica** 
+
+este indicador de tendencia central se utiliza para promediar tasa de crecimiento o de interes. Para encontar su valor se multiplican los valores de $n$ tasas incrementadas en uno. A ese producto se le extrae la raiz n-esima.
+
+###  **Media armónica**  
+
+Este indicador corresponde al inverso de la media aritmética 
+
+
+
+
+### **Problema reconocimiento de grupo**
+
+|                             |                                    |
+|:----------------------------|:-----------------------------------|
+|**Grupo 1**                  |**Grupo 2**                         | 
+|Edades : 19, 22, 18, 21      |Edades : 39, 38, 2, 1               |
+|Promedio : 20 años           |Promedio : 20 años                  |
+|                             |                                    |
+
+<img src="img/grupos.png" width="700">
+
+
+Hace falta otro indicador que nos oriente de cual grupo hablamos cuando solo tenemos como informacion : media = 20 años.
+
+## **Indicadores de Dispersión**
+
+### **Rango**
+
+$r = max(x) - min(x)$
+
+En caso de los dos grupos:
+
+|**Grupo 1**                  | **Grupo 1**                        |
+|:----------------------------|:-----------------------------------|
+|$\bar{x} = 20$ años          |$\bar{x} = 20$ años                 |
+|$r = 4$ años                 |$r = 38$ años                       |  
+|                             |                                    |
+  
+Indicador muy útil cuando se deben realizar cálculos rápidos
+
+
+### **Varianza**
+
+Es la medida de dispersión más utilizada en estadística y está definida por 
+
+$$s^{2}=\frac{1}{n-1} \sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$$
+
+
+#### **Propiedades de la varianza**
+
++ $s^{2} = \frac{1}{n} \sum x_{i}^{2}- (\bar{x})^{2}$ 
+
++ La varianza es siempre no negativa  $s^{2} >=0$
+
++ La varianza de una constante es cero $s_{k}^{2}=0$
+
++ Si $y_{i}=k x_{i}$, entonces $s_{y}^{2}= k^{2} s_{x}$
+
++ Si $y_{i}=x_{i} + k$ , entonces  $s_{y}^{2} = s_{x}$
+
++ Si $z_{i} = a x_{i} + b y_{i}$, entonces $s_{z}^{2}$ = $a^{2}s_{x}^{2}$ + $b^{2}s_{y}^{2}$ + $2ab$ $cov(xy)$
+
+La varianza se puede interpretar como el promedio de las diferencias cuadradas entre cada uno de los datos y la media
+
+El problema de la varianza es su **interpretación**
+
+Sus unidades son al cuadrado y en la mayoría de los casos no es posible interpretarlos. Por esta razón se optó por utilizar otra mediada de dispersión
+
+### **Desviación estándar** 
+
+Es la raíz cuadrada de la varianza
+
+$$s=\sqrt{s^{2}}$$
+
+**Nota** : no aplican todas las propiedades de la varianza
+
+```{r}
+cat( "Varianza :",var(bd0052$promacum) )
+cat("Desviación estándar :",sd(bd0052$promacum))
+```
+Aunque la desviacion estandar reduce el problema dibido a tener las mismas unidades de la variable, es util para compacion de dos grupos
+
+
+### **Coeficiente de variación**
+
+Nos indica que tan grande o que tan pequeña es la desviación estándar con respecto a su media
+
+$$CV= \dfrac{s}{\bar{x}} \times 100 \% $$
+
+Existen diferentes reglas empíricas para la interpretación del coeficiente de variación. Una de ellas establece como límite el 20% para separar los grupos homogéneos de los heterogéneos Por lo general se utiliza un valor hasta el 20% para determinar que un grupo de datos son homogéneos, de lo contrario se calificará como heterogéneo.
+
+```{r}
+cat("Coeficiente de variación :",sd(bd0052$promacum)/mean(bd0052$promacum)*100)
+```
+
+
+## **Indicadores de forma**
+
+### **Curtosis**
+
+Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a la curva de la distribución normal entandar.
+
+De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres grupos:
+
++ **Leptocúrtica**, con valores grandes para el coeficiente (CA>0)
+
++ **Mesocúrtica**, con valores medianos para el coeficiente (CA=0)
+
++ **Platicútrica**, con valores pequeños para el coeficiente (CA<0) 
+
+<img src="img/curtosis.png" width="500">
+
+
+### **Asimetría o sesgo**
+
+Mide que tanto la forma de la distribución de frecuencias de los datos es simétrica o no con respecto a la media. Esta característica de los datos se mide a través del coeficiente de asimetría o sesgo.
+
++ Es **simétrica** si el  valor del indicador es 0  ($\bar{x}=Me$)
+
++ Es **asimétrica a la izquierda** si el valor del indicador es negativo ($\bar{x}<Me$)
+
++ Es **asimétrica a la derecha** si el valor del indicador es positivo ($\bar{x}>Me$)
+
+<img src="img/asimetria.png" width="700">
+
++ **Asimetria negativa ** : Poco con poco, mucho con mucho
++ **Simetrica** : Poco con poco, poco con mucho, mucho al rededor de un centro
++ **Asimetria positiva** : Mucho con poco, poco con mucho
+
+
+
+```{r, message=FALSE, warning=FALSE}
+bd0052=read_excel("data/bd0052.xlsx", sheet = "base20211",col_types = c("numeric", "numeric", "text", "text", "numeric", "numeric", "text", "numeric")); bd0052$carrera[bd0052$carrera=="Biologia"]="Biología"
+summarytools::descr(bd0052$promacum)
+
+```
+
+
+
+```{r}
+summarytools::descr(mtcars$mpg)
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+d1=density(bd0052$promacum, na.rm=TRUE); plot(d1)
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+data("mtcars")
+d2=density(mtcars$mpg); plot(d2)
+
+```
+
+
+ <br/> <br/>
+ 
+## Actividades
+
+<br/>
+
++ **Actividad 1** : Realice las  actividades consignadas en  el **Taller 1-01**.  Adjunte y envíe las respuesta a la plataforma de Brightspace en  formato pdf.
+    + **Nota**: RMarkdown permite realizar el trabajo fácilmente
+
+<br/>
+
++ **Actividad 2** : A partir de la  información contenida en  la base de datos  seleccionada en la **Unidad 1.1**, realice un análisis de al menos una variable cualitativa y una cuantitativa teniendo como soportes las tablas de frecuencia y los indicadores estadísticos correspondiente.
+
+<br/><br/><br/>
+
+<img src="img/person-1245959_1920.jpg" width="1000">
+
+### **Lo podemos lograr...**
+#### Daniel Enrique González Gómez 
+
+Imagen tomada de : https://pixabay.com/es/images/search/paisaje/
+
+
+
+
 
 
 

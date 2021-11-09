@@ -197,30 +197,37 @@ des
 
 
 ## **Metodología estadística**
+
 <br/><br/>
 
 Una forma de abordar el curso de Probabilidad y Estadística e mediante la metodolgía estadística, que al igual que el método cientifico está conformada por una serie de etapas que van desde la definición del problema hasta la escritura del informe final con las conclusiones y recomendaciones.
 
-1. Definición del problema
+<br/>
 
-2. Definición de los objetivos
+    1. Definición del problema
 
-3. Definición de las variables de interés
+    2. Definición de los objetivos
 
-4. Diseño del experimento
+    3. Definición de las variables de interés
 
-5. Recolección de la información
+    4. Diseño del experimento
 
-6. Procesamiento de los datos
+    5. Recolección de la información
 
-7. Análisis descriptivo
+    6. Procesamiento de los datos
 
-8. Inferencia estadística
+    7. Análisis descriptivo
 
-9. Conclusiones y recomendaciones
+    8. Inferencia estadística
+
+    9. Conclusiones y recomendaciones
+
+<br/><br/>
+
 
 La descripción de cada una de ellas se presenta a continuación: 
 
+<br/>
 
 <html>
 <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/panel-loader-low.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="5f1ba8da1829700da368b4ab" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
@@ -229,9 +236,13 @@ La descripción de cada una de ellas se presenta a continuación:
 
 <br/><br/>
 
-Para abordar las primeras etapas se plantea la **actividad 101*, donde se plantea la necesidad de definir un prolema, definir unos objetivos y determinar las variables que serán empleadas para poder cumplir con los objetivos planteados.
+Para abordar las primeras etapas se plantea la **actividad 101**, donde se plantea la necesidad de definir un prolema, definir unos objetivos y determinar las variables que serán empleadas para poder cumplir con los objetivos planteados.
+
+<br/>
 
 Continuaremos con una parte importante de esta metodología que está relacionada con la obtención de la información y la construcción de la base de datos.
+
+<br/>
 
 ## **Base de datos**
 
@@ -244,7 +255,9 @@ Continuaremos con una parte importante de esta metodología que está relacionad
 
 Una base de datos en estadística es un conjunto de información relacionada con una población organizada en filas y columnas. Las columnas corresponden a las variables y las filas están relacionadas con los individuos u objetos de estudio.  
 
-Es importente indicar que variables como: número de la encuesta, número de identificación, telefono, dirección, entre otros, no constituyen variables estadística, auque pueden ser utilzadas para la identificación de la persona u objeto  de donde proviene la información. 
+<br/>
+
+Es importente indicar que variables como: número de la encuesta, número de identificación, teléfono, dirección, entre otros, no constituyen variables estadística, aun que pueden ser utilzadas para la identificación de la persona u objeto  de donde proviene la información. 
 
 <br/>
 
@@ -252,17 +265,19 @@ Existen repositorio de bases de datos para uso general como:
 
 <br/>
 
-+ dataset en RStudio
+* dataset en RStudio
 
-+ [Portal Bases de datos abiertos Colombia](https://www.datos.gov.co/)
+* [Portal Bases de datos abiertos Colombia](https://www.datos.gov.co/)
 
-+ [Datos Banco mundial](https://datos.bancomundial.org/)
+* [Datos Banco mundial](https://datos.bancomundial.org/)
 
-+ [Portal de Datos Abiertos de Esri España](https://opendata.esri.es/)
+* [Portal de Datos Abiertos de Esri España](https://opendata.esri.es/)
 
 <br/><br/>
 
 **Base datos iris (dataset R)**
+
+<br/>
 
 ```{r ,warning=FALSE, message=FALSE}
 head(iris)
@@ -288,25 +303,25 @@ Una base de datos en estadística es un conjunto de información relacionada con
 
 Existen repositorio de bases de datos para uso general
 
-+ dataset en RStudio
+* dataset en RStudio (bases de datos dentro de los paquetes de R)
 
-+ [Portal Bases de datos abiertos Colombia](https://www.datos.gov.co/)
+* [Portal Bases de datos abiertos Colombia](https://www.datos.gov.co/)
 
-+ [Datos Banco mundial](https://datos.bancomundial.org/)
+* [Datos Banco mundial](https://datos.bancomundial.org/)
 
-+ [Portal de Datos Abiertos de Esri España](https://opendata.esri.es/)
+* [Portal de Datos Abiertos de Esri España](https://opendata.esri.es/)
 
-+ [kaggle](https://www.kaggle.com)
+* [kaggle](https://www.kaggle.com)
 
-+ [FiveThirtyEight](https://data.fivethirtyeight.com/)
+* [FiveThirtyEight](https://data.fivethirtyeight.com/)
 
-+ [Datos abiertos Cali](https://datos.cali.gov.co/)
+* [Datos abiertos Cali](https://datos.cali.gov.co/)
 
-+ [The home of the U.S. Government’s open data](https://www.data.gov/)
+* [The home of the U.S. Government’s open data](https://www.data.gov/)
 
-+ [World Bank Open Data] (https://data.worldbank.org/)
+* [World Bank Open Data](https://data.worldbank.org/)
 
-+ [Open data initiative of the Government of Spain](https://datos.gob.es/en)
+* [Open data initiative of the Government of Spain](https://datos.gob.es/en)
 
 
 Open Data Barometer : https://opendatabarometer.org/4thedition/report/?lang=es]
@@ -324,12 +339,14 @@ DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength =
 
 ```{r }
 var1=c(4,5,6)
-DT::datatable(head(bd0052[var1],53),fillContainer = FALSE, options = list(pageLength = 8))
+DT::datatable(head(bd0052[var1],53),fillContainer = FALSE, options = list(pageLength = 10))
 ```
 
 <br/><br/>
 
 ## **Etapas del proceso de datos**
+
+<br/>
 
 Las siguientes etapas comprenden el ciclo de los datos desde la importación hasta la comunicación. Estas etapas suceden al interior de la Metodología Estadística antes mencionada y constituyen una parte muy importante del proceso, pues de la calidad de los datos, depende la calidad de los resultados.
 
@@ -339,6 +356,7 @@ Las siguientes etapas comprenden el ciclo de los datos desde la importación has
 
 Imagen tomada de : https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/
 
+<br/><br/>
 
 Utilizaremos para este proceso el lenguaje estadístico **R** , bajo **RStudio**
 
@@ -351,29 +369,32 @@ Utilizaremos para este proceso el lenguaje estadístico **R** , bajo **RStudio**
 ###  **Origen de los datos**
 
 <br/>
-+ Encuesta personal (datos primarios)
 
-+ Online
+Los datos pueden proceder de diferentes fuentes (tanto primarias como secundarias), dentro de las cuales pueden ser:
 
-+ Entrevista cara a cara
+<br/>
 
-+ Entrevista telefónica
+* Encuesta personal (datos primarios)
 
-+ Investigación propia      
+* Online ( utilizando sistemas como REDCap, Office 365 - forms)
 
-+ Sistema automático de recolección de datos
+* Entrevista cara a cara
 
-+ Fuente externa (datos secundarios)
+* Entrevista telefónica
 
-+ DANE
+* Investigación propia ( observaciones en laboratorios)      
 
-+ Cámara de Comercio
+* Sistema automático de recolección de datos ( webscraping)
 
-+ Agremiaciones
+* Fuente externa (datos secundarios : bases de datos abiertos)
 
-+ Bancos de datos abiertos
+* DANE (o entidades gubernamentales)
 
-+ Otros medios...
+* Cámara de Comercio
+
+* Agremiaciones (observatorios de gremios)
+
+* Bancos de datos abiertos
 
 <br/><br/>
 
@@ -424,69 +445,11 @@ Las bases de datos debe estar acompañadas de una ficha técnica donde si indica
 
 <br/><br/><br/>
 
-## **Entornos R - RStudio**
-
-A continuación se dará un breve introducción al programa R y RStudio (complementadas con Introducción a R en el Menú : < Código R >)
-<br/>
-
-![](img/RRStudio.jpeg)
-
-<br/>
-
-*RStudio es un entorno de desarrollo integrado para R, un lenguaje de programación para gráficos y computación estadística. Está disponible en dos formatos: RStudio Desktop es una aplicación de escritorio normal, mientras que RStudio Server se ejecuta en un servidor remoto y permite acceder a RStudio mediante un navegador web.* Wikipedia
-
-<br/>
-
-**R** 
-
-<br/>
-
-El entorno de R consiste en una terminal donde se digitan los códigos de R requidiros para realizar los distintos proceso
-
-![](img/R_terminal.png)
-
-<br/>
-
-**RStudio**
-
-Tambien existe otro entorno con más elemento que permite una mejor interacción con el lenguaje
-
-<br/>
-
-![](img/VRStudio.png)
-
-<br/>
-
-Este entorno está conformado por ventanas con diferentes funciones:
-
-
-|   |    ventana    |  función                                      |
-|:--|:--------------|:----------------------------------------------|
-|1. | Rscrip        | escritura de código R para guardarlo          |
-|2  | Consola       | escritura de código                           |
-|   | Terminal      |                                               |
-|   | R Mardown     | visualización de proceso RMarkdown            |
-|   | Jobs          |                                               | 
-|3  | Environment   | visualización de variables en memoria         |
-|   | History       | visualización de códigos anteriores           |
-|   | Connections   |                                               |
-|   | Build         |ejecutar código Rmd                            |
-|   | Git           |realizar proceso de subida código a GitHub     |
-|   | Tutorial      |visualización de tutoriales                    |
-|4  | Files         |visualización de archivos y directorio local   |
-|5  | Plot          |visualización de gráficos                      |
-|6  | Packages      |cargar paquetes                                |
-|7  | Help          |ayudas de sintaxis con ejemplos                |
-|   | Viewer        |visualización de resultados como paginas html  |
-|   |               |                                               |
-
-
-
-<br/><br/>
-
 ## **Importar bases de datos**
 
-Los datos se pueden importar de diferentes fornas :
+<br/>
+
+Los datos se pueden importar de diferentes formas :
 
 <br/>
 
@@ -503,6 +466,8 @@ Los datos se pueden importar de diferentes fornas :
 <br/><br/>
 
 ### **Importar datos desde la dataset de R**
+
+<br/>
 
 ```{r, echo=TRUE, warning=FALSE, message=FALSE}
 data("mtcars")
@@ -540,6 +505,7 @@ bd0052=bd0052[,var1]
 head(bd0052, n=3)
 ```
 
+<br/>
 
 Otro ejemplo para importar una base de datos en formato csv :
 
@@ -554,11 +520,6 @@ library(DT)
 clasificacion=read.csv("data/spi_global_rankings_intl.csv")
 DT::datatable(head(clasificacion, 218),fillContainer = FALSE, options = list(pageLength = 3))
 ```
-
-
-
-
-
 
 <br/><br/>
 
