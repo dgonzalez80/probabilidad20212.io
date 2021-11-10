@@ -379,7 +379,7 @@ fig
 fig=ggplot(data=casas,  aes(x=area.con , y=precio)) + geom_point() +
         facet_wrap(~ mes) + 
         stat_smooth(method = "loess" , formula =y ~ x) +
-        coord_cartesian(xlim = c(1500,3000))
+        coord_cartesian(xlim = c(150,300))
 fig
 ```
 
@@ -392,7 +392,7 @@ fig
 fig=ggplot(data=casas,  aes(x=area.con , y=precio)) + geom_point() +
         facet_wrap(~ mes) + 
         stat_smooth(method = "loess" , formula =y ~ x) +
-        coord_cartesian(xlim = c(1500,3000)) +
+        coord_cartesian(xlim = c(150,300)) +
         theme_classic()
 fig
 ```
@@ -470,7 +470,7 @@ Gran parte de los gráficos se realizan con la función : ** hchart() ** que es 
 Inicialmente se instala el paquete por una única vez
 
 ```{r, eval=FALSE}
-install.packages("highcharter")
+# install.packages("highcharter")
 ```
 
 Luego se carga para utilizar sus funciones
@@ -481,7 +481,7 @@ library(highcharter)
 
 
 ```{r, message=FALSE,warning=FALSE}
-hchart(casas, "scatter", hcaes(x = precio, y = areaconst, group = mes)) %>%
+hchart(casas, "scatter", hcaes(x = precio, y = area.con, group = mes)) %>%
   hc_title(text = "Precio por área construida") 
 ```
 ```{r}

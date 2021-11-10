@@ -186,6 +186,7 @@ barplot(counts, main="Numero de cambios adelante por Tipo de motor",  xlab="Nume
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 stem(nf)
 ```
+Este diagrama ordena los datos de manera que se puede determinar tanto en mínimo (1.6) como el máximo (4.3) , además de visualizar donde están la mayor concentración de ellos.
 
 
 ### **Histograma**
@@ -195,6 +196,9 @@ h1=hist(nf, main = "Nota final matemáticas fundamentales", xlab = "nota", ylab=
 abline(v=3,col="red")
 grid()
 ```
+
+
+
 
 <br/><br/>
 
@@ -270,6 +274,8 @@ https://rextester.com/CBC3320 <br/>
 https://rextester.com/KBQL21515 <br/>
 https://rdrr.io/snippets/
     
+
+<br/><br/><br/>
 
 
 ## **Gráficos con ggplot2**
@@ -430,7 +436,7 @@ https://plotly-r.com/
 + [Galeria](https://shiny.rstudio.com/gallery/)
 
 
-### RMarkdown
+### **RMarkdown**
 
 [RMarkdown resumen](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)<br/>
 
