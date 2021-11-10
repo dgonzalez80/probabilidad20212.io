@@ -496,6 +496,9 @@ div.tocify {
     <li>
       <a href="codigo501.html">Código u5.1</a>
     </li>
+    <li>
+      <a href="codigo502.html">Código u5.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -795,10 +798,10 @@ e=1 # año
 n=(za1.2)^2*(s2.edad)/(e^2)
 
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>[1] 1680</code></pre>
+<pre><code>[1] 1812</code></pre>
 <pre class="r"><code>library(paquetepye)
 nmu(qnorm(0.99),s2.edad,1)</code></pre>
-<pre><code>[1] 1679.629</code></pre>
+<pre><code>[1] 1812.28</code></pre>
 <p><br/><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción" class="section level3">
@@ -1206,12 +1209,12 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
 <pre><code>    2.5%    97.5% 
-4.741321 6.424536 </code></pre>
+4.725607 6.460250 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
 <pre><code>   97.5%     2.5% 
-4.614701 6.297916 </code></pre>
+4.618787 6.353430 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)
@@ -1220,10 +1223,10 @@ abline(v=ic2, col=&quot;blue&quot;)</code></pre>
 <p>Como se puede observar, el segundo estimador corrige el intervalo</p>
 <p><br/><br/><br/><br/></p>
 </div>
-</div>
-<div id="conceptos" class="section level1">
-<h1><strong>Conceptos</strong></h1>
+<div id="conceptos" class="section level2">
+<h2><strong>Conceptos</strong></h2>
 <p><br/><br/></p>
+</div>
 <div id="confianza" class="section level2">
 <h2><strong>Confianza</strong></h2>
 <p>Para explicar el concepto de confianza se simula 100 intervalos para la estimación de una media con valor de <span class="math inline">\(\mu=100\)</span>, como se ve en la gráfica no todos los intervalos (representados por una línea) contienen el valor del parámetro, solo de color negro lo contiene.</p>
@@ -1238,9 +1241,8 @@ abline(v=ic2, col=&quot;blue&quot;)</code></pre>
 <p>Como ejemplo supongamos que tenemos una muestras de datos formado por : <span class="math inline">\(X_{1}\)</span>,<span class="math inline">\(X_{2}\)</span>,<span class="math inline">\(X_{3}\)</span>,<span class="math inline">\(X_{4}\)</span>,<span class="math inline">\(X_{5}\)</span>. Con media <span class="math inline">\(\mu\)</span>. En este caso tendremos <span class="math inline">\(n-1\)</span> grados de libertad dado que conocemos el valor de la media en este caso. Es decir que tendríamos libertad de asignar 4 de los valores de la muestra, dado que el último estaría determinado por el valor de la media.</p>
 <p><br/><br/><br/><br/></p>
 </div>
-</div>
-<div id="formulario" class="section level1">
-<h1><strong>Formulario</strong></h1>
+<div id="formulario" class="section level2">
+<h2><strong>Formulario</strong></h2>
 <table>
 <colgroup>
 <col width="2%" />
@@ -1332,6 +1334,7 @@ abline(v=ic2, col=&quot;blue&quot;)</code></pre>
 </tbody>
 </table>
 <p><br/><br/><br/></p>
+</div>
 <div id="tamaño-de-muestra" class="section level2">
 <h2><strong>Tamaño de muestra</strong></h2>
 <p><br/><br/></p>
@@ -1431,15 +1434,14 @@ Donde:</p>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
-</div>
-<div id="video" class="section level1">
-<h1><strong>Video</strong></h1>
+<div id="video" class="section level2">
+<h2><strong>Video</strong></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5y7MJiPXIjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p><br/><br/><br/><br/></p>
 </div>
-<div id="tutorial" class="section level1">
-<h1><strong>Tutorial</strong></h1>
+<div id="tutorial" class="section level2">
+<h2><strong>Tutorial</strong></h2>
 <p><br/><br/></p>
 <p>El siguiente código permite la activación de tutorial <br/><br/></p>
 <pre class="r"><code>install.packages(&quot;learnr&quot;) # solo una vez
@@ -1447,6 +1449,7 @@ install.packages(&#39;remotes&#39;)  # solo una vez
 library(remotes) # solo una vez
 install_github(&quot;dgonzalez80/paquetepye&quot;, force = TRUE) # solo una vez
 learnr::run_tutorial(&quot;Taller_Intervalos&quot;, &quot;paquetepye&quot;)</code></pre>
+</div>
 </div>
 
 

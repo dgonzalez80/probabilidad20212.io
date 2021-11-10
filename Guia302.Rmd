@@ -674,14 +674,14 @@ $$f(x,y)= g(x) h(y) $$
 
 <br/><br/><br/>
 
-# **Solución Taller 321**
+## **Solución Taller 321**
 
 ![](img/Taller301.png)
 [**Solución**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/Taller301.pdf)
 
 <br/><br/><br/>
 
-# **Solución Taller 322**
+## **Solución Taller 322**
 
 <br/><br/>
 
@@ -737,7 +737,7 @@ d) Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos d
 
 <br/><br/><br/>
 
-# **Videos**
+## **Videos**
 
 <br/><br/>
 

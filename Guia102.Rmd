@@ -35,7 +35,7 @@ knitr::include_url("tex/modulo1/unidad12/Guia_de_aprendizaje_102.pdf", height="6
 ```
 
 
-## **Guía de aprendizaje 1.2**
+# **Guía de aprendizaje 1.2**
 
 
 ![](img/baner1.png)
@@ -626,7 +626,7 @@ d2=density(mtcars$mpg); plot(d2)
 
  <br/> <br/>
  
-## Actividades
+## **Actividades**
 
 <br/>
 

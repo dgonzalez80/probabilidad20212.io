@@ -708,7 +708,7 @@ Como se puede observar, el segundo estimador corrige el intervalo
 
 <br/><br/><br/><br/>
 
-# **Conceptos**
+## **Conceptos**
 
 <br/><br/>
 
@@ -733,7 +733,7 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 
 <br/><br/><br/><br/>
 
-# **Formulario**
+## **Formulario**
 
 |   |**parámetro** |**Estimador por IC **                                                            | **Supuestos** |
 |:-:|:------------:|:-------------------------------------------------------------------------------:|:---------------------:|
@@ -826,14 +826,14 @@ $$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 <br/><br/><br/><br/>
 
 
-# **Video**
+## **Video**
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5y7MJiPXIjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/><br/><br/><br/>
 
-# **Tutorial**
+## **Tutorial**
 
 <br/><br/>
 

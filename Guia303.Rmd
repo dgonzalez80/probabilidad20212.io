@@ -113,7 +113,9 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/><br/><br/>
 
-# **Modelos especiales**
+# **Recursos**
+
+## **Modelos especiales**
 
 <br/><br/>
 
@@ -145,7 +147,7 @@ Fuente: construcción propia. basado en Univariate Distribution Relationships  (
 
 <br/><br/>
 
-# **Algunos modelos discretos**	
+## **Algunos modelos discretos**	
 
 <br/>
 
@@ -656,7 +658,7 @@ ggplot(dat) + geom_point(aes(x, fx),colour = "orange", size = 3) +
 $$E[X]=\dfrac{3}{0.0005}= 6000 $$
 <br/><br/>
 
-# **Algunos modelos continuos**
+## **Algunos modelos continuos**
 
 Las variables continuas proceden en su mayoría de la medición y se clasifican así debido a que su rango esta formado por un conjunto infinito no numerable. A continuación se presentan los principales modelos continuos.
 

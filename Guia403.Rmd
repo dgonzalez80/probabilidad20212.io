@@ -241,7 +241,7 @@ No es posible minimizar simultáneamente, las probabilidades de los errores tipo
 
 <br/><br/><br/><br/>
 
-# **Pruebas paramétricas**
+## **Pruebas paramétricas**
 
 Se llaman pruebas de hipótesis metrificaras debido a que para su realización se deben verificar el cumplimiento de supuestos sobre parámetros. 
 
@@ -647,7 +647,7 @@ Como el valor-p ( 0.4896) es mayor al nivel de significancia, no se rechaza la h
 
 <br/><br/><br/><br/>
 
-# **Pruebas no paramétricas**
+## **Pruebas no paramétricas**
 
 Hasta el momento nos hemos dedicado a la estadística parametrica, que exige la estimación de parámetros y de la comprobación de supuestos sobre las distribuciones de las variables, como por ejemplo que se distribuyan normal.
 
@@ -1021,7 +1021,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 <br/><br/><br/><br/>
 
-# **Resumen**
+## **Resumen**
 
 <br/><br/>
 
@@ -1066,7 +1066,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 ![](img/pruebas.png)
 <br/><br/>
 
-# **Código R**
+## **Código R**
 
 |                   |                                                          |
 |:------------------|:---------------------------------------------------------|
@@ -1125,7 +1125,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 
 
-# **Videos**
+## **Videos**
 
 <br/><br/>
 
@@ -1138,7 +1138,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 ## **Video no paramétricas**
 <iframe width="560" height="315" src="https://www.youtube.com/embed/m3YIdS2TVHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-# **Tutorial**
+## **Tutorial**
 
 <br/><br/>
 

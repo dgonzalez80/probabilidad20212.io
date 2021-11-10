@@ -288,7 +288,7 @@ En este caso la probabilidad es valorada y asignada por un EXPERTO, como un méd
 
 <br/><br/>
 
-## **2.3 Axiomas de  probabilidad**
+## **Axiomas de  probabilidad**
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 

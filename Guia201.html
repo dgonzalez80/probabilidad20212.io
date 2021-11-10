@@ -496,6 +496,9 @@ div.tocify {
     <li>
       <a href="codigo501.html">Código u5.1</a>
     </li>
+    <li>
+      <a href="codigo502.html">Código u5.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -795,16 +798,16 @@ div.tocify {
 <p>Otro ejemplo puede estar relacionado con la probabilidad de muerte por Covid en Colombia. Es de aclarar que esta probabilidad no se mantiene constante a través del tiempo pues los efectos causados por la vacunación y su evolución hacen que esta probabilidad cambie. Por fines prácticos tomaremos la base total de colombianos infectados desde marzo del 2019 como denominador y como numerador el numero total de muertos</p>
 <pre class="r"><code>Colombia=readRDS(&quot;data/Colombia.RDS&quot;)
 summarytools::freq(Colombia$ubicacion, cumul = FALSE)</code></pre>
-<pre><code>## Frequencies  
-## 
-##                         Freq   % Valid   % Total
-## ------------------ --------- --------- ---------
-##               casa   4803358     97.26     96.90
-##          fallecido    126299      2.56      2.55
-##           hospital      7950      0.16      0.16
-##       hospital uci       993      0.02      0.02
-##               &lt;NA&gt;     18677                0.38
-##              Total   4957277    100.00    100.00</code></pre>
+<pre><code>Frequencies  
+
+                        Freq   % Valid   % Total
+------------------ --------- --------- ---------
+              casa   4803358     97.26     96.90
+         fallecido    126299      2.56      2.55
+          hospital      7950      0.16      0.16
+      hospital uci       993      0.02      0.02
+              &lt;NA&gt;     18677                0.38
+             Total   4957277    100.00    100.00</code></pre>
 <p>Con base en esta tabla podríamos pensar que la probabilidad de que una persona muera a causa del Covid es de 0.02525. Valor que se obtiene al dividir el número de personas fallecidas y el número total de personas que se han contraído covid. Claro bajo el supuesto de que todos las personas tenemos la misma probabilidad de fallecer. Hecho que se discutirá mas adelante.</p>
 <p><br/><br/></p>
 <div id="enfoque-subjetivo" class="section level3" style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
@@ -814,7 +817,7 @@ summarytools::freq(Colombia$ubicacion, cumul = FALSE)</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="axiomas-de-probabilidad" class="section level2">
-<h2><strong>2.3 Axiomas de probabilidad</strong></h2>
+<h2><strong>Axiomas de probabilidad</strong></h2>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
 <ul>
 <li><p><span class="math inline">\(A_{1}\)</span> : Sea <span class="math inline">\(S\)</span> un espacio muestral asociado a un experimento. Entonces <span class="math inline">\(P(S)=1\)</span></p></li>
