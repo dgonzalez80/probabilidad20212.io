@@ -33,9 +33,6 @@ bd0052 <- read_csv("data/datapye20212.csv")
 
 # **Guía de aprendizaje 1.1**
 
-```{r,eval=FALSE, echo=FALSE, out.width="100%", fig.cap=""}
-knitr::include_url("pdf/Guia_de_aprendizaje_101.pdf", height="1000px")
-```
 
 ![](img/baner1.png)
 
@@ -330,7 +327,7 @@ Open Data Barometer : https://opendatabarometer.org/4thedition/report/?lang=es]
 
 
 ```{r }
-DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength = 8))
+DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength = 10))
 ```
 
 **Base de datos estudiantes Probabilidad y Estadistica 2021-2**
@@ -518,7 +515,7 @@ Otro ejemplo para importar una base de datos en formato csv :
 ```{r, echo=TRUE, warning=FALSE, message=FALSE, results='hide'}
 library(DT)
 clasificacion=read.csv("data/spi_global_rankings_intl.csv")
-DT::datatable(head(clasificacion, 218),fillContainer = FALSE, options = list(pageLength = 3))
+datatable(head(clasificacion, 218),fillContainer = FALSE, options = list(pageLength = 3))
 ```
 
 <br/><br/>
@@ -538,7 +535,6 @@ Cargar la base de datos de COVID-19 Colombia
 ```{r, eval=FALSE}
 # install.packages("RSocrata")
  library(RSocrata)
-
  token ="ew2rEMuESuzWPqMkyPfOSGJgE"
  Colombia= read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token)
  saveRDS(Colombia,"data/Colombia.RDS")
