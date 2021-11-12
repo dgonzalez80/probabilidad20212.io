@@ -1058,6 +1058,14 @@ Nota : para verificar los supuestos S3 y S4 se requiere descargar el paquete : `
 
 ## **Tutorial**
 
+Con el siguiente código en R , podrán abrir un tutorial con problemas propuestos sobre el tema. Es necesario para ello abrir la consola de R o RStudio y correr el código
+
+Si ya se tienen instalados los paquetes `learnr` y `remotes`, no es necesario hacerlo nuevamente. 
+
+El paquete `paquetepye` si debe ser instalado cada vez que sea utilizado con el fin de incorporar nuevas actualizaciones
+
+**Taller regresion1**
+
 ```{r, eval=FALSE}
 # se deben instalar los pquetes en caso de no haberlo hecho antes
 install.packages("learnr") # solo una vez
@@ -1073,7 +1081,7 @@ learnr::run_tutorial("Taller_regresion2", "paquetepye") # correr instructivo 2 (
 ```
 
 
-
+**Taller regresion2**
 
 ```{r, eval=FALSE}
 # codigo para cargar instructivo Taller_regresion1

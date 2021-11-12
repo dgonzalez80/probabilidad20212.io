@@ -1869,6 +1869,10 @@ predict(object=regresion, newdata=nuevo, interval=&quot;predict&quot;, level=0.9
 </div>
 <div id="tutorial" class="section level2">
 <h2><strong>Tutorial</strong></h2>
+<p>Con el siguiente código en R , podrán abrir un tutorial con problemas propuestos sobre el tema. Es necesario para ello abrir la consola de R o RStudio y correr el código</p>
+<p>Si ya se tienen instalados los paquetes <code>learnr</code> y <code>remotes</code>, no es necesario hacerlo nuevamente.</p>
+<p>El paquete <code>paquetepye</code> si debe ser instalado cada vez que sea utilizado con el fin de incorporar nuevas actualizaciones</p>
+<p><strong>Taller regresion1</strong></p>
 <pre class="r"><code># se deben instalar los pquetes en caso de no haberlo hecho antes
 install.packages(&quot;learnr&quot;) # solo una vez
 install.packages(&#39;remotes&#39;)  # solo una vez
@@ -1880,6 +1884,7 @@ install_github(&quot;dgonzalez80/paquetepye&quot;, force = TRUE) # bajar paquete
 learnr::run_tutorial(&quot;Taller_regresion1&quot;, &quot;paquetepye&quot;) # correr instructivo 1
 
 learnr::run_tutorial(&quot;Taller_regresion2&quot;, &quot;paquetepye&quot;) # correr instructivo 2 (se corre uno de los dos !!)</code></pre>
+<p><strong>Taller regresion2</strong></p>
 <pre class="r"><code># codigo para cargar instructivo Taller_regresion1
 library(remotes) 
 library(devtools)  

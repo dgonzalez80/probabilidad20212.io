@@ -327,6 +327,7 @@ Open Data Barometer : https://opendatabarometer.org/4thedition/report/?lang=es]
 
 
 ```{r }
+library(DT)
 DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength = 10))
 ```
 
@@ -335,6 +336,7 @@ DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength =
 <br/>
 
 ```{r }
+library(DT)
 var1=c(4,5,6)
 DT::datatable(head(bd0052[var1],53),fillContainer = FALSE, options = list(pageLength = 10))
 ```

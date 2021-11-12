@@ -1142,7 +1142,10 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 <br/><br/>
 
-El siguiente código permite la activación de tutorial 
+Con el siguiente código en R , podrán abrir un tutorial con problemas propuestos sobre el tema. Es necesario para ello abrir la consola de R o RStudio y correr el código
+
+Si ya se tienen instalados los paquetes `learnr` y `remotes`, no es necesario hacerlo nuevamente. 
+El paquete `paquetepye` si debe ser instalado cada vez que sea utilizado con el fin de incorporar nuevas actualizaciones
 
 <br/><br/>
 
