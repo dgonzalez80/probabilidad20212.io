@@ -125,7 +125,7 @@ summarytools::freq(Colombia$edadR)
 ```
 Esta tabla nos permite identificar los rangos de mayor frecuencia 
 
-Tambien podemo realizar una tabla sin tener que realizar la recodificacion. Esto se logra con la función **hist()**
+Tambien podemo realizar una tabla sin tener que realizar la recodificación. Esto se logra con la función **hist()**
 
 ```{r}
 h=hist(Colombia$edad)

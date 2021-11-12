@@ -277,6 +277,7 @@ Existen repositorio de bases de datos para uso general como:
 <br/>
 
 ```{r ,warning=FALSE, message=FALSE}
+data(iris)
 head(iris)
 ```
 Datos de iris (de Fisher o Anderson) 
@@ -327,18 +328,9 @@ Open Data Barometer : https://opendatabarometer.org/4thedition/report/?lang=es]
 
 
 ```{r }
+data(iris)
 library(DT)
-DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength = 10))
-```
-
-**Base de datos estudiantes Probabilidad y Estadistica 2021-2**
-
-<br/>
-
-```{r }
-library(DT)
-var1=c(4,5,6)
-DT::datatable(head(bd0052[var1],53),fillContainer = FALSE, options = list(pageLength = 10))
+DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength = 8))
 ```
 
 <br/><br/>

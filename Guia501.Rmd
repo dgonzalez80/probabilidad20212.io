@@ -1067,7 +1067,7 @@ El paquete `paquetepye` si debe ser instalado cada vez que sea utilizado con el 
 **Taller regresion1**
 
 ```{r, eval=FALSE}
-# se deben instalar los pquetes en caso de no haberlo hecho antes
+# se deben instalar los paquetes en caso de no haberlo hecho antes
 install.packages("learnr") # solo una vez
 install.packages('remotes')  # solo una vez
 
