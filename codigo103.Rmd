@@ -22,7 +22,7 @@ casas$mes=rep(1:3, each =18 )
 
 # **Introducción**
 
-La visualización de datos es una de partes más importantes del análisis de datos, que permite de manera gráfica representar la información con fines de poder 
+La visualización de datos es una de las partes más importantes del análisis de datos, que permite de manera gráfica representar la información con el fin de poder resumir e interpretarlos 
 
 
 Algunas consideraciones
