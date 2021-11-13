@@ -262,7 +262,7 @@ Existen repositorio de bases de datos para uso general como:
 
 <br/>
 
-* dataset en RStudio
+* [dataset en RStudio](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html)
 
 * [Portal Bases de datos abiertos Colombia](https://www.datos.gov.co/)
 
@@ -301,7 +301,9 @@ Una base de datos en estadística es un conjunto de información relacionada con
 
 Existen repositorio de bases de datos para uso general
 
-* dataset en RStudio (bases de datos dentro de los paquetes de R)
+<br/>
+
+* [dataset en RStudio](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html)   (bases de datos dentro de los paquetes de R)
 
 * [Portal Bases de datos abiertos Colombia](https://www.datos.gov.co/)
 

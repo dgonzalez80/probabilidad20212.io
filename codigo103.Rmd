@@ -906,3 +906,9 @@ En este formato podemos distinguir varias partes :
 ## **Uso de color**
 
 https://r-charts.com/colors/
+
+
+## **Algunos paquetes**
+
+[Selección de paquetes de Sharpm Machis](https://www.computerworld.com/article/2921176/great-r-packages-for-data-import-wrangling-visualization.html)
+
