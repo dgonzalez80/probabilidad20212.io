@@ -285,7 +285,14 @@ Es un número que divide la muestra en dos partes. $x$ % de los datos de la mues
 
 ![](img/carrera.jpg)
 
+ <br/>
+ 
+ Para ilustrar el concepto, pensemos en que participamos de una carrera y que el grupo está conformado por 100 corredores.  El percentil dará cuenta de mi posición dentro del grupo. Por ejemplo si mi posición en la carrera en orden de llegada es la décima, indica que por detrás de mi están 90 atletas. Indica esto que soy el percentil 90 ($P_{90}$).
+ 
  <br/> <br/>
+ 
+ 
+ 
  
 + Participé en una carrera **K10** y ocupé el percentil 30 : $P_{30}$
 
