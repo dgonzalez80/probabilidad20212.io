@@ -12,11 +12,11 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
-
 library(readxl)
-bd0052=read_excel("data/bd0052.xlsx", sheet = "base20211",col_types = c("numeric", "numeric", "text", "text", "numeric", "numeric", "text", "numeric"))
+bd0052 <- read_excel("data/bd0052.xlsx")
+
 bd0052$carrera[bd0052$carrera=="Biologia"]="Biología"
-matrix(bd0052$promacum, ncol = 12)
+matrix(bd0052$acumulado, ncol = 12)
 
 
 # colores
@@ -233,7 +233,7 @@ Para las variables cualitativas la tabla posee 3 columnas :
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # Forma simple
 library(readxl)
-bd0052=read_excel("data/bd0052.xlsx", sheet = "base20211",col_types = c("numeric", "numeric", "text", "text", "numeric", "numeric", "text", "numeric"))
+bd0052 <- read_excel("data/bd0052.xlsx")
 bd0052$carrera[bd0052$carrera=="Biologia"]="Biología"
 data.frame(table(bd0052$carrera))
 ```
@@ -257,7 +257,7 @@ Para las variables cuantitativas las tablas de frecuencias tiene una presentacio
 
 ```{r,  echo=TRUE, message=FALSE, warning=FALSE}
 library(agricolae)
-h2=with(bd0052,graph.freq(promacum,plot=FALSE));t2=table.freq(h2);
+h2=with(bd0052,graph.freq(acumulado,plot=FALSE));t2=table.freq(h2);
 colnames(t2) = c("  LI  ", "  LS  ", "marca clase'", "Frec.Abs","Frec.Rel", "Frec.Abs.Ac","Frec.Rel.Ac")
 t2
 ```
@@ -301,7 +301,7 @@ Es un número que divide la muestra en dos partes. $x$ % de los datos de la mues
  <br/>
  
 ```{r, warning=FALSE, message=FALSE, fig.height=2, fig.width=10.7} 
-library(ggplot2);bd0052[23,5]=5.1; bd0052[24,5]=2.6; ggplot(bd0052, aes(x=promacum))+geom_boxplot()
+library(ggplot2);bd0052[23,5]=5.1; bd0052[24,5]=2.6; ggplot(bd0052, aes(x=acumulado))+geom_boxplot()
 
 
 ```
@@ -366,7 +366,7 @@ mean(mtcars$mpg,na.rm = TRUE)
 Ejemplo2
 
 ```{r}
-mean(bd0052$promacum, na.rm = TRUE)
+mean(bd0052$acumulado, na.rm = TRUE)
 ```
 
  <br/> <br/>
@@ -403,13 +403,13 @@ $P_{50} = D_{5} = Q_{2}$
 también corresponde a la linea central del diagrama de cajas.
 
 ```{r}
-median(bd0052$promacum,na.rm = TRUE)
+median(bd0052$acumulado,na.rm = TRUE)
 ```
 
  <br/> <br/>
  
 ```{r, warning=FALSE, message=FALSE, fig.height=3, fig.width=7}
-boxplot(bd0052$promacum, las=1, horizontal = TRUE, col = c1)
+boxplot(bd0052$acumulado, las=1, horizontal = TRUE, col = c1)
 ```
  
  <br/> <br/>
@@ -455,7 +455,7 @@ moda : **Ingeniería Civil**
 
 ```{r, warning=FALSE, message=FALSE}
 
-mean(bd0052$promacum, na.rm = TRUE, trim = 0.10)
+mean(bd0052$acumulado, na.rm = TRUE, trim = 0.10)
 ```
 
 ### **Rango medio**  
@@ -464,12 +464,12 @@ $\frac{1}{2}(max(x)+min(x))$
 
 
 ```{r, warning=FALSE, message=FALSE}
-(max(bd0052$promacum,na.rm = TRUE)+min(bd0052$promacum,na.rm = TRUE))/2
+(max(bd0052$acumulado,na.rm = TRUE)+min(bd0052$acumulado,na.rm = TRUE))/2
 ```
 
 ###  **Media geométrica** 
 
-este indicador de tendencia central se utiliza para promediar tasa de crecimiento o de interes. Para encontar su valor se multiplican los valores de $n$ tasas incrementadas en uno. A ese producto se le extrae la raiz n-esima.
+este indicador de tendencia central se utiliza para promediar tasa de crecimiento o de interés. Para encontrar su valor se multiplican los valores de $n$ tasas incrementadas en uno. A ese producto se le extrae la raíz n-esima.
 
 ###  **Media armónica**  
 
@@ -545,10 +545,10 @@ $$s=\sqrt{s^{2}}$$
 **Nota** : no aplican todas las propiedades de la varianza
 
 ```{r}
-cat( "Varianza :",var(bd0052$promacum) )
-cat("Desviación estándar :",sd(bd0052$promacum))
+cat( "Varianza :",var(bd0052$acumulado), "\n" )
+cat("Desviación estándar :",sd(bd0052$acumulado))
 ```
-Aunque la desviacion estandar reduce el problema dibido a tener las mismas unidades de la variable, es util para compacion de dos grupos
+Aunque la desviación estándar reduce el problema debido a tener las mismas unidades de la variable, es útil para comparación de dos grupos
 
 
 ### **Coeficiente de variación**
@@ -560,7 +560,7 @@ $$CV= \dfrac{s}{\bar{x}} \times 100 \% $$
 Existen diferentes reglas empíricas para la interpretación del coeficiente de variación. Una de ellas establece como límite el 20% para separar los grupos homogéneos de los heterogéneos Por lo general se utiliza un valor hasta el 20% para determinar que un grupo de datos son homogéneos, de lo contrario se calificará como heterogéneo.
 
 ```{r}
-cat("Coeficiente de variación :",sd(bd0052$promacum)/mean(bd0052$promacum)*100)
+cat("Coeficiente de variación :",sd(bd0052$acumulado)/mean(bd0052$acumulado)*100)
 ```
 
 
@@ -600,8 +600,10 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 
 ```{r, message=FALSE, warning=FALSE}
-bd0052=read_excel("data/bd0052.xlsx", sheet = "base20211",col_types = c("numeric", "numeric", "text", "text", "numeric", "numeric", "text", "numeric")); bd0052$carrera[bd0052$carrera=="Biologia"]="Biología"
-summarytools::descr(bd0052$promacum)
+
+bd0052 <- read_excel("data/bd0052.xlsx")
+bd0052$carrera[bd0052$carrera=="Biologia"]="Biología"
+summarytools::descr(bd0052$acumulado)
 
 ```
 
@@ -613,7 +615,7 @@ summarytools::descr(mtcars$mpg)
 
 
 ```{r, message=FALSE, warning=FALSE}
-d1=density(bd0052$promacum, na.rm=TRUE); plot(d1)
+d1=density(bd0052$acumulado, na.rm=TRUE); plot(d1)
 ```
 
 

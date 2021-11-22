@@ -851,32 +851,30 @@ div.tocify {
 <p><br/> <br/></p>
 <pre class="r"><code># Forma simple
 library(readxl)
-bd0052=read_excel(&quot;data/bd0052.xlsx&quot;, sheet = &quot;base20211&quot;,col_types = c(&quot;numeric&quot;, &quot;numeric&quot;, &quot;text&quot;, &quot;text&quot;, &quot;numeric&quot;, &quot;numeric&quot;, &quot;text&quot;, &quot;numeric&quot;))
+bd0052 &lt;- read_excel(&quot;data/bd0052.xlsx&quot;)
 bd0052$carrera[bd0052$carrera==&quot;Biologia&quot;]=&quot;Biología&quot;
 data.frame(table(bd0052$carrera))</code></pre>
-<pre><code>                      Var1 Freq
-1                 Biología   23
-2         Ingeniería Civil   41
-3   Ingeniería de Sistemas    4
-4   Ingeniería Electrónica    5
-5      Ingeniería Mecánica    4
-6 Negocios Internacionales    4</code></pre>
+<pre><code>                    Var1 Freq
+1               Biología   18
+2       Ingeniería Civil   11
+3 Ingeniería de Sistemas    1
+4 Ingeniería Electrónica    4
+5    Ingeniería Mecánica    2</code></pre>
 <p><br/> <br/></p>
 <pre class="r"><code>#utilizando summarytools
 library(summarytools)
 t1=freq(bd0052$carrera, cumul = FALSE, headings = FALSE)
 t1</code></pre>
 <pre><code>
-                                 Freq   % Valid   % Total
------------------------------- ------ --------- ---------
-                      Biología     23     28.40     28.40
-              Ingeniería Civil     41     50.62     50.62
-        Ingeniería de Sistemas      4      4.94      4.94
-        Ingeniería Electrónica      5      6.17      6.17
-           Ingeniería Mecánica      4      4.94      4.94
-      Negocios Internacionales      4      4.94      4.94
-                          &lt;NA&gt;      0                0.00
-                         Total     81    100.00    100.00</code></pre>
+                               Freq   % Valid   % Total
+---------------------------- ------ --------- ---------
+                    Biología     18     50.00     50.00
+            Ingeniería Civil     11     30.56     30.56
+      Ingeniería de Sistemas      1      2.78      2.78
+      Ingeniería Electrónica      4     11.11     11.11
+         Ingeniería Mecánica      2      5.56      5.56
+                        &lt;NA&gt;      0                0.00
+                       Total     36    100.00    100.00</code></pre>
 <p>Nota: paquete <a href="https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html">summarytools</a></p>
 <p><br/> <br/></p>
 </div>
@@ -884,17 +882,16 @@ t1</code></pre>
 <h3><strong>Tablas de frecuencia para variables cuantitativas</strong></h3>
 <p>Para las variables cuantitativas las tablas de frecuencias tiene una presentacion diferente a la vista anteriormente. Como se trata de variables con una gran numero de valores diferentes, es necesario dividirlas por intervalos .</p>
 <pre class="r"><code>library(agricolae)
-h2=with(bd0052,graph.freq(promacum,plot=FALSE));t2=table.freq(h2);
+h2=with(bd0052,graph.freq(acumulado,plot=FALSE));t2=table.freq(h2);
 colnames(t2) = c(&quot;  LI  &quot;, &quot;  LS  &quot;, &quot;marca clase&#39;&quot;, &quot;Frec.Abs&quot;,&quot;Frec.Rel&quot;, &quot;Frec.Abs.Ac&quot;,&quot;Frec.Rel.Ac&quot;)
 t2</code></pre>
 <pre><code>    LI     LS   marca clase&#39; Frec.Abs Frec.Rel Frec.Abs.Ac Frec.Rel.Ac
-1   3.30   3.53        3.415       16     20.0          16        20.0
-2   3.53   3.76        3.645       21     26.2          37        46.2
-3   3.76   3.99        3.875       11     13.8          48        60.0
-4   3.99   4.22        4.105       19     23.8          67        83.8
-5   4.22   4.45        4.335        7      8.8          74        92.5
-6   4.45   4.68        4.565        4      5.0          78        97.5
-7   4.68   4.91        4.795        2      2.5          80       100.0</code></pre>
+1   3.30   3.55        3.425        9     25.0           9        25.0
+2   3.55   3.80        3.675        6     16.7          15        41.7
+3   3.80   4.05        3.925       10     27.8          25        69.4
+4   4.05   4.30        4.175        8     22.2          33        91.7
+5   4.30   4.55        4.425        0      0.0          33        91.7
+6   4.55   4.80        4.675        3      8.3          36       100.0</code></pre>
 <p>Frec.Abs : Frecuencia absoluta <br/> Frec.Rel : Frecuencia relativa <br/><br/> Frec.Abs.Ac : Frecuencia Absoluta Acumuada <br/> Frec.Rel.Ac : Frecuencia Relativa Acumulada</p>
 <p><br/> <br/></p>
 <pre class="r"><code>library(stringr)
@@ -927,7 +924,7 @@ t1</code></pre>
 <div id="diagrama-de-cajas" class="section level3">
 <h3><strong>Diagrama de cajas</strong></h3>
 <p><br/></p>
-<pre class="r"><code>library(ggplot2);bd0052[23,5]=5.1; bd0052[24,5]=2.6; ggplot(bd0052, aes(x=promacum))+geom_boxplot()</code></pre>
+<pre class="r"><code>library(ggplot2);bd0052[23,5]=5.1; bd0052[24,5]=2.6; ggplot(bd0052, aes(x=acumulado))+geom_boxplot()</code></pre>
 <p><img src="Guia102_files/figure-html/unnamed-chunk-6-1.png" width="1027.2" /></p>
 <p><br/></p>
 <p>atipico | <span class="math inline">\(LI=Q_{1}- 1.5(Q_{3}-Q_{1})\)</span> | <span class="math inline">\(Q_{1}\)</span> | <span class="math inline">\(Q_{2}\)</span> | <span class="math inline">\(Q_{3}\)</span> | <span class="math inline">\(LS=Q_{3}+ 1.5(Q_{3}-Q_{1})\)</span> | atipico</p>
@@ -1008,8 +1005,8 @@ t1</code></pre>
 <pre><code>[1] 20.09062</code></pre>
 <p><br/> <br/></p>
 <p>Ejemplo2</p>
-<pre class="r"><code>mean(bd0052$promacum, na.rm = TRUE)</code></pre>
-<pre><code>[1] 3.869259</code></pre>
+<pre class="r"><code>mean(bd0052$acumulado, na.rm = TRUE)</code></pre>
+<pre><code>[1] 3.8875</code></pre>
 <p><br/> <br/></p>
 <p>Ejemplo3</p>
 <pre class="r"><code>x=1:10
@@ -1029,10 +1026,10 @@ x</code></pre>
 <p><strong>Me</strong> :Es el número que divide la muestra en dos partes de igual proporción (50% : 50%). Es decir que corresponde a:</p>
 <p><span class="math inline">\(P_{50} = D_{5} = Q_{2}\)</span></p>
 <p>también corresponde a la linea central del diagrama de cajas.</p>
-<pre class="r"><code>median(bd0052$promacum,na.rm = TRUE)</code></pre>
-<pre><code>[1] 3.84</code></pre>
+<pre class="r"><code>median(bd0052$acumulado,na.rm = TRUE)</code></pre>
+<pre><code>[1] 3.875</code></pre>
 <p><br/> <br/></p>
-<pre class="r"><code>boxplot(bd0052$promacum, las=1, horizontal = TRUE, col = c1)</code></pre>
+<pre class="r"><code>boxplot(bd0052$acumulado, las=1, horizontal = TRUE, col = c1)</code></pre>
 <p><img src="Guia102_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p><br/> <br/></p>
 <p>La <strong>Me</strong> corresponde a la linea central de a caja en el diagrama de cajas</p>
@@ -1058,16 +1055,15 @@ library(summarytools)
 t1=freq(bd0052$carrera, cumul = FALSE, headings = FALSE)
 t1</code></pre>
 <pre><code>
-                                 Freq   % Valid   % Total
------------------------------- ------ --------- ---------
-                      Biología     23     28.40     28.40
-              Ingeniería Civil     41     50.62     50.62
-        Ingeniería de Sistemas      4      4.94      4.94
-        Ingeniería Electrónica      5      6.17      6.17
-           Ingeniería Mecánica      4      4.94      4.94
-      Negocios Internacionales      4      4.94      4.94
-                          &lt;NA&gt;      0                0.00
-                         Total     81    100.00    100.00</code></pre>
+                               Freq   % Valid   % Total
+---------------------------- ------ --------- ---------
+                    Biología     18     50.00     50.00
+            Ingeniería Civil     11     30.56     30.56
+      Ingeniería de Sistemas      1      2.78      2.78
+      Ingeniería Electrónica      4     11.11     11.11
+         Ingeniería Mecánica      2      5.56      5.56
+                        &lt;NA&gt;      0                0.00
+                       Total     36    100.00    100.00</code></pre>
 <p>moda : <strong>Ingeniería Civil</strong></p>
 </div>
 <div id="otras-medidas-de-centro" class="section level3">
@@ -1075,18 +1071,18 @@ t1</code></pre>
 </div>
 <div id="media-truncada" class="section level3">
 <h3><strong>Media truncada</strong></h3>
-<pre class="r"><code>mean(bd0052$promacum, na.rm = TRUE, trim = 0.10)</code></pre>
-<pre><code>[1] 3.846154</code></pre>
+<pre class="r"><code>mean(bd0052$acumulado, na.rm = TRUE, trim = 0.10)</code></pre>
+<pre><code>[1] 3.862333</code></pre>
 </div>
 <div id="rango-medio" class="section level3">
 <h3><strong>Rango medio</strong></h3>
 <p><span class="math inline">\(\frac{1}{2}(max(x)+min(x))\)</span></p>
-<pre class="r"><code>(max(bd0052$promacum,na.rm = TRUE)+min(bd0052$promacum,na.rm = TRUE))/2</code></pre>
-<pre><code>[1] 3.85</code></pre>
+<pre class="r"><code>(max(bd0052$acumulado,na.rm = TRUE)+min(bd0052$acumulado,na.rm = TRUE))/2</code></pre>
+<pre><code>[1] 4.025</code></pre>
 </div>
 <div id="media-geométrica" class="section level3">
 <h3><strong>Media geométrica</strong></h3>
-<p>este indicador de tendencia central se utiliza para promediar tasa de crecimiento o de interes. Para encontar su valor se multiplican los valores de <span class="math inline">\(n\)</span> tasas incrementadas en uno. A ese producto se le extrae la raiz n-esima.</p>
+<p>este indicador de tendencia central se utiliza para promediar tasa de crecimiento o de interés. Para encontrar su valor se multiplican los valores de <span class="math inline">\(n\)</span> tasas incrementadas en uno. A ese producto se le extrae la raíz n-esima.</p>
 </div>
 <div id="media-armónica" class="section level3">
 <h3><strong>Media armónica</strong></h3>
@@ -1172,19 +1168,19 @@ t1</code></pre>
 <p>Es la raíz cuadrada de la varianza</p>
 <p><span class="math display">\[s=\sqrt{s^{2}}\]</span></p>
 <p><strong>Nota</strong> : no aplican todas las propiedades de la varianza</p>
-<pre class="r"><code>cat( &quot;Varianza :&quot;,var(bd0052$promacum) )</code></pre>
-<pre><code>Varianza : 0.1658319</code></pre>
-<pre class="r"><code>cat(&quot;Desviación estándar :&quot;,sd(bd0052$promacum))</code></pre>
-<pre><code>Desviación estándar : 0.4072247</code></pre>
-<p>Aunque la desviacion estandar reduce el problema dibido a tener las mismas unidades de la variable, es util para compacion de dos grupos</p>
+<pre class="r"><code>cat( &quot;Varianza :&quot;,var(bd0052$acumulado), &quot;\n&quot; )</code></pre>
+<pre><code>Varianza : 0.1293279 </code></pre>
+<pre class="r"><code>cat(&quot;Desviación estándar :&quot;,sd(bd0052$acumulado))</code></pre>
+<pre><code>Desviación estándar : 0.3596218</code></pre>
+<p>Aunque la desviación estándar reduce el problema debido a tener las mismas unidades de la variable, es útil para comparación de dos grupos</p>
 </div>
 <div id="coeficiente-de-variación" class="section level3">
 <h3><strong>Coeficiente de variación</strong></h3>
 <p>Nos indica que tan grande o que tan pequeña es la desviación estándar con respecto a su media</p>
 <p><span class="math display">\[CV= \dfrac{s}{\bar{x}} \times 100 \% \]</span></p>
 <p>Existen diferentes reglas empíricas para la interpretación del coeficiente de variación. Una de ellas establece como límite el 20% para separar los grupos homogéneos de los heterogéneos Por lo general se utiliza un valor hasta el 20% para determinar que un grupo de datos son homogéneos, de lo contrario se calificará como heterogéneo.</p>
-<pre class="r"><code>cat(&quot;Coeficiente de variación :&quot;,sd(bd0052$promacum)/mean(bd0052$promacum)*100)</code></pre>
-<pre><code>Coeficiente de variación : 10.52462</code></pre>
+<pre class="r"><code>cat(&quot;Coeficiente de variación :&quot;,sd(bd0052$acumulado)/mean(bd0052$acumulado)*100)</code></pre>
+<pre><code>Coeficiente de variación : 9.250722</code></pre>
 </div>
 </div>
 <div id="indicadores-de-forma" class="section level2">
@@ -1214,29 +1210,30 @@ t1</code></pre>
 <li><strong>Simetrica</strong> : Poco con poco, poco con mucho, mucho al rededor de un centro</li>
 <li><strong>Asimetria positiva</strong> : Mucho con poco, poco con mucho</li>
 </ul>
-<pre class="r"><code>bd0052=read_excel(&quot;data/bd0052.xlsx&quot;, sheet = &quot;base20211&quot;,col_types = c(&quot;numeric&quot;, &quot;numeric&quot;, &quot;text&quot;, &quot;text&quot;, &quot;numeric&quot;, &quot;numeric&quot;, &quot;text&quot;, &quot;numeric&quot;)); bd0052$carrera[bd0052$carrera==&quot;Biologia&quot;]=&quot;Biología&quot;
-summarytools::descr(bd0052$promacum)</code></pre>
+<pre class="r"><code>bd0052 &lt;- read_excel(&quot;data/bd0052.xlsx&quot;)
+bd0052$carrera[bd0052$carrera==&quot;Biologia&quot;]=&quot;Biología&quot;
+summarytools::descr(bd0052$acumulado)</code></pre>
 <pre><code>Descriptive Statistics  
 value  
-N: 81  
+N: 36  
 
-                    value
------------------ -------
-             Mean    3.86
-          Std.Dev    0.36
-              Min    3.34
-               Q1    3.55
-           Median    3.83
-               Q3    4.16
-              Max    4.83
-              MAD    0.43
-              IQR    0.61
-               CV    0.09
-         Skewness    0.50
-      SE.Skewness    0.27
-         Kurtosis   -0.58
-          N.Valid   80.00
-        Pct.Valid   98.77</code></pre>
+                     value
+----------------- --------
+             Mean     3.89
+          Std.Dev     0.36
+              Min     3.34
+               Q1     3.55
+           Median     3.88
+               Q3     4.12
+              Max     4.71
+              MAD     0.44
+              IQR     0.54
+               CV     0.09
+         Skewness     0.43
+      SE.Skewness     0.39
+         Kurtosis    -0.61
+          N.Valid    36.00
+        Pct.Valid   100.00</code></pre>
 <pre class="r"><code>summarytools::descr(mtcars$mpg)</code></pre>
 <pre><code>Descriptive Statistics  
 value  
@@ -1259,7 +1256,7 @@ N: 32
          Kurtosis    -0.37
           N.Valid    32.00
         Pct.Valid   100.00</code></pre>
-<pre class="r"><code>d1=density(bd0052$promacum, na.rm=TRUE); plot(d1)</code></pre>
+<pre class="r"><code>d1=density(bd0052$acumulado, na.rm=TRUE); plot(d1)</code></pre>
 <p><img src="Guia102_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <pre class="r"><code>data(&quot;mtcars&quot;)
 d2=density(mtcars$mpg); plot(d2)</code></pre>
