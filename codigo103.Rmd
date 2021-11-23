@@ -747,7 +747,7 @@ mapco$NOMBRE_DPT
 ```
 <br/>
 
- Si quiereramos representar un mapa con las muertes causadas por covid en Colombia por departamento debemos crear una tabla con la información relacionada con esta variable por departamento en el mismo orden contenida en el archivo **depto.shp** y adicionarla como variable : mapcol@data$muertes
+ Si se quiere representar un mapa con las muertes causadas por covid en Colombia por departamento debemos crear una tabla con la información relacionada con esta variable por departamento en el mismo orden contenida en el archivo **depto.shp** y adicionarla como variable : mapcol@data$muertes
 
 De la base de datos abiertos Colombia se obtiene la siguiente información correspondiente al número de fallecidos por Covid19, durante el periodo marzo 2019 a agosto 25 de 2021
 
@@ -755,11 +755,9 @@ De la base de datos abiertos Colombia se obtiene la siguiente información corre
 # colombia=readRDS("data/Colombia.RDS")
 # colombia$departamento_nom= str_to_upper(colombia$departamento_nom)
 # t=table(colombia$departamento_nom,colombia$estado)
-
 fallecidos=c(15174,3876,26516,807,2417,2151,880,1333,2388,3487,6495,382,2880,
              1296,1380,2076,2861,3961,1635,2119,6934,1546,3411,11929,400,844,
              620,249,29,87,17,45,133)
-
 ```
  
 
