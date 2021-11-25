@@ -1,0 +1,58 @@
+---
+title: "**Evaluacion final**"
+author: "dgonzalez80"
+date: " "
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+---
+
+# **PARTE A**
+<br/>
+
+### **Descripción**
+
+A partir de la información trabajada en el Módulo 4, construya un mapa mental que relacione los conceptos trabajados
+
+**Requisitos** :
+
+* El mapa se debe construir a mano
+* El producto debe ser entregado en archivo pdf
+* Es necesario que dentro del mapa este el nombre del autor
+
+<br/><br/><br/>
+
+# **PARTE B**
+
+<br/>
+
+### **Descripción**
+
+Construya un Caso de estudio que corresponda a un problema de aplicación del modelo de regresión lineal. Resuelva el problema e interprete los resultados
+
+**Requisitos**
+
+* El problema debe tener un contexto amplio que permita ser catalogado como Caso de estudio 
+* Se debe suministrar la información con la que se corre el modelo
+* La solución debe incluir:  
+    * los resultados obtenidos del proceso, 
+    * mostrando todos los pasos requeridos, 
+    * su análisis con las conclusiones y recomendaciones
+
+  
+  
+Nota: Como referencia a un Caso de estudio pueden revisar el caso de la Guía 1.3    
+    
+    
+
+
+
+
