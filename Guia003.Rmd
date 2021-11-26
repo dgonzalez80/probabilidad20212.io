@@ -30,3 +30,29 @@ c5="#BC2B6A" # MORADO
 <br/>
 ![](img/baner0.png)
 
+# **Introducción**
+
+Unas de las funciones más utilizadas en Estadística son :la exponencial y logaritmica, de allí que es de mucha importancia recordar sus diferentes formas y propiedades al igual que su representación gráfica  
+
+# **Función exponencial**
+
+Aunque en matemáticas se define la función exponecial de manera general como  $f(x)=a b^{cx+d}$, en este caso nos interesa aquellos casos donde $b=e= 2.71828....$ 
+
+Definición:
+
+$e^{x} = exp\{x\} = \displaystyle\sum_{k=0}^{\infty} \dfrac{x^{k}}{k!} = 1 + x + \dfrac{x^{2}}{2}+\dfrac{x^{3}}{6}+\dfrac{x^{4}}{24}+ \dots$
+
+
+```{r}
+x=seq(0,5,0.2)
+fx=exp(x)
+plot(x,fx, las=1, type ="l", ylab = "f(x) = exp(x)")
+```
+
+
+
+## Algunas propiedades
+
+* 
+
+
