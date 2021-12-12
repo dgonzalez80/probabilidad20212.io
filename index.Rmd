@@ -10,6 +10,8 @@ output:
     theme: cosmo
 ---
 
+![](img/banner.png)
+<br/><br/><br/
 
 **Métodología** 
 
