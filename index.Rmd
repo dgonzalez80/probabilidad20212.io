@@ -11,7 +11,7 @@ output:
 ---
 
 ![](img/banner.png)
-<br/><br/><br/
+<br/><br/><br/>
 
 **Métodología** 
 
