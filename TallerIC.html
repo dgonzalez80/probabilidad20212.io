@@ -317,7 +317,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Probabilidad y Estadística 2021-2 </a>
+      <a class="navbar-brand" href="index.html"> </a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -493,6 +493,12 @@ div.tocify {
     <li>
       <a href="codigo403.html">Código u4.3</a>
     </li>
+    <li>
+      <a href="codigo501.html">Código u5.1</a>
+    </li>
+    <li>
+      <a href="codigo502.html">Código u5.2</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -520,7 +526,24 @@ div.tocify {
       <a href="TallerIC.html">Taller IC</a>
     </li>
     <li>
+      <a href="Taller_pruebas1.html">Taller Pruebas 1</a>
+    </li>
+    <li>
       <a href="Guia_trabajo.html">Trabajo final</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-chess-pawn"></span>
+     
+    Atención
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="atencion.html">Atención</a>
     </li>
   </ul>
 </li>
@@ -576,7 +599,7 @@ boxplot(data.frame(A,B))</code></pre>
 ## [1] 0.95</code></pre>
 <p>Como el IC para la razón de varianzas (0.3588543; 3.1837492) contienen a 1, asumimos que las varianzas son iguales</p>
 <pre class="r"><code>t.test(A,B, var.equal=T,paired=F)$conf.int</code></pre>
-<pre><code>## [1] -1.3922636 -0.8477364
+<pre><code>## [1] -1.6934843 -0.5465157
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>Como el intervalo resultante es (-,-), indica que <span class="math inline">\(\mu_{A} &lt; \mu_{B}\)</span>. Por tal motivo se recomienda la compra de la marca A</p>
